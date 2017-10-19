@@ -1,0 +1,18 @@
+<% if @linked_rule.errors.count == 0 %>
+
+  $('.alert-box').remove();
+  $("body").append ("<%= j(render 'layouts/notices') %>");
+	$('#form_div').remove();
+  $('#form_modifier_placeholder').remove();
+	$('#form_placeholder').show();
+  $('#brass_form').html("<%= j(render 'form_list') %>");
+  bindSortable();
+  scrollToForm("body");
+
+<% else %>
+
+	$('#form_div').remove();
+  $('#form_modifier_placeholder').remove();
+	$('#form_placeholder').after('<%= j render("form") %>');
+
+<% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  notableable: resident_one
+  notableable_type: Campaignmanager::Campaign
+  entity: resident_character_one
+  name: MyString
+  sort_order: 1
+
+two:
+  notableable: page1
+  notableable_type: Campaignmanager::Page
+  entity: resident_character_two
+  name: MyString
+  sort_order: 1

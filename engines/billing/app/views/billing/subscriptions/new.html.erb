@@ -1,0 +1,44 @@
+<% provide(:title, 'Subscription') %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "Account" => nil },
+          { 'Subscription'  => nil  }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render 'menus/account', :active => 'subscription' %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render 'layouts/header', :main => 'Subscription', :sub => 'New' %>
+    <hr class="faded">
+    <div class="row">
+      <div class="large-6 medium-8 small-12 columns">
+        <div id="brass_form">
+
+          <fieldset>
+            <div class="row">
+              <div class="small-12 columns">
+                <%= simple_form_for @subscription, :html => { :id => "payment-form" } do |f| %>
+                  <span class="payment-errors">
+                    <% @subscription.errors.full_messages.each do |msg| %>
+                      <%= msg %><br>
+                    <% end %>
+                  </span>
+                  <%= render 'form_card' %>
+                  <%= render 'form_coupon' %>
+                  <%= render "layouts/form/subscribe" %>
+                <% end %>
+              </div>
+            </div>
+          </fieldset>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% render "stripejs" %>

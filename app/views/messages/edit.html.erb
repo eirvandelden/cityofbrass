@@ -1,0 +1,19 @@
+<% provide(:title, 'Message') %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "Residents" => residents_path },
+          { "Message" => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-2 columns">
+    <%= render 'menu' %>
+  </div>
+  <div class="medium-10 columns" id="brass_form">
+    <%= render 'form' %>
+  </div>
+</div>
+
+<%= render :partial =>'layouts/ckeditor', :locals => { :cke_version => 'mini' } %>

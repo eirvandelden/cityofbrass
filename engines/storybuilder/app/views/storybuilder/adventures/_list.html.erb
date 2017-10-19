@@ -1,0 +1,18 @@
+<% @adventures.each do |adventure| %>
+  <%= render :partial =>'layouts/index_row',
+    :locals => {
+    :main => adventure.name,
+    :sub => adventure.core_rules,
+    :description => adventure.short_description,
+    :show_link => polymorphic_path(adventure),
+    :edit_link => edit_polymorphic_path(adventure),
+    :can_auth => adventure.can_edit?(current_user, admin_signed_in?, @type)
+    }
+  %>
+<% end %>
+
+<div class="row">
+  <div class="small-12 columns text-center">
+    <%= paginate @adventures %>
+  </div>
+</div>

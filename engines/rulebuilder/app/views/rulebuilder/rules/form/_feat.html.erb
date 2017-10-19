@@ -1,0 +1,61 @@
+<%= f.input :core_rules, as: :hidden %>
+<%= f.input :rule_type, as: :hidden %>
+
+<div class="row">
+
+  <% if f.object.gallery_image_join.present? %>
+    <div class="medium-8 columns">
+  <% else %>
+    <div class="medium-12 columns">
+  <% end %>
+
+    <div class="row">
+      <div class="small-9 columns">
+        <%= f.input :name %>
+      </div>
+      <div class="small-3 columns text-center">
+        <label>Shared <%= tooltip_helper("If <span class='color-primary'>shared <i class='fa fa-check-square-o fa-fw'></i></span>, this rule will show up under Rule Builder rules and display the Tag List and Category List fields.<br><br>If <span class='color-primary'>not shared <i class='fa fa-square-o fa-fw'></i></span>, this rule will get deleted when the last character, creature or NPC using it gets deleted.") %></label>
+        <% unless f.object.is_shared == true %>
+          <%= f.input :is_shared, label: '', as: :boolean %>
+        <% else %>
+          <%= f.input :is_shared, label: '', as: :boolean, disabled: true %>
+        <% end %>
+      </div>
+    </div>
+    <%= f.association :parent, collection: f.object.class.where(core_rules: f.object.core_rules).select(:name, :id).order_name, label_method: :name, value_method: :id, :include_blank => true if admin_signed_in? %>
+    <% if f.object.is_shared == true && ('Rule Feat Stunt'.include?f.object.rule_type) %>
+
+    <% end %>
+    <%= f.input :short_description, label: "Short description #{tooltip_helper('The short description is used wherever rules are displayed in a list.<br><br>Treat it like a customizable abbreviation for the full description that is limited to 255 characters.')}".html_safe %>
+    <% if CoreRules.d20_system?(f.object.core_rules) %>
+      <%= f.input :category_list, label: "Category list (separated by commas) #{tooltip_helper('Displayed as the subheader(s) for this rule.')}".html_safe %>
+    <% end %>
+    <%= f.input :prerequisites %>
+  </div>
+
+  <% if f.object.gallery_image_join.present? %>
+    <div class="medium-4 columns text-center">
+      <%= f.fields_for :gallery_image_join do |p| %>
+        <%= p.input :image_id, as: :hidden %>
+        <%= render :partial => 'gallery/images/image_pkr', :locals => { :image_url => (@rule.gallery_image.file.url(:thumb) unless @rule.gallery_image.nil?) } %>
+      <% end %>
+    </div>
+  <% end %>
+
+</div>
+<div class="row">
+  <div class="medium-12 columns">
+    <%= f.input :full_description, class: "editorblank" %>
+    <br>
+    <% if CoreRules.d20_system?(f.object.core_rules) %>
+      <%= f.input :benefit, class: "editorblank" %>
+      <br>
+      <%= f.input :normal, class: "editorblank" %>
+      <br>
+      <%= f.input :special, class: "editorblank" %>
+      <br>
+    <% end %>
+  </div>
+</div>
+
+<%= render "rulebuilder/rules/form/source", :f => f %>

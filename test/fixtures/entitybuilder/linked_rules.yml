@@ -1,0 +1,11 @@
+one:
+  entity: resident_character_one
+  rule: resident_one
+  sort_order: 1
+  detail: im detail
+
+two:
+  entity: resident_character_one
+  rule: resident_two
+  sort_order: 2
+  detail:

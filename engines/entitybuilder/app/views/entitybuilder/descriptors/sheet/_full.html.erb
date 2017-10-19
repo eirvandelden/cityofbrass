@@ -1,0 +1,10 @@
+<ul class="no-bullet  no-margin">
+<% @parent_object.descriptors.each do |descriptor| %>
+  <li>
+    <div class="indent">
+      <strong><%= descriptor.name %>:</strong>
+      <%= descriptor.description %>
+    </div>
+  </li>
+<% end %>
+</ul>

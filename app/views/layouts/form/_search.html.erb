@@ -1,0 +1,12 @@
+<%= form_tag url, :method => 'get', :remote => true, :html => {'data-no-transition-cache' => ''} do %>
+  <div class="row collapse prefix-radius">
+    <div class="medium-11 small-10 columns">
+      <%= text_field_tag :search, params[:search], placeholder: 'Enter search term...' %>
+    </div>
+    <div class="medium-1 small-2 columns">
+      <%= button_tag type: 'submit', class: 'postfix nopad' do %>
+      <i class="fa fa-search"></i>
+      <% end %>
+    </div>
+  </div>
+<% end %>

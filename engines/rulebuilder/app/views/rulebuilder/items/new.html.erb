@@ -1,0 +1,26 @@
+<% provide(:title, "Items | New Item") %>
+<% type_array = type_split(@type) %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => polymorphic_path(@type.tableize) },
+    { "New Item" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-2 columns">
+    <%= render :partial => 'menus/manage',
+      :locals => {
+        :active => 'new',
+        :index_link => polymorphic_path(@type.tableize)
+      } %>
+  </div>
+  <div class="medium-10 columns" id="brass_form">
+    <%= simple_form_for @item do |f| %>
+      <%= render :partial => 'form', :locals => { :f => f } %>
+    <% end %>
+  </div>
+</div>
+
+<%= render :partial =>'layouts/ckeditor', :locals => { :cke_version => 'standard' } %>

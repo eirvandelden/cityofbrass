@@ -1,0 +1,28 @@
+@import "v1/core/base";
+
+.header{
+  line-height: 2.5rem;
+}
+
+.subheader{
+  font-size: .75em;
+  color: $color-c5;
+}
+
+.header-icon{
+  line-height: 2rem;
+  font-size: 2rem;
+  width: 2rem;
+  display: inline-block;
+}
+
+.header-icon-edit{
+  //height: 2rem;
+  //line-height: 2rem;
+  line-height: 2.5rem;
+  padding: 0 .15em;
+}
+
+.header-icon-small{
+  padding: 0 .1em;
+}

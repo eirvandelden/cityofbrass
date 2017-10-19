@@ -1,0 +1,25 @@
+<% provide(:title, "404") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "404" => nil  },
+          { "requested resource could not be found" => nil  }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="large-10 large-centered columns">
+    <div class="row">
+      <div class="medium-8 columns">
+        <span class="error-code">404</span>
+        <h2>Barmy! Where is that blasted page?</h2>
+        <p>Either those worthless goblins have moved it again or they ate it. They seem to have a taste for web pages these days. If upper management doesn't do something about those pesky creatures, I hope Cthulhu does.</p>
+        <p><i class="fa fa-angle-double-left"></i> <%= link_to "Back", :back %>
+      </div>
+      <div class="medium-4 columns text-center">
+        <p>&nbsp;</p>
+        <img src="https://s3.amazonaws.com/thecityofbrass/assets/images/orc_boss.png">
+      </div>
+    </div>
+  </div>
+</div>

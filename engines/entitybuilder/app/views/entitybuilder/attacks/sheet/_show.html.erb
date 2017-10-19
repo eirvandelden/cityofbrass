@@ -1,0 +1,26 @@
+<% if @attacks_melee.any? %>
+  <div class="indent">
+    <strong>Melee: </strong>
+    <% @attacks_melee.each do |attack| %>
+      <%= render 'entitybuilder/attacks/sheet/show_detail', attack: attack, last: @attacks_melee.last %>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @attacks_range.any? %>
+  <div class="indent">
+    <strong>Range: </strong>
+    <% @attacks_range.each do |attack| %>
+      <%= render 'entitybuilder/attacks/sheet/show_detail', attack: attack, last: @attacks_range.last %>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @attacks_special.any? %>
+  <div class="indent">
+    <strong>Special: </strong>
+    <% @attacks_special.each do |attack| %>
+      <%= render 'entitybuilder/attacks/sheet/show_detail', attack: attack, last: @attacks_special.last %>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="large-8 medium-10 columns small-centered">
+    <fieldset style="border-color: #cc0000;">
+    <legend style="color:#cc0000;"><i class='header-icon-edit icon-warning'></i> Delete</legend>
+    <p>This will permanently delete <strong><%= record.name %></strong> and cannot be undone. Are you sure you want to do this?</p>
+    <%= f.input :name_confirmation, label: "Please type in the name of your #{record.class.to_s.demodulize.underscore.titleize} to confirm." %>
+    <%= render "layouts/form/delete" %>
+    </fieldset>
+  </div>
+</div>

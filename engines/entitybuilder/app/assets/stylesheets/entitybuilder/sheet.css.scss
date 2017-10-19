@@ -1,0 +1,123 @@
+$font-family-grace: 'Covered By Your Grace', cursive;
+
+.sheet-font{
+  p{ margin-bottom: .75rem; }
+}
+
+.sheet-font-normal{
+  p{ margin-bottom: .75rem; }
+}
+
+.sheet-font-bold{
+  p{ margin-bottom: .75rem; }
+  td{ font-weight:bold; }
+  li{ }
+}
+
+.sheet-font-hand-written{
+  font-family: $font-family-grace;
+  font-size: 1.25rem;
+  p{
+    font-size: 1.25rem;
+    margin-bottom: .75rem;
+  }
+  td{ font-size: 1.25rem; }
+  li{ font-size: 1.25rem; }
+}
+
+.sheet-font-dungeon-bastard{
+  font-family: 'Permanent Marker', cursive;
+  p{ margin-bottom: .75rem; }
+}
+
+.sheet-table{
+  width: 100%;
+  border-collapse: collapse;
+  .bold{
+    font-weight: bold;
+  }
+  thead{
+    background-color: #3a3a3a;
+    .name{
+      color: #666;
+    }
+  }
+  th{
+    padding: 4px .5em;
+    font-family: "Marcellus SC", serif;
+    color: #c5c5c5;
+  }
+  tbody {
+    border-top: 2px solid #c69633;
+  }
+  tr{
+    border-bottom: 1px solid #ebebeb;
+  }
+  td{
+    vertical-align:top;
+  }
+  .roll:hover, {
+    background: #666;
+    cursor:pointer;
+    td {
+      color:#c5c5c5;
+    }
+  }
+  .noranks{
+    font-style: italic;
+  }
+  .blank{
+    background-color: #fff;
+  }
+}
+
+.sheet-over{
+  border-bottom: 1px dotted #c5c5c5;
+  font-weight:bold;
+  font-size: 2em;
+  line-height: 2rem;
+}
+
+.reduced{
+  font-size: 1em;
+}
+
+.sheet-over-big{
+  border-bottom: 1px dotted #c5c5c5;
+  font-weight:bold;
+  font-size: 3em;
+  line-height: 3rem;
+}
+
+.reduced-big{
+  font-size: 1.5em;
+}
+
+.sheet-super-big{
+  border-bottom: 1px dotted #c5c5c5;
+  font-weight:bold;
+  font-size: 4em;
+  line-height: 1.1em;
+}
+
+.sheet-under{
+  color:#c5c5c5;
+  font-weight:bold;
+  font-size: .83em;
+  margin-bottom: .75em;
+  line-height: 1.25em;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+li.sheet-li{
+  margin-left: .83em;
+}
+
+.sheet-hpcogs{
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #c5c5c5;
+  font-size: .5em;
+  line-height: .5em;
+}

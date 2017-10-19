@@ -1,0 +1,28 @@
+<li id="user_<%= user.id %>">
+  <div class="row">
+    <div class="small-3 columns clipper">
+      <%= user.email %>
+    </div>
+    <div class="small-2 columns clipper">
+      <strong><%= link_to user.resident.name, resident_path(user.resident.slug), target: "_user" unless user.resident.nil? %>&nbsp;</strong>
+    </div>
+    <div class="small-3 columns clipper">
+      <span style="<%= status_style(user.status) %>"><%= user.status.humanize %></span>
+    </div>
+    <div class="small-1 columns clipper">
+      <%= user.sign_in_count %>
+    </div>
+    <div class="small-3 columns text-right">
+      <span class="cogspan">
+        <% if user.stripe_customer_token? %>
+          <% if Rails.env.production? %>
+            <a class="stripe-a" href="https://dashboard.stripe.com/customers/<%= user.stripe_customer_token %>" target="_stripe"><i class='fa fa-cc-stripe'></i></a>
+          <% else %>
+            <a class="stripe-a" href="https://dashboard.stripe.com/test/customers/<%= user.stripe_customer_token %>" target="_stripe"><i class='fa fa-cc-stripe'></i></a>
+          <% end %>
+        <% end %>
+        <%= link_to "<i class='fa fa-cogs'></i>".html_safe, edit_user_path(user), class: "color-c5" %>
+      </span>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,31 @@
+<ul class="inline-list eb-v1-card-list">
+  <% ability_scores.each do |ability_score| %>
+  <li>
+    <div class="eb-v1-badge-over text-center">
+      <strong>
+        <%= link_to_if (clickable && ability_score.description.present?), ability_score.name.upcase[0..2], "#{entitybuilder.polymorphic_path(entity)}/ability_scores/#{ability_score.id}", "data-reveal-id" => "ability_score_modal", :remote => true %>
+      </strong>
+    </div>
+    <div class="eb-v1-card-under text-center">
+      <strong><%= ability_score.calculated_score(modifiers) %></strong>
+      <% unless ability_score.modifier.blank? and ability_score.dice.blank?  %>
+        (
+          <span class="eb-v1-card-attribute">
+          <% dice = ability_score.game_dice(core_rules) %>
+          <% bonus = ability_score.calculated_modifier(modifiers) %>
+          <% bonus_placeholder = "#{bonus}" %>
+          <% bonus_placeholder = "+#{bonus}" if bonus > -1 %>
+          <% roll = "#{dice}#{bonus_placeholder}" %>
+
+          <% if @show_popbox.present? %>
+            <%= format_dice_popup(ability_score.display_dice_or_modifier(core_rules, bonus, dice), dice, bonus).html_safe %>
+          <% else %>
+            <%= format_dice_activeplay(ability_score.display_dice_or_modifier(core_rules, bonus, dice), ability_score.name, roll).html_safe %>
+          <% end %>
+          </span>
+        )
+      <% end %>
+    </div>
+  </li>
+  <% end %>
+</ul>

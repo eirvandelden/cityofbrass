@@ -1,0 +1,42 @@
+<div id="trackable_div">
+<%= simple_form_for [@parent_object, @trackable], url: "#{polymorphic_path(@parent_object)}/trackables/#{@trackable.id}/update_sheet", :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <div class="row inline">
+    <div class="small-12 columns">
+      <label class="inline-label-flat"><%= f.object.name %></label>
+    </div>
+  </div>
+  <fieldset>
+    <div class="row">
+      <div class="small-6 columns">
+        <%= f.input :current %>
+      </div>
+      <div class="small-6 columns">
+        <%= f.input :temporary %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-6 columns text-center">
+        <div class="input-wrapper">
+          <%= f.label :maximum, class: 'color-c5' %>
+          <label class="color-c5"><%= f.object.maximum.blank? ? '-' : f.object.maximum %></label>
+        </div>
+      </div>
+      <div class="small-6 columns text-center">
+        <div class="input-wrapper">
+          <%= f.label :minimum, class: 'color-c5' %>
+          <label class="color-c5"><%= f.object.minimum.blank? ? '-' : f.object.minimum %></label>
+        </div>
+      </div>
+    </div>
+    <% unless f.object.description.blank? %>
+    <div class="row">
+      <div class="medium-12 columns">
+        <%= f.label :description %>
+        <%= f.object.description %>
+      </div>
+    </div>
+    <% end %>
+  </fieldset>
+  <%= render "layouts/form/save" %>
+<% end %>
+</div>

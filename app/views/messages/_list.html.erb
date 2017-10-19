@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="medium-12 columns">
+    <% @messages.each do |message| %>
+      <%= render 'message', message: message %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns text-center">
+    <%= paginate @messages %>
+  </div>
+</div>

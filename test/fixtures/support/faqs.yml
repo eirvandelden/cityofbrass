@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  topic: Test
+  question: Who are you?
+  answer: <p>The developer</p>
+  active: t
+
+two:
+  topic: Test
+  question: Who am i?
+  answer: <p>Jackie Chan</p>
+  active: f

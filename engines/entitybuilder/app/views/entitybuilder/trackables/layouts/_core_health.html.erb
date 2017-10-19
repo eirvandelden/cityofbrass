@@ -1,0 +1,2 @@
+<div class="eb-v1-<%= "#{css_class}" %>-over <%= "eb-v1-#{css_class}-reduced" if hit_points.current.to_s.length > 5 %> text-center"><%= hit_points.current if hit_points %></div>
+<div class="eb-v1-<%= "#{css_class}" %>-under text-center"><i class='fa fa-pencil'></i> <%= card_name_shortner(hit_points.name) %></div>

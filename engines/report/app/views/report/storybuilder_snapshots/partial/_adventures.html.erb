@@ -1,0 +1,32 @@
+<fieldset>
+  <div class="row inline text-right">
+    <div class="small-12 columns">
+      <label class="inline-label-flat">Adventures</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <table class="simple_table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th class="text-center">Paid</th>
+            <th class="text-center">Free</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Adventures</strong></td>
+            <td class="text-center"><%= @paid_counts[:adventures] %></td>
+            <td class="text-center"><%= @free_counts[:adventures] %></td>
+          </tr>
+          <tr>
+            <td><strong>Pages</strong></td>
+            <td class="text-center"><%= @paid_counts[:pages] %></td>
+            <td class="text-center"><%= @free_counts[:pages] %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</fieldset>

@@ -1,0 +1,16 @@
+<li id="contributor_<%= contributor.id %>">
+  <div class="row">
+    <div class="small-8 columns clipper">
+      <% if contributor.affiliate_user.nil? %>
+        <strong class="color-c5" style="font-style: italic;"><%= contributor.affiliate.name %></strong>
+      <% else %>
+        <strong><%= link_to contributor.affiliate.name, main_app.resident_path(contributor.affiliate.slug) %></strong>
+      <% end %>
+    </div>
+    <div class="small-2 columns text-right">
+      <span class="cogspan">
+        <%= link_to "<i class='fa fa-times-circle'></i>".html_safe, district_contributor_path(@district.id, contributor.id), class: "color-c5", method: :delete, data: { confirm: "Are you sure you want to remove #{contributor.affiliate.name} as a contributor to your district?" }, :remote => true %>
+      </span>
+    </div>
+  </div>
+</li>

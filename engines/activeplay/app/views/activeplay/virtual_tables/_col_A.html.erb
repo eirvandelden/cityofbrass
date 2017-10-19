@@ -1,0 +1,63 @@
+<div id="badge-list" class="ap-v1-campaign-panel">
+  <ul class="tabs" data-tab role="tablist">
+    <li class="tab-title active"><a href="#ap-panel-characters" class="ap-v1-campaign-tab"><i class="fa fa-users fa-fw"></i></a></li>
+    <% if @virtual_table.can_edit?(current_user, admin_signed_in?) %>
+      <li class="tab-title"><a href="#ap-panel-creatures-add" class="ap-v1-campaign-tab"><i class="fa fa-gears fa-fw"></i></a></li>
+    <% elsif @my_character.present? %>
+      <li class="tab-title"><a href="#ap-panel-creatures-add" class="ap-v1-campaign-tab"><i class="fa fa-gears fa-fw"></i></a></li>
+    <% end %>
+  </ul>
+  <div class="tabs-content">
+
+    <section role="tabpanel" class="content active" id="ap-panel-characters">
+      <div id="characters_div" class="ap-scroll ap-scroll-col">
+
+        <label class="inline-label-flat right">
+          GM
+        </label>
+        <%= render 'activeplay/virtual_tables/layouts/gm_badge', game_master: @game_master %>
+
+        <label class="inline-label-flat right">
+          Characters
+        </label>
+        <%= render 'activeplay/virtual_tables/layouts/character_list' %>
+
+        <% if @virtual_table.can_edit?(current_user, admin_signed_in?) %>
+          <div id="notables_list">
+            <%= render 'activeplay/notables/list' %>
+          </div>
+        <% elsif @my_character.present? %>
+          <div id="notables_list">
+            <%= render 'entitybuilder/notables/list' %>
+          </div>
+        <% end %>
+
+      </div>
+    </section>
+
+    <% if @virtual_table.can_edit?(current_user, admin_signed_in?) %>
+      <section role="tabpanel" class="content" id="ap-panel-creatures-add">
+        <div id="notables_add_div">
+          <label class="inline-label-flat right">
+            Edit Encounter
+          </label>
+            <div class="ap-scroll ap-scroll-pri">
+              <%= render 'activeplay/notables/index' %>
+            </div>
+        </div>
+      </section>
+    <% elsif @my_character.present? %>
+      <section role="tabpanel" class="content" id="ap-panel-creatures-add">
+        <div id="notables_add_div">
+          <label class="inline-label-flat right">
+            Edit Notables
+          </label>
+            <div class="ap-scroll ap-scroll-pri">
+              <%= render 'entitybuilder/notables/index' %>
+            </div>
+        </div>
+      </section>
+    <% end %>
+
+  </div>
+</div>

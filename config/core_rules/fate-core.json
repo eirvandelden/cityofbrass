@@ -1,0 +1,82 @@
+{
+  "name": "Fate Core",
+  "active": "true",
+  "stock": "true",
+  "default_dice": "Fate",
+  "d20_system": "false",
+  "publisher": {
+    "name": "Evil Hat Productions",
+    "logo": "http://www.evilhat.com/home/wp-content/uploads/2013/06/Powered-by-Fate-Final-Dark-BG.png",
+    "url": "http://www.evilhat.com/"
+  },
+  "license": {
+    "label": "Open Game License",
+    "core_faq": "License d20 OGL"
+  },
+  "entitybuilder": {
+    "sheet": "fate",
+    "use_modifiers": "false",
+    "show_core_blocks": "false",
+    "menu": [
+      {"label": "Descriptors", "link": "descriptors",                   "add_modifiers": "false"},
+      {"label": "Trackables",  "link": "trackables",                    "add_modifiers": "false"},
+      {"label": "Aspects",     "link": "linked_rules?rule_type=aspect", "add_modifiers": "false"},
+      {"label": "Skills",      "link": "skills",                        "add_modifiers": "false"},
+      {"label": "Stunts",      "link": "linked_rules?rule_type=stunt",  "add_modifiers": "false"},
+      {"label": "Options",     "link": "options",                       "add_modifiers": "false"}
+    ],
+    "core_skills": [
+      {"name": "Athletics", "ranks": "0", "ability_score": ""},
+      {"name": "Burglary", "ranks": "0", "ability_score": ""},
+      {"name": "Contacts", "ranks": "0", "ability_score": ""},
+      {"name": "Crafts", "ranks": "0", "ability_score": ""},
+      {"name": "Deceive", "ranks": "0", "ability_score": ""},
+      {"name": "Drive", "ranks": "0", "ability_score": ""},
+      {"name": "Empathy", "ranks": "0", "ability_score": ""},
+      {"name": "Fight", "ranks": "0", "ability_score": ""},
+      {"name": "Investigate", "ranks": "0", "ability_score": ""},
+      {"name": "Lore", "ranks": "0", "ability_score": ""},
+      {"name": "Notice", "ranks": "0", "ability_score": ""},
+      {"name": "Physique", "ranks": "0", "ability_score": ""},
+      {"name": "Provoke", "ranks": "0", "ability_score": ""},
+      {"name": "Rapport", "ranks": "0", "ability_score": ""},
+      {"name": "Resources", "ranks": "0", "ability_score": ""},
+      {"name": "Shoot", "ranks": "0", "ability_score": ""},
+      {"name": "Stealth", "ranks": "0", "ability_score": ""},
+      {"name": "Will", "ranks": "0", "ability_score": ""}
+    ],
+    "character": {
+      "descriptors": [
+        {"name": "Age", "description": "", "is_private": "false"},
+        {"name": "Gender", "description": "", "is_private": "false"},
+        {"name": "Height", "description": "", "is_private": "false"},
+        {"name": "Weight", "description": "", "is_private": "false"}
+      ],
+      "linked_rules": [
+        {"detail": "", "rule": {"name": "High Concept", "rule_type": "Aspect"}},
+        {"detail": "", "rule": {"name": "Trouble", "rule_type": "Aspect"}},
+        {"detail": "", "rule": {"name": "Aspect 1", "rule_type": "Aspect"}},
+        {"detail": "", "rule": {"name": "Aspect 2", "rule_type": "Aspect"}},
+        {"detail": "", "rule": {"name": "Aspect 3", "rule_type": "Aspect"}}
+      ],
+      "movements": [
+        {"name": "Initiative", "base": "0", "ability_score": "", "dice": "", "description": ""}
+      ],
+      "trackables": [
+        {"name": "Fate Points", "maximum": "3", "current": "3"},
+        {"name": "Physical Stress 1", "maximum": "0", "current": "0"},
+        {"name": "Physical Stress 2", "maximum": "0", "current": "0"},
+        {"name": "Mental Stress 1", "maximum": "0", "current": "0"},
+        {"name": "Mental Stress 2", "maximum": "0", "current": "0"}
+      ]
+    },
+    "creature": {}
+  },
+  "rulebuilder": {
+    "rules": [
+      {"name": "Aspect", "is_shared": "false"},
+      {"name": "Stunt", "is_shared": "true"}
+    ],
+    "powers": []
+  }
+}

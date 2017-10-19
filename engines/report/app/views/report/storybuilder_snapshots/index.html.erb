@@ -1,0 +1,32 @@
+<% provide(:title, "Report | Story Builder") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Report" => nil },
+    { "Story Builder" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'report/menus/report' %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'icon-book',
+        :main => "Story Builder",
+        :sub  => "Reports"
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= render "report/storybuilder_snapshots/partial/adventures" %>
+      </div>
+      <div class="medium-6 columns text-center">
+        <p><%= image_tag "sb_resident.jpg", style: "max-height: 250px;" %></p>
+      </div>
+    </div>
+  </div>
+</div>

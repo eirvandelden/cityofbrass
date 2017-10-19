@@ -1,0 +1,33 @@
+<% provide(:title, "Campaigns | #{@campaign.name}") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Campaigns" => campaigns_path },
+    { @campaign.name => campaign_path(@campaign) },
+    { "Notables" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'campaignmanager/menus/campaign' %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'icon-user',
+        :main => 'Notables',
+        :edit_link  => campaignmanager.campaign_notables_path(@campaign),
+        :can_auth => @campaign.can_edit?(current_user, admin_signed_in?)
+      }
+    %>
+    <hr class="faded">
+
+    <% @campaign.notables.each do |notable| %>
+      <%= render 'notable', notable: notable %>
+    <% end %>
+
+  </div>
+</div>
+
+<%= render 'layouts/modal/show' %>

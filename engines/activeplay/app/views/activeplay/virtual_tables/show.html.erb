@@ -1,0 +1,69 @@
+<% provide(:title, "Campaign Tables | #{@virtual_table.campaign.name}") %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Campaigns" => campaignmanager.campaigns_path},
+    { @virtual_table.campaign.name => campaignmanager.campaign_path(@virtual_table.campaign) },
+    { "Activeplay Beta" => nil }
+  ] %>
+<% end %>
+
+<div id="ap-core" class="ap-chat">
+  <div class="row">
+
+    <div class="medium-4 columns">
+      <%= render 'col_A' %>
+    </div>
+
+    <div class="medium-4 columns">
+      <%= render 'col_B' %>
+    </div>
+
+    <div class="medium-4 columns">
+      <%= render 'col_C' %>
+    </div>
+  </div>
+</div>
+
+<style>
+.ap-scroll {
+  overflow-y: auto;
+  border-bottom: 1px dotted #c5c5c5;
+}
+</style>
+
+<script>
+  var campaign = '<%= @virtual_table.id %>'
+  var token = '<%= @token %>'
+
+  $(document).on('page:fetch', function () {
+    //disconnect ActivePlay socket if it exists when you navigate always
+    if(socket){
+      socket.disconnect();
+      socket = null;
+    }
+  });
+
+$(window).bind('resize', function () {
+  windowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  $('.ap-scroll-msg').css('height', function(){
+    return windowHeight - 253;
+  });
+  $('.ap-scroll-pri').css('height', function(){
+    return windowHeight - 186;
+  });
+  $('.ap-scroll-col').css('height', function(){
+    return windowHeight - 164;
+  });
+});
+
+var ap_sok = '<%= "#{ENV['ACTIVEPLAY_URL']}/activeplay/v0.6" %>';
+
+</script>
+
+<%= stylesheet_link_tag "#{ENV['ACTIVEPLAY_URL']}/stylesheets/activeplay.v0.6.min.css", :media => "all", "data-turbolinks-track" => true %>
+
+<%= javascript_include_tag "#{ENV['ACTIVEPLAY_URL']}/socket.io/socket.io.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "#{ENV['ACTIVEPLAY_URL']}/javascripts/vue.v1.0.21.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "#{ENV['ACTIVEPLAY_URL']}/javascripts/activeplay.v0.6.min.js", "data-turbolinks-track" => true %>
+
+<%= render 'entitybuilder/layouts/modal_list' %>

@@ -1,0 +1,80 @@
+one:
+  entity: resident_character_one
+  sort_order: 1
+  name: Longsword
+  description: I swing!
+  proficient:
+  attack_type: Melee
+  attack_range: 5 ft.
+  attack_ability_score: Strength
+  attack_dice:
+  attack_bonus:
+  attack_misc_modifier: 2
+  damage_ability_score: Strength
+  damage_dice: 1d8
+  damage_bonus:
+  damage_misc_modifier: 2
+  critical_damage_ability_score:
+  critical_damage_dice: 1d8
+  critical_damage_bonus:
+  critical_damage_misc_modifier: 8
+  special_damage_name:
+  special_damage_ability_score: Strength
+  special_damage_dice: 1d6
+  special_damage_bonus:
+  special_damage_misc_modifier: 6
+  critical_range: 19-20/x2
+
+two:
+  entity: resident_character_one
+  sort_order: 1
+  name: Bow
+  description: I shoot!
+  proficient: true
+  attack_type: Range
+  attack_range: 600 ft.
+  attack_ability_score: Dexterity
+  attack_dice: 5d6
+  attack_bonus:
+  attack_misc_modifier: 2
+  damage_ability_score: Dexterity
+  damage_dice: 1d10
+  damage_bonus:
+  damage_misc_modifier: 2
+  critical_damage_ability_score: Dexterity
+  critical_damage_dice: 1d10
+  critical_damage_bonus:
+  critical_damage_misc_modifier: 2
+  special_damage_name: Sneak Attack
+  special_damage_ability_score: Dexterity
+  special_damage_dice: 1d6
+  special_damage_bonus:
+  special_damage_misc_modifier: 2
+  critical_range: x3
+
+three:
+  entity: resident_character_one
+  sort_order: 1
+  name: Longsword
+  description: I swing!
+  proficient:
+  attack_type: Special
+  attack_range:
+  attack_ability_score:
+  attack_dice:
+  attack_bonus: 5
+  attack_misc_modifier:
+  damage_ability_score:
+  damage_dice:
+  damage_bonus: 5
+  damage_misc_modifier:
+  critical_damage_ability_score:
+  critical_damage_dice:
+  critical_damage_bonus: 5
+  critical_damage_misc_modifier:
+  special_damage_name:
+  special_damage_ability_score:
+  special_damage_dice:
+  special_damage_bonus: 5
+  special_damage_misc_modifier:
+  critical_range:

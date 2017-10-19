@@ -1,0 +1,118 @@
+<%
+  isGM            = false unless local_assigns.has_key? :isGM
+  notable         = notable if local_assigns.has_key? :notable
+
+  badge_id        = entity.id
+  badge_type      = 'entity'
+  badge_name      = entity.name
+  badge_title     = entity.badge_title
+
+  ability_scores  = entity.ability_scores
+  base_values     = entity.base_values
+  core_rules      = entity.core_rules
+  defenses        = entity.defenses
+  modifiers       = entity.modifiers
+  movements       = entity.movements
+  trackables      = entity.trackables
+
+  # core values
+  armor_class         = eb_get_armor_class(defenses)
+  hit_points          = eb_get_hit_points(trackables) if trackables.present?
+  initiative          = eb_get_initiative(movements) if movements.present?
+  initiative_dice     = initiative.game_dice(core_rules) if initiative.present?
+  initiative_bonus    = initiative.calculated_bonus(ability_scores, modifiers, base_values) if initiative.present?
+  initiative_display  = initiative.display_dice_or_modifier(core_rules, initiative_bonus, initiative_dice) if initiative.present?
+
+  core_count = 0;
+  if CoreRules::Entity.show_core_blocks?(core_rules)
+    core_count = core_count + 1 if hit_points.present?
+    core_count = core_count + 1 if armor_class.present?
+    core_count = core_count + 1 if initiative.present?
+  end
+
+  if notable.present?
+    badge_id    = notable.id
+    badge_type  = 'notable'
+    badge_name  = notable.name
+    badge_title = entity.name
+  end
+
+%>
+
+<div id="badge_<%= badge_id %>" class="eb-v1-badge eb-v1-badge-<%= entity.simple_type %>">
+
+  <% if entity.can_sheet?(current_user, false, entity.type.demodulize) %>
+
+  <div class="row">
+    <div class="small-<%= 12-(core_count*2) %> columns">
+      <div class="eb-v1-badge-over <%= "eb-v1-badge-reduced" if entity.name.length > 18 %> clipper">
+        <span class="eb-v1-badge-name">
+          <% if entity.type.include?"Character" || entity.name == "GM"%>
+          <a id="whisper_<%= badge_id %>" href="#" onclick='eb_badge_whisper("<%= name_scrubber(badge_name) %>")' class="iconlink">
+            <i class="fa fa-fw fa-paper-plane"></i>
+          </a>
+          <% end %>
+          <% if(isGM) %>
+          <a href="#" onclick="eb_add_entity({ id: '<%= entity.id %>', name: '<%= name_scrubber(badge_name).gsub(/'/, "\\\\'") %>', residentName: '<%= name_scrubber(badge_title) %>', type: '<%= entity.simple_type %>' })" class="iconlink">
+            <i class="fa fa-fw fa-list-ol"></i>
+          </a>
+          <% end %>
+
+          <a href="#" onclick="eb_display_card('<%= entity.id %>', '<%= entitybuilder.polymorphic_path(entity) %>/card.js')" title="Show Card">
+            <%= badge_name %>
+          </a>
+        </span>
+      </div>
+      <div class="eb-v1-badge-under clipper"><%= badge_title %></div>
+    </div>
+    <% if core_count > 0 %>
+      <div class="small-<%= 0+(core_count*2) %> columns">
+        <%= render "entitybuilder/entities/layouts/card/core_blocks",
+          css_class: 'badge',
+          entity_id: entity.id,
+          core_rules: core_rules,
+          armor_class_name: (armor_class.name if armor_class.present?),
+          armor_class_value: (armor_class.calculated_bonus(ability_scores, modifiers, base_values) if armor_class.present?),
+          hit_points: (hit_points if hit_points.present?),
+          initiative_name: (initiative.name if initiative.present?),
+          initiative_dice: (initiative_dice if initiative_dice.present?),
+          initiative_bonus: (initiative_bonus if initiative_bonus.present?),
+          initiative_display: (initiative_display if initiative_display.present?),
+          column_size: (12/core_count)
+        %>
+      </div>
+    <% end %>
+  </div>
+
+  <% else %>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="eb-v1-badge-over <%= "eb-v1-badge-reduced" if entity.name.length > 18 %> clipper">
+        <span class="eb-v1-badge-name">
+          <% if entity.type.include?"Character" || entity.name == "GM"%>
+          <a id="whisper_<%= badge_id %>" href="#" onclick='eb_badge_whisper("<%= name_scrubber(badge_name) %>")' class="iconlink">
+            <i class="fa fa-fw fa-paper-plane"></i>
+          </a>
+          <% end %>
+          <% if(isGM) %>
+          <a href="#" onclick="eb_add_entity({ id: '<%= entity.id %>', name: "<%= name_scrubber(badge_name) %>", residentName: "<%= name_scrubber(badge_title) %>", type: '<%= entity.simple_type %>' })" class="iconlink">
+            <i class="fa fa-fw fa-list-ol"></i>
+          </a>
+          <% end %>
+          <% if entity.can_show?(current_user, false, entity.type.demodulize) %>
+          <a href="#" onclick="eb_display_card('<%= entity.id %>', '<%= entitybuilder.polymorphic_path(entity) %>/card_summary.js')" title="Show Summary">
+            <%= badge_name %>
+          </a>
+          <% else %>
+            <%= badge_name %>
+          <% end %>
+        </span>
+      </div>
+      <div class="eb-v1-badge-under clipper"><%= badge_title %></div>
+    </div>
+  </div>
+
+  <% end %>
+
+</div>

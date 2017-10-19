@@ -1,0 +1,50 @@
+<dl class="left-menu show-for-medium-up">
+  <% if @district.menu_item_join.nil? %>
+  <dd class="<%= 'active' if current_page?(district_path(@district.slug)) %>">
+  	<h3><%= link_to 'Home', district_path(@district.slug), :style => 'display:block;' %></h3>
+  </dd>
+  <% end %>
+<% @district.menu_items.each do |menu_item| %>
+   <dd class='<%= active_menu_item(menu_item,page,"#{district_path(@district.slug)}#{menu_item.item_link}") %>'>
+    <% if menu_item.item_link.start_with?("http") || menu_item.item_link.start_with?("/") %>
+      <h3><%= link_to menu_item.item_label, menu_item.item_link, :style => 'display:block;' %> </h3>
+    <% else %>
+      <h3><%= link_to menu_item.item_label, "/wb/#{@district.slug}/#{menu_item.item_link}", :style => 'display:block;' %> </h3>
+    <% end %>
+  </dd>
+<% end %>
+</dl>
+
+<% if @district.can_edit?(current_user, admin_signed_in?) %>
+  <dl class="shortcut-menu show-for-medium-up">
+    <dd>
+      <h4><%= link_to 'District Details', edit_district_path(@district), :style => 'display:block;' %></h4>
+    </dd>
+    <dd>
+      <h4><%= link_to 'District Menu', district_menu_items_path(@district), :style => 'display:block;' %></h4>
+    </dd>
+    <dd class="<%= 'active' if current_page?(district_pages_path(@district.slug)) %>">
+      <h4><%= link_to 'District Pages', district_pages_path(@district.slug), :style => 'display:block;' %></h4>
+    </dd>
+  </dl>
+
+<% end %>
+
+<% content_for :left_menu_icon do %>
+  <section class="left-small">
+    <a class="left-off-canvas-toggle menu-icon"><span></span></a>
+  </section>
+<% end %>
+
+<% content_for :left_menu do %>
+  <li><label><%= @district.name %></label></li>
+  <%= render :partial =>'worldbuilder/menus/small' %>
+<% end %>
+
+<% content_for :small_menu do %>
+  <li class="has-dropdown show-for-small"><a href="#"><i class='fa icon-globe fa-fw'></i> <%= @district.name %></a>
+    <ul class="dropdown">
+      <%= render :partial =>'worldbuilder/menus/small' %>
+    </ul>
+  </li>
+<% end %>

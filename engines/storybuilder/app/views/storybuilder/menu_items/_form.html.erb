@@ -1,0 +1,33 @@
+<div id="form_div">
+<%= simple_form_for [@parent_object, @menu_item], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <fieldset>
+    <%= f.hidden_field :sort_order, :maxlength => 3 %>
+    <div class="row">
+      <div class="small-10 columns">
+        <%= f.input :item_label, label: 'Label' %>
+      </div>
+      <div class="small-2 columns  text-center">
+        <label>Wizard</label>
+        <span style="line-height:36px;" >
+          <a href="#" data-reveal-id="menuWizardModal" data-reveal onclick="setWizardFor('<%= "menu_item_item_link" %>');return false;">
+            <i class="fa fa-magic feature_cogs"></i>
+          </a>
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.input :item_link, label: 'Link' %>
+      </div>
+    </div>
+  </fieldset>
+  <%= render "layouts/form/save_and_cancel" %>
+<% end %>
+</div>
+
+<script>
+  var engine_type = 'SB'
+  var sb_url = "/sb/resident/";
+  var wb_url = "/resident/";
+</script>
+<%= javascript_include_tag "v1/menu-item" %>

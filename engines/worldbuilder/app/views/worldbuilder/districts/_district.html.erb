@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="medium-12 columns">
+    <h2><%= link_to district.name, worldbuilder.district_path(district.slug) %><span class="subheader"><%= " - #{district.page_label}" if district.page_label.present? %></h2>
+    <h4 style="color:#c5c5c5;">Updated: <span data-timestamp="<%= district.updated_at.to_i*1000 %>"></span></h4>
+    <p><%= district.short_description %></p>
+  </div>
+</div>

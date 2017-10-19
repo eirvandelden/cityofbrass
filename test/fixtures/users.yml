@@ -1,0 +1,26 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# <%= SecureRandom.uuid %>
+
+dan:
+  email: daniel@embersds.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  confirmed_at: <%= DateTime.now %>
+  status: active
+
+lucas:
+  email: lucas@embersds.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  confirmed_at: <%= DateTime.now %>
+  status: free
+
+courtney:
+  email: courtney@embersds.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  confirmed_at: <%= DateTime.now %>
+  status: trial
+
+brittany:
+  email: brittany@embersds.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  confirmed_at: <%= DateTime.now %>
+  status: suspended

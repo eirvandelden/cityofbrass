@@ -1,0 +1,36 @@
+<% if CoreRules::Entity.use_modifiers?(@parent_object.core_rules) %>
+<div id="brass_modifier_form">
+<%= form_for @modifier_parent_object, :url => "#{polymorphic_path(@parent_object)}/#{@modifier_parent_object.class.to_s.demodulize.tableize}/#{@modifier_parent_object.id}/modifiers", :remote => true, :html => {"data-sortable" => ''} do |f| %>
+  <fieldset>
+    <label>Modifiers</label>
+    <ul class="sortable row">
+      <li class="ui-state-disabled">
+        <%= link_to "<i class='fa fa-plus-square'></i> Add Modifier".html_safe, "#{polymorphic_path(@parent_object)}/#{@modifier_parent_object.class.to_s.demodulize.tableize}/#{@modifier_parent_object.id}/modifiers/new", class: "add", :remote => true, :id => "add_modifier" %>
+      </li>
+      <%= f.fields_for :modifiers do |modifier| %>
+      <li id="modifier_<%= modifier.object.id %>">
+        <%= modifier.hidden_field :sort_order %>
+        <div class="row">
+          <div class="small-9 columns clipper">
+            <strong><%= modifier.object.value %> <%= modifier.object.dice %> <%= modifier.object.item[0,20] %></strong>
+          </div>
+          <div class="small-3 columns text-right">
+            <h3>
+              <span class="right cogs125">
+              <%= link_to "<i class='fa fa-times-circle'></i>".html_safe, "#{polymorphic_path(@parent_object)}/#{@modifier_parent_object.class.to_s.demodulize.tableize}/#{f.object.id}/modifiers/#{modifier.object.id}", class: "iconlink delete", method: :delete, data: { confirm: 'Are you sure?' }, :remote => true %>
+              </span>
+            </h3>
+          </div>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </fieldset>
+<% end %>
+
+<span id="form_modifier_placeholder"></span>
+
+</div>
+
+<script>bindSortable();</script>
+<% end %>

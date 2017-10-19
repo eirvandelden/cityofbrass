@@ -1,0 +1,584 @@
+  [1m[36mActiveRecord::SchemaMigration Load (3.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddIntroductionToEntitybuilderCreatures (20141108013418)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (14.6ms)[0m  [1mALTER TABLE "entitybuilder_creatures" ADD "introduction" text[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141108013418"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to RemoveColumnsFromEntitybuilderCharacters (20141109142454)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (7.5ms)[0m  [1mALTER TABLE "entitybuilder_characters" DROP "slug"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "entitybuilder_characters" DROP "race"
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141109142454"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+Migrating to AddResidentIdIndexToCharacters (20141109143707)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (5.1ms)[0m  CREATE  INDEX  "index_entitybuilder_characters_on_resident_id" ON "entitybuilder_characters"  ("resident_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141109143707"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to ChangeQuantityToBigint (20141230030340)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (21.1ms)[0m  ALTER TABLE "entitybuilder_currencies" ALTER COLUMN "quantity" TYPE bigint
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141230030340"]]
+  [1m[35m (1.6ms)[0m  COMMIT
+Migrating to AddColumnsToEntitybuilderMovements (20150105024034)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.7ms)[0m  ALTER TABLE "entitybuilder_movements" DROP "description"
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "entitybuilder_movements" RENAME COLUMN "distance" TO "base"[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "entitybuilder_movements" RENAME COLUMN "measurement" TO "description"
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "entitybuilder_movements" ADD "bonus" integer[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "entitybuilder_movements" ADD "ability_score" character varying
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "entitybuilder_movements" ADD "misc_modifier" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "entitybuilder_movements" ADD "dice" character varying
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150105024034"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to CreateEntitybuilderKnownAbilities (20150115012537)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (9.3ms)[0m  CREATE TABLE "entitybuilder_known_abilities" ("id" uuid PRIMARY KEY  DEFAULT uuid_generate_v4(), "known_abilityable_id" uuid, "known_abilityable_type" character varying, "sort_order" integer, "ability_id" uuid, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_entitybuilder_known_abilities_on_ability_id" ON "entitybuilder_known_abilities"  ("ability_id")[0m
+  [1m[35m (1.1ms)[0m  CREATE  INDEX  "eb_known_ability_id_and_type" ON "entitybuilder_known_abilities"  ("known_abilityable_id", "known_abilityable_type")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150115012537"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to DropRuleBuilderTablesFromEb (20150125122624)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (4.1ms)[0m  DROP TABLE "entitybuilder_feats"
+  [1m[36m (2.0ms)[0m  [1mDROP TABLE "entitybuilder_items"[0m
+  [1m[35m (1.1ms)[0m  DROP TABLE "entitybuilder_spells"
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150125122624"]]
+  [1m[35m (3.7ms)[0m  COMMIT
+Migrating to AddLevelAndClassToEntitybuilderKnownSpell (20150129120315)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.1ms)[0m  ALTER TABLE "entitybuilder_known_spells" ADD "spell_class" character varying
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "entitybuilder_known_spells" ADD "level" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150129120315"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateEntitybuilderTraits (20150130121412)
+  [1m[35m (0.2ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamp` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/daniel/embersds/thecityofbrass/brasscore/engines/entitybuilder/db/migrate/20150130121412_create_entitybuilder_traits.rb:11)
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "entitybuilder_traits" ("id" uuid PRIMARY KEY  DEFAULT uuid_generate_v4(), "traitable_id" uuid, "traitable_type" character varying, "sort_order" integer, "name" character varying NOT NULL, "short_description" character varying, "full_description" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "eb_trait_id_and_type" ON "entitybuilder_traits"  ("traitable_id", "traitable_type")
+  [1m[36m (2.1ms)[0m  [1mCREATE UNIQUE INDEX  "eb_trait_name" ON "entitybuilder_traits"  ("traitable_id", "name")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150130121412"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddTypeToCharacterAndCreature (20150131125053)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "entitybuilder_characters" ADD "type" character varying[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "entitybuilder_creatures" ADD "type" character varying
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150131125053"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Migrating to AddSheetPrivacyToEntitybuilderCreature (20150329142316)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "entitybuilder_creatures" ADD "sheet_privacy" character varying
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150329142316"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to AddTypeIndex (20150329143903)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  CREATE  INDEX  "index_entitybuilder_characters_on_type" ON "entitybuilder_characters"  ("type")
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_entitybuilder_creatures_on_type" ON "entitybuilder_creatures"  ("type")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150329143903"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateEntitybuilderEntities (20150330110926)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "entitybuilder_entities" ("id" uuid PRIMARY KEY  DEFAULT uuid_generate_v4(), "type" character varying NOT NULL, "resident_id" uuid, "name" character varying, "core_rules" character varying, "privacy" character varying, "sheet_privacy" character varying, "short_description" character varying, "full_description" text, "introduction" text, "notes" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (8.3ms)[0m  CREATE  INDEX  "index_entitybuilder_entities_on_type" ON "entitybuilder_entities"  ("type")
+  [1m[36m (10.1ms)[0m  [1mCREATE  INDEX  "index_entitybuilder_entities_on_resident_id" ON "entitybuilder_entities"  ("resident_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150330110926"]]
+  [1m[36m (8.5ms)[0m  [1mCOMMIT[0m
+Migrating to DropEntitybuilderCharacteristics (20150402013445)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.3ms)[0m  [1mDROP TABLE "entitybuilder_characteristics"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150402013445"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Migrating to RemovePolymorphicFromAll (20150403235608)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mDROP INDEX "eb_ability_score_id_and_type"[0m
+  [1m[35m (0.5ms)[0m  DROP INDEX "eb_ability_score_name"
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "entitybuilder_ability_scores" RENAME COLUMN "ability_scoreable_id" TO "entity_id"[0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_entitybuilder_ability_scores_on_entity_id" ON "entitybuilder_ability_scores"  ("entity_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150403235608"]]
+  [1m[35m (1.4ms)[0m  COMMIT
+Migrating to RemovePolymorphicFromAttacks (20150404001919)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  DROP INDEX "eb_attack_id_and_type"
+  [1m[36m (0.6ms)[0m  [1mDROP INDEX "eb_attack_name"[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "entitybuilder_attacks" RENAME COLUMN "attackable_id" TO "entity_id"
+  [1m[36m (1.1ms)[0m  [1mCREATE  INDEX  "index_entitybuilder_attacks_on_entity_id" ON "entitybuilder_attacks"  ("entity_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150404001919"]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+Migrating to RemovePolymorphicFromBaseValues (20150404002513)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mDROP INDEX "eb_base_value_id_and_type"[0m
+  [1m[35m (0.3ms)[0m  DROP INDEX "eb_base_value_name"
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "entitybuilder_base_values" RENAME COLUMN "base_valueable_id" TO "entity_id"[0m
+  [1m[35m (1.1ms)[0m  CREATE  INDEX  "index_entitybuilder_base_values_on_entity_id" ON "entitybuilder_base_values"  ("entity_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150404002513"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Migrating to RemovePolymorphicFromCasterLevels (20150404002619)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  DROP INDEX "eb_caster_level_id_and_type"
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "entitybuilder_caster_levels" RENAME COLUMN "caster_levelable_id" TO "entity_id"[0m
+  [1m[35m (1.1ms)[0m  CREATE  INDEX  "index_entitybuilder_caster_levels_on_entity_id" ON "entitybuilder_caster_levels"  ("entity_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150404002619"]]
+  [1m[35m (1.8ms)[0m  COMMIT
+Migrating to RemovePolymorphicFromClassLevels (20150404002745)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  DROP INDEX "eb_class_level_id_and_type"
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "entitybuilder_class_levels" RENAME COLUMN "class_levelable_id" TO "entity_id"[0m
+  [1m[35m (1.5ms)[0m  CREATE  INDEX  "index_entitybuilder_class_levels_on_entity_id" ON "entitybuilder_class_levels"  ("entity_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150404002745"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Migrating to RemovePolymorphicFromCurrencies (20150404004807)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  DROP INDEX "eb_currency_id_and_type"
+  [1m[36m (0.3ms)[0m  [1mDROP INDEX "eb_currency_name"[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "entitybuilder_currencies" RENAME COLUMN "currencyable_id" TO "entity_id"
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_entitybuilder_currencies_on_entity_id" ON "entitybuilder_currencies"  ("entity_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150404004807"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to RemovePolymorphicFromDefenses (20150404004921)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mDROP INDEX "eb_defense_id_and_type"[0m
+  [1m[35m (0.3ms)[0m  DROP INDEX "eb_defense_name"
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "entitybuilder_defenses" RENAME COLUMN "defenseable_id" TO "entity_id"[0m
+  [1m[35m (1.6ms)[0m  CREATE  INDEX  "index_entitybuilder_defenses_on_entity_id" ON "entitybuilder_defenses"  ("entity_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150404004921"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Migrating to RemovePolymorphicFromDescriptors (20150404005013)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  DROP INDEX "eb_descriptor_id_and_type"
+  [1m[36m (0.3ms)[0m  [1mDROP INDEX "eb_descriptor_name"[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "entitybuilder_descriptors" RENAME COLUMN "descriptorable_id" TO "entity_id"
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX  "index_entitybuilder_descriptors_on_entity_id" ON "entitybuilder_descriptors"  ("entity_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150404005013"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Migrating to RemovePolymorphicFromModifiers (20150404005057)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mDROP INDEX "eb_modifier_entity_id_and_type"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "entitybuilder_modifiers" RENAME COLUMN "entityable_id" TO "entity_id"
+  [1m[36m (1.1ms)[0m  [1mCREATE  INDEX  "index_entitybuilder_modifiers_on_entity_id" ON "entitybuilder_modifiers"  ("entity_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150404005057"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Migrating to RemovePolymorphicFromMovements (20150404005511)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.9ms)[0m  [1mDROP INDEX "eb_movement_id_and_type"[0m
+  [1m[35m (0.3ms)[0m  DROP INDEX "eb_movement_name"
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "entitybuilder_movements" RENAME COLUMN "movementable_id" TO "entity_id"[0m
+  [1m[35m (1.1ms)[0m  CREATE  INDEX  "index_entitybuilder_movements_on_entity_id" ON "entitybuilder_movements"  ("entity_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150404005511"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Migrating to RemovePolymorphicFromSavingThrows (20150404005631)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  DROP INDEX "eb_saving_throw_id_and_type"
+  [1m[36m (0.3ms)[0m  [1mDROP INDEX "eb_saving_throw_name"[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "entitybuilder_saving_throws" RENAME COLUMN "saving_throwable_id" TO "entity_id"
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX  "index_entitybuilder_saving_throws_on_entity_id" ON "entitybuilder_saving_throws"  ("entity_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150404005631"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to RemovePolymorphicFromSkills (20150404005719)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mDROP INDEX "eb_skill_id_and_type"[0m
+  [1m[35m (0.3ms)[0m  DROP INDEX "eb_skill_name"
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "entitybuilder_skills" RENAME COLUMN "skillable_id" TO "entity_id"[0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_entitybuilder_skills_on_entity_id" ON "entitybuilder_skills"  ("entity_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150404005719"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Migrating to RemovePolymorphicFromTrackables (20150404005758)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  DROP INDEX "eb_trackable_id_and_type"
+  [1m[36m (0.3ms)[0m  [1mDROP INDEX "eb_trackable_name"[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "entitybuilder_trackables" RENAME COLUMN "trackableable_id" TO "entity_id"
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_entitybuilder_trackables_on_entity_id" ON "entitybuilder_trackables"  ("entity_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150404005758"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to RemovePolymorphicFromTraits (20150404005856)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mDROP INDEX "eb_trait_id_and_type"[0m
+  [1m[35m (0.4ms)[0m  DROP INDEX "eb_trait_name"
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "entitybuilder_traits" RENAME COLUMN "traitable_id" TO "entity_id"[0m
+  [1m[35m (1.1ms)[0m  CREATE  INDEX  "index_entitybuilder_traits_on_entity_id" ON "entitybuilder_traits"  ("entity_id")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150404005856"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Migrating to RemovePolymorphicFromInventoryItems (20150404010014)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  DROP INDEX "eb_inventory_item_id_and_type"
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "entitybuilder_inventory_items" RENAME COLUMN "inventory_itemable_id" TO "entity_id"[0m
+  [1m[35m (1.7ms)[0m  CREATE  INDEX  "index_entitybuilder_inventory_items_on_entity_id" ON "entitybuilder_inventory_items"  ("entity_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150404010014"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Migrating to RemovePolymorphicFromKnownAbilities (20150404010150)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  DROP INDEX "eb_known_ability_id_and_type"
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "entitybuilder_known_abilities" RENAME COLUMN "known_abilityable_id" TO "entity_id"[0m
+  [1m[35m (1.1ms)[0m  CREATE  INDEX  "index_entitybuilder_known_abilities_on_entity_id" ON "entitybuilder_known_abilities"  ("entity_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150404010150"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Migrating to RemovePolymorphicFromKnownFeats (20150404010239)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  DROP INDEX "eb_known_feat_id_and_type"
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "entitybuilder_known_feats" RENAME COLUMN "known_featable_id" TO "entity_id"[0m
+  [1m[35m (1.0ms)[0m  CREATE  INDEX  "index_entitybuilder_known_feats_on_entity_id" ON "entitybuilder_known_feats"  ("entity_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150404010239"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Migrating to RemovePolymorphicFromKnownSpells (20150404010326)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  DROP INDEX "eb_known_spell_id_and_type"
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "entitybuilder_known_spells" RENAME COLUMN "known_spellable_id" TO "entity_id"[0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_entitybuilder_known_spells_on_entity_id" ON "entitybuilder_known_spells"  ("entity_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150404010326"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Migrating to RemovePolymorphicFromCampaignJoins (20150408214341)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  DROP INDEX "eb_campaign_join_id_and_type"
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "entitybuilder_campaign_joins" RENAME COLUMN "campaign_joinable_id" TO "entity_id"[0m
+  [1m[35m (1.7ms)[0m  CREATE  INDEX  "index_entitybuilder_campaign_joins_on_entity_id" ON "entitybuilder_campaign_joins"  ("entity_id")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150408214341"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Migrating to DropCharacterAndCreature (20150429215620)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  DROP TABLE "characters"
+PG::UndefinedTable: ERROR:  table "characters" does not exist
+: DROP TABLE "characters"
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DropCharacterAndCreature (20150429215620)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.3ms)[0m  [1mDROP TABLE "entitybuilder_characters"[0m
+  [1m[35m (1.3ms)[0m  DROP TABLE "entitybuilder_creatures"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150429215620"]]
+  [1m[35m (2.1ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'billing_plans'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'campaignmanager_campaigns'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'campaignmanager_features'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (5.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'campaignmanager_pages'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'campaignmanager_players'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'campaignmanager_sections'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_ability_scores'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_attacks'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_base_values'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_campaign_joins'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_caster_levels'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_class_levels'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_currencies'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_defenses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_descriptors'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (5.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_entities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_inventory_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_known_abilities'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_known_feats'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_known_spells'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.3ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_modifiers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_movements'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_saving_throws'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_skills'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_trackables'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'entitybuilder_traits'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tester_blorghs'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'tester_characters'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m

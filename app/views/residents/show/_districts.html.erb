@@ -1,0 +1,9 @@
+<%= render 'layouts/header', icon: 'icon-globe', main: 'Districts', index_link: main_app.resident_districts_path(@resident.slug) %>
+<hr class="faded">
+<% @resident.top_5_districts.each do |district| %>
+  <% if district.can_show?(current_user, admin_signed_in?) %>
+    <h2><%= link_to district.name, worldbuilder.district_path(district.slug)  %></h2>
+    <h4 style="color:#c5c5c5;">Updated: <span data-timestamp="<%= district.updated_at.to_i*1000 %>"></span></h4>
+    <p><%= district.short_description %></p>
+  <% end %>
+<% end %>

@@ -1,0 +1,44 @@
+<% @entities.each_slice(3) do |slice| %>
+  <div class="row" data-equalizer>
+  <% slice.each do |entity| %>
+    <div class="medium-4 columns end">
+      <h4 class="color-c5 text-center clipper"><%= entity.index_title %></h4>
+      <ul class="vcard" data-equalizer-watch>
+        <li>
+          <div class="row">
+            <div class="small-2 columns">
+              <h3>
+                <% if entity.can_sheet?(current_user, admin_signed_in?, @type) %>
+                  <% if entity.is_character? %>
+                    <%= link_to "<i class='fa fa-file-code-o'></i>".html_safe, "#{polymorphic_path(entity)}/sheet", class: "cogs125" %>
+                  <% else %>
+                    <%= link_to "<i class='fa fa-file-text-o'></i>".html_safe, "#{polymorphic_path(entity)}/profile", class: "cogs125" %>
+                  <% end %>
+                <% end %>
+              </h3>
+            </div>
+            <div class="small-8 columns text-center">
+              <h3><%= link_to entity.name, polymorphic_path(entity) %></h3>
+            </div>
+            <div class="small-2 columns text-right">
+              <h3><% if entity.can_edit?(current_user, admin_signed_in?, @type) %><%= link_to "<i class='fa fa-cogs'></i>".html_safe, edit_polymorphic_path(entity), class: "cogs125" %><% end %></h3>
+            </div>
+          </div>
+        </li>
+        <li style="padding-top: 10px;">
+          <% unless entity.gallery_image.nil? %>
+            <%= link_to image_tag(entity.gallery_image.file.url(:thumb), align: "left", style: "max-height:100px; max-width:100px; padding-right:10px;"), polymorphic_path(entity) %>
+          <% end %>
+          <%= entity.short_description %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="small-12 columns text-center">
+    <%= paginate @entities %>
+  </div>
+</div>

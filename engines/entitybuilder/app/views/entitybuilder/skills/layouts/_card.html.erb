@@ -1,0 +1,19 @@
+<% skills.each do |skill| %>
+  <span class="nowrap"><strong><%= link_to_if (clickable && skill.description.present?), skill.name, "#{entitybuilder.polymorphic_path(entity)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %></strong>
+  (
+    <strong>
+    <% dice = skill.game_dice(core_rules) %>
+    <% bonus = skill.calculated_bonus(ability_scores, modifiers, base_values) %>
+    <% bonus_placeholder = "#{bonus}" %>
+    <% bonus_placeholder = "+#{bonus}" if bonus > -1 %>
+    <% roll = "#{dice}#{bonus_placeholder}" %>
+
+    <% if @show_popbox.present? %>
+      <%= format_dice_popup(skill.display_dice_or_modifier(core_rules, bonus, dice), dice, bonus).html_safe %>
+    <% else %>
+      <%= format_dice_activeplay(skill.display_dice_or_modifier(core_rules, bonus, dice), skill.name, roll).html_safe %>
+    <% end %>
+
+    </strong>
+  )<%= ", " unless skill == skills.last %></span>
+<% end %>

@@ -1,0 +1,16 @@
+</fieldset>
+
+<h3 class="color-c5">Optional Reference <%= tooltip_helper("The publisher and source of this rule. If filled out, a footer with the specified information will be displayed below this rule.") %></h3>
+<fieldset>
+  <div class="row">
+    <div class="medium-5 small-4 columns">
+      <%= f.input :publisher %>
+    </div>
+    <div class="small-5 columns">
+      <%= f.input :source %>
+    </div>
+    <div class="medium-2 small-3 columns text-center">
+      <label>3rd Party</label>
+      <%= f.input :is_3pp, label: '', as: :boolean %>
+    </div>
+  </div>

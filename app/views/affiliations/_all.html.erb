@@ -1,0 +1,3 @@
+<%= render 'affiliations/list', :list_title => 'PENDING REQUESTS', :list => @top_5_pending_affiliations, :list_type => 'pending' if @top_5_pending_affiliations.size > 0 %>
+<%= render 'affiliations/list', :list_title => 'RECEIVED REQUESTS', :list => @top_5_requested_affiliations, :list_type => 'received' if @top_5_requested_affiliations.size > 0 %>
+<%= render 'affiliations/list', :list_title => 'AFFILIATES', :list => @top_10_affiliates, :list_type => 'affiliates' if @top_10_affiliates.size > 0 %>

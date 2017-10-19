@@ -1,0 +1,3 @@
+<%= f.input :feature_label %>
+<%= f.input :search_tags, label: 'Tag', required: true %>
+<%= f.input :record_type, collection: cm_record_types, :include_blank => true, required: true %>

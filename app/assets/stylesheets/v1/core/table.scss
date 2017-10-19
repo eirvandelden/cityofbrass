@@ -1,0 +1,55 @@
+@import "v1/core/base";
+
+table {
+  border: none;
+}
+
+.brass_table{
+  width: 100%;
+  border: 0px; border-collapse: collapse;
+  background-color: #fff;
+  thead{
+    font-family: $brass-font-family;
+  }
+  tbody {
+    border-top: 2px solid #575757;
+    border-bottom: 2px solid #575757;
+  }
+  tr{
+    background-color: #fff;
+    border-bottom: 1px solid #575757;
+  }
+  td{
+    vertical-align:top;
+  }
+  tr:hover td, {
+    color: #000;
+    background-color: #f7f7da;
+    cursor:pointer
+  }
+}
+
+.simple_table{
+  width: 100%;
+  border: 0px; border-collapse: collapse;
+  background-color: #fff;
+  thead{
+    font-family: $brass-font-family;
+  }
+  tbody {
+    border-top: 2px solid #575757;
+    //border-bottom: 2px solid #575757;
+  }
+  tr{
+    background-color: #fff;
+    border-bottom: 1px solid $color-c5;
+  }
+  tr.total{
+    background-color: #fff;
+    border-top: 2px solid $color-body-font;
+    border-bottom: 0px solid $color-c5;
+  }
+  td{
+    //vertical-align:top;
+  }
+}

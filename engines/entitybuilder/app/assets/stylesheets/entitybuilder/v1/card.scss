@@ -1,0 +1,141 @@
+.eb-v1-card-panel{
+  margin: .15em;
+  h3{
+    font-size: 1rem;
+  }
+}
+
+.eb-v1-status-refresh{
+  float: right !important;
+}
+
+.eb-v1-card-notab-header{
+  padding-bottom: 2px;
+}
+
+.eb-v1-card{
+  font-size: 0.875rem !important;
+  position: relative;
+  border: 1px solid #ddd;
+  margin-top: .25em;
+  line-height: 1.25rem;
+
+  p {
+    font-size: 0.875rem !important;
+  }
+
+  .row.row{
+    margin: 0 -0.25rem;
+  }
+
+  .content{
+    padding: 0.25em 0.4em !important;
+  }
+
+  .columns{
+    padding-left: .25em;
+    padding-right: .25em;
+  }
+}
+
+ul.inline-list.eb-v1-card-list{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin: 0;
+  li{
+    margin-left: 0;
+    margin-right: .5em;
+  }
+}
+
+.eb-v1-card-Character{
+  border-left: 4px solid #4e74a5;
+}
+
+.eb-v1-card-Creature{
+  border-left: 4px solid #cc0000;
+}
+
+.eb-v1-card-NPC{
+  border-left: 4px solid #007a00;
+}
+
+.eb-v1-card-name{
+  font-weight:bold;
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
+
+.eb-v1-card-icon{
+  width: 1em;
+  color: #ddd;
+  font-size: 2em;
+  position: absolute;
+  top: -.1em;
+  right: -.8em;
+  clip: rect(auto, 2em, auto, .2em);
+}
+
+.eb-v1-card-icon-rotate{
+  -ms-transform: rotate(30deg); /* IE 9 */
+  -webkit-transform: rotate(30deg); /* Chrome, Safari, Opera */
+  transform: rotate(30deg);
+}
+
+.eb-v1-card-hr{
+  border-bottom: 1px dotted #c5c5c5;
+  border-style: none none dotted;
+  margin: 0 0 0.25em 0;
+}
+
+.eb-v1-card-title{
+  font-weight: bold;
+}
+
+.eb-v1-card-over{
+  border-bottom: 1px dotted #c5c5c5;
+  font-weight:bold;
+  font-size: 1.75em;
+  line-height: 1.75rem;
+}
+
+.eb-v1-card-reduced{
+  font-size: 1em;
+}
+
+.eb-v1-card-under{
+  color:#c5c5c5;
+  font-weight:bold;
+  font-size: 1em;
+  line-height: 1.25rem;
+}
+
+.eb-v1-card-input{
+  border: 0 !important;
+  border-bottom: 1px solid #c5c5c5 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 0 .25em 0  !important;
+  height: 1.5em !important;
+}
+
+.eb-v1-card-attribute{
+  font-weight: bold;
+  color: #4e74a5;
+}
+
+.eb-v1-card-sentence{
+  margin-left: 1em;
+  padding-right: 1em;
+  text-indent: -1em;
+  font-weight: bold;
+}
+
+.eb-v1-card-header{
+  color: #c5c5c5;
+  margin-top: .5em;
+}
+
+.eb-v1-caster-levels{
+  font-size: 1em !important;
+}

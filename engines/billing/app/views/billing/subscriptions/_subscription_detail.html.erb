@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="small-2 columns">
+    <strong class="color-c5">Account</strong>
+  </div>
+  <div class="small-10 columns">
+    <strong style="color: <%= current_user.active? ? "#007a00;":"#cc0000;" %>"><%= current_user.status.titleize %></strong>
+  </div>
+</div>
+
+<% if @stripe_subscription.present? %>
+<div class="row">
+  <div class="small-2 columns">
+    <strong class="color-c5">Plan</strong>
+  </div>
+  <div class="small-10 columns">
+    <strong><%= @stripe_subscription.plan.name.titleize %></strong>
+    -
+    <strong style="color: <%= @stripe_subscription.status=='active'? "#c5c5c5;":"#cc0000;" %>"><%= @stripe_subscription.status.titleize %></strong>
+    <br>
+    <i class='icon-docs'></i> <%= link_to "Invoices", billing.subscription_invoices_path(@subscription) %>
+  </div>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="small-2 columns">
+    <strong class="color-c5">Card</strong>
+  </div>
+  <div class="small-10 columns">
+    <% if @stripe_source.present? %>
+      <i class='fa fa-credit-card'></i> <%= @stripe_source.brand %>: <strong><%= @stripe_source.last4 %></strong><br>
+      Exp: <strong><%= "#{@stripe_source.exp_month.to_s.rjust(2,'0');}/#{@stripe_source.exp_year}" %></strong>
+      <br>
+      Next payment due:
+      <strong><span data-timestamp-format="MMMM Do YYYY" data-timestamp="<%= Time.strptime(@stripe_subscription.current_period_end.to_s, "%s").to_i*1000 %>"></span></strong>
+      <br>
+      Amount: <strong><%= "$%.2f" % Rational(@stripe_subscription.plan.amount.to_i,100) %></strong>
+    <% else %>
+      You do not currently have a valid payment method.
+    <% end %>
+    <br><br>
+    <%= link_to 'Change Payment Method', editsource_subscription_path, class: 'button' %>
+  </div>
+</div>
+
+<% if @stripe_subscription.present? %>
+  <div class="row">
+    <div class="small-2 columns">
+      <strong class="color-c5">Cancel</strong>
+    </div>
+    <div class="small-10 columns">
+      <% if @stripe_subscription.cancel_at_period_end.present? && @stripe_subscription.canceled_at.present? %>
+        <p>Your subscription is set to <strong>cancel</strong> at the end of your
+          current subscription period which is on
+          <strong><span data-timestamp-format="MMMM Do YYYY" data-timestamp="<%= Time.strptime(@stripe_subscription.current_period_end.to_s, "%s").to_i*1000 %>"></span></strong>.
+          You may continue enjoying <strong>City of Brass</strong> until then. If
+          you change your mind before or after this date, you may return to this
+          page and reactivate your subscription.</p>
+        <%= link_to 'Reactivate Subscription', subscription_path(@subscription), class: "button", method: :patch, :onclick => '$("#gears_of_work").fadeIn("slow")' %>
+      <% else %>
+        <%= link_to 'Cancel Subscription', subscription_path(@subscription), class: "button", method: :delete, :onclick => '$("#gears_of_work").fadeIn("slow")' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

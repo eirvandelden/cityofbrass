@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="medium-4 columns text-right columns">
+    <%= image_tag "scrolls/guard.png" %>
+  </div>
+  <div class="medium-7 columns text-left columns end">
+    <%= render 'layouts/header', :main => 'What are you waiting for?' %>
+    <p>Begin exploring City of Brass now with a <strong>Free</strong> account which gives you</p>
+    <ul>
+      <li>2 character slots</li>
+      <li>2 creature slots</li>
+      <li>20 custom rules.</li>
+      <li>Unlimited access to our stock content.</li>
+      <li>The ability to participate in Campaigns and ActivePlay.</li>
+    </ul>
+    <p>The Free Account will also allow you to try out other City of Brass
+      features including World Builder, Story Builder, and Campaign manager.</p>
+
+    <p>When you are ready to move to the head of the table and gain unlimited
+      access to City of Brass you can subscribe for a
+      <% if @account_faq.present? %>
+        <strong><%= link_to "Premium", support.faq_path(@account_faq.faq.id) %></strong>
+      <% else %>
+        <strong>Premium</strong>
+      <% end %>
+      account!</p>
+
+    <div class="text-center"><%= link_to 'Sign up now!', new_user_registration_path(), class: 'button' %></div>
+  </div>
+</div>

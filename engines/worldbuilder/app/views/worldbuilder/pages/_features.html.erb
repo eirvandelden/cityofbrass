@@ -1,0 +1,18 @@
+<ul class="no-bullet">
+<% if @page.parent %>
+  <li>
+    <strong>Parent: </strong>
+    <%= link_to @page.parent.name, worldbuilder.district_page_path(@district.slug, @page.parent.slug) %>
+  </li>
+<% end %>
+<% @page.features.each do |feature| %>
+  <li>
+  <%= render :partial =>'layouts/features/looper',
+      :locals => {
+        :feature => feature,
+        :record => @page,
+        :resident => @district.resident
+    } %>
+  </li>
+<% end %>
+</ul>

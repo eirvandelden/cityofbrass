@@ -1,0 +1,35 @@
+<% provide(:title, "#{@parent_object.name} | New #{@type.titleize.pluralize}") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Campaigns" => polymorphic_path(@parent_type.tableize) },
+    { @parent_object.name => polymorphic_path(@parent_object) },
+    { "#{@type.titleize.pluralize}" => "#{polymorphic_path(@parent_object)}/#{@type.tableize}" },
+    { "New #{@type.titleize}" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial => 'menus/manage',
+      :locals => {
+        :active => 'edit',
+        :index_link => :back
+      } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <div class="row" style="height: 2rem;">
+      <div class="small-12 columns">
+        <h1><%= "#{@type.titleize}" %></h1>
+      </div>
+    </div>
+    <hr class="faded">
+    <div id="brass_form">
+      <%= simple_form_for @page, url: "#{polymorphic_path(@parent_object)}/#{@type.tableize}" do |f| %>
+        <%= render :partial => 'form', :locals => { :f => f } %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render :partial =>'layouts/ckeditor', :locals => { :cke_version => 'standard' } %>

@@ -1,0 +1,42 @@
+<% provide(:title, "Items | #{@item.name}") %>
+<% type_array = type_split(@type) %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => polymorphic_path(@type.tableize) },
+    { @item.name => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-2 columns">
+    <%= render :partial =>'menus/manage',
+      :locals => {
+        :active => 'edit',
+        :index_link => polymorphic_path(@type.tableize),
+        :view_link => polymorphic_path(@item),
+        :details_link => edit_polymorphic_path(@item),
+        :options_link => "#{polymorphic_path(@item)}/options"
+      } %>
+  </div>
+  <div class="medium-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @item.name,
+        :sub => 'Details',
+        :add_link  => new_polymorphic_path(@type.tableize.singularize),
+        :can_auth => can_add(current_user, @type)
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="small-12 columns">
+        <div id="brass_form">
+          <%= render :partial => 'update' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render :partial =>'layouts/ckeditor', :locals => { :cke_version => 'standard' } %>

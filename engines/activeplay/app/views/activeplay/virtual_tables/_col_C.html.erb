@@ -1,0 +1,61 @@
+<div id="activeplay-list" class="ap-v1-campaign-panel">
+  <ul class="tabs" data-tab role="tablist">
+    <li class="tab-title active ap-v1-status-gear"><a href="#ap-panel-chat" class="ap-v1-campaign-tab" id="ap-panel-chat-link"><i class='fa fa-gear fa-spin fa-fw'></i></a></li>
+    <li class="tab-title"><a href="#ap-panel-notables" class="ap-v1-campaign-tab"><i class="fa fa-male fa-fw"></i></a></li>
+    <li class="tab-title"><a href="#ap-panel-campaign" class="ap-v1-campaign-tab"><i class="fa fa-sitemap fa-fw"></i></a></li>
+    <li class="tab-title" style="float:right"><a href="#ap-panel-help" class="ap-v1-campaign-tab"><i class="icon-graduation-cap fa-fw"></i></a></li>
+  </ul>
+  <div class="tabs-content">
+
+    <section role="tabpanel" class="content active" id="ap-panel-chat">
+      <label class="inline-label-flat right">
+        <strong v-show="user.name" style="word-wrap: break-word;" v-cloak>{{ user.name }} </strong>
+      </label>
+      <ap-chat-input v-bind:input-text.sync="inputText"></ap-chat-input>
+      <ap-dice-bag></ap-dice-bag>
+      <div class="ap-scroll ap-scroll-msg">
+        <ap-chat-messages v-bind:messages="messages"></ap-chat-messages>
+      </div>
+    </section>
+
+    <section role="tabpanel" class="content" id="ap-panel-notables">
+      <div id="notables_div">
+        <label class="inline-label-flat right">
+          Notables
+        </label>
+        <div class="ap-scroll ap-scroll-pri">
+          <% @campaign_notables.each do |notable| %>
+            <%= render 'entitybuilder/entities/layouts/badge', notable: notable, entity: notable.entity, badge_color: '', isGM: @isGM %>
+          <% end %>
+        </div>
+      </div>
+    </section>
+
+    <section role="tabpanel" class="content" id="ap-panel-campaign">
+      <div class="ap-v1-campaign-summary">
+        <label class="inline-label-flat right">
+          Campaign
+        </label>
+        <div class="ap-scroll ap-scroll-pri">
+          <%= render 'campaignmanager/campaigns/features', campaign: @virtual_table.campaign %>
+          <p><%= @virtual_table.campaign.short_description %></p>
+        </div>
+      </div>
+    </section>
+
+    <section role="tabpanel" class="content" id="ap-panel-help">
+      <label class="inline-label-flat right">
+        <strong>Commands</strong>
+      </label>
+      <div class="ap-scroll ap-scroll-pri">
+        /r <span style="color: #4e74a5">or</span> /roll <span style="color: #4e74a5">ndx+b</span><br>
+        /r <span style="color: #4e74a5">or</span> /roll <span style="color: #4e74a5">name ndn+b</span><br>
+        /r <span style="color: #4e74a5">or</span> /roll "<span style="color: #4e74a5">name with space(s)</span>" <span style="color: #4e74a5">ndn+b</span><br>
+        /gmr <span style="color: #4e74a5">or</span> /gmroll send dice roll to GM<br>
+        /w <span style="color: #4e74a5">or</span> /pm <span style="color: #4e74a5">or</span> /whisper "<span style="color: #4e74a5">recipient</span>" <span style="color: #4e74a5">message</span><br>
+        /help <span style="color: #4e74a5">or</span> /?<br>
+      </div>
+    </section>
+
+  </div>
+</div>

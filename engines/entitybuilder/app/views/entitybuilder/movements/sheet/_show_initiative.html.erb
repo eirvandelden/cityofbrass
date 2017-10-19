@@ -1,0 +1,12 @@
+<% if @initiative.present? %>
+
+<% initiative_dice = @initiative.game_dice(@parent_object.core_rules) %>
+<% initiative_bonus = @initiative.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) %>
+
+  <div class="indent">
+    <span class="attribute-highlight">
+      <strong><%= @initiative.name %>:</strong>
+      <%= "#{@initiative.display_dice_or_modifier(@parent_object.core_rules, initiative_bonus, initiative_dice)}" %>
+    </span>
+  </div>
+<% end %>

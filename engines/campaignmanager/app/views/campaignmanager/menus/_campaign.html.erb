@@ -1,0 +1,63 @@
+<dl class="left-menu show-for-medium-up">
+  <dd class="<%= 'active' if current_page?(campaignmanager.polymorphic_path(@campaign)) %>">
+  	<h3><%= link_to 'Overview', campaignmanager.polymorphic_path(@campaign), :style => 'display:block;' %></h3>
+  </dd>
+<% if @campaign.district.present? %>
+  <dd class="<%= 'active' if current_page?("#{worldbuilder.district_path(@campaign.district.slug)}/campaign/#{@campaign.id}") %>">
+    <h3><%= link_to 'District', "#{worldbuilder.district_path(@campaign.district.slug)}/campaign/#{@campaign.id}", :style => 'display:block;' %></h3>
+  </dd>
+<% end %>
+<% if @campaign.entity_joins.size > 0 %>
+  <dd class="<%= 'active' if current_page?(campaignmanager.polymorphic_path([@campaign, :characters])) %>">
+    <h3><%= link_to 'Characters', campaignmanager.polymorphic_path([@campaign, :characters]), :style => 'display:block;' %></h3>
+  </dd>
+<% end %>
+<% if @campaign.notables.size > 0 %>
+  <dd class="<%= 'active' if current_page?("#{campaignmanager.polymorphic_path(@campaign)}/notables/list") %>">
+    <h3><%= link_to 'Notables', "#{campaignmanager.polymorphic_path(@campaign)}/notables/list", :style => 'display:block;' %></h3>
+  </dd>
+<% end %>
+  <dd class="<%= 'active' if page == "HouseRule" if local_assigns.has_key? :page %>">
+    <h3><%= link_to 'House Rules', campaignmanager.polymorphic_path([@campaign, :house_rules]), :style => 'display:block;' %></h3>
+  </dd>
+  <dd class="<%= 'active' if page == "AdventureLog" if local_assigns.has_key? :page %>">
+    <h3><%= link_to 'Adventure Logs', campaignmanager.polymorphic_path([@campaign, :adventure_logs]), :style => 'display:block;' %></h3>
+  </dd>
+  <% if @campaign.activeplay.present? && @campaign.user.is_not_free? && @campaign.can_show?(current_user, admin_signed_in?, "Activeplay::Campaign")  %>
+  <dd>
+    <h3><%= link_to "ActivePlay <sup class='color-c5' style='font-size: .75em;'>Beta</sup>".html_safe, "/ap/virtual_tables/#{@campaign.activeplay.id}", :style => 'display:block;' %></h3>
+  </dd>
+  <% end %>
+</dl>
+
+<% if @campaign.can_edit?(current_user, admin_signed_in?) %>
+<dl class="left-menu show-for-medium-up">
+  <% if @campaign.adventure.present? %>
+  <dd class="<%= 'active' if current_page?("#{storybuilder.polymorphic_path(@campaign.adventure)}/campaign/#{@campaign.id}") %>">
+    <h3><%= link_to 'Adventure', "#{storybuilder.polymorphic_path(@campaign.adventure)}/campaign/#{@campaign.id}", :style => 'display:block;' %></h3>
+  </dd>
+  <% end %>
+  <dd class="<%= 'active' if page == "GameMasterNote" if local_assigns.has_key? :page %>">
+    <h3><%= link_to 'GM Notes', campaignmanager.polymorphic_path([@campaign, :game_master_notes]), :style => 'display:block;' %></h3>
+  </dd>
+</dl>
+<% end %>
+
+<% content_for :left_menu_icon do %>
+  <section class="left-small">
+    <a class="left-off-canvas-toggle menu-icon"><span></span></a>
+  </section>
+<% end %>
+
+<% content_for :left_menu do %>
+  <li><label><%= @campaign.name %></label></li>
+  <%= render :partial =>'campaignmanager/menus/small' %>
+<% end %>
+
+<% content_for :small_menu do %>
+  <li class="has-dropdown show-for-small"><a href="#"><i class='fa fa-sitemap fa-fw'></i> <%= @campaign.name %></a>
+    <ul class="dropdown">
+      <%= render :partial =>'campaignmanager/menus/small' %>
+    </ul>
+  </li>
+<% end %>

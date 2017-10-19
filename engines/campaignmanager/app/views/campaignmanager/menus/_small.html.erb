@@ -1,0 +1,23 @@
+<li><%= link_to 'Overview', campaignmanager.polymorphic_path(@campaign) %></li>
+<% if @campaign.district.present? %>
+  <li><%= link_to 'District', "#{worldbuilder.district_path(@campaign.district)}/campaign/#{@campaign.id}" %></li>
+<% end %>
+<% if @campaign.entity_joins.size > 0 %>
+  <li><%= link_to 'Characters', campaignmanager.polymorphic_path([@campaign, :characters]) %></li>
+<% end %>
+<% if @campaign.notables.size > 0 %>
+  <li><%= link_to 'Notables', "#{campaignmanager.polymorphic_path(@campaign)}/notables/list" %></li>
+<% end %>
+<li><%= link_to 'House Rules', campaignmanager.polymorphic_path([@campaign, :house_rules]) %></li>
+<li><%= link_to 'Adventure Logs', campaignmanager.polymorphic_path([@campaign, :adventure_logs]) %></li>
+
+<% if @campaign.activeplay.present? && @campaign.can_show?(current_user, admin_signed_in?, "Activeplay::Campaign") %>
+  <li><%= link_to 'ActivePlay', "/ap/virtual_tables/#{@campaign.activeplay.id}" %></li>
+<% end %>
+
+<% if @campaign.can_edit?(current_user, admin_signed_in?) %>
+  <% if @campaign.adventure.present? %>
+    <li><%= link_to 'Adventure', "#{storybuilder.resident_adventure_path(@campaign.adventure)}/campaign/#{@campaign.id}" %></li>
+  <% end %>
+  <li><%= link_to 'GM Notes', campaignmanager.polymorphic_path([@campaign, :game_master_notes]) %></li>
+<% end %>

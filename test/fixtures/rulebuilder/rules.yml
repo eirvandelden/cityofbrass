@@ -1,0 +1,130 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+resident_one:
+  type: Rulebuilder::ResidentRule
+  resident: razune
+  core_rules: PFRPG
+  rule_type: Feat
+  is_shared: true
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  prerequisites: MyString
+  benefit: MyText
+  normal: MyText
+  special: MyText
+  categories: ["One", "Two"]
+
+resident_two:
+  type: Rulebuilder::ResidentRule
+  resident: razune
+  core_rules: PFRPG
+  rule_type: Ability
+  is_shared: false
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  prerequisites: MyString
+  benefit: MyText
+  normal: MyText
+  special: MyText
+  categories: ["One", "Two"]
+
+resident_three:
+  type: Rulebuilder::ResidentRule
+  resident: razune
+  core_rules: PFRPG
+  rule_type: Stunt
+  is_shared: false
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  prerequisites: MyString
+  benefit: MyText
+  normal: MyText
+  special: MyText
+  categories: ["One", "Two"]
+
+stock_one:
+  type: Rulebuilder::StockRule
+  core_rules: PFRPG
+  rule_type: Feat
+  is_shared: true
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  prerequisites: MyString
+  benefit: MyText
+  normal: MyText
+  special: MyText
+  categories: ["One", "Two"]
+
+stock_two:
+  type: Rulebuilder::StockRule
+  core_rules: PFRPG
+  rule_type: Feat
+  is_shared: true
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  prerequisites: MyString
+  benefit: MyText
+  normal: MyText
+  special: MyText
+  categories: ["One", "Two"]
+
+proprietary_one:
+  type: Rulebuilder::ProprietaryRule
+  core_rules: PFRPG
+  rule_type: Feat
+  is_shared: true
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  prerequisites: MyString
+  benefit: MyText
+  normal: MyText
+  special: MyText
+  categories: ["One", "Two"]
+
+proprietary_two:
+  type: Rulebuilder::ProprietaryRule
+  core_rules: PFRPG
+  rule_type: Feat
+  is_shared: true
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  prerequisites: MyString
+  benefit: MyText
+  normal: MyText
+  special: MyText
+  categories: ["One", "Two"]

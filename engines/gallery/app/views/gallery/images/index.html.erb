@@ -1,0 +1,66 @@
+<% provide(:title, "Images") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+      { 'Images' => nil }
+    ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-12 columns">
+    <%
+      title = @type.underscore.humanize.pluralize
+      title = 'Images' if @type == 'ResidentImage'
+    %>
+    <%= render :partial =>'layouts/header',
+    :locals => {
+      :main => title,
+      :sub => @sub,
+      :icon => 'icon-images',
+      :add_link => new_polymorphic_path(@type.tableize.singularize),
+      :can_auth => can_add(current_user, @type)
+    }
+    %>
+    <hr class="faded">
+
+    <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+
+    <% @images.each_slice(4) do |slice| %>
+    <div class="row" data-equalizer>
+      <% slice.each do |image| %>
+      <div class="medium-3 columns">
+        <ul class="vcard" data-equalizer-watch>
+          <li>
+            <div class="row">
+              <div class="medium-10 columns">
+                <h3><%= link_to image.name, polymorphic_path(image) %></h3>
+              </div>
+              <div class="medium-2 columns text-right">
+                <h3><% if image.can_edit?(current_user, admin_signed_in?, @type) %><%= link_to "<i class='fa fa-cogs'></i>".html_safe, edit_polymorphic_path(image), class: "cogs125" %><% end %></h3>
+              </div>
+            </div>
+          </li>
+          <li class="text-center">
+            <% if image.file? %>
+            <%= link_to image_tag(image.file.url(:thumb), :alt => image.name), image %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <% end %>
+      <% (1..(4-slice.length)).each do |i| %>
+      <div class="medium-3 columns">
+
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns text-center">
+    <%= paginate @images %>
+  </div>
+</div>

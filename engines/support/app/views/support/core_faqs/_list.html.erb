@@ -1,0 +1,17 @@
+<fieldset>
+  <div class="row inline">
+    <div class="small-12 columns">
+      <label class="inline-label-flat">Core Item</label>
+    </div>
+  </div>
+  <ul class="not-sortable row" id="core_faqs">
+    <% @core_faqs.each do |core_faq| %>
+      <%= render 'core_faq', :core_faq => core_faq %>
+    <% end %>
+  </ul>
+</fieldset>
+<div class="row">
+  <div class="small-12 columns text-center">
+    <%= paginate @core_faqs, :window => 2 %>
+  </div>
+</div>

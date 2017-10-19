@@ -1,0 +1,23 @@
+<div id="form_placeholder">
+  <fieldset>
+    <%= render 'entitybuilder/layouts/tutorial' %>
+    <% if CoreRules.stock?(@parent_object.core_rules) %>
+      <strong><%= link_to "<i class='fa fa-plus-circle'></i> Stock Rule".html_safe, "#{polymorphic_path(@parent_object)}/linked_rules/new?rule_type=#{@rule_type}&type=stock", :remote => true %></strong>
+      <p>Add a Stock Rule.</p>
+    <% end %>
+    <% if admin_signed_in? %>
+      <strong><%= link_to "<i class='fa fa-plus-circle'></i> Proprietary Rule".html_safe, "#{polymorphic_path(@parent_object)}/linked_rules/new?rule_type=#{@rule_type}&type=proprietary", :remote => true %></strong>
+      <p>Add a Proprietary Rule.</p>
+    <% end %>
+    <% if @parent_type.include?"resident" %>
+      <strong><%= link_to "<i class='fa fa-plus-circle'></i> Resident Rule".html_safe, "#{polymorphic_path(@parent_object)}/linked_rules/new?rule_type=#{@rule_type}&type=resident", :remote => true %></strong>
+      <p>Add a rule from your resident list.</p>
+    <% end %>
+    <strong><%= link_to "<i class='fa fa-plus-circle'></i> New Rule".html_safe, "#{polymorphic_path(@parent_object)}/linked_rules/new?rule_type=#{@rule_type}&type=new", :remote => true %></strong>
+    <p>Add a new rule.</p>
+  </fieldset>
+</div>
+
+<% content_for :footer do %>
+  <%= render 'layouts/modal/tutorial' %>
+<% end %>

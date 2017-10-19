@@ -1,0 +1,35 @@
+<div id="show_div">
+  <%= render :partial =>'layouts/header',
+    :locals => {
+      :icon => 'fa fa-book',
+      :main => @rule.name,
+      :sub => ("(#{@rule.category_list})" if @rule.category_list.present?),
+      :edit_link => edit_polymorphic_path(@rule),
+      :can_auth => @rule.can_edit?(current_user, admin_signed_in?, @type)
+    }
+  %>
+  <hr class="faded">
+
+  <% unless @rule.gallery_image.nil? %>
+    <%= link_to (image_tag @rule.gallery_image.file.url(:medium), :alt => @rule.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@rule.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
+  <% end %>
+
+  <% if @rule.prerequisites? && ('5th Edition Generic'.include?@rule.core_rules) %><p class="italic"><strong>Prerequisites:</strong> <%= @rule.prerequisites %></p><% end %>
+  <%= sanitize @rule.full_description %>
+  <%= render :partial => 'rulebuilder/rules/rule_details', :locals => { :rule => @rule } %>
+
+  <% if @rule.parent.present? %>
+    <h2><%= @rule.parent.name %></h2>
+    <hr class="faded">
+    <%= sanitize @rule.parent.full_description %>
+  <% end %>
+
+  <% if @rule.publisher.present? or @rule.source.present? %>
+    <%= render 'layouts/publisher', publisher: @rule.publisher, is_3pp: @rule.is_3pp, source: @rule.source %>
+  <% end %>
+
+  <% if @type.include?"Stock" %>
+    <%= render 'layouts/license/link', core_rules: @rule.core_rules %>
+    <%= render 'layouts/license/modal' %>
+  <% end %>
+</div>

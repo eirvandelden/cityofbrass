@@ -1,0 +1,16 @@
+<table class="sheet-table">
+  <thead class="blank">
+    <tr>
+      <th class="name text-center" colspan="3">Money</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @parent_object.currencies.each do |currency| %>
+      <tr>
+        <td><%= currency.name %></td>
+        <td class="name text-right"><%= number_with_delimiter(currency.quantity) %></td>
+        <td class="name text-center"><%= link_to "<i class='fa fa-cogs'></i>".html_safe, "#{polymorphic_path(@parent_object)}/currencies/#{currency.id}/edit_sheet", "data-reveal-id" => "currency_modal", class: "cogs125", :remote => true if @clickable %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

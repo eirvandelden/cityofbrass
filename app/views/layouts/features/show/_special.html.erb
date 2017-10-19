@@ -1,0 +1,13 @@
+<% if feature.feature_label.parameterize == 'owner' && record.resident.present? %>
+  <strong><%= feature.feature_label %>:</strong>
+  <%= link_to record.resident.name, main_app.resident_path(record.resident.slug) %>
+<% elsif feature.feature_label.parameterize == 'updated' %>
+  <strong><%= feature.feature_label %>:</strong>
+  <span data-timestamp="<%= record.updated_at.to_i*1000 %>"></span>
+<% elsif feature.feature_label.parameterize == 'created' %>
+  <strong><%= feature.feature_label %>:</strong>
+  <span data-timestamp="<%= record.created_at.to_i*1000 %>"></span>
+<% else %>
+  <strong><%= feature.feature_label %>:</strong>
+  <%= sanitize markdown(feature.feature_text), :tags => %w(a) %>
+<% end %>

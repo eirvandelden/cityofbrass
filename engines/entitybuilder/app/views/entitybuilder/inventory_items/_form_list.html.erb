@@ -1,0 +1,42 @@
+<%= form_for @parent_object, :url => send("#{@parent_type}_inventory_items_path"), :remote => true, :html => {"data-sortable" => ''} do |f| %>
+  <fieldset>
+    <div class="row inline">
+      <div class="small-6 columns">
+        <label class="inline-label-flat">Name</label>
+      </div>
+      <div class="small-2 columns text-center">
+        <label class="inline-label-flat">Qty</label>
+      </div>
+      <div class="small-4 columns text-right">
+        <% if request.variant == [:phone] %>
+          <span class="right"><a id="sortable_unlock"><span class="right"><i class="lock fa fa-lock" id="sortable_unlock_icon"></i></a></span>
+        <% else %>
+          &nbsp;
+        <% end %>
+      </div>
+    </div>
+    <ul class="sortable row">
+      <%= f.fields_for :inventory_items do |inventory_item| %>
+      <li id="inventory_item_<%= inventory_item.object.id %>" "sortable-item">
+        <%= inventory_item.hidden_field :sort_order %>
+        <div class="row">
+          <div class="small-6 columns clipper">
+            <strong><%= link_to inventory_item.object.item.name[0,20], "#{polymorphic_path(@parent_object)}/inventory_items/#{inventory_item.object.id}" %></strong>
+          </div>
+          <div class="small-2 columns text-center">
+            <strong><%= inventory_item.object.quantity %></strong>
+          </div>
+          <div class="small-4 columns text-right">
+            <h3>
+              <span class="right cogs125">
+              <%= link_to "<i class='fa fa-cogs'></i>".html_safe, "#{polymorphic_path(@parent_object)}/inventory_items/#{inventory_item.object.id}/edit", class: "iconlink", :remote => true %>
+              <%= link_to "<i class='fa fa-times-circle'></i>".html_safe, "#{polymorphic_path(@parent_object)}/inventory_items/#{inventory_item.object.id}", class: "iconlink delete", method: :delete, data: { confirm: 'Are you sure?' }, :remote => true %>
+              </span>
+            </h3>
+          </div>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </fieldset>
+<% end %>

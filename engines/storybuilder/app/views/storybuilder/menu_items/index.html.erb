@@ -1,0 +1,78 @@
+<% provide(:title, "Adventures | #{@parent_object.name}") %>
+<% type_array = type_split(@parent_type) %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => polymorphic_path(@parent_type.tableize) },
+    { @parent_object.name => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'menus/manage',
+      :locals => {
+        :active => 'menu_items',
+        :view_link => polymorphic_path(@parent_object),
+        :details_link => edit_polymorphic_path(@parent_object),
+        :options_link => polymorphic_path([@parent_object, :options]),
+        :features_link => polymorphic_path([@parent_object, :features]),
+        :sections_link => polymorphic_path([@parent_object, :sections]),
+        :notables_link => polymorphic_path([@parent_object, :notables]),
+        :menu_items_link => polymorphic_path([@parent_object, :menu_items])
+      } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @parent_object.name,
+        :sub => 'Menu Items',
+        :add_remote_link => "#{polymorphic_path(@parent_object)}/menu_items/new",
+        :can_auth => @parent_object.can_edit?(current_user, admin_signed_in?, @parent_type)
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="medium-5 columns" id="brass_form">
+        <%= render 'form_list' %>
+      </div>
+      <div class="medium-7 columns">
+        <%= render 'about' %>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="menuWizardModal" class="reveal-modal tiny" data-reveal style="display: none">
+  <h2><i class="fa fa-magic"></i> Link Wizard</h2>
+  <br>
+  <div class="row">
+    <div class="medium-12 medium-centered columns text-center">
+      <input type="hidden" name="wizard_for" id="wizard_for">
+      <select name="selectEngineSB" id="selectEngineSB">
+        <option value="WB">World Builder</option>
+        <option value="SB">Story Builder</option>
+      </select>
+
+      <select name="selectParent" id="selectParent">
+
+      </select>
+
+      <select name="selectRecordType" id="selectRecordType" style="display: none;">
+        <option value="WB">Pages</option>
+        <option value="SB">Pages<option>
+      </select>
+
+      <select name="selectRecord" id="selectRecord">
+
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-12 medium-centered columns text-center">
+      <%= button_tag 'Select', type: 'button', name: 'menu-select', :id => 'menu-select', class: 'button' %>
+    </div>
+  </div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>

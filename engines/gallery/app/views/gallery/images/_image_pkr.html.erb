@@ -1,0 +1,10 @@
+<strong><i class="icon-images" style="line-height: 1.4em;"></i>
+  <%= link_to "Select", gallery.resident_images_pkr_path, "data-reveal-id" => "pkrGalleryModal", :remote => true %> |
+  <%= link_to "Remove", "#", onclick: "set_image_blank('#{asset_path("gallery/blank_image.png")}');return false;" %>
+</strong>
+<br>
+<% unless image_url.blank? %>
+  <%= link_to (image_tag image_url, id: "record_img", style: "max-height:110px"), gallery.resident_images_pkr_path, "data-reveal-id" => "pkrGalleryModal", :remote => true %>
+<% else %>
+  <%= link_to (image_tag asset_path("gallery/blank_image.png"), id: "record_img", style: "max-height:110px"), gallery.resident_images_pkr_path, "data-reveal-id" => "pkrGalleryModal", :remote => true %>
+<% end %>

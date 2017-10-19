@@ -1,0 +1,35 @@
+<% provide(:title, 'Events') %>
+
+<% content_for :breadcrumb do %>
+<%=  breadcrumb [
+  { "Events" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-12 medium-centered columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'fa fa-cloud-download',
+        :main => 'Billing Events'
+      }
+    %>
+    <hr class="faded">
+
+    <div class="row">
+      <div class="small-6 small-centered columns">
+        <%= render 'layouts/form/search', url: events_path %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-7 columns" id="index_list">
+        <%= render 'list' %>
+      </div>
+      <div class="medium-5 columns">
+        <%= render 'about' %>
+      </div>
+    </div>
+
+  </div>
+</div>

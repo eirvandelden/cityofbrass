@@ -1,0 +1,35 @@
+<div id="ap-chat-panel">
+  <div class="ap-chatviewer">
+
+    <div class="row collapse">
+      <input class="ap-inputMessage" maxlength="500" placeholder="Type here..."/>
+      <!--
+      <div class="small-10 columns">
+        <input class="ap-inputMessage" maxlength="500" placeholder="Type here..."/>
+      </div>
+      <div class="small-2 columns">
+        <%= button_tag class: 'postfix ap-inputButton' do %>
+        <i class="fa fa-comment"></i>
+        <% end %>
+      </div>
+      -->
+
+    </div>
+
+    <ul class="ap-pages no-bullet">
+      <li class="ap-chat ap-page">
+        <div class="ap-chatArea">
+          <ul class="ap-messages"></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>var $ap_cid = '<%= @virtual_table.id %>'</script>
+<script>var $ap_usr = "<%= name_scrubber(ap_usr) %>"</script>
+<script>var $ap_clr = '<%= ap_clr %>'</script>
+<script>var $ap_sok = '<%= ENV['BRASSNODE_URL'] %>'</script>
+
+<script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
+<%= javascript_include_tag "activeplay/brassnode/v1/activeplay" %>

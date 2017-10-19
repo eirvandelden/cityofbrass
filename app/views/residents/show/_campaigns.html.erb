@@ -1,0 +1,9 @@
+<%= render 'layouts/header', icon: 'fa fa-sitemap', main: 'Campaigns', index_link: main_app.resident_campaigns_path(@resident.slug) %>
+<hr class="faded">
+<% @resident.top_5_campaigns.each do |campaign| %>
+  <% if campaign.can_show?(current_user, admin_signed_in?) %>
+    <h2><%= link_to campaign.name, campaignmanager.campaign_path(campaign)  %></h2>
+    <h4 style="color:#c5c5c5;">Updated: <span data-timestamp="<%= campaign.updated_at.to_i*1000 %>"></span></h4>
+    <p><%= campaign.short_description %></p>
+  <% end %>
+<% end %>

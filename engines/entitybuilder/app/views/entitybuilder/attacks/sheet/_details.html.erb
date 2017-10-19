@@ -1,0 +1,62 @@
+<table class="detail-table">
+  <tbody>
+
+    <% unless attack.attack_range.blank? %>
+    <tr class="roll">
+      <td><%= (attack.attack_type.include?"Melee")? "Reach" : "Range" %><td>
+      <td>
+        <%= attack.attack_range %>
+      </td>
+    </tr>
+    <% end %>
+
+    <% unless attack.damage_type.blank? %>
+    <tr class="roll">
+      <td>Damage Type<td>
+      <td>
+        <%= attack.damage_type %>
+      </td>
+    </tr>
+    <% end %>
+
+    <% unless attack.critical_range.blank? %>
+    <tr class="roll">
+      <td>Critical Range<td>
+      <td>
+        <%= attack.critical_range %>
+      </td>
+    </tr>
+    <% end %>
+
+    <% unless attack.critical_damage_dice.blank? and attack.calculated_critical_damage_bonus(@parent_object.ability_scores, @parent_object.modifiers).blank? %>
+    <tr class="roll">
+      <td>Critical Damage<td>
+      <td>
+        <% critical_damage_bonus = attack.calculated_critical_damage_bonus(@parent_object.ability_scores, @parent_object.modifiers) %>
+        <%= render 'layouts/dice_roller',
+          core_rules: @parent_object.core_rules,
+          dice: attack.critical_damage_dice,
+          bonus: critical_damage_bonus,
+          display: "#{attack.critical_damage_dice}#{critical_damage_bonus.to_s.gsub("+"," + ").gsub("-"," - ")}"
+        %>
+      </td>
+    </tr>
+    <% end %>
+
+    <% unless attack.special_damage_name.blank? and attack.special_damage_dice.blank? and attack.calculated_special_damage_bonus(@parent_object.ability_scores, @parent_object.modifiers).blank? %>
+    <tr class="roll">
+      <td><%= attack.special_damage_name.blank? ? 'Special Damage' : attack.special_damage_name %><td>
+      <td style="min-width: 75px;">
+        <% special_damage_bonus = attack.calculated_special_damage_bonus(@parent_object.ability_scores, @parent_object.modifiers) %>
+        <%= render 'layouts/dice_roller',
+          core_rules: @parent_object.core_rules,
+          dice: attack.special_damage_dice,
+          bonus: special_damage_bonus,
+          display: "#{attack.special_damage_dice}#{special_damage_bonus.to_s.gsub("+"," + ").gsub("-"," - ")}"
+        %>
+      </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>

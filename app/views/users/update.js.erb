@@ -1,0 +1,4 @@
+$('.alert-box').remove();
+$("body").append ("<%= j(render 'layouts/notices') %>");
+$('#user_detail').html("<%= j render('details') %>");
+$('#user_form').html("<%= j render('form') %>");

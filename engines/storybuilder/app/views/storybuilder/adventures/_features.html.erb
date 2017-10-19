@@ -1,0 +1,23 @@
+<ul class="no-bullet">
+<% if @adventure.parent %>
+  <li>
+    <strong>Parent: </strong>
+    <%= link_to @adventure.parent.name, polymorphic_path(@adventure.parent) %>
+  </li>
+<% end %>
+<% @adventure.features.each do |feature| %>
+  <li>
+  <%= render :partial =>'layouts/features/looper',
+      :locals => {
+        :feature => feature,
+        :record => @adventure,
+        :resident => @resident
+    } %>
+  </li>
+<% end %>
+
+<% if @adventure.notables.size > 0 %>
+  <%= render "layouts/notables/entity_feature_list", list: @adventure.notables %>
+<% end %>
+
+</ul>

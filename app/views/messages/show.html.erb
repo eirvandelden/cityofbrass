@@ -1,0 +1,33 @@
+<% provide(:title, @resident.name) %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { @message.subject[0,50] => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-12 columns">
+    <%= render :partial =>'layouts/header',
+    :locals => {
+      :icon => 'fa fa-envelope',
+      :main => 'Messages',
+      :reply_link => message_reply_path(@message),
+      :delete_message => "Are you sure you want to delete this message?",
+      :delete_link => message_path(@message),
+      :can_auth => @message.can_auth(current_user)
+    }
+    %>
+    <hr class="faded">
+  </div>
+</div>
+
+<div class="row">
+  <div class="medium-2 columns">
+    <%= render :partial =>'menu' %>
+  </div>
+  <div class="medium-10 columns">
+    <h2><%= @message.subject %></h2>
+    <%= sanitize @message.body %>
+  </div>
+</div>

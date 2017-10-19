@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="small-2 columns">
+    <strong class="color-c5">Date</strong>
+  </div>
+  <div class="small-10 columns">
+    <span data-timestamp-format="MMMM Do YYYY" data-timestamp="<%= @invoice.date.to_i*1000 %>"></span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-2 columns">
+    <strong class="color-c5">Period</strong>
+  </div>
+  <div class="small-10 columns">
+    <span data-timestamp-format="MMMM Do YYYY" data-timestamp="<%= @invoice.period_start.to_i*1000 %>"></span>
+    <br>to<br>
+    <span data-timestamp-format="MMMM Do YYYY" data-timestamp="<%= @invoice.period_end.to_i*1000 %>"></span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-2 columns">
+    <strong class="color-c5">Total</strong>
+  </div>
+  <div class="small-10 columns">
+    <%= "$%.2f" % Rational(@invoice.total.to_i,100) %> <%= @invoice.currency.upcase %>
+  </div>
+</div>

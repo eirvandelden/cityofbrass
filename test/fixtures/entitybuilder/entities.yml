@@ -1,0 +1,249 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+resident_character_one:
+  type: Entitybuilder::ResidentCharacter
+  resident: razune
+  name: Borlan
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  introduction: <p>Text for test</p>
+  notes: <p>Text for test</p>
+
+resident_character_two:
+  type: Entitybuilder::ResidentCharacter
+  resident: tuandn
+  name: Morlan
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  introduction: <p>Text for test</p>
+  notes: <p>Text for test</p>
+
+resident_character_three:
+  type: Entitybuilder::ResidentCharacter
+  resident: tuandn
+  name: Morlan2
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  introduction: <p>Text for test</p>
+  notes: <p>Text for test</p>
+
+resident_creature_one:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Barbazu
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  introduction: <p>Text for test</p>
+  notes: MyText
+
+resident_creature_two:
+  type: Entitybuilder::ResidentCreature
+  resident: tuandn
+  name: Kobold
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  introduction: <p>Text for test</p>
+  notes: MyText
+
+resident_creature_three:
+  type: Entitybuilder::ResidentCreature
+  resident: tuandn
+  name: Kobold2
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  introduction: <p>Text for test</p>
+  notes: MyText
+
+resident_npc_one:
+  type: Entitybuilder::ResidentNpc
+  resident: razune
+  name: Borlan
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  introduction: <p>Text for test</p>
+  notes: <p>Text for test</p>
+
+resident_npc_two:
+  type: Entitybuilder::ResidentNpc
+  resident: tuandn
+  name: Morlan
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  introduction: <p>Text for test</p>
+  notes: <p>Text for test</p>
+
+stock_creature_one:
+  type: Entitybuilder::StockCreature
+  name: Barbazu
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  introduction: <p>Text for test</p>
+  notes: MyText
+
+stock_creature_two:
+  type: Entitybuilder::StockCreature
+  name: Kobold
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  introduction: <p>Text for test</p>
+  notes: MyText
+
+stock_npc_one:
+  type: Entitybuilder::StockNpc
+  name: Borlan
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  introduction: <p>Text for test</p>
+  notes: <p>Text for test</p>
+
+stock_npc_two:
+  type: Entitybuilder::StockNpc
+  name: Morlan
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  introduction: <p>Text for test</p>
+  notes: <p>Text for test</p>
+
+proprietary_creature_one:
+  type: Entitybuilder::ProprietaryCreature
+  name: Barbazu
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  introduction: <p>Text for test</p>
+  notes: MyText
+
+proprietary_creature_two:
+  type: Entitybuilder::ProprietaryCreature
+  name: Kobold
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  introduction: <p>Text for test</p>
+  notes: MyText
+
+proprietary_npc_one:
+  type: Entitybuilder::ProprietaryNpc
+  name: Borlan
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  introduction: <p>Text for test</p>
+  notes: <p>Text for test</p>
+
+proprietary_npc_two:
+  type: Entitybuilder::ProprietaryNpc
+  name: Morlan
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  introduction: <p>Text for test</p>
+  notes: <p>Text for test</p>

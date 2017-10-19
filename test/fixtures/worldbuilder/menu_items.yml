@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+menu_item1:
+  menu_itemable: district1
+  menu_itemable_type: Worldbuilder::District
+  sort_order: 1
+  item_label: Overview
+  item_link: /wb/realm-of-the-gods
+
+menu_item2:
+  menu_itemable: district1
+  menu_itemable_type: Worldbuilder::District
+  sort_order: 2
+  item_label: Inhabitants
+  item_link: /wb/realm-of-the-gods/inhabitants/inhabitants-of-the-realms

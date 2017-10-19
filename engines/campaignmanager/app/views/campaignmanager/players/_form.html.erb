@@ -1,0 +1,8 @@
+<div id="form_div">
+<%= simple_form_for [@campaign, @player], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <fieldset>
+    <%= f.association :affiliation, collection: @aff_list, :include_blank => true %>
+  </fieldset>
+  <%= render "layouts/form/save_and_cancel" %>
+<% end %>
+</div>

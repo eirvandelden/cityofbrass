@@ -1,0 +1,17 @@
+<fieldset>
+  <div class="row inline">
+    <div class="small-12 columns">
+      <label class="inline-label-flat">Name</label>
+    </div>
+  </div>
+  <ul class="not-sortable row" id="contributors">
+    <% @contributors.each do |contributor| %>
+      <%= render 'contributor', :contributor => contributor %>
+    <% end %>
+  </ul>
+</fieldset>
+<div class="row">
+  <div class="small-12 columns text-center">
+    <%= paginate @contributors, :window => 2 %>
+  </div>
+</div>

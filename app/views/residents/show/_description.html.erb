@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="medium-12 columns">
+    <%= render :partial =>'layouts/header',
+        :locals => {
+        :icon => 'fa fa-user',
+        :main => @resident.name,
+        :sub => @resident.title,
+        :message_affiliate_link => (message_affiliate_path(@resident) if Affiliation.are_affiliates(current_user.resident, @resident)),
+        :add_affiliate_link => (request_affiliation_path(@resident) if !Affiliation.has_affiliation(current_user.resident, @resident)),
+        :edit_link => edit_resident_path(@resident),
+        :can_auth => @resident.can_auth(current_user)
+      }
+    %>
+    <hr class="faded">
+
+    <p>
+      <%= @resident.short_description %>
+      <% unless @resident.full_description.blank? %>
+        <br>
+        <a href="#" data-reveal-id="thumbModalDesc">
+         ( read more )
+        </a>
+      <% end %>
+    </p>
+
+  </div>
+</div>

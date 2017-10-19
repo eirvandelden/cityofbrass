@@ -1,0 +1,7 @@
+<div class="indent">
+  <% @movements.each do |movement| %>
+    <strong><%= movement.name %>:</strong>
+    <%= movement.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) %>
+    <%= " #{movement.description}" unless movement.description.blank? %><%= " (#{movement.dice})" unless movement.dice.blank? %><%= ", " unless movement == @movements.last %>
+  <% end %>
+</div>

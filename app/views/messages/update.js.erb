@@ -1,0 +1,4 @@
+$('.alert-box').remove();
+$("body").append ("<%= j(render 'layouts/notices') %>");
+$('#brass_form').html("<%= j render('form') %>");
+$(".edit_message").ready(ckeditorStandard);

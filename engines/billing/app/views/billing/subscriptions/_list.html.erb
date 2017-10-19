@@ -1,0 +1,14 @@
+<div class="row inline">
+  <div class="small-5 columns">
+    <label class="inline-label-flat">Plan</label>
+  </div>
+  <div class="small-5 columns end">
+    <label class="inline-label-flat">End</label>
+  </div>
+</div>
+
+<ul class="not-sortable row">
+  <% @subscriptions.each do |subscription| %>
+    <%= render 'subscription', :subscription => subscription %>
+  <% end %>
+</ul>

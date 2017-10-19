@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: resident_one
+  imageable: razune
+  imageable_type: Resident
+
+two:
+  image: stock_one
+  imageable: tuandn
+  imageable_type: Resident

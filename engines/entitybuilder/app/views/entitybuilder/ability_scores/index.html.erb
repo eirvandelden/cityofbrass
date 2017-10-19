@@ -1,0 +1,45 @@
+<% provide(:title, "#{@parent_object.name}") %>
+<% type_array = type_split(@parent_type) %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => send("#{@parent_object.class.to_s.demodulize.tableize.pluralize}_path") },
+    { @parent_object.name => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial => "entitybuilder/menus/manage",
+      :locals => {
+        :view_link => polymorphic_path(@parent_object),
+        :about_link => edit_polymorphic_path(@parent_object),
+        :base_link => polymorphic_path(@parent_object)
+      } %>
+  </div>
+
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @parent_object.name,
+        :sub => 'Ability Scores',
+        :add_remote_link => send("new_#{@parent_object.class.to_s.demodulize.underscore}_ability_score_path"),
+        :can_auth => @parent_object.can_edit?(current_user, admin_signed_in?, @parent_type)
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="medium-12 columns text-right">
+        <h3 class="color-c5"><%= "#{@parent_object.core_rules}" %></h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 columns" id="brass_form">
+        <%= render 'form_list' %>
+      </div>
+      <div class="medium-6 columns">
+        <%= render 'about' %>
+      </div>
+    </div>
+  </div>
+</div>

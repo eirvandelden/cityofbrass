@@ -1,0 +1,27 @@
+<%= form_tag url, :method => 'get', :remote => true, :html => {'data-no-transition-cache' => ''} do %>
+<%= hidden_field_tag :core_rules, params[:core_rules] %>
+<div class="row">
+  <div class="small-4 columns">
+    <div class="row collapse">
+      <div class="medium-5 columns show-for-medium-up">
+        <span class="prefix core-rules">Rule Type</span>
+      </div>
+      <div class="medium-7 small-12 columns">
+        <%= select_tag :rule_type, grouped_options_for_select(CoreRules::Rule.options(admin_signed_in?), params[:rule_type]), {onchange: "javascript: $( this ).trigger('submit.rails')", class: 'select2-rule_type_search postfix', prompt: 'All'} %>
+      </div>
+    </div>
+  </div>
+  <div class="small-8 columns">
+    <div class="row collapse">
+      <div class="medium-11 small-10 columns">
+        <%= text_field_tag :search, params[:search], placeholder: 'Enter search term...' %>
+      </div>
+      <div class="medium-1 small-2 columns">
+        <%= button_tag type: 'submit', class: 'postfix nopad' do %>
+        <i class="fa fa-search"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

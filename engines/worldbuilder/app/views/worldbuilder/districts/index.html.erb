@@ -1,0 +1,37 @@
+<% provide(:title, 'Districts') %>
+<% content_for :head do %>
+  <meta name="description" content="From concept to gaming table with ease. It's never been easier to create a complete world for your RPG settings.">
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Districts" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-4 columns text-center">
+    <%= image_tag "wb.jpg" %>
+  </div>
+
+  <div class="medium-8 columns">
+    <div class="row">
+      <div class="small-12 small-centered columns">
+        <%= render 'layouts/form/search', url: worldbuilder.districts_path %>
+      </div>
+    </div>
+    <%= render :partial =>'layouts/header',
+        :locals => {
+        :icon => 'icon-globe',
+        :main => 'Districts'
+      }
+    %>
+    <hr class="faded">
+
+    <div class="row">
+      <div class="medium-12 columns" id="index_list">
+        <%= render 'list' %>
+      </div>
+    </div>
+  </div>
+</div>

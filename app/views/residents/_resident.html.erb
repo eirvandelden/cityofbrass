@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="medium-12 columns">
+    <h2><%= link_to resident.name, resident_path(resident.slug) %></h2>
+    <h4 style="color:#c5c5c5;">Est: <span data-timestamp="<%= resident.created_at.to_i*1000 %>"></span></h4>
+    <p><%= resident.short_description %></p>
+  </div>
+</div>

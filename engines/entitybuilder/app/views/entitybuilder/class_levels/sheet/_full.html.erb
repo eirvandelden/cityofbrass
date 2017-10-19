@@ -1,0 +1,15 @@
+<table class="sheet-table">
+  <thead>
+    <tr>
+      <th class="text-center" colspan="3">Class & Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @parent_object.class_levels.each do |class_level| %>
+      <tr>
+        <td><%= class_level.name.upcase %></td>
+        <td class="text-center"><%= class_level.level %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

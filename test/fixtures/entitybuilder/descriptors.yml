@@ -1,0 +1,13 @@
+one:
+  entity: resident_character_one
+  sort_order: 1
+  name: Fire breathing
+  description: Breath fire on stuff
+  is_private: false
+
+two:
+  entity: resident_character_one
+  sort_order: 1
+  name: Water breathing
+  description: Breath water on stuff
+  is_private: true

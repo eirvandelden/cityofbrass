@@ -1,0 +1,38 @@
+<% provide(:title, "Adventures | #{@adventure.name}") %>
+<% type_array = type_split(@type) %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => polymorphic_path(@type.tableize) },
+    { @adventure.name => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'storybuilder/menus/adventure', :locals => { :page => @adventure.menu_item_join } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'icon-book',
+        :main => @adventure.name,
+        :sub => @adventure.page_label,
+        :edit_link => edit_polymorphic_path(@adventure),
+        :can_auth => @adventure.can_edit?(current_user, admin_signed_in?, @type)
+      }
+    %>
+    <hr class="faded">
+
+    <% unless @adventure.gallery_image.nil? %>
+      <%= link_to (image_tag @adventure.gallery_image.file.url(:medium), :alt => @adventure.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@adventure.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
+    <% end %>
+
+    <%= render :partial =>'features' if @adventure.features.size > 0 || @adventure.parent_id.present? || @adventure.notables.size > 0 %>
+    <%= render :partial =>'sections' %>
+
+  </div>
+</div>
+
+<%= render 'layouts/modal/show' %>
+<%= render 'layouts/modal/image' %>

@@ -1,0 +1,17 @@
+<%= simple_form_for @message, :html => {'data-no-transition-cache' => ''} do |f| %>
+<fieldset>
+  <div class="row">
+    <div class="medium-12 columns">
+      <%= f.association :recipient, collection: @resident.affiliates, label_method: :name, value_method: :id, :prompt => 'Please Select' %>
+      <%= f.input :subject %>
+      <%= f.input :body, class: "editorblank" %>
+    </div>
+  </div>
+</fieldset>
+
+<div class="row">
+  <div class="medium-12 medium-centered columns text-center">
+    <%= button_tag 'Send', type: 'submit', :id => 'sub-lock', class: 'button' %>
+  </div>
+</div>
+<% end %>

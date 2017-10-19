@@ -1,0 +1,188 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+page_text1:
+  sectionable: encounter_one
+  sectionable_type: Storybuilder::Page
+  sort_order: 1
+  header: Text for label
+  content: <p>Text for text</p>
+  section_type: text
+  section_style: paragraph
+  record_type:
+  search_tags:
+
+page_text2:
+  sectionable: encounter_one
+  sectionable_type: Storybuilder::Page
+  sort_order: 1
+  header: Text for label
+  content: <p>Text for text</p>
+  section_type: text
+  section_style: private_notes
+  record_type:
+  search_tags:
+
+page_text3:
+  sectionable: encounter_one
+  sectionable_type: Storybuilder::Page
+  sort_order: 1
+  header: Text for label
+  content: <p>Text for text</p>
+  section_type: text
+  section_style: readaloud
+  record_type:
+  search_tags:
+
+page_text4:
+  sectionable: encounter_one
+  sectionable_type: Storybuilder::Page
+  sort_order: 1
+  header: Text for label
+  content: <p>Text for text</p>
+  section_type: text
+  section_style: sidebar
+  record_type:
+  search_tags:
+
+adventure_text1:
+  sectionable: resident_one
+  sectionable_type: Storybuilder::Adventure
+  sort_order: 1
+  header: Text for label
+  content: <p>Text for text</p>
+  section_type: text
+  section_style: paragraph
+  record_type:
+  search_tags:
+
+adventure_text2:
+  sectionable: resident_one
+  sectionable_type: Storybuilder::Adventure
+  sort_order: 1
+  header: Text for label
+  content: <p>Text for text</p>
+  section_type: text
+  section_style: private_notes
+  record_type:
+  search_tags:
+
+adventure_text3:
+  sectionable: resident_one
+  sectionable_type: Storybuilder::Adventure
+  sort_order: 1
+  header: Text for label
+  content: <p>Text for text</p>
+  section_type: text
+  section_style: readaloud
+  record_type:
+  search_tags:
+
+adventure_text4:
+  sectionable: resident_one
+  sectionable_type: Storybuilder::Adventure
+  sort_order: 1
+  header: Text for label
+  content: <p>Text for text</p>
+  section_type: text
+  section_style: sidebar
+  record_type:
+  search_tags:
+
+page_child1:
+  sectionable: encounter_one
+  sectionable_type: Storybuilder::Page
+  sort_order: 1
+  header:
+  content:
+  section_type: child
+  section_style: blocks
+  record_type:
+  search_tags:
+
+page_child2:
+  sectionable: encounter_one
+  sectionable_type: Storybuilder::Page
+  sort_order: 2
+  header:
+  content:
+  section_type: child
+  section_style: bulleted
+  record_type:
+  search_tags:
+
+page_child3:
+  sectionable: encounter_one
+  sectionable_type: Storybuilder::Page
+  sort_order: 3
+  header:
+  content:
+  section_type: child
+  section_style: standard
+  record_type:
+  search_tags:
+
+page_tag1:
+  sectionable: encounter_one
+  sectionable_type: Storybuilder::Page
+  sort_order: 3
+  header: Text for tag header
+  content:
+  section_type: tag
+  section_style: blocks
+  record_type: Storybuilder::Encounter
+  search_tags: hello
+
+page_tag2:
+  sectionable: encounter_one
+  sectionable_type: Storybuilder::Page
+  sort_order: 3
+  header: Text for tag header
+  content:
+  section_type: tag
+  section_style: bulleted
+  record_type: Storybuilder::Encounter
+  search_tags: hello
+
+page_tag3:
+  sectionable: encounter_one
+  sectionable_type: Storybuilder::Page
+  sort_order: 3
+  header: Text for tag header
+  content:
+  section_type: tag
+  section_style: standard
+  record_type: Storybuilder::Encounter
+  search_tags: hello
+
+adventure_tag1:
+  sectionable: resident_one
+  sectionable_type: Storybuilder::Adventure
+  sort_order: 3
+  header: Text for tag header
+  content:
+  section_type: tag
+  section_style: blocks
+  record_type: Storybuilder::Encounter
+  search_tags: hello
+
+adventure_tag2:
+  sectionable: resident_one
+  sectionable_type: Storybuilder::Adventure
+  sort_order: 3
+  header: Text for tag header
+  content:
+  section_type: tag
+  section_style: bulleted
+  record_type: Storybuilder::Encounter
+  search_tags: hello
+
+adventure_tag3:
+  sectionable: resident_one
+  sectionable_type: Storybuilder::Adventure
+  sort_order: 3
+  header: Text for tag header
+  content:
+  section_type: tag
+  section_style: standard
+  record_type: Storybuilder::Encounter
+  search_tags: hello

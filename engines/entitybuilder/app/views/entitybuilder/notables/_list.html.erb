@@ -1,0 +1,8 @@
+<% if @notables.present? %>
+  <label class="inline-label-flat right">
+    Notables
+  </label>
+  <% @notables.each do |notable| %>
+    <%= render 'entitybuilder/entities/layouts/badge', notable: notable, entity: notable.entity, badge_color: '', isGM: @isGM %>
+  <% end %>
+<% end %>

@@ -1,0 +1,36 @@
+<%= form_for @parent_object, :url => send("#{@parent_type}_menu_items_path"), :remote => true, :html => {"data-sortable" => ''} do |f| %>
+  <fieldset>
+    <div class="row inline">
+      <div class="small-8 columns">
+        <label class="inline-label-flat">Label</label>
+      </div>
+      <div class="small-4 columns text-right">
+        <% if request.variant == [:phone] %>
+          <span class="right"><a id="sortable_unlock"><span class="right"><i class="lock fa fa-lock" id="sortable_unlock_icon"></i></a></span>
+        <% else %>
+          &nbsp;
+        <% end %>
+      </div>
+    </div>
+    <ul class="sortable row">
+      <%= f.fields_for :menu_items do |menu_item| %>
+      <li id="menu_item_<%= menu_item.object.id %>" "sortable-item">
+        <%= menu_item.hidden_field :sort_order %>
+        <div class="row">
+          <div class="small-7 columns clipper">
+            <strong><%= menu_item.object.item_label[0,25] if menu_item.object.item_label %></strong>
+          </div>
+          <div class="small-5 columns text-right">
+            <h3>
+              <span class="right cogs125">
+              <%= link_to "<i class='fa fa-cogs'></i>".html_safe, "#{tcob_path(@parent_object, 'id')}/menu_items/#{menu_item.object.id}/edit", class: "iconlink", :remote => true %>
+              <%= link_to "<i class='fa fa-times-circle'></i>".html_safe, "#{tcob_path(@parent_object, 'id')}/menu_items/#{menu_item.object.id}", class: "iconlink delete", method: :delete, data: { confirm: 'Are you sure?' }, :remote => true %>
+              </span>
+            </h3>
+          </div>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </fieldset>
+<% end %>

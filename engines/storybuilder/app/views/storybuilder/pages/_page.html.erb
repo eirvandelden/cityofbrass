@@ -1,0 +1,11 @@
+<%= render :partial =>'layouts/index_row',
+  :locals => {
+  :main => page.name,
+  :sub => page.page_label,
+  :description => page.short_description,
+  :show_link => storybuilder.polymorphic_path([@parent_object, page]),
+  :child_link => storybuilder.polymorphic_path([@parent_object, page, :new, :child]),
+  :edit_link => storybuilder.edit_polymorphic_path([@parent_object, page]),
+  :can_auth => @parent_object.can_edit?(current_user, admin_signed_in?, @parent_type)
+  }
+%>

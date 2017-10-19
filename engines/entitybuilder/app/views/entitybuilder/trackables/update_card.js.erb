@@ -1,0 +1,4 @@
+$('.alert-box').remove();
+$("body").append ("<%= j(render 'layouts/notices') %>");
+$("#badge_core_health_<%= @trackable.id %>").html("<%= j(render 'entitybuilder/trackables/layouts/core_health', css_class: 'badge', hit_points: @hit_points) %>");
+$("#card_core_health_<%= @trackable.id %>").html("<%= j(render 'entitybuilder/trackables/layouts/core_health', css_class: 'card', hit_points: @hit_points) %>");

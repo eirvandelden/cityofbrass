@@ -1,0 +1,15 @@
+<li id="event_<%= event.id %>">
+  <div class="row">
+    <div class="small-4 columns clipper">
+      <span data-timestamp-format="MM-DD-YYYY h:mm:ss a" data-timestamp="<%= event.event_date.to_i*1000 %>"></span>
+    </div>
+    <div class="small-6 columns clipper">
+      <%= event.event_type %>
+    </div>
+    <div class="small-2 columns text-right">
+      <span class="cogspan">
+        <%= link_to "<i class='fa fa-chevron-circle-right'></i>".html_safe, event_path(event), class: "color-c5", :remote => true %>
+      </span>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,8 @@
+$('.alert-box').remove();
+$("body").append ("<%= j(render 'layouts/notices') %>");
+if ( $( "#affiliates_list" ).length ) {
+  $('#affiliates_list').html("<%= j(render 'affiliations/all') %>");
+}
+if ( $( "#affiliates_pending_list" ).length ) {
+  $('#affiliates_pending_list').html("<%= j(render 'affiliations/pending') %>");
+}

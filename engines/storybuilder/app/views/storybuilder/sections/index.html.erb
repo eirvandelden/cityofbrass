@@ -1,0 +1,54 @@
+<% provide(:title, "#{@parent_object.name}") %>
+
+<% content_for :breadcrumb do %>
+  <% if @parent_type.include?"adventure" %>
+    <% type_array = type_split(@parent_type) %>
+    <%=  breadcrumb [
+      { type_array[0] => nil },
+      { type_array[1] => polymorphic_path(@parent_type.tableize) },
+      { @parent_object.name => nil }
+    ] %>
+  <% else %>
+    <% type_array = type_split(@parent_object.adventure.type.demodulize) %>
+    <%=  breadcrumb [
+      { type_array[0] => nil },
+      { type_array[1] => polymorphic_path(@parent_object.adventure.type.demodulize.tableize) },
+      { @parent_object.adventure.name => tcob_path(@parent_object.adventure) },
+      { "#{@parent_type.titleize.pluralize}" => "#{tcob_path(@parent_object)}" },
+      { @parent_object.name => nil }
+    ] %>
+  <% end %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'menus/manage',
+      :locals => {
+        :active => 'sections',
+        :view_link => tcob_path(@parent_object),
+        :details_link => edit_tcob_path(@parent_object),
+        :options_link => "#{tcob_path(@parent_object, 'id')}/options",
+        :features_link => "#{tcob_path(@parent_object, 'id')}/features",
+        :sections_link => "#{tcob_path(@parent_object, 'id')}/sections",
+        :notables_link => "#{tcob_path(@parent_object, 'id')}/notables",
+        :menu_items_link => ("#{tcob_path(@parent_object, 'id')}/menu_items" if @parent_type.include?"adventure")
+      } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @parent_object.name,
+        :sub => 'Sections'
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="medium-5 columns" id="brass_form">
+        <%= render 'form_list' %>
+      </div>
+      <div class="medium-7 columns">
+        <%= render 'form_new' %>
+      </div>
+    </div>
+  </div>
+</div>

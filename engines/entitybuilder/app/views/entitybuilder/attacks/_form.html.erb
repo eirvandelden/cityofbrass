@@ -1,0 +1,120 @@
+<div id="form_div">
+<%= simple_form_for [@parent_object, @attack], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <label class="inline-label-flat">Attack</label>
+      </div>
+    </div>
+    <%= f.hidden_field :sort_order, :maxlength => 3 %>
+    <div class="row">
+      <div class="medium-8 columns">
+        <%= f.input :name %>
+      </div>
+      <div class="medium-4 columns text-center">
+        <label>Proficient</label>
+        <%= f.input :proficient, label: '', as: :boolean %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 columns">
+        <%= f.input :attack_type, collection: eb_attack_type_options, :include_blank => true %>
+        <%= f.input :damage_type %>
+      </div>
+      <div class="large-6 columns">
+        <%= f.input :attack_range, label: 'Range / Reach' %>
+        <%= f.input :critical_range %>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="row">
+    <div class="medium-12 columns">
+
+      <fieldset>
+        <legend>Attack Roll</legend>
+        <div class="row">
+          <div class="large-6 columns">
+            <%= f.input :attack_ability_score, label: 'Ability score', collection: @parent_object.ability_scores.pluck(:name), :include_blank => true %>
+            <%= f.input :attack_dice, placeholder: f.object.game_dice(@parent_object.core_rules), hint: valid_core_dice_hint %>
+          </div>
+          <div class="large-6 columns">
+            <%= f.input :attack_misc_modifier, label: 'Misc modifier' %>
+            <label>Calculated bonus<a id="unlock_attack"><span class="right"><i class="lock fa fa-lock" id="icon_unlock_attack"></i></a></span></label>
+            <%= f.input :attack_bonus, label: false, placeholder: f.object.calculated_attack_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values).to_s, disabled: true %>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Normal Damage</legend>
+        <div class="row">
+          <div class="large-6 columns">
+            <%= f.input :damage_ability_score, label: 'Ability score', collection: @parent_object.ability_scores.pluck(:name), :include_blank => true %>
+            <%= f.input :damage_dice, hint: valid_dice_hint %>
+          </div>
+          <div class="large-6 columns">
+            <%= f.input :damage_misc_modifier, label: 'Misc modifier' %>
+            <label>Calculated bonus<a id="unlock_damage"><span class="right"><i class="lock fa fa-lock" id="icon_unlock_damage"></i></a></span></label>
+            <%= f.input :damage_bonus, label: false, placeholder: f.object.calculated_damage_bonus(@parent_object.ability_scores, @parent_object.modifiers).to_s, disabled: true %>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Critical Damage</legend>
+        <div class="row">
+          <div class="large-6 columns">
+            <%= f.input :critical_damage_ability_score, label: 'Ability score', collection: @parent_object.ability_scores.pluck(:name), :include_blank => true %>
+            <%= f.input :critical_damage_dice, label: 'Damage dice', hint: valid_dice_hint %>
+          </div>
+          <div class="large-6 columns">
+            <%= f.input :critical_damage_misc_modifier, label: 'Misc modifier' %>
+            <label>Calculated bonus<a id="unlock_critical"><span class="right"><i class="lock fa fa-lock" id="icon_unlock_critical"></i></a></span></label>
+            <%= f.input :critical_damage_bonus, label: false, placeholder: f.object.calculated_critical_damage_bonus(@parent_object.ability_scores, @parent_object.modifiers).to_s, disabled: true %>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Special Damage</legend>
+        <div class="row">
+          <div class="medium-12 columns">
+            <%= f.input :special_damage_name, placeholder: 'Special Damage' %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 columns">
+            <%= f.input :special_damage_ability_score, label: 'Ability score', collection: @parent_object.ability_scores.pluck(:name), :include_blank => true %>
+            <%= f.input :special_damage_dice, label: 'Damage dice', hint: valid_dice_hint %>
+          </div>
+          <div class="large-6 columns">
+            <%= f.input :special_damage_misc_modifier, label: 'Misc modifier' %>
+            <label>Calculated bonus<a id="unlock_special"><span class="right"><i class="lock fa fa-lock" id="icon_unlock_special"></i></a></span></label>
+            <%= f.input :special_damage_bonus, label: false, placeholder: f.object.calculated_special_damage_bonus(@parent_object.ability_scores, @parent_object.modifiers).to_s, disabled: true %>
+          </div>
+        </div>
+      </fieldset>
+
+
+    </div>
+  </div>
+
+  <%= render "layouts/form/save_and_cancel" %>
+<% end %>
+</div>
+
+<script>
+  $('#unlock_attack').on("click", function(e){
+    unlock_field('#attack_attack_bonus', '#icon_unlock_attack');
+  });
+  $('#unlock_damage').on("click", function(e){
+    unlock_field('#attack_damage_bonus', '#icon_unlock_damage');
+  });
+  $('#unlock_critical').on("click", function(e){
+    unlock_field('#attack_critical_damage_bonus', '#icon_unlock_critical');
+  });
+  $('#unlock_special').on("click", function(e){
+    unlock_field('#attack_special_damage_bonus', '#icon_unlock_special');
+  });
+</script>

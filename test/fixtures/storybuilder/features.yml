@@ -1,0 +1,71 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+page_text1:
+  featureable: encounter_one
+  featureable_type: Storybuilder::Page
+  sort_order: 1
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: text
+  record_type:
+  search_tags:
+
+adventure_text1:
+  featureable: resident_one
+  featureable_type: Storybuilder::Adventure
+  sort_order: 1
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: text
+  record_type:
+  search_tags:
+
+page_child1:
+  featureable: encounter_one
+  featureable_type: Storybuilder::Page
+  sort_order: 2
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: child
+  record_type:
+  search_tags:
+
+page_tag1:
+  featureable: encounter_one
+  featureable_type: Storybuilder::Page
+  sort_order: 3
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: tag
+  record_type: Storybuilder::Encounter
+  search_tags: hello
+
+adventure_tag1:
+  featureable: resident_one
+  featureable_type: Storybuilder::Adventure
+  sort_order: 3
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: tag
+  record_type: Storybuilder::Encounter
+  search_tags: hello
+
+page_special1:
+  featureable: encounter_one
+  featureable_type: Storybuilder::Page
+  sort_order: 4
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: special
+  record_type:
+  search_tags:
+
+adventure_special1:
+  featureable: resident_one
+  featureable_type: Storybuilder::Adventure
+  sort_order: 4
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: special
+  record_type:
+  search_tags:

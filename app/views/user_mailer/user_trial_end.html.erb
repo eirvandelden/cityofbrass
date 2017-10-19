@@ -1,0 +1,9 @@
+<p>
+  Hello <%= @user.email %>!
+</p>
+<p>
+  Thank you for trying the City of Brass. We hope you enjoyed your trial and although we are sad to see you go, we hope your RPG days bring you great fortune and adventure in the years to come.
+</p>
+<p>
+  If you have any questions, please reply to <%= mail_to ENV["DEFAULT_FROM_EMAIL"], ENV["DEFAULT_FROM_EMAIL"], subject: "City of Brass Support" %>
+</p>

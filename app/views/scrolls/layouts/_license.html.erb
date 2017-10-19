@@ -1,0 +1,18 @@
+<div id="license_div">
+  <div class="row">
+    <div class="medium-12 medium-centered columns text-center">
+      <%= image_tag 'logo.png', width: '200px' %>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="medium-12 columns">
+
+      <div class="terms_full">
+
+        <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+
+      </div>
+    </div>
+  </div>
+</div>

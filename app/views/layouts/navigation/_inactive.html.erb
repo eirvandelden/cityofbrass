@@ -1,0 +1,3 @@
+<li><a href="/users/edit"><i class='fa fa-key fa-fw'></i> Settings</a></li>
+<% unless current_user.has_vip_status? %><li><a href="/billing"><i class='fa icon-calendar fa-fw'></i> Subscription</a></li><% end %>
+<li><%= link_to "<i class='fa fa-sign-out fa-fw'></i> Logout".html_safe, "/users/logout", :method => :delete %></li>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+menu_item_join1:
+  menu_item: menu_item1
+  menu_item_joinable: district1
+  menu_item_joinable_type: Worldbuilder::District
+
+menu_item_join2:
+  menu_item: menu_item2
+  menu_item_joinable: district1
+  menu_item_joinable_type: Worldbuilder::District

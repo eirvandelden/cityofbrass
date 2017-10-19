@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="medium-6 columns">
+    <h3 class="color-c5"><%= @rule.rule_type.blank? ? "Rule" : "#{@rule.rule_type}" %></h3>
+  </div>
+  <div class="medium-6 columns text-right">
+    <h3 class="color-c5"><%= "#{@rule.core_rules}" %></h3>
+  </div>
+</div>
+<fieldset>
+  <%= render "rulebuilder/rules/form/#{@rule.rule_type.parameterize}", :f => f %>
+</fieldset>
+
+<%= render "layouts/form/save" %>
+
+<%= render :partial => 'gallery/images/image_modal', :locals => { :image_for => "#{@type.underscore}_gallery_image_join_attributes_image_id" }  %>

@@ -1,0 +1,10 @@
+<ul class="no-bullet">
+  <% @parent_object.inventory_items.each do |inventory_item| %>
+  <li>
+    <div class="indent">
+      <strong><%= link_to_if @clickable, inventory_item.item.name, "#{polymorphic_path(@parent_object)}/inventory_items/#{inventory_item.id}", "data-reveal-id" => "inventory_item_modal", :remote => true %><%= " (#{inventory_item.detail})" if inventory_item.detail.present? %></strong>
+      <%= inventory_item.item.short_description %>
+    </div>
+  </li>
+  <% end %>
+</ul>

@@ -1,0 +1,23 @@
+<ul class="no-bullet">
+<% if @page.parent %>
+  <li>
+    <strong>Parent: </strong>
+    <%= link_to @page.parent.name, storybuilder.polymorphic_path([@adventure, @page.parent]) %><br>
+  </li>
+<% end %>
+<% @page.features.each do |feature| %>
+  <li>
+  <%= render :partial =>'layouts/features/looper',
+      :locals => {
+        :feature => feature,
+        :record => @page,
+        :resident => @resident
+    } %>
+  </li>
+<% end %>
+
+<% if @page.notables.size > 0 %>
+  <%= render "layouts/notables/entity_feature_list", list: @page.notables %>
+<% end %>
+
+</ul>

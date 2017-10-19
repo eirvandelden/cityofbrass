@@ -1,0 +1,3 @@
+<%= simple_form_for @page, url: city_path(@parent_object, @page), :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>

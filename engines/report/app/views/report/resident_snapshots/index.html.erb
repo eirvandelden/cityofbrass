@@ -1,0 +1,32 @@
+<% provide(:title, "Report | Residents") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Report" => nil },
+    { "Residents" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'report/menus/report' %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'fa fa-user',
+        :main => "Resident",
+        :sub  => "Reports"
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= render "report/resident_snapshots/partial/summary" %>
+      </div>
+      <div class="medium-6 columns text-center">
+        <p><%= image_tag "Halfling-A.jpg" %></p>
+      </div>
+    </div>
+  </div>
+</div>

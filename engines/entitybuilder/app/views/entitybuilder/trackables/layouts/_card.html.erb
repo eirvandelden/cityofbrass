@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="small-6 columns">
+    &nbsp;
+  </div>
+  <div class="small-2 columns text-center">
+    <span class="eb-v1-card-title">Cur</span>
+  </div>
+  <div class="small-2 columns text-center">
+    <span class="eb-v1-card-title">Tmp</span>
+  </div>
+  <div class="small-2 columns text-center end">
+    <span class="eb-v1-card-title">Max</span>
+  </div>
+</div>
+
+<% if (entity.type.include?"Character") && can_edit %>
+
+  <% trackables.each do |trackable| %>
+    <%= simple_form_for [entity, trackable], url: "#{entitybuilder.polymorphic_path(entity)}/trackables/#{trackable.id}/update_card", :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+      <div class="row">
+        <div class="small-6 columns eb-v1-card-title clipper">
+          <%= link_to_if (clickable && trackable.description.present?), trackable.name, "#{entitybuilder.polymorphic_path(entity)}/trackables/#{trackable.id}", "data-reveal-id" => "trackable_modal", :remote => true %>
+        </div>
+        <div class="small-2 columns text-center">
+          <%= f.input :current, label: false, input_html: { class: 'eb-v1-card-input', onblur: "$('#edit_trackable_#{trackable.id}').submit()" } %>
+        </div>
+        <div class="small-2 columns text-center">
+          <%= f.input :temporary, label: false, input_html: { class: 'eb-v1-card-input', onblur: "$('#edit_trackable_#{trackable.id}').submit()" } %>
+        </div>
+        <div class="small-2 columns text-center">
+          <%= trackable.maximum %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+<% else %>
+
+  <% trackables.each do |trackable| %>
+      <div class="row">
+        <div class="small-5 columns eb-v1-card-title clipper">
+          <%= link_to_if (clickable && trackable.description.present?), trackable.name, "#{entitybuilder.polymorphic_path(entity)}/trackables/#{trackable.id}", "data-reveal-id" => "trackable_modal", :remote => true %>
+        </div>
+        <div class="small-2 columns text-center">
+          <%= trackable.current %>
+        </div>
+        <div class="small-2 columns text-center">
+          <%= trackable.temporary %>
+        </div>
+        <div class="small-2 columns text-center end">
+          <%= trackable.maximum %>
+        </div>
+      </div>
+  <% end %>
+
+<% end %>

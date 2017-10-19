@@ -1,0 +1,5 @@
+<div class="row">
+  <div class="small-12 columns">
+    <%= f.association :plan, collection: @plans, label_method: :display_name, value_method: :id, :include_blank => false %>
+  </div>
+</div>

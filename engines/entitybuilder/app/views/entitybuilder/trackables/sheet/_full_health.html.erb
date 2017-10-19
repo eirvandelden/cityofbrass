@@ -1,0 +1,7 @@
+<div class="small-3 columns">
+  <div class="sheet-over-big <%= "reduced-big" if @hit_points.current.to_i > 999 %> text-center">
+    <%= @hit_points.current if @hit_points %>
+    <%= link_to "<i class='fa fa-cogs'></i>".html_safe, "#{polymorphic_path(@parent_object)}/trackables/#{@hit_points.id}/edit_sheet", "data-reveal-id" => "trackable_modal", class: "sheet-hpcogs", :remote => true if @clickable %>
+  </div>
+  <div class="sheet-under text-center"><i class='fa fa-pencil'></i> <%= @hit_points.name if @hit_points %></div>
+</div>

@@ -1,0 +1,3 @@
+<%= simple_form_for @resident, :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>

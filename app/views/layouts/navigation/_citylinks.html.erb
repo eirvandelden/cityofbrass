@@ -1,0 +1,22 @@
+<% if user_signed_in? %>
+  <li><label class="text-right">Community</label></li>
+  <li><a href="https://symposium.cityofbrass.io"><i class='fa icon-chat fa-fw'></i> Symposium</a></li>
+<% end %>
+  <li><label class="text-right">Search</label></li>
+<% if user_signed_in? %>
+  <li><a href="/residents"><i class='fa fa-users fa-fw'></i> Residents</a></li>
+  <li><a href="/cm/campaigns"><i class='fa fa-sitemap fa-fw'></i> Campaigns</a></li>
+<% end %>
+  <li><a href="/wb"><i class='fa icon-globe fa-fw'></i> Districts</a></li>
+  <li class="divider show-for-medium-up"></li>
+<li><label class="text-right">Support</label></li>
+<li><a href="/support/faqs"><i class='fa icon-graduation-cap fa-fw'></i> FAQs</a></li>
+<% if user_signed_in? %>
+  <li><a href="https://symposium.cityofbrass.io/c/support"><i class='fa icon-megaphone fa-fw'></i> Support</a></li>
+  <li><a href="/scrolls/terms_of_service"><i class='fa fa-book fa-fw'></i> Terms of Service</a></li>
+<% end %>
+<li class="divider show-for-medium-up"></li>
+<li><label class="text-right">Social</label></li>
+<li><a href="https://twitter.com/embersds" target="_blank"><i class='fa fa-twitter fa-fw'></i> Twitter</a></li>
+<li><a href="https://www.facebook.com/embersds" target="_blank"><i class='fa fa-facebook-square fa-fw'></i> Facebook</a></li>
+<li><a href="https://www.youtube.com/channel/UCHCKnNCIkoneh1o4Uog3tsQ" target="_blank"><i class='fa fa-youtube-square fa-fw'></i> YouTube</a></li>

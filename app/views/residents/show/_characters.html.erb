@@ -1,0 +1,7 @@
+<%= render 'layouts/header', icon: 'fa fa-shield', main: 'Characters', index_link: entitybuilder.resident_characters_path %>
+<hr class="faded">
+<% @resident.top_5_characters.each do |character| %>
+  <h2><%= link_to character.name, entitybuilder.resident_character_path(character)  %></h2>
+  <h4 style="color:#c5c5c5;">Updated: <span data-timestamp="<%= character.updated_at.to_i*1000 %>"></span></h4>
+  <p><%= character.short_description %></p>
+<% end %>

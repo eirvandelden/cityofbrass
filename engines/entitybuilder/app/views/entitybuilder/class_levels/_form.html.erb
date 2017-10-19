@@ -1,0 +1,37 @@
+<div id="form_div">
+<%= simple_form_for [@parent_object, @class_level], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <label class="inline-label-flat">Class Level</label>
+      </div>
+    </div>
+    <%= f.hidden_field :sort_order, :maxlength => 3 %>
+    <div class="row">
+      <div class="medium-12 columns">
+        <%= f.input :name, label: 'Class' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= f.input :level %>
+      </div>
+      <div class="medium-6 columns">
+        <%= f.input :hit_dice, hint: valid_core_dice_hint %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-12 columns">
+        <%= f.input :description %>
+      </div>
+    </div>
+  </fieldset>
+  <%= render "layouts/form/save_and_cancel" %>
+<% end %>
+</div>
+
+<% unless @class_level.new_record? %>
+<div id="form_modifier_placeholder">
+  <%= render "entitybuilder/modifiers/form_item_list" %>
+</div>
+<% end %>

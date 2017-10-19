@@ -1,0 +1,45 @@
+<fieldset>
+  <div class="row inline text-right">
+    <div class="small-12 columns">
+      <label class="inline-label-flat">Resident</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-7 columns">
+      <ul class="no-bullet">
+        <li><strong><%= link_to @resident.name, resident_path(@resident.slug), target: "_user" %></strong></li>
+        <li><%= @resident.short_description %></li>
+      </ul>
+
+      <table class="simple_table">
+        <tbody>
+          <tr><td><strong><i class="fa icon-images fa-fw"></i> Images</strong></td><td class="text-center"><%= @resident.resident_images.size %></td></tr>
+          <tr><td><strong><i class="fa icon-images fa-fw"></i> Gallery</strong></td><td class="text-center"><%= @resident.resident_images_sum %></td></tr>
+        </tbody>
+        <tbody>
+          <tr><td><strong><i class="fa icon-book fa-fw"></i> Adventures</strong></td><td class="text-center"><%= @resident.resident_adventures.size %></td></tr>
+          <tr><td><strong><i class="fa fa-sitemap fa-fw"></i> Campaigns</strong></td><td class="text-center"><%= @resident.campaigns.size %></td></tr>
+          <tr><td><strong><i class="fa fa-shield fa-fw"></i> Characters</strong></td><td class="text-center"><%= @resident.resident_characters.size %></td></tr>
+          <tr><td><strong><i class="fa fa-paw fa-fw"></i> Creatures</strong></td><td class="text-center"><%= @resident.resident_creatures.size %></td></tr>
+          <tr><td><strong><i class="fa icon-globe fa-fw"></i> Districts</strong></td><td class="text-center"><%= @resident.districts.size %></td></tr>
+        </tbody>
+        </tbody>
+          <tr><td><strong><i class="fa fa-book fa-fw"></i> Rules</strong></td><td class="text-center"><%= @resident.resident_rules.size %></td></tr>
+          <tr><td><strong><i class="fa icon-price-tag fa-fw"></i> Items</strong></td><td class="text-center"><%= @resident.resident_items.size %></td></tr>
+          <tr><td><strong><i class="fa fa-magic fa-fw"></i> Spells</strong></td><td class="text-center"><%= @resident.resident_spells.size %></td></tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="small-5 columns text-center">
+      <p>
+        <% unless @resident.gallery_image.nil? %>
+          <%= image_tag @resident.gallery_image.file.url(:thumb), :alt => @resident.name %>
+        <% else %>
+          <%= image_tag "Halfling-A.jpg" %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</fieldset>

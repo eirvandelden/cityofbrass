@@ -1,0 +1,30 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: postgres
+  username: postgres
+  password:
+  pool: 5
+
+development:
+  <<: *default
+  database: cityofbrass_development
+
+test:
+  <<: *default
+  database: cityofbrass_test
+
+production:
+  <<: *default
+  database: cityofbrass
+  timeout: 5000
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
+
+staging:
+  <<: *default
+  database: quin-slon
+  timeout: 5000
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>

@@ -1,0 +1,22 @@
+<% @defenses_w_bonus.each do |defense| %>
+  <tr class="roll">
+    <td><%= defense.name %></td>
+    <td class="text-center">
+      <%= defense.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) %>
+    </td>
+  </tr>
+<% end %>
+<% @defenses_w_text.each do |defense| %>
+  <tr class="roll">
+    <td colspan="2">
+      <div class="indent">
+        <%= defense.name %>:
+        <% if defense.base.present? %>
+          <span class='color-c5'><%= "#{defense.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values)}/" %><%= defense.description %></span>
+        <% else %>
+          <span class='color-c5'><%= defense.description %></span>
+        <% end %>
+      </div>
+    </td>
+  </tr>
+<% end %>

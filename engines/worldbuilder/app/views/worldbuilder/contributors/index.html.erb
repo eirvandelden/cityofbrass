@@ -1,0 +1,44 @@
+<% provide(:title, "#{@district.name}") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { @district.name => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'menus/manage',
+      :locals => {
+        :active => 'contributors',
+        :view_link => district_path(@district.slug),
+        :details_link => edit_district_path(@district),
+        :options_link => "#{tcob_path(@district, 'id')}/options",
+        :features_link => "#{tcob_path(@district, 'id')}/features",
+        :sections_link => "#{tcob_path(@district, 'id')}/sections",
+        :menu_items_link => ("#{tcob_path(@district, 'id')}/menu_items"),
+        :contributors_link => ("#{tcob_path(@district, 'id')}/contributors" if @district.is_owner?(current_user))
+      } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @district.name,
+        :sub => 'Contributors',
+        :add_remote_link => send("new_district_contributor_path"),
+        :can_auth => @district.can_edit?(current_user, admin_signed_in?)
+      }
+    %>
+    <hr class="faded">
+
+    <div class="row">
+      <div class="medium-6 columns" id="index_list">
+        <%= render 'list' %>
+      </div>
+      <div class="medium-6 columns">
+        <%= render 'about' %>
+      </div>
+    </div>
+
+  </div>
+</div>

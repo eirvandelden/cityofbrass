@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= full_title(yield(:title)) %></title>
+  <link rel="apple-touch-icon" href="<%=image_path "apple-touch-icon.png" %>">
+  <link rel="apple-touch-icon-precomposed" href="<%=image_path "apple-touch-icon-precomposed.png" %>">
+  <meta name="msapplication-config" content="none" />
+
+<%= stylesheet_link_tag "application", "data-turbolinks-track" => true %>
+
+<%= javascript_include_tag "vendor/modernizr" %>
+
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "https://cdn.ckeditor.com/4.5.3/full/ckeditor.js" if user_signed_in? %>
+
+<%= yield :head %>
+
+<%= csrf_meta_tags %>
+<%= favicon_link_tag 'apple-touch-icon.png' %>
+
+</head>
+<body>
+
+  <div id="wrap">
+    <div id="main">
+      <%= render 'layouts/notices' %>
+      <%= render 'layouts/topbar/menu' %>
+      <%= yield %>
+      <br>
+      <% if Rails.env.development? %>
+      <div class="show-for-medium-up">
+        <%= debug(params) %>
+        <blockquote>
+          Memory<br>
+          <% mem = GetProcessMem.new.inspect %>
+          <%= mem %>
+          <br><br>
+        </blockquote>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div id="footer">
+    <%= render 'layouts/footer' %>
+  </div>
+
+  <span class="go-top"><a href="#" >Back to top <i class='fa fa-chevron-circle-up'></i></a></span>
+
+  <%= yield :footer %>
+
+</body>
+</html>

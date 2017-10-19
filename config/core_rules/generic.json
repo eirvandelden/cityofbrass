@@ -1,0 +1,64 @@
+{
+  "name": "Generic",
+  "active": "true",
+  "stock": "false",
+  "default_dice": "1d20",
+  "d20_system": "false",
+  "entitybuilder": {
+    "sheet": "default",
+    "use_modifiers": "true",
+    "show_core_blocks": "true",
+    "menu": [
+      {"label": "Descriptors",      "link": "descriptors",      "add_modifiers": "true"},
+      {"label": "Ability Scores",   "link": "ability_scores",   "add_modifiers": "true"},
+      {"label": "Class Levels",     "link": "class_levels",     "add_modifiers": "true"},
+      {"label": "Trackables",       "link": "trackables",       "add_modifiers": "false"},
+      {"label": "Attacks",          "link": "attacks",          "add_modifiers": "false"},
+      {"label": "Movement",         "link": "movements",        "add_modifiers": "true"},
+      {"label": "Defenses",         "link": "defenses",         "add_modifiers": "false"},
+      {"label": "Spells",           "link": "known_spells",     "add_modifiers": "false"},
+      {"label": "Skills",           "link": "skills",           "add_modifiers": "true"},
+      {"label": "Abilities",        "link": "linked_rules?rule_type=rule", "add_modifiers": "true"},
+      {"label": "Inventory Items",  "link": "inventory_items",  "add_modifiers": "true"},
+      {"label": "Currencies",       "link": "currencies",       "add_modifiers": "false"},
+      {"label": "Modifiers",        "link": "modifiers",        "add_modifiers": "false"},
+      {"label": "Options",          "link": "options",          "add_modifiers": "false"}
+    ],
+    "attacks": [],
+    "core_skills": [],
+    "character": {
+      "ability_scores": [],
+      "attacks": [],
+      "base_values": [],
+      "currencies": [],
+      "defenses": [],
+      "descriptors": [],
+      "linked_rules": [],
+      "movements": [],
+      "saving_throws": [],
+      "skills":[],
+      "trackables": []
+    },
+    "creature": {
+      "ability_scores": [],
+      "attacks": [],
+      "base_values": [],
+      "currencies": [],
+      "defenses": [],
+      "descriptors": [],
+      "linked_rules": [],
+      "movements": [],
+      "saving_throws": [],
+      "skills": [],
+      "trackables": []
+    }
+  },
+  "rulebuilder": {
+    "rules": [
+      {"name": "Rule", "is_shared": "true"}
+    ],
+    "powers": [
+      {"name": "Power", "is_shared": "true"}
+    ]
+  }
+}

@@ -1,0 +1,149 @@
+<dl class="left-menu show-for-medium-up">
+  <% if local_assigns.has_key? :index_link %>
+    <% unless index_link.nil? %>
+    <dd class="<%= 'active' if active=='index' %>">
+      <h3><%= link_to 'Index', index_link%></h3>
+    </dd>
+    <% end %>
+  <% end %>
+  <% if local_assigns.has_key? :view_link %>
+    <% unless view_link.nil? %>
+    <dd class="<%= 'active' if active=='view' %>">
+      <h3><%= link_to 'View', view_link%></h3>
+    </dd>
+    <% end %>
+  <% end %>
+  <% if local_assigns.has_key? :details_link %>
+    <% unless details_link.nil? %>
+    <dd class="<%= 'active' if active=='edit' || active.blank? %>">
+      <h3><%= link_to 'Details', details_link%></h3>
+    </dd>
+    <% end %>
+  <% end %>
+  <% if local_assigns.has_key? :features_link %>
+    <% unless features_link.nil? %>
+    <dd class="<%= 'active' if active=='features' %>">
+      <h3><%= link_to 'Features', features_link%></h3>
+    </dd>
+    <% end %>
+  <% end %>
+  <% if local_assigns.has_key? :sections_link %>
+    <% unless sections_link.nil? %>
+    <dd class="<%= 'active' if active=='sections' %>">
+      <h3><%= link_to 'Sections', sections_link%></h3>
+    </dd>
+    <% end %>
+  <% end %>
+  <% if local_assigns.has_key? :notables_link %>
+    <% unless notables_link.nil? %>
+    <dd class="<%= 'active' if active=='notables' %>">
+      <h3><%= link_to 'Notables', notables_link%></h3>
+    </dd>
+    <% end %>
+  <% end %>
+  <% if local_assigns.has_key? :menu_items_link %>
+    <% unless menu_items_link.nil? %>
+    <dd class="<%= 'active' if active=='menu_items' %>">
+      <h3><%= link_to 'Menu Items', menu_items_link%></h3>
+    </dd>
+    <% end %>
+  <% end %>
+  <% if local_assigns.has_key? :contributors_link %>
+    <% unless contributors_link.nil? %>
+    <dd class="<%= 'active' if active=='contributors' %>">
+      <h3><%= link_to 'Contributors', contributors_link%></h3>
+    </dd>
+    <% end %>
+  <% end %>
+  <% if local_assigns.has_key? :players_link %>
+    <% unless players_link.nil? %>
+    <dd class="<%= 'active' if active=='players' %>">
+      <h3><%= link_to 'Players', players_link%></h3>
+    </dd>
+    <% end %>
+  <% end %>
+  <% if local_assigns.has_key? :options_link %>
+    <% unless options_link.nil? %>
+    <dd class="<%= 'active' if active=='options' %>">
+      <h3><%= link_to 'Options', options_link%></h3>
+    </dd>
+    <% end %>
+  <% end %>
+</dl>
+
+<% content_for :left_menu_icon do %>
+  <section class="left-small">
+    <a class="left-off-canvas-toggle menu-icon"><span></span></a>
+  </section>
+<% end %>
+
+<% content_for :left_menu do %>
+  <li><label>Manage</label></li>
+  <% if local_assigns.has_key? :index_link %>
+  <li><%= link_to 'Index', index_link %></li>
+  <% end %>
+  <% if local_assigns.has_key? :view_link %>
+  <li><%= link_to 'View', view_link %></li>
+  <% end %>
+  <% if local_assigns.has_key? :details_link %>
+  <li><%= link_to 'Details', details_link %></li>
+  <% end %>
+  <% if local_assigns.has_key? :features_link %>
+  <li><%= link_to 'Features', features_link %></li>
+  <% end %>
+  <% if local_assigns.has_key? :sections_link %>
+  <li><%= link_to 'Sections', sections_link %></li>
+  <% end %>
+  <% if local_assigns.has_key? :notables_link %>
+  <li><%= link_to 'Notables', notables_link %></li>
+  <% end %>
+  <% if local_assigns.has_key? :menu_items_link %>
+  <li><%= link_to 'Menu Items', menu_items_link %></li>
+  <% end %>
+  <% if local_assigns.has_key? :contributors_link %>
+  <li><%= link_to 'Contributors', contributors_link %></li>
+  <% end %>
+  <% if local_assigns.has_key? :players_link %>
+  <li><%= link_to 'Players', players_link %></li>
+  <% end %>
+  <% if local_assigns.has_key? :options_link %>
+  <li><%= link_to 'Options', options_link %></li>
+  <% end %>
+<% end %>
+
+<% content_for :small_menu do %>
+  <li class="has-dropdown show-for-small"><a href="#"><i class='fa fa-gears fa-fw'></i> Manage</a>
+    <ul class="dropdown">
+      <% if local_assigns.has_key? :index_link %>
+      <li><%= link_to 'Index', index_link %></li>
+      <% end %>
+      <% if local_assigns.has_key? :view_link %>
+      <li><%= link_to 'View', view_link %></li>
+      <% end %>
+      <% if local_assigns.has_key? :details_link %>
+      <li><%= link_to 'Details', details_link %></li>
+      <% end %>
+      <% if local_assigns.has_key? :features_link %>
+      <li><%= link_to 'Features', features_link %></li>
+      <% end %>
+      <% if local_assigns.has_key? :sections_link %>
+      <li><%= link_to 'Sections', sections_link %></li>
+      <% end %>
+      <% if local_assigns.has_key? :notables_link %>
+      <li><%= link_to 'Notables', notables_link %></li>
+      <% end %>
+      <% if local_assigns.has_key? :menu_items_link %>
+      <li><%= link_to 'Menu Items', menu_items_link %></li>
+      <% end %>
+      <% if local_assigns.has_key? :contributors_link %>
+      <li><%= link_to 'Contributors', contributors_link %></li>
+      <% end %>
+      <% if local_assigns.has_key? :players_link %>
+      <li><%= link_to 'Players', players_link %></li>
+      <% end %>
+      <% if local_assigns.has_key? :options_link %>
+      <li><%= link_to 'Options', options_link %></li>
+      <% end %>
+    </ul>
+  </li>
+<% end %>

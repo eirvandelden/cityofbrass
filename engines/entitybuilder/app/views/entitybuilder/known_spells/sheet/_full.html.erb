@@ -1,0 +1,28 @@
+<% spell_classes = @prepared_spells.collect(&:spell_class).uniq.sort %>
+<% spell_classes.each do |spell_class| %>
+
+  <h3 class="eb-v1-card-header"><%= spell_class %></h3>
+  <div class="indent">
+
+    <% levels = @prepared_spells.select { |i| i.spell_class == spell_class && i.at_will == false }.collect(&:level).uniq.sort_by! { |l| l.to_i } %>
+    <% levels = levels.reject { |i| i.nil? } %>
+
+    <% list_type = 'static_list' %>
+    <% list_type = 'active_list' if @parent_object.can_edit?(current_user, admin_signed_in?, @type) %>
+
+    <ul class="no-bullet" style="margin-bottom: 0px;">
+      <% zero_level_known_spells = @prepared_spells.select { |i| i.at_will == false && i.level.nil? && i.spell_class == spell_class } %>
+      <%= render partial: "entitybuilder/known_spells/sheet/#{list_type}", locals: { known_spells: zero_level_known_spells, level: '' } if zero_level_known_spells.present? %>
+
+      <% at_will_known_spells = @prepared_spells.select { |i| i.at_will == true && i.spell_class == spell_class } %>
+      <%= render partial: "entitybuilder/known_spells/sheet/#{list_type}", locals: { known_spells: at_will_known_spells, level: 'At-will' } if at_will_known_spells.present? %>
+
+      <% levels.each do |level| %>
+        <% known_spells = @prepared_spells.select { |i| i.at_will == false && i.level == level && i.spell_class == spell_class } %>
+        <%= render partial: "entitybuilder/known_spells/sheet/#{list_type}", locals: { known_spells: known_spells, level: level } %>
+      <% end %>
+    </ul>
+  </div>
+  <br>
+
+<% end %>

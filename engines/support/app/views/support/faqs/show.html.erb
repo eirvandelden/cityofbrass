@@ -1,0 +1,27 @@
+<% provide(:title, "FAQs | #{@faq.question}") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "FAQs" => faqs_path },
+          { @faq.question => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-10 medium-centered columns">
+    <%= render :partial =>'layouts/header',
+        :locals => {
+        :icon => 'icon-graduation-cap',
+        :main => 'FAQ',
+        :sub => @faq.topic,
+        :edit_link => edit_faq_path(@faq),
+        :delete_link => faq_path(@faq.id),
+        :can_auth => admin_signed_in?
+      }
+    %>
+    <hr class="faded">
+    <h2 style="margin-bottom: .75rem;"><%= @faq.question %></h2>
+    <%= sanitize @faq.answer, tags: %w(iframe strong em b i p code pre tt samp kbd var sub sup dfn cite big small address hr br span h1 h2 h3 h4 h5 h6 ul ol li dl dt dd abbr acronym a img blockquote del ins table tr td th), attributes: %w(href src width height alt cite datetime title class name xml:lang abbr id style frameborder) %>
+    <p><i class='fa fa-angle-double-left'></i> <%= link_to "Back".html_safe, :back %></p>
+  </div>
+</div>

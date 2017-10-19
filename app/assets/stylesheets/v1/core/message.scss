@@ -1,0 +1,15 @@
+@import "v1/core/base";
+
+.message{
+  //padding: 5px;
+  border-bottom: 1px dotted $color-c5;
+  color: #000;
+  :hover{
+    background-color: #f7f7da;
+    cursor:pointer
+  }
+  .row{
+    margin: 0px 0px !important;
+    padding: 5px;
+  }
+}

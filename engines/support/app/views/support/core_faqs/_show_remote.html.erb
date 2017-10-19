@@ -1,0 +1,18 @@
+<div id="show_div">
+  <div class="row">
+    <div class="medium-12 medium-centered columns">
+      <%= render :partial =>'layouts/header',
+        :locals => {
+          :icon => 'icon-graduation-cap',
+          :main => 'Tutorial'
+        }
+      %>
+      <hr class="faded">
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-12 columns">
+      <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+<%
+  skills_superb = @parent_object.skills.select{ |v| v.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) == 5 }
+  skills_great = @parent_object.skills.select{ |v| v.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) == 4 }
+  skills_good = @parent_object.skills.select{ |v| v.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) == 3 }
+  skills_fair = @parent_object.skills.select{ |v| v.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) == 2 }
+  skills_average = @parent_object.skills.select{ |v| v.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) == 1 }
+%>
+
+<table class="sheet-table">
+  <thead>
+    <tr>
+      <th class="text-left" colspan="5">Skills</th>
+      <th class="text-right">
+        <span class='popbox'>
+          <a class='openbox' onclick="roll_them_bones('Fate', 'Fate', '0');">
+            <i class='fa fa-square'></i>
+          </a>
+        </span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td class="text-right">
+        Superb (<%= render 'layouts/dice_roller',
+          core_rules: @parent_object.core_rules,
+          dice: "Fate",
+          bonus: "+5",
+          display: "+5"
+        %>)
+      </td>
+      <% skills_superb.each do |skill| %>
+        <td  class="color-c5">
+          <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{polymorphic_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
+        </td>
+      <% end %>
+    </tr>
+
+    <tr>
+      <td class="text-right">
+        Great (<%= render 'layouts/dice_roller',
+          core_rules: @parent_object.core_rules,
+          dice: "Fate",
+          bonus: "+4",
+          display: "+4"
+        %>)
+      </td>
+      <% skills_great.each do |skill| %>
+        <td class="color-c5">
+          <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{polymorphic_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
+        </td>
+      <% end %>
+    </tr>
+
+    <tr>
+      <td class="text-right">
+        Good (<%= render 'layouts/dice_roller',
+          core_rules: @parent_object.core_rules,
+          dice: "Fate",
+          bonus: "+3",
+          display: "+3"
+        %>)
+      </td>
+      <% skills_good.each do |skill| %>
+        <td class="color-c5">
+          <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{polymorphic_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
+        </td>
+      <% end %>
+    </tr>
+
+    <tr>
+      <td class="text-right">
+        Fair (<%= render 'layouts/dice_roller',
+          core_rules: @parent_object.core_rules,
+          dice: "Fate",
+          bonus: "+2",
+          display: "+2"
+        %>)
+      </td>
+      <% skills_fair.each do |skill| %>
+        <td class="color-c5">
+          <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{polymorphic_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
+        </td>
+      <% end %>
+    </tr>
+
+    <tr>
+      <td class="text-right">
+        Average (<%= render 'layouts/dice_roller',
+          core_rules: @parent_object.core_rules,
+          dice: "Fate",
+          bonus: "+1",
+          display: "+1"
+        %>)
+      </td>
+      <% skills_average.each do |skill| %>
+        <td class="color-c5">
+          <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{polymorphic_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
+        </td>
+      <% end %>
+    </tr>
+
+  </tbody>
+</table>

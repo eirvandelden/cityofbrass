@@ -1,0 +1,27 @@
+<fieldset>
+  <div class="row inline text-right">
+    <div class="small-12 columns">
+      <label class="inline-label-flat">Current Login By Week</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <table class="simple_table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th class="text-center">Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @current_login_counts_by_week.each do |item| %>
+            <tr>
+              <td><strong><%= item.dte %></strong></td>
+              <td class="text-center"><%= item.total %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</fieldset>

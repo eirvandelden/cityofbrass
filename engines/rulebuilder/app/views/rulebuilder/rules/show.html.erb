@@ -1,0 +1,18 @@
+<% provide(:title, "Rules | #{@rule.name}") %>
+<% type_array = type_split(@type) %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => polymorphic_path(@type.tableize) },
+    { @rule.name => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-10 medium-centered columns">
+    <%= render "rule" %>
+    <p><i class='fa fa-angle-double-left'></i> <a href="javascript:history.back()">Back</a></p>
+  </div>
+</div>
+
+<%= render 'layouts/modal/image' %>

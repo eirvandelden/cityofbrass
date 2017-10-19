@@ -1,0 +1,16 @@
+<% provide(:title, 'FAQs') %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "FAQs" => faqs_path },
+          { "New FAQ" => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-10 medium-centered columns" id="brass_form">
+    <%= simple_form_for @faq do |f| %>
+      <%= render :partial =>'form', :locals => { :f => f } %>
+    <% end %>
+  </div>
+</div>

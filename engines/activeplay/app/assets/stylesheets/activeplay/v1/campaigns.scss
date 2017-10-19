@@ -1,0 +1,33 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+.ap-v1-campaign-panel{
+  margin: .25em;
+}
+
+.ap-v1-campaign-name{
+  font-weight:bold;
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
+
+.ap-v1-status-gear{
+  //float: right !important;
+}
+
+.ap-v1-campaign-tab{
+  font-family: "Open Sans", Helvetica, Arial, sans-serif !important;
+  font-weight: bold !important;
+  font-size: 1.25em !important;
+  line-height: 1.5em !important;
+}
+
+.ap-v1-campaign-summary ul{
+  font-size: .875em !important;
+}
+
+.ap-v1-campaign-summary p{
+  font-size: .875em !important;
+}

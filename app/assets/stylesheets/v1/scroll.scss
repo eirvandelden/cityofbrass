@@ -1,0 +1,30 @@
+div.scroll {
+  width:98%;
+  height:500px;
+  padding:6px;
+  overflow:auto;
+}
+
+.scroll-list{
+  padding-left:20px;
+}
+
+.scroll-div {
+  background-color: #3a3a3a;
+  color: #c5c5c5;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  text-shadow: 1px 1px 2px #000;
+  h1{color: #c5c5c5;}
+  padding-top: 20px;
+}
+
+.scrollicon{
+  font-size: 5em;
+  min-height: 95px;
+}
+
+.picing-table-33{
+  font-weight: bold;
+  color: #007a00;
+}

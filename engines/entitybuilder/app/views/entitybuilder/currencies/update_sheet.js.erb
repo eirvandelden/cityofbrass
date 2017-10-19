@@ -1,0 +1,5 @@
+$('.alert-box').remove();
+$("body").append ("<%= j(render 'layouts/notices') %>");
+$('#form_div').remove();
+$('#panelCurrencies').html("<%= j(render 'entitybuilder/currencies/sheet/full') %>");
+$('#currency_modal').foundation('reveal', 'close');

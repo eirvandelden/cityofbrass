@@ -1,0 +1,6 @@
+<div class="eb-v1-card-sentence">
+  <% if rule_type != 'Rule' %><h3 class="eb-v1-card-header"><%= rule_type.pluralize %></h3><% end %>
+  <% linked_rules.each do |linked_rule| %>
+    <%= link_to_if clickable, linked_rule.rule.name, "#{entitybuilder.polymorphic_path(entity)}/linked_rules/#{linked_rule.id}", "data-reveal-id" => "linked_rule_modal", :remote => true %><%= " (#{linked_rule.detail})" if linked_rule.detail.present? %><%= ", " unless linked_rule == linked_rules.last %>
+  <% end %>
+</div>

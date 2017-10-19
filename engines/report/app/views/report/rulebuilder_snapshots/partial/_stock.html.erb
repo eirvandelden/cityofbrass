@@ -1,0 +1,40 @@
+<fieldset>
+  <div class="row inline text-right">
+    <div class="small-12 columns">
+      <label class="inline-label-flat">Stock</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <table class="simple_table">
+        <thead>
+          <tr>
+            <th>Core Rules</th>
+            <th class="text-center"><i class="fa fa-book"></i></th>
+            <th class="text-center"><i class="icon-price-tag"></i></th>
+            <th class="text-center"><i class="fa fa-magic"></i></th>
+            <th class="text-center">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @stock_counts.each do |item| %>
+            <tr>
+              <td><strong><%= item.core_rules %></strong></td>
+              <td class="text-center"><%= item.rules %></td>
+              <td class="text-center"><%= item.items %></td>
+              <td class="text-center"><%= item.spells %></td>
+              <td class="text-center"><%= item.total %></td>
+            </tr>
+          <% end %>
+          <tr class="total">
+            <td><strong>Total</strong></td>
+            <td class="text-center"><%= @stock_totals.rules %></td>
+            <td class="text-center"><%= @stock_totals.items %></td>
+            <td class="text-center"><%= @stock_totals.spells %></td>
+            <td class="text-center"><%= @stock_totals.total %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</fieldset>

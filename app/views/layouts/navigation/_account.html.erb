@@ -1,0 +1,30 @@
+  <li><label class="text-right">Resident</label></li>
+  <% if current_user.resident && !current_user.resident.new_record? %>
+    <li class="show-for-medium-up"><a href="/residents/<%= current_user.resident.slug %>"><i class='fa fa-home fa-fw'></i> Home</a></li>
+    <li><a href="/resident/affiliates"><i class='fa fa-group fa-fw'></i> Affiliates</a></li>
+    <li class="divider show-for-medium-up"></li>
+    <li><label class="text-right">Messages</label></li>
+    <li><a href="/resident/messages/new"><i class='fa fa-edit fa-fw'></i> Compose</a></li>
+    <% if current_user.resident && current_user.resident.unread_messages? %>
+      <li><a href="/resident/mailboxes/inbox">
+        <span class="fa-stack fa-sm" style="width: 1.28571429em; margin-top:-3px;">
+          <i class="fa fa-circle fa-stack-1x secondary" style="color: #666; font-size: 1.25em;"></i>
+          <span class="fa fa-stack-1x" style="font-family: 'Open Sans'; font-size: 0.85rem; font-weight: bold;"><%= current_user.resident.unread_message_count %></span>
+        </span>
+        Inbox</a>
+       </li>
+    <% else %>
+      <li><a href="/resident/mailboxes/inbox"><i class='fa fa-inbox fa-fw'></i> Inbox</a></li>
+    <% end %>
+    <li><a href="/resident/mailboxes/sent"><i class='fa fa-paper-plane fa-fw'></i> Sent</a></li>
+    <li class="divider show-for-medium-up"></li>
+  <% end %>
+  <li><label class="text-right">Account</label></li>
+
+  <% if current_user.resident && !current_user.resident.new_record? %>
+    <li><a href="/residents/<%= current_user.resident.id %>/edit"><i class='fa fa-user fa-fw'></i> Resident</a></li>
+  <% else %>
+    <li><a href="/residents/new"><i class='fa fa-plus fa-fw'></i> Create Resident</a></li>
+  <% end %>
+
+  <%= render '/layouts/navigation/inactive' %>

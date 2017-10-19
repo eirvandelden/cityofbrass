@@ -1,0 +1,43 @@
+<% klasses = caster_levels.collect(&:caster_class).uniq.sort %>
+<br>
+<ul class="small-block-grid-2 eb-v1-caster-levels">
+  <% klasses.each do |klass| %>
+    <li style="padding-bottom: 0;">
+      <% c_levels = caster_levels.select { |i| i.caster_class == klass } %>
+      <div class="row">
+        <div class="small-12 columns text-center">
+          <h3 class="eb-v1-card-header"><%= klass %></h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-4 columns">
+          <span class="eb-v1-card-title">Level</span>
+        </div>
+        <div class="small-4 columns text-center">
+          <span class="eb-v1-card-title">#/Day</span>
+        </div>
+        <div class="small-4 columns text-center end">
+          <span class="eb-v1-card-title">DC</span>
+        </div>
+      </div>
+      <% c_levels.each do |caster_level| %>
+        <div class="row">
+          <div class="small-12 columns">
+            <hr class="eb-v1-card-hr">
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-4 columns">
+            <% unless caster_level.level.blank? %><%= caster_level.level.ordinalize %><% end %>
+          </div>
+          <div class="small-4 columns text-center">
+            <%= caster_level.total_per_day %>
+          </div>
+          <div class="small-4 columns text-center end">
+            (<%= caster_level.calculated_dc(ability_scores, base_values) %>)
+          </div>
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

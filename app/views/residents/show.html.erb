@@ -1,0 +1,90 @@
+<% provide(:title, @resident.name) %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "Residents" => residents_path },
+          { @resident.name  => nil  }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 columns text-center">
+    <% if current_user.present? && current_user.status == 'trial' %>
+      <p class="trial_notice <%= "final_week" if current_user.trial_days_remaining < 7 %>">
+        Trial: <%= current_user.trial_days_remaining %> days remaining
+      </p>
+    <% end %>
+    <p>
+      <% unless @resident.gallery_image.nil? %>
+        <%= link_to (image_tag @resident.gallery_image.file.url(:medium), :alt => @resident.name, class: "images_space"), "#{gallery.polymorphic_path(@resident.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
+      <% else %>
+      <%= image_tag "Halfling-A.jpg" %>
+      <% end %>
+    </p>
+    <h4 class="color-c5">Est. <span data-timestamp="<%= @resident.created_at.to_i*1000 %>"></span></h4>
+    <% if @resident.title.present? %>
+      <h3><%= @resident.title %></h3>
+    <% end %>
+
+    <%= badge_formatter @resident.badges.split(',') if @resident.badges.present? %>
+
+  </div>
+  <div class="medium-9 columns">
+    <div class="row">
+      <div class="medium-12 columns">
+      	<%= render :partial =>'layouts/header',
+      	    :locals => {
+            :icon => 'fa fa-user',
+            :main => @resident.name,
+            :sub => @resident.title,
+            :message_affiliate_link => (message_affiliate_path(@resident) if Affiliation.are_affiliates(current_user.resident, @resident)),
+            :add_affiliate_link => (request_affiliation_path(@resident) if !Affiliation.has_affiliation(current_user.resident, @resident)),
+      	    :edit_link => edit_resident_path(@resident),
+            :can_auth => @resident.can_auth(current_user)
+      	  }
+      	%>
+        <hr class="faded">
+      </div>
+    </div>
+    <div class="row">
+      <% if @resident.can_auth(current_user) && @resident.affiliations.size > 0 %>
+      <div class="medium-8 columns">
+      <% else %>
+      <div class="medium-12 columns">
+      <% end %>
+
+        <p>
+          <%= @resident.short_description %>
+          <% unless @resident.full_description.blank? %>
+            <br>
+            <a href="#" data-reveal-id="thumbModalDesc">
+             ( read more )
+            </a>
+          <% end %>
+        </p>
+
+        <%= render "residents/show/campaigns"  if @top_5_campaigns.present? %>
+        <% if @resident.can_auth(current_user) %>
+          <%= render "residents/show/characters" if @top_5_characters.present? %>
+          <%= render "residents/show/adventures" if @top_5_adventures.present? %>
+        <% end %>
+        <%= render "residents/show/districts" if @top_5_districts.present? %>
+
+        <% if @resident.can_auth(current_user) && @resident.top_5_campaigns.size == 0 && @resident.top_5_characters.size == 0 && @resident.top_5_adventures.size == 0 && @resident.top_5_districts.size == 0 %>
+          <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+        <% end %>
+      </div>
+      <% if @resident.can_auth(current_user) && @resident.affiliations.size > 0 %>
+      <div class="medium-4 columns">
+        <div id="affiliates_list">
+          <%= render 'affiliations/all' %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% if @resident.full_description.present? %>
+  <%= render 'layouts/modal/resident', desc: @resident.full_description %>
+<% end %>
+<%= render 'layouts/modal/image' %>

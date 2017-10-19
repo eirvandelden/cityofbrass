@@ -1,0 +1,63 @@
+<fieldset>
+  <div class="row">
+    <div class="medium-8 columns">
+      <%= f.input :name %>
+      <%= f.input :page_label, label: 'Label' %>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <% if current_user.is_free? %>
+            <%= f.input :privacy, collection: Storybuilder::Adventure::PRIVACY_OPTIONS_FREE, :include_blank => false %>
+          <% else %>
+            <%= f.input :privacy, collection: Storybuilder::Adventure::PRIVACY_OPTIONS %>
+          <% end %>
+        </div>
+        <div class="medium-6 columns text-center">
+          <label>Player Handout <span data-tooltip aria-haspopup="true" class="has-tip question-mark" title="This will cause the menu to be suppressed when viewed by anyone other than you."><i class="fa fa-question-circle"></i></span></label>
+          <%= f.input :player_handout, label: '', as: :boolean %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-6 columns">
+          <%= f.fields_for :menu_item_join do |p| %>
+            <%= p.association :menu_item, collection: @parent_object.menu_items, label_method: :item_label, value_method: :id, :include_blank => true %>
+          <% end %>
+        </div>
+        <div class="medium-6 columns">
+          <%= f.input :sort_weight %>
+        </div>
+      </div>
+
+      <%= f.association :parent, collection: @parent_object.pages.order_name, label_method: :name, value_method: :id, :include_blank => true %>
+    </div>
+    <div class="medium-4 columns text-center">
+      <% if @core_faq.present? %>
+        <div class="text-right">
+          <p>
+            <strong><%= link_to "Tutorial <i class='icon-graduation-cap'></i>".html_safe, support.core_faq_path(@core_faq), class: "tutorial", "data-reveal-id" => "tutorialModal", :remote => true %></strong>
+          </p>
+        </div>
+      <% end %>
+      <%= f.fields_for :gallery_image_join do |p| %>
+        <%= p.input :image_id, as: :hidden %>
+        <%= render :partial => 'gallery/images/image_pkr', :locals => { :image_url => (@page.gallery_image.file.url(:thumb) unless @page.gallery_image.nil?) } %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.input :tag_list, label: 'Tag list (separated by commas)' %>
+      <%= f.input :short_description %>
+      <%= f.input :full_description, class: "editorblank" %>
+    </div>
+  </div>
+</fieldset>
+
+<%= render "layouts/form/save" %>
+
+<%= render :partial => 'gallery/images/image_modal', :locals => { :image_for => "page_gallery_image_join_attributes_image_id" }  %>
+
+<% content_for :footer do %>
+  <%= render 'layouts/modal/tutorial' %>
+<% end %>

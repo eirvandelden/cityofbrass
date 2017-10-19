@@ -1,0 +1,12 @@
+<strong>Notables</strong>
+<ul style="margin-bottom: 0px;">
+<% list.each do |record| %>
+  <% if record.entity.blank? %>
+    <%= "#{record.name}" %>
+  <% elsif record.notableable_type.include?"Storybuilder" %>
+    <li><%= link_to record.name, "#{entitybuilder.polymorphic_path(record.entity)}/profile", "data-reveal-id" => "showModal", :remote => true %></li>
+  <% else %>
+    <li><%= link_to record.name, "#{entitybuilder.polymorphic_path(record.entity)}", "data-reveal-id" => "showModal", :remote => true %></li>
+  <% end %>
+<% end %>
+</ul>

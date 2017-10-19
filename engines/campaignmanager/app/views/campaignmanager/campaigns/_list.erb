@@ -1,0 +1,9 @@
+<% @campaigns.each do |campaign| %>
+  <%= render 'campaign', campaign: campaign %>
+<% end %>
+
+<div class="row">
+  <div class="small-12 columns text-center">
+    <%= paginate @campaigns, :window => 2 %>
+  </div>
+</div>

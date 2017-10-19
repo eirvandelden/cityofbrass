@@ -1,0 +1,20 @@
+<%= link_to message_path(message) do %>
+<div class="message" style="<%= "font-weight: bold;" if message.read_at.blank? %>">
+  <div class="row">
+    <div class="medium-2 columns clipper">
+      <%= if params[:action] == 'inbox' then message.sender.name else message.recipient.name end %>
+    </div>
+    <div class="medium-7 columns">
+      <div>
+        <%= message.subject %> -
+        <span class="color-c5">
+          <% body = sanitize message.body, tags: [] %>
+          <%= body.to_s.squish.strip[0,255] %>
+        </span>
+      </div>
+    </div>
+    <div class="medium-3 columns clipper text-right" data-timestamp="<%= message.created_at.to_i*1000 %>">
+    </div>
+  </div>
+</div>
+<% end %>

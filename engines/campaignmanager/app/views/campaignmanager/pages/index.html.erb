@@ -1,0 +1,47 @@
+<% provide(:title, "#{@parent_object.name} | #{@type.titleize.pluralize}") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Campaigns" => polymorphic_path(@parent_type.tableize) },
+    { @parent_object.name => polymorphic_path(@parent_object) },
+    { "#{@type.titleize.pluralize}" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial => 'campaignmanager/menus/campaign', :locals => { :page => @type } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => cm_icon_for(@type),
+        :main => @type.titleize.pluralize,
+        :sub => @sub,
+        :add_link  => "#{new_city_path(@parent_object, @type.underscore)}",
+        :can_auth => @parent_object.can_edit?(current_user, admin_signed_in?)
+      }
+    %>
+  <hr class="faded">
+    <% @pages.each do |page| %>
+      <% if page.can_show?(current_user, admin_signed_in?, @type) %>
+        <%= render :partial =>'layouts/index_row',
+          :locals => {
+          :main => page.name,
+          :sub => page.page_label,
+          :description => page.short_description,
+          :show_link => city_path(@parent_object, page),
+          :edit_link => edit_city_path(@parent_object, page),
+          :can_auth => @parent_object.can_edit?(current_user, admin_signed_in?)
+          }
+        %>
+      <% end %>
+    <% end %>
+
+    <div class="row">
+      <div class="small-12 columns text-center">
+        <%= paginate @pages %>
+      </div>
+    </div>
+  </div>
+</div>

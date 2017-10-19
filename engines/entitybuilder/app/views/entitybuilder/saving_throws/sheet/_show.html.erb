@@ -1,0 +1,6 @@
+<div class="indent">
+  <% @parent_object.saving_throws.each do |saving_throw| %>
+    <strong><%= saving_throw.name %></strong>
+    <%= saving_throw.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) %><%= ", " unless saving_throw == @parent_object.saving_throws.last %>
+  <% end %>
+</div>

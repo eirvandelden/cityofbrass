@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+resident_one:
+  resident: razune
+  district:
+  adventure:
+  name: Long Trail
+  slug: long-trail
+  page_label: ima label
+  privacy: Affiliates
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+
+resident_two:
+  resident: tuandn
+  district: district2
+  adventure: resident_two
+  name: See the World
+  slug: see-the-world
+  page_label:
+  privacy: Public
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>

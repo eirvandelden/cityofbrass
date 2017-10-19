@@ -1,0 +1,82 @@
+@import "v1/core/base";
+
+#outer-container {
+  width: 95%;
+  height: 70%;
+  min-height: 125px;
+  display: table;
+  z-index: 998;
+}
+#outer-container-absolute {
+  width: 100%;
+  height: 100%;
+  display: table;
+  position: absolute;
+  //overflow: hidden;
+  z-index: 998;
+}
+#inner-container {
+  display: table-cell;
+  vertical-align: middle;
+}
+#centered-box {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fa-spin.fa-spin-reverse {
+  -moz-animation-direction: reverse;
+  -o-animation-direction: reverse;
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse;
+}
+
+.wrap{
+  width: 9em;
+  height: 9em;
+
+  font-size: 1em;
+
+  position: relative;
+
+  i {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    font-size: 3em;
+    text-align: center;
+
+    color: $color-primary;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -moz-animation-duration: 5s;
+    -o-animation-duration: 5s;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+  }
+
+  i:nth-child(2) {
+    font-size: 1.5em;
+    top: -.3em;
+    left: 1.6em;
+  }
+
+  i:nth-child(3) {
+    font-size: 1.5em;
+    top: 1.3em;
+    left: 1.6em;
+  }
+}
+
+.tabs{
+  border-bottom: 2px solid $color-3a;
+  .tab-title > a{
+    padding: 0 10px;
+  }
+  .tab-title.active > a{
+    color: $color-c5;
+  }
+}

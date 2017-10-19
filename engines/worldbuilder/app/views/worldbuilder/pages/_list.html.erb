@@ -1,0 +1,9 @@
+<% @pages.each do |page| %>
+  <%= render 'page', page: page %>
+<% end %>
+
+<div class="row">
+  <div class="small-12 columns text-center">
+    <%= paginate @pages, :window => 2 %>
+  </div>
+</div>

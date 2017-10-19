@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  known_abilityable_id: MyString
+  known_abilityable_type: MyString
+  sort_order: 
+  ability_id: 
+
+two:
+  known_abilityable_id: MyString
+  known_abilityable_type: MyString
+  sort_order: 
+  ability_id: 

@@ -1,0 +1,13 @@
+<ul class="no-bullet">
+  <% if spell.level_list.present? %><li><strong>Level:</strong> <%= spell.level_list %></li><% end %>
+  <% if spell.school? %><li><strong>School:</strong> <%= spell.school %></li><% end %>
+  <% if spell.casting_time? %><li><strong>Casting time:</strong> <%= spell.casting_time %></li><% end %>
+  <% if spell.range? %><li><strong>Range:</strong> <%= spell.range %></li><% end %>
+  <% if spell.components? %><li><strong>Components:</strong> <%= spell.components %></li><% end %>
+  <% if spell.duration? %><li><strong>Duration:</strong> <%= spell.duration %></li><% end %>
+  <% if spell.target? %><li><strong>Target:</strong> <%= spell.target %></li><% end %>
+  <% if spell.area? %><li><strong>Area:</strong> <%= spell.area %></li><% end %>
+  <% if spell.effect? %><li><strong>Effect:</strong> <%= spell.effect %></li><% end %>
+  <% if spell.saving_throw? %><li><strong>Save:</strong> <%= spell.saving_throw %></li><% end %>
+  <% if spell.spell_resistance? %><li><strong>Spell Resistance:</strong> <%= spell.spell_resistance %></li><% end %>
+</ul>

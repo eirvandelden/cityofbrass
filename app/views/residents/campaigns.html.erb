@@ -1,0 +1,68 @@
+<% provide(:title, "Campaigns") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Residents" => residents_path },
+    { @resident.name  => resident_path(@resident.slug)  },
+    { "Campaigns" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 columns text-center">
+    <%= image_tag "cm.jpg" %>
+  </div>
+
+  <div class="medium-9 columns">
+    <div class="row">
+      <div class="medium-12 columns">
+
+        <%= render :partial =>'layouts/header',
+          :locals => {
+            :icon => 'fa fa-sitemap',
+            :main => 'Campaigns',
+            :sub => 'Game Master',
+            :add_link  => campaignmanager.new_campaign_path,
+            :can_auth => @resident.can_auth(current_user)
+          }
+        %>
+        <hr class="faded">
+
+        <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+
+        <% @cm_gm_campaigns.each do |campaign| %>
+          <% if campaign.can_show?(current_user, admin_signed_in?) %>
+            <h2><%= link_to campaign.name, campaignmanager.campaign_path(campaign)  %><span class="subheader"><%= " - #{campaign.page_label}" if campaign.page_label.present? %></span></h2>
+            <% if campaign.core_rules.present? %><strong>Core Rules:</strong> <%= campaign.core_rules %></br><% end %>
+            <h4 style="color:#c5c5c5;">Updated: <span data-timestamp="<%= campaign.updated_at.to_i*1000 %>"></span></h4>
+            <p><%= campaign.short_description %></p>
+          <% end %>
+        <% end %>
+
+        <% if @cm_pc_campaigns.present? %>
+          <%= render :partial =>'layouts/header',
+            :locals => {
+              :icon => 'fa fa-sitemap',
+              :main => 'Campaigns',
+              :sub => 'Player',
+            }
+          %>
+
+          <hr class="faded">
+
+          <% @cm_pc_campaigns.each do |pc_campaign| %>
+            <%= render 'campaignmanager/campaigns/campaign', campaign: pc_campaign.campaign if pc_campaign.campaign.can_show?(current_user, admin_signed_in?) %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns text-center">
+        <%= paginate @cm_gm_campaigns %>
+      </div>
+    </div>
+  </div>
+</div>
+<% if @resident.full_description.present? %>
+  <%= render 'layouts/modal/resident', desc: @resident.full_description %>
+<% end %>

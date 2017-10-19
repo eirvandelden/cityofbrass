@@ -1,0 +1,31 @@
+<% provide(:title, "Campaigns | #{@campaign.name}") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Campaigns" => campaigns_path },
+    { @campaign.name => campaign_path(@campaign) },
+    { "Characters" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'campaignmanager/menus/campaign' %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'fa fa-shield',
+        :main => 'Characters'
+      }
+    %>
+    <hr class="faded">
+
+    <% @campaign.characters.each do |character| %>
+      <%= render 'entitybuilder/entities/layouts/campaign', character: character %>
+    <% end %>
+
+  </div>
+</div>
+
+<%= render 'layouts/modal/show' %>

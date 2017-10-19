@@ -1,0 +1,8 @@
+<div class="indent">
+  <h3 class="eb-v1-card-header">Movement</h3>
+  <% movements.each do |movement| %>
+    <strong><%= movement.name %>:</strong>
+    <span class="eb-v1-card-attribute"><%= movement.calculated_bonus(ability_scores, modifiers, base_values) %>
+    <%= " #{movement.description}" unless movement.description.blank? %><%= " (#{movement.dice})" unless movement.dice.blank? %></span><%= ", " unless movement == movements.last %>
+  <% end %>
+</div>

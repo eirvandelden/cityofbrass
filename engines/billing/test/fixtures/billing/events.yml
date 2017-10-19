@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stripe_event_token: MyText
+  stripe_date: 2015-04-16 06:43:46
+  type: MyText
+  data: 
+
+two:
+  stripe_event_token: MyText
+  stripe_date: 2015-04-16 06:43:46
+  type: MyText
+  data: 

@@ -1,0 +1,47 @@
+<% if section.section_type == 'child' %>
+  <% if record.type and ( record.type.include?"Adventure" or record.type.include?"District" or record.type.include?"Campaign" ) %>
+  <%= render :partial => "layouts/sections/show/#{section.section_type}/#{section.section_style}",
+    :locals => {
+      :section => section,
+      :list => record.children.order(:name),
+      :all_pages => all_pages,
+      :can_auth => can_auth
+    } %>
+  <% else %>
+  <%= render :partial => "layouts/sections/show/#{section.section_type}/#{section.section_style}",
+    :locals => {
+      :section => section,
+      :list => record.children.order('sort_weight, name'),
+      :all_pages => all_pages,
+      :can_auth => can_auth
+    } %>
+  <% end %>
+<% end %>
+
+<%
+  if section.section_type == 'tag'
+    if section.record_type.include?"::"
+      tag_children = @district.pages.where(type: section.record_type).order('sort_weight, name').all_tags(section.search_tags.split(',')) if section.record_type.include? "Worldbuilder"
+      tag_children = @adventure.pages.where(type: section.record_type).order('sort_weight, name').all_tags(section.search_tags.split(',')) if section.record_type.include? "Storybuilder"
+    else
+      tag_children = @district.pages.order('sort_weight, name').all_tags(section.search_tags.split(',')) if section.record_type.include? "Worldbuilder"
+      tag_children = @adventure.pages.order('sort_weight, name').all_tags(section.search_tags.split(',')) if section.record_type.include? "Storybuilder"
+    end
+%>
+
+  <%= render :partial => "layouts/sections/show/#{section.section_type}/#{section.section_style}",
+      :locals => {
+        :section => section,
+        :list => tag_children,
+        :all_pages => all_pages,
+        :can_auth => can_auth
+      } %>
+<% end %>
+
+<% if section.section_type == 'text' %>
+  <% if section.section_style == 'private_notes' %>
+    <%= render :partial => "layouts/sections/show/#{section.section_type}/#{section.section_style}", :locals => { :section => section } if can_auth %>
+  <% else %>
+	  <%= render :partial => "layouts/sections/show/#{section.section_type}/#{section.section_style}", :locals => { :section => section } %>
+  <% end %>
+<% end %>

@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: MyText
+  resident_id: 
+  parent_id: 
+  core_rules: MyText
+  rule_type: MyText
+  name: MyText
+  short_description: MyText
+  full_description: MyText
+  publisher: MyText
+  source: MyText
+  is_3pp: MyText
+  tags: MyText
+  prerequisites: MyText
+  benefit: MyText
+  normal: MyText
+  special: MyText
+
+two:
+  type: MyText
+  resident_id: 
+  parent_id: 
+  core_rules: MyText
+  rule_type: MyText
+  name: MyText
+  short_description: MyText
+  full_description: MyText
+  publisher: MyText
+  source: MyText
+  is_3pp: MyText
+  tags: MyText
+  prerequisites: MyText
+  benefit: MyText
+  normal: MyText
+  special: MyText

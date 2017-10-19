@@ -1,0 +1,56 @@
+<div id="form_div">
+<%= simple_form_for [@parent_object, @caster_level], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <label class="inline-label-flat">Caster Level</label>
+      </div>
+    </div>
+    <%= f.hidden_field :sort_order, :maxlength => 3 %>
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= f.input :caster_class, collection: @parent_object.class_levels.pluck(:name).uniq, :include_blank => true %>
+      </div>
+      <div class="medium-6 columns">
+        <%= f.input :level %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= f.input :base_dc, label: 'Base DC' %>
+      </div>
+      <div class="medium-6 columns text-center">
+        <label>Proficient</label>
+        <%= f.input :proficient, label: '', as: :boolean %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= f.input :per_day %>
+      </div>
+      <div class="medium-6 columns">
+        <%= f.input :bonus_per_day %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= f.input :ability_score, collection: @parent_object.ability_scores.pluck(:name), :include_blank => true %>
+      </div>
+      <div class="medium-6 columns">
+        <label>Calculated save DC<a id="unlock_calc"><span class="right"><i class="lock fa fa-lock" id="icon_unlock_calc"></i></a></span></label>
+        <%= f.input :save_dc, label: false, placeholder: f.object.calculated_dc(@parent_object.ability_scores, @parent_object.base_values).to_s, disabled: true %>
+      </div>
+    </div>
+  </fieldset>
+  <%= render "layouts/form/save_and_cancel" %>
+<% end %>
+</div>
+
+<script>
+  $('#unlock_calc').on("click", function(e){
+    unlock_field('#caster_level_save_dc', '#icon_unlock_calc');
+  });
+</script>

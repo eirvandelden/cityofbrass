@@ -1,0 +1,14 @@
+<li id="core_faq_<%= core_faq.id %>">
+  <div class="row">
+    <div class="small-8 columns clipper">
+      <%= render 'layouts/checkmark', checked: core_faq.active %>
+      <strong><%= core_faq.core_item %></strong>
+    </div>
+    <div class="small-4 columns text-right">
+      <span class="cogspan">
+        <%= link_to "<i class='fa fa-cogs'></i>".html_safe, edit_core_faq_path(core_faq), class: "color-c5", :remote => true %>
+        <%= link_to "<i class='fa fa-times-circle'></i>".html_safe, core_faq_path(core_faq), class: "color-c5 delete", method: :delete, data: { confirm: "Are you sure you want to remove #{core_faq.core_item}?" }, :remote => true %>
+      </span>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+affiliation1:
+  resident: razune
+  affiliate: tuandn
+  status: accepted
+
+affiliation2:
+  resident: tuandn
+  affiliate: razune
+  status: accepted

@@ -1,0 +1,126 @@
+{
+  "name": "W.O.I.N",
+  "active": "true",
+  "stock": "true",
+  "default_dice": "1d6",
+  "d20_system": "false",
+  "publisher": {
+    "name": "EN Publishing",
+    "logo": "http://static1.squarespace.com/static/529e6f58e4b0f61963b40f53/t/5560d81ce4b048b2365b86da/1432410141628",
+    "url": "http://www.woinrpg.com"
+  },
+  "license": {
+    "label": "Open Game License",
+    "core_faq": "License d20 OGL"
+  },
+  "entitybuilder": {
+    "sheet": "default",
+    "use_modifiers": "true",
+    "show_core_blocks": "true",
+    "menu": [
+      {"label": "Descriptors",      "link": "descriptors",      "add_modifiers": "true"},
+      {"label": "Ability Scores",   "link": "ability_scores",   "add_modifiers": "true"},
+      {"label": "Class Levels",     "link": "class_levels",     "add_modifiers": "true"},
+      {"label": "Trackables",       "link": "trackables",       "add_modifiers": "false"},
+      {"label": "Attacks",          "link": "attacks",          "add_modifiers": "false"},
+      {"label": "Movement",         "link": "movements",        "add_modifiers": "true"},
+      {"label": "Defenses",         "link": "defenses",         "add_modifiers": "false"},
+      {"label": "Spells",           "link": "known_spells",     "add_modifiers": "false"},
+      {"label": "Skills",           "link": "skills",           "add_modifiers": "true"},
+      {"label": "Exploits",        "link": "linked_rules?rule_type=exploit", "add_modifiers": "true"},
+      {"label": "Traits",           "link": "linked_rules?rule_type=trait",    "add_modifiers": "true"},
+      {"label": "Inventory Items",  "link": "inventory_items",  "add_modifiers": "true"},
+      {"label": "Currencies",       "link": "currencies",       "add_modifiers": "false"},
+      {"label": "Modifiers",        "link": "modifiers",        "add_modifiers": "false"},
+      {"label": "Options",          "link": "options",          "add_modifiers": "false"}
+    ],
+    "core_skills": [],
+    "character": {
+      "ability_scores": [
+        {"name": "Strength", "base": "3", "modifier": "", "dice": "2d6"},
+        {"name": "Agility", "base": "3", "modifier": "", "dice": "2d6"},
+        {"name": "Endurance", "base": "3", "modifier": "", "dice": "2d6"},
+        {"name": "Intuition", "base": "3", "modifier": "", "dice": "2d6"},
+        {"name": "Logic", "base": "3", "modifier": "", "dice": "2d6"},
+        {"name": "Willpower", "base": "3", "modifier": "", "dice": "2d6"},
+        {"name": "Charisma", "base": "3", "modifier": "", "dice": "2d6"},
+        {"name": "Luck", "base": "3", "modifier": "", "dice": "2d6"},
+        {"name": "Reputation", "base": "3", "modifier": "", "dice": "2d6"}
+      ],
+      "currencies": [
+        {"name": "Credits", "quantity": "0", "weight": "0.02", "carried": "true"}
+      ],
+      "defenses": [
+        {"name": "Melee Defense", "base": "0", "ability_score": ""},
+        {"name": "Ranged Defense", "base": "0", "ability_score": ""},
+        {"name": "Mental Defense", "base": "0", "ability_score": ""},
+        {"name": "Soak", "base": "0", "ability_score": ""}
+      ],
+      "descriptors": [
+        {"name": "Species", "description": "", "is_private": "false"},
+        {"name": "Age", "description": "", "is_private": "false"},
+        {"name": "Height", "description": "", "is_private": "false"},
+        {"name": "Weight", "description": "", "is_private": "false"}
+      ],
+      "movements": [
+        {"name": "Initiative", "base": "", "ability_score": "", "dice": "1d6", "description": ""},
+        {"name": "Speed", "base": "0", "ability_score": "", "dice": "", "description": "Squares"},
+        {"name": "Climb", "base": "0", "ability_score": "", "dice": "", "description": "Squares"},
+        {"name": "Jump (h)", "base": "0", "ability_score": "", "dice": "", "description": "Feet"},
+        {"name": "Jump (v)", "base": "0", "ability_score": "", "dice": "", "description": "Feet"}
+      ],
+      "trackables": [
+        {"name": "Health", "maximum": "0", "current": "0"},
+        {"name": "Experience", "maximum": "0", "current": "0"},
+        {"name": "Experience Spent", "maximum": "0", "current": "0"}
+      ]
+    },
+    "creature": {
+      "ability_scores": [
+        {"name": "Strength", "base": "3", "modifier": "", "dice": "2d6"},
+        {"name": "Agility", "base": "3", "modifier": "", "dice": "2d6"},
+        {"name": "Endurance", "base": "3", "modifier": "", "dice": "2d6"},
+        {"name": "Intuition", "base": "3", "modifier": "", "dice": "2d6"},
+        {"name": "Logic", "base": "3", "modifier": "", "dice": "2d6"},
+        {"name": "Willpower", "base": "3", "modifier": "", "dice": "2d6"},
+        {"name": "Charisma", "base": "3", "modifier": "", "dice": "2d6"}
+      ],
+      "currencies": [
+        {"name": "Credits", "quantity": "0", "weight": "0.02", "carried": "true"}
+      ],
+      "defenses": [
+        {"name": "Melee Defense", "base": "0", "ability_score": ""},
+        {"name": "Ranged Defense", "base": "0", "ability_score": ""},
+        {"name": "Mental Defense", "base": "0", "ability_score": ""},
+        {"name": "Soak", "base": "0", "ability_score": ""}
+      ],
+      "descriptors": [
+        {"name": "Size", "description": ""},
+        {"name": "Classification", "description": ""},
+        {"name": "Sentience", "description": ""},
+        {"name": "Level", "description": ""},
+        {"name": "Experience", "description": ""},
+        {"name": "Carry", "description": ""}
+      ],
+      "movements": [
+        {"name": "Initiative", "base": "0", "ability_score": "", "dice": "1d6", "description": ""},
+        {"name": "Speed", "base": "0", "ability_score": "", "dice": "", "description": "Squares"},
+        {"name": "Climb", "base": "0", "ability_score": "", "dice": "", "description": "Squares"},
+        {"name": "Jump (h)", "base": "0", "ability_score": "", "dice": "", "description": "Feet"},
+        {"name": "Jump (v)", "base": "0", "ability_score": "", "dice": "", "description": "Feet"}
+      ],
+      "trackables": [
+        {"name": "Health", "maximum": "0", "current": "0"}
+      ]
+    }
+  },
+  "rulebuilder": {
+    "rules": [
+      {"name": "Exploit", "is_shared": "true"},
+      {"name": "Trait", "is_shared": "true"}
+    ],
+    "powers": [
+      {"name": "Spell", "is_shared": "true"}
+    ]
+  }
+}

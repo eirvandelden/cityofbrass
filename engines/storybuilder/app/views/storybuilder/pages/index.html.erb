@@ -1,0 +1,36 @@
+<% provide(:title, "#{@parent_object.name} | Pages") %>
+<% type_array = type_split(@parent_type) %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => polymorphic_path(@parent_type.tableize) },
+    { @parent_object.name => polymorphic_path(@parent_object) }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial => 'storybuilder/menus/adventure', :locals => { :page => nil } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @parent_object.name,
+        :sub => "Pages #{@sub}",
+        :add_link  => new_polymorphic_path([@adventure, :page]),
+        :can_auth => @parent_object.can_edit?(current_user, admin_signed_in?, @type)
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="small-10 small-centered columns">
+        <%= render 'layouts/form/search', url: polymorphic_path([@adventure, :pages]) %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-12 columns" id="index_list">
+        <%= render 'list' %>
+      </div>
+    </div>
+  </div>
+</div>

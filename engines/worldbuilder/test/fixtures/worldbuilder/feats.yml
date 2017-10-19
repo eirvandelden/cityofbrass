@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  resident_id: 
+  core_rules: MyString
+  name: MyString
+  short_description: MyString
+  full_description: MyText
+  prerequisites: MyString
+  benefit: MyText
+  normal: MyText
+  special: MyText
+
+two:
+  type: 
+  resident_id: 
+  core_rules: MyString
+  name: MyString
+  short_description: MyString
+  full_description: MyText
+  prerequisites: MyString
+  benefit: MyText
+  normal: MyText
+  special: MyText

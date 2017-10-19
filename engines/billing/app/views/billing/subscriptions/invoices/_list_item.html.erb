@@ -1,0 +1,17 @@
+<li>
+  <div class="row">
+    <div class="small-5 columns clipper">
+      <span data-timestamp-format="YYYY-MM-DD" data-timestamp="<%= invoice.date.to_i*1000 %>"></span>
+    </div>
+    <div class="small-5 columns clipper">
+      <%= "$%.2f" % Rational(invoice.total.to_i,100) %> <%= invoice.currency.upcase %>
+    </div>
+    <div class="small-2 columns text-center">
+      <% if invoice.paid %>
+        <i class="fa fa-check added"></i>
+      <% else %>
+        <i class="fa fa-ban deleted"></i>
+      <% end %>
+    </div>
+  </div>
+</li>

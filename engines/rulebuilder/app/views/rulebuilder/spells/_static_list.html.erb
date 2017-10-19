@@ -1,0 +1,7 @@
+<li>
+  <div class="indent">
+    <% spells.each do |spell| %>
+      <%= link_to spell.name, polymorphic_path(spell) %><%= ", " unless spell == spells.last %>
+    <% end %>
+  </div>
+</li>

@@ -1,0 +1,6 @@
+<%= render 'campaignmanager/campaigns/players/list', :list_title => 'PENDING REQUESTS', :list => @pending_affiliations, :list_type => 'pending' if @pending_affiliations.present? %>
+<%= render 'campaignmanager/campaigns/players/list', :list_title => 'RECEIVED REQUESTS', :list => @requested_affiliations, :list_type => 'received' if @requested_affiliations.present? %>
+<%= render 'campaignmanager/campaigns/players/list', :list_title => 'AFFILIATES', :list => @affiliates, :list_type => 'affiliates' if @affiliates.present? %>
+<%= render 'campaignmanager/campaigns/players/list', :list_title => 'NOT AFFILIATES', :list => @not_affiliates, :list_type => 'not affiliates' if @not_affiliates.present? %>
+<%= render 'campaignmanager/campaigns/players/list', :list_title => 'BLOCKED', :list => @blocked_affiliations, :list_type => 'blocked' if @blocked_affiliations.present? %>
+<%= render 'campaignmanager/campaigns/players/list', :list_title => 'PLAYERS', :list => @players, :list_type => 'players' if @players.present? %>

@@ -1,0 +1,13 @@
+<script type="text/javascript" data-turbolinks-eval=always>
+  $(".sortable").sortable({
+    placeholder: "ui-sortable-placeholder",
+    items: "li:not(.ui-state-disabled)"
+  }).disableSelection();
+
+  bindSortable();
+  setLockIcon();
+
+  $('#unlock_sortable').on("click", function(e){
+    unlock_sortable();
+  });
+</script>

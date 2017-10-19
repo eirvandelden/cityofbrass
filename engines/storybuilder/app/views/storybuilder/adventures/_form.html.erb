@@ -1,0 +1,34 @@
+<fieldset>
+  <div class="row">
+    <div class="medium-8 columns">
+      <%= f.input :name %>
+      <%= f.input :page_label, label: 'Label' %>
+      <% if current_user.is_free? %>
+        <%= f.input :privacy, collection: Storybuilder::Adventure::PRIVACY_OPTIONS_FREE, :include_blank => false %>
+      <% else %>
+        <%= f.input :privacy, collection: Storybuilder::Adventure::PRIVACY_OPTIONS %>
+      <% end %>
+      <%= f.input :core_rules, collection: CoreRules.options(admin_signed_in?), :include_blank => true %>
+      <%= f.fields_for :menu_item_join do |p| %>
+        <%= p.association :menu_item, collection: @adventure.menu_items, label_method: :item_label, value_method: :id, :include_blank => true %>
+      <% end %>
+      <%= f.association :parent, collection: @parent_options, label_method: :name, value_method: :id, :include_blank => true %>
+    </div>
+    <div class="medium-4 columns text-center">
+      <%= f.fields_for :gallery_image_join do |p| %>
+        <%= p.input :image_id, as: :hidden %>
+        <%= render :partial => 'gallery/images/image_pkr', :locals => { :image_url => (@adventure.gallery_image.file.url(:thumb) unless @adventure.gallery_image.nil?) } %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.input :short_description %>
+      <%= f.input :full_description, class: "editorblank" %>
+    </div>
+  </div>
+</fieldset>
+
+<%= render "layouts/form/save" %>
+
+<%= render :partial => 'gallery/images/image_modal', :locals => { :image_for => "#{@type.underscore}_gallery_image_join_attributes_image_id" }  %>

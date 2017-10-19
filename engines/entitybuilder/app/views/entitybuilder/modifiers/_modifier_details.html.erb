@@ -1,0 +1,8 @@
+<ul class="no-bullet">
+  <li><strong>Type:</strong> <%= link_to "#{modifier.modifierable_type.demodulize.titleize}", "#{polymorphic_path(@parent_object)}/#{modifier.modifierable_type.demodulize.tableize}" %></li>
+  <li><strong>Name:</strong> <%= "#{modifier.modifierable.name}" %></li>
+</ul>
+<ul class="no-bullet">
+  <li><strong>Category:</strong> <%= modifier.category %></li>
+  <li><strong>Item:</strong> <%= modifier.item %></li>
+</ul>

@@ -1,0 +1,11 @@
+<div id="form_placeholder">
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <label class="inline-label-flat">Options</label>
+      </div>
+    </div>
+    <strong><%= link_to "<i class='fa fa-plus-circle'></i> Text".html_safe, "#{tcob_path(@parent_object, 'id')}/sections/new/text", :remote => true %></strong>
+    <p>Standard section with a header and content.</p>
+  </fieldset>
+</div>

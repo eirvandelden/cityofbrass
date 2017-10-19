@@ -1,0 +1,32 @@
+<% provide(:title, "Report | World Builder") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Report" => nil },
+    { "World Builder" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'report/menus/report' %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'icon-globe',
+        :main => "World Builder",
+        :sub  => "Reports"
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= render "report/worldbuilder_snapshots/partial/districts" %>
+      </div>
+      <div class="medium-6 columns text-center">
+        <p><%= image_tag "wb.jpg", style: "max-height: 250px;", class: "flip" %></p>
+      </div>
+    </div>
+  </div>
+</div>

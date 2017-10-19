@@ -1,0 +1,106 @@
+<% provide(:title, "Images | #{@image.name}") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "Images" => polymorphic_path(@type.tableize) },
+          { @image.name => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-12 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @image.name,
+        :sub => @image.file_size,
+        :icon => 'icon-images',
+        :edit_link => edit_polymorphic_path(@image),
+        :can_auth => @image.can_edit?(current_user, admin_signed_in?, @type)
+      }
+    %>
+    <hr class="faded">
+    <p><i class='fa fa-angle-double-left'></i> <%= link_to "Return to Index".html_safe, polymorphic_path(@type.tableize) %></p>
+  </div>
+</div>
+<% if @image.file? %>
+
+<div class="row">
+  <div class="medium-8 medium-centered columns">
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <label id="thumbLabel">Thumb</label>
+        <input type="text" value="<%= @image.file.url(:thumb) %>" id="copyThumbUrl">
+        <% if @image.file.processing? %>
+          <span class="color-c5">Processing...</span>
+        <% else %>
+          <%= image_tag @image.file.url(:thumb), :alt => @image.name, :style => "padding-bottom:1rem;" %>
+        <% end %>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <label id="mediumLabel">Medium</label>
+        <input type="text" value="<%= @image.file.url(:medium) %>" id="copyMediumUrl">
+        <% if @image.file.processing? %>
+          <span class="color-c5">Processing...</span>
+        <% else %>
+          <%= image_tag @image.file.url(:medium), :alt => @image.name, :style => "padding-bottom:1rem;" %>
+        <% end %>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <label id="originalLabel">Original</label>
+        <input type="text" value="<%= @image.file.url(:original) %>" id="copyOriginalUrl">
+        <%= image_tag @image.file.url(:original), :alt => @image.name, :style => "padding-bottom:1rem; max-width:800px; max-height:800px;" %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<% end %>
+
+<script type="text/javascript">
+  <% if @image.file.processing? %>
+    setTimeout(function(){
+        Turbolinks.visit(location.href);
+      }, 3000);
+  <% end %>
+
+  $(function() {
+    $("#thumbLabel").click(function() {
+      $("#copyThumbUrl").focus();
+      $("#copyThumbUrl").select();
+    });
+    $("#copyThumbUrl").click(function() {
+      $(this).focus();
+      $(this).select();
+    });
+
+    $("#mediumLabel").click(function() {
+      $("#copyMediumUrl").focus();
+      $("#copyMediumUrl").select();
+    });
+    $("#copyMediumUrl").click(function() {
+      $(this).focus();
+      $(this).select();
+    });
+
+    $("#originalLabel").click(function() {
+      $("#copyOriginalUrl").focus();
+      $("#copyOriginalUrl").select();
+    });
+    $("#copyOriginalUrl").click(function() {
+      $(this).focus();
+      $(this).select();
+    });
+  });
+</script>

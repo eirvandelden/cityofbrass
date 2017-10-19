@@ -1,0 +1,52 @@
+<% provide(:title, @resident.name) %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "Residents" => residents_path },
+          { @resident.name  => nil  }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-10 medium-centered columns">
+  	<%= render :partial =>'layouts/header',
+  	    :locals => {
+        :icon => 'fa fa-group',
+        :main => 'Affiliates'
+  	  }
+  	%>
+    <hr class="faded">
+
+    <div class="row">
+      <div class="medium-9 columns">
+        <% @affiliates.each do |affiliate| %>
+          <div class="row">
+            <div class="medium-12 columns">
+              <h2>
+                <%= link_to affiliate.name, resident_path(affiliate.slug) %>
+                <span class="right">
+                  <%= link_to "<i class='fa fa-envelope'></i>".html_safe, message_affiliate_path(@resident), title: "Message Affiliate", class: "color-c5" %>
+                  <%= link_to "<i class='fa fa-user-times'></i>".html_safe, update_affiliation_path(affiliate, 'rescind'), title: "Remove Affiliate", class: "color-c5 delete", method: :patch, data: { confirm: 'Are you sure you want to remove this affiliate?'} %>
+                </span>
+              </h2>
+              <span class="color-c5"><%= resident_url(affiliate.slug) %></span>
+              <p><%= affiliate.short_description %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="medium-3 columns">
+        <div id="affiliates_pending_list">
+          <%= render 'affiliations/pending' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns text-center">
+        <%= paginate @affiliates %>
+      </div>
+    </div>
+
+  </div>
+</div>

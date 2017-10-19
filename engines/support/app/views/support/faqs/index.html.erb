@@ -1,0 +1,37 @@
+<% provide(:title, 'FAQs') %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "FAQs" => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-10 medium-centered columns">
+    <%= render :partial =>'layouts/header',
+        :locals => {
+        :icon => 'icon-graduation-cap',
+        :main => 'Frequently Asked Questions',
+        :add_link => new_faq_path,
+        :can_auth => admin_signed_in?
+      }
+    %>
+  <hr class="faded">
+  <% @topics.each do |t| %>
+  <h3><%= t %></h3>
+    <% @faq_topic = @faqs.select{ |f| f.topic == t } %>
+    <ul>
+      <% @faq_topic.each do |faq| %>
+        <% if faq.active or admin_signed_in? %>
+          <li>
+            <% if admin_signed_in? %>
+              <%= render 'layouts/checkmark', checked: faq.active %>
+            <% end %>
+            <%= link_to faq.question, faq_path(faq) %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+  </div>
+</div>

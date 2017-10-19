@@ -1,0 +1,40 @@
+.block-table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: .5em;
+  thead{
+    background-color: #3a3a3a;
+    .name{
+      color: #666;
+    }
+  }
+  th{
+    padding: 4px;
+    font-family: "Marcellus SC", serif;
+    color: #c5c5c5;
+  }
+  tbody {
+    border-top: 2px solid #c69633;
+  }
+  .bold{
+    font-weight: bold;
+  }
+
+  td{
+    padding: .25em;
+    vertical-align:top;
+    .block-image{
+      max-height: 100px;
+      max-width: 100px;
+      float:right;
+    }
+  }
+  .roll:hover, {
+    background: #666;
+    color: #c69633;
+    cursor:pointer;
+    td {
+      color:#c5c5c5;
+    }
+  }
+}

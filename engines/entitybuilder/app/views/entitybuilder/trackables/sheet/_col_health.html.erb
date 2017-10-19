@@ -1,0 +1,4 @@
+<div>
+  <div class="sheet-over-big <%= "reduced-big" if @hit_points.current > 999 %> text-center"><%= @hit_points.current if @hit_points %></div>
+  <div class="sheet-under text-center"><i class='fa fa-pencil'></i> <%= @hit_points.name if @hit_points %></div>
+</div>

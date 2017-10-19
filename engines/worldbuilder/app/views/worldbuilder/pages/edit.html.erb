@@ -1,0 +1,40 @@
+<% provide(:title, "#{@district.name} | #{@page.name}") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { @district.name => district_path(@district.slug) },
+          { @page.name => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'menus/manage',
+      :locals => {
+        :active => 'edit',
+        :view_link => worldbuilder.district_page_path(@district.slug, @page.slug),
+        :details_link => worldbuilder.edit_district_page_path(@district.slug, @page),
+        :options_link => "#{worldbuilder.district_page_path(@district.slug, @page)}/options",
+        :features_link => "#{worldbuilder.district_page_path(@district.slug, @page)}/features",
+        :sections_link => "#{worldbuilder.district_page_path(@district.slug, @page)}/sections"
+      } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @page.name,
+        :sub => 'Details'
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="small-12 columns">
+        <div id="brass_form">
+          <%= render :partial => 'update' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render :partial =>'layouts/ckeditor', :locals => { :cke_version => 'standard' } %>

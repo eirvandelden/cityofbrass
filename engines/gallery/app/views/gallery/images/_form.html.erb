@@ -1,0 +1,17 @@
+<fieldset>
+  <legend>Image</legend>
+  <div class="row">
+    <div class="medium-8 columns">
+      <%= f.input :name %>
+      <%= f.input :file, hint: '(Max Size: 1mb)' %>
+    </div>
+    <div class="medium-4 columns text-center">
+      <% unless @image.new_record? %>
+        <%= image_tag @image.file.url(:thumb) %>
+      <% end %>
+    </div>
+
+  </div>
+</fieldset>
+
+<%= render "layouts/form/save" %>

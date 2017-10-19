@@ -1,0 +1,49 @@
+@import "v1/core/base";
+
+.top-bar {
+  border-bottom: 1px solid #222;
+  box-shadow: 0px 0px 5px #222;
+  text-shadow: 1px 1px 2px #000;
+
+  .dropdown{
+    box-shadow: 0px 0px 5px #222;
+    border: 1px solid #222;
+    vertical-align:center;
+
+    li:not(.has-form) a:not(.button){
+      vertical-align:text-top;
+    }
+  }
+}
+
+.top-bar-section{
+  li:not(.has-form) a:not(.button) {
+    height: 33px;
+    -moz-box-sizing: inherit;
+  }
+}
+
+// FIX >> Top Bar Logo Text
+.top-bar .name h1 a {
+  //min-width: 200px;
+}
+
+// FIX >> IN MENU
+.top-bar-section .has-dropdown .dropdown li.has-dropdown a:after{
+  margin-top: -.75em;
+}
+
+// FIX >> MENU WHEN YOU SHRINK BROWSER AND SHOW HAMBURGER
+.top-bar-section ul li > a{
+  padding: 0px 12px;
+}
+.top-bar-section .dropdown li a{
+  padding: 0px 12px;
+}
+
+.phone-menu{
+  border-bottom: 0;
+  box-shadow: 0px 0px 0px #222;
+  margin-bottom: .5em;
+  margin-top: -40px;
+}

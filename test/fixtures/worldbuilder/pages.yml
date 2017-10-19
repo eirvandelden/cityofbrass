@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+page_one:
+  district: district_one
+  parent:
+  name: Black Iron Forest
+  slug: black-iron-forest
+  page_label: Forest
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  tags: ["hello1", "world2"]
+
+page_two:
+  district: district_two
+  parent:
+  name: Kingdom of Ur
+  slug: kingdom-of-ur
+  page_label:
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  tags: ["hello", "world"]

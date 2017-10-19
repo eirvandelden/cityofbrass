@@ -1,0 +1,71 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+page_text1:
+  featureable: resident_one
+  featureable_type: Campaignmanager::Page
+  sort_order: 1
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: text
+  record_type:
+  search_tags:
+
+campaign_text1:
+  featureable: resident_two
+  featureable_type: Campaignmanager::Campaign
+  sort_order: 1
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: text
+  record_type:
+  search_tags:
+
+page_child1:
+  featureable: resident_one
+  featureable_type: Campaignmanager::Page
+  sort_order: 2
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: child
+  record_type:
+  search_tags:
+
+page_tag1:
+  featureable: resident_one
+  featureable_type: Campaignmanager::Page
+  sort_order: 3
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: tag
+  record_type: Campaignmanager::AdventureLog
+  search_tags: hello
+
+campaign_tag1:
+  featureable: resident_two
+  featureable_type: Campaignmanager::Campaign
+  sort_order: 3
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: tag
+  record_type: Campaignmanager::AdventureLog
+  search_tags: hello
+
+page_special1:
+  featureable: resident_one
+  featureable_type: Campaignmanager::Page
+  sort_order: 4
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: special
+  record_type:
+  search_tags:
+
+campaign_special1:
+  featureable: resident_two
+  featureable_type: Campaignmanager::Campaign
+  sort_order: 4
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: special
+  record_type:
+  search_tags:

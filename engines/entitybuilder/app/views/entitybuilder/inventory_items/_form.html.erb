@@ -1,0 +1,58 @@
+<div id="form_div">
+<%= simple_form_for [@parent_object, @inventory_item], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <label class="inline-label-flat">Inventory Item</label>
+      </div>
+    </div>
+    <input type="hidden" name="rule_type" value="<%= params[:rule_type] %>">
+    <%= f.hidden_field :sort_order, :maxlength => 3 %>
+    <div class="row">
+      <div class="medium-8 columns">
+        <% if f.object.new_record? %>
+          <% if params[:rule_type] == "stock" && CoreRules.stock?(@parent_object.core_rules) %>
+            <%= f.association :item, label: 'Name', collection: Rulebuilder::StockItem.basic.order_name.where(core_rules: @parent_object.core_rules), label_method: :name, value_method: :id, :include_blank => true %>
+          <% elsif params[:rule_type] == "proprietary" && admin_signed_in? %>
+            <%= f.association :item, label: 'Name', collection: Rulebuilder::ProprietaryItem.basic.order_name.where(core_rules: @parent_object.core_rules), label_method: :name, value_method: :id, :include_blank => true %>
+          <% else %>
+          <%= f.association :item, label: 'Name', collection: @parent_object.resident.resident_items.where(core_rules: @parent_object.core_rules), label_method: :name, value_method: :id, :include_blank => true %>
+          <% end %>
+        <% else %>
+          <label>Name</label>
+          <%= f.input_field :item, value: f.object.item.name.to_s, disabled: true, readonly: 'readonly' %>
+        <% end %>
+      </div>
+      <div class="small-4 columns">
+        <%= f.input :quantity, label: 'Qty' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-12 columns">
+        <%= f.input :detail %>
+      </div>
+    </div>
+  </fieldset>
+  <%= render "layouts/form/save_and_cancel" %>
+<% end %>
+
+<% unless @inventory_item.new_record? %>
+<div id="form_modifier_placeholder">
+  <%= render "entitybuilder/modifiers/form_item_list" %>
+</div>
+<% end %>
+
+<% unless @inventory_item.new_record? %>
+<br>
+<fieldset>
+  <legend><%= @inventory_item.item.name %></legend>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= render :partial => 'rulebuilder/items/item_details', :locals => { :item => @inventory_item.item } %>
+      <p><%= @inventory_item.item.short_description %></p>
+    </div>
+  </div>
+</fieldset>
+<% end %>
+
+</div>

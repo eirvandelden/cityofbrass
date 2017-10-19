@@ -1,0 +1,46 @@
+<% provide(:title, "Campaigns | #{@campaign.name}") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Campaigns" => campaigns_path },
+    { @campaign.name => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'campaignmanager/menus/campaign' %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'fa fa-sitemap',
+        :main => @campaign.name,
+        :edit_link => edit_campaign_path(@campaign),
+        :can_auth => @campaign.can_edit?(current_user, admin_signed_in?)
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="medium-8 columns">
+      <%= render 'features', campaign: @campaign %>
+
+      <%= render 'sections' %>
+
+      </div>
+      <div class="medium-4 columns">
+        <% unless @campaign.gallery_image.nil? %>
+          <p class="text-center">
+            <%= link_to (image_tag @campaign.gallery_image.file.url(:medium), :alt => @campaign.name, class: "images_space"), "#{gallery.polymorphic_path(@campaign.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
+          </p>
+        <% end %>
+
+        <div id="affiliates_list">
+          <%= render 'campaignmanager/campaigns/players/all' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'layouts/modal/image' %>

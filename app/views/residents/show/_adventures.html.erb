@@ -1,0 +1,7 @@
+<%= render 'layouts/header', icon: 'icon-book', main: 'Adventures', index_link: storybuilder.resident_adventures_path %>
+<hr class="faded">
+<% @resident.top_5_adventures.each do |adventure| %>
+  <h2><%= link_to adventure.name, storybuilder.resident_adventure_path(adventure)  %></h2>
+  <h4 style="color:#c5c5c5;">Updated: <span data-timestamp="<%= adventure.updated_at.to_i*1000 %>"></span></h4>
+  <p><%= adventure.short_description %></p>
+<% end %>

@@ -1,0 +1,195 @@
+<div class="row sheet-font-bold">
+
+  <div class="medium-2 columns">
+    <div class="text-center">
+      <% unless @parent_object.gallery_image.nil? %>
+        <%= link_to (image_tag @parent_object.gallery_image.file.url(:medium), :alt => @parent_object.name), "#{gallery.polymorphic_path(@parent_object.gallery_image)}/swoosh", "data-reveal-id" => "image_modal", :remote => true  %>
+      <% end %>
+    </div>
+    <% if @parent_object.ability_scores.size > 0 %><%= render "entitybuilder/ability_scores/sheet/full" %><% end %>
+    <% if @movements.size > 0 %><%= render "entitybuilder/movements/sheet/full" %><% end %>
+  </div>
+
+  <% if @parent_object.skills.size > 0 %>
+  <div class="medium-7 columns">
+  <% else %>
+  <div class="medium-10 columns">
+  <% end %>
+
+    <%= render "entitybuilder/entities/layouts/sheet/core_blocks" %>
+
+    <div class="row">
+
+      <% if (@defenses_w_bonus.size + @defenses_w_text.size + @parent_object.saving_throws.size) > 0 %>
+      <div class="medium-4 columns">
+        <table class="sheet-table">
+          <thead>
+            <tr>
+              <th class="text-center" colspan="3">Defenses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render "entitybuilder/defenses/sheet/partial" %>
+            <% if @parent_object.saving_throws.size > 0 %>
+              <%= render "entitybuilder/saving_throws/sheet/partial" %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="medium-8 columns">
+      <% else %>
+      <div class="medium-12 columns">
+      <% end %>
+        <% if @parent_object.attacks.size > 0 %>
+          <%= render "entitybuilder/attacks/sheet/full" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns">
+
+        <% active = "active" %>
+        <dl class="tabs" data-tab>
+          <% if @parent_object.trackables.size > 0 %>
+            <dd class="tab-title<%= " #{active}" %>"><a href="#panelTrackables" title="Trackables"><i class="fa fa-pencil"></i></a></dd>
+            <% active = nil %>
+          <% end %>
+
+          <% if @parent_object.linked_rules.present? %>
+          <dd class="tab-title<%= " #{active}" %>"><a href="#panelRules" title="Rules"><i class="fa fa-book"></i></a></dd>
+          <% active = nil %>
+          <% end %>
+
+          <% if @parent_object.prepared_known_spells.size > 0 %>
+            <dd class="tab-title<%= " #{active}" %>"><a href="#panelSpells" title="Spells"><i class="fa fa-magic"></i></a></dd>
+          <% active = nil %>
+          <% end %>
+          <% if @parent_object.items.size > 0 or @parent_object.currencies.size > 0 %>
+            <dd class="tab-title<%= " #{active}" %>"><a href="#panelItems" title="Items"><i class="icon-price-tag"></i></a></dd>
+            <% active = nil %>
+          <% end %>
+          <% if @parent_object.descriptors.size > 0 %>
+            <dd class="tab-title<%= " #{active}" %>"><a href="#panelDescriptors" title="Descriptors"><i class="fa fa-info-circle"></i></a></dd>
+            <% active = nil %>
+          <% end %>
+
+          <dd class="tab-title<%= " #{active}" %>"><a href="#panelDice" title="Dice"><i class="fa fa-square"></i></a></dd>
+          <% active = nil %>
+
+          <% if (@parent_object.type.include?"Resident") && @parent_object.can_edit?(current_user, admin_signed_in?, @type) %>
+            <dd class="tab-title<%= " #{active}" %>"><a href="#panelNotes" title="Notes"><i class="fa fa-sticky-note"></i></a></dd>
+            <% active = nil %>
+          <% end %>
+        </dl>
+
+        <% active = "active" %>
+        <div class="tabs-content">
+          <% if @parent_object.trackables.size > 0 %>
+            <div class="content<%= " #{active}" %>" id="panelTrackables" style="padding-top: 0px;">
+              <%= render partial: "entitybuilder/trackables/sheet/full", locals: { active: active } %>
+            </div>
+            <% active = nil %>
+          <% end %>
+
+          <% if @parent_object.linked_rules.present? %>
+            <div class="content<%= " #{active}" %>" id="panelRules">
+              <div class="row inline text-right">
+                <div class="small-12 columns">
+                  <label class="inline-label-flat">Rules</label>
+                </div>
+              </div>
+              <%= render "entitybuilder/linked_rules/layouts/card",
+                entity: @parent_object,
+                clickable: @clickable,
+                linked_rules: @parent_object.linked_rules
+              %>
+            </div>
+          <% end %>
+
+          <% if @parent_object.prepared_known_spells.size > 0 %>
+            <div class="content<%= " #{active}" %>" id="panelSpells">
+              <div class="row inline text-right">
+                <div class="small-12 columns">
+                  <label class="inline-label-flat">Spells</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="medium-8 columns" id="spell_list">
+                  <%= render "entitybuilder/known_spells/layouts/card",
+                    entity: @parent_object,
+                    clickable: @clickable,
+                    can_edit: @parent_object.can_edit?(current_user, admin_signed_in?, @type),
+                    prepared_known_spells: @prepared_spells
+                  %>
+                </div>
+                <div class="medium-4 columns">
+                  <% if @parent_object.caster_levels.size > 0 %><%= render "entitybuilder/caster_levels/sheet/full" %><% end %>
+                </div>
+              </div>
+            </div>
+            <% active = nil %>
+          <% end %>
+          <% if @parent_object.items.size > 0 or @parent_object.currencies.size > 0 %>
+            <div class="content<%= " #{active}" %>" id="panelItems">
+              <div class="row inline text-right">
+                <div class="small-12 columns">
+                  <label class="inline-label-flat">Items</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="medium-7 columns">
+                  <%= render "entitybuilder/inventory_items/sheet/full" %>
+                </div>
+                <div class="medium-5 columns" id="panelCurrencies">
+                  <%= render "entitybuilder/currencies/sheet/full" %>
+                </div>
+              </div>
+            </div>
+            <% active = nil %>
+          <% end %>
+          <% if @parent_object.descriptors.size > 0 %>
+            <div class="content<%= " #{active}" %>" id="panelDescriptors">
+              <div class="row inline text-right">
+                <div class="small-12 columns">
+                  <label class="inline-label-flat">Descriptors</label>
+                </div>
+              </div>
+              <%= render partial: "entitybuilder/descriptors/sheet/full" %>
+            </div>
+            <% active = nil %>
+          <% end %>
+
+          <div class="content<%= " #{active}" %>" id="panelDice">
+            <div class="row inline text-right">
+              <div class="small-12 columns">
+                <label class="inline-label-flat">Dice</label>
+              </div>
+            </div>
+            <%= render 'entitybuilder/layouts/basic_dice/row' %>
+          </div>
+          <% active = nil %>
+
+          <% if (@parent_object.type.include?"Resident") && @parent_object.can_edit?(current_user, admin_signed_in?, @type) %>
+            <div class="content<%= " #{active}" %>" id="panelNotes">
+              <div class="row inline text-right">
+                <div class="small-12 columns">
+                  <label class="inline-label-flat">Notes</label>
+                </div>
+              </div>
+              <%= render "entitybuilder/entities/update_notes" %>
+            </div>
+            <% active = nil %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+<% if @parent_object.skills.size > 0 %>
+  <div class="medium-3 columns">
+    <%= render "entitybuilder/skills/layouts/sheet" %>
+  </div>
+<% end %>
+</div>

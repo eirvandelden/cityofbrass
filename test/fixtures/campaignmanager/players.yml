@@ -1,0 +1,5 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+player1:
+  campaign: resident_two
+  affiliation: affiliation2

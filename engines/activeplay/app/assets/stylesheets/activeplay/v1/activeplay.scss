@@ -1,0 +1,122 @@
+/* Fix user-agent */
+
+.ap-chatviewer{
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  //padding-top: .25em;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Pages */
+
+.ap-pages {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.ap-page {
+  height: 100%;
+  width: 100%;
+}
+
+/* Chat page */
+
+.ap-chat.ap-page {
+  display: none;
+}
+
+.ap-inputMessage {
+  font-size: .875em !important;
+}
+
+.ap-inputButton {
+  line-height: 1rem !important;
+  border-color: #999;
+}
+
+.ap-log {
+  color: gray;
+  font-size: .875em;
+  margin: 5px;
+  text-align: center;
+}
+
+/* Messages */
+
+.ap-chatArea {
+  height: 100%;
+  //padding-bottom: 60px;
+}
+
+.ap-messages {
+  word-wrap: break-word;
+  font-size: .875em;
+  height: 100%;
+  margin: 0px !important;
+  overflow-y: scroll;
+  padding: 0px;
+  ul{
+    font-weight: bold;
+    font-size: .875em;
+  }
+}
+
+.ap-message {
+  padding-bottom: .5em;
+}
+
+.ap-message.ap-typing .ap-messageBody {
+  color: gray;
+}
+
+.ap-username {
+  float: left;
+  font-weight: bold;
+  overflow: hidden;
+  padding-right: .5em;
+  text-align: right;
+}
+
+.ap-listname {
+  font-weight: bold;
+}
+
+/* Input */
+
+.ap-inputMessage {
+  border: 10px solid #000;
+  bottom: 0;
+  height: 60px;
+  left: 0;
+  outline: none;
+  padding-left: 10px;
+  //position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.ap-chat-command{
+  padding-left: .5em;
+}
+
+.ap-chat-dice{
+  padding-left: .5em;
+  border-left: .25em solid #c5c5c5;
+}
+
+.ap-dice-roll{
+  padding-left: .5em;
+}
+
+.ap-dice-total{
+  color: #4e74a5;
+}
+
+.ap-variable{
+  color: #4e74a5;
+  font-weight: normal;
+}

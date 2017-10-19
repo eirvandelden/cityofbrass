@@ -1,0 +1,37 @@
+<% core_rules_list = @rules.to_a.map(&:core_rules).uniq.sort() %>
+<% core_rules_list.each do |core_rules| %>
+
+  <h2><%= core_rules %></h2>
+  <div class="row show-div">
+    <div class="medium-12 columns">
+      <% rule_types = CoreRules::Rule.rule_types(core_rules)%>
+      <% rule_types.each do |rule_type| %>
+        <% rules = @rules.select { |i| i.core_rules == core_rules && i.rule_type == rule_type } %>
+        <% if rules.present? %>
+
+          <h3 class="color-c5"><%= rule_type.pluralize %></h3>
+          <div class="row show-div">
+            <div class="medium-12 columns">
+              <% rules.each do |rule| %>
+
+                <div class="row">
+                  <div class="small-12 columns">
+                    <%= link_to rule.name, polymorphic_path(rule) %><%= " - #{rule.short_description}" if rule.short_description.present? %>
+                  </div>
+                </div>
+
+              <% end %>
+            </div>
+          </div>
+
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+<% end %>
+<div class="row">
+  <div class="small-12 columns text-center">
+    <%= paginate @rules %>
+  </div>
+</div>

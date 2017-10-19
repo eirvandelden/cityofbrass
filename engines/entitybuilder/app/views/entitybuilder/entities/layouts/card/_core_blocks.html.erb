@@ -1,0 +1,32 @@
+<div class="row">
+  <% if hit_points.present? %>
+    <div class="small-<%= column_size %> columns">
+      <div id="<%= "#{css_class}" %>_core_health_<%= "#{hit_points.id}" %>">
+        <%= render 'entitybuilder/trackables/layouts/core_health', css_class: css_class, hit_points: hit_points %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if armor_class_name.present? and armor_class_value.present? %>
+    <div class="small-<%= column_size %> columns end">
+      <div class="eb-v1-<%= "#{css_class}" %>-over <%= "eb-v1-#{css_class}-reduced" if armor_class_value.to_s.length > 5 %> text-center"><%= armor_class_value %></div>
+      <div class="eb-v1-<%= "#{css_class}" %>-under text-center"><i class='fa fa-shield'></i> <%= card_name_shortner(armor_class_name) %></div>
+    </div>
+  <% end %>
+
+  <% if initiative_dice.present? %>
+    <div class="small-<%= column_size %> columns end">
+      <div class="eb-v1-<%= "#{css_class}" %>-over <%= "eb-v1-#{css_class}-reduced" if initiative_bonus.to_s.length > 5 %> text-center">
+        <% initiative_bonus_placeholder = "#{initiative_bonus}"  %>
+        <% initiative_bonus_placeholder = "+#{initiative_bonus}" if initiative_bonus > -1 %>
+        <% initiative_roll = "#{initiative_dice}#{initiative_bonus_placeholder}" %>
+        <% if @show_popbox.present? %>
+          <%= format_dice_popup(initiative_display, initiative_dice, initiative_bonus).html_safe %>
+        <% else %>
+          <%= format_dice_activeplay(initiative_display, initiative_name, initiative_roll).html_safe %>
+        <% end %>
+      </div>
+      <div class="eb-v1-<%= "#{css_class}" %>-under text-center"><i class='fa fa-clock-o'></i>  <%= card_name_shortner(initiative_name) %></div>
+    </div>
+  <% end %>
+</div>

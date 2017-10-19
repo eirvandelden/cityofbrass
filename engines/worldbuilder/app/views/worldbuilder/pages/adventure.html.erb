@@ -1,0 +1,42 @@
+<% provide(:title, "#{@district.name} | #{@page.name}") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Adventures" => "/sb/#{@adventure.type.demodulize.tableize.gsub('_','/')}" },
+    { @adventure.name => storybuilder.polymorphic_path(@adventure) },
+    { @district.name => district_path(@district.slug) },
+    { @page.name => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'storybuilder/menus/adventure', :locals => { :page => nil } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @page.name,
+        :sub => @page.page_label,
+        :child_link => worldbuilder.district_page_new_child_path(@district.slug, @page),
+        :edit_link => worldbuilder.edit_district_page_path(@district.slug, @page),
+        :can_auth => @district.can_edit?(current_user, admin_signed_in?)
+      }
+    %>
+    <hr class="faded">
+
+    <div class="row">
+      <div class="small-12 columns">
+        <% unless @page.gallery_image.nil? %>
+          <%= link_to (image_tag @page.gallery_image.file.url(:medium), :alt => @page.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@page.gallery_image)}", "data-reveal-id" => "showModal", :remote => true  %>
+        <% end %>
+
+        <%= render :partial =>'features' if @page.features.size > 0 || @page.parent_id.present? %>
+
+        <%= render :partial =>'sections' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'layouts/modal/show' %>

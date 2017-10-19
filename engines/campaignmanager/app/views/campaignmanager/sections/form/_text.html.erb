@@ -1,0 +1,5 @@
+<%= f.input :header %>
+<%= f.input :section_style, label: 'Style', collection: cm_section_text_style_options, :include_blank => true %>
+<%= f.input :content, class: "editorblank" %>
+
+<%= render :partial =>'layouts/ckeditor', :locals => { :cke_version => 'standard' } %>

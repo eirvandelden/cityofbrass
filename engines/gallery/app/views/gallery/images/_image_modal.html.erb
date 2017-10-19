@@ -1,0 +1,22 @@
+<script>
+  var image_for = "<%= image_for %>";
+</script>
+
+<div id="pkrGalleryModal" class="reveal-modal" data-reveal>
+  <div>
+    <h2><i class="icon-images"></i> Images</h2>
+    <hr class="faded">
+    <div class="reveal-modal-scroll">
+      <i class="icon-images"></i> <%= link_to "My Images", gallery.resident_images_pkr_path, :remote => true %> |
+      <i class="icon-images"></i> <%= link_to "Stock Images", gallery.stock_images_pkr_path, :remote => true %> |
+      <% if admin_signed_in? %>
+        <i class="icon-images"></i> <%= link_to "Proprietary Images", gallery.proprietary_images_pkr_path, :remote => true %> |
+      <% end %>
+      <i class="icon-images"></i> <%= link_to "Map Images", gallery.map_images_pkr_path, :remote => true %> |
+    </div>
+    <div>
+      <span id="show_placeholder"></span>
+    </div>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+</div>

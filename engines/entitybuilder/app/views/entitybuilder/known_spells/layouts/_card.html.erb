@@ -1,0 +1,22 @@
+<% spell_classes = prepared_known_spells.collect(&:spell_class).uniq.sort %>
+<% spell_classes.each do |spell_class| %>
+<div class="indent">
+  <h3 class="eb-v1-card-header"><%= spell_class %></h3>
+  <div>
+    <% levels = prepared_known_spells.select { |i| i.spell_class == spell_class && i.at_will == false }.collect(&:level).uniq.sort_by! { |l| l.to_i } %>
+    <% levels = levels.reject { |i| i.nil? } %>
+
+
+      <% zero_level_known_spells = prepared_known_spells.select { |i| i.at_will == false && i.level.nil? && i.spell_class == spell_class } %>
+      <%= render "entitybuilder/known_spells/layouts/level_list", entity: entity, clickable: clickable, can_edit: can_edit, known_spells: zero_level_known_spells, level: '' if zero_level_known_spells.present? %>
+
+      <% at_will_known_spells = prepared_known_spells.select { |i| i.at_will == true && i.spell_class == spell_class } %>
+      <%= render "entitybuilder/known_spells/layouts/level_list", entity: entity, clickable: clickable, can_edit: can_edit, known_spells: at_will_known_spells, level: 'At-will' if at_will_known_spells.present? %>
+
+      <% levels.each do |level| %>
+        <% known_spells = prepared_known_spells.select { |i| i.at_will == false && i.level == level && i.spell_class == spell_class } %>
+        <%= render "entitybuilder/known_spells/layouts/level_list", entity: entity, clickable: clickable, can_edit: can_edit, known_spells: known_spells, level: level %>
+      <% end %>
+  </div>
+</div>
+<% end %>

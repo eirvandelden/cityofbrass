@@ -1,0 +1,56 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+adventure_log_one:
+  type: Campaignmanager::AdventureLog
+  campaign: resident_one
+  parent_id:
+  name: Ima Log
+  slug: ima-log
+  page_label: Forest
+  privacy: Residents
+  short_description: MyString
+  full_description: <p>Text for test</p>
+
+adventure_log_two:
+  type: Campaignmanager::AdventureLog
+  campaign: resident_two
+  parent_id:
+  name: Ima Log
+  slug: ima-log
+  page_label: Forest
+  privacy: Residents
+  short_description: MyString
+  full_description: <p>Text for test</p>
+
+house_rule_one:
+  type: Campaignmanager::HouseRule
+  campaign: resident_two
+  parent_id:
+  name: Ima Rule
+  slug: ima-rule
+  page_label:
+  privacy: Residents
+  short_description: MyString
+  full_description: <p>Text for test</p>
+
+game_master_note_one:
+  type: Campaignmanager::GameMasterNote
+  campaign: resident_two
+  parent_id:
+  name: Ima GM Note1
+  slug: ima-gm-note1
+  page_label:
+  privacy: Residents
+  short_description: MyString
+  full_description: <p>Text for test</p>
+
+game_master_note_two:
+  type: Campaignmanager::GameMasterNote
+  campaign: resident_two
+  parent_id: a7084512-22b7-4ae7-ba7f-8203c282bf45
+  name: Ima GM Note2
+  slug: ima-gm-note2
+  page_label:
+  privacy: Residents
+  short_description: MyString
+  full_description: <p>Text for test</p>

@@ -1,0 +1,42 @@
+<% type_array = type_split(@type) %>
+<% provide(:title, "#{type_array[1]} | #{@entity.name}") %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => polymorphic_path(@type.tableize) },
+    { @entity.name => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="large-10 large-centered columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => @entity.icon,
+        :main => @entity.name,
+        :sub => @entity.title,
+        :view_link => polymorphic_path(@entity),
+        :profile_link => ("#{polymorphic_path(@entity)}/profile" if @entity.can_sheet?(current_user, admin_signed_in?, @type)),
+        :sheet_link => ("#{polymorphic_path(@entity)}/sheet" if @entity.can_sheet?(current_user, admin_signed_in?, @type)),
+        :edit_link => edit_polymorphic_path(@entity),
+        :can_auth => @entity.can_edit?(current_user, admin_signed_in?, @type)
+      }
+    %>
+    <hr class="faded">
+    <% @show_popbox = true %>
+    <%= render "layouts/popbox" %>
+    <%= render "entitybuilder/entities/layouts/card", entity: @entity, hide_header: 'true' %>
+  </div>
+</div>
+
+<% if @entity.publisher.present? or @entity.source.present? %>
+  <%= render 'layouts/publisher', publisher: @entity.publisher, is_3pp: @entity.is_3pp, source: @entity.source %>
+<% end %>
+
+<% if @type.include?"Stock" %>
+  <%= render 'layouts/license/link', core_rules: @entity.core_rules %>
+  <%= render 'layouts/license/modal' %>
+<% end %>
+
+<%= render 'entitybuilder/layouts/modal_list' %>
+<br>

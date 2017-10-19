@@ -1,0 +1,20 @@
+<div id="form_div">
+  <%= simple_form_for @core_faq, :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <label class="inline-label-flat">Core Faq</label>
+      </div>
+    </div>
+    <% if f.object.new_record? %>
+      <%= f.input :core_item, collection: missing_core_items.sort, :include_blank => true %>
+    <% else %>
+      <%= f.input :core_item, collection: core_faq_list, :include_blank => true, disabled: true, input_html: { readonly: 'readonly' } %>
+    <% end %>
+    <%= f.association :faq, collection: Support::Faq.select('id, question').order(:question), label_method: :question, value_method: :id, :include_blank => true %>
+    <%= f.input :active, label: "&nbsp; Active".html_safe, as: :boolean %>
+  </fieldset>
+
+  <%= render 'layouts/form/save_and_cancel' %>
+  <% end %>
+</div>

@@ -1,0 +1,8 @@
+<div class="license-link text-center color-c5">
+  <p>
+    <% if publisher.present? %><strong>Publisher: </strong><%= publisher %><% end %>
+    <% if publisher.present? && is_3pp == true %> / 3PP<% end %>
+    <% if publisher.present? %><br><% end %>
+    <% if source.present? %><strong>Source: </strong><%= source %><% end %>
+  </p>
+</div>

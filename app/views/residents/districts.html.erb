@@ -1,0 +1,72 @@
+<% provide(:title, "#{@resident.name} | Districts") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Residents" => residents_path },
+    { @resident.name  => resident_path(@resident.slug)  },
+    { "Districts" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 columns text-center">
+    <%= image_tag "wb.jpg" %>
+  </div>
+
+  <div class="medium-9 columns">
+    <div class="row">
+      <div class="medium-12 columns">
+        <%= render :partial =>'layouts/header',
+            :locals => {
+            :icon => 'icon-globe',
+            :main => 'Districts',
+            :sub => 'Owner',
+            :add_link  => worldbuilder.new_district_path,
+            :can_auth => @resident.can_auth(current_user)
+          }
+        %>
+        <hr class="faded">
+
+        <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+
+        <% @districts.each do |district| %>
+          <% if district.can_show?(current_user, admin_signed_in?) %>
+            <h2><%= link_to district.name, worldbuilder.district_path(district.slug) %><span class="subheader"><%= " - #{district.page_label}" if district.page_label.present? %></span></h2>
+            <h4 style="color:#c5c5c5;">Updated: <span data-timestamp="<%= district.updated_at.to_i*1000 %>"></span></h4>
+            <p><%= district.short_description %></p>
+          <% end %>
+        <% end %>
+
+        <% if @wb_contributions.present? %>
+          <%= render :partial =>'layouts/header',
+              :locals => {
+              :icon => 'icon-globe',
+              :main => 'Districts',
+              :sub => 'Contributor'
+            }
+          %>
+
+          <hr class="faded">
+
+          <% @wb_contributions.each do |wb_contribution| %>
+            <% if wb_contribution.district.can_show?(current_user, admin_signed_in?) %>
+              <h2><%= link_to wb_contribution.district.name, worldbuilder.district_path(wb_contribution.district.slug) %><span class="subheader"><%= " - #{wb_contribution.district.page_label}" if wb_contribution.district.page_label.present? %></h2>
+              <strong>Owner:</strong> <%= link_to wb_contribution.district.resident.name, main_app.resident_path(wb_contribution.district.resident.slug) %></br>
+              <h4 class="color-c5">Updated: <span data-timestamp="<%= wb_contribution.district.updated_at.to_i*1000 %>"></span></h4>
+              <p><%= wb_contribution.district.short_description %></p>
+            <% end %>
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns text-center">
+        <%= paginate @districts %>
+      </div>
+    </div>
+  </div>
+</div>
+<% if @resident.full_description.present? %>
+  <%= render 'layouts/modal/resident', desc: @resident.full_description %>
+<% end %>

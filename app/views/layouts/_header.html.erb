@@ -1,0 +1,101 @@
+<div class="row">
+  <div class="small-7 medium-8 large-9 columns">
+	  <h1 class="header clipper">
+      <% if local_assigns.has_key? :icon %>
+        <i class='header-icon text-center <%= icon %>'></i>
+      <% end %>
+      <% if local_assigns.has_key? :main %><%= main %><% end %>
+  	  <% if local_assigns.has_key? :sub and !sub.blank? %><span class="subheader"> - <%= sub %></span><% end %>
+    </h1>
+  </div>
+
+  <div class="small-5 medium-4 large-3 columns text-right">
+    <h3>
+    <% if user_signed_in? %>
+      <% if local_assigns.has_key? :message_link %>
+        <%= link_to "<i class='header-icon-edit fa fa-edit'></i>".html_safe, message_link, title: "New Message", class: "cogs" unless message_link.nil? %>
+      <% end %>
+      <% if local_assigns.has_key? :message_affiliate_link %>
+        <%= link_to "<i class='header-icon-edit fa fa-envelope'></i>".html_safe, message_affiliate_link, title: "Message Affiliate", class: "cogs" unless message_affiliate_link.nil? %>
+      <% end %>
+      <% if local_assigns.has_key? :reply_link %>
+        <%= link_to "<i class='header-icon-edit fa fa-mail-reply'></i>".html_safe, reply_link, title: "Reply", class: "cogs" unless reply_link.nil? %>
+      <% end %>
+      <% if local_assigns.has_key? :add_affiliate_link %>
+        <%= link_to "<i class='header-icon-edit fa fa-user-plus'></i>".html_safe, add_affiliate_link, title: "Add Affiliate", class: "cogs add", method: :post unless add_affiliate_link.nil?%>
+      <% end %>
+      <% if local_assigns.has_key? :index_link %>
+        <%= link_to "<i class='header-icon-edit fa fa-list-ul'></i>".html_safe, index_link, title: "Index", class: "cogs" unless index_link.nil? %>
+      <% end %>
+      <% if local_assigns.has_key? :new_tab_link %>
+        <%= link_to "<i class='header-icon-edit fa fa-external-link-square'></i>".html_safe, new_tab_link, title: "Open in new tab!", target: "_blank", class: "cogs" unless new_tab_link.nil? %>
+      <% end %>
+
+      <% if local_assigns.has_key? :view_link %>
+        <% if current_page?(view_link) %>
+          <span class="cogs"><i class='header-icon-edit fa fa-file-image-o color-secondary'></i></span>
+        <% else %>
+          <%= link_to "<i class='header-icon-edit fa fa-file-image-o'></i>".html_safe, view_link, title: "Summary", class: "cogs" unless view_link.nil?%>
+        <% end %>
+      <% end %>
+      <% if local_assigns.has_key? :profile_link and profile_link.present? %>
+        <% if current_page?(profile_link) %>
+          <span class="cogs"><i class='header-icon-edit fa fa-file-text-o color-secondary'></i></span>
+        <% else %>
+          <%= link_to "<i class='header-icon-edit fa fa-file-text-o'></i>".html_safe, profile_link, title: "Profile", class: "cogs" unless profile_link.nil?%>
+        <% end %>
+      <% end %>
+      <% if local_assigns.has_key? :sheet_link and sheet_link.present? %>
+        <% if current_page?(sheet_link) %>
+          <span class="cogs"><i class='header-icon-edit fa fa-file-code-o color-secondary'></i></span>
+        <% else %>
+          <%= link_to "<i class='header-icon-edit fa fa-file-code-o'></i>".html_safe, sheet_link, title: "Sheet", class: "cogs" unless sheet_link.nil?%>
+        <% end %>
+      <% end %>
+
+      <% if local_assigns.has_key? :view_link_remote %>
+        <% if current_page?(view_link_remote) %>
+          <span class="cogs"><i class='header-icon-edit fa fa-file-image-o color-secondary'></i></span>
+        <% else %>
+          <%= link_to "<i class='header-icon-edit fa fa-file-image-o'></i>".html_safe, view_link_remote, :remote => true, title: "Summary", class: "cogs" unless view_link_remote.nil?%>
+        <% end %>
+      <% end %>
+      <% if local_assigns.has_key? :profile_link_remote and profile_link_remote.present? %>
+        <% if current_page?(profile_link_remote) %>
+          <span class="cogs"><i class='header-icon-edit fa fa-file-text-o color-secondary'></i></span>
+        <% else %>
+          <%= link_to "<i class='header-icon-edit fa fa-file-text-o'></i>".html_safe, profile_link_remote, :remote => true, title: "Profile", class: "cogs" unless profile_link_remote.nil?%>
+        <% end %>
+      <% end %>
+      <% if local_assigns.has_key? :sheet_link_remote and sheet_link_remote.present? %>
+        <% if current_page?(sheet_link_remote) %>
+          <span class="cogs"><i class='header-icon-edit fa fa-file-code-o color-secondary'></i></span>
+        <% else %>
+          <%= link_to "<i class='header-icon-edit fa fa-file-code-o'></i>".html_safe, sheet_link_remote, :remote => true, title: "Sheet", class: "cogs" unless sheet_link_remote.nil?%>
+        <% end %>
+      <% end %>
+
+      <% if local_assigns.has_key? :can_auth and can_auth == true %>
+        <% if local_assigns.has_key? :use_spell_link %>
+          <%= link_to "<i class='header-icon-edit icon-checkmark'></i>".html_safe, use_spell_link, title: "Use Spell", class: "cogs add", method: :patch, :remote => true unless use_spell_link.nil? %>
+        <% end %>
+        <% if local_assigns.has_key? :child_link %>
+          <%= link_to "<i class='header-icon-edit fa fa-plus'></i>".html_safe, child_link, title: "Add Child", class: "cogs add" unless child_link.nil? %>
+        <% end %>
+        <% if local_assigns.has_key? :add_link %>
+          <%= link_to "<i class='header-icon-edit fa fa-plus-circle'></i>".html_safe, add_link, title: "Add New", class: "cogs add" unless add_link.nil? %>
+        <% end %>
+        <% if local_assigns.has_key? :add_remote_link %>
+          <%= link_to "<i class='header-icon-edit fa fa-plus-circle'></i>".html_safe, add_remote_link, title: "Add New", class: "cogs add", :remote => true unless add_remote_link.nil? %>
+        <% end %>
+        <% if local_assigns.has_key? :edit_link %>
+          <%= link_to "<i class='header-icon-edit fa fa-cogs'></i>".html_safe, edit_link, title: "Edit", class: "cogs" unless edit_link.nil? %>
+        <% end %>
+        <% if local_assigns.has_key? :delete_link and local_assigns.has_key? :delete_message %>
+          <%= link_to "<i class='header-icon-edit fa fa-trash'></i>".html_safe, delete_link, title: "Delete", class: "cogs delete", method: :delete, data: { confirm: delete_message} unless delete_link.nil? %>
+        <% end %>
+      <% end %>
+    <% end %>
+    </h3>
+  </div>
+</div>

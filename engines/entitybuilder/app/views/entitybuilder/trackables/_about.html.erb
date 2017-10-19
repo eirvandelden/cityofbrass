@@ -1,0 +1,13 @@
+<div id="form_placeholder">
+  <fieldset>
+    <%= render 'entitybuilder/layouts/tutorial' %>
+    <strong>What are trackables?</strong>
+    <p>
+      Trackables are attributes that increase and decrease during game play.  Hit Points, Health and reputation are a few examples.  You can increase and descrease trackables via the character sheet.
+    </p>
+  </fieldset>
+</div>
+
+<% content_for :footer do %>
+  <%= render 'layouts/modal/tutorial' %>
+<% end %>

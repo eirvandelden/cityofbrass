@@ -1,0 +1,32 @@
+<div id="show_div">
+  <%= render :partial =>'layouts/header',
+    :locals => {
+      :icon => 'icon-price-tag',
+      :main => @item.name,
+      :edit_link => edit_polymorphic_path(@item),
+      :can_auth => @item.can_edit?(current_user, admin_signed_in?, @type)
+    }
+  %>
+  <hr class="faded">
+  <% unless @item.gallery_image.nil? %>
+    <%= link_to (image_tag @item.gallery_image.file.url(:medium), :alt => @item.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@item.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
+  <% end %>
+
+  <%= render :partial => 'rulebuilder/items/item_details', :locals => { :item => @item } %>
+  <%= sanitize @item.full_description %>
+
+  <% if @item.parent.present? %>
+    <h2><%= @item.parent.name %></h2>
+    <hr class="faded">
+    <%= sanitize @item.parent.full_description %>
+  <% end %>
+
+  <% if @item.publisher.present? or @item.source.present? %>
+    <%= render 'layouts/publisher', publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source %>
+  <% end %>
+
+  <% if @type.include?"Stock" %>
+    <%= render 'layouts/license/link', core_rules: @item.core_rules %>
+    <%= render 'layouts/license/modal' %>
+  <% end %>
+</div>

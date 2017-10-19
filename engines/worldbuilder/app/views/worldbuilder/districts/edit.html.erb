@@ -1,0 +1,41 @@
+<% provide(:title, @district.name) %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { @district.name => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'menus/manage',
+      :locals => {
+        :active => 'edit',
+        :view_link => district_path(@district.slug),
+        :details_link => edit_district_path(@district),
+        :options_link => district_options_path(@district),
+        :features_link => district_features_path(@district),
+        :sections_link => district_sections_path(@district),
+        :menu_items_link => district_menu_items_path(@district),
+        :contributors_link => (district_contributors_path(@district) if @district.is_owner?(current_user))
+      } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @district.name,
+        :sub => 'Details'
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="small-12 columns">
+        <div id="brass_form">
+          <%= render :partial => 'update' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render :partial =>'layouts/ckeditor', :locals => { :cke_version => 'standard' } %>

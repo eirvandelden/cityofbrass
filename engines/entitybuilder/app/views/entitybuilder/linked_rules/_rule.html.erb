@@ -1,0 +1,33 @@
+<div id="linked_rule_div">
+  <%= render :partial =>'layouts/header',
+    :locals => {
+      :icon => 'fa fa-book',
+      :main => @linked_rule.rule.name,
+      :sub => ("(#{@linked_rule.rule.category_list})" if @linked_rule.rule.category_list.present?),
+    }
+  %>
+  <hr class="faded">
+  <% unless @linked_rule.rule.gallery_image.nil? %>
+    <%= link_to (image_tag @linked_rule.rule.gallery_image.file.url(:medium), :alt => @linked_rule.rule.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@linked_rule.rule.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
+  <% end %>
+
+  <% if @linked_rule.rule.prerequisites? && ('5th Edition Generic'.include?@linked_rule.rule.core_rules) %><p class="italic"><strong>Prerequisites:</strong> <%= @linked_rule.rule.prerequisites %></p><% end %>
+  <%= sanitize @linked_rule.rule.full_description %>
+  <%= render :partial => 'rulebuilder/rules/rule_details', :locals => { :rule => @linked_rule.rule } %>
+
+  <% if @linked_rule.rule.parent.present? %>
+    <h2><%= @linked_rule.rule.parent.name %></h2>
+    <hr class="faded">
+    <%= sanitize @linked_rule.rule.parent.full_description %>
+  <% end %>
+
+  <% if @linked_rule.rule.publisher.present? or @linked_rule.rule.source.present? %>
+    <%= render 'layouts/publisher', publisher: @linked_rule.rule.publisher, is_3pp: @linked_rule.rule.is_3pp, source: @linked_rule.rule.source %>
+  <% end %>
+
+  <% if @linked_rule.rule.type.include?"Stock" %>
+    <%= render 'layouts/license/link', core_rules: @linked_rule.rule.core_rules %>
+    <%= render 'layouts/license/modal' %>
+  <% end %>
+
+</div>

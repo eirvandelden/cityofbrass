@@ -1,0 +1,40 @@
+<% provide(:title, "Rules | #{@rule.name}") %>
+<% type_array = type_split(@type) %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => polymorphic_path(@type.tableize) },
+    { @rule.name => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-2 columns">
+    <%= render :partial =>'menus/manage',
+      :locals => {
+        :active => 'options',
+        :index_link => polymorphic_path(@type.tableize),
+        :view_link => polymorphic_path(@rule),
+        :details_link => edit_polymorphic_path(@rule),
+        :options_link => "#{polymorphic_path(@rule)}/options"
+      } %>
+  </div>
+  <div class="medium-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @rule.name,
+        :sub => 'Options'
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="small-12 columns">
+        <div id="rule_form">
+          <%= simple_form_for @rule, method: :delete do |f| %>
+            <%= render :partial => 'layouts/form/options', :locals => { :f => f, :record => @rule } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

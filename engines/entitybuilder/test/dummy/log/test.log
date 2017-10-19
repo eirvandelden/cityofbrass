@@ -1,0 +1,31 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.9ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_ability_scores" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_attacks" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_base_values" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_campaign_joins" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_caster_levels" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_characteristics" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_characters" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_class_levels" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_creatures" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_currencies" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_defenses" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_descriptors" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_feats" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_inventory_items" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_items" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_known_feats" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_known_spells" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_modifiers" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_movements" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_saving_throws" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_skills" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_spells" DISABLE TRIGGER ALL;ALTER TABLE "entitybuilder_trackables" DISABLE TRIGGER ALL;ALTER TABLE "tester_blorghs" DISABLE TRIGGER ALL;ALTER TABLE "tester_characters" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.7ms)[0m  DELETE FROM "entitybuilder_characters"
+  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO "entitybuilder_characters" ("id", "resident_id", "name", "privacy", "sheet_privacy", "core_rules", "short_description", "full_description", "notes", "sheet_font", "created_at", "updated_at") VALUES ('af60c04c-415d-407c-91e4-664c000f9a9f', 'b8141712-4abd-4277-a290-a42c958b38b1', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyText', 'MyText', 'MyString', '2014-11-05 22:20:36', '2014-11-05 22:20:36')[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "entitybuilder_characters" ("id", "resident_id", "name", "privacy", "sheet_privacy", "core_rules", "short_description", "full_description", "notes", "sheet_font", "created_at", "updated_at") VALUES ('acce9424-3872-4793-b2c4-6bfb5b5f6f01', 'bae67f30-13cb-4bf2-872e-6217c0c14eda', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyText', 'MyText', 'MyString', '2014-11-05 22:20:36', '2014-11-05 22:20:36')
+entitybuilder_characters has primary key id with no default sequence
+  [1m[36m (8.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_ability_scores" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_attacks" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_base_values" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_campaign_joins" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_caster_levels" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_characteristics" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_characters" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_class_levels" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_creatures" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_currencies" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_defenses" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_descriptors" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_feats" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_inventory_items" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_items" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_known_feats" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_known_spells" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_modifiers" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_movements" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_saving_throws" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_skills" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_spells" ENABLE TRIGGER ALL;ALTER TABLE "entitybuilder_trackables" ENABLE TRIGGER ALL;ALTER TABLE "tester_blorghs" ENABLE TRIGGER ALL;ALTER TABLE "tester_characters" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+--------------------------------------------------------------
+Entitybuilder::CharactersControllerTest: test_should_get_index
+--------------------------------------------------------------
+  [1m[35mEntitybuilder::Character Load (0.5ms)[0m  SELECT  "entitybuilder_characters".* FROM "entitybuilder_characters"  WHERE "entitybuilder_characters"."id" = $1 LIMIT 1  [["id", "af60c04c-415d-407c-91e4-664c000f9a9f"]]
+Processing by Entitybuilder::CharactersController#index as HTML
+Completed 500 Internal Server Error in 1ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+-------------------------------------------------------------------
+Entitybuilder::CharactersControllerTest: test_should_show_character
+-------------------------------------------------------------------
+  [1m[36mEntitybuilder::Character Load (0.3ms)[0m  [1mSELECT  "entitybuilder_characters".* FROM "entitybuilder_characters"  WHERE "entitybuilder_characters"."id" = $1 LIMIT 1[0m  [["id", "af60c04c-415d-407c-91e4-664c000f9a9f"]]
+Processing by Entitybuilder::CharactersController#show as HTML
+  Parameters: {"id"=>"af60c04c-415d-407c-91e4-664c000f9a9f"}
+Completed 500 Internal Server Error in 1ms
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+-----------------------------
+EntitybuilderTest: test_truth
+-----------------------------
+  [1m[35m (0.1ms)[0m  ROLLBACK

@@ -1,0 +1,3 @@
+<% @campaign_characters.each do |character| %>
+  <%= render 'entitybuilder/entities/layouts/badge', entity: character, badge_color: character.badge_color, isGM: @isGM %>
+<% end %>

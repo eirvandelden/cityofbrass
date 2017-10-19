@@ -1,0 +1,18 @@
+<% if flash[:success] %>
+	<div data-alert data-options="animation_speed:500;" class="alert-box success">
+		<%= flash[:error] %>
+		<a href="#" class="close"><i class='fa fa-times-circle'></i></a>
+	</div>
+<% end %>
+<% if flash[:notice] %>
+	<div data-alert data-options="animation_speed:500;" class="alert-box">
+		<%= flash[:notice] %>
+		<a href="#" class="close"><i class='fa fa-times-circle'></i></a>
+	</div>
+<% end %>
+<% if flash[:error] %>
+	<div data-alert data-options="animation_speed:5500;" class="alert-box alert">
+	  <%= flash[:error] %>
+	  <a href="#" class="close"><i class='fa fa-times-circle'></i></a>
+	</div>
+<% end %>

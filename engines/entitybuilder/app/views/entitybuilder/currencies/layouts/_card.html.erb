@@ -1,0 +1,17 @@
+<h3 class="eb-v1-card-header">Currencies</h3>
+
+<% currencies.each do |currency| %>
+  <%= simple_form_for [entity, currency], url: "#{entitybuilder.polymorphic_path(entity)}/currencies/#{currency.id}/update_card", :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+    <div class="row">
+      <div class="small-8 columns eb-v1-card-title clipper" style="text-indent: 1em;">
+        <%= link_to_if (clickable && currency.description.present?), currency.name, "#{entitybuilder.polymorphic_path(entity)}/currencies/#{currency.id}", "data-reveal-id" => "currency_modal", :remote => true %>
+      </div>
+      <div class="small-3 columns text-center">
+        <%= f.input :quantity, label: false, input_html: { class: 'eb-v1-card-input' } %>
+      </div>
+      <div class="small-1 columns text-center">
+        <a onclick="$('#edit_currency_<%= "#{currency.id}" %>').submit()" class="cogs125"><i class='fa fa-save fa-rotate-180'></i></a>
+      </div>
+    </div>
+  <% end %>
+<% end %>

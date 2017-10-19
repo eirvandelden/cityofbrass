@@ -1,0 +1,32 @@
+<% provide(:title, 'FAQs') %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "FAQs" => faqs_path },
+          { @faq.question => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-10 medium-centered columns">
+    <%= render :partial =>'layouts/header',
+    :locals => {
+      :main => 'FAQ',
+      :sub => 'Details',
+      :delete_link => @faq,
+      :delete_message => "Are you sure you want to delete \"#{@faq.question}\"?",
+      :can_auth => admin_signed_in?? true:false
+    }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="small-12 columns">
+        <div id="brass_form">
+          <%= simple_form_for @faq do |f| %>
+            <%= render :partial => 'form', :locals => { :f => f } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

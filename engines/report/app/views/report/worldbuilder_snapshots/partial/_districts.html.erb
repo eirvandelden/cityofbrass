@@ -1,0 +1,37 @@
+<fieldset>
+  <div class="row inline text-right">
+    <div class="small-12 columns">
+      <label class="inline-label-flat">Districts</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <table class="simple_table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th class="text-center">Paid</th>
+            <th class="text-center">Free</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Districts</strong></td>
+            <td class="text-center"><%= @paid_counts[:districts] %></td>
+            <td class="text-center"><%= @free_counts[:districts] %></td>
+          </tr>
+          <tr>
+            <td><strong>Pages</strong></td>
+            <td class="text-center"><%= @paid_counts[:pages] %></td>
+            <td class="text-center"><%= @free_counts[:pages] %></td>
+          </tr>
+          <tr>
+            <td><strong>Contributors</strong></td>
+            <td class="text-center"><%= @paid_counts[:contributors] %></td>
+            <td class="text-center"><%= @free_counts[:contributors] %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</fieldset>

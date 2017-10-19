@@ -1,0 +1,17 @@
+<div id="form_placeholder">
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <label class="inline-label-flat">Options</label>
+      </div>
+    </div>
+    <strong><%= link_to "<i class='fa fa-plus-circle'></i> Text".html_safe, "#{tcob_path(@parent_object, 'id')}/features/new?feature_type=text", :remote => true %></strong>
+    <p>Standard feature with a label and text. Can include a link using markdown. <br><strong>Example: [</strong>Label<strong>](</strong>http://www.example.com<strong>)</strong></p>
+    <strong><%= link_to "<i class='fa fa-plus-circle'></i> Child".html_safe, "#{tcob_path(@parent_object, 'id')}/features/new?feature_type=child", :remote => true %></strong>
+    <p>List of children associated current with record.</p>
+    <strong><%= link_to "<i class='fa fa-plus-circle'></i> Tag".html_safe, "#{tcob_path(@parent_object, 'id')}/features/new?feature_type=tag", :remote => true %></strong>
+    <p>List of records based on the specified tag and record type</p>
+    <strong><%= link_to "<i class='fa fa-plus-circle'></i> Special".html_safe, "#{tcob_path(@parent_object, 'id')}/features/new?feature_type=special", :remote => true %></strong>
+    <p>Owner, Updated, Created.</p>
+  </fieldset>
+</div>

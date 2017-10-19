@@ -1,0 +1,5 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+contributor1:
+  district: district_two
+  affiliation: affiliation1

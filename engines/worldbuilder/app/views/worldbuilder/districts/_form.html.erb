@@ -1,0 +1,38 @@
+<fieldset>
+  <div class="row">
+    <div class="medium-8 columns">
+      <%= f.input :name %>
+      <% unless @district.new_record?%>
+        <%= f.input :page_label, label: 'Label' %>
+      <% end %>
+      <% if current_user.is_free? %>
+        <%= f.input :privacy, collection: Campaignmanager::Campaign::PRIVACY_OPTIONS_FREE, :include_blank => false %>
+      <% else %>
+        <%= f.input :privacy, collection: Campaignmanager::Campaign::PRIVACY_OPTIONS %>
+      <% end %>
+      <%= f.fields_for :menu_item_join do |p| %>
+        <%= p.association :menu_item, collection: @district.menu_items, label_method: :item_label, value_method: :id, :include_blank => true %>
+      <% end %>
+    </div>
+    <div class="medium-4 columns text-center">
+      <%= f.fields_for :gallery_image_join do |p| %>
+        <%= p.input :image_id, as: :hidden %>
+        <%= render :partial => 'gallery/images/image_pkr', :locals => { :image_url => (@district.gallery_image.file.url(:thumb) unless @district.gallery_image.nil?) } %>
+      <% end %>
+    </div>
+  </div>
+
+  <% unless @district.new_record?%>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.input :short_description %>
+      <%= f.input :full_description, class: "editorblank" %>
+    </div>
+  </div>
+  <% end %>
+
+</fieldset>
+
+<%= render "layouts/form/save" %>
+
+<%= render :partial => 'gallery/images/image_modal', :locals => { :image_for => 'district_gallery_image_join_attributes_image_id' }  %>

@@ -1,0 +1,127 @@
+@import "v1/core/base";
+
+.left-menu{
+  color: $color-body-font;
+  text-align: right;
+
+  i {
+    width: 1.2em;
+    font-size: 1.1em;
+  }
+
+  dd{
+    width: 100%;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    border-right: 2px solid #c5c5c5;
+  }
+
+  a {
+    color: $color-body-font;
+    line-height: 1.75em;
+    padding-right: .5em;
+  }
+  dd.active {
+    background: #f5f5f5;
+    border-right: 2px solid #666;
+  }
+
+  dd:hover {
+    background: #f5f5f5;
+    border-right: 2px solid #c69633;
+  }
+
+}
+
+.message-menu{
+  dd{
+    width: 100%;
+    display: inline-block;
+    margin: 0px;
+    padding: 0;
+  }
+
+  i {
+    width: 1.2em;
+    font-size: 1.1em;
+  }
+
+  a {
+    color: $color-body-font;
+    padding-left: .5em;
+  }
+  dd.active {
+    color: $color-body-font;
+    font-weight: bold;
+  }
+}
+
+.menu-title{
+  color: $color-c5;
+  font-family: $brass-font-family;
+}
+
+.affiliate-menu{
+  font-weight:bold;
+  dd{
+    width: 100%;
+    display: inline-block;
+    margin: 1px;
+    padding: 0 5px;
+    border-bottom: 1px dotted $color-c5;
+  }
+
+  i {
+    width: 1.2em;
+    font-size: 1.1em;
+  }
+
+  dd.active {
+    font-weight: bold;
+  }
+}
+
+.shortcut-header{
+  //background-color: #3a3a3a;
+  text-align: right;
+  padding: 3px;
+  margin: 0px;
+  font-weight: bold;
+  color: $color-c5;
+  font-family: $body-font-family;
+}
+
+.shortcut-menu{
+  color: $color-body-font;
+  text-align: right;
+
+  i {
+    width: 1.2em;
+    font-size: 1.1em;
+  }
+
+  dd{
+    width: 100%;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    border-right: 2px solid #c5c5c5;
+  }
+
+  a {
+    color: $color-c5;
+    line-height: 1.75em;
+    padding-right: .5em;
+  }
+  dd.active {
+    background: #f5f5f5;
+    border-right: 2px solid #666;
+  }
+
+  dd:hover {
+    background: #f5f5f5;
+    border-right: 2px solid #c69633;
+  }
+
+}

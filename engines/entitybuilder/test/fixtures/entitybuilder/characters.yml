@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: "af60c04c-415d-407c-91e4-664c000f9a9f"
+  resident_id: "b8141712-4abd-4277-a290-a42c958b38b1"
+  name: MyString
+  privacy: MyString
+  sheet_privacy: MyString
+  core_rules: MyString
+  short_description: MyString
+  full_description: MyText
+  notes: MyText
+  sheet_font: MyString
+
+two:
+  id: "acce9424-3872-4793-b2c4-6bfb5b5f6f01"
+  resident_id: "bae67f30-13cb-4bf2-872e-6217c0c14eda"
+  name: MyString
+  privacy: MyString
+  sheet_privacy: MyString
+  core_rules: MyString
+  short_description: MyString
+  full_description: MyText
+  notes: MyText
+  sheet_font: MyString

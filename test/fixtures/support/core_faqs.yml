@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  faq: one
+  core_item: Resident New Form
+  active: true
+
+two:
+  faq: two
+  core_item: OGL
+  active: false

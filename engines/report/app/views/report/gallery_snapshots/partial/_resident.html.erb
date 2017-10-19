@@ -1,0 +1,24 @@
+<fieldset>
+  <div class="row inline text-right">
+    <div class="small-12 columns">
+      <label class="inline-label-flat">Resident</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <table class="simple_table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th class="text-center">Paid</th>
+            <th class="text-center">Free</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong><i class="fa icon-images fa-fw"></i> Images</strong></td><td class="text-center"><%= report_resident_image_count('active') %></td><td class="text-center"><%= report_resident_image_count('free') %></td></tr>
+          <tr><td><strong><i class="fa icon-database fa-fw"></i> Gallery Size</strong></td><td class="text-center"><%= report_resident_gallery_size('active') %></td><td class="text-center"><%= report_resident_gallery_size('free') %></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</fieldset>

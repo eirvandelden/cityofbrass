@@ -1,0 +1,6 @@
+<%= render :partial => 'rulebuilder/items/item_details', :locals => { :item => inventory_item.item } %>
+<ul class="no-bullet">
+  <% if inventory_item.quantity? %><li><strong>Quantity:</strong> <%= inventory_item.quantity %></li><% end %>
+  <% if inventory_item.equipped? %><li><strong>Equiped:</strong> <%= inventory_item.equipped %></li><% end %>
+  <% if inventory_item.carried? %><li><strong>Carried:</strong> <%= inventory_item.carried %></li><% end %>
+</ul>

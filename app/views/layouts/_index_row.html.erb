@@ -1,0 +1,54 @@
+<% if local_assigns.has_key? :can_auth and can_auth == true %>
+<div class="row">
+  <div class="small-9 columns">
+    <h2 class="clipper">
+      <% if local_assigns.has_key? :main %>
+        <% unless show_link.blank? %>
+          <%= link_to main, show_link  %>
+        <% end %>
+      <% end %>
+      <% if local_assigns.has_key? :sub %>
+        <% unless sub.blank? %>
+          <span class="subheader"> - <%= sub %></span>
+        <% end %>
+      <% end %>
+    </h2>
+  </div>
+  <div class="small-3 columns text-right">
+    <span class="cogspan">
+      <% if local_assigns.has_key? :child_link %>
+        <%= link_to "<i class='fa fa-plus'></i>".html_safe, child_link, title: "Add Child", class: "color-c5 add" unless child_link.nil? %>
+      <% end %>
+      <% if local_assigns.has_key? :edit_link %>
+        <%= link_to "<i class='fa fa-cogs'></i>".html_safe, edit_link, title: "Edit", class: "color-c5" unless edit_link.nil? %>
+      <% end %>
+      <% if local_assigns.has_key? :delete_link %>
+        <%= link_to "<i class='fa fa-times-circle'></i>".html_safe, delete_link, title: "Delete", class: "color-c5 delete", method: :delete, data: { confirm: 'Are you sure you want to delete this?'} unless delete_link.nil? %>
+      <% end %>
+    </span>
+  </div>
+</div>
+<% else %>
+
+<div class="row">
+  <div class="small-12 columns">
+    <h2 class="clipper">
+      <% if local_assigns.has_key? :main %>
+        <% unless show_link.blank? %>
+          <%= link_to main, show_link  %>
+        <% else %>
+          <%= main  %>
+        <% end %>
+      <% end %>
+      <% if local_assigns.has_key? :sub %>
+        <% unless sub.blank? %>
+          <span class="subheader"> - <%= sub %></span>
+        <% end %>
+      <% end %>
+    </h2>
+  </div>
+</div>
+
+<% end %>
+
+<p><%= description %></p>

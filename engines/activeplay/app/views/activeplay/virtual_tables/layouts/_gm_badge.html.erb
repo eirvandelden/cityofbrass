@@ -1,0 +1,15 @@
+<div id="badge_gm_<%= game_master.id %>" class="eb-v1-badge eb-v1-badge-gm">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="eb-v1-badge-over">
+        <span class="eb-v1-badge-name">
+          <a href="#" onclick="ApCore.$emit('evt-privateMessage','GM')" class="iconlink">
+            <i class="fa fa-fw fa-paper-plane"></i>
+          </a>
+          GM
+        </span>
+      </div>
+      <div class="eb-v1-badge-under clipper"><%= game_master.name %></div>
+    </div>
+  </div>
+</div>

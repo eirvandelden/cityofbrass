@@ -1,0 +1,15 @@
+<li>
+  <div class="indent">
+    <% if level.present? && level != 'At-will' %><strong><%= "#{level}#{level.ordinal}" %> level: </strong><% end %>
+    <% if level == 'At-will' %><strong>At-will: </strong><% end %>
+    <% known_spells.each do |known_spell| %>
+      <% unless known_spell.used == true %>
+        <%= link_to "<i class='fa fa-minus-circle'></i>".html_safe, "#{polymorphic_path(@parent_object)}/known_spells/#{known_spell.id}/use_spell", title: "Use Spell", class: "cogs125 delete", method: :patch, :remote => true if @parent_object.can_edit?(current_user, admin_signed_in?, @type) %>
+        <strong><%= link_to known_spell.spell.name, "#{polymorphic_path(@parent_object)}/known_spells/#{known_spell.id}", "data-reveal-id" => "known_spell_modal", :remote => true %><%= " (#{known_spell.detail})" if known_spell.detail.present? %></strong><%= ", " unless known_spell == known_spells.last %>
+      <% else %>
+        <%= link_to "<i class='fa fa-plus-circle'></i>".html_safe, "#{polymorphic_path(@parent_object)}/known_spells/#{known_spell.id}/use_spell", title: "Reset Spell", class: "cogs125 add", method: :patch, :remote => true if @parent_object.can_edit?(current_user, admin_signed_in?, @type) %>
+        <strong><%= link_to known_spell.spell.name, "#{polymorphic_path(@parent_object)}/known_spells/#{known_spell.id}", "data-reveal-id" => "known_spell_modal", :remote => true, :class => "iconlink" %><%= " (#{known_spell.detail})" if known_spell.detail.present? %></strong><%= ", " unless known_spell == known_spells.last %>
+      <% end %>
+    <% end %>
+  </div>
+</li>

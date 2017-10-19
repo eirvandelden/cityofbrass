@@ -1,0 +1,12 @@
+<%= sanitize @campaign.full_description %>
+
+<% @campaign.sections.each do |section| %>
+  <%= render :partial =>'layouts/sections/looper',
+      :locals => {
+        :section => section,
+        :record => @campaign,
+        :all_pages => @campaign.pages.to_a,
+        :resident => @resident,
+        :can_auth => @campaign.can_edit?(current_user, admin_signed_in?)
+    } %>
+<% end %>

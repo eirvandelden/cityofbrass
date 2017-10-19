@@ -1,0 +1,25 @@
+<% provide(:title, "403") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "403" => nil  },
+          { "server refuses to respond to request" => nil  }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="large-10 large-centered columns">
+    <div class="row">
+      <div class="medium-8 columns">
+        <span class="error-code">403</span>
+        <h2>What have we here?</h2>
+        <p>I don't see yer name on the authorized list. Nobody gets by me who ain't on da list. No amount of sweet talking, jink tossing, or begging will get you past me. I suggest you just turn around and go back to where you came from.</p>
+        <p><i class="fa fa-angle-double-left"></i> <%= link_to "Back", :back %>
+      </div>
+      <div class="medium-4 columns text-center">
+        <p>&nbsp;</p>
+        <img src="https://s3.amazonaws.com/thecityofbrass/assets/images/orc_boss.png">
+      </div>
+    </div>
+  </div>
+</div>

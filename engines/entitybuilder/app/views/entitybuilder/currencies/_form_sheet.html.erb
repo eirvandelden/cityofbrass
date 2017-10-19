@@ -1,0 +1,17 @@
+<div id="currency_div">
+<%= simple_form_for [@parent_object, @currency], url: "#{polymorphic_path(@parent_object)}/currencies/#{@currency.id}/update_sheet", :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <div class="row inline">
+    <div class="small-12 columns">
+      <label class="inline-label-flat"><%= f.object.name %></label>
+    </div>
+  </div>
+  <fieldset>
+    <div class="row inline">
+      <div class="small-12 columns">
+        <%= f.input :quantity %>
+      </div>
+    </div>
+  </fieldset>
+  <%= render "layouts/form/save_and_cancel" %>
+<% end %>
+</div>

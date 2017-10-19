@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+district_one:
+  resident: razune
+  name: Realm of the Gods
+  slug: realm-of-the-gods
+  privacy: Public
+  short_description: MyString
+  full_description: <p>Text for test</p>
+
+district_two:
+  resident: tuandn
+  name: Korinth
+  slug: korinth
+  privacy: Public
+  short_description: MyString
+  full_description: <p>Text for test</p>
+
+district_three:
+  resident: razune
+  name: Realm of the Gods2
+  slug: realm-of-the-gods2
+  privacy: Affiliate
+  short_description: MyString
+  full_description: <p>Text for test</p>

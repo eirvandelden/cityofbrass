@@ -1,0 +1,173 @@
+<% provide(:title, 'Welcome') %>
+<% content_for :head do %>
+    <meta name="description" content="The City of Brass is a fully-featured app specifically designed to manage the mechanics of pen-and-paper games allowing you to focus on what matters: { playing that game }">
+<% end %>
+
+<style>
+  .tab-bar{
+    margin-bottom: 0;
+  }
+</style>
+
+<div class="container">
+  <div class="medium-12 medium-centered columns" style="text-align: center; padding: 0;">
+    <% if Rails.env.production? %>
+      <%= image_tag "scrolls/skyline.jpg" %>
+    <% else %>
+      <%= image_tag "scrolls/KahnaVsDragon.jpg" %>
+    <% end %>
+  </div>
+</div>
+<div>
+  <div class="medium-12 columns scroll-div text-center">
+    <div class="row">
+      <div class="medium-12 columns">
+        <h1 class="color-c5">Welcome to the next generation of gaming apps.</h1>
+        <h1 style="font-size: 44px;"><span class="color-primary">City of Brass</span></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-10 columns medium-centered">
+        <p style="font-size: 1.15em;">
+          The <span class="color-primary">City of Brass</span> is a fully-featured app specifically designed to manage the mechanics of pen-and-paper games allowing you to focus on what matters:<br>
+          <span style="font-size: 1.25em;">{ <em class="color-primary">playing that game</em> }</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div>&nbsp;<br><br><br></div>
+
+<div class="row">
+  <div class="medium-6 columns">
+    <h1 class="scrollicon text-center"><i class='icon-globe'></i></h1>
+    <h1 class="text-center">World Builder</h1>
+    <p>
+      From concept to gaming table with ease. It's never been easier to create a complete world for your RPG settings.
+    </p>
+
+    <ul class="scroll-list">
+      <li>Create your gaming world</li>
+      <li>And the inhabitants that live there</li>
+      <li>Including their faith</li>
+      <li>Plus the deities they worship</li>
+      <li>And the places they live at
+    </ul>
+    <% if @wb_faq.present? %>
+    <div class="text-center">
+      <%= link_to @wb_faq.faq.question, support.faq_path(@wb_faq.faq.id), class: 'button' %>
+    </div>
+    <% end %>
+  </div>
+  <div class="medium-6 columns">
+    <h1 class="scrollicon text-center"><i class='fa fa-shield'></i> <i class='fa fa-paw'></i></h1>
+    <h1 class="text-center">Entity Builder</h1>
+    <p>
+      Never forget your character again. At last you can bring all of your characters from every game you play into a single place.
+    </p>
+    <ul class="scroll-list">
+      <li>Build out your character sheet</li>
+      <li>For any tabletop RPG you play</li>
+      <li>Complete with an interactive dice roller</li>
+      <li>And support for House Rules</li>
+      <li>Easily shared with your GM</li>
+    </ul>
+    <% if @eb_faq.present? %>
+    <div class="text-center">
+      <%= link_to @eb_faq.faq.question, support.faq_path(@eb_faq.faq.id), class: 'button' %>
+    </div>
+    <% end %>
+    <p>
+      *Entity Builder works for GMs too.  Stat out your monsters once and you'll have them ready for every game you play.
+    </p>
+  </div>
+</div>
+
+<div class="medium-12 columns medium-centered text-center">
+  <div class="row">
+      <hr style="border:none; height:3px; background-color: #c5c5c5;">
+      <br>
+  </div>
+</div>
+
+<div class="row">
+  <div class="medium-6 columns">
+    <h1 class="scrollicon text-center"><i class='icon-book'></i></h1>
+    <h1 class="text-center">Story Builder</h1>
+    <p>
+      Bring your adventures together with all of your other content and run games like the pros.
+    </p>
+    <ul class="scroll-list">
+      <li>Write your story</li>
+      <li>And fill it up with challenges</li>
+      <li>Including monsters, traps, and puzzles</li>
+      <li>Linked to your gaming world</li>
+      <li>And the campaign where you'll play it</li>
+    </ul>
+    <% if @sb_faq.present? %>
+    <div class="text-center">
+      <%= link_to @sb_faq.faq.question, support.faq_path(@sb_faq.faq.id), class: 'button' %>
+    </div>
+    <% end %>
+  </div>
+  <div class="medium-6 columns">
+    <h1 class="scrollicon text-center"><i class='fa fa-sitemap'></i></h1>
+    <h1 class="text-center">Campaign Manager</h1>
+    <p>
+      Bringing players and game masters together. Bring all of the elements together into a single place.
+    </p>
+    <ul class="scroll-list">
+      <li>Manage your game</li>
+      <li>Including recaps and House Rules</li>
+      <li>Bring in all of the players</li>
+      <li>And tie it together with World Builder</li>
+      <li>Now you are ready for game night!</li>
+    </ul>
+    <% if @cm_faq.present? %>
+    <div class="text-center">
+      <%= link_to @cm_faq.faq.question, support.faq_path(@cm_faq.faq.id), class: 'button' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="medium-12 columns medium-centered text-center">
+  <div class="row">
+      <hr style="border:none; height:3px; background-color: #c5c5c5;">
+      <br>
+  </div>
+</div>
+
+<%= render 'pricing_tables' %>
+
+<div class="medium-12 columns medium-centered text-center">
+  <div class="row">
+      <hr style="border:none; height:3px; background-color: #c5c5c5;">
+      &nbsp;<br><br>
+  </div>
+</div>
+
+<div class="row">
+  <div class="medium-12 columns text-center">
+    <%= image_tag 'logo.png', width: '200px' %>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="medium-6 medium-centered columns">
+    <form action="https://embersds.us3.list-manage.com/subscribe/post?u=4eff69c7ea6d6a0b890c8b911&amp;id=7e78233e9b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="custom" novalidate>
+      <div style="position: absolute; left: -5000px;">
+        <input type="text" name="b_4eff69c7ea6d6a0b890c8b911_7e78233e9b" value="">
+      </div>
+      <div class="row">
+        <div class="medium-12 medium-centered columns text-center">
+          <label class="form_label">Subscribe to our mailing list to receive status updates</label>
+          <input type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="your@email.com" required>
+          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<dl class="left-menu show-for-medium-up">
+  <dd class="<%= 'active' if current_page?(polymorphic_path(@type.tableize)) && params[:core_rules].blank? %>">
+    <h3><%= link_to 'All', polymorphic_path(@type.tableize), :style => 'display:block;' %></h3>
+  </dd>
+  <% CoreRules.options(admin_signed_in?).each do |item| %>
+    <dd class="<%= 'active' if current_page?("#{polymorphic_path(@type.tableize)}?core_rules=#{item}") %>">
+      <h3><%= link_to "#{item}", "#{polymorphic_path(@type.tableize)}?core_rules=#{item}", :style => 'display:block;' %></h3>
+    </dd>
+  <% end %>
+</dl>
+
+<% content_for :left_menu_icon do %>
+  <section class="left-small">
+    <a class="left-off-canvas-toggle menu-icon"><span></span></a>
+  </section>
+<% end %>
+
+<% content_for :left_menu do %>
+  <li><label>Rules</label></li>
+  <li><%= link_to 'All', polymorphic_path(@type.tableize) %></li>
+
+  <% CoreRules.options(admin_signed_in?).each do |item| %>
+    <li><%= link_to "#{item}", "#{polymorphic_path(@type.tableize)}?core_rules=#{item}" %></li>
+  <% end %>
+<% end %>
+
+<% content_for :small_menu do %>
+  <li class="has-dropdown show-for-small"><a href="#"><i class='fa fa-book fa-fw'></i> Rules</a>
+    <ul class="dropdown">
+      <li><%= link_to 'All', polymorphic_path(@type.tableize) %></li>
+
+      <% CoreRules.options(admin_signed_in?).each do |item| %>
+        <li><%= link_to "#{item}", "#{polymorphic_path(@type.tableize)}?core_rules=#{item}" %></li>
+      <% end %>
+    </ul>
+  </li>
+<% end %>

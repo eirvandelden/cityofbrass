@@ -1,0 +1,28 @@
+<h5 class="menu-title text-center"><i class='fa fa-group'></i> <%= list_title %></h5>
+<dl class="affiliate-menu">
+<% list.each do |affiliate| %>
+  <dd>
+    <%= link_to_if user_signed_in?, affiliate.name, main_app.resident_path(affiliate.slug) %>
+    <span class="right">
+    	<% if 'affiliates'.include?(list_type) %>
+        <%= link_to "<i class='fa fa-envelope'></i>".html_safe, main_app.message_affiliate_path(affiliate), class: "color-c5", :title => "Send Message" %>
+    	<% end %>
+    	<% if 'pending'.include?(list_type) %>
+        <%= link_to "<i class='fa fa-user-times'></i>".html_safe, main_app.update_campaign_affiliations_path(affiliate, 'rescind', @campaign), :method => 'patch', class: "color-c5 delete", :title => "Rescind", remote: true %>
+    	<% end %>
+    	<% if 'received blocked'.include?(list_type) %>
+        <%= link_to "<i class='fa fa-user-plus'></i>".html_safe, main_app.update_campaign_affiliations_path(affiliate, 'accept', @campaign), :method => 'patch', class: "color-c5 add", :title => "Accept", remote: true %>
+    	<% end %>
+    	<% if 'received blocked'.include?(list_type) %>
+        <%= link_to "<i class='fa fa-user-times'></i>".html_safe, main_app.update_campaign_affiliations_path(affiliate, 'reject', @campaign), :method => 'patch', class: "color-c5 delete", :title => "Reject", remote: true %>
+    	<% end %>
+    	<% if 'received pending'.include?(list_type) %>
+        <%= link_to "<i class='fa fa-ban'></i>".html_safe, main_app.update_campaign_affiliations_path(affiliate, 'block', @campaign), :method => 'patch', class: "color-c5 delete", :title => "Block", remote: true %>
+      <% end %>
+      <% if list_type.include?('not affiliates') %>
+        <%= link_to "<i class='fa fa-user-plus'></i>".html_safe, main_app.request_campaign_affiliations_path(affiliate, @campaign), method: 'post', class: "color-c5 add", title: "Request", remote: true %>
+      <% end %>
+    </span>
+  </dd>
+<% end %>
+</dl>

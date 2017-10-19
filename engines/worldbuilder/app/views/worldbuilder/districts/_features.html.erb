@@ -1,0 +1,12 @@
+<ul class="no-bullet">
+<% @district.features.each do |feature| %>
+  <li>
+  <%= render :partial =>'layouts/features/looper',
+      :locals => {
+        :feature => feature,
+        :record => @district,
+        :resident => @district.resident
+    } %>
+  </li>
+<% end %>
+</ul>

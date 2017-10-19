@@ -1,0 +1,15 @@
+<fieldset>
+  <div class="row inline">
+    <div class="small-4 columns">
+      <label class="inline-label-flat">Date</label>
+    </div>
+    <div class="small-6 columns end">
+      <label class="inline-label-flat">User</label>
+    </div>
+  </div>
+  <ul class="not-sortable row" id="events">
+    <% @events.each do |event| %>
+      <%= render 'event', :event => event %>
+    <% end %>
+  </ul>
+</fieldset>

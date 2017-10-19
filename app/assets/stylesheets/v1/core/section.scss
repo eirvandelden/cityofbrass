@@ -1,0 +1,29 @@
+.sidebar {
+  padding: 10px;
+  background-color:#F5F5F5;
+  p,ul,ol{
+    font-size: .8rem;
+    margin-left: 0;
+    li  {
+     list-style-position:inside
+    }
+  }
+}
+
+.sidebar-float {
+  float: right;
+  max-width: 18em;
+  padding: .8em;
+  clear:both;
+}
+
+.notes {
+  border: dotted 1px #575757;
+  font-style: normal;
+  p {
+    color: #444;
+  }
+}
+
+.readaloud {
+}

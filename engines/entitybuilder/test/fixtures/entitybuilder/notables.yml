@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entity_id: 
+  name: MyString
+  sort_order: 1
+
+two:
+  entity_id: 
+  name: MyString
+  sort_order: 1

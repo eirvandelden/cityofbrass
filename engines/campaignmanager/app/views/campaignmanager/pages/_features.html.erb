@@ -1,0 +1,29 @@
+<ul class="no-bullet">
+<% if @page.parent %>
+  <li>
+    <strong>Parent: </strong>
+    <%= link_to @page.parent.name, city_path(@campaign, @page.parent) %>
+  </li>
+<% end %>
+<% if @page.page_date %>
+  <li>
+    <strong>Session Date: </strong>
+    <br><%= @page.page_date.strftime("%B #{@page.page_date.day.ordinalize}, %Y") %>
+  </li>
+<% end %>
+<% @page.features.each do |feature| %>
+  <li>
+  <%= render :partial =>'layouts/features/looper',
+      :locals => {
+        :feature => feature,
+        :record => @page,
+        :resident => @resident
+    } %>
+  </li>
+<% end %>
+
+<% if @page.notables.size > 0 %>
+  <%= render "layouts/notables/entity_feature_sentence", list: @page.notables %>
+<% end %>
+
+</ul>

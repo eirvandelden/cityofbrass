@@ -1,0 +1,31 @@
+<% provide(:title, 'Message') %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "New Message" => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-12 columns">
+    <%= render :partial =>'layouts/header',
+    :locals => {
+      :icon => 'fa fa-envelope',
+      :main => 'Messages',
+      :message_link => new_message_path
+    }
+    %>
+    <hr class="faded">
+  </div>
+</div>
+
+<div class="row">
+  <div class="medium-2 columns">
+    <%= render :partial =>'menu' %>
+  </div>
+  <div class="medium-10 columns" id="brass_form">
+    <%= render 'form' %>
+  </div>
+</div>
+
+<%= render :partial =>'layouts/ckeditor', :locals => { :cke_version => 'mini' } %>

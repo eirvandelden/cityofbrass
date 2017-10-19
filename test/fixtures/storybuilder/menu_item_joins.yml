@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+menu_item1:
+  menu_item: menu_item1
+  menu_item_joinable: resident_one
+  menu_item_joinable_type: Storybuilder::Adventure
+
+menu_item2:
+  menu_item: menu_item2
+  menu_item_joinable: encounter_one
+  menu_item_joinable_type: Storybuilder::Page

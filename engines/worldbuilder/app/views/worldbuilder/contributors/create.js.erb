@@ -1,0 +1,13 @@
+<% if @contributor.errors.count == 0 %>
+
+	$('.alert-box').remove();
+	$("body").append ("<%= j(render 'layouts/notices') %>");
+	$('#form_div').remove();
+	$('#contributors').append('<%= j render("contributor", :contributor => @contributor) %>');
+
+<% else %>
+
+	$('#form_div').remove();
+	$('#form_placeholder').after('<%= j render("form") %>');
+
+<% end %>

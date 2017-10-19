@@ -1,0 +1,9 @@
+<% @residents.each do |resident| %>
+  <%= render 'resident', resident: resident %>
+<% end %>
+
+<div class="row">
+  <div class="small-12 columns text-center">
+    <%= paginate @residents, :window => 2 %>
+  </div>
+</div>

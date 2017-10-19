@@ -1,0 +1,28 @@
+<% provide(:title, "#{@parent_object.name}") %>
+<% type_array = type_split(@parent_type) %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => send("#{@parent_object.class.to_s.demodulize.tableize.pluralize}_path") },
+    { @parent_object.name => nil },
+    { @base_value.name => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-2 columns">
+    <%= render :partial => "entitybuilder/menus/manage",
+      :locals => {
+        :view_link => polymorphic_path(@parent_object),
+        :about_link => edit_polymorphic_path(@parent_object),
+        :base_link => polymorphic_path(@parent_object),
+        :active_link => 'base_values'
+      } %>
+  </div>
+
+  <div class="medium-10 columns">
+    <h2><%= @base_value.name %></h2>
+    <hr class="faded">
+    <p><i class='fa fa-angle-double-left'></i> <%= link_to "Return to Index".html_safe, :back %></p>
+  </div>
+</div>

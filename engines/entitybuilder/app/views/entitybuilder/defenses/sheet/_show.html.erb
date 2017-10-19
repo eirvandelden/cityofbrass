@@ -1,0 +1,21 @@
+<% if @defenses_w_bonus.any? %>
+  <div class="indent">
+    <% @defenses_w_bonus.each do |defense| %>
+      <strong><%= defense.name %>:</strong>
+      <%= defense.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) %><%= ", " unless defense == @defenses_w_bonus.last %>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @defenses_w_text.any? %>
+  <% @defenses_w_text.each do |defense| %>
+  <div class="indent">
+    <strong><%= defense.name %>:</strong>
+    <% if defense.base.present? %>
+      <%= "#{defense.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values)}/" %><%= defense.description %>
+    <% else %>
+      <%= defense.description %>
+    <% end %>
+  </div>
+  <% end %>
+<% end %>

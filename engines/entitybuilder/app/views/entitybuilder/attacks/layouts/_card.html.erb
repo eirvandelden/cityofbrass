@@ -1,0 +1,32 @@
+<% if attacks_melee.any? %>
+  <div class="indent">
+    <h3 class="eb-v1-card-header">Melee</h3>
+    <% attacks_melee.each do |attack| %>
+      <div class="indent">
+        <%= render 'entitybuilder/attacks/layouts/detail', attack: attack, core_rules: core_rules, ability_scores: ability_scores, modifiers: modifiers, base_values: base_values, last: attacks_melee.last %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<% if attacks_range.any? %>
+  <div class="indent">
+    <h3 class="eb-v1-card-header">Range</h3>
+    <% attacks_range.each do |attack| %>
+      <div class="indent">
+        <%= render 'entitybuilder/attacks/layouts/detail', attack: attack, core_rules: core_rules, ability_scores: ability_scores, modifiers: modifiers, base_values: base_values, last: attacks_range.last %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<% if attacks_special.any? %>
+  <div class="indent">
+    <h3 class="eb-v1-card-header">Special</h3>
+    <% attacks_special.each do |attack| %>
+      <div class="indent">
+        <%= render 'entitybuilder/attacks/layouts/detail', attack: attack, core_rules: core_rules, ability_scores: ability_scores, modifiers: modifiers, base_values: base_values, last: attacks_special.last %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

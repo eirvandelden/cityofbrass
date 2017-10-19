@@ -1,0 +1,40 @@
+<fieldset>
+  <div class="row inline text-right">
+    <div class="small-12 columns">
+      <label class="inline-label-flat">Page Features</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <table class="simple_table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th class="text-center">Chi</th>
+            <th class="text-center">Spe</th>
+            <th class="text-center">Tag</th>
+            <th class="text-center">Txt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @feature_page_counts.each do |item| %>
+            <tr>
+              <td><strong><%= item.type.demodulize.titleize.pluralize %></strong></td>
+              <td class="text-center"><%= item.child %></td>
+              <td class="text-center"><%= item.special %></td>
+              <td class="text-center"><%= item.tag %></td>
+              <td class="text-center"><%= item.text %></td>
+            </tr>
+          <% end %>
+          <tr class="total">
+            <td><strong>Total</strong></td>
+            <td class="text-center"><%= @feature_page_totals.child %></td>
+            <td class="text-center"><%= @feature_page_totals.special %></td>
+            <td class="text-center"><%= @feature_page_totals.tag %></td>
+            <td class="text-center"><%= @feature_page_totals.text %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</fieldset>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body style="background-color: #f6f6f5; font-size: 16px; color: #666; font-family: helvetica;">
+    <div style="max-width: 600px; text-align: center; margin-left: auto; margin-right: auto;">
+      <div style="background-color: #fff; border: 1px solid #c5c5c5; padding:20px; text-align: left;">
+        <%= link_to image_tag("https://thecityofbrass.s3.amazonaws.com/assets/images/CityofBrass_200w.png", width: '100px'), "https://#{ENV['DEFAULT_BASE_URL']}" %>
+
+        <p>Hello and welcome,</p>
+
+        <p>Thank you for choosing City of Brass.</p>
+
+        <p>You’ve just made the first step in leveling up your game, and I know you won’t regret it! City of Brass will help you manage the mechanics of your game, so that you can focus on what matters: playing that game.</p>
+
+        <p>Now it’s time to take your second step by confirming your account. It’s as easy as clicking the link below.</p>
+
+        <p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @token) %></p>
+
+        <p>If you experience any problems during your signup, please let us know by either replying to this email, or sending a note to <%= mail_to ENV['DEFAULT_BASE_EMAIL'] %>.</p>
+
+        <p>
+          Best regards,<br>
+          The City of Brass Team
+        </p>
+
+      </div>
+    </div>
+  </body>
+</html>

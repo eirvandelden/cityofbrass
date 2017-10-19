@@ -1,0 +1,27 @@
+<ul class="no-bullet">
+  <li>
+    <strong>Game Master: </strong>
+    <%= link_to campaign.resident.name, main_app.resident_path(campaign.resident.slug) %>
+  </li>
+<% if campaign.district.present? %>
+  <li>
+    <strong>District: </strong>
+    <%= link_to campaign.district.name, worldbuilder.district_path(campaign.district.slug) %>
+  </li>
+<% end %>
+<% if campaign.adventure.present? and campaign.can_edit?(current_user, admin_signed_in?) %>
+  <li>
+    <strong>Adventure: </strong>
+    <%= link_to campaign.adventure.name, "#{tcob_path(campaign.adventure)}" %>
+  </li>
+<% end %>
+<% campaign.features.each do |feature| %>
+  <li>
+  <%= render :partial =>'layouts/features/looper',
+      :locals => {
+        :feature => feature,
+        :record => campaign
+    } %>
+  </li>
+<% end %>
+</ul>

@@ -1,0 +1,16 @@
+<li id="player_<%= player.id %>">
+  <div class="row">
+    <div class="small-8 columns clipper">
+      <% if player.affiliate_user.nil? %>
+      <strong class="color-c5" style="font-style: italic;"><%= player.affiliate.name %></strong>
+      <% else %>
+      <strong><%= link_to player.affiliate.name, main_app.resident_path(player.affiliate.slug) %></strong>
+      <% end %>
+    </div>
+    <div class="small-2 columns text-right">
+      <span class="cogspan">
+        <%= link_to "<i class='fa fa-times-circle'></i>".html_safe, "#{tcob_path(@parent_object, 'id')}/players/#{player.id}", class: "iconlink delete", method: :delete, data: { confirm: 'Are you sure?' }, :remote => true %>
+      </span>
+    </div>
+  </div>
+</li>

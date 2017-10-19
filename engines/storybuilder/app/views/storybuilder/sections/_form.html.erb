@@ -1,0 +1,19 @@
+<div id="form_div">
+<%= simple_form_for [@parent_object, @section], :url => "#{tcob_path(@parent_object, 'id')}/sections/#{@section.id}", :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <label class="inline-label-flat"><%= f.object.section_type.humanize %></label>
+      </div>
+    </div>
+    <%= f.input :sort_order, as: :hidden %>
+    <%= f.input :section_type, as: :hidden %>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= render :partial => "storybuilder/sections/form/#{f.object.section_type}", :locals => { f: f } %>
+      </div>
+    </div>
+  </fieldset>
+  <%= render "layouts/form/save_and_cancel" %>
+<% end %>
+</div>

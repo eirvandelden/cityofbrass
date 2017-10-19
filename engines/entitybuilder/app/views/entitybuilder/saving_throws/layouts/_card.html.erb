@@ -1,0 +1,20 @@
+<div class="indent">
+  <h3 class="eb-v1-card-header">Saving Throws</h3>
+  <% saving_throws.each do |saving_throw| %>
+    <% calculated_bonus = saving_throw.calculated_bonus(ability_scores, modifiers, base_values) %>
+    <strong><%= saving_throw.name %></strong>
+
+    <span class="eb-v1-card-attribute">
+      <% dice = saving_throw.game_dice(core_rules) %>
+      <% bonus = saving_throw.calculated_bonus(ability_scores, modifiers, base_values) %>
+      <% bonus_placeholder = "#{bonus}" %>
+      <% bonus_placeholder = "+#{bonus}" if bonus > -1 %>
+      <% roll = "#{dice}#{bonus_placeholder}" %>
+
+      <% if @show_popbox.present? %>
+        <%= format_dice_popup(saving_throw.display_dice_or_modifier(core_rules, bonus, dice), dice, bonus).html_safe %>
+      <% else %>
+        <%= format_dice_activeplay(saving_throw.display_dice_or_modifier(core_rules, bonus, dice), saving_throw.name, roll).html_safe %>
+      <% end %><%= " <span class='color-c5'>/</span> ".html_safe unless saving_throw == saving_throws.last %></span>
+  <% end %>
+</div>

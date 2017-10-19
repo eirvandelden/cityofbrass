@@ -1,0 +1,30 @@
+<% provide(:title, @resident.name) %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Account" => nil },
+    { "Resident"  => nil  }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render 'menus/account', :active => 'resident' %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render 'layouts/header', main: 'Resident', sub: 'New' %>
+    <hr class="faded">
+    <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+    <div class="row">
+      <div class="small-12 columns">
+        <div id="brass_form">
+          <%= simple_form_for @resident do |f| %>
+            <%= render :partial => 'form', :locals => { :f => f } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render :partial =>'layouts/ckeditor', :locals => { :cke_version => 'standard' } %>

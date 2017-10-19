@@ -1,0 +1,37 @@
+<div class="row">
+  <% if @hit_points.present? and @hit_points.current.present? %>
+  <div id="full_health">
+    <%= render 'entitybuilder/trackables/sheet/full_health' %>
+  </div>
+  <% end %>
+
+  <% if @armor_class %>
+  <div class="small-3 columns end">
+    <div class="sheet-over-big <%= "reduced-big" if @armor_class.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) > 999 %> text-center"><%= @armor_class.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) %></div>
+    <div class="sheet-under text-center"><i class='fa fa-shield'></i> <%= @armor_class.name %></div>
+  </div>
+  <% end %>
+
+  <% if @initiative %>
+    <% initiative_dice = @initiative.game_dice(@parent_object.core_rules) %>
+    <% initiative_bonus = @initiative.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) %>
+    <div class="small-3 columns end">
+      <div class="sheet-over-big <%= "reduced-big" if initiative_dice.to_s.length > 4 or initiative_bonus.to_s.length > 3 %> text-center">
+        <%= render 'layouts/dice_roller',
+          core_rules: @parent_object.core_rules,
+          dice: initiative_dice,
+          bonus: initiative_bonus,
+          display: @initiative.display_dice_or_modifier(@parent_object.core_rules, initiative_bonus, initiative_dice)
+        %>
+      </div>
+      <div class="sheet-under text-center"><i class='fa fa-clock-o'></i> <%= @initiative.name %></div>
+    </div>
+  <% end %>
+
+  <% if @speed %>
+  <div class="small-3 columns end">
+    <div class="sheet-over-big <%= "reduced-big" if @speed.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) > 999 %> text-center"><%= @speed.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) %></div>
+    <div class="sheet-under text-center"><i class='fa fa-tachometer'></i> <%= @speed.name %></div>
+  </div>
+  <% end %>
+</div>

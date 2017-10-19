@@ -1,0 +1,17 @@
+<div class="row inline">
+  <div class="small-5 columns">
+    <label class="inline-label-flat">Date</label>
+  </div>
+  <div class="small-5 columns">
+    <label class="inline-label-flat">Amount</label>
+  </div>
+  <div class="small-2 columns end text-center">
+    <label class="inline-label-flat">Paid</label>
+  </div>
+</div>
+
+<ul class="not-sortable row">
+  <% @invoices.each do |invoice| %>
+    <%= render 'billing/subscriptions/invoices/list_item', :invoice => invoice %>
+  <% end %>
+</ul>

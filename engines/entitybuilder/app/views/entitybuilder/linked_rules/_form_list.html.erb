@@ -1,0 +1,39 @@
+<%= form_for @parent_object, :url => send("#{@parent_type}_linked_rules_path"), :remote => true, :html => {"data-sortable" => ''} do |f| %>
+  <input type="hidden" name="rule_type" value="<%= params[:rule_type] %>">
+  <fieldset>
+    <div class="row inline">
+      <div class="small-8 columns">
+        <label class="inline-label-flat">Name</label>
+      </div>
+      <div class="small-4 columns text-right">
+        <% if request.variant == [:phone] %>
+          <span class="right"><a id="sortable_unlock"><span class="right"><i class="lock fa fa-lock" id="sortable_unlock_icon"></i></a></span>
+        <% else %>
+          &nbsp;
+        <% end %>
+      </div>
+    </div>
+    <ul class="sortable row">
+      <%= f.fields_for :linked_rules, @linked_rules do |linked_rule| %>
+
+      <li id="linked_rule_<%= linked_rule.object.id %>" "sortable-item">
+        <%= linked_rule.hidden_field :sort_order %>
+        <div class="row">
+          <div class="small-8 columns clipper">
+            <strong><%= link_to linked_rule.object.rule.name[0,20], "#{polymorphic_path(@parent_object)}/linked_rules/#{linked_rule.object.id}" %></strong>
+          </div>
+          <div class="small-4 columns text-right">
+            <h3>
+              <span class="right cogs125">
+              <%= link_to "<i class='fa fa-cogs'></i>".html_safe, "#{polymorphic_path(@parent_object)}/linked_rules/#{linked_rule.object.id}/edit", class: "iconlink", :remote => true %>
+              <%= link_to "<i class='fa fa-times-circle'></i>".html_safe, "#{polymorphic_path(@parent_object)}/linked_rules/#{linked_rule.object.id}", class: "iconlink delete", method: :delete, data: { confirm: 'Are you sure?' }, :remote => true %>
+              </span>
+            </h3>
+          </div>
+        </div>
+      </li>
+
+      <% end %>
+    </ul>
+  </fieldset>
+<% end %>

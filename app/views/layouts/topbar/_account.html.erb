@@ -1,0 +1,16 @@
+<li class="has-dropdown">
+  <a href="#">
+  <% if current_user.resident && current_user.resident.unread_messages? %>
+    <span class="fa-stack fa-sm" style="width: 1.28571429em; margin-top:-3px;">
+      <i class="fa fa-circle fa-stack-1x secondary" style="color: #666; font-size: 1.25em;"></i>
+      <span class="fa fa-stack-1x" style="font-family: 'Open Sans'; font-size: 0.85rem; font-weight: bold;"><%= current_user.resident.unread_message_count %></span>
+    </span>
+    Account
+  <% else %>
+    <i class='fa fa-user-circle fa-fw'></i> Account
+  <% end %>
+  </a>
+  <ul class="dropdown">
+    <%= render "layouts/navigation/account" %>
+  </ul>
+</li>

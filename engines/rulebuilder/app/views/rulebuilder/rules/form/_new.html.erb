@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="medium-12 columns">
+    <%= f.input :name %>
+    <div class="row">
+      <div class="small-6 columns">
+        <%= f.input :core_rules, collection: CoreRules.options(admin_signed_in?), :include_blank => true %>
+      </div>
+      <div class="small-6 columns">
+        <%= f.input :rule_type, as: :grouped_select, collection: CoreRules::Rule.options(admin_signed_in?), group_method: :last, include_blank: false, input_html: { class: "select2-rule_type"} %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+var ruleList = <%= "#{CoreRules::Rule.hash(admin_signed_in?)}".html_safe %>;
+var rule_type_param = '<%= f.object.rule_type %>';
+</script>

@@ -1,0 +1,40 @@
+<%= form_for @parent_object, :url => "#{tcob_path(@parent_object, 'id')}/sections", :remote => true, :html => {"data-sortable" => ''} do |f| %>
+  <fieldset>
+    <div class="row inline">
+      <div class="small-8 columns">
+        <label class="inline-label-flat">Header</label>
+      </div>
+      <div class="small-4 columns text-right">
+        <% if request.variant == [:phone] %>
+          <span class="right"><a id="sortable_unlock"><span class="right"><i class="lock fa fa-lock" id="sortable_unlock_icon"></i></a></span>
+        <% else %>
+          &nbsp;
+        <% end %>
+      </div>
+    </div>
+    <ul class="sortable row">
+      <%= f.fields_for :sections do |section| %>
+      <li id="section_<%= section.object.id %>" "sortable-item">
+        <%= section.hidden_field :sort_order %>
+        <div class="row">
+          <div class="small-7 columns clipper">
+            <% unless section.object.header.blank? %>
+            <strong><%= section.object.header[0,20] %></strong>
+            <% else %>
+            <strong class="color-c5" style="font-style: italic;"><%= section.object.section_type.humanize %> <%= section.object.section_style.humanize %></strong>
+            <% end %>
+          </div>
+          <div class="small-5 columns text-right">
+            <h3>
+              <span class="right cogs125">
+              <%= link_to "<i class='fa fa-cogs'></i>".html_safe, "#{tcob_path(@parent_object, 'id')}/sections/#{section.object.id}/edit", class: "iconlink", :remote => true %>
+              <%= link_to "<i class='fa fa-times-circle'></i>".html_safe, "#{tcob_path(@parent_object, 'id')}/sections/#{section.object.id}", class: "iconlink delete", method: :delete, data: { confirm: 'Are you sure?' }, :remote => true %>
+              </span>
+            </h3>
+          </div>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </fieldset>
+<% end %>

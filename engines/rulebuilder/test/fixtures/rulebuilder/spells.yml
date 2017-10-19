@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  resident_id: 
+  core_rules: MyString
+  name: MyString
+  short_description: MyString
+  full_description: MyText
+  school: MyString
+  level: 1
+  casting_time: MyString
+  components: MyString
+  range: MyString
+  effect: MyString
+  target: MyString
+  area: MyString
+  duration: MyString
+  saving_throw: MyString
+
+two:
+  type: 
+  resident_id: 
+  core_rules: MyString
+  name: MyString
+  short_description: MyString
+  full_description: MyText
+  school: MyString
+  level: 1
+  casting_time: MyString
+  components: MyString
+  range: MyString
+  effect: MyString
+  target: MyString
+  area: MyString
+  duration: MyString
+  saving_throw: MyString

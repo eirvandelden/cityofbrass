@@ -1,0 +1,32 @@
+<div id="show_div">
+  <%= render :partial =>'layouts/header',
+    :locals => {
+      :icon => 'fa fa-magic',
+      :main => @spell.name,
+      :edit_link => edit_polymorphic_path(@spell),
+      :can_auth => @spell.can_edit?(current_user, admin_signed_in?, @type)
+    }
+  %>
+  <hr class="faded">
+  <% unless @spell.gallery_image.nil? %>
+    <%= link_to (image_tag @spell.gallery_image.file.url(:medium), :alt => @spell.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@spell.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
+  <% end %>
+
+  <%= render :partial => 'rulebuilder/spells/spell_details', :locals => { :spell => @spell } %>
+  <%= sanitize @spell.full_description %>
+
+  <% if @spell.parent.present? %>
+    <h2><%= @spell.parent.name %></h2>
+    <hr class="faded">
+    <%= sanitize @spell.parent.full_description %>
+  <% end %>
+
+  <% if @spell.publisher.present? or @spell.source.present? %>
+    <%= render 'layouts/publisher', publisher: @spell.publisher, is_3pp: @spell.is_3pp, source: @spell.source %>
+  <% end %>
+
+  <% if @type.include?"Stock" %>
+    <%= render 'layouts/license/link', core_rules: @spell.core_rules %>
+    <%= render 'layouts/license/modal' %>
+  <% end %>
+</div>

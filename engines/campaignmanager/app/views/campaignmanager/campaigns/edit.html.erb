@@ -1,0 +1,42 @@
+<% provide(:title, "Campaigns | #{@campaign.name}") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Campaigns" => campaigns_path },
+    { @campaign.name => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'menus/manage',
+      :locals => {
+        :active => 'edit',
+        :view_link => campaign_path(@campaign),
+        :details_link => edit_campaign_path(@campaign),
+        :options_link => campaign_options_path(@campaign),
+        :features_link => campaign_features_path(@campaign),
+        :sections_link => campaign_sections_path(@campaign),
+        :notables_link => campaign_notables_path(@campaign),
+        :players_link => campaign_players_path(@campaign)
+      } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @campaign.name,
+        :sub => 'Details'
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="small-12 columns">
+        <div id="brass_form">
+        <%= render :partial => 'update' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render :partial =>'layouts/ckeditor', :locals => { :cke_version => 'standard' } %>

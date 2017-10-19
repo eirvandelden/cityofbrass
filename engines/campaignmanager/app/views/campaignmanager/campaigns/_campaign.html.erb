@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="medium-12 columns">
+    <h2><%= link_to campaign.name, campaignmanager.campaign_path(campaign) %><span class="subheader"><%= " - #{campaign.page_label}" if campaign.page_label.present? %></span></h2>
+    <strong>Game Master:</strong> <%= link_to campaign.resident.name, main_app.resident_path(campaign.resident.slug) %></br>
+    <% if campaign.core_rules.present? %><strong>Core Rules:</strong> <%= campaign.core_rules %></br><% end %>
+    <h4 style="color:#c5c5c5;">Updated: <span data-timestamp="<%= campaign.updated_at.to_i*1000 %>"></span></h4>
+    <p><%= campaign.short_description %></p>
+  </div>
+</div>

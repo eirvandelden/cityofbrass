@@ -1,0 +1,15 @@
+<% if @caster_level.errors.count == 0 %>
+
+  $('.alert-box').remove();
+  $("body").append ("<%= j(render 'layouts/notices') %>");
+	$('#form_div').remove();
+	$('#form_placeholder').show();
+  $('#brass_form').html("<%= j(render 'form_list') %>");
+  bindSortable();
+
+<% else %>
+
+	$('#form_div').remove();
+	$('#form_placeholder').after('<%= j render("form") %>');
+
+<% end %>

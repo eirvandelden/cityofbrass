@@ -1,0 +1,38 @@
+<% provide(:title, "Campaigns") %>
+<% content_for :head do %>
+  <meta name="description" content="RPG campaign management has never been this easy.">
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Campaigns" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-4 columns text-center">
+    <%= image_tag "cm.jpg" %>
+  </div>
+
+  <div class="medium-8 columns">
+    <div class="row">
+      <div class="small-12 small-centered columns">
+        <%= render 'layouts/form/search', url: campaignmanager.campaigns_path %>
+      </div>
+    </div>
+    <%= render :partial =>'layouts/header',
+        :locals => {
+        :icon => 'fa fa-sitemap',
+        :main => 'Campaigns'
+      }
+    %>
+    <hr class="faded">
+
+    <div class="row">
+      <div class="medium-12 columns" id="index_list">
+        <%= render 'list' %>
+      </div>
+    </div>
+
+  </div>
+</div>

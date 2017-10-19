@@ -1,0 +1,191 @@
+{
+  "name": "3.5 Edition",
+  "active": "true",
+  "stock": "true",
+  "default_dice": "1d20",
+  "d20_system": "true",
+  "publisher": {
+    "name": "Wizards of the Coast",
+    "logo": "",
+    "url": "http://dnd.wizards.com"
+  },
+  "license": {
+    "label": "Open Game License",
+    "core_faq": "License d20 OGL"
+  },
+  "entitybuilder": {
+    "sheet": "default",
+    "use_modifiers": "true",
+    "show_core_blocks": "true",
+    "menu": [
+      {"label": "Descriptors",      "link": "descriptors",      "add_modifiers": "true"},
+      {"label": "Base Values",      "link": "base_values",      "add_modifiers": "false"},
+      {"label": "Ability Scores",   "link": "ability_scores",   "add_modifiers": "true"},
+      {"label": "Class Levels",     "link": "class_levels",     "add_modifiers": "true"},
+      {"label": "Trackables",       "link": "trackables",       "add_modifiers": "false"},
+      {"label": "Attacks",          "link": "attacks",          "add_modifiers": "false"},
+      {"label": "Movement",         "link": "movements",        "add_modifiers": "true"},
+      {"label": "Defenses",         "link": "defenses",         "add_modifiers": "false"},
+      {"label": "Saving Throws",    "link": "saving_throws",    "add_modifiers": "false"},
+      {"label": "Caster Levels",    "link": "caster_levels",    "add_modifiers": "false"},
+      {"label": "Spells",           "link": "known_spells",     "add_modifiers": "false"},
+      {"label": "Skills",           "link": "skills",           "add_modifiers": "true"},
+      {"label": "Abilities",        "link": "linked_rules?rule_type=ability", "add_modifiers": "true"},
+      {"label": "Feats",            "link": "linked_rules?rule_type=feat",    "add_modifiers": "true"},
+      {"label": "Inventory Items",  "link": "inventory_items",  "add_modifiers": "true"},
+      {"label": "Currencies",       "link": "currencies",       "add_modifiers": "false"},
+      {"label": "Modifiers",        "link": "modifiers",        "add_modifiers": "false"},
+      {"label": "Options",          "link": "options",          "add_modifiers": "false"}
+    ],
+    "core_skills": [
+      {"name": "Appraise", "ranks": "0", "ability_score": "Intelligence"},
+      {"name": "Balance", "ranks": "0", "ability_score": "Dexterity"},
+      {"name": "Bluff", "ranks": "0", "ability_score": "Charisma"},
+      {"name": "Climb", "ranks": "0", "ability_score": "Strength"},
+      {"name": "Concentration", "ranks": "0", "ability_score": "Constitution"},
+      {"name": "Craft", "ranks": "0", "ability_score": "Intelligence"},
+      {"name": "Decipher Script", "ranks": "0", "ability_score": "Intelligence"},
+      {"name": "Diplomacy", "ranks": "0", "ability_score": "Charisma"},
+      {"name": "Disable Device", "ranks": "0", "ability_score": "Intelligence"},
+      {"name": "Disguise", "ranks": "0", "ability_score": "Charisma"},
+      {"name": "Escape Artist", "ranks": "0", "ability_score": "Dexterity"},
+      {"name": "Forgery", "ranks": "0", "ability_score": "Intelligence"},
+      {"name": "Gather Information", "ranks": "0", "ability_score": "Charisma"},
+      {"name": "Handle Animal", "ranks": "0", "ability_score": "Charisma"},
+      {"name": "Heal", "ranks": "0", "ability_score": "Wisdom"},
+      {"name": "Hide", "ranks": "0", "ability_score": "Dexterity"},
+      {"name": "Intimidate", "ranks": "0", "ability_score": "Charisma"},
+      {"name": "Jump", "ranks": "0", "ability_score": "Strength"},
+      {"name": "Knowledge", "ranks": "0", "ability_score": "Intelligence"},
+      {"name": "Listen", "ranks": "0", "ability_score": "Wisdom"},
+      {"name": "Move Silently", "ranks": "0", "ability_score": "Dexterity"},
+      {"name": "Open Lock", "ranks": "0", "ability_score": "Dexterity"},
+      {"name": "Perform", "ranks": "0", "ability_score": "Charisma"},
+      {"name": "Profession", "ranks": "0", "ability_score": "Wisdom"},
+      {"name": "Ride", "ranks": "0", "ability_score": "Dexterity"},
+      {"name": "Search", "ranks": "0", "ability_score": "Intelligence"},
+      {"name": "Sense Motive", "ranks": "0", "ability_score": "Wisdom"},
+      {"name": "Sleight of Hand", "ranks": "0", "ability_score": "Dexterity"},
+      {"name": "Speak Language", "ranks": "0", "ability_score": "Intelligence"},
+      {"name": "Spellcraft", "ranks": "0", "ability_score": "Wisdom"},
+      {"name": "Spot", "ranks": "0", "ability_score": "Wisdom"},
+      {"name": "Survival", "ranks": "0", "ability_score": "Wisdom"},
+      {"name": "Swim", "ranks": "0", "ability_score": "Strength"},
+      {"name": "Tumble", "ranks": "0", "ability_score": "Dexterity"},
+      {"name": "Use Magic Device", "ranks": "0", "ability_score": "Charisma"},
+      {"name": "Use Rope", "ranks": "0", "ability_score": "Dexterity"}
+    ],
+    "character": {
+      "ability_scores": [
+        {"name": "Strength", "base": "10", "modifier": "0", "dice": ""},
+        {"name": "Dexterity", "base": "10", "modifier": "0", "dice": ""},
+        {"name": "Constitution", "base": "10", "modifier": "0", "dice": ""},
+        {"name": "Intelligence", "base": "10", "modifier": "0", "dice": ""},
+        {"name": "Wisdom", "base": "10", "modifier": "0", "dice": ""},
+        {"name": "Charisma", "base": "10", "modifier": "0", "dice": ""}
+      ],
+      "base_values": [
+        {"name": "Base Attack Bonus", "value": "0", "dice": ""}
+      ],
+      "currencies": [
+        {"name": "Platinum", "quantity": "0", "weight": "0.02", "carried": "true"},
+        {"name": "Gold", "quantity": "0", "weight": "0.02", "carried": "true"},
+        {"name": "Electrum", "quantity": "0", "weight": "0.02", "carried": "true"},
+        {"name": "Silver", "quantity": "0", "weight": "0.02", "carried": "true"},
+        {"name": "Copper", "quantity": "0", "weight": "0.02", "carried": "true"}
+      ],
+      "defenses": [
+        {"name": "Armor Class", "base": "10", "ability_score": "Dexterity"},
+        {"name": "Touch", "base": "10", "ability_score": "Dexterity"},
+        {"name": "Flat-footed", "base": "10", "ability_score": ""}
+      ],
+      "descriptors": [
+        {"name": "Race", "description": "", "is_private": "false"},
+        {"name": "Age", "description": "", "is_private": "false"},
+        {"name": "Height", "description": "", "is_private": "false"},
+        {"name": "Weight", "description": "", "is_private": "false"},
+        {"name": "Gender", "description": "", "is_private": "false"},
+        {"name": "Size", "description": "Medium", "is_private": "false"},
+        {"name": "Homeland", "description": "", "is_private": "true"},
+        {"name": "Alignment", "description": "", "is_private": "true"},
+        {"name": "Deity", "description": "", "is_private": "true"},
+        {"name": "Languages", "description": "Common", "is_private": "true"}
+      ],
+      "movements": [
+        {"name": "Initiative", "base": "0", "ability_score": "Dexterity", "dice": "", "description": ""},
+        {"name": "Speed", "base": "30", "ability_score": "", "dice": "", "description": "Feet"}
+      ],
+      "saving_throws": [
+        {"name": "Fortitude", "base": "0", "ability_score": "Constitution"},
+        {"name": "Reflex", "base": "0", "ability_score": "Dexterity"},
+        {"name": "Will", "base": "0", "ability_score": "Wisdom"}
+      ],
+      "trackables": [
+        {"name": "Hit Points", "maximum": "0", "current": "0"},
+        {"name": "Experience", "maximum": "0", "current": "0"}
+      ]
+    },
+    "creature": {
+      "ability_scores": [
+        {"name": "Strength", "base": "10", "modifier": "0", "dice": ""},
+        {"name": "Dexterity", "base": "10", "modifier": "0", "dice": ""},
+        {"name": "Constitution", "base": "10", "modifier": "0", "dice": ""},
+        {"name": "Intelligence", "base": "10", "modifier": "0", "dice": ""},
+        {"name": "Wisdom", "base": "10", "modifier": "0", "dice": ""},
+        {"name": "Charisma", "base": "10", "modifier": "0", "dice": ""}
+      ],
+      "base_values": [
+        {"name": "Base Attack Bonus", "value": "0", "dice": ""}
+      ],
+      "currencies": [
+        {"name": "Platinum", "quantity": "0", "weight": "0.02", "carried": "true"},
+        {"name": "Gold", "quantity": "0", "weight": "0.02", "carried": "true"},
+        {"name": "Electrum", "quantity": "0", "weight": "0.02", "carried": "true"},
+        {"name": "Silver", "quantity": "0", "weight": "0.02", "carried": "true"},
+        {"name": "Copper", "quantity": "0", "weight": "0.02", "carried": "true"}
+      ],
+      "defenses": [
+        {"name": "Armor Class", "base": "10", "ability_score": "Dexterity"},
+        {"name": "Touch", "base": "10", "ability_score": "Dexterity"},
+        {"name": "Flat-footed", "base": "10", "ability_score": ""}
+      ],
+      "descriptors": [
+        {"name": "Race", "description": ""},
+        {"name": "Age", "description": ""},
+        {"name": "Height", "description": ""},
+        {"name": "Weight", "description": ""},
+        {"name": "Gender", "description": ""},
+        {"name": "Size", "description": "Medium"},
+        {"name": "Homeland", "description": ""},
+        {"name": "Alignment", "description": ""},
+        {"name": "Deity", "description": ""},
+        {"name": "Languages", "description": ""}
+      ],
+      "movements": [
+        {"name": "Initiative", "base": "0", "ability_score": "Dexterity", "dice": "", "description": ""},
+        {"name": "Speed", "base": "30", "ability_score": "", "dice": "", "description": "Feet"}
+      ],
+      "saving_throws": [
+        {"name": "Fortitude", "base": "0", "ability_score": "Constitution"},
+        {"name": "Reflex", "base": "0", "ability_score": "Dexterity"},
+        {"name": "Will", "base": "0", "ability_score": "Wisdom"}
+      ],
+      "skills":[
+        {"name": "Knowledge", "ranks": "0", "ability_score": "Intelligence"},
+        {"name": "Spot", "ranks": "0", "ability_score": "Wisdom"}
+      ],
+      "trackables": [
+        {"name": "Hit Points", "maximum": "0", "current": "0"}
+      ]
+    }
+  },
+  "rulebuilder": {
+    "rules": [
+      {"name": "Ability", "is_shared": "true"},
+      {"name": "Feat", "is_shared": "true"}
+    ],
+    "powers": [
+      {"name": "Spell", "is_shared": "true"}
+    ]
+  }
+}

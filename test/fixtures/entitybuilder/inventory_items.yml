@@ -1,0 +1,17 @@
+one:
+  entity: resident_character_one
+  sort_order: 1
+  item: resident_one
+  quantity:  1
+  equipped:
+  carried:
+  detail: im detail
+
+two:
+  entity: resident_character_one
+  sort_order: 2
+  item: resident_two
+  quantity: 5
+  equipped:
+  carried:
+  detail:

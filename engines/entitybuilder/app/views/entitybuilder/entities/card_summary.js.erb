@@ -1,0 +1,7 @@
+$('.eb-v1-card-panel').hide();
+$('#card_<%= @entity.id %>').remove();
+$('#cardholder_div').hide().after('<%= j render("entitybuilder/entities/layouts/card_summary", entity: @entity) %>');
+$('.eb-v1-status-refresh i').removeClass( "fa-spin" );
+$('.popbox').popbox();
+$(document).foundation('accordion', 'reflow');
+$(document).foundation('reveal', 'reflow');

@@ -1,0 +1,7 @@
+<div class="indent">
+  <h3 class="eb-v1-card-header">Standard Defenses</h3>
+  <% defenses_w_bonus.each do |defense| %>
+    <strong><%= defense.name %></strong>
+    <span class="eb-v1-card-attribute"><%= defense.calculated_bonus(ability_scores, modifiers, base_values) %></span><%= ", " unless defense == defenses_w_bonus.last %>
+  <% end %>
+</div>

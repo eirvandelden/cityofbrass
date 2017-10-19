@@ -1,0 +1,39 @@
+<% provide(:title, "Campaign Tables | #{@virtual_table.campaign.name}") %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "ActivePlay" => nil },
+    { @virtual_table.campaign.name => nil }
+  ] %>
+<% end %>
+
+<div id="ap-core" class="ap-chat">
+  <div class="row">
+    <div class="small-12 columns">
+      <%= render 'col_Phone' %>
+    </div>
+  </div>
+</div>
+
+<script>
+  var campaign = '<%= @virtual_table.id %>'
+  var token = '<%= @token %>'
+
+  $(document).on('page:fetch', function () {
+    //disconnect ActivePlay socket if it exists when you navigate always
+    if(socket){
+      socket.disconnect();
+      socket = null;
+    }
+  });
+
+  var ap_sok = '<%= "#{ENV['ACTIVEPLAY_URL']}/activeplay/v0.6" %>';
+
+</script>
+
+<%= stylesheet_link_tag "#{ENV['ACTIVEPLAY_URL']}/stylesheets/activeplay.v0.6.min.css", :media => "all", "data-turbolinks-track" => true %>
+
+<%= javascript_include_tag "#{ENV['ACTIVEPLAY_URL']}/socket.io/socket.io.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "#{ENV['ACTIVEPLAY_URL']}/javascripts/vue.v1.0.21.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "#{ENV['ACTIVEPLAY_URL']}/javascripts/activeplay.v0.6.min.js", "data-turbolinks-track" => true %>
+
+<%= render 'entitybuilder/layouts/modal_list' %>

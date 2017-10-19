@@ -1,0 +1,62 @@
+<%
+
+  home_link = main_app.root_path
+  account_link = main_app.edit_user_registration_path
+  subscription_link = ((current_user.subscription && !current_user.subscription.new_record?) ? billing.subscription_path(current_user.subscription) : billing.subscriptions_path) unless current_user.has_vip_status?
+
+  if current_user.active?
+    resident_link = (current_user.resident && !current_user.resident.new_record?) ? main_app.edit_resident_path(current_user.resident) : main_app.new_resident_path
+  end
+
+%>
+<dl class="left-menu show-for-medium-up">
+  <dd class="<%= 'active' if active=='home' %>">
+  	<h3><%= link_to 'Home', home_link %></h3>
+  </dd>
+  <% if resident_link.present? %>
+    <dd class="<%= 'active' if active=='resident' %>">
+    	<h3><%= link_to 'Resident', resident_link %></h3>
+    </dd>
+  <% end %>
+  <dd class="<%= 'active' if active=='settings' %>">
+  	<h3><%= link_to 'Settings', account_link %></h3>
+  </dd>
+  <% if subscription_link.present? %>
+    <dd class="<%= 'active' if active=='subscription' %>">
+    	<h3><%= link_to 'Subscription', subscription_link %></h3>
+    </dd>
+  <% end %>
+</dl>
+
+<% content_for :left_menu_icon do %>
+  <section class="left-small">
+    <a class="left-off-canvas-toggle menu-icon"><span></span></a>
+  </section>
+<% end %>
+
+<% content_for :left_menu do %>
+  <li><label>Manage</label></li>
+  <li><%= link_to 'Home', home_link %></li>
+  <% if resident_link.present? %>
+    <li><%= link_to 'Resident', resident_link %></li>
+  <% end %>
+  <li><%= link_to 'Settings', account_link %></li>
+  <% if subscription_link.present? %>
+    <li><%= link_to 'Subscription', subscription_link %></li>
+  <% end %>
+<% end %>
+
+<% content_for :small_menu do %>
+  <li class="has-dropdown show-for-small"><a href="#"><i class='fa fa-gears fa-fw'></i> Manage</a>
+    <ul class="dropdown">
+      <li><%= link_to 'Home', home_link %></li>
+      <% if resident_link.present? %>
+        <li><%= link_to 'Resident', resident_link %></li>
+      <% end %>
+      <li><%= link_to 'Settings', account_link %></li>
+      <% if subscription_link.present? %>
+        <li><%= link_to 'Subscription', subscription_link %></li>
+      <% end %>
+    </ul>
+  </li>
+<% end %>

@@ -1,0 +1,35 @@
+<% provide(:title, "Districts | #{@district.name}") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Campaigns" => campaignmanager.campaigns_path },
+    { @campaign.name => campaignmanager.polymorphic_path(@campaign) },
+    { @district.name => district_path(@district.slug) }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'campaignmanager/menus/campaign', :locals => { :page => nil } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'icon-globe',
+        :main => @district.name,
+        :new_tab_link => district_path(@district.slug),
+        :can_auth => @district.can_edit?(current_user, admin_signed_in?)
+      }
+    %>
+    <hr class="faded">
+
+    <% unless @district.gallery_image.nil? %>
+      <%= image_tag @district.gallery_image.file.url(:medium), :alt => @district.name, :align=>"right", class: "images_space" %>
+    <% end %>
+
+    <%= render :partial =>'features' if @district.features.size > 0 %>
+
+    <%= render :partial =>'sections' %>
+
+  </div>
+</div>

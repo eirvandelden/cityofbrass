@@ -1,0 +1,12 @@
+<%= simple_form_for @user, :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <fieldset>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.input :email %>
+        <%= f.input :stripe_customer_token %>
+        <%= f.input :status, collection: User::STATUS_OPTIONS  %>
+      </div>
+    </div>
+  </fieldset>
+  <%= render 'layouts/form/save' %>
+<% end %>

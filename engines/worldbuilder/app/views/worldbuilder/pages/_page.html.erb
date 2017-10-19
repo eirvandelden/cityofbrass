@@ -1,0 +1,11 @@
+<%= render :partial =>'layouts/index_row',
+  :locals => {
+    :main => page.name,
+    :sub => page.page_label,
+    :description => page.short_description,
+    :show_link => worldbuilder.district_page_path(@district.slug, page.slug),
+    :child_link => worldbuilder.district_page_new_child_path(@district.slug, page),
+    :edit_link => worldbuilder.edit_district_page_path(@district.slug, page),
+    :can_auth => @district.can_edit?(current_user, admin_signed_in?)
+  }
+%>

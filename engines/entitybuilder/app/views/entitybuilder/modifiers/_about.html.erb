@@ -1,0 +1,18 @@
+<div id="form_placeholder_mod">
+  <fieldset>
+    <%= render 'entitybuilder/layouts/tutorial' %>
+    <strong>What are modifiers?</strong>
+    <p>
+      Modifiers allow you to add bonuses to specific items.  To add a new modifier go to one of the following sections, click the <i class='fa fa-cogs cogs125'></i> icon to edit a specific item, then add a modifier.
+    </p>
+    <ul>
+      <% CoreRules::Entity.modifier_list(@parent_object.core_rules).each do |item| %>
+        <li><%= link_to item['label'], "#{polymorphic_path(@parent_object)}/#{item['link']}", :style => 'display:block;' %></li>
+      <% end %>
+    </ul>
+  </fieldset>
+</div>
+
+<% content_for :footer do %>
+  <%= render 'layouts/modal/tutorial' %>
+<% end %>

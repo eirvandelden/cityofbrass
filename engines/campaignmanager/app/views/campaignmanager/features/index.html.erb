@@ -1,0 +1,50 @@
+<% provide(:title, "#{@parent_object.name}") %>
+
+<% content_for :breadcrumb do %>
+  <% if @parent_type.include?"campaign" %>
+    <%=  breadcrumb [
+      { "Campaigns" => campaigns_path },
+      { @parent_object.name => nil }
+    ] %>
+  <% else %>
+    <%=  breadcrumb [
+      { "Campaigns" => campaigns_path },
+      { @parent_object.campaign.name => campaign_path(@parent_object.campaign) },
+      { "#{@parent_type.titleize.pluralize}" => "#{tcob_path(@parent_object)}" },
+      { @parent_object.name => nil }
+    ] %>
+  <% end %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'menus/manage',
+      :locals => {
+        :active => 'features',
+        :view_link => tcob_path(@parent_object),
+        :details_link => edit_tcob_path(@parent_object),
+        :options_link => "#{tcob_path(@parent_object, 'id')}/options",
+        :features_link => "#{tcob_path(@parent_object, 'id')}/features",
+        :sections_link => "#{tcob_path(@parent_object, 'id')}/sections",
+        :notables_link => "#{tcob_path(@parent_object, 'id')}/notables",
+        :players_link => ("#{tcob_path(@parent_object, 'id')}/players" if @parent_type.include?"campaign")
+      } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @parent_object.name,
+        :sub => 'Features'
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="medium-5 columns" id="brass_form">
+        <%= render 'form_list' %>
+      </div>
+      <div class="medium-7 columns">
+        <%= render 'form_new' %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+resident_one:
+  type: Storybuilder::ResidentAdventure
+  resident: razune
+  parent:
+  name: Kobold Layer
+  slug: kobold-layer
+  privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+
+resident_two:
+  type: Storybuilder::ResidentAdventure
+  resident: tuandn
+  parent:
+  name: Wizards Tower
+  slug: wizards-tower
+  privacy: Private
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+
+stock_one:
+  type: Storybuilder::StockAdventure
+  resident:
+  parent:
+  name: Kobold Layer
+  slug: kobold-layer
+  privacy: Residents
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>
+
+stock_two:
+  type: Storybuilder::StockAdventure
+  resident:
+  parent:
+  name: Wizards Tower
+  slug: wizards-tower
+  privacy: Private
+  core_rules: PFRPG
+  short_description: MyString
+  full_description: <p>Text for test</p>

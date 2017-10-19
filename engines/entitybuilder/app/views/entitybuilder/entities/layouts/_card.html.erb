@@ -1,0 +1,274 @@
+<%
+
+  entity_id             = entity.id
+  ability_scores        = entity.ability_scores
+  attacks               = entity.attacks
+  base_values           = entity.base_values
+  caster_levels         = entity.caster_levels.to_a
+  core_rules            = entity.core_rules
+  currencies            = entity.currencies
+  defenses              = entity.defenses
+  descriptors           = entity.descriptors
+  inventory_items       = entity.inventory_items
+  linked_rules          = entity.linked_rules
+  modifiers             = entity.modifiers
+  movements             = entity.movements
+  prepared_known_spells = entity.prepared_known_spells.to_a
+  saving_throws         = entity.saving_throws
+  skills                = entity.skills
+  trackables            = entity.trackables
+  clickable             = entity.clickable?(current_user, admin_signed_in?, entity.type.demodulize)
+  can_edit              = entity.can_edit?(current_user, admin_signed_in?, entity.type.demodulize)
+
+  # core values
+  armor_class           = eb_get_armor_class(defenses)
+  hit_points            = eb_get_hit_points(trackables) if trackables.present?
+  initiative            = eb_get_initiative(movements) if movements.present?
+  initiative_dice       = initiative.game_dice(core_rules) if initiative.present?
+  initiative_bonus      = initiative.calculated_bonus(ability_scores, modifiers, base_values) if initiative.present?
+  initiative_display    = initiative.display_dice_or_modifier(core_rules, initiative_bonus, initiative_dice) if initiative.present?
+
+  defenses_w_bonus      = entity.defenses.reject { |d| !d.description.blank? } unless defenses.nil?
+  defenses_w_text       = entity.defenses.reject { |d| d.description.blank? } unless defenses.nil?
+
+  attacks_melee         = entity.attacks.select { |d| ("Melee").include?(d.attack_type) } if attacks.present?
+  attacks_range         = entity.attacks.select { |d| ("Range").include?(d.attack_type) } if attacks.present?
+  attacks_special       = entity.attacks.select { |d| ("Special").include?(d.attack_type) } if attacks.present?
+
+  core_count = 0;
+  if CoreRules::Entity.show_core_blocks?(core_rules)
+    core_count = core_count + 1 if hit_points.present?
+    core_count = core_count + 1 if armor_class.present?
+    core_count = core_count + 1 if initiative.present?
+  end
+
+%>
+
+<div id="card_<%= entity.id %>" class="eb-v1-card-panel">
+
+  <% unless local_assigns.has_key? :hide_header %>
+    <div class="eb-v1-card-notab-header clipper">
+      <span class="eb-v1-card-name"><%=  entity.name %></span>
+      <span class="eb-v1-status-refresh">
+        <a href="#" onclick="eb_get_card('<%= entitybuilder.polymorphic_path(entity) %>/card.js')" title="Refresh Card" class="cogs125">
+          <i class='fa fa-fw fa-refresh fa-spin'></i>
+        </a>
+      </span>
+    </div>
+  <% end %>
+
+  <ul class="accordion" data-accordion>
+
+    <% if core_count > 0 %>
+      <div class="eb-v1-card eb-v1-card-<%= entity.simple_type %>">
+        <%= render "entitybuilder/entities/layouts/card/core_blocks",
+          css_class: 'card',
+          entity_id: entity_id,
+          core_rules: core_rules,
+          armor_class_name: (armor_class.name if armor_class.present?),
+          armor_class_value: (armor_class.calculated_bonus(ability_scores, modifiers, base_values) if armor_class.present?),
+          hit_points: (hit_points if hit_points.present?),
+          initiative_name: (initiative.name if initiative.present?),
+          initiative_dice: (initiative_dice if initiative_dice.present?),
+          initiative_bonus: (initiative_bonus if initiative_bonus.present?),
+          initiative_display: (initiative_display if initiative_display.present?),
+          column_size: (12/core_count)
+        %>
+      </div>
+    <% end %>
+
+    <% if descriptors.any? %>
+      <li class="accordion-navigation eb-v1-card eb-v1-card-<%= entity.simple_type %>">
+        <a href="#panelSummary-<%= entity_id %>"><label class="inline-label-flat">Summary</label></a>
+        <div id="panelSummary-<%= entity_id %>" class="content">
+          <% if entity.gallery_image.present? %>
+            <%= link_to (image_tag entity.gallery_image.file.url(:thumb), :alt => entity.name, class: "images_space", style: "max-width: 150px; max-height: 250px; float: right;"), "#{gallery.polymorphic_path(entity.gallery_image)}/swoosh", "data-reveal-id" => "image_modal", :remote => true  %>
+          <% end %>
+          <p><%= entity.short_description %></p>
+          <%= render "entitybuilder/descriptors/layouts/card",
+            entity: entity,
+            clickable: clickable,
+            descriptors: descriptors
+          %>
+        </div>
+      </li>
+    <% end %>
+
+    <% if trackables.present? %>
+      <li class="accordion-navigation eb-v1-card eb-v1-card-<%= entity.simple_type %>">
+        <a href="#panelTrackables-<%= entity_id %>"><label class="inline-label-flat">Trackables</label></a>
+        <div id="panelTrackables-<%= entity_id %>" class="content active">
+          <%= render "entitybuilder/trackables/layouts/card",
+            entity: entity,
+            clickable: clickable,
+            can_edit: can_edit,
+            trackables: trackables
+          %>
+        </div>
+      </li>
+    <% end %>
+
+    <% if defenses_w_bonus.present? || defenses_w_text.present? || saving_throws.present? %>
+      <li class="accordion-navigation eb-v1-card eb-v1-card-<%= entity.simple_type %>">
+        <a href="#panelDefenses-<%= entity_id %>"><label class="inline-label-flat">Defenses</label></a>
+        <div id="panelDefenses-<%= entity_id %>" class="content">
+          <% if defenses_w_bonus.present? %>
+            <%= render "entitybuilder/defenses/layouts/defenses_w_bonus",
+              ability_scores: ability_scores,
+              base_values: base_values,
+              modifiers: modifiers,
+              defenses_w_bonus: defenses_w_bonus
+            %>
+          <% end %>
+          <% if defenses_w_text.present? %>
+            <%= render "entitybuilder/defenses/layouts/defenses_w_text",
+              ability_scores: ability_scores,
+              base_values: base_values,
+              modifiers: modifiers,
+              defenses_w_text: defenses_w_text
+            %>
+          <% end %>
+          <% if saving_throws.present? %>
+            <%= render "entitybuilder/saving_throws/layouts/card",
+              core_rules: core_rules,
+              ability_scores: ability_scores,
+              base_values: base_values,
+              modifiers: modifiers,
+              saving_throws: saving_throws
+            %>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+
+    <% if attacks.present?  || movements.present? %>
+      <li class="accordion-navigation eb-v1-card eb-v1-card-<%= entity.simple_type %>">
+        <a href="#panelActions-<%= entity_id %>"><label class="inline-label-flat">Actions</label></a>
+        <div id="panelActions-<%= entity_id %>" class="content">
+          <% if attacks.present? %>
+            <%= render "entitybuilder/attacks/layouts/card",
+              entity: entity,
+              clickable: clickable,
+              core_rules: core_rules,
+              ability_scores: ability_scores,
+              base_values: base_values,
+              modifiers: modifiers,
+              attacks_melee: attacks_melee,
+              attacks_range: attacks_range,
+              attacks_special: attacks_special
+            %>
+          <% end %>
+          <% if movements.present? %>
+            <%= render "entitybuilder/movements/layouts/card",
+              ability_scores: ability_scores,
+              base_values: base_values,
+              modifiers: modifiers,
+              movements: movements
+            %>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+
+    <% if prepared_known_spells.present? %>
+      <li class="accordion-navigation eb-v1-card eb-v1-card-<%= entity.simple_type %>">
+        <a href="#panelSpells-<%= entity_id %>"><label class="inline-label-flat">Spells</label></a>
+        <div id="panelSpells-<%= entity_id %>" class="content">
+          <div id="spell_list">
+            <%= render "entitybuilder/known_spells/layouts/card",
+              entity: entity,
+              clickable: clickable,
+              can_edit: can_edit,
+              prepared_known_spells: prepared_known_spells
+            %>
+
+            <% if caster_levels.present? %>
+              <%= render "entitybuilder/caster_levels/layouts/card",
+                ability_scores: ability_scores,
+                base_values: base_values,
+                caster_levels: caster_levels
+              %>
+            <% end %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+
+    <% if ability_scores.present? || skills.present? %>
+      <li class="accordion-navigation eb-v1-card eb-v1-card-<%= entity.simple_type %>">
+        <a href="#panelSkills-<%= entity_id %>"><label class="inline-label-flat">Skills</label></a>
+        <div id="panelSkills-<%= entity_id %>" class="content">
+          <% if ability_scores.present? %>
+            <%= render "entitybuilder/ability_scores/layouts/card",
+              entity: entity,
+              clickable: clickable,
+              core_rules: core_rules,
+              ability_scores: ability_scores,
+              base_values: base_values,
+              modifiers: modifiers
+            %>
+          <% end %>
+          <br>
+          <%= render "entitybuilder/skills/layouts/card",
+            entity: entity,
+            clickable: clickable,
+            core_rules: core_rules,
+            ability_scores: ability_scores,
+            base_values: base_values,
+            modifiers: modifiers,
+            skills: skills
+          %>
+        </div>
+      </li>
+    <% end %>
+
+    <% if linked_rules.present?  %>
+      <li class="accordion-navigation eb-v1-card eb-v1-card-<%= entity.simple_type %>">
+        <a href="#panelRules-<%= entity_id %>"><label class="inline-label-flat">Rules</label></a>
+        <div id="panelRules-<%= entity_id %>" class="content">
+
+          <% if linked_rules.present? %>
+            <%= render "entitybuilder/linked_rules/layouts/card",
+              entity: @parent_object,
+              clickable: @clickable,
+              linked_rules: @parent_object.linked_rules
+            %>
+          <% end %>
+
+        </div>
+      </li>
+    <% end %>
+
+    <% if inventory_items.present? || currencies.present? %>
+      <li class="accordion-navigation eb-v1-card eb-v1-card-<%= entity.simple_type %>">
+        <a href="#panelEquipment-<%= entity_id %>"><label class="inline-label-flat">Equipment</label></a>
+        <div id="panelEquipment-<%= entity_id %>" class="content">
+          <% if inventory_items.present? %>
+            <%= render "entitybuilder/inventory_items/layouts/card#{inventory_items.size > 5 ? '_sentence' : ''}",
+              entity: entity,
+              clickable: clickable,
+              inventory_items: inventory_items
+            %>
+          <% end %>
+          <% if currencies.present? %>
+            <%= render "entitybuilder/currencies/layouts/card",
+              entity: entity,
+              clickable: clickable,
+              currencies: currencies
+            %>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+
+    <% if (entity.type.include?"Resident") && can_edit %>
+      <li class="accordion-navigation eb-v1-card eb-v1-card-<%= entity.simple_type %>">
+        <a href="#panelNotes-<%= entity_id %>"><label class="inline-label-flat">Notes</label></a>
+        <div id="panelNotes-<%= entity_id %>" class="content">
+          <%= render "entitybuilder/entities/update_notes" %>
+        </div>
+      </li>
+    <% end %>
+
+  </ul>
+</div>

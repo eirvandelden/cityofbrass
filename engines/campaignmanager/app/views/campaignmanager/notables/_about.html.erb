@@ -1,0 +1,23 @@
+<div id="form_placeholder">
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <label class="inline-label-flat">About</label>
+      </div>
+    </div>
+    <% if CoreRules.stock?(@campaign.core_rules) %>
+      <strong><%= link_to "<i class='fa fa-plus-circle'></i> Stock Creature".html_safe, "#{tcob_path(@parent_object, 'id')}/notables/new?entity_type=stock_creature", :remote => true %></strong>
+      <p>Add a Creature from the stock beastiary.</p>
+      <strong><%= link_to "<i class='fa fa-plus-circle'></i> Stock NPC".html_safe, "#{tcob_path(@parent_object, 'id')}/notables/new?entity_type=stock_npc", :remote => true %></strong>
+      <p>Add a NPC from the stock yards.</p>
+    <% end %>
+    <strong><%= link_to "<i class='fa fa-plus-circle'></i> Creature".html_safe, "#{tcob_path(@parent_object, 'id')}/notables/new?entity_type=resident_creature", :remote => true %></strong>
+    <p>Add a Creature from your beastiary.</p>
+    <strong><%= link_to "<i class='fa fa-plus-circle'></i> NPC".html_safe, "#{tcob_path(@parent_object, 'id')}/notables/new?entity_type=resident_npc", :remote => true %></strong>
+    <p>Add an NPC from your list.</p>
+    <% if @parent_type.exclude?"campaign" %>
+      <strong><%= link_to "<i class='fa fa-plus-circle'></i> PC".html_safe, "#{tcob_path(@parent_object, 'id')}/notables/new?entity_type=player_character", :remote => true %></strong>
+      <p>Add an PC from the campaign.</p>
+    <% end %>
+  </fieldset>
+</div>

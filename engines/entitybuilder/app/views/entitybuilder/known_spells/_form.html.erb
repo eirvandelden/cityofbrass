@@ -1,0 +1,68 @@
+<div id="form_div">
+<%= simple_form_for [@parent_object, @known_spell], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <label class="inline-label-flat">Known Spell</label>
+      </div>
+    </div>
+    <input type="hidden" name="rule_type" value="<%= params[:rule_type] %>">
+    <%= f.hidden_field :sort_order, :maxlength => 3 %>
+    <div class="row">
+      <div class="medium-9 columns">
+        <% if f.object.new_record? %>
+          <% if params[:rule_type] == "stock" && CoreRules.stock?(@parent_object.core_rules) %>
+            <%= f.association :spell, label: 'Name', collection: Rulebuilder::StockSpell.basic.order_name.where(core_rules: @parent_object.core_rules), label_method: :name, value_method: :id, include_blank: true %>
+          <% elsif params[:rule_type] == "proprietary" && admin_signed_in? %>
+            <%= f.association :spell, label: 'Name', collection: Rulebuilder::ProprietarySpell.basic.order_name.where(core_rules: @parent_object.core_rules), label_method: :name, value_method: :id, include_blank: true %>
+          <% else %>
+          <%= f.association :spell, label: 'Name', collection: @parent_object.resident.resident_spells.where(core_rules: @parent_object.core_rules), label_method: :name, value_method: :id, include_blank: true %>
+          <% end %>
+        <% else %>
+          <label>Name</label>
+          <%= f.input_field :spell, value: f.object.spell.name.to_s, disabled: true, readonly: 'readonly' %>
+        <% end %>
+      </div>
+      <div class="medium-3 columns text-center">
+        <label>Prepared</label>
+        <%= f.input :prepared, label: '', as: :boolean %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= f.input :spell_class, label: 'Class', collection: @parent_object.class_levels.pluck(:name).uniq, :include_blank => true %>
+      </div>
+      <div class="medium-3 columns">
+        <%= f.input :level %>
+      </div>
+      <div class="medium-3 columns text-center">
+        <label>At-will</label>
+        <%= f.input :at_will, label: '', as: :boolean %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-12 columns">
+        <%= f.input :detail %>
+      </div>
+    </div>
+  </fieldset>
+  <%= render "layouts/form/save_and_cancel" %>
+  <% unless @known_spell.new_record? %>
+  <br>
+  <fieldset>
+    <legend><%= @known_spell.spell.name %></legend>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= render :partial => 'rulebuilder/spells/spell_details', :locals => { :spell => @known_spell.spell } %>
+        <p><%= @known_spell.spell.short_description %></p>
+        <% if @known_spell.spell.parent.present? %>
+          <h2><%= @known_spell.spell.parent.name %></h2>
+          <hr class="faded">
+          <%= sanitize @known_spell.spell.parent.full_description %>
+        <% end %>
+      </div>
+    </div>
+  </fieldset>
+  <% end %>
+<% end %>
+</div>

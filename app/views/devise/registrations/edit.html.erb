@@ -1,0 +1,25 @@
+<% provide(:title, @user.email) %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "Account" => nil },
+          { @user.email  => nil  }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render 'menus/account', :active => 'settings' %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render 'layouts/header', main: 'Settings', sub: current_user.email %>
+    <hr class="faded">
+    <div class="row">
+      <div class="large-8 medium-10 small-12 columns">
+        <div id="brass_form">
+          <%= render 'form' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

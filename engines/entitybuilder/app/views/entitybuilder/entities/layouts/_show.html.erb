@@ -1,0 +1,53 @@
+<div class="row">
+
+  <% if @parent_object.gallery_image.present? %>
+    <div class="medium-4 columns text-center">
+      <%= link_to (image_tag @parent_object.gallery_image.file.url(:medium), :alt => @parent_object.name, class: "images_space"), "#{gallery.polymorphic_path(@parent_object.gallery_image)}/swoosh", "data-reveal-id" => "image_modal", :remote => true  %>
+      <h4 style="color:#c5c5c5;">Est. <span data-timestamp="<%= @parent_object.created_at.to_i*1000 %>"></span></h4>
+    </div>
+    <div class="medium-8 columns">
+  <% else %>
+    <div class="medium-12 columns">
+  <% end %>
+
+    <div class="row">
+      <div class="medium-12 columns">
+        <ul class="no-bullet">
+        <% if (@type.include?"Character") && @parent_object.campaign.present? %>
+          <li>
+            <div class="indent">
+              <strong>Campaign: </strong><%= link_to @parent_object.campaign.name, campaignmanager.polymorphic_path(@parent_object.campaign) %>
+            </div>
+          </li>
+          <li>
+            <div class="indent">
+              <strong>Game Master: </strong><%= link_to @parent_object.campaign.resident.name, main_app.resident_path(@parent_object.campaign.resident.slug) %>
+            </div>
+          </li>
+          <% unless @parent_object.campaign.district_id.nil? %>
+            <li>
+              <div class="indent">
+                <strong>District: </strong><%= link_to @parent_object.district.name, worldbuilder.district_path(@parent_object.district.slug) %>
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+        <% @parent_object.descriptors.each do |descriptor| %>
+          <% can_show = true %>
+          <% can_show = @parent_object.can_sheet?(current_user, admin_signed_in?, @type) if descriptor.is_private %>
+          <% if can_show %>
+            <li>
+              <div class="indent">
+                <strong><%= descriptor.name %>:</strong>
+                <%= descriptor.description %>
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+        </ul>
+        <%= sanitize @parent_object.full_description %>
+
+      </div>
+    </div>
+  </div>
+</div>

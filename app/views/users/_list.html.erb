@@ -1,0 +1,27 @@
+<fieldset>
+  <div class="row inline">
+    <div class="small-3 columns">
+      <label class="inline-label-flat">Email</label>
+    </div>
+    <div class="small-2 columns">
+      <label class="inline-label-flat">Resident</label>
+    </div>
+    <div class="small-3 columns end">
+      <label class="inline-label-flat">Status</label>
+    </div>
+    <div class="small-4 columns end">
+      <label class="inline-label-flat">Login Count</label>
+    </div>
+  </div>
+  <ul class="not-sortable row">
+    <% @users.each do |user| %>
+      <%= render 'user', :user => user %>
+    <% end %>
+  </ul>
+</fieldset>
+
+<div class="row">
+  <div class="small-12 columns text-center">
+    <%= paginate @users, :window => 2 %>
+  </div>
+</div>

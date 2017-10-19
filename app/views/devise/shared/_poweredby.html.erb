@@ -1,0 +1,9 @@
+<div id="powered-by-hastur">
+  Powered by <strong><%= link_to 'Hastur', main_app.scrolls_hastur_path %></strong>
+</div>
+
+<% content_for :footer do %>
+  <script>
+    $("body").addClass("hastur");
+  </script>
+<% end %>

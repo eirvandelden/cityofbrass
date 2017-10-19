@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+razune:
+  user: dan
+  name: Razune Khazar
+  slug: razune-khazar
+  short_description: Razune is an evil guy
+  full_description: <p>Razune is full of evilness</p>
+  title: Pharaoh
+
+tuandn:
+  user: lucas
+  name: Tuandn
+  slug: tuandn
+  short_description: Tuandn is a cool guy
+  full_description: <p>Tuandn is full of coolness</p>
+
+eleanor:
+  user: brittany
+  name: Eleanor
+  slug: eleanor
+  short_description:
+  full_description:

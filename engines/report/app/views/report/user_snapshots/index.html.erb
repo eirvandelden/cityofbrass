@@ -1,0 +1,46 @@
+<% provide(:title, "Report | Users") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Report" => nil },
+    { "Users" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'report/menus/report' %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'fa fa-users',
+        :main => "User",
+        :sub  => "Reports"
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="medium-4 columns">
+        <%= render "report/user_snapshots/partial/current_login_by_date" %>
+      </div>
+      <div class="medium-4 columns">
+        <%= render "report/user_snapshots/partial/current_login_by_week" %>
+      </div>
+      <div class="medium-4 columns">
+        <%= render "report/user_snapshots/partial/status" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-4 columns">
+        <%= render "report/user_snapshots/partial/created_at_by_date" %>
+      </div>
+      <div class="medium-4 columns">
+        <%= render "report/user_snapshots/partial/created_at_by_week" %>
+      </div>
+      <div class="medium-4 columns">
+        <%= render "report/user_snapshots/partial/created_at_by_month" %>
+      </div>
+    </div>
+  </div>
+</div>

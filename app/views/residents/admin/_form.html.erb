@@ -1,0 +1,11 @@
+<%= simple_form_for @resident, :url => admin_resident_update_path(@resident), :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <fieldset>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.input :title %>
+        <%= f.input :badges %>
+      </div>
+    </div>
+  </fieldset>
+  <%= render 'layouts/form/save' %>
+<% end %>

@@ -1,0 +1,81 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+resident_one:
+  type: Rulebuilder::ResidentItem
+  resident: razune
+  core_rules: PFRPG
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  category: MyText
+  weight: 9.99
+
+resident_two:
+  type: Rulebuilder::ResidentItem
+  resident: razune
+  core_rules: PFRPG
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  category: MyText
+  weight: 9.99
+
+stock_one:
+  type: Rulebuilder::StockItem
+  core_rules: PFRPG
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  category: MyText
+  weight: 9.99
+
+stock_two:
+  type: Rulebuilder::StockItem
+  core_rules: PFRPG
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  category: MyText
+  weight: 9.99
+
+proprietary_one:
+  type: Rulebuilder::ProprietaryItem
+  core_rules: PFRPG
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  category: MyText
+  weight: 9.99
+
+proprietary_two:
+  type: Rulebuilder::ProprietaryItem
+  core_rules: PFRPG
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  category: MyText
+  weight: 9.99

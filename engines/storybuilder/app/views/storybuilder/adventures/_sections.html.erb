@@ -1,0 +1,12 @@
+<%= sanitize @adventure.full_description %>
+
+<% @adventure.sections.each do |section| %>
+  <%= render :partial =>'layouts/sections/looper',
+      :locals => {
+        :section => section,
+        :record => @adventure,
+        :all_pages => (@adventure.pages.block.order('sort_weight, name').to_a if section.section_style == 'blocks'),
+        :resident => @resident,
+        :can_auth => @adventure.can_edit?(current_user, admin_signed_in?, @type)
+    } %>
+<% end %>

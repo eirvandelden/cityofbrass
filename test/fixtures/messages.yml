@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+message1:
+  sender: razune
+  recipient: tuandn
+  subject: test
+  body: <p>this is a message</p>
+  read_at:
+
+message2:
+  sender: tuandn
+  recipient: razune
+  subject: test
+  body: <p>this is a message</p>
+  read_at:

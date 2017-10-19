@@ -1,0 +1,27 @@
+@import "v1/core/base";
+
+div.terms {
+  width:100%;
+  height:200px;
+  border:1px solid #c5c5c5;
+  background:#f6f6f5;
+  padding:6px;
+  overflow:auto;
+  margin-bottom: .5rem;
+}
+div.terms p,
+div.terms li {font:normal 12px/15px arial;color:#444;}
+div.terms h1 {font:bold 14px/19px arial;color:#999;}
+div.terms h2 {font:bold 14px/19px arial;color:#999;}
+div.terms h3 {font:bold 12px/15px arial;color:#999;}
+div.terms h4 {font:bold 12px/15px arial;color:#999;}
+div.terms h4 {font:bold 12px/15px arial;color:#999;}
+div.terms strong {color:#444;}
+
+div.terms_full li {font:normal 16px/16px; color:#444;}
+div.terms_full h1 {font:bold 20px/20px "Open Sans";color:#666;}
+div.terms_full h2 {font:bold 19px/19px "Open Sans";color:#666;}
+div.terms_full h3 {font:bold 18px/18px "Open Sans";color:#666;}
+div.terms_full h4 {font:bold 17px/17px "Open Sans";color:#666;}
+div.terms_full h5 {font:bold 16px/16px "Open Sans";color:#666;}
+div.terms_full strong {color:#444;}

@@ -1,0 +1,34 @@
+<% provide(:title, 'Residents') %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "Residents" => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-4 columns text-center">
+    <%= image_tag "explorers.jpg" %>
+  </div>
+
+  <div class="medium-8 columns">
+    <div class="row">
+      <div class="small-12 small-centered columns">
+        <%= render 'layouts/form/search', url: residents_path %>
+      </div>
+    </div>
+    <%= render :partial =>'layouts/header',
+        :locals => {
+        :main => 'Residents',
+        :icon => 'fa fa-group'
+      }
+    %>
+    <hr class="faded">
+
+    <div class="row">
+      <div class="medium-12 columns" id="index_list">
+        <%= render 'list' %>
+      </div>
+    </div>
+  </div>
+</div>

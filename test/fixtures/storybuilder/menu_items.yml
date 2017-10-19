@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+menu_item1:
+  menu_itemable: resident_one
+  menu_itemable_type: Storybuilder::Adventure
+  sort_order: 1
+  item_label: The Hallway
+  item_link: /encounters/the-hallway
+
+menu_item2:
+  menu_itemable: resident_one
+  menu_itemable_type: Storybuilder::Adventure
+  sort_order: 2
+  item_label: The Study
+  item_link: /stories/the-house

@@ -1,0 +1,39 @@
+<% unless section.header.blank? %>
+  <h2><%= section.header %></h2>
+<% end %>
+<% unless list.nil? %>
+  <% list.each_slice(3) do |slice| %>
+    <div class="row" data-equalizer>
+      <% slice.each do |record| %>
+        <div class="medium-4 columns">
+          <ul class="vcard" data-equalizer-watch>
+            <li>
+              <h3>
+              <%= link_to record.name, tcob_path(record) %>
+              <span class="right cogs125">
+                <%= link_to "<i class='fa fa-cogs'></i>".html_safe, edit_tcob_path(record), title: "Edit", class: "color-c5" if can_auth %>
+              </span>
+              </h3>
+            </li>
+            <li>
+              <%= record.short_description  %>
+              <% children = all_pages.select{ |e| e.parent_id == record.id}%>
+              <% unless children.empty? %>
+              <ol>
+                <% children.each do |record| %>
+                  <li><%= link_to record.name, tcob_path(record) %></li>
+                <% end %>
+              </ol>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+        <% (1..(3-slice.length)).each do |i| %>
+          <div class="medium-4 columns">
+
+          </div>
+        <% end %>
+    </div>
+  <% end %>
+<% end %>

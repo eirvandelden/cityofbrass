@@ -1,0 +1,20 @@
+<div id="inventory_item_div">
+  <%= render :partial =>'layouts/header',
+    :locals => {
+      :icon => 'icon-price-tag',
+      :main => @inventory_item.item.name
+    }
+  %>
+  <hr class="faded">
+  <% unless @inventory_item.item.gallery_image.nil? %>
+    <%= link_to (image_tag @inventory_item.item.gallery_image.file.url(:thumb), :alt => @inventory_item.item.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@inventory_item.item.gallery_image)}/swoosh", "data-reveal-id" => "image_modal", :remote => true  %>
+  <% end %>
+  <%= render :partial => 'entitybuilder/inventory_items/item_details', :locals => { :inventory_item => @inventory_item } %>
+  <%= sanitize @inventory_item.item.full_description %>
+
+  <% if @inventory_item.item.parent.present? %>
+    <h2><%= @inventory_item.item.parent.name %></h2>
+    <hr class="faded">
+    <%= sanitize @inventory_item.item.parent.full_description %>
+  <% end %>
+</div>

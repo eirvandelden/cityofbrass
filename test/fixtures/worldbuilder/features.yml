@@ -1,0 +1,71 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+page_text1:
+  featureable: page1
+  featureable_type: Worldbuilder::Page
+  sort_order: 1
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: text
+  record_type:
+  search_tags:
+
+district_text1:
+  featureable: district1
+  featureable_type: Worldbuilder::District
+  sort_order: 1
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: text
+  record_type:
+  search_tags:
+
+page_child1:
+  featureable: page1
+  featureable_type: Worldbuilder::Page
+  sort_order: 2
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: child
+  record_type:
+  search_tags:
+
+page_tag1:
+  featureable: page1
+  featureable_type: Worldbuilder::Page
+  sort_order: 3
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: tag
+  record_type: Worldbuilder::Deity
+  search_tags: hello
+
+district_tag1:
+  featureable: district1
+  featureable_type: Worldbuilder::District
+  sort_order: 3
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: tag
+  record_type: Worldbuilder::Deity
+  search_tags: hello
+
+page_special1:
+  featureable: page1
+  featureable_type: Worldbuilder::Page
+  sort_order: 4
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: special
+  record_type:
+  search_tags:
+
+district_special1:
+  featureable: district1
+  featureable_type: Worldbuilder::District
+  sort_order: 4
+  feature_label: Text for label
+  feature_text: Text for text
+  feature_type: special
+  record_type:
+  search_tags:

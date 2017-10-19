@@ -1,0 +1,34 @@
+<div id="show_div" class="reveal-modal-scroll">
+  <% @images.each_slice(6) do |slice| %>
+    <div class="row">
+    <% slice.each do |image| %>
+      <div class="medium-2 columns text-center">
+        <div class="image-pick-list" id="<%= image.id %>" data-url="<%= image.file.url(:thumb) %>">
+          <h5><%= image.name %></h5>
+          <% if image.file? %>
+            <%= image_tag image.file.url(:thumb) %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <% (1..(6-slice.length)).each do |i| %>
+      <div class="medium-2 columns">
+
+      </div>
+    <% end %>
+    </div>
+  <% end %>
+  <script>
+    $(".image-pick-list").click(function() {
+      $("#"+image_for).val($(this).attr('id'));
+      $("#record_img").attr("src", $(this).attr("data-url"));
+      $('#pkrGalleryModal').foundation('reveal', 'close');
+    });
+  </script>
+
+  <div class="row">
+    <div class="small-12 columns text-center">
+      <%= paginate @images, :remote => true %>
+    </div>
+  </div>
+</div>

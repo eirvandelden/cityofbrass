@@ -1,0 +1,140 @@
+var onCurrentInstance = function(){
+    var focused = $();
+
+    var onBlur = function(obj){
+        console.log("Blur:", obj);
+    };
+
+    var onFocus = function(obj){
+        console.log("Focus:", obj);
+    };
+
+    return function(e){
+        var cke_focus = $(".cke_focus");
+        if(cke_focus.size() > 0) onFocus(cke_focus);
+        if(focused.size() > 0) onBlur(focused);
+        focused = cke_focus;
+    };
+
+};
+
+function ckeditorStandard() {
+  CKEDITOR.env.isCompatible = true;
+  CKEDITOR.replaceAll(function( textarea, config ){
+    config.contentsCss = ["https://fonts.googleapis.com/css?family=Marcellus+SC","https://fonts.googleapis.com/css?family=Open+Sans:400,700","<%= asset_path 'ckeditor/standard.css' %>"];
+    config.uiColor = '#c5c5c5';
+    config.forcePasteAsPlainText = false;
+    config.browserContextMenuOnCtrl = true;
+    config.disableNativeSpellChecker = false;
+    config.removePlugins = 'liststyle,tabletools,contextmenu,elementspath';
+    config.resize_enabled = false;
+    config.toolbar = [
+      ['Bold','Italic','Underline','TextColor'],
+      ['Format'],
+      ['Outdent','Indent','-','JustifyLeft', 'JustifyCenter', 'JustifyRight'],
+      ['NumberedList','BulletedList','-','Blockquote','HorizontalRule'],
+      ['Image', 'Link','Unlink'],
+      ['Maximize','ShowBlocks']
+    ];
+  });
+};
+
+function ckeditorMini() {
+  CKEDITOR.env.isCompatible = true;
+  CKEDITOR.replaceAll(function( textarea, config ){
+    config.contentsCss = ["https://fonts.googleapis.com/css?family=Marcellus+SC","https://fonts.googleapis.com/css?family=Open+Sans:400,700","<%= asset_path 'ckeditor/standard.css' %>"];
+    config.uiColor = '#c5c5c5';
+    config.forcePasteAsPlainText = false;
+    config.browserContextMenuOnCtrl = true;
+    config.disableNativeSpellChecker = false;
+    config.removePlugins = 'liststyle,tabletools,contextmenu,elementspath';
+    config.resize_enabled = false;
+    config.toolbar = [
+      ['Bold','Italic','Underline'],
+      ['Blockquote','-','NumberedList','BulletedList'],
+      ['Image', 'Link','Unlink'],
+      ['Maximize','ShowBlocks']
+    ];
+  });
+};
+
+function ckeditorBasic() {
+  CKEDITOR.env.isCompatible = true;
+  CKEDITOR.replaceAll(function( textarea, config ){
+    config.contentsCss = ["https://fonts.googleapis.com/css?family=Marcellus+SC","https://fonts.googleapis.com/css?family=Open+Sans:400,700","<%= asset_path 'ckeditor/standard.css' %>"];
+    config.uiColor = '#c5c5c5';
+    config.forcePasteAsPlainText = false;
+    config.browserContextMenuOnCtrl = true;
+    config.disableNativeSpellChecker = false;
+    config.removePlugins = 'liststyle,tabletools,contextmenu,elementspath';
+    config.resize_enabled = false;
+    config.toolbar = [
+      ['Bold','Italic'],
+      ['NumberedList','BulletedList']
+    ];
+  });
+};
+
+function ckeditorCard() {
+  CKEDITOR.plugins.registered['save']={
+      init : function( editor ){
+      var command = editor.addCommand( 'save',{
+        exec : function( editor ) {
+          $("i[class*='-refresh']").addClass( "fa-spin" );
+          var $form = editor.element.$.form;
+          editor.updateElement();
+          $($form).submit();
+          // $('#notes_modal').foundation('reveal', 'close');
+        }
+      });
+      editor.ui.addButton( 'AjaxSave',{
+        label : 'Save',
+        icon: 'save', //CKEDITOR.getUrl('https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/32/checked_checkbox.png'),
+        command : 'save'
+      });
+    }
+  }
+
+  CKEDITOR.env.isCompatible = true;
+  CKEDITOR.replaceAll(function( textarea, config ){
+    config.contentsCss = ["https://fonts.googleapis.com/css?family=Marcellus+SC","https://fonts.googleapis.com/css?family=Open+Sans:400,700","<%= asset_path 'ckeditor/standard.css' %>"];
+    config.uiColor = '#c5c5c5';
+    config.forcePasteAsPlainText = false;
+    config.browserContextMenuOnCtrl = true;
+    config.disableNativeSpellChecker = false;
+    config.removePlugins = 'liststyle,tabletools,contextmenu,elementspath';
+    config.resize_enabled = false;
+    config.toolbar = [
+      ['Bold','Italic'],
+      ['NumberedList','BulletedList'],
+      ['AjaxSave'],
+      ['Maximize']
+    ];
+  });
+
+  // FIRE BLUR EVENT / POSSIBLE AUTO SAVE
+  // CKEDITOR.on( "currentInstance", onCurrentInstance());
+};
+
+
+function ckeditorFAQ() {
+  CKEDITOR.env.isCompatible = true;
+  CKEDITOR.replaceAll(function( textarea, config ){
+    config.contentsCss = ["https://fonts.googleapis.com/css?family=Marcellus+SC","https://fonts.googleapis.com/css?family=Open+Sans:400,700","<%= asset_path 'ckeditor/standard.css' %>"];
+    config.uiColor = '#c5c5c5';
+    config.forcePasteAsPlainText = false;
+    config.browserContextMenuOnCtrl = true;
+    config.disableNativeSpellChecker = false;
+    config.removePlugins = 'liststyle,tabletools,contextmenu,elementspath';
+    config.resize_enabled = false;
+    config.toolbar = [
+    ['Bold','Italic','Underline','TextColor'],
+    ['Format'],
+    ['Outdent','Indent','-','JustifyLeft', 'JustifyCenter', 'JustifyRight'],
+    ['NumberedList','BulletedList','-','Blockquote','HorizontalRule'],
+    ['Image', 'Link','Unlink'],
+    ['Iframe', 'Source'],
+    ['Maximize','ShowBlocks']
+    ];
+  });
+};

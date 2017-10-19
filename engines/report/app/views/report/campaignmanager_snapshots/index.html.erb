@@ -1,0 +1,32 @@
+<% provide(:title, "Report | Campaign Manager") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Report" => nil },
+    { "Campaign Manager" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'report/menus/report' %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'fa fa-sitemap',
+        :main => "Campaign Manager",
+        :sub  => "Reports"
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= render "report/campaignmanager_snapshots/partial/campaigns" %>
+      </div>
+      <div class="medium-6 columns text-center">
+        <p><%= image_tag "cm.jpg", style: "max-height: 300px;" %></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<% if @armor_class.present? %>
+  <div class="indent">
+    <span class="attribute-highlight">
+      <strong><%= @armor_class.name %>:</strong>
+      <%= @armor_class.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) %>
+    </span>
+  </div>
+<% end %>

@@ -1,0 +1,22 @@
+<% provide(:title, "#{@resident.name} | #{@parent_object.name}") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { @resident.name => main_app.resident_path(@resident.slug) },
+          { "#{@parent_object.class.to_s.demodulize.pluralize}" => send("#{@parent_object.class.to_s.demodulize.tableize.pluralize}_path") },
+          { @parent_object.name => nil },
+          { @menu_item.name => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-2 columns">
+
+  </div>
+
+  <div class="medium-10 columns">
+    <h2><%= @menu_item.name %></h2>
+    <hr class="faded">
+    <p><i class='fa fa-angle-double-left'></i> <%= link_to "Return to Index".html_safe, :back %></p>
+  </div>
+</div>

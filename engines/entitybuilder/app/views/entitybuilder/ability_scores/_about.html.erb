@@ -1,0 +1,23 @@
+<div id="form_placeholder">
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <% if @core_faq.present? %>
+          <strong><%= link_to "Tutorial <i class='icon-graduation-cap'></i>".html_safe, support.core_faq_path(@core_faq), class: "tutorial", "data-reveal-id" => "tutorialModal", :remote => true %></strong>
+        <% else %>
+          <label class="inline-label-flat">
+            About
+          </label>
+        <% end %>
+      </div>
+    </div>
+    <strong>What are ability scores?</strong>
+    <p>
+      Each ability score partially describes your character and affects some of his or her actions.
+    </p>
+  </fieldset>
+</div>
+
+<% content_for :footer do %>
+  <%= render 'layouts/modal/tutorial' %>
+<% end %>

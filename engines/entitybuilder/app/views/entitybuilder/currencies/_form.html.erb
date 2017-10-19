@@ -1,0 +1,35 @@
+<div id="form_div">
+<%= simple_form_for [@parent_object, @currency], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <label class="inline-label-flat">Currency</label>
+      </div>
+    </div>
+    <%= f.hidden_field :sort_order, :maxlength => 3 %>
+    <div class="row">
+      <div class="medium-8 columns">
+        <%= f.input :name %>
+      </div>
+      <div class="medium-4 columns text-center">
+        <label>Carried</label>
+        <%= f.input :carried, label: '', as: :boolean %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= f.input :quantity %>
+      </div>
+      <div class="medium-6 columns">
+        <%= f.input :weight, label: 'Weight (lbs)', placeholder: '0.02' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-12 columns">
+        <%= f.input :description %>
+      </div>
+    </div>
+  </fieldset>
+  <%= render "layouts/form/save_and_cancel" %>
+<% end %>
+</div>

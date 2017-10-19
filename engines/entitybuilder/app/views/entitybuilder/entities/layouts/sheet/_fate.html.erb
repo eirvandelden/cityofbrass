@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="medium-9 columns">
+    <div class="row">
+      <div class="medium-12 columns">
+        <p><%= @parent_object.short_description %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-8 columns">
+        <%= render partial: "entitybuilder/trackables/sheet/full" %>
+      </div>
+      <div class="medium-4 columns">
+        <table class="sheet-table">
+          <thead>
+            <tr>
+              <th class="text-left">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <%= render partial: "entitybuilder/descriptors/sheet/full" %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="medium-3 columns">
+    <div class="text-center">
+      <% unless @parent_object.gallery_image.nil? %>
+        <%= link_to (image_tag @parent_object.gallery_image.file.url(:medium), :alt => @parent_object.name, style: 'max-height: 250px'), "#{gallery.polymorphic_path(@parent_object.gallery_image)}/swoosh", "data-reveal-id" => "image_modal", :remote => true  %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="medium-6 columns">
+    <table class="sheet-table">
+      <thead>
+        <tr>
+          <th class="text-left">Rules</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <%= render "entitybuilder/linked_rules/layouts/card",
+              entity: @parent_object,
+              clickable: @clickable,
+              linked_rules: @parent_object.linked_rules
+            %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="medium-6 columns">
+    <%= render "entitybuilder/skills/layouts/fate" %>
+
+    <table class="sheet-table">
+      <thead>
+        <tr>
+          <th class="text-left">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <%= render "entitybuilder/entities/update_notes" %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

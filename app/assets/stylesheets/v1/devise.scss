@@ -1,0 +1,43 @@
+@import "v1/core/base";
+
+.hastur {
+  background-color: #f6f6f5;
+  background-image: url(image_path('hastur.jpg'));
+  background-repeat: no-repeat;
+}
+
+.box {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid $color-c5;
+  margin: auto;
+  margin-top: 5%;
+  overflow: auto;
+  padding: 1rem;
+}
+
+#powered-by-hastur {
+  width: 100%;
+  color: $color-c5;
+  font-size: .8rem;
+  padding-top: .8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+div.scroll {
+  width:98%;
+  height:550px;
+  padding:6px;
+  overflow:auto;
+}
+
+label.flat{
+  cursor: default;
+  color:#c5c5c5;
+}
+
+.topyenohdiv{
+  position:fixed; 
+  visibility: hidden;
+  top:-500px; left:-500px;
+}

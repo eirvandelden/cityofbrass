@@ -1,0 +1,10 @@
+@import "v1/core/base";
+
+.trial_notice{
+  font-weight: bold;
+  color: $color-c5;
+}
+
+.trial_notice.final_week{
+    color:#cc0000;
+}

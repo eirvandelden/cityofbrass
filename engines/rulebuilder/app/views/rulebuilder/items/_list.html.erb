@@ -1,0 +1,21 @@
+<% rules = @items.to_a.map(&:core_rules).uniq %>
+<% rules.each do |rule| %>
+  <h2><%= rule %></h2>
+  <div class="row show-div">
+    <div class="medium-12 columns">
+      <% items = @items.select { |i| i.core_rules == rule } %>
+      <% items.each do |item| %>
+      <div class="row">
+        <div class="small-12 columns">
+          <%= link_to item.name, polymorphic_path(item) %><%= " - #{item.short_description}" if item.short_description.present? %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<div class="row">
+  <div class="small-12 columns text-center">
+    <%= paginate @items %>
+  </div>
+</div>

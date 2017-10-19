@@ -1,0 +1,19 @@
+<ul class="inline-list">
+  <% @parent_object.ability_scores.each do |ability_score| %>
+  <li>
+    <div>
+      <div class="show-over text-center">
+        <strong>
+          <%= link_to_if (@clickable && ability_score.description.present?), ability_score.name.upcase[0..2], "#{polymorphic_path(@parent_object)}/ability_scores/#{ability_score.id}", "data-reveal-id" => "ability_score_modal", :remote => true %>
+        </strong>
+      </div>
+      <div class="show-under text-center">
+        <%= ability_score.calculated_score(@parent_object.modifiers) %>
+        <% dice = ability_score.game_dice(@parent_object.core_rules) %>
+        <% modifier = ability_score.calculated_modifier(@parent_object.modifiers) %>
+        <%= "(#{ability_score.display_dice_or_modifier(@parent_object.core_rules, modifier, dice)})"  %>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>

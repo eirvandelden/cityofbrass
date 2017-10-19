@@ -1,0 +1,13 @@
+<% if @player.errors.count == 0 %>
+
+	$('.alert-box').remove();
+	$("body").append ("<%= j(render 'layouts/notices') %>");
+	$('#form_div').remove();
+	$('#players').append('<%= j render("player", :player => @player) %>');
+
+<% else %>
+
+	$('#form_div').remove();
+	$('#form_placeholder').after('<%= j render("form") %>');
+
+<% end %>

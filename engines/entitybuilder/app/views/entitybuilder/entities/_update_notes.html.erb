@@ -1,0 +1,5 @@
+<%= simple_form_for @parent_object, :url => "#{polymorphic_path(@parent_object)}/update_notes", :remote => true do |f| %>
+  <%= render :partial => 'notes', :locals => { :f => f } %>
+<% end %>
+
+<%= render :partial =>'layouts/ckeditor', :locals => { :cke_version => 'card' } %>

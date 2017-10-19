@@ -1,0 +1,43 @@
+<% provide(:title, "#{@parent_object.name} | #{@page.name}") %>
+<% type_array = type_split(@parent_type) %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => polymorphic_path(@parent_type.tableize) },
+    { @parent_object.name => polymorphic_path(@parent_object) },
+    { @page.name => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'menus/manage',
+      :locals => {
+        :active => 'options',
+        :view_link => polymorphic_path([@parent_object, @page]),
+        :details_link => edit_polymorphic_path([@parent_object, @page]),
+        :options_link => polymorphic_path([@parent_object, @page, :options]),
+        :features_link => polymorphic_path([@parent_object, @page, :features]),
+        :sections_link => polymorphic_path([@parent_object, @page, :sections]),
+        :notables_link => polymorphic_path([@parent_object, @page, :notables])
+      } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @page.name,
+        :sub => 'Options'
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="small-12 columns">
+        <div id="brass_form">
+          <%= simple_form_for @page, url: city_path(@parent_object, @page), method: :delete do |f| %>
+            <%= render :partial => 'layouts/form/options', :locals => { :f => f, :record => @page } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

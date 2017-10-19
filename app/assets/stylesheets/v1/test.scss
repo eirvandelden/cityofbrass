@@ -1,0 +1,46 @@
+@import "v1/core/base";
+
+ul.breadcrumbs{
+  margin-bottom: .75em;
+}
+
+.hit-points-minus{
+  position: absolute;
+  top: 0;
+  left: .5em;
+}
+
+.hit-points-plus{
+  position: absolute;
+  top: 0;
+  right: .5em;
+}
+
+select.date.optional{
+  width: auto;
+  padding-right: 1.25rem;
+}
+
+.flip {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+
+
+html.busy, html.busy * {
+  cursor: wait !important;
+}
+
+input[type="checkbox"] {
+  margin-right: .625em;
+}
+
+// placeholder color fix
+::-webkit-input-placeholder { color:#c5c5c5; }
+::-moz-placeholder { color:#c5c5c5; }
+:-ms-input-placeholder { color:#c5c5c5; }
+input:-moz-placeholder { color:#c5c5c5; }

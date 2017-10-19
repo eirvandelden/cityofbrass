@@ -1,0 +1,44 @@
+<% type_array = type_split(@type) %>
+<% provide(:title, "#{type_array[1]} | #{@entity.name}") %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => polymorphic_path(@type.tableize) },
+    { @entity.name => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'entitybuilder/menus/manage',
+      :locals => {
+        :index_link => polymorphic_path(@type.tableize),
+        :view_link => polymorphic_path(@entity),
+        :about_link => edit_polymorphic_path(@entity),
+        :base_link => polymorphic_path(@entity)
+      } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @entity.name,
+        :sub => 'Details'
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="medium-12 columns text-right">
+        <h3 class="color-c5"><%= "#{@parent_object.core_rules}" %></h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <div id="brass_form">
+          <%= render :partial => 'update' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render :partial =>'layouts/ckeditor', :locals => { :cke_version => 'standard' } %>

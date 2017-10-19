@@ -1,0 +1,29 @@
+<% provide(:title, "Report | Dashboard") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Report" => nil },
+    { "Dashboard" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'report/menus/report' %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'fa fa-bar-chart',
+        :main => "Dahsboard",
+        :sub  => "Reports"
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="medium-12 columns">
+        <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/8/8a/Bentley_Continental_GTC_011.JPG" %>
+      </div>
+    </div>
+  </div>
+</div>

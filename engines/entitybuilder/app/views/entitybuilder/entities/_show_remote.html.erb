@@ -1,0 +1,26 @@
+<div id="show_div">
+  <div class="row">
+    <div class="large-12 large-centered columns">
+      <%= render :partial =>'layouts/header',
+        :locals => {
+          :icon => @entity.icon,
+          :main => @entity.name,
+          :sub => @entity.title,
+          :view_link_remote => polymorphic_path(@entity),
+          :profile_link_remote => ("#{polymorphic_path(@entity)}/profile" if @entity.can_sheet?(current_user, admin_signed_in?, @type))
+        }
+      %>
+      <hr class="faded">
+      <%= render "entitybuilder/entities/layouts/show" %>
+    </div>
+  </div>
+
+  <% if @entity.publisher.present? or @entity.source.present? %>
+    <%= render 'layouts/publisher', publisher: @entity.publisher, is_3pp: @entity.is_3pp, source: @entity.source %>
+  <% end %>
+
+  <% if @type.include?"Stock" %>
+    <%= render 'layouts/license/link', core_rules: @entity.core_rules %>
+    <%= render 'layouts/license/modal' %>
+  <% end %>
+</div>

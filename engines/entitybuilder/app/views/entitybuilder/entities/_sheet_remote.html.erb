@@ -1,0 +1,25 @@
+<div id="show_div">
+  <div class="row">
+    <div class="large-12 large-centered columns">
+      <%= render :partial =>'layouts/header',
+        :locals => {
+          :icon => @entity.icon,
+          :main => @entity.name,
+          :sub => @entity.title,
+          :view_link_remote => polymorphic_path(@entity),
+          :profile_link_remote => ("#{polymorphic_path(@entity)}/profile" if @entity.can_sheet?(current_user, admin_signed_in?, @type)),
+          :sheet_link_remote => ("#{polymorphic_path(@entity)}/sheet" if @entity.can_sheet?(current_user, admin_signed_in?, @type))
+        }
+      %>
+      <hr class="faded">
+    </div>
+  </div>
+
+  <%= render 'layouts/popbox' %>
+  <% if @type.include?"Stock" %>
+    <%= render 'layouts/license/link', core_rules: @entity.core_rules %>
+    <%= render 'layouts/license/modal' %>
+  <% end %>
+  <%= render 'layouts/modal/sheet' %>
+  <%= render 'layouts/modal/trackable' %>
+</div>

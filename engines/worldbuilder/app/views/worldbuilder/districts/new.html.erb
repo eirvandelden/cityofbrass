@@ -1,0 +1,32 @@
+<% provide(:title, 'New District') %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "New District" => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial => 'menus/manage',
+      :locals => {
+        :active => 'edit',
+        :index_link => main_app.resident_districts_path(resident_id: current_user.resident.slug)
+      } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <div class="row" style="height: 2rem;">
+      <div class="small-12 columns">
+        <h1>District</h1>
+      </div>
+    </div>
+    <hr class="faded">
+    <div id="brass_form">
+    <%= simple_form_for @district do |f| %>
+      <%= render :partial => 'form', :locals => { :f => f } %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render :partial =>'layouts/ckeditor', :locals => { :cke_version => 'standard' } %>

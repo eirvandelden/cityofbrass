@@ -1,0 +1,44 @@
+<% provide(:title, "#{@district.name} | #{@page.name}") %>
+<% content_for :head do %>
+    <meta name="description" content="<%= @page.short_description %>">
+<% end %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { @district.name => district_path(@district.slug) },
+          { @page.name => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'worldbuilder/menus/district', :locals => { :page => @page.menu_item_join } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @page.name,
+        :sub => @page.page_label,
+        :child_link => worldbuilder.district_page_new_child_path(@district.slug, @page),
+        :edit_link => worldbuilder.edit_district_page_path(@district.slug, @page),
+        :can_auth => @district.can_edit?(current_user, admin_signed_in?)
+      }
+    %>
+    <hr class="faded">
+
+    <div class="row">
+      <div class="small-12 columns">
+        <% unless @page.gallery_image.nil? %>
+          <%= link_to (image_tag @page.gallery_image.file.url(:medium), :alt => @page.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@page.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
+        <% end %>
+
+        <%= render :partial =>'features' if @page.features.size > 0 || @page.parent_id.present? %>
+
+        <%= render :partial =>'sections' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'layouts/modal/show' %>
+<%= render 'layouts/modal/image' %>

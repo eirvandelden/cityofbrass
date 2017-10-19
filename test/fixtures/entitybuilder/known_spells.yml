@@ -1,0 +1,21 @@
+one:
+  entity: resident_character_one
+  sort_order: 1
+  spell: resident_one
+  prepared: true
+  used: true
+  spell_class: Wizard
+  level:
+  at_will: false
+  detail: im detail
+
+two:
+  entity: resident_character_one
+  sort_order: 2
+  spell: resident_two
+  prepared: false
+  used: false
+  spell_class: Cleric
+  level: 1
+  at_will: true
+  detail:

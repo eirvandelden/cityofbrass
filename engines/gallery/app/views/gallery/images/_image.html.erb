@@ -1,0 +1,10 @@
+<div id="image_div">
+  <div class="row">
+    <div class="small-12 columns text-center">
+      <h3 class="color-c5"><%= @image.name %></h3>
+      <%= image_tag @image.file.url(:original), :alt => @image.name %>
+      <br>
+      <strong><%= link_to "Full Size <i class='fa fa-external-link-square'></i>".html_safe, @image.file.url(:original), target: "FullSize" %></strong>
+    </div>
+  </div>
+</div>

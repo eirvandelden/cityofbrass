@@ -1,0 +1,30 @@
+<% if notable.entity.present? %>
+<div class="row">
+  <div class="small-8 columns">
+    <h2 class="clipper">
+      <%= link_to_if notable.entity.can_show?(current_user, admin_signed_in?, notable.entity.type.demodulize), notable.name, entitybuilder.polymorphic_path(notable.entity), "data-reveal-id" => "showModal", :remote => true %>
+      <span class="subheader"> - <%= "#{notable.name}" %></span>
+    </h2>
+  </div>
+  <div class="small-4 columns text-right">
+    <span class="cogspan">
+      <%= link_to "<i class='fa fa-file-image-o'></i>".html_safe, "#{entitybuilder.polymorphic_path(notable.entity)}", title: "Summary", class: "color-c5" if notable.entity.can_show?(current_user, admin_signed_in?, notable.entity.type.demodulize) %>
+      <%= link_to "<i class='fa fa-file-text-o'></i>".html_safe, "#{entitybuilder.polymorphic_path(notable.entity)}/profile", title: "Profile", class: "color-c5" if notable.entity.can_sheet?(current_user, admin_signed_in?, notable.entity.type.demodulize) %>
+      <%= link_to "<i class='fa fa-file-code-o'></i>".html_safe, "#{entitybuilder.polymorphic_path(notable.entity)}/sheet", title: "Sheet", class: "color-c5" if notable.entity.can_sheet?(current_user, admin_signed_in?, notable.entity.type.demodulize) %>
+    </span>
+  </div>
+</div>
+<% else %>
+<div class="row">
+  <div class="small-12 columns">
+    <h2 class="clipper">
+      <%= "#{notable.name}" %>
+    </h2>
+  </div>
+</div>
+<% end %>
+<div class="row">
+  <div class="small-12 columns">
+    <p><%= notable.entity.short_description if notable.entity.present? %></p>
+  </div>
+</div>

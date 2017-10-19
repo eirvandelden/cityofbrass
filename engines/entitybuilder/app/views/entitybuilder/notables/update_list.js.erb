@@ -1,0 +1,7 @@
+$('.alert-box').remove();
+$("body").append ("<%= j(render 'layouts/notices') %>");
+$('#notables_form').html("<%= j(render 'form_list') %>");
+if ($("#notables_list").length > 0) {
+  $('#notables_list').html("<%= j(render 'list') %>");
+}
+bindSortable();

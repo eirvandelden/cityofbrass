@@ -1,0 +1,4 @@
+<% if rule.prerequisites? && rule.core_rules != '5th Edition' %><h2>Prerequisites</h2> <p><%= rule.prerequisites %></p><% end %>
+<% if rule.benefit? %><h2>Benefit</h2> <%= sanitize rule.benefit %><% end %>
+<% if rule.normal? %><h2>Normal</h2> <%= sanitize rule.normal %><% end %>
+<% if rule.special? %><h2>Special</h2> <%= sanitize rule.special %><% end %>

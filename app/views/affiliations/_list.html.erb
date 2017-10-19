@@ -1,0 +1,35 @@
+<h5 class="menu-title text-center"><i class='fa fa-group'></i> <%= list_title %></h5>
+<dl class="affiliate-menu">
+<% list.each do |affiliate| %>
+  <dd>
+    <%= link_to affiliate.name, main_app.resident_path(affiliate.slug) %>
+    <span class="right">
+    	<% if 'affiliates'.include?(list_type) %>
+          <%= link_to "<i class='fa fa-envelope'></i>".html_safe, main_app.message_affiliate_path(affiliate), class: "color-c5", :title => "Send Message" %>
+    	<% end %>
+    	<% if 'pending'.include?(list_type) %>
+          <%= link_to "<i class='fa fa-user-times'></i>".html_safe, main_app.update_affiliation_path(affiliate, 'rescind'), remote: true, :method => 'patch', class: "color-c5 delete", :title => "Rescind" %>
+    	<% end %>
+    	<% if 'received blocked'.include?(list_type) %>
+          <%= link_to "<i class='fa fa-user-plus'></i>".html_safe, main_app.update_affiliation_path(affiliate, 'accept'), remote: true, :method => 'patch', class: "color-c5 add", :title => "Accept" %>
+    	<% end %>
+    	<% if 'received blocked'.include?(list_type) %>
+          <%= link_to "<i class='fa fa-user-times'></i>".html_safe, main_app.update_affiliation_path(affiliate, 'reject'), remote: true, :method => 'patch', class: "color-c5 delete", :title => "Reject" %>
+    	<% end %>
+    	<% if 'received pending'.include?(list_type) %>
+        <%= link_to "<i class='fa fa-ban'></i>".html_safe, main_app.update_affiliation_path(affiliate, 'block'), remote: true, :method => 'patch', class: "color-c5 delete", :title => "Block" %>
+      <% end %>
+      <% if list_type.include?('not affiliates') %>
+        <%= link_to "<i class='fa fa-user-plus'></i>".html_safe, main_app.request_affiliation_path(affiliate), remote: true, method: 'post', class: "color-c5 add", title: "Request" %>
+      <% end %>
+    </span>
+  </dd>
+<% end %>
+<% if list.size > 9 %>
+  <dd>
+    <a href="/resident/affiliates">
+      <div class="text-center"><i class='icon-dots-three-horizontal'></i></div>
+    </a>
+  </dd>
+<% end %>
+</dl>

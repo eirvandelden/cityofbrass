@@ -1,0 +1,55 @@
+<dl class="left-menu show-for-medium-up">
+  <% if @adventure.menu_item_join.nil? %>
+  <dd class="<%= 'active' if current_page?(storybuilder.polymorphic_path(@adventure)) %>">
+  	<h3><%= link_to 'Home', storybuilder.polymorphic_path(@adventure), :style => 'display:block;' %></h3>
+  </dd>
+  <% end %>
+<% @adventure.menu_items.each do |menu_item| %>
+   <dd class='<%= active_menu_item(menu_item,page,"#{storybuilder.polymorphic_path(@adventure)}#{menu_item.item_link}") || active_menu_item(menu_item,page,"#{menu_item.item_link}/adventure/#{@adventure.id}") %>'>
+    <% if menu_item.item_link.start_with?("http") %>
+      <h3><%= link_to menu_item.item_label, menu_item.item_link, :style => 'display:block;' %> </h3>
+    <% else %>
+      <% if menu_item.item_link.start_with?("/wb/") %>
+        <h3><%= link_to menu_item.item_label, "#{menu_item.item_link}/adventure/#{@adventure.id}", :style => 'display:block;' %> </h3>
+      <% else %>
+        <h3><%= link_to menu_item.item_label, "#{storybuilder.polymorphic_path(@adventure)}#{menu_item.item_link}", :style => 'display:block;' %> </h3>
+      <% end %>
+    <% end %>
+  </dd>
+<% end %>
+</dl>
+
+<% if @adventure.can_edit?(current_user, admin_signed_in?, @type) %>
+
+  <dl class="shortcut-menu show-for-medium-up">
+    <dd>
+      <h4><%= link_to 'Adventure Details', storybuilder.edit_polymorphic_path([@adventure]), :style => 'display:block;' %></h4>
+    </dd>
+    <dd>
+      <h4><%= link_to 'Adventure Menu', storybuilder.polymorphic_path([@adventure, :menu_items]), :style => 'display:block;' %></h4>
+    </dd>
+    <dd class="<%= 'active' if current_page?(storybuilder.polymorphic_path([@adventure, :pages])) %>">
+      <h4><%= link_to 'Adventure Pages', storybuilder.polymorphic_path([@adventure, :pages]) %></h4>
+    </dd>
+  </dl>
+
+<% end %>
+
+<% content_for :left_menu_icon do %>
+  <section class="left-small">
+    <a class="left-off-canvas-toggle menu-icon"><span></span></a>
+  </section>
+<% end %>
+
+<% content_for :left_menu do %>
+  <li><label><%= @adventure.name %></label></li>
+  <%= render :partial =>'storybuilder/menus/small' %>
+<% end %>
+
+<% content_for :small_menu do %>
+  <li class="has-dropdown show-for-small"><a href="#"><i class='fa icon-book fa-fw'></i> <%= @adventure.name %></a>
+    <ul class="dropdown">
+      <%= render :partial =>'storybuilder/menus/small' %>
+    </ul>
+  </li>
+<% end %>

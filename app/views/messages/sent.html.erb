@@ -1,0 +1,29 @@
+<% provide(:title, 'Messages') %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { params[:action] => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-12 columns">
+    <%= render :partial =>'layouts/header',
+    :locals => {
+      :icon => 'fa fa-envelope',
+      :main => 'Messages',
+      :message_link => new_message_path
+    }
+    %>
+    <hr class="faded">
+  </div>
+</div>
+
+<div class="row">
+  <div class="medium-2 columns">
+    <%= render partial: 'menu' %>
+  </div>
+  <div class="medium-10 columns">
+    <%= render 'list' %>
+  </div>
+</div>

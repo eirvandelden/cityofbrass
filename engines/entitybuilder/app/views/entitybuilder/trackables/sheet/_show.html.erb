@@ -1,0 +1,10 @@
+<ul class="no-bullet no-margin">
+  <% @trackables.each do |trackable| %>
+  <li>
+    <div class="indent">
+      <strong><%= trackable.name %>:</strong>
+      <%= trackable.current %>
+    </div>
+  </li>
+  <% end %>
+</ul>

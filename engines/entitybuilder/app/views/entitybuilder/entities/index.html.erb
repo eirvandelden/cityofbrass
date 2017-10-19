@@ -1,0 +1,38 @@
+<% type_array = type_split(@type) %>
+<% provide(:title, "#{type_array[1]}") %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-12 medium-centered columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => eb_icon_for(@type),
+        :main => type_array[1],
+        :sub => @sub,
+        :add_link  => new_polymorphic_path(@type.tableize.singularize),
+        :can_auth => can_add(current_user, @type)
+      }
+    %>
+  <hr class="faded">
+
+  <div class="row">
+    <div class="small-10 small-centered columns">
+      <%= render 'layouts/form/search_with_rules', url: entitybuilder.polymorphic_path(@type.tableize) %>
+    </div>
+  </div>
+
+  <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+
+  <div class="row">
+    <div class="medium-12 medium-centered columns" id="index_list">
+      <%= render 'list' %>
+    </div>
+  </div>
+
+  </div>
+</div>

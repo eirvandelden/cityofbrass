@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  linked_rule_id: 
+  linked_rule_type: MyString
+  rule_id: 
+  sort_order: 1
+  detail: MyString
+
+two:
+  linked_rule_id: 
+  linked_rule_type: MyString
+  rule_id: 
+  sort_order: 1
+  detail: MyString

@@ -1,0 +1,3 @@
+<%= render 'affiliations/list', :list_title => 'PENDING REQUESTS', :list => @resident.pending_affiliations, :list_type => 'pending' if @resident.pending_affiliations.present? %>
+<%= render 'affiliations/list', :list_title => 'RECEIVED REQUESTS', :list => @resident.requested_affiliations, :list_type => 'received' if @resident.requested_affiliations.present? %>
+<%= render 'affiliations/list', :list_title => 'BLOCKED', :list => @resident.blocked_affiliations, :list_type => 'blocked' if @resident.blocked_affiliations.present? %>

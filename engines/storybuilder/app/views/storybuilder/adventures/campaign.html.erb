@@ -1,0 +1,36 @@
+<% provide(:title, "Adventures | #{@adventure.name}") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Campaigns" => campaignmanager.campaigns_path },
+    { @campaign.name => campaignmanager.campaign_path(@campaign) },
+    { @adventure.name => storybuilder.polymorphic_path(@adventure) }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'campaignmanager/menus/campaign', :locals => { :page => nil } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'icon-book',
+        :main => @adventure.name,
+        :sub => @adventure.page_label,
+        :new_tab_link => polymorphic_path(@adventure),
+        :can_auth => @adventure.can_edit?(current_user, admin_signed_in?, @type)
+      }
+    %>
+    <hr class="faded">
+
+    <% unless @adventure.gallery_image.nil? %>
+      <%= image_tag @adventure.gallery_image.file.url(:medium), :alt => @adventure.name, :align=>"right", class: "images_space" %>
+    <% end %>
+
+    <%= render :partial =>'features' if @adventure.features.size > 0 || @adventure.parent_id.present? %>
+
+    <%= render :partial =>'sections' %>
+
+  </div>
+</div>

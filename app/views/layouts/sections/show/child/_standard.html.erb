@@ -1,0 +1,7 @@
+<% unless section.header.blank? %>
+<h2><%= section.header %></h2>
+<% end %>
+<% list.each do |record| %>
+  <h2><%= link_to record.name, tcob_path(record) %></h2>
+  <p><%= record.short_description %></p>
+<% end %>

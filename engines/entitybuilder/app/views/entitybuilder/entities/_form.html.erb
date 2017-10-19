@@ -1,0 +1,57 @@
+<fieldset>
+  <div class="row">
+    <div class="medium-8 columns">
+      <%= f.input :name %>
+
+      <% if f.object.new_record? %>
+        <%= f.input :core_rules, collection: CoreRules.options(admin_signed_in?), :include_blank => true %>
+      <% end %>
+
+      <% unless f.object.new_record?%>
+        <% unless @type.include?"Character" %>
+        <div class="row">
+          <div class="medium-9 columns">
+            <%= f.input :publisher %>
+          </div>
+          <div class="medium-3 columns text-center">
+            <label>3rd Party</label>
+            <%= f.input :is_3pp, label: '', as: :boolean %>
+          </div>
+        </div>
+        <%= f.input :source %>
+        <% end %>
+
+        <% if @type.include?"ResidentCharacter" %>
+          <%= f.fields_for :campaign_join do |p| %>
+            <%= p.association :campaign, collection: @entity.resident.campaign_list, label_method: :name, value_method: :id, :include_blank => true %>
+          <% end %>
+        <% end %>
+        <%= f.input :privacy, label: 'Summary Privacy', collection: Entitybuilder::Entity::PRIVACY_OPTIONS, :include_blank => false %>
+        <%= f.input :sheet_privacy, label: "Sheet & Profile Privacy", collection: Entitybuilder::Entity::PRIVACY_OPTIONS, :include_blank => false %>
+      <% end %>
+    </div>
+    <div class="medium-4 columns text-center">
+      <%= f.fields_for :gallery_image_join do |p| %>
+        <%= p.input :image_id, as: :hidden %>
+        <%= render :partial => 'gallery/images/image_pkr', :locals => { :image_url => (@entity.gallery_image.file.url(:thumb) unless @entity.gallery_image.nil?) } %>
+      <% end %>
+    </div>
+  </div>
+  <% unless f.object.new_record?%>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.input :tag_list, label: 'Tag list (separated by commas)' %>
+      <%= f.input :short_description %>
+      <%= f.input :full_description, label: "Full Description ( Summary & Profile )", class: "editorblank" %>
+      <br>
+      <%= f.input :introduction, label: "Introduction ( Profile )", class: "editorblank" %>
+      <br>
+      <%= f.input :notes, class: "editorblank" %>
+    </div>
+  </div>
+  <% end %>
+</fieldset>
+
+<%= render "layouts/form/save" %>
+
+<%= render :partial => 'gallery/images/image_modal', :locals => { :image_for => "#{@type.underscore}_gallery_image_join_attributes_image_id" }  %>

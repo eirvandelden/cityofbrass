@@ -1,0 +1,27 @@
+<table class="sheet-table">
+  <thead>
+    <tr>
+      <th class="text-center" colspan="3">Ability Scores</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @parent_object.ability_scores.each do |ability_score| %>
+      <tr class="roll">
+        <td>
+          <%= link_to_if (@clickable && ability_score.description.present?), ability_score.name.upcase[0..2], "#{polymorphic_path(@parent_object)}/ability_scores/#{ability_score.id}", "data-reveal-id" => "ability_score_modal", :remote => true %>
+        </td>
+        <td class="text-center"><%= ability_score.calculated_score(@parent_object.modifiers) %></td>
+        <td class="text-center">
+          <% dice = ability_score.game_dice(@parent_object.core_rules) %>
+          <% modifier = ability_score.calculated_modifier(@parent_object.modifiers) %>
+          <%= render 'layouts/dice_roller',
+            core_rules: @parent_object.core_rules,
+            dice: dice,
+            bonus: modifier,
+            display: ability_score.display_dice_or_modifier(@parent_object.core_rules, modifier, dice)
+          %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

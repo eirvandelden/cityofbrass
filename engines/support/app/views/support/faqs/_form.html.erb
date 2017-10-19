@@ -1,0 +1,21 @@
+<fieldset>
+  <div class="row">
+    <div class="small-6 columns">
+      <%= f.input :topic, label: 'Current Topics', collection: @topics, :include_blank => true %>
+    </div>
+    <div class="small-6 columns">
+      <%= f.input :new_topic %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.input :question %>
+      <%= f.input :answer, class: "editorblank" %>
+      <%= f.input :active, label: "&nbsp; Active".html_safe %>
+    </div>
+  </div>
+</fieldset>
+
+<%= render "layouts/form/save_and_cancel" %>
+
+<%= render :partial =>'layouts/ckeditor', :locals => { :cke_version => 'faq' } %>

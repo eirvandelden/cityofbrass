@@ -1,0 +1,123 @@
+<% if @xp or @cr %>
+<div class="row show-div">
+  <div class="small-6 columns">
+    <strong class="color-c5"><%= "Experience: #{@xp.description}" if @xp.present? %></strong>
+  </div>
+  <div class="small-6 columns text-right">
+    <strong class="color-c5"><%= "#{@cr.name}: #{@cr.description}" if @cr.present? %></strong>
+  </div>
+</div>
+<% end %>
+
+<div class="show-div-flat">
+  <%= sanitize @parent_object.introduction %>
+  <% if @parent_object.introduction.blank? %><p><%= @parent_object.short_description %></p><% end %>
+</div>
+
+<div class="row">
+  <% if @parent_object.gallery_image.present? %>
+  <div class="medium-7 columns">
+  <% else %>
+  <div class="medium-12 columns">
+  <% end %>
+    <div class="row">
+      <div class="medium-12 columns">
+        <% if ( @initiative.present? || @hit_points.present? || @armor_class.present? ||  @parent_object.defenses.size > 0 || @parent_object.saving_throws.size > 0 || @parent_object.movements.size > 0 ) %>
+        <h2>Defenses</h2>
+        <hr class="faded">
+        <div class="row show-div">
+          <div class="medium-12 columns">
+            <%= render "entitybuilder/trackables/sheet/show_health" if @hit_points.present? %>
+            <%= render "entitybuilder/defenses/sheet/show_armor_class" if @armor_class.present? %>
+            <%= render "entitybuilder/defenses/sheet/show" if @parent_object.defenses.size > 0 %>
+            <%= render "entitybuilder/saving_throws/sheet/show" if @parent_object.saving_throws.size > 0 %>
+            <%= render "entitybuilder/movements/sheet/show_initiative" if @initiative.present? %>
+            <%= render "entitybuilder/movements/sheet/show" if @parent_object.movements.size > 0 %>
+          </div>
+        </div>
+        <% end %>
+
+        <% if @parent_object.attacks.size > 0 %>
+        <h2>Attacks</h2>
+        <hr class="faded">
+        <div class="row show-div">
+          <div class="medium-12 columns">
+            <%= render "entitybuilder/attacks/sheet/show" %>
+          </div>
+        </div>
+        <% end %>
+
+        <% if (@parent_object.ability_scores.size > 0 || @parent_object.linked_rules.size > 0 || @parent_object.skills.size > 0 || @parent_object.descriptors.size > 0 || @parent_object.inventory_items.size > 0) %>
+        <h2>Statistics</h2>
+        <hr class="faded">
+        <div class="row show-div">
+          <div class="medium-12 columns">
+            <%= render "entitybuilder/ability_scores/sheet/show" if @parent_object.ability_scores.present? %>
+
+            <% if @parent_object.linked_rules.present? %>
+              <%= render "entitybuilder/linked_rules/layouts/profile",
+                entity: @parent_object,
+                clickable: @clickable,
+                linked_rules: @parent_object.linked_rules
+              %>
+            <% end %>
+
+            <%= render "entitybuilder/skills/layouts/profile" if @parent_object.skills.present? %>
+            <%= render "entitybuilder/descriptors/sheet/full" if @parent_object.descriptors.present? %>
+            <%= render "entitybuilder/inventory_items/sheet/show" if @parent_object.inventory_items.present? %>
+          </div>
+        </div>
+        <% end %>
+
+        <% if @trackables.size > 0 %>
+        <h2>Trackables</h2>
+        <hr class="faded">
+        <div class="row show-div">
+          <div class="medium-12 columns">
+            <%= render "entitybuilder/trackables/sheet/show" %>
+          </div>
+        </div>
+        <% end %>
+
+        <% if @prepared_spells.present? %>
+        <h2>Spells</h2>
+        <hr class="faded">
+        <div class="row show-div">
+          <div class="medium-12 columns">
+            <%= render "entitybuilder/known_spells/layouts/card",
+              entity: @parent_object,
+              clickable: @clickable,
+              can_edit: false,
+              prepared_known_spells: @prepared_spells
+            %>
+          </div>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+  <% if @parent_object.gallery_image.present? %>
+  <div class="medium-5 columns text-center">
+    <%= link_to (image_tag @parent_object.gallery_image.file.url(:medium), :alt => @parent_object.name, class: "images_space"), "#{gallery.polymorphic_path(@parent_object.gallery_image)}/swoosh", "data-reveal-id" => "image_modal", :remote => true  %>
+    <h4 style="color:#c5c5c5;">Est. <span data-timestamp="<%= @parent_object.created_at.to_i*1000 %>"></span></h4>
+  </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="medium-12 columns">
+
+    <% unless @parent_object.full_description.blank? %>
+    <h2>Additional Information</h2>
+    <hr class="faded">
+    <div class="row show-div">
+      <div class="medium-12 columns">
+        <%= sanitize @parent_object.full_description %>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+</div>

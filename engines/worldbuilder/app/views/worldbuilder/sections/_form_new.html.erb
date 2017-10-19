@@ -1,0 +1,30 @@
+<div id="form_placeholder">
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <label class="inline-label-flat">Options</label>
+      </div>
+    </div>
+    <% too_many = (@parent_object.sections.size < 20) ? false : true %>
+    <% unless too_many %>
+      <strong><%= link_to "<i class='fa fa-plus-circle'></i> Text".html_safe, "#{tcob_path(@parent_object, 'id')}/sections/new?section_type=text", :remote => true %></strong>
+      <p>Standard section with a header and content.</p>
+      <% unless @type == "district" %>
+      <strong><%= link_to "<i class='fa fa-plus-circle'></i> Child".html_safe, "#{tcob_path(@parent_object, 'id')}/sections/new?section_type=child", :remote => true %></strong>
+      <p>List of children associated current with record.</p>
+      <% end %>
+      <strong><%= link_to "<i class='fa fa-plus-circle'></i> Tag".html_safe, "#{tcob_path(@parent_object, 'id')}/sections/new?section_type=tag", :remote => true %></strong>
+      <p>List of records based on the specified tag and record type</p>
+    <% else %>
+      <strong class="color-c5" style="font-style: italic;">Text</strong>
+      <p>Standard section with a header and content.</p>
+      <% unless @type == "district" %>
+      <strong class="color-c5" style="font-style: italic;">Child</strong>
+      <p>List of children associated current with record.</p>
+      <% end %>
+      <strong class="color-c5" style="font-style: italic;">Tag</strong>
+      <p>List of records based on the specified tag and record type</p>
+      <blockquote>Sections are limited to 10</blockquote>
+    <% end %>
+  </fieldset>
+</div>

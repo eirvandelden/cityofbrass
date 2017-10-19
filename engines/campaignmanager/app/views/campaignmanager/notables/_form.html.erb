@@ -1,0 +1,24 @@
+<div id="form_div">
+<%= simple_form_for [@parent_object, @notable], :url => "#{tcob_path(@parent_object, 'id')}/notables/#{@notable.id}", :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <label class="inline-label-flat">Notable</label>
+      </div>
+    </div>
+    <input type="hidden" name="entity_type" value="<%= params[:entity_type] %>">
+    <%= f.input :sort_order, as: :hidden %>
+    <div class="row">
+      <div class="small-12 columns">
+        <% if f.object.new_record? %>
+          <%= f.association :entity, label: 'Entity', collection: @entities, label_method: :name, value_method: :id, :include_blank => true %>
+        <% else %>
+          <%= text_field_tag 'Entity', f.object.entity.name, disabled: true %>
+        <% end %>
+        <%= f.input :name %>
+      </div>
+    </div>
+  </fieldset>
+  <%= render "layouts/form/save_and_cancel" %>
+<% end %>
+</div>

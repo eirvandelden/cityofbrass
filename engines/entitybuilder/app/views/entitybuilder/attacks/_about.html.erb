@@ -1,0 +1,21 @@
+<div id="form_placeholder">
+  <fieldset>
+    <%= render 'entitybuilder/layouts/tutorial' %>
+    <strong>What are attacks?</strong>
+    <p>
+      Attacks are how you kill things that go bump in the night.
+    </p>
+    <strong>Dice</strong>
+    <p>
+      Attack dice and damage dice alike can be either 1 dice, ie. 1d20, or multiple dice that get added together and should be entered in the following format: 6d6+2d4+5d7
+    </p>
+    <strong>What is a calculated bonus?</strong>
+    <p>
+      The calculated bonuses add the ability score bonus, miscellaneous modifier and any other modifiers from other features.
+    </p>
+  </fieldset>
+</div>
+
+<% content_for :footer do %>
+  <%= render 'layouts/modal/tutorial' %>
+<% end %>

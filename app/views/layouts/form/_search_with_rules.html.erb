@@ -1,0 +1,26 @@
+<%= form_tag url, :method => 'get', :remote => true, :html => {'data-no-transition-cache' => ''} do %>
+<div class="row">
+  <div class="small-4 columns">
+    <div class="row collapse">
+      <div class="medium-5 columns show-for-medium-up">
+        <span class="prefix core-rules">Core Rules</span>
+      </div>
+      <div class="medium-7 small-12 columns">
+        <%= select_tag :core_rules_filter, options_for_select(CoreRules.options(admin_signed_in?), params[:core_rules_filter]), {prompt: 'All', onchange: "javascript: $( this ).trigger('submit.rails')", class: 'postfix'} %>
+      </div>
+    </div>
+  </div>
+  <div class="small-8 columns">
+    <div class="row collapse">
+      <div class="medium-11 small-10 columns">
+        <%= text_field_tag :search, params[:search], placeholder: 'Enter search term...' %>
+      </div>
+      <div class="medium-1 small-2 columns">
+        <%= button_tag type: 'submit', class: 'postfix nopad' do %>
+        <i class="fa fa-search"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

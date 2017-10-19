@@ -1,0 +1,46 @@
+<table class="sheet-table sheet-font-bold">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Attack</th>
+      <th class="text-center">Bonus</th>
+      <th class="text-center">Dmg</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @parent_object.attacks.each do |attack| %>
+      <tr class="roll">
+        <td>
+          <% if attack.has_details(@parent_object.ability_scores, @parent_object.modifiers) %>
+          <%= link_to "<i class='fa fa-expand'></i>".html_safe, "#", class: "cogs125", onclick: "$('#details_#{attack.id}').toggle(); return false;" %>
+          <% end %>
+        </td>
+        <td><%= attack.name %></td>
+        <td class="text-center">
+          <% attack_dice = attack.game_dice(@parent_object.core_rules) %>
+          <% attack_bonus = attack.calculated_attack_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) %>
+          <% #attack_bonus = "" if (attack_bonus == "+0" and attack.attack_bonus.to_s.blank?) %>
+          <%= render 'layouts/dice_roller',
+            core_rules: @parent_object.core_rules,
+            dice: attack_dice,
+            bonus: attack_bonus,
+            display: attack.display_dice_or_modifier(@parent_object.core_rules, attack_bonus, attack_dice, "#{attack_dice}#{attack_bonus.to_s.gsub("+"," + ").gsub("-"," - ")}")
+          %>
+        </td>
+        <td class="text-center">
+          <% damage_bonus = attack.calculated_damage_bonus(@parent_object.ability_scores, @parent_object.modifiers) %>
+          <%= render 'layouts/dice_roller',
+            core_rules: @parent_object.core_rules,
+            dice: attack.damage_dice,
+            bonus: damage_bonus,
+            display: "#{attack.damage_dice}#{damage_bonus.to_s.gsub("+"," + ").gsub("-"," - ")}"
+          %>
+        </td>
+      </tr>
+      <tr id='details_<%= "#{attack.id}"%>' style="display:none;">
+        <td></td>
+        <td colspan="3"><%= render 'entitybuilder/attacks/sheet/details', attack: attack %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

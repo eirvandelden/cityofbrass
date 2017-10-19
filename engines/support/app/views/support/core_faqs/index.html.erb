@@ -1,0 +1,32 @@
+<% provide(:title, 'Core FAQs') %>
+
+<% content_for :breadcrumb do %>
+<%=  breadcrumb [
+  { "Core FAQs" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-12 medium-centered columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'fa fa-info-circle ',
+        :main => 'Core FAQs',
+        :add_remote_link => new_core_faq_path,
+        :can_auth => current_admin.present?
+      }
+    %>
+    <hr class="faded">
+
+    <div class="row">
+      <div class="medium-6 columns" id="index_list">
+        <%= render 'list' %>
+      </div>
+      <div class="medium-6 columns">
+        <%= render 'about' %>
+      </div>
+    </div>
+
+  </div>
+</div>
+

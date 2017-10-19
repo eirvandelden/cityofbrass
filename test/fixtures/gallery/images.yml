@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+resident_one:
+  type: Gallery::ResidentImage
+  resident: razune
+  name: MyString
+
+resident_two:
+  type: Gallery::ResidentImage
+  resident: razune
+  name: MyString
+
+stock_one:
+  type: Gallery::StockImage
+  name: MyString
+
+stock_two:
+  type: Gallery::StockImage
+  name: MyString
+
+proprietary_one:
+  type: Gallery::ProprietaryImage
+  name: MyString
+
+proprietary_two:
+  type: Gallery::ProprietaryImage
+  name: MyString
+
+map_one:
+  type: Gallery::MapImage
+  name: MyString
+
+map_two:
+  type: Gallery::MapImage
+  name: MyString
+
+faq_one:
+  type: Gallery::FaqImage
+  name: MyString
+
+faq_two:
+  type: Gallery::FaqImage
+  name: MyString

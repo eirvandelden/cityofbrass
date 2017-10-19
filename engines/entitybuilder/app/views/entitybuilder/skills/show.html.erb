@@ -1,0 +1,33 @@
+<% provide(:title, "#{@parent_object.name}") %>
+<% type_array = type_split(@parent_type) %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => send("#{@parent_object.class.to_s.demodulize.tableize.pluralize}_path") },
+    { @parent_object.name => nil },
+    { @skill.name => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-2 columns">
+    <%= render :partial => "entitybuilder/menus/manage",
+      :locals => {
+        :view_link => polymorphic_path(@parent_object),
+        :about_link => edit_polymorphic_path(@parent_object),
+        :base_link => polymorphic_path(@parent_object),
+        :active_link => 'skills'
+      } %>
+  </div>
+
+  <div class="medium-10 columns">
+    <h2><%= @skill.name %></h2>
+    <hr class="faded">
+    <p><%= @skill.full_description %></p>
+    <% if @skill.prerequisites? %><p><strong>Prerequisites:</strong> <%= @skill.prerequisites %></p><% end %>
+    <% if @skill.benefit? %><p><strong>Benefit:</strong> <%= @skill.benefit %></p><% end %>
+    <% if @skill.normal? %><p><strong>Normal:</strong> <%= @skill.normal %></p><% end %>
+    <% if @skill.special? %><p><strong>Special:</strong> <%= @skill.special %></p><% end %>
+    <p><i class='fa fa-angle-double-left'></i> <%= link_to "Return to Index".html_safe, :back %></p>
+  </div>
+</div>

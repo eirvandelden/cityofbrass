@@ -1,0 +1,58 @@
+<% provide(:title, "Adventures") %>
+<% type_array = type_split(@type) %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <% if @adventures.nil? %>
+    <div class="medium-4 columns text-center">
+      <%= image_tag @index_image %>
+    </div>
+    <div class="medium-8 columns">
+      <%= render :partial =>'layouts/header',
+        :locals => {
+          :icon => 'icon-book',
+          :main => 'Adventures',
+          :add_link  => new_polymorphic_path(@type.tableize.singularize),
+          :can_auth => can_add(current_user, @type)
+        }
+      %>
+      <hr class="faded">
+      <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+    </div>
+  <% else %>
+    <div class="medium-4 columns text-center">
+      <%= image_tag @index_image %>
+    </div>
+
+    <div class="medium-8 columns">
+      <div class="row">
+        <div class="small-12 small-centered columns">
+          <%= render 'layouts/form/search_with_rules', url: storybuilder.polymorphic_path(@type.tableize) %>
+        </div>
+      </div>
+
+      <%= render :partial =>'layouts/header',
+        :locals => {
+          :icon => 'icon-book',
+          :main => 'Adventures',
+          :add_link  => new_polymorphic_path(@type.tableize.singularize),
+          :can_auth => can_add(current_user, @type)
+        }
+      %>
+      <hr class="faded">
+
+      <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+
+      <div class="row">
+        <div class="medium-12 columns" id="index_list">
+          <%= render 'list' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

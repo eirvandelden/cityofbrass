@@ -1,0 +1,25 @@
+<div id="character_<%= character.id %>">
+  <div class="row" id="character_<%= character.id %>">
+    <div class="small-9 columns">
+      <h2 class="clipper">
+        <% if current_user == @campaign.resident.user %>
+          <%= link_to "<i class='fa fa-times-circle fa-fw'></i>".html_safe, "#{entitybuilder.campaign_join_path(character.campaign_join)}", class: "iconlink delete", method: :delete, data: { confirm: 'Are you sure?' }, :remote => true %>
+        <% end %>
+        <%= link_to_if character.can_show?(current_user, admin_signed_in?, character.type.demodulize), character.name, entitybuilder.polymorphic_path(character), "data-reveal-id" => "showModal", :remote => true %>
+        <span class="subheader"> - <%= "#{character.title} | #{character.resident.name}" %></span>
+      </h2>
+    </div>
+    <div class="small-3 columns text-right">
+      <span class="cogspan">
+        <%= link_to "<i class='fa fa-file-image-o fa-fw'></i>".html_safe, "#{entitybuilder.polymorphic_path(character)}", title: "Summary", class: "color-c5" if character.can_show?(current_user, admin_signed_in?, character.type.demodulize) %>
+        <%= link_to "<i class='fa fa-file-text-o fa-fw'></i>".html_safe, "#{entitybuilder.polymorphic_path(character)}/profile", title: "Profile", class: "color-c5" if character.can_sheet?(current_user, admin_signed_in?, character.type.demodulize) %>
+        <%= link_to "<i class='fa fa-file-code-o fa-fw'></i>".html_safe, "#{entitybuilder.polymorphic_path(character)}/sheet", title: "Sheet", class: "color-c5" if character.can_sheet?(current_user, admin_signed_in?, character.type.demodulize) %>
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <p><%= character.short_description %></p>
+    </div>
+  </div>
+</div>

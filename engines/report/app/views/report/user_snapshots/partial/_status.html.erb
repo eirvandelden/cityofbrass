@@ -1,0 +1,42 @@
+<fieldset>
+  <div class="row inline text-right">
+    <div class="small-12 columns">
+      <label class="inline-label-flat">Status</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <table class="simple_table">
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th class="text-center">Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @user_counts.each do |item| %>
+            <tr>
+              <td><strong><%= item.status.humanize %></strong></td>
+              <td class="text-center"><%= item.total %></td>
+            </tr>
+          <% end %>
+
+          <tr class="total">
+            <th colspan="2"></th>
+          </tr>
+
+          <% @other_counts.each do |item| %>
+            <tr>
+              <td><strong><%= item.status.humanize %></strong></td>
+              <td class="text-center"><%= item.total %></td>
+            </tr>
+          <% end %>
+          <tr class="total">
+            <td>Total</td>
+            <td class="text-center"><%= User.count %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</fieldset>

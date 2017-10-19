@@ -1,0 +1,117 @@
+<div id="badge-list" class="ap-v1-campaign-panel">
+  <ul class="tabs" data-tab role="tablist">
+    <li class="tab-title"><a href="#ap-panel-characters" class="ap-v1-campaign-tab"><i class="fa fa-users"></i></a></li>
+    <li class="tab-title active"><a href="#ap-panel-entity" class="ap-v1-campaign-tab" id="ap-panel-entity-link"><i class='fa fa-shield fa-fw'></i></a></li>
+    <li class="tab-title ap-v1-status-gear"><a href="#ap-panel-chat" class="ap-v1-campaign-tab" id="ap-panel-chat-link"><i class='fa fa-gear fa-spin'></i></a></li>
+    <li class="tab-title"><a href="#ap-panel-initiative" class="ap-v1-campaign-tab" id="ap-panel-initiative-link"><i class="fa fa-list-ol fa-fw"></i></a></li>
+    <% if @virtual_table.can_edit?(current_user, admin_signed_in?) %>
+      <li class="tab-title right"><a href="#ap-panel-creatures-add" class="ap-v1-campaign-tab"><i class="fa fa-gears"></i></a></li>
+      <li class="tab-title right"><a href="#ap-panel-creatures" class="ap-v1-campaign-tab"><i class="fa fa-random"></i></a></li>
+    <% else %>
+      <li class="tab-title right"><a href="#ap-panel-creatures-add" class="ap-v1-campaign-tab"><i class="fa fa-gears fa-fw"></i></a></li>
+      <li class="tab-title right"><a href="#ap-panel-creatures" class="ap-v1-campaign-tab"><i class="fa fa-male fa-fw"></i></a></li>
+    <% end %>
+  </ul>
+  <div class="tabs-content">
+
+    <section role="tabpanel" class="content" id="ap-panel-characters">
+      <div id="characters_div">
+        <label class="inline-label-flat right">
+          GM
+        </label>
+          <%= render 'activeplay/virtual_tables/layouts/gm_badge', game_master: @game_master %>
+        <label class="inline-label-flat right">
+          Characters
+        </label>
+        <div class="ap-scroll ap-scroll-msg">
+          <% @campaign_characters.each do |character| %>
+            <%= render 'entitybuilder/entities/layouts/badge', entity: character, badge_color: character.badge_color, isGM: @isGM %>
+          <% end %>
+        </div>
+      </div>
+    </section>
+
+    <section class="content active" id="ap-panel-entity">
+      <div class="ap-scroll ap-scroll-col">
+        <div id="cardholder_div"><%= render 'layouts/page_loading' %></div>
+      </div>
+    </section>
+
+    <section role="tabpanel" class="content" id="ap-panel-chat">
+      <label class="inline-label-flat right">
+        <strong v-show="user.name" style="word-wrap: break-word;" v-cloak>{{ user.name }} </strong>
+      </label>
+      <ap-chat-input v-bind:input-text.sync="inputText"></ap-chat-input>
+      <ap-dice-bag></ap-dice-bag>
+      <div class="ap-scroll ap-scroll-msg">
+        <ap-chat-messages v-bind:messages="messages"></ap-chat-messages>
+      </div>
+    </section>
+
+    <section class="content" id="ap-panel-initiative">
+      <label class="inline-label-flat right">
+        Initiative
+      </label>
+      <div>
+        <% if @isGM %>
+          <ap-initiative-gm v-bind:initiative="initiative"></ap-initiative-gm>
+        <% else %>
+          <ap-initiative-player v-bind:initiative="initiative"></ap-initiative-player>
+        <% end %>
+      </div>
+    </section>
+
+    <% if @virtual_table.can_edit?(current_user, admin_signed_in?) %>
+      <section role="tabpanel" class="content" id="ap-panel-creatures">
+        <label class="inline-label-flat right">
+          Encounter
+        </label>
+        <div id="notables_list">
+          <%= render 'activeplay/notables/list' %>
+        </div>
+      </section>
+
+      <section role="tabpanel" class="content" id="ap-panel-creatures-add">
+        <div id="notables_add_div">
+          <label class="inline-label-flat right">
+            Edit Encounter
+          </label>
+            <div>
+              <%= render 'activeplay/notables/index' %>
+            </div>
+        </div>
+      </section>
+    <% else %>
+      <section role="tabpanel" class="content" id="ap-panel-creatures">
+        <label class="inline-label-flat right">
+          Notables
+        </label>
+        <div id="notables_list">
+          <%= render 'entitybuilder/notables/list' %>
+        </div>
+      </section>
+
+      <section role="tabpanel" class="content" id="ap-panel-creatures-add">
+        <div id="notables_add_div">
+          <label class="inline-label-flat right">
+            Edit Notables
+          </label>
+            <div>
+              <%= render 'entitybuilder/notables/index' %>
+            </div>
+        </div>
+      </section>
+    <% end %>
+
+  </div>
+</div>
+
+<% content_for :footer do %>
+  <%= javascript_tag do %>
+    <% if @my_character.present? %>
+      eb_get_card('<%= "#{entitybuilder.polymorphic_path(@my_character)}" %>/card.js')
+    <% else %>
+      $('#cardholder_div').hide()
+    <% end %>
+  <% end %>
+<% end %>

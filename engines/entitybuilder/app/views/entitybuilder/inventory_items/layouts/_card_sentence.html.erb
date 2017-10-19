@@ -1,0 +1,6 @@
+<div class="eb-v1-card-sentence">
+  <h3 class="eb-v1-card-header">Items</h3>
+  <% inventory_items.each do |inventory_item| %>
+    <%= link_to_if clickable, inventory_item.item.name, "#{entitybuilder.polymorphic_path(entity)}/inventory_items/#{inventory_item.id}", "data-reveal-id" => "inventory_item_modal", :remote => true %><%= " (#{inventory_item.detail})" if inventory_item.detail.present? %><%= ", " unless inventory_item == inventory_items.last %>
+  <% end %>
+</div>

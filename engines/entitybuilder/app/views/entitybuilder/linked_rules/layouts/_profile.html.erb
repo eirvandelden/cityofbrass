@@ -1,0 +1,14 @@
+<% rule_types = CoreRules::Rule.rule_types(entity.core_rules)%>
+<% rule_types.each do |rule_type| %>
+  <% linked_rules_selected = linked_rules.select { |i| i.rule_type == rule_type } %>
+  <% if linked_rules_selected.present? %>
+
+    <div class="indent">
+    <strong><%= rule_type.pluralize %>:</strong>
+      <% linked_rules_selected.each do |linked_rule| %>
+        <%= link_to_if clickable, linked_rule.rule.name, "#{entitybuilder.polymorphic_path(entity)}/linked_rules/#{linked_rule.id}", "data-reveal-id" => "linked_rule_modal", :remote => true %><%= " (#{linked_rule.detail})" if linked_rule.detail.present? %><%= ", " unless linked_rule == linked_rules_selected.last %>
+      <% end %>
+    </div>
+
+  <% end %>
+<% end %>

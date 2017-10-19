@@ -1,0 +1,6 @@
+$('.alert-box').remove();
+$("body").append ("<%= j(render 'layouts/notices') %>");
+$('#trackable_div').remove();
+$('#panelTrackables').html("<%= j(render 'entitybuilder/trackables/sheet/full') %>");
+$('#full_health').html("<%= j(render 'entitybuilder/trackables/sheet/full_health') %>");
+$('#trackable_modal').foundation('reveal', 'close');

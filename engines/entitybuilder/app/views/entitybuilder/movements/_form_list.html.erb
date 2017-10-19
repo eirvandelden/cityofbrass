@@ -1,0 +1,57 @@
+<%= form_for @parent_object, :url => send("#{@parent_type}_movements_path"), :remote => true, :html => {"data-sortable" => ''} do |f| %>
+  <fieldset>
+    <div class="row inline">
+      <div class="small-5 columns">
+        <label class="inline-label-flat">Name</label>
+      </div>
+      <div class="small-3 columns text-center">
+        <label class="inline-label-flat"> </label>
+      </div>
+      <div class="small-4 columns text-right">
+        <% if request.variant == [:phone] %>
+          <span class="right"><a id="sortable_unlock"><span class="right"><i class="lock fa fa-lock" id="sortable_unlock_icon"></i></a></span>
+        <% else %>
+          &nbsp;
+        <% end %>
+      </div>
+    </div>
+    <ul class="sortable row">
+      <% init_index = 1 %>
+      <%= f.fields_for :movements do |movement| %>
+      <li id="movement_<%= movement.object.id %>" "sortable-item">
+        <%= movement.hidden_field :sort_order %>
+        <div class="row">
+          <div class="small-5 columns clipper">
+            <strong><%= movement.object.name[0,20] %></strong>
+            <% if movement.object.name == "Initiative" %>
+              <% init_index = movement.index %>
+              <i class="fa fa-clock-o color-c5"></i>
+            <% end %>
+            <% if (movement.index == 0 and init_index > 0) or (movement.index == 1 and init_index == 0) %>
+              <i class="fa fa-tachometer color-c5"></i>
+            <% end %>
+          </div>
+          <div class="small-3 columns clipper">
+            <strong>
+              <% unless movement.object.base.nil? %>
+                <%= movement.object.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) %>
+                <%= "#{movement.object.description[0,10]}" unless movement.object.description.blank? %>
+              <% else %>
+                <%= movement.object.game_dice(@parent_object.core_rules) %>
+              <% end %>
+            </strong>
+          </div>
+          <div class="small-4 columns text-right">
+            <h3>
+              <span class="right cogs125">
+              <%= link_to "<i class='fa fa-cogs'></i>".html_safe, "#{polymorphic_path(@parent_object)}/movements/#{movement.object.id}/edit", class: "iconlink", :remote => true %>
+              <%= link_to "<i class='fa fa-times-circle'></i>".html_safe, "#{polymorphic_path(@parent_object)}/movements/#{movement.object.id}", class: "iconlink delete", method: :delete, data: { confirm: 'Are you sure?' }, :remote => true %>
+              </span>
+            </h3>
+          </div>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </fieldset>
+<% end %>

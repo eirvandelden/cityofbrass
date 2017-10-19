@@ -1,0 +1,17 @@
+<table class="sheet-table">
+  <thead>
+    <tr>
+      <th class="text-center" colspan="3">Move</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movements.each do |movement| %>
+    <tr class="roll">
+      <td><%= movement.name %></td>
+      <td class="text-center">
+        <%= movement.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

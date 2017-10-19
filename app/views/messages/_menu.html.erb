@@ -1,0 +1,11 @@
+<div class="color-c5 text-center" style="font-weight: bold; font-size: .8em;">Mailboxes</div>
+<dl class="message-menu">
+  <dd class="<%= 'active' if params[:action]=='inbox' %>">
+    <i class='fa fa-inbox'></i><%= link_to "Inbox".html_safe, inbox_path %>
+    <span class="secondary round label right"><%= current_user.resident.messages_received.size %></span>
+  </dd>
+  <dd class="<%= 'active' if params[:action]=='sent' %>">
+    <i class='fa fa-paper-plane'></i><%= link_to "Sent".html_safe, sent_path %>
+    <span class="secondary round label right"><%= current_user.resident.messages_sent.size %></span>
+  </dd>
+</dl>

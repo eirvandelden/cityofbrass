@@ -1,0 +1,27 @@
+<% provide(:title, 'Subscription') %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "Account" => nil },
+          { 'Subscription'  => nil  }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render 'menus/account', :active => 'subscription' %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render 'layouts/header', :main => 'Subscription' %>
+    <hr class="faded">
+    <div class="row">
+      <div class="medium-12 columns">
+        <div class="row">
+          <%= render 'free' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% render "stripejs" %>

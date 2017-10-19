@@ -1,0 +1,19 @@
+<div id="form_placeholder">
+  <fieldset>
+    <%= render 'entitybuilder/layouts/tutorial' %>
+    <strong>What are skills?</strong>
+    <p>
+      Skills represent some of the most basic and yet most fundamental abilities your character possesses.
+    </p>
+    <% if @parent_object.missing_core_skills.any? %>
+    <strong><%= link_to "<i class='fa fa-plus-circle'></i> Core Skill".html_safe, "#{polymorphic_path(@parent_object)}/skills/new/core", :remote => true %></strong>
+    <p>Add a <%= @parent_object.core_rules %> core skill.</p>
+    <% end %>
+    <strong><%= link_to "<i class='fa fa-plus-circle'></i> Custom Skill".html_safe, send("new_#{@parent_object.class.to_s.demodulize.underscore}_skill_path"), :remote => true %></strong>
+    <p>Add a blank skill that you can name what you want.</p>
+  </fieldset>
+</div>
+
+<% content_for :footer do %>
+  <%= render 'layouts/modal/tutorial' %>
+<% end %>

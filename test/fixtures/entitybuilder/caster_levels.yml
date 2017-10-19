@@ -1,0 +1,23 @@
+one:
+  entity: resident_character_one
+  sort_order: 1
+  caster_class: Wizard
+  level: 5
+  per_day: 10
+  bonus_per_day: 5
+  base_dc: 15
+  ability_score: Strength
+  save_dc: 10
+  proficient: true
+
+one:
+  entity: resident_character_one
+  sort_order: 2
+  caster_class: Cleric
+  level: 5
+  per_day: 10
+  bonus_per_day: 5
+  base_dc: 15
+  ability_score: Strength
+  save_dc: 10
+  proficient: false

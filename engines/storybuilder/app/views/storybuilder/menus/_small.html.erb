@@ -1,0 +1,25 @@
+<% if @adventure.menu_item_join.nil? %>
+  <li>
+    <%= link_to 'Home', storybuilder.polymorphic_path(@adventure) %>
+  </li>
+<% end %>
+<% @adventure.menu_items.each do |menu_item| %>
+  <li>
+    <% if menu_item.item_link.start_with?("http") %>
+      <%= link_to menu_item.item_label, menu_item.item_link %>
+    <% else %>
+      <% if menu_item.item_link.start_with?("/wb/") %>
+        <%= link_to menu_item.item_label, "#{menu_item.item_link}/adventure/#{@adventure.id}" %>
+      <% else %>
+        <%= link_to menu_item.item_label, "#{storybuilder.polymorphic_path(@adventure)}#{menu_item.item_link}" %>
+      <% end %>
+    <% end %>
+  </li>
+<% end %>
+
+<% if @adventure.can_edit?(current_user, admin_signed_in?, @type) %>
+  <li><label>Management</label></li>
+  <li><%= link_to 'Adventure Details', storybuilder.edit_polymorphic_path([@adventure]) %></li>
+  <li><%= link_to 'Adventure Menu', storybuilder.polymorphic_path([@adventure, :menu_items]) %></li>
+  <li><%= link_to 'Adventure Pages', storybuilder.polymorphic_path([@adventure, :pages]) %></li>
+<% end %>

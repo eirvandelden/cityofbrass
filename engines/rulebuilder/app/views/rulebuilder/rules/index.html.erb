@@ -1,0 +1,45 @@
+<% provide(:title, "Rules") %>
+<% type_array = type_split(@type) %>
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'rulebuilder/rules/menu' %>
+  </div>
+  <%
+    add_link = new_polymorphic_path(@type.tableize.singularize)
+    add_link = add_link += "?core_rules=#{params[:core_rules]}" if params[:core_rules]
+  %>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'fa fa-book',
+        :main => 'Rules',
+        :sub => @sub,
+        :add_link  => add_link,
+        :can_auth => can_add(current_user, @type)
+      }
+    %>
+    <hr class="faded">
+
+    <div class="row">
+      <div class="small-10 small-centered columns">
+        <%= render 'search', url: rulebuilder.polymorphic_path(@type.tableize) %>
+      </div>
+    </div>
+
+    <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+
+    <div class="row">
+      <div class="medium-12 medium-centered columns" id="index_list">
+        <%= render 'rulebuilder/rules/list' %>
+      </div>
+    </div>
+
+  </div>
+</div>

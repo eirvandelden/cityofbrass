@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+page_one:
+  adventure: resident_one
+  parent_id:
+  name: The Hallway
+  slug: the-hallway
+  page_label: creepy
+  privacy: Residents
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  tags: ["hello", "world"]
+
+page_two:
+  adventure: resident_two
+  parent_id:
+  name: The Hallway
+  slug: the-hallway
+  page_label: creepy
+  privacy: Residents
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  tags: ["hello", "world"]
+
+page_three:
+  adventure: stock_one
+  parent_id:
+  name: The Hallway
+  slug: the-hallway
+  page_label: creepy
+  privacy: Residents
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  tags: ["hello", "world"]
+
+page_four:
+  adventure: stock_two
+  parent_id:
+  name: The Hallway
+  slug: the-hallway
+  page_label: creepy
+  privacy: Residents
+  short_description: MyString
+  full_description: <p>Text for test</p>
+  tags: ["hello", "world"]

@@ -1,0 +1,11 @@
+<div class="indent">
+  <h3 class="eb-v1-card-header">Special Defenses</h3>
+  <% defenses_w_text.each do |defense| %>
+    <strong><%= defense.name %>:</strong>
+    <% if defense.base.present? %>
+      <span class="eb-v1-card-attribute"><%= "#{defense.calculated_bonus(ability_scores, modifiers, base_values)}/" %><%= defense.description %></span>
+    <% else %>
+      <span class="eb-v1-card-attribute"><%= defense.description %></span>
+    <% end %>
+  <% end %>
+</div>

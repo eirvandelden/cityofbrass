@@ -1,0 +1,52 @@
+<div id="form_div">
+<%= simple_form_for [@parent_object, @linked_rule], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <div class="row">
+    <div class="medium-12 columns">
+
+      <fieldset>
+        <div class="row inline text-right">
+          <div class="small-12 columns">
+            <label class="inline-label-flat"><%= get_type_label(@linked_rule.rule, params[:type]) %> <%= params[:rule_type] %></label>
+          </div>
+        </div>
+        <% if f.object.new_record? %>
+          <% if params[:type] != 'new' %>
+            <%= f.association :rule, label: 'Name', collection: @rule_options, label_method: :name, value_method: :id, :include_blank => true %>
+          <% end %>
+        <% end %>
+
+        <% if f.object.new_record? || @linked_rule.rule.can_edit?(current_user, admin_signed_in?, @linked_rule.rule.type)  %>
+          <%= f.fields_for :rule do |r| %>
+            <%= render "rulebuilder/rules/form/#{r.object.rule_type.parameterize}", f: r, nested: true %>
+          <% end %>
+        <% else %>
+          <label>Name</label>
+          <%= f.input_field :rule, value: f.object.rule.name.to_s, disabled: true, readonly: 'readonly' %>
+        <% end %>
+
+      </fieldset>
+
+      <h3 class="color-c5">Additional Info <%= tooltip_helper("This text appears in parentheses after the name of the rule.") %></h3>
+      <fieldset>
+
+        <input type="hidden" name="type" value="<%= params[:type] %>">
+        <input type="hidden" name="rule_type" value="<%= params[:rule_type] %>">
+
+        <%= f.hidden_field :sort_order, :maxlength => 3 %>
+
+        <%= f.input :detail %>
+      </fieldset>
+    </div>
+  </div>
+  <%= render "layouts/form/save_and_cancel" %>
+<% end %>
+
+<% unless @linked_rule.new_record? %>
+<div id="form_modifier_placeholder">
+  <%= render "entitybuilder/modifiers/form_item_list" %>
+</div>
+<% end %>
+
+</div>
+
+<%= render :partial =>'layouts/ckeditor', :locals => { :cke_version => 'mini' } %>

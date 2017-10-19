@@ -1,0 +1,22 @@
+<ul class="off-canvas-list">
+  <li><label>City of Brass</label></li>
+  <li><a href="/"><i class='fa fa-home fa-fw'></i> Home</a></li>
+  <% if admin_signed_in? %>
+    <%= render "layouts/offcanvas/admin" %>
+    <%= render 'layouts/offcanvas/proprietary' %>
+  <% end %>
+  <% if user_signed_in? %>
+    <% if current_user.active? %>
+      <%= render 'layouts/offcanvas/toolkit' if current_user.resident && !current_user.resident.new_record? %>
+      <%= render 'layouts/offcanvas/stock' %>
+      <%= render 'layouts/offcanvas/account' %>
+    <% else %>
+      <%= render 'layouts/offcanvas/inactive' %>
+    <% end %>
+    <%= render 'layouts/offcanvas/citylinks' %>
+  <% else %>
+    <%= render 'layouts/offcanvas/citylinks' %>
+    <%= render 'layouts/navigation/sign_up' %>
+    <%= render 'layouts/navigation/login' %>
+  <% end %>
+</ul>

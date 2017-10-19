@@ -1,0 +1,21 @@
+<div id="form_div">
+<%= simple_form_for [@parent_object, @base_value], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <label class="inline-label-flat">Base Value</label>
+      </div>
+    </div>
+    <%= f.hidden_field :sort_order, :maxlength => 3 %>
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= f.input :name, disabled: true, input_html: { readonly: 'readonly' }  %>
+      </div>
+      <div class="medium-6 columns">
+        <%= f.input :value %>
+      </div>
+    </div>
+  </fieldset>
+  <%= render "layouts/form/save_and_cancel" %>
+<% end %>
+</div>

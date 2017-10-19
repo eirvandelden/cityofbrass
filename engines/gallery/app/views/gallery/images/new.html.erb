@@ -1,0 +1,28 @@
+<% provide(:title, "Images | New") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+          { "Images" => polymorphic_path(@type.tableize) },
+          { "New" => nil }
+      ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-12 columns">
+    <%= render :partial =>'layouts/header',
+    :locals => {
+      :main => 'New',
+      :icon => 'icon-images'
+    }
+    %>
+    <hr class="faded">
+    <p><i class='fa fa-angle-double-left'></i> <%= link_to "Return to Index".html_safe, polymorphic_path(@type.tableize) %></p>
+  </div>
+</div>
+<div class="row">
+  <div class="medium-8 medium-centered columns">
+    <%= simple_form_for @image, url: polymorphic_path(@image) do |f| %>
+      <%= render :partial => 'form', :locals => { :f => f } %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div id="form_div">
+<%= simple_form_for [@parent_object, @ability_score], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <label class="inline-label-flat">Ability Score</label>
+      </div>
+    </div>
+    <%= f.hidden_field :sort_order, :maxlength => 3 %>
+    <div class="row">
+      <div class="medium-12 columns">
+        <%= f.input :name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= f.input :base, label: 'Base (score)' %>
+      </div>
+      <div class="medium-6 columns">
+        <label>Calculated score<a id="unlock_calc"><span class="right"><i class="lock fa fa-lock" id="icon_unlock_calc"></i></a></span></label>
+        <%= f.input :score, label: false, placeholder: f.object.calculated_score(@parent_object.modifiers).to_s, disabled: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= f.input :dice, placeholder: f.object.game_dice(@parent_object.core_rules), hint: valid_core_dice_hint %>
+      </div>
+      <div class="medium-6 columns">
+        <%= f.input :modifier %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-12 columns">
+        <%= f.input :description %>
+      </div>
+    </div>
+  </fieldset>
+  <%= render "layouts/form/save_and_cancel" %>
+<% end %>
+</div>
+
+<% unless @ability_score.new_record? %>
+<div id="form_modifier_placeholder">
+  <%= render "entitybuilder/modifiers/form_item_list" %>
+</div>
+<% end %>
+
+<script>
+  $('#unlock_calc').on("click", function(e){
+    unlock_field('#ability_score_score', '#icon_unlock_calc');
+  });
+</script>

@@ -1,0 +1,31 @@
+<% base_link = "/report" %>
+
+<dl class="left-menu show-for-medium-up">
+  <% report_menu.each do |item| %>
+    <dd class="<%= 'active' if current_page?("#{base_link}/#{item[:link]}") %>">
+      <h3><%= link_to item[:label], "#{base_link}/#{item[:link]}", :style => 'display:block;' %></h3>
+    </dd>
+  <% end %>
+</dl>
+
+<% content_for :left_menu_icon do %>
+  <section class="left-small">
+    <a class="left-off-canvas-toggle menu-icon"><span></span></a>
+  </section>
+<% end %>
+
+<% content_for :left_menu do %>
+  <% report_menu.each do |item| %>
+    <li><%= link_to item[:label], "#{base_link}/#{item[:link]}" %></li>
+  <% end %>
+<% end %>
+
+<% content_for :small_menu do %>
+  <li class="has-dropdown show-for-small"><a href="#"><i class='fa fa-bar-chart fa-fw'></i> Report</a>
+    <ul class="dropdown">
+      <% report_menu.each do |item| %>
+        <li><%= link_to item[:label], "#{base_link}/#{item[:link]}" %></li>
+      <% end %>
+    </ul>
+  </li>
+<% end %>

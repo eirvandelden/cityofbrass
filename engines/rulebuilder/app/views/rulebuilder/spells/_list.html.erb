@@ -1,0 +1,21 @@
+<% rules = @spells.to_a.map(&:core_rules).uniq %>
+<% rules.each do |rule| %>
+  <h2><%= rule %></h2>
+  <div class="row show-div">
+    <div class="medium-12 columns">
+      <% spells = @spells.select { |i| i.core_rules == rule } %>
+      <% spells.each do |spell| %>
+      <div class="row">
+        <div class="small-12 columns">
+          <%= link_to spell.name, polymorphic_path(spell) %><%= " - #{spell.short_description}" if spell.short_description.present? %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<div class="row">
+  <div class="small-12 columns text-center">
+    <%= paginate @spells %>
+  </div>
+</div>

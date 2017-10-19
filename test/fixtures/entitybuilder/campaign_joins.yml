@@ -1,0 +1,7 @@
+one:
+  entity: resident_character_one
+  campaign: resident_two
+
+one:
+  entity: resident_character_two
+  campaign: resident_two

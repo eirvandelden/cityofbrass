@@ -1,0 +1,17 @@
+<div id="show_div">
+  <%= render :partial =>'layouts/header',
+    :locals => {
+      :icon => 'fa fa-cloud-download',
+      :main => 'Event'
+    }
+  %>
+  <hr class="faded">
+  <ul class="no-bullet">
+    <li><strong>User:</strong> <%= @event.user.email %></li>
+    <li><strong>Token:</strong> <%= @event.stripe_event_token %></li>
+    <li><strong>Date:</strong> <%= @event.event_date %></li>
+    <li><strong>Type:</strong> <%= @event.event_type %></li>
+  </ul>
+
+  <%= @event.event_data %>
+</div>

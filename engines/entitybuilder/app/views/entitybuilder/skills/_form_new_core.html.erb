@@ -1,0 +1,24 @@
+<div id="form_div">
+<%= simple_form_for [@parent_object, @skill], url: {action: :create_core_skill}, :remote => true do |f| %>
+  <fieldset>
+    <div class="row inline text-right">
+      <div class="small-12 columns">
+        <label class="inline-label-flat">Skill</label>
+      </div>
+    </div>
+    <%= f.hidden_field :sort_order, :maxlength => 3 %>
+    <%= f.input :name, collection: @parent_object.missing_core_skills, :include_blank => true %>
+  </fieldset>
+  <% if @parent_object.missing_core_skills.any? %>
+  <%= render 'layouts/form/save_and_cancel' %>
+  <% else %>
+  <%= render 'layouts/form/cancel' %>
+  <% end %>
+<% end %>
+</div>
+
+<% unless @skill.new_record? %>
+<div id="form_modifier_placeholder">
+  <%= render "entitybuilder/modifiers/form_item_list" %>
+</div>
+<% end %>

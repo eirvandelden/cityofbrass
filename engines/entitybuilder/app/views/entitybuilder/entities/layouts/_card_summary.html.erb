@@ -1,0 +1,41 @@
+<%
+
+  entity_id             = entity.id
+  descriptors           = entity.descriptors
+
+%>
+
+<div id="card_<%= entity.id %>" class="eb-v1-card-panel">
+
+  <% unless local_assigns.has_key? :hide_header %>
+    <div class="eb-v1-card-notab-header clipper">
+      <span class="eb-v1-card-name"><%=  entity.name %></span>
+      <span class="eb-v1-status-refresh">
+        <a href="#" onclick="eb_get_card('<%= entitybuilder.polymorphic_path(entity) %>/card_summary.js')" title="Refresh Card" class="cogs125">
+          <i class='fa fa-refresh fa-spin fa-fw'></i>
+        </a>
+      </span>
+    </div>
+  <% end %>
+
+  <ul class="accordion" data-accordion>
+    <% if descriptors.any? %>
+      <li class="accordion-navigation eb-v1-card eb-v1-card-<%= entity.simple_type %>">
+        <a href="#panelSummary"><label class="inline-label-flat">Summary</label></a>
+        <div id="panelSummary" style="min-height: 200px" class="content active">
+          <% if entity.gallery_image.present? %>
+            <%= link_to (image_tag entity.gallery_image.file.url(:thumb), :alt => entity.name, class: "images_space", style: "max-width: 150px; max-height: 250px; float: right;"), "#{gallery.polymorphic_path(entity.gallery_image)}/swoosh", "data-reveal-id" => "image_modal", :remote => true  %>
+          <% end %>
+          <%= sanitize "<p>#{entity.short_description}</p>" if entity.short_description.present? %>
+          <%= render "entitybuilder/descriptors/layouts/card",
+            entity: entity,
+            clickable: true,
+            descriptors: descriptors
+          %>
+        </div>
+      </li>
+    <% end %>
+
+  </ul>
+
+</div>

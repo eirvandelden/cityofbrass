@@ -1,0 +1,3 @@
+Your latest payment failed to go through. Please log into <%= @url %> and update your credit card info to keep your subscription active.
+
+If you have any questions, please reply to <%= ENV["DEFAULT_FROM_EMAIL"] %>

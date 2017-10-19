@@ -1,0 +1,16 @@
+<li>
+  <div class="row">
+    <div class="small-4 columns clipper">
+      <strong><%= subscription.plan.titleize %></strong>
+    </div>
+    <div class="small-4 columns clipper">
+      <strong><span data-timestamp="<%= subscription.current_period_end.to_i*1000 %>"></span></strong>
+    </div>
+    <div class="small-4 columns text-right">
+      <span class="cogspan">
+        <%= link_to "<i class='fa fa-files-o'></i>".html_safe, subscription_invoices_path(subscription), class: "color-c5" %>
+        <%= link_to "<i class='fa fa-cogs'></i>".html_safe, subscription_path(subscription), class: "color-c5" %>
+      </span>
+    </div>
+  </div>
+</li>

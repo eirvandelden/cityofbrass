@@ -1,0 +1,15 @@
+one:
+  entity: resident_character_one
+  sort_order: 1
+  name: Strength
+  description: MyString
+  value: 10
+  dice: 1d6
+
+two:
+  entity: resident_character_one
+  sort_order: 2
+  name: Dexterity
+  description: MyString
+  value: 10
+  dice: 1d6

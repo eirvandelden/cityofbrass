@@ -1,0 +1,40 @@
+<% if feature.feature_type == 'child' %>
+  <% if record.type and ( record.type.include?"Adventure" or record.type.include?"District" or record.type.include?"Campaign" ) %>
+    <%= render :partial => "layouts/features/show/#{feature.feature_type}",
+      :locals => {
+        :feature => feature,
+        :list => record.children.order(:name)
+      } %>
+  <% else %>
+    <%= render :partial => "layouts/features/show/#{feature.feature_type}",
+      :locals => {
+        :feature => feature,
+        :list => record.children.order('sort_weight, name')
+      } %>
+  <% end %>
+<% end %>
+
+<%
+  if feature.feature_type == 'tag'
+    if feature.record_type.include?"::"
+      tag_children = @district.pages.where(type: feature.record_type).order('sort_weight, name').all_tags(feature.search_tags.split(',')) if feature.record_type.include? "Worldbuilder"
+      tag_children = @adventure.pages.where(type: feature.record_type).order('sort_weight, name').all_tags(feature.search_tags.split(',')) if feature.record_type.include? "Storybuilder"
+    else
+      tag_children = @district.pages.order('sort_weight, name').all_tags(feature.search_tags.split(',')) if feature.record_type.include? "Worldbuilder"
+      tag_children = @adventure.pages.order('sort_weight, name').all_tags(feature.search_tags.split(',')) if feature.record_type.include? "Storybuilder"
+    end
+%>
+  <%= render :partial => "layouts/features/show/#{feature.feature_type}",
+      :locals => {
+        :feature => feature,
+        :list => tag_children
+      } %>
+<% end %>
+
+<% if feature.feature_type == 'special' %>
+  <%= render :partial => "layouts/features/show/#{feature.feature_type}", :locals => { :feature => feature, :record => record } %>
+<% end %>
+
+<% if feature.feature_type == 'text' %>
+  <%= render :partial => "layouts/features/show/#{feature.feature_type}", :locals => { :feature => feature } %>
+<% end %>

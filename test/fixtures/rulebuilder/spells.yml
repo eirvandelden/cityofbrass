@@ -1,0 +1,135 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+resident_one:
+  type: Rulebuilder::ResidentSpell
+  resident: razune
+  core_rules: PFRPG
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  school: MyString
+  levels: ["One", "Two"]
+  casting_time: MyString
+  components: MyString
+  range: MyString
+  effect: MyString
+  target: MyString
+  area: MyString
+  duration: MyString
+  saving_throw: MyString
+  spell_resistance: MyString
+
+resident_two:
+  type: Rulebuilder::ResidentSpell
+  resident: razune
+  core_rules: PFRPG
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  school: MyString
+  levels: ["One", "Two"]
+  casting_time: MyString
+  components: MyString
+  range: MyString
+  effect: MyString
+  target: MyString
+  area: MyString
+  duration: MyString
+  saving_throw: MyString
+  spell_resistance: MyString
+
+stock_one:
+  type: Rulebuilder::StockSpell
+  core_rules: PFRPG
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  school: MyString
+  levels: ["One", "Two"]
+  casting_time: MyString
+  components: MyString
+  range: MyString
+  effect: MyString
+  target: MyString
+  area: MyString
+  duration: MyString
+  saving_throw: MyString
+  spell_resistance: MyString
+
+stock_two:
+  type: Rulebuilder::StockSpell
+  core_rules: PFRPG
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  school: MyString
+  levels: ["One", "Two"]
+  casting_time: MyString
+  components: MyString
+  range: MyString
+  effect: MyString
+  target: MyString
+  area: MyString
+  duration: MyString
+  saving_throw: MyString
+  spell_resistance: MyString
+
+proprietary_one:
+  type: Rulebuilder::ProprietarySpell
+  core_rules: PFRPG
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  school: MyString
+  levels: ["One", "Two"]
+  casting_time: MyString
+  components: MyString
+  range: MyString
+  effect: MyString
+  target: MyString
+  area: MyString
+  duration: MyString
+  saving_throw: MyString
+  spell_resistance: MyString
+
+proprietary_two:
+  type: Rulebuilder::ProprietarySpell
+  core_rules: PFRPG
+  name: MyString
+  publisher: Embers Design Studios
+  is_3pp: true
+  source: Book of Terniel
+  tags: ["hello1", "world2"]
+  short_description: MyString
+  full_description: MyText
+  school: MyString
+  levels: ["One", "Two"]
+  casting_time: MyString
+  components: MyString
+  range: MyString
+  effect: MyString
+  target: MyString
+  area: MyString
+  duration: MyString
+  saving_throw: MyString
+  spell_resistance: MyString

@@ -1,0 +1,22 @@
+<ul class="inline-list">
+  <% @parent_object.ability_scores.each do |ability_score| %>
+  <li>
+    <div>
+      <div class="show-over text-center"><strong><%= ability_score.name[0..2] %></strong></div>
+      <div class="show-under text-center">
+        <span class="color-c5"><%= ability_score.calculated_score(@parent_object.modifiers) %></span>
+        <% unless ability_score.modifier.blank? %>
+          (
+            <%= render 'layouts/dice_roller',
+              core_rules: @parent_object.core_rules,
+              dice: ability_score.game_dice(@parent_object.core_rules),
+              bonus: ability_score.calculated_modifier(@parent_object.modifiers),
+              display: ability_score.display_dice_or_modifier(@parent_object.core_rules, modifier, dice)
+            %>
+          )
+        <% end %>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>

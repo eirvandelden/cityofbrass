@@ -1,0 +1,33 @@
+<% provide(:title, 'Users') %>
+
+<% content_for :breadcrumb do %>
+<%=  breadcrumb [
+  { "Users" => nil }
+  ] %>
+  <% end %>
+
+<div class="row">
+  <div class="medium-12 medium-centered columns">
+
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'fa fa-users',
+        :main => 'Users',
+      }
+    %>
+    <hr class="faded">
+
+    <div class="row">
+      <div class="small-6 small-centered columns">
+        <%= render 'layouts/form/search', url: users_path %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-12 columns" id="index_list">
+        <%= render 'list' %>
+      </div>
+    </div>
+  </div>
+</div>
+

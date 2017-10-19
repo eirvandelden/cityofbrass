@@ -1,0 +1,5 @@
+$('.alert-box').remove();
+$("body").append ("<%= j(render 'layouts/notices') %>");
+$('#brass_modifier_form').html("<%= j(render 'form_item_list') %>");
+$('#brass_form_mod').html("<%= j(render 'form_list') %>");
+bindSortable();

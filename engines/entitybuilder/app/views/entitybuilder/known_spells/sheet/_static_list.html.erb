@@ -1,0 +1,7 @@
+<li>
+  <% if level.present? && level != 'At-will' %><strong><%= "#{level}#{level.ordinal}" %> level: </strong><% end %>
+  <% if level == 'At-will' %><strong>At-will: </strong><% end %>
+  <% known_spells.each do |known_spell| %>
+  <%= link_to_if @clickable, known_spell.spell.name, "#{polymorphic_path(@parent_object)}/known_spells/#{known_spell.id}", "data-reveal-id" => "known_spell_modal", :remote => true %><%= " (#{known_spell.detail})" if known_spell.detail.present? %><%= ", " unless known_spell == known_spells.last %>
+  <% end %>
+</li>

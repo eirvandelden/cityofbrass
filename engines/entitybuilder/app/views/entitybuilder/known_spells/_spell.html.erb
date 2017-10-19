@@ -1,0 +1,20 @@
+<div id="known_spell_div">
+  <%= render :partial =>'layouts/header',
+    :locals => {
+      :icon => 'fa fa-magic',
+      :main => @known_spell.spell.name
+    }
+  %>
+  <hr class="faded">
+  <% unless @known_spell.spell.gallery_image.nil? %>
+    <%= link_to (image_tag @known_spell.spell.gallery_image.file.url(:thumb), :alt => @known_spell.spell.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@known_spell.spell.gallery_image)}/swoosh", "data-reveal-id" => "image_modal", :remote => true  %>
+  <% end %>
+  <%= render :partial => 'rulebuilder/spells/spell_details', :locals => { :spell => @known_spell.spell } %>
+  <%= sanitize @known_spell.spell.full_description %>
+
+  <% if @known_spell.spell.parent.present? %>
+    <h2><%= @known_spell.spell.parent.name %></h2>
+    <hr class="faded">
+    <%= sanitize @known_spell.spell.parent.full_description %>
+  <% end %>
+</div>

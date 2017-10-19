@@ -1,0 +1,9 @@
+<p>
+  Hello <%= @user.email %>!
+</p>
+<p>
+  Your latest payment failed to go through. Please log into <a href="<%= @url %>"><%= @url %></a> and update your credit card info to keep your subscription active.
+</p>
+<p>
+  If you have any questions, please reply to <%= mail_to ENV["DEFAULT_FROM_EMAIL"], ENV["DEFAULT_FROM_EMAIL"], subject: "Subscription Support" %>
+</p>

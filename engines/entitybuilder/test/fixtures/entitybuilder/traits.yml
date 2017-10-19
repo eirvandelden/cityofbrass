@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  traitable_id: 
+  traitable_type: MyString
+  sort_order: 1
+  name: MyString
+  short_description: MyString
+  full_description: MyText
+
+two:
+  traitable_id: 
+  traitable_type: MyString
+  sort_order: 1
+  name: MyString
+  short_description: MyString
+  full_description: MyText

@@ -1,0 +1,37 @@
+<% provide(:title, "Report | Rule Builder") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Report" => nil },
+    { "Rule Builder" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'report/menus/report' %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :icon => 'icon-tools',
+        :main => "Rule Builder",
+        :sub  => "Reports"
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= render "report/rulebuilder_snapshots/partial/paid" %>
+      </div>
+      <div class="medium-6 columns">
+        <%= render "report/rulebuilder_snapshots/partial/free" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= render "report/rulebuilder_snapshots/partial/stock" %>
+      </div>
+    </div>
+  </div>
+</div>

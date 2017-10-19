@@ -1,0 +1,42 @@
+<% provide(:title, "Campaigns | #{@campaign.name}") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Campaigns" => campaigns_path },
+    { @campaign.name => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'menus/manage',
+      :locals => {
+        :active => 'options',
+        :view_link => campaign_path(@parent_object),
+        :details_link => edit_campaign_path(@parent_object),
+        :options_link => "#{tcob_path(@parent_object, 'id')}/options",
+        :features_link => "#{tcob_path(@parent_object, 'id')}/features",
+        :sections_link => "#{tcob_path(@parent_object, 'id')}/sections",
+        :notables_link => "#{tcob_path(@parent_object, 'id')}/notables",
+        :players_link => "#{tcob_path(@parent_object, 'id')}/players"
+      } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @campaign.name,
+        :sub => 'Options'
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="small-12 columns">
+        <div id="brass_form">
+          <%= simple_form_for @campaign, method: :delete do |f| %>
+            <%= render :partial => 'layouts/form/options', :locals => { :f => f, :record => @campaign } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

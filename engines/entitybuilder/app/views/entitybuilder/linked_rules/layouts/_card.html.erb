@@ -1,0 +1,14 @@
+<% rule_types = CoreRules::Rule.rule_types(entity.core_rules)%>
+<% rule_types.each do |rule_type| %>
+  <% linked_rules_selected = linked_rules.select { |i| i.rule_type == rule_type } %>
+  <% if linked_rules_selected.present? %>
+
+    <%= render "entitybuilder/linked_rules/layouts/card#{linked_rules_selected.size > 5 ? '_sentence' : '_description'}",
+      entity: @parent_object,
+      clickable: @clickable,
+      linked_rules: linked_rules_selected,
+      rule_type: rule_type
+    %>
+
+  <% end %>
+<% end %>

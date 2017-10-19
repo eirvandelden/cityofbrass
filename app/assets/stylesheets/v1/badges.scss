@@ -1,0 +1,24 @@
+@import "v1/core/base";
+
+.badge-primary{
+  background-color: $color-primary;
+}
+.badge-secondary{
+  background-color: $color-secondary;
+}
+
+.badge-secondary-link{
+  background-color: $color-secondary;
+}
+
+.badge-kickstarter{
+  background-color: #2BDE73;
+}
+
+.badge-kickstarter-link{
+  background-color: #2BDE73;
+}
+
+.badge-kickstarter-link:hover{
+  color: #0F2105;
+}
