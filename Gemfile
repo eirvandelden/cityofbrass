@@ -1,15 +1,13 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
-# We want dotenv to load before everything else.
-gem 'dotenv-rails'
+gem 'dotenv-rails' # We want dotenv to load before everything else.
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.6'
+gem 'rails'
 # Use postgresql as the database for Active Record
-gem 'pg', '0.20.0'
+gem 'pg'
 # Use SCSS for stylesheets
-gem 'sass-rails'#, '~> 5.0.4'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
 # Use CoffeeScript for .js.coffee assets and views
@@ -20,29 +18,29 @@ gem 'coffee-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'gitlab-turbolinks-classic', '2.5.6'
+gem 'gitlab-turbolinks-classic'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc'#, '~> 0.4.0', group: :doc
+gem 'sdoc'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
-gem 'puma'#, '< 4'
-gem 'devise'#, '< 5'
-gem 'omniauth'#, '~> 1.3.1'
-gem 'paperclip'#, '~> 4.3.2'
-gem 'aws-sdk', '< 3'#, '~> 1.61.0' # 2 is out but not compatible with paperclip
-gem 'redcarpet'#, '< 4'
-gem 'simple_form'#, '< 4'
+gem 'puma'
+gem 'devise'
+gem 'omniauth'
+gem 'paperclip'
+gem 'aws-sdk', '< 3' # 2 is out but not compatible with paperclip
+gem 'redcarpet'
+gem 'simple_form'
 gem 'foundation-rails', '5.5.3.2' #git: 'https://github.com/embersds/foundation-rails', branch: 'v5'
-gem 'kaminari'#, '~> 0.16.3'
+gem 'kaminari'
 gem 'stripe'
-gem 'redis'#, '< 4'
-gem 'sidekiq'#, '< 5'
+gem 'redis'
+gem 'sidekiq'
 gem 'delayed_paperclip', '< 4'
 # gem 'sinatra' # used for sidekiq ui
-gem 'jwt'#, '< 2'
+gem 'jwt'
 gem 'font-awesome-rails', '< 5'
 
 # City of Brass
