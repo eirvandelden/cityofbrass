@@ -340,7 +340,7 @@ DEPENDENCIES
   foundation-rails (= 5.5.3.2)
   gallery!
   get_process_mem
-  gitlab-turbolinks-classic (= 2.5.6)
+  gitlab-turbolinks-classic
   jbuilder
   jquery-rails
   jwt
@@ -350,9 +350,9 @@ DEPENDENCIES
   newrelic_rpm
   omniauth
   paperclip
-  pg (= 0.20.0)
+  pg
   puma
-  rails (= 5.0.6)
+  rails
   rails-controller-testing
   rails_12factor
   redcarpet
