@@ -141,6 +141,10 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    dotenv (2.2.1)
+    dotenv-rails (2.2.1)
+      dotenv (= 2.2.1)
+      railties (>= 3.2, < 5.2)
     erubi (1.6.1)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -328,6 +332,7 @@ DEPENDENCIES
   coffee-rails
   delayed_paperclip (< 4)
   devise
+  dotenv-rails
   entitybuilder!
   figaro
   font-awesome-rails (< 5)
@@ -367,7 +372,7 @@ DEPENDENCIES
   worldbuilder!
 
 RUBY VERSION
-   ruby 2.3.1p112
+   ruby 2.3.7p456
 
 BUNDLED WITH
-   1.13.6
+   1.17.0
