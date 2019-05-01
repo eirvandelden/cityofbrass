@@ -42,6 +42,7 @@ gem 'delayed_paperclip', '< 4'
 # gem 'sinatra' # used for sidekiq ui
 gem 'jwt'
 gem 'font-awesome-rails', '< 5'
+gem 'bundle-audit'
 
 # City of Brass
 gem 'activeplay', :path => 'engines/activeplay'
