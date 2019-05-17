@@ -4,17 +4,14 @@ networks:
     external:
       name: embers-net
 services:
-  cityofbrass:
-    build: .
-    command: foreman start
-    ports:
-      - '5000:5000'
-    volumes:
-      - ./:/usr/src/app
-    links:
-      - redis
-      - postgres
   redis:
     image: redis:latest
+    ports:
+      - "6379"
   postgres:
     image: postgres
+    ports:
+      - "5432"
+    environment:
+      - "POSTGRES_USER=cityofbrass"
+      - "POSTGRES_PASSWORD=cityofbrass"
