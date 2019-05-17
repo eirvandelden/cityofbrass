@@ -3,9 +3,11 @@ default: &default
   adapter: postgresql
   encoding: unicode
   host: postgres
-  username: postgres
-  password:
+  username: cityofbrass
+  password: cityofbrass
   pool: 5
+  host: <%= ENV['DOCKER_POSTGRES_HOST'] %>
+  port: <%= ENV['DOCKER_POSTGRES_PORT'] %>
 
 development:
   <<: *default
@@ -17,14 +19,5 @@ test:
 
 production:
   <<: *default
-  database: cityofbrass
-  timeout: 5000
-  url:  <%= ENV["DATABASE_URL"] %>
-  pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
-
-staging:
-  <<: *default
-  database: quin-slon
-  timeout: 5000
-  url:  <%= ENV["DATABASE_URL"] %>
-  pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
+  database: cityofbrass_production
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
