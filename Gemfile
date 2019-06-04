@@ -3,7 +3,8 @@ ruby '2.6.3'
 
 gem 'dotenv-rails' # We want dotenv to load before everything else.
 
-gem 'rails'
+gem 'rails', '~> 5.2'
+gem 'bootsnap'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
