@@ -44,6 +44,7 @@ gem 'delayed_paperclip', '< 4'
 gem 'jwt'
 gem 'font-awesome-rails', '< 5'
 gem 'bundle-audit'
+gem 'erubis'
 
 # City of Brass
 gem 'activeplay', :path => 'engines/activeplay'
