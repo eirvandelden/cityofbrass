@@ -70,7 +70,7 @@ module CoreRules
                 ar = entity.send(default_type).new
                 ar.sort_order = i
 
-                k = HashWithIndifferentAccess.new(r)
+                k = ActiveSupport::HashWithIndifferentAccess.new(r)
                 k.each do |key, value|
                   ar[key] = value
                 end
