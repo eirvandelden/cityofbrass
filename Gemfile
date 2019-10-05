@@ -45,6 +45,7 @@ gem 'jwt'
 gem 'font-awesome-rails', '< 5'
 gem 'bundle-audit'
 gem 'erubis'
+gem 'sentry-raven'
 
 # City of Brass
 gem 'activeplay', :path => 'engines/activeplay'

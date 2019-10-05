@@ -35,5 +35,9 @@ module Brasscore
     config.active_job.queue_adapter = :sidekiq
 
     config.action_view.sanitized_allowed_attributes = ['name', 'href', 'cite', 'class', 'title', 'src', 'height', 'width', 'style']
+
+    Raven.configure do |config|
+      config.dsn = 'https://0c7e19e5782947038b553e385fd9a8cf:e2643685f5f84dcbadc927bf833be1eb@sentry.io/1494091'
+    end
   end
 end

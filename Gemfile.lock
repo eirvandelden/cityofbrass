@@ -297,11 +297,14 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    sdoc (1.0.0)
-      rdoc (>= 5.0)
-    sidekiq (5.2.7)
-      connection_pool (~> 2.2, >= 2.2.2)
-      rack (>= 1.5.0)
+    sdoc (0.4.2)
+      json (~> 1.7, >= 1.7.7)
+      rdoc (~> 4.0)
+    sentry-raven (2.11.3)
+      faraday (>= 0.7.6, < 1.0)
+    sidekiq (5.0.4)
+      concurrent-ruby (~> 1.0)
+      connection_pool (~> 2.2, >= 2.2.0)
       rack-protection (>= 1.5.0)
       redis (>= 3.3.5, < 5)
     simple_form (4.1.0)
@@ -383,6 +386,7 @@ DEPENDENCIES
   rulebuilder!
   sass-rails
   sdoc
+  sentry-raven
   sidekiq
   simple_form
   spring
