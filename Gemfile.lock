@@ -292,6 +292,8 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sentry-raven (2.11.3)
+      faraday (>= 0.7.6, < 1.0)
     sidekiq (5.0.4)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
@@ -370,6 +372,7 @@ DEPENDENCIES
   rulebuilder!
   sass-rails
   sdoc
+  sentry-raven
   sidekiq
   simple_form
   spring
