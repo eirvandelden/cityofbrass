@@ -174,8 +174,6 @@ GEM
       sass (>= 3.3.0, < 3.5)
     get_process_mem (0.2.5)
       ffi (~> 1.0)
-    gitlab-turbolinks-classic (2.5.6)
-      coffee-rails
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hashie (3.6.0)
@@ -189,6 +187,7 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    json (1.8.6)
     jwt (2.2.1)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
@@ -221,10 +220,14 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2020.0512)
     mimemagic (0.3.2)
+    mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
+    msgpack (1.3.3)
     multi_json (1.12.2)
     multipart-post (2.1.1)
+    net-http-persistent (3.1.0)
+      connection_pool (~> 2.2)
     newrelic_rpm (4.4.0.336)
     nio4r (2.1.0)
     nokogiri (1.10.10)
@@ -285,7 +288,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    rdoc (6.1.1)
+    rdoc (4.3.0)
     redcarpet (3.4.0)
     redis (4.1.2)
     responders (3.0.0)
@@ -325,6 +328,7 @@ GEM
     stripe (4.20.0)
       faraday (~> 0.13)
       net-http-persistent (~> 3.0)
+    symbol-fstring (0.1.0)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (0.19.4)
@@ -395,11 +399,8 @@ DEPENDENCIES
   storybuilder!
   stripe
   support!
-<<<<<<< HEAD
-  turbolinks
-=======
   symbol-fstring
->>>>>>> 8fbc0a4... ✨ Upgrade to latest Rails 5.0.X
+  turbolinks
   uglifier
   worldbuilder!
 
