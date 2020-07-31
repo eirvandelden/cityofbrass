@@ -1,5 +1,5 @@
 Support::Engine.routes.draw do
-  
+
   resources :core_faqs
   resources :faqs
 

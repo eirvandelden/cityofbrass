@@ -19,7 +19,7 @@ Rulebuilder::Engine.routes.draw do
 
   scope '/proprietary/' do
     resources :proprietary_items,     path: :items,     concerns: :options
-    resources :proprietary_rules,     path: :rules,     concerns: :options    
+    resources :proprietary_rules,     path: :rules,     concerns: :options
     resources :proprietary_spells,    path: :spells,    concerns: :options
   end
 

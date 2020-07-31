@@ -1,7 +1,7 @@
 class CreateEntitybuilderCharacters < ActiveRecord::Migration
   def change
     enable_extension 'uuid-ossp'
-    
+
     create_table :entitybuilder_characters, id: :uuid do |t|
       t.uuid :resident_id, :null => false
       t.uuid :campaign_id

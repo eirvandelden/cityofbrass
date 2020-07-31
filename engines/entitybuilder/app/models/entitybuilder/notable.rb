@@ -8,6 +8,6 @@ module Entitybuilder
 
     validates :entity, presence: true
     validates :name, presence: true, length: { maximum: 64 }
-    
+
   end
 end

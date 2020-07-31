@@ -10,6 +10,6 @@ class CreateWorldbuilderMenuItems < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :worldbuilder_menu_items, [:menu_itemable_id, :menu_itemable_type], :name => 'wb_menu_items_id_and_type'   
+    add_index :worldbuilder_menu_items, [:menu_itemable_id, :menu_itemable_type], :name => 'wb_menu_items_id_and_type'
   end
 end
