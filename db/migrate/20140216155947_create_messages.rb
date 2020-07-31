@@ -12,6 +12,6 @@ class CreateMessages < ActiveRecord::Migration
     end
 
     add_index :messages, :sender_id
-    add_index :messages, :recipient_id    
+    add_index :messages, :recipient_id
   end
 end

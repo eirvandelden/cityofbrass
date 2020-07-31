@@ -7,7 +7,7 @@ class CreateAffiliations < ActiveRecord::Migration
 
       t.timestamps
     end
-    
+
     add_index :affiliations, :resident_id
   end
 end

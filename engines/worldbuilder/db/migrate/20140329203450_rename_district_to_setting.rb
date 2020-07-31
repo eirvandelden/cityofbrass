@@ -17,9 +17,9 @@ class RenameDistrictToSetting < ActiveRecord::Migration
     rename_column :worldbuilder_inhabitants, :district_id, :setting_id
 
     add_index :worldbuilder_atlas_entries, [:setting_id, :slug], :unique => true
-    add_index :worldbuilder_religions, [:setting_id, :slug], :unique => true 
-    add_index :worldbuilder_deities, [:setting_id, :slug], :unique => true 
-    add_index :worldbuilder_planes, [:setting_id, :slug], :unique => true 
+    add_index :worldbuilder_religions, [:setting_id, :slug], :unique => true
+    add_index :worldbuilder_deities, [:setting_id, :slug], :unique => true
+    add_index :worldbuilder_planes, [:setting_id, :slug], :unique => true
     add_index :worldbuilder_inhabitants, [:setting_id, :slug], :unique => true
-  end 
+  end
 end

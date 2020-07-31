@@ -5,7 +5,7 @@ class CreateBetaInvites < ActiveRecord::Migration
 
       t.timestamps
     end
-    
+
     add_index :beta_invites, :email, :unique => true
   end
 end

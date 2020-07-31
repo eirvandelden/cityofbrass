@@ -2,7 +2,7 @@ require_dependency "campaignmanager/application_controller"
 
 module Campaignmanager
   class NotablesController < ApplicationController
-    
+
     before_action :set_parent_type
     before_action :set_parent_object
     before_action :set_campaign

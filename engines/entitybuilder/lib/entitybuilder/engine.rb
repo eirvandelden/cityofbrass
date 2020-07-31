@@ -9,6 +9,5 @@ module Entitybuilder
         end
       end
     end
-    
   end
 end

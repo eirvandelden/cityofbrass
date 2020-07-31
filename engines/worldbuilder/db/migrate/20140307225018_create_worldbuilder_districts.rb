@@ -9,7 +9,7 @@ class CreateWorldbuilderDistricts < ActiveRecord::Migration
 
       t.timestamps
     end
-    
-    add_index :worldbuilder_districts, :slug, :unique => true    
+
+    add_index :worldbuilder_districts, :slug, :unique => true
   end
 end

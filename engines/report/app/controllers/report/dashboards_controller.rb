@@ -2,7 +2,7 @@ require_dependency "report/application_controller"
 
 module Report
   class DashboardsController < ApplicationController
-    
+
     # GET /dashboards
     def index
       #@dashboards = Dashboard.all
