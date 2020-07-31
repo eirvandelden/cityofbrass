@@ -1,5 +1,8 @@
 # frozen_string_literal: false
 
+source 'https://rubygems.org'
+ruby '2.7.1'
+
 gem 'dotenv-rails' # We want dotenv to load before everything else.
 
 gem 'rails', '~> 5.2'
