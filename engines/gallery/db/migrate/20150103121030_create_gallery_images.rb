@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateGalleryImages < ActiveRecord::Migration
   def change
     create_table :gallery_images, id: :uuid do |t|

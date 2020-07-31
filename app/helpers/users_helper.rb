@@ -1,5 +1,6 @@
-module UsersHelper
+# frozen_string_literal: false
 
+module UsersHelper
   def status_style(status)
     case status
       when 'active'

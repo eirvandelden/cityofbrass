@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateGalleryImageJoins < ActiveRecord::Migration
   def change
     create_table :gallery_image_joins, id: :uuid do |t|

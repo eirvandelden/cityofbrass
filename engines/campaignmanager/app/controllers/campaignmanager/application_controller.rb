@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class Campaignmanager::ApplicationController < ApplicationController
 
   before_action :authenticate_user!, except: [:show, :characters, :notables]

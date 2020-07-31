@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class ErrorsController < ApplicationController
   def show
     status_code = params[:code] || 404

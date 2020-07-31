@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Campaignmanager
   class Engine < ::Rails::Engine
     isolate_namespace Campaignmanager

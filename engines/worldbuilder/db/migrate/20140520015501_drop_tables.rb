@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class DropTables < ActiveRecord::Migration
   def change
     drop_table :worldbuilder_atlas_entries

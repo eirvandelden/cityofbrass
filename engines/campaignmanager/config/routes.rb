@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 Campaignmanager::Engine.routes.draw do
 
   # DRY UP YOUR CONCERNS

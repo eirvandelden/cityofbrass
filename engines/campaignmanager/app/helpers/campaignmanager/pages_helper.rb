@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Campaignmanager
   module PagesHelper
     def cm_icon_for(type)

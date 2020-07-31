@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateEntitybuilderCurrencies < ActiveRecord::Migration
   def change
     create_table :entitybuilder_currencies, id: :uuid do |t|

@@ -1,5 +1,6 @@
-module ApplicationHelper
+# frozen_string_literal: false
 
+module ApplicationHelper
   def tooltip_helper(tooltip)
     return "<span data-tooltip aria-haspopup='true' class='has-tip question-mark' title=\"#{tooltip}\"><i class='fa fa-question-circle'></i></span>".html_safe
   end

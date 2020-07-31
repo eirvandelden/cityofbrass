@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Worldbuilder
   module SectionsHelper
     def wb_section_text_style_options

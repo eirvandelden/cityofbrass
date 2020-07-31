@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateWorldbuilderAtlasEntries < ActiveRecord::Migration
   def change
     create_table :worldbuilder_atlas_entries, id: :uuid do |t|

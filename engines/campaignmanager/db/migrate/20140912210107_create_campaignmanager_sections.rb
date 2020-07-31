@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateCampaignmanagerSections < ActiveRecord::Migration
   def change
     create_table :campaignmanager_sections, id: :uuid do |t|

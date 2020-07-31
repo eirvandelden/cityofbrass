@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateRulebuilderSpells < ActiveRecord::Migration
   def change
     create_table :rulebuilder_spells, id: :uuid do |t|

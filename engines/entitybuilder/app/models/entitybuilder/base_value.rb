@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Entitybuilder
   class BaseValue < ApplicationRecord
     include Dice

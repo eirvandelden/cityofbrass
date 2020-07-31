@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePolymorphicFromCasterLevels < ActiveRecord::Migration
   def change
     remove_index :entitybuilder_caster_levels, :name =>  'eb_caster_level_id_and_type'

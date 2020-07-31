@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateEntitybuilderCampaignJoins < ActiveRecord::Migration
   def change
     create_table :entitybuilder_campaign_joins, id: :uuid do |t|

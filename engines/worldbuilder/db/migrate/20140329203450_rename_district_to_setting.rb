@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RenameDistrictToSetting < ActiveRecord::Migration
   def change
   	remove_index :worldbuilder_districts, :slug

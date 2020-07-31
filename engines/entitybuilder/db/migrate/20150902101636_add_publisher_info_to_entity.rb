@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddPublisherInfoToEntity < ActiveRecord::Migration
   def change
     add_column :entitybuilder_entities, :publisher, :string

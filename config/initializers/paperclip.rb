@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Paperclip
   module Interpolations
     def part_id attachment, style_name

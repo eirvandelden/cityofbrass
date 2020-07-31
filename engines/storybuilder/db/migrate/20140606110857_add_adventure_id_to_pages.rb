@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddAdventureIdToPages < ActiveRecord::Migration
   def change
     add_column :storybuilder_pages, :adventure_id, :uuid

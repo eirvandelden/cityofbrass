@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require_dependency "billing/application_controller"
 
 module Billing

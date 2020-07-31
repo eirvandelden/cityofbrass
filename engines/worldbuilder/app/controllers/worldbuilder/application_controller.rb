@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class Worldbuilder::ApplicationController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index, :campaign]
   before_action :check_user_status,  except: [:show, :index, :campaign]

@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CampaignmanagerIndexChanges < ActiveRecord::Migration
   def change
     remove_index :campaignmanager_campaigns, :privacy

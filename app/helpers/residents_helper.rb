@@ -1,5 +1,6 @@
-module ResidentsHelper
+# frozen_string_literal: false
 
+module ResidentsHelper
   def resident_badges
     options = [
       {badge: "Owner", color: "badge-secondary", url: "https://www.embersds.com"},

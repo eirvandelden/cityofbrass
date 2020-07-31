@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePolymorphicFromSkills < ActiveRecord::Migration
   def change
     remove_index :entitybuilder_skills, :name =>  'eb_skill_id_and_type'

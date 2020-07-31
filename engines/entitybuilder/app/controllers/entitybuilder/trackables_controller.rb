@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require_dependency "entitybuilder/application_controller"
 
 module Entitybuilder

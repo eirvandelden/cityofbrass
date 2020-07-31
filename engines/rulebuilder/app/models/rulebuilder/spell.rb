@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Rulebuilder
   class Spell < ApplicationRecord
     include KeysToRulebuilder

@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Worldbuilder
   class Engine < ::Rails::Engine
     isolate_namespace Worldbuilder

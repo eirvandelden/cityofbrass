@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Storybuilder
   module FeaturesHelper
     def sb_feature_special_options

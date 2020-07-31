@@ -1,5 +1,6 @@
-class UserMailer < ApplicationMailer
+# frozen_string_literal: false
 
+class UserMailer < ApplicationMailer
   def user_trial_warning(user)
     @user = user
     @url = "https://#{ENV['DEFAULT_BASE_URL']}/billing"

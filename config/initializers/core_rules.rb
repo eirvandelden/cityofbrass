@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require 'core_rules'
 
 CoreRules.rulebooks = []

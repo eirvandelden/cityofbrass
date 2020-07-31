@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module ReservedNames
   extend ActiveSupport::Concern
 

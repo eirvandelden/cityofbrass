@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePolymorphicFromCurrencies < ActiveRecord::Migration
   def change
     remove_index :entitybuilder_currencies, :name =>  'eb_currency_id_and_type'

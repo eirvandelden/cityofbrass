@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddPublisherInfoToRules < ActiveRecord::Migration
   def change
     add_column :rulebuilder_abilities, :publisher, :string

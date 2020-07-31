@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class FixCampaignManagerPageIndexes < ActiveRecord::Migration
   def change
     remove_index :campaignmanager_pages, [:campaign_id, :type, :slug]

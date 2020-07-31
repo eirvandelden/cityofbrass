@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CleanupPolyColumns < ActiveRecord::Migration
   def change
     remove_column :entitybuilder_ability_scores, :ability_scoreable_type, :string

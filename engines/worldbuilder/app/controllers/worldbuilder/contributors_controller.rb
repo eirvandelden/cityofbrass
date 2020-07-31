@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require_dependency "worldbuilder/application_controller"
 
 module Worldbuilder

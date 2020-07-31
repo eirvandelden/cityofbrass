@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddSRtoSpellsandCategoryToFeats < ActiveRecord::Migration
   def change
     add_column :rulebuilder_spells, :spell_resistance, :string

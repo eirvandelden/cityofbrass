@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePolymorphicFromAll < ActiveRecord::Migration
   def change
     remove_index :entitybuilder_ability_scores, :name =>  'eb_ability_score_id_and_type'

@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateEntitybuilderDefenses < ActiveRecord::Migration
   def change
     create_table :entitybuilder_defenses, id: :uuid do |t|

@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateSupportCoreFaqs < ActiveRecord::Migration
   def change
     create_table :support_core_faqs, id: :uuid do |t|

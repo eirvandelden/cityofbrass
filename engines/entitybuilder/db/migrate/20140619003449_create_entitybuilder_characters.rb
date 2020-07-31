@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateEntitybuilderCharacters < ActiveRecord::Migration
   def change
     enable_extension 'uuid-ossp'

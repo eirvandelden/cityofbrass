@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePolymorphicFromCampaignJoins < ActiveRecord::Migration
   def change
     remove_index :entitybuilder_campaign_joins, :name =>  'eb_campaign_join_id_and_type'

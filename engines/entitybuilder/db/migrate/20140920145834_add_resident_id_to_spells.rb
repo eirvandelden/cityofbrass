@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddResidentIdToSpells < ActiveRecord::Migration
   def change
     remove_column :entitybuilder_spells, :prepared, :uuid

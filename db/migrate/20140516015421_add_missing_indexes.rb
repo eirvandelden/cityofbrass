@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddMissingIndexes < ActiveRecord::Migration
   def change
     add_index :affiliations, [:affiliate_id, :resident_id]

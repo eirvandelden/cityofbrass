@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateEntitybuilderNotables < ActiveRecord::Migration
   def change
     create_table :entitybuilder_notables, id: :uuid do |t|

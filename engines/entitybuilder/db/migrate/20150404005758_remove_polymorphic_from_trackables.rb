@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePolymorphicFromTrackables < ActiveRecord::Migration
   def change
     remove_index :entitybuilder_trackables, :name =>  'eb_trackable_id_and_type'

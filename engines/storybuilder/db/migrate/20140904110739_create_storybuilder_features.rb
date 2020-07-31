@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateStorybuilderFeatures < ActiveRecord::Migration
   def change
     create_table :storybuilder_features, id: :uuid do |t|

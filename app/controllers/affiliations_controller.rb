@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AffiliationsController < ApplicationController
 
   before_action :authenticate_user!

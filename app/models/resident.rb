@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class Resident < ApplicationRecord
   include ReservedNames
 

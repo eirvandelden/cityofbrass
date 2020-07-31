@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddTagsToWorldbuilderPages < ActiveRecord::Migration
   def change
     add_column :worldbuilder_pages, :tags, :text, array: true, default: []

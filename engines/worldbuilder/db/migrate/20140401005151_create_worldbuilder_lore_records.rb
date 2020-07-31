@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateWorldbuilderLoreRecords < ActiveRecord::Migration
   def change
     create_table :worldbuilder_lore_records, id: :uuid do |t|

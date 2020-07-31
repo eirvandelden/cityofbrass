@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 Rulebuilder::Engine.routes.draw do
 
   resources :rules

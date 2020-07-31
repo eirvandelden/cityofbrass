@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class DropEntitybuilderTraitsAndSpecialAbilities < ActiveRecord::Migration
   def change
     drop_table :entitybuilder_traits

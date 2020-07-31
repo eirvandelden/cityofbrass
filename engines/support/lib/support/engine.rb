@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Support
   class Engine < ::Rails::Engine
     isolate_namespace Support

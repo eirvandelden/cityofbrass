@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePolymorphicFromMovements < ActiveRecord::Migration
   def change
     remove_index :entitybuilder_movements, :name =>  'eb_movement_id_and_type'

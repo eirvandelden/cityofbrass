@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Campaignmanager
   module FeaturesHelper
     def cm_feature_special_options

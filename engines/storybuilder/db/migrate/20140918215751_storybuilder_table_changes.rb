@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class StorybuilderTableChanges < ActiveRecord::Migration
   def change
     drop_table :storybuilder_campaigns

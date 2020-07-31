@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class User < ApplicationRecord
 
   attr_accessor :check_field

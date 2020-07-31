@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require 'test_helper'
 
 class ErrorsControllerTest < ActionController::TestCase

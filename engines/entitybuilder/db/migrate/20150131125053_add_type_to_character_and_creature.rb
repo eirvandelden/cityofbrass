@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddTypeToCharacterAndCreature < ActiveRecord::Migration
   def change
     add_column :entitybuilder_characters, :type, :string

@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
 

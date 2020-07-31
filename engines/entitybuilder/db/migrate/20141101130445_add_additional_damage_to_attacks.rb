@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddAdditionalDamageToAttacks < ActiveRecord::Migration
   def change
     add_column :entitybuilder_attacks, :damage_type, :string

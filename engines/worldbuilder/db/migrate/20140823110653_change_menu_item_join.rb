@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class ChangeMenuItemJoin < ActiveRecord::Migration
   def change
     remove_index :worldbuilder_menu_item_joins, :name => 'wb_menu_item_joins_id_and_type'

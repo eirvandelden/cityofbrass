@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Storybuilder
   class Feature < ApplicationRecord
     OPTIONS = ['text', 'child', 'tag', 'special']

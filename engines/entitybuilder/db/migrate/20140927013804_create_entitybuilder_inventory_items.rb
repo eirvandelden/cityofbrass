@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateEntitybuilderInventoryItems < ActiveRecord::Migration
   def change
     create_table :entitybuilder_inventory_items, id: :uuid do |t|

@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddColumnsToEntitybuilderMovements < ActiveRecord::Migration
   def change
     remove_column :entitybuilder_movements, :description

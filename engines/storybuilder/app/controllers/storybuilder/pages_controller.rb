@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require_dependency "storybuilder/application_controller"
 
 module Storybuilder

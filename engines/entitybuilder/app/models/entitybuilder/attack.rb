@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Entitybuilder
   class Attack < ApplicationRecord
     include Dice

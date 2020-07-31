@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 Activeplay::Engine.routes.draw do
 
   concern :notables do

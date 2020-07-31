@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 Entitybuilder::Engine.routes.draw do
 
   concern :sheet do

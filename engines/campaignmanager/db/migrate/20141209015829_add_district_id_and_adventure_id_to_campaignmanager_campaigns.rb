@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddDistrictIdAndAdventureIdToCampaignmanagerCampaigns < ActiveRecord::Migration
   def change
     add_column :campaignmanager_campaigns, :district_id, :uuid

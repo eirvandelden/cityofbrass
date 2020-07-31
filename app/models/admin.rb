@@ -1,3 +1,4 @@
+# frozen_string_literal: false
 class Admin < ApplicationRecord
   devise :database_authenticatable,
          :trackable, :rememberable, :recoverable,

@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePolymorphicFromDefenses < ActiveRecord::Migration
   def change
     remove_index :entitybuilder_defenses, :name =>  'eb_defense_id_and_type'

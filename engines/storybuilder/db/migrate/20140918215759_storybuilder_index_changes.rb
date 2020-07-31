@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class StorybuilderIndexChanges < ActiveRecord::Migration
   def change
     remove_index :storybuilder_adventures, :privacy

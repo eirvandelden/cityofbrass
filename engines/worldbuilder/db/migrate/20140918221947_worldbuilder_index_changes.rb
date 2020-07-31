@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class WorldbuilderIndexChanges < ActiveRecord::Migration
   def change
     add_index :worldbuilder_districts, :resident_id

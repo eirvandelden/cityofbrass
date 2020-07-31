@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateMessages < ActiveRecord::Migration
   def change
     create_table :messages, id: :uuid do |t|

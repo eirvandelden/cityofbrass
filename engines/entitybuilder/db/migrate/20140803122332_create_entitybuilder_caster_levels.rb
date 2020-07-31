@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateEntitybuilderCasterLevels < ActiveRecord::Migration
   def change
     create_table :entitybuilder_caster_levels, id: :uuid do |t|

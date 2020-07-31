@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Storybuilder
   module SectionsHelper
     def sb_section_text_style_options

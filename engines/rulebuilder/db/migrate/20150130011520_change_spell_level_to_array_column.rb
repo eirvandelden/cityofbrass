@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class ChangeSpellLevelToArrayColumn < ActiveRecord::Migration
   def change
     remove_column :rulebuilder_spells, :level, :integer

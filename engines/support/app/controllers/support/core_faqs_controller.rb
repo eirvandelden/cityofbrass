@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require_dependency "support/application_controller"
 
 module Support

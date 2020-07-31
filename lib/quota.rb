@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Quota
 
   FREE_USER_NPC_LIMIT = 0

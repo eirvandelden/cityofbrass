@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateBillingSubscriptions < ActiveRecord::Migration
   def change
     create_table :billing_subscriptions, id: :uuid do |t|

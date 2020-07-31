@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateEntitybuilderLinkedRules < ActiveRecord::Migration
   def change
     create_table :entitybuilder_linked_rules, id: :uuid do |t|

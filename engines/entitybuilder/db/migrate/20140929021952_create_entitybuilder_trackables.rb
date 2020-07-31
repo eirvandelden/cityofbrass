@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateEntitybuilderTrackables < ActiveRecord::Migration
   def change
     create_table :entitybuilder_trackables, id: :uuid do |t|

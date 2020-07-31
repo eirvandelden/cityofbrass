@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePolymorphicFromSavingThrows < ActiveRecord::Migration
   def change
     remove_index :entitybuilder_saving_throws, :name =>  'eb_saving_throw_id_and_type'

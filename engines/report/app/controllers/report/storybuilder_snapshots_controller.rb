@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require_dependency "report/application_controller"
 
 module Report

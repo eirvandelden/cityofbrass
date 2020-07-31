@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePageTypeNullConstraint < ActiveRecord::Migration
   def change
     change_column_null :storybuilder_pages, :type, true

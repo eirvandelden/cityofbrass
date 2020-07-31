@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePolymorphicFromTraits < ActiveRecord::Migration
   def change
     remove_index :entitybuilder_traits, :name =>  'eb_trait_id_and_type'

@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateActiveplayNotables < ActiveRecord::Migration
   def change
     create_table :activeplay_notables, id: :uuid do |t|

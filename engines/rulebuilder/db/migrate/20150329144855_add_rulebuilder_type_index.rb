@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddRulebuilderTypeIndex < ActiveRecord::Migration
   def change
     add_index :rulebuilder_abilities, :type

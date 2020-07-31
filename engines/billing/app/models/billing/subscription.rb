@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Billing
   class Subscription < ApplicationRecord
     include KeysToBilling

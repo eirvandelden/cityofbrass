@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class SingleSignOn
   ACCESSORS = [:nonce, :name, :username, :email, :avatar_url, :avatar_force_update,
                :about_me, :external_id, :return_sso_url, :admin, :moderator, :suppress_welcome_message]

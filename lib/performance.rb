@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class Performance
   @@current_symbols = []
 

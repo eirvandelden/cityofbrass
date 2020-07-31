@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table :users, id: :uuid  do |t|

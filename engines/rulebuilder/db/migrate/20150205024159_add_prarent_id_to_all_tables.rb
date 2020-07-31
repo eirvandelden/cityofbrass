@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddPrarentIdToAllTables < ActiveRecord::Migration
   def change
     add_column :rulebuilder_abilities, :parent_id, :uuid

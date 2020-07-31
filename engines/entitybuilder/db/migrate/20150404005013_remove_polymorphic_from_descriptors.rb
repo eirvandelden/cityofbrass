@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePolymorphicFromDescriptors < ActiveRecord::Migration
   def change
     remove_index :entitybuilder_descriptors, :name =>  'eb_descriptor_id_and_type'

@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class BrasscoreTableChanges < ActiveRecord::Migration
   def change
     drop_table :component_features

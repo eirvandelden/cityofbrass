@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemoveResidentIdFromStorybuilderPage < ActiveRecord::Migration
   def change
     remove_column :storybuilder_pages, :resident_id, :uuid

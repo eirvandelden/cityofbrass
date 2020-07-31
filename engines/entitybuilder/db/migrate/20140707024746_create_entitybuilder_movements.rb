@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateEntitybuilderMovements < ActiveRecord::Migration
   def change
     create_table :entitybuilder_movements, id: :uuid do |t|

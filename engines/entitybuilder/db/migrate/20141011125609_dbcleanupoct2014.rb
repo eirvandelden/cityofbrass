@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class Dbcleanupoct2014 < ActiveRecord::Migration
   def change
     remove_index :entitybuilder_feats, :name => 'eb_feat_id_and_type'

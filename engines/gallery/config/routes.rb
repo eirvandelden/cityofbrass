@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 Gallery::Engine.routes.draw do
 
   scope '/pkr/' do

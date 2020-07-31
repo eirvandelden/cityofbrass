@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddProficiencyBonusToStuff < ActiveRecord::Migration
   def change
     add_column :entitybuilder_skills, :proficient, :boolean

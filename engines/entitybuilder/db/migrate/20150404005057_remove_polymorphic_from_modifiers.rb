@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePolymorphicFromModifiers < ActiveRecord::Migration
   def change
     remove_index :entitybuilder_modifiers, :name =>  'eb_modifier_entity_id_and_type'

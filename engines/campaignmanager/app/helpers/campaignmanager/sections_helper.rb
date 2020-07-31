@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Campaignmanager
   module SectionsHelper
     def cm_section_text_style_options

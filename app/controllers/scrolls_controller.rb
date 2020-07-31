@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class ScrollsController < ApplicationController
 
   respond_to :html, :json, :js

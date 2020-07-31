@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RenameCampaignmanagerSpriteToNotable < ActiveRecord::Migration
   def change
     remove_index :campaignmanager_sprites, :name => 'cm_sprite_id_and_type'

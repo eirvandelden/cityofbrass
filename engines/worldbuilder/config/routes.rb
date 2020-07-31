@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 Worldbuilder::Engine.routes.draw do
 
   # DRY UP YOUR CONCERNS

@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Entitybuilder
   class SavingThrow < ApplicationRecord
     include Dice

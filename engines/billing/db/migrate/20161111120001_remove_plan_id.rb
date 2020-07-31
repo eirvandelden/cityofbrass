@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePlanId < ActiveRecord::Migration[5.0]
   def change
     remove_index :billing_subscriptions, :plan_id

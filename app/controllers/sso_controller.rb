@@ -1,4 +1,6 @@
-require 'single_sign_on'
+# frozen_string_literal: false
+
+require "single_sign_on"
 
 class SsoController < ApplicationController
   before_action :authenticate_user! # ensures user must login

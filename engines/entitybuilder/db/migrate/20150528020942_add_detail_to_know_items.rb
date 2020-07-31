@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddDetailToKnowItems < ActiveRecord::Migration
   def change
     add_column :entitybuilder_known_abilities, :detail, :string

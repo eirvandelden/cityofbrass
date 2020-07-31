@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RenameStorybuilderSpriteToNotable < ActiveRecord::Migration
   def change
     remove_index :storybuilder_sprites, :name => 'sb_sprite_id_and_type'

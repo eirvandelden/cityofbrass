@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class Affiliation < ApplicationRecord
   belongs_to :resident
   belongs_to :affiliate, :class_name => "Resident", :foreign_key => "affiliate_id"

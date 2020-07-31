@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddResidentIdToFeatsAndItems < ActiveRecord::Migration
   def change
     remove_column :entitybuilder_feats, :sort_order, :integer

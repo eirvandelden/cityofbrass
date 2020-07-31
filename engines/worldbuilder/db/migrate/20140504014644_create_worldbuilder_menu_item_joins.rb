@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class CreateWorldbuilderMenuItemJoins < ActiveRecord::Migration
   def change
     create_table :worldbuilder_menu_item_joins, id: :uuid do |t|

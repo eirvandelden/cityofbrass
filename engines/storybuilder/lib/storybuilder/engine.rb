@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Storybuilder
   class Engine < ::Rails::Engine
     isolate_namespace Storybuilder

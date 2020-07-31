@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePolymorphicFromInventoryItems < ActiveRecord::Migration
   def change
     remove_index :entitybuilder_inventory_items, :name =>  'eb_inventory_item_id_and_type'

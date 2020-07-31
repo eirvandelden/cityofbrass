@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePolymorphicFromKnownSpells < ActiveRecord::Migration
   def change
     remove_index :entitybuilder_known_spells, :name =>  'eb_known_spell_id_and_type'

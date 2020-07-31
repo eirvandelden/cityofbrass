@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemoveNotNullFromGalleryResidentId < ActiveRecord::Migration
   def change
     change_column_null(:gallery_images, :resident_id, true)

@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 Report::Engine.routes.draw do
   resources :storybuilder_snapshots, only: [:index]
   resources :campaignmanager_snapshots, only: [:index]

@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class Message < ApplicationRecord
 
   scope :read, -> { where read_at: nil }

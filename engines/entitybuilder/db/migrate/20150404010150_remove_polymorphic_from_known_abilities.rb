@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class RemovePolymorphicFromKnownAbilities < ActiveRecord::Migration
   def change
     remove_index :entitybuilder_known_abilities, :name =>  'eb_known_ability_id_and_type'

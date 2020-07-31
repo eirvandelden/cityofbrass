@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 Rails.application.routes.draw do
   # require 'sidekiq/web' # used for sidekiq ui
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 module Campaignmanager
   module ApplicationHelper
     def cm_record_types

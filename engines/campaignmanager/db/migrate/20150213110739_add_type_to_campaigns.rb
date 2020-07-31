@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class AddTypeToCampaigns < ActiveRecord::Migration
   def change
     remove_index :campaignmanager_campaigns, [:resident_id, :slug]
