@@ -99,7 +99,7 @@ class Resident < ApplicationRecord
            :foreign_key => 'recipient_id'
 
   validates :user_id, presence: true, uniqueness: true
-  validates :name, presence: true, length: { minimum: 3, maximum: 20 }, uniqueness: { case_sensitive: false }
+  validates :name, presence: true, length: { minimum: 2, maximum: 20 }, uniqueness: { case_sensitive: false }
   validate  :name_not_reserved
   validates :slug, presence: { :message => "" }, length: { maximum: 128 }, uniqueness: { :message => "has already been taken." }
   validates :short_description, length: { maximum: 255 }
