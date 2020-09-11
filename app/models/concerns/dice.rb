@@ -6,6 +6,7 @@ module Dice
 
   CORE_RULES_DICE = [
     {core_rules: '3.5 Edition',       dice: '1d20'},
+    {core_rules: '4th Edition',       dice: '1d20'},
     {core_rules: '5th Edition',       dice: '1d20'},
     {core_rules: 'd20 Future',        dice: '1d20'},
     {core_rules: 'd20 Modern',        dice: '1d20'},
