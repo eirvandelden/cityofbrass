@@ -1,0 +1,585 @@
+{
+  "name": "4th Edition",
+  "active": "true",
+  "stock": "true",
+  "default_dice": "1d20",
+  "d20_system": "false",
+  "publisher": {
+    "name": "Wizards of the Coast",
+    "logo": "",
+    "url": "http://dnd.wizards.com"
+  },
+  "license": {
+    "label": "Game System License",
+    "core_faq": ""
+  },
+  "entitybuilder": {
+    "sheet": "default",
+    "use_modifiers": "true",
+    "show_core_blocks": "true",
+    "menu": [
+      {
+        "label": "Descriptors",
+        "link": "descriptors",
+        "add_modifiers": "true"
+      },
+      {
+        "label": "Base Values",
+        "link": "base_values",
+        "add_modifiers": "true"
+      },
+      {
+        "label": "Ability Scores",
+        "link": "ability_scores",
+        "add_modifiers": "true"
+      },
+      {
+        "label": "Class Levels",
+        "link": "class_levels",
+        "add_modifiers": "true"
+      },
+      {
+        "label": "Trackables",
+        "link": "trackables",
+        "add_modifiers": "false"
+      },
+      {
+        "label": "Attacks",
+        "link": "attacks",
+        "add_modifiers": "false"
+      },
+      {
+        "label": "Movement",
+        "link": "movements",
+        "add_modifiers": "true"
+      },
+      {
+        "label": "Defenses",
+        "link": "defenses",
+        "add_modifiers": "false"
+      },
+      {
+        "label": "Powers",
+        "link": "known_spells",
+        "add_modifiers": "false"
+      },
+      {
+        "label": "Skills",
+        "link": "skills",
+        "add_modifiers": "true"
+      },
+      {
+        "label": "Abilities",
+        "link": "linked_rules?rule_type=ability",
+        "add_modifiers": "true"
+      },
+      {
+        "label": "Feats",
+        "link": "linked_rules?rule_type=feat",
+        "add_modifiers": "true"
+      },
+      {
+        "label": "Inventory Items",
+        "link": "inventory_items",
+        "add_modifiers": "true"
+      },
+      {
+        "label": "Currencies",
+        "link": "currencies",
+        "add_modifiers": "false"
+      },
+      {
+        "label": "Modifiers",
+        "link": "modifiers",
+        "add_modifiers": "false"
+      },
+      {
+        "label": "Options",
+        "link": "options",
+        "add_modifiers": "false"
+      }
+    ],
+    "core_skills": [
+      {
+        "name": "Acrobatics",
+        "ranks": "",
+        "ability_score": "Dexterity"
+      },
+      {
+        "name": "Arcana",
+        "ranks": "",
+        "ability_score": "Intelligence"
+      },
+      {
+        "name": "Athletics",
+        "ranks": "",
+        "ability_score": "Strength"
+      },
+      {
+        "name": "Bluff",
+        "ranks": "",
+        "ability_score": "Charisma"
+      },
+      {
+        "name": "Diplomacy",
+        "ranks": "",
+        "ability_score": "Charisma"
+      },
+      {
+        "name": "Dungeoneering",
+        "ranks": "",
+        "ability_score": "Wisdom"
+      },
+      {
+        "name": "Endurance",
+        "ranks": "",
+        "ability_score": "Constitution"
+      },
+      {
+        "name": "Heal",
+        "ranks": "",
+        "ability_score": "Wisdom"
+      },
+      {
+        "name": "History",
+        "ranks": "",
+        "ability_score": "Intelligence"
+      },
+      {
+        "name": "Insight",
+        "ranks": "",
+        "ability_score": "Wisdom"
+      },
+      {
+        "name": "Intimidate",
+        "ranks": "",
+        "ability_score": "Charisma"
+      },
+      {
+        "name": "Nature",
+        "ranks": "",
+        "ability_score": "Wisdom"
+      },
+      {
+        "name": "Perception",
+        "ranks": "",
+        "ability_score": "Wisdom"
+      },
+      {
+        "name": "Religion",
+        "ranks": "",
+        "ability_score": "Wisdom"
+      },
+      {
+        "name": "Stealth",
+        "ranks": "",
+        "ability_score": "Dexterity"
+      },
+      {
+        "name": "Streetwise",
+        "ranks": "",
+        "ability_score": "Charisma"
+      },
+      {
+        "name": "Thievery",
+        "ranks": "",
+        "ability_score": "Dexterity"
+      }
+    ],
+    "character": {
+      "ability_scores": [
+        {
+          "name": "Strength",
+          "base": "10",
+          "modifier": "0",
+          "dice": ""
+        },
+        {
+          "name": "Constitution",
+          "base": "10",
+          "modifier": "0",
+          "dice": ""
+        },
+        {
+          "name": "Dexterity",
+          "base": "10",
+          "modifier": "0",
+          "dice": ""
+        },
+        {
+          "name": "Intelligence",
+          "base": "10",
+          "modifier": "0",
+          "dice": ""
+        },
+        {
+          "name": "Wisdom",
+          "base": "10",
+          "modifier": "0",
+          "dice": ""
+        },
+        {
+          "name": "Charisma",
+          "base": "10",
+          "modifier": "0",
+          "dice": ""
+        }
+      ],
+      "base_values": [
+        {
+          "name": "Half level",
+          "value": "0",
+          "dice": ""
+        },
+        {
+          "name": "Combat Advantage",
+          "value": "2",
+          "dice": ""
+        },
+        {
+          "name": "Trained",
+          "value": "5",
+          "dice": ""
+        }
+      ],
+      "currencies": [
+        {
+          "name": "Astral diamond (ad)",
+          "quantity": 0,
+          "weight": "0.02",
+          "carried": "true"
+        },
+        {
+          "name": "Platinum piece (pp)",
+          "quantity": 0,
+          "weight": "0.02",
+          "carried": "true"
+        },
+        {
+          "name": "Gold piece (gp)",
+          "quantity": "0",
+          "weight": "0.02",
+          "carried": "true"
+        },
+        {
+          "name": "Silver piec (sp)",
+          "quantity": "0",
+          "weight": "0.02",
+          "carried": "true"
+        },
+        {
+          "name": "Copper piece (cp)",
+          "quantity": "0",
+          "weight": "0.02",
+          "carried": "true"
+        }
+      ],
+      "defenses": [
+        {
+          "name": "Armor Class",
+          "base": "10",
+          "ability_score": "Dexterity"
+        },
+        {
+          "name": "Fortitude (Str)",
+          "base": "10",
+          "ability_score": "Strength"
+        },
+        {
+          "name": "Fortitude (Con)",
+          "base": "10",
+          "ability_score": "Constitution"
+        },
+        {
+          "name": "Reflex (Dex)",
+          "base": "10",
+          "ability_score": "Dexterity"
+        },
+        {
+          "name": "Reflex (Int)",
+          "base": "10",
+          "ability_score": "Intelligence"
+        },
+        {
+          "name": "Will (Wis)",
+          "base": "10",
+          "ability_score": "Wisdom"
+        },
+        {
+          "name": "Will (Cha)",
+          "base": "10",
+          "ability_score": "Charisma"
+        }
+      ],
+      "descriptors": [
+        {
+          "name": "Race",
+          "description": "",
+          "is_private": "false"
+        },
+        {
+          "name": "Height",
+          "description": "",
+          "is_private": "false"
+        },
+        {
+          "name": "Size",
+          "description": "Medium",
+          "is_private": "false"
+        },
+        {
+          "name": "Deity",
+          "description": "",
+          "is_private": "true"
+        },
+        {
+          "name": "Languages",
+          "description": "Common",
+          "is_private": "true"
+        },
+        {
+          "name": "Background",
+          "description": "",
+          "is_private": "true"
+        }
+      ],
+      "movements": [
+        {
+          "name": "Initiative",
+          "base": "0",
+          "ability_score": "Dexterity",
+          "dice": "",
+          "description": ""
+        },
+        {
+          "name": "Speed",
+          "base": "5",
+          "ability_score": "",
+          "dice": "",
+          "description": "Squares"
+        }
+      ],
+      "trackables": [
+        {
+          "name": "Hit Points",
+          "maximum": "0",
+          "current": "0"
+        },
+        {
+          "name": "Hit Dice",
+          "maximum": "0",
+          "current": "1"
+        },
+        {
+          "name": "Experience",
+          "maximum": "0",
+          "current": "0"
+        },
+        {
+          "name": "Action Points",
+          "maximum": "0",
+          "current": "1"
+        }
+      ]
+    },
+    "creature": {
+      "ability_scores": [
+        {
+          "name": "Strength",
+          "base": "10",
+          "modifier": "0",
+          "dice": ""
+        },
+        {
+          "name": "Dexterity",
+          "base": "10",
+          "modifier": "0",
+          "dice": ""
+        },
+        {
+          "name": "Constitution",
+          "base": "10",
+          "modifier": "0",
+          "dice": ""
+        },
+        {
+          "name": "Intelligence",
+          "base": "10",
+          "modifier": "0",
+          "dice": ""
+        },
+        {
+          "name": "Wisdom",
+          "base": "10",
+          "modifier": "0",
+          "dice": ""
+        },
+        {
+          "name": "Charisma",
+          "base": "10",
+          "modifier": "0",
+          "dice": ""
+        }
+      ],
+      "base_values": [
+        {
+          "name": "Half level",
+          "value": "0",
+          "dice": ""
+        },
+        {
+          "name": "Combat Advantage",
+          "value": "2",
+          "dice": ""
+        },
+        {
+          "name": "Trained",
+          "value": "5",
+          "dice": ""
+        }
+      ],
+      "currencies": [
+        {
+          "name": "Astral diamond (ad)",
+          "quantity": 0,
+          "weight": "0.02",
+          "carried": "true"
+        },
+        {
+          "name": "Platinum piece (pp)",
+          "quantity": 0,
+          "weight": "0.02",
+          "carried": "true"
+        },
+        {
+          "name": "Gold piece (gp)",
+          "quantity": "0",
+          "weight": "0.02",
+          "carried": "true"
+        },
+        {
+          "name": "Silver piec (sp)",
+          "quantity": "0",
+          "weight": "0.02",
+          "carried": "true"
+        },
+        {
+          "name": "Copper piece (cp)",
+          "quantity": "0",
+          "weight": "0.02",
+          "carried": "true"
+        }
+      ],
+      "defenses": [
+        {
+          "name": "Armor Class",
+          "base": "13",
+          "ability_score": "Dexterity"
+        },
+        {
+          "name": "Fortitude",
+          "base": "13",
+          "ability_score": ""
+        },
+        {
+          "name": "Reflex",
+          "base": "13",
+          "ability_score": ""
+        },
+        {
+          "name": "Will",
+          "base": "13",
+          "ability_score": ""
+        }
+      ],
+      "descriptors": [
+        {
+          "name": "Level",
+          "description": ""
+        },
+        {
+          "name": "Role",
+          "description": ""
+        },
+        {
+          "name": "Size",
+          "description": "Medium"
+        },
+        {
+          "name": "Type",
+          "description": ""
+        },
+        {
+          "name": "Alignment",
+          "description": ""
+        },
+        {
+          "name": "Senses",
+          "description": ""
+        },
+        {
+          "name": "Languages",
+          "description": ""
+        },
+        {
+          "name": "Experience",
+          "description": ""
+        }
+      ],
+      "movements": [
+        {
+          "name": "Initiative",
+          "base": "0",
+          "ability_score": "Dexterity",
+          "dice": "",
+          "description": ""
+        },
+        {
+          "name": "Speed",
+          "base": "5",
+          "ability_score": "",
+          "dice": "",
+          "description": "Squares"
+        }
+      ],
+      "saving_throws": [],
+      "skills": [
+        {
+          "name": "Perception",
+          "ranks": "",
+          "ability_score": "Wisdom"
+        }
+      ],
+      "trackables": [
+        {
+          "name": "Hit Points",
+          "maximum": "0",
+          "current": "0"
+        },
+        {
+          "name": "Action Points",
+          "maximum": "0",
+          "current": "1"
+        }
+      ]
+    }
+  },
+  "rulebuilder": {
+    "rules": [
+      {
+        "name": "Ability",
+        "is_shared": "true"
+      },
+      {
+        "name": "Feat",
+        "is_shared": "true"
+      }
+    ],
+    "powers": [
+      {
+        "name": "Power",
+        "is_shared": "true"
+      }
+    ]
+  }
+}
