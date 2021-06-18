@@ -2,27 +2,10 @@ module ReservedNames
   extend ActiveSupport::Concern
 
   RESERVED_NAMES = [
-    "dan",
-    "daniel",
-    "luke",
-    "lucas",
     "admin",
     "support",
     "info",
     "help",
-    "embers",
-    "brass",
-    "embersdev",
-    "embersds",
-    "cityofbrass",
-    "city-of-brass",
-    "citybrass",
-    "city-brass",
-    "thecityofbrass",
-    "the-city-of-brass",
-    "eberron",
-    "forgotten-realms",
-    "the-forgotten-realms",
     "edit",
     "delete",
     "new",
@@ -35,5 +18,4 @@ module ReservedNames
         errors.add(:name, "is not valid.")
       end
     end
-
 end
