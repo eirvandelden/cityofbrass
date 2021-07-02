@@ -10,7 +10,7 @@ module Report
         {label: 'Entity', link: 'entity_snapshots'},
         {label: 'Rule Builder', link: 'rulebuilder_snapshots'},
         {label: 'Campaign Mgr', link: 'campaignmanager_snapshots'},
-        {label: 'Story Builder', link: 'storybuilder_snapshots'},
+        {label: 'Adventure Builder', link: 'storybuilder_snapshots'},
         {label: 'World Builder', link: 'worldbuilder_snapshots'}
       ]
     end

@@ -4,7 +4,7 @@ module Storybuilder
       options = [
         ['Encounters', 'Storybuilder::Encounter'],
         ['Handouts', 'Storybuilder::Handout'],
-        ['Stories', 'Storybuilder::Story']
+        ['Adventures', 'Storybuilder::Story']
       ]
     end
   end

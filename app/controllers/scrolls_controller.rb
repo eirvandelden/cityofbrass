@@ -15,7 +15,7 @@ class ScrollsController < ApplicationController
 
     @wb_faq = Support::CoreFaq.joins(:faq).active.find_by_core_item('Home World Builder')
     @eb_faq = Support::CoreFaq.joins(:faq).active.find_by_core_item('Home Entity Builder')
-    @sb_faq = Support::CoreFaq.joins(:faq).active.find_by_core_item('Home Story Builder')
+    @sb_faq = Support::CoreFaq.joins(:faq).active.find_by_core_item('Home Adventure Builder')
     @cm_faq = Support::CoreFaq.joins(:faq).active.find_by_core_item('Home Campaign Manager')
     @account_faq = Support::CoreFaq.joins(:faq).active.find_by_core_item('Home Account')
   end

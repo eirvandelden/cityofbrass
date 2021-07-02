@@ -1,9 +1,9 @@
-<% provide(:title, "Report | Story Builder") %>
+<% provide(:title, "Report | Adventure Builder") %>
 
 <% content_for :breadcrumb do %>
   <%=  breadcrumb [
     { "Report" => nil },
-    { "Story Builder" => nil }
+    { "Adventure Builder" => nil }
   ] %>
 <% end %>
 
@@ -15,7 +15,7 @@
     <%= render :partial =>'layouts/header',
       :locals => {
         :icon => 'icon-book',
-        :main => "Story Builder",
+        :main => "Adventure Builder",
         :sub  => "Reports"
       }
     %>

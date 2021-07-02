@@ -49,7 +49,7 @@ module Support
 
         'Home World Builder',
         'Home Entity Builder',
-        'Home Story Builder',
+        'Home Adventure Builder',
         'Home Campaign Manager',
         'Home Account'
       ]
