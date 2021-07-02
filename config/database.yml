@@ -1,13 +1,13 @@
 
 default: &default
   adapter: postgresql
-  encoding: unicode
-  host: postgres
-  username: cityofbrass
-  password: cityofbrass
-  pool: 5
-  host: <%= ENV['DOCKER_POSTGRES_HOST'] %>
-  port: <%= ENV['DOCKER_POSTGRES_PORT'] %>
+  # encoding: unicode
+  # host: postgres
+  # username: cityofbrass
+  # password: cityofbrass
+  # pool: 5
+  # host: <%= ENV['DOCKER_POSTGRES_HOST'] %>
+  # port: <%= ENV['DOCKER_POSTGRES_PORT'] %>
 
 development:
   <<: *default
