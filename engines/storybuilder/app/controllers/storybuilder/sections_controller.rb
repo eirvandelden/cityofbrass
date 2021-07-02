@@ -11,6 +11,7 @@ module Storybuilder
     # GET /sections
     def index
       @sections = @parent_object.sections
+      @section = Section.find params[:section] if params[:section].present?
     end
 
     # GET /sections/1

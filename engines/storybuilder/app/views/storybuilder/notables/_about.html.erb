@@ -1,4 +1,5 @@
-<div id="form_placeholder">
+<% style= local_assigns[:hide] ? 'display:none;' : '' %>
+<div id="form_placeholder" style=<%= style.html_safe %>>
   <fieldset>
     <div class="row inline text-right">
       <div class="small-12 columns">

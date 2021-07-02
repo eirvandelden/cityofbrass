@@ -47,7 +47,10 @@
         <%= render 'form_list' %>
       </div>
       <div class="medium-7 columns">
-        <%= render 'about' %>
+        <%= render partial: 'about', locals: { hide: @section.present? } %>
+        <% if @section.present? %>
+          <%= render 'form' %>
+        <% end %>
       </div>
     </div>
   </div>

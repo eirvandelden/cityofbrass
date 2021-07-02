@@ -1,12 +1,19 @@
 <%= sanitize @adventure.full_description %>
 
-<% @adventure.sections.each do |section| %>
-  <%= render :partial =>'layouts/sections/looper',
-      :locals => {
-        :section => section,
-        :record => @adventure,
-        :all_pages => (@adventure.pages.block.order('sort_weight, name').to_a if section.section_style == 'blocks'),
-        :resident => @resident,
-        :can_auth => @adventure.can_edit?(current_user, admin_signed_in?, @type)
-    } %>
-<% end %>
+<article class="sections">
+  <% @adventure.sections.each do |section| %>
+    <section class="<%= section.section_style %>">
+      <%= render :partial =>'layouts/sections/looper',
+          :locals => {
+            :section => section,
+            :record => @adventure,
+            :all_pages => (@adventure.pages.block.order('sort_weight, name').to_a if section.section_style == 'blocks'),
+            :resident => @resident,
+            :can_auth => @adventure.can_edit?(current_user, admin_signed_in?, @type)
+        } %>
+    </section>
+    <%= link_to "<i class='fa fa-cogs'></i>".html_safe, resident_adventure_sections_path(@adventure, section: section), class: "iconlink cogs125 edit" %>
+  <% end %>
+
+  <%= link_to "<i class='header-icon-edit fa fa-cog'></i>".html_safe, resident_adventure_sections_path(@adventure), title: "Edit Sections", class: "edit" %>
+</article>

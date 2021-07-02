@@ -1,23 +1,30 @@
-<ul class="no-bullet">
-<% if @adventure.parent %>
-  <li>
-    <strong>Parent: </strong>
-    <%= link_to @adventure.parent.name, polymorphic_path(@adventure.parent) %>
-  </li>
-<% end %>
-<% @adventure.features.each do |feature| %>
-  <li>
-  <%= render :partial =>'layouts/features/looper',
-      :locals => {
-        :feature => feature,
-        :record => @adventure,
-        :resident => @resident
-    } %>
-  </li>
-<% end %>
+<article class="features">
+  <% if @adventure.features.size > 0 || @adventure.parent_id.present? %>
+    <ul class="no-bullet">
+      <% if @adventure.parent %>
+        <li>
+          <strong>Parent: </strong>
+          <%= link_to @adventure.parent.name, polymorphic_path(@adventure.parent) %>
+        </li>
+      <% end %>
+      <% @adventure.features.each do |feature| %>
+        <li>
+        <%= render :partial =>'layouts/features/looper',
+            :locals => {
+              :feature => feature,
+              :record => @adventure,
+              :resident => @resident
+          } %>
+        </li>
+      <% end %>
+    </ul>
+    <%= link_to "<i class='header-icon-edit fa fa-cog'></i>".html_safe, resident_adventure_features_path(@adventure), title: "Edit Features", class: "edit" %>
+  <% end %>
+</article>
+<article class="notables">
 
-<% if @adventure.notables.size > 0 %>
-  <%= render "layouts/notables/entity_feature_list", list: @adventure.notables %>
-<% end %>
-
-</ul>
+  <% if @adventure.notables.size > 0 %>
+    <%= render "layouts/notables/entity_feature_list", list: @adventure.notables %>
+    <%= link_to "<i class='header-icon-edit fa fa-cog'></i>".html_safe, resident_adventure_notables_path(@adventure), title: "Edit Notables", class: "edit" %>
+  <% end %>
+</article>

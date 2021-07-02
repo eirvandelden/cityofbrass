@@ -28,7 +28,7 @@
       <%= link_to (image_tag @adventure.gallery_image.file.url(:medium), :alt => @adventure.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@adventure.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
     <% end %>
 
-    <%= render :partial =>'features' if @adventure.features.size > 0 || @adventure.parent_id.present? || @adventure.notables.size > 0 %>
+    <%= render :partial =>'features' %>
     <%= render :partial =>'sections' %>
 
   </div>
