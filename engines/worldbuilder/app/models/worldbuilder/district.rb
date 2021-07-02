@@ -74,7 +74,7 @@ module Worldbuilder
           self.short_description =  "An example game world to help you get started." if self.short_description.blank?
           self.full_description =  "
                                     <blockquote>
-                                    <p>Welcome to your new District! This is your setting's home page, and the first thing people will see when they visit. Make sure it looks great. </p>
+                                    <p>Welcome to your new World! This is your setting's home page, and the first thing people will see when they visit. Make sure it looks great. </p>
                                     </blockquote>
                                     <p>We've structured World Builder so that it groups similar things together. There are seven categories, but we've started you off with these three: </p>
                                     <ul>

@@ -15,7 +15,7 @@
 
 <% if @district.can_edit?(current_user, admin_signed_in?) %>
   <li><label>Management</label></li>
-  <li><%= link_to 'District Details', edit_district_path(@district) %></li>
-  <li><%= link_to 'District Menu', district_menu_items_path(@district) %></li>
-  <li><%= link_to 'District Pages', district_pages_path(@district.slug) %></li>
+  <li><%= link_to 'World Details', edit_district_path(@district) %></li>
+  <li><%= link_to 'World Menu', district_menu_items_path(@district) %></li>
+  <li><%= link_to 'World Pages', district_pages_path(@district.slug) %></li>
 <% end %>

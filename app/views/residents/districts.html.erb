@@ -1,10 +1,10 @@
-<% provide(:title, "#{@resident.name} | Districts") %>
+<% provide(:title, "#{@resident.name} | Worlds") %>
 
 <% content_for :breadcrumb do %>
   <%=  breadcrumb [
     { "Residents" => residents_path },
     { @resident.name  => resident_path(@resident.slug)  },
-    { "Districts" => nil }
+    { "Worlds" => nil }
   ] %>
 <% end %>
 
@@ -19,7 +19,7 @@
         <%= render :partial =>'layouts/header',
             :locals => {
             :icon => 'icon-globe',
-            :main => 'Districts',
+            :main => 'Worlds',
             :sub => 'Owner',
             :add_link  => worldbuilder.new_district_path,
             :can_auth => @resident.can_auth(current_user)
@@ -41,7 +41,7 @@
           <%= render :partial =>'layouts/header',
               :locals => {
               :icon => 'icon-globe',
-              :main => 'Districts',
+              :main => 'Worlds',
               :sub => 'Contributor'
             }
           %>

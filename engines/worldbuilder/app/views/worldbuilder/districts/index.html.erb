@@ -1,11 +1,11 @@
-<% provide(:title, 'Districts') %>
+<% provide(:title, 'Worlds') %>
 <% content_for :head do %>
   <meta name="description" content="From concept to gaming table with ease. It's never been easier to create a complete world for your RPG settings.">
 <% end %>
 
 <% content_for :breadcrumb do %>
   <%=  breadcrumb [
-    { "Districts" => nil }
+    { "Worlds" => nil }
   ] %>
 <% end %>
 
@@ -23,7 +23,7 @@
     <%= render :partial =>'layouts/header',
         :locals => {
         :icon => 'icon-globe',
-        :main => 'Districts'
+        :main => 'Worlds'
       }
     %>
     <hr class="faded">

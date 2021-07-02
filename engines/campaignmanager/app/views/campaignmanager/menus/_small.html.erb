@@ -1,6 +1,6 @@
 <li><%= link_to 'Overview', campaignmanager.polymorphic_path(@campaign) %></li>
 <% if @campaign.district.present? %>
-  <li><%= link_to 'District', "#{worldbuilder.district_path(@campaign.district)}/campaign/#{@campaign.id}" %></li>
+  <li><%= link_to 'World', "#{worldbuilder.district_path(@campaign.district)}/campaign/#{@campaign.id}" %></li>
 <% end %>
 <% if @campaign.entity_joins.size > 0 %>
   <li><%= link_to 'Characters', campaignmanager.polymorphic_path([@campaign, :characters]) %></li>

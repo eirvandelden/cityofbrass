@@ -18,13 +18,13 @@
 <% if @district.can_edit?(current_user, admin_signed_in?) %>
   <dl class="shortcut-menu show-for-medium-up">
     <dd>
-      <h4><%= link_to 'District Details', edit_district_path(@district), :style => 'display:block;' %></h4>
+      <h4><%= link_to 'World Details', edit_district_path(@district), :style => 'display:block;' %></h4>
     </dd>
     <dd>
-      <h4><%= link_to 'District Menu', district_menu_items_path(@district), :style => 'display:block;' %></h4>
+      <h4><%= link_to 'World Menu', district_menu_items_path(@district), :style => 'display:block;' %></h4>
     </dd>
     <dd class="<%= 'active' if current_page?(district_pages_path(@district.slug)) %>">
-      <h4><%= link_to 'District Pages', district_pages_path(@district.slug), :style => 'display:block;' %></h4>
+      <h4><%= link_to 'World Pages', district_pages_path(@district.slug), :style => 'display:block;' %></h4>
     </dd>
   </dl>
 

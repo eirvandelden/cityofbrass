@@ -27,7 +27,7 @@
           <% unless @parent_object.campaign.district_id.nil? %>
             <li>
               <div class="indent">
-                <strong>District: </strong><%= link_to @parent_object.district.name, worldbuilder.district_path(@parent_object.district.slug) %>
+                <strong>World: </strong><%= link_to @parent_object.district.name, worldbuilder.district_path(@parent_object.district.slug) %>
               </div>
             </li>
           <% end %>

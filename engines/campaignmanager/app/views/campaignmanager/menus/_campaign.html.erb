@@ -4,7 +4,7 @@
   </dd>
 <% if @campaign.district.present? %>
   <dd class="<%= 'active' if current_page?("#{worldbuilder.district_path(@campaign.district.slug)}/campaign/#{@campaign.id}") %>">
-    <h3><%= link_to 'District', "#{worldbuilder.district_path(@campaign.district.slug)}/campaign/#{@campaign.id}", :style => 'display:block;' %></h3>
+    <h3><%= link_to 'World', "#{worldbuilder.district_path(@campaign.district.slug)}/campaign/#{@campaign.id}", :style => 'display:block;' %></h3>
   </dd>
 <% end %>
 <% if @campaign.entity_joins.size > 0 %>
