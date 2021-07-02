@@ -61,16 +61,11 @@
       {
         "label": "Powers",
         "link": "known_spells",
-        "add_modifiers": "false"
+        "add_modifiers": "true"
       },
       {
         "label": "Skills",
         "link": "skills",
-        "add_modifiers": "true"
-      },
-      {
-        "label": "Abilities",
-        "link": "linked_rules?rule_type=ability",
         "add_modifiers": "true"
       },
       {
@@ -366,7 +361,12 @@
           "current": "0"
         },
         {
-          "name": "Hit Dice",
+          "name": "Healing Surges",
+          "maximum": "0",
+          "current": "1"
+        },
+        {
+          "name": "Action Points",
           "maximum": "0",
           "current": "1"
         },
@@ -374,11 +374,6 @@
           "name": "Experience",
           "maximum": "0",
           "current": "0"
-        },
-        {
-          "name": "Action Points",
-          "maximum": "0",
-          "current": "1"
         }
       ]
     },
@@ -567,11 +562,19 @@
   "rulebuilder": {
     "rules": [
       {
-        "name": "Ability",
+        "name": "Backgrounds",
         "is_shared": "true"
       },
       {
         "name": "Feat",
+        "is_shared": "true"
+      },
+      {
+        "name": "Paragon Paths",
+        "is_shared": "true"
+      },
+      {
+        "name": "Epic Destinies",
         "is_shared": "true"
       }
     ],
