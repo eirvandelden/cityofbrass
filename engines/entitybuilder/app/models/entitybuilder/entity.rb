@@ -2,7 +2,7 @@ module Entitybuilder
   class Entity < ApplicationRecord
     include KeysToEntitybuilder
 
-    PRIVACY_OPTIONS = ['Private', 'Affiliates', 'Residents']
+    PRIVACY_OPTIONS = ['Private', 'Friends', 'Residents']
     NULL_ATTRS = %w( )
 
     scope :short, -> { select('id, type, resident_id, name, short_description, core_rules, privacy, sheet_privacy') }

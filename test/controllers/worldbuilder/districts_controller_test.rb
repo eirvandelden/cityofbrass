@@ -30,7 +30,7 @@ module Worldbuilder
     test "should create district" do
       sign_in @dan
       assert_difference('District.count') do
-        post :create, params: { district: { resident_id: @district.resident_id, name: "Test World", slug: "test-world", privacy: "Affiliates" } }
+        post :create, params: { district: { resident_id: @district.resident_id, name: "Test World", slug: "test-world", privacy: "Friends" } }
       end
 
       assert_redirected_to "/wb/#{assigns(:district).slug}"
@@ -40,7 +40,7 @@ module Worldbuilder
     test "should not create second adventure for free user" do
       sign_in @user2
       assert_difference('District.count', 0) do
-        post :create, params: { district: { resident_id: @district.resident_id, name: "Test World", slug: "test-world", privacy: "Affiliates" } }
+        post :create, params: { district: { resident_id: @district.resident_id, name: "Test World", slug: "test-world", privacy: "Friends" } }
       end
 
       assert_redirected_to "/billing/subscriptions"

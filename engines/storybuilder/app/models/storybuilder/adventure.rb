@@ -3,7 +3,7 @@ module Storybuilder
     include KeysToStorybuilder
 
     PRIVACY_OPTIONS_FREE = ['Private']
-    PRIVACY_OPTIONS = ['Private', 'Affiliates', 'Residents']
+    PRIVACY_OPTIONS = ['Private', 'Friends', 'Residents']
     NULL_ATTRS = %w( parent_id )
 
     scope :short, -> { select('id, type, resident_id, name, page_label, short_description, core_rules') }

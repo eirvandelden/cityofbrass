@@ -12,7 +12,7 @@ module KeysToCampaignmanager
       return false
     else
       return true if privacy == 'Residents'
-      return true if privacy == 'Affiliates' && Affiliation.are_affiliates(current_user.resident, self.resident) rescue NoMethodError
+      return true if privacy == 'Friends' && Affiliation.are_affiliates(current_user.resident, self.resident) rescue NoMethodError
       return true if privacy == 'Private' && record_type == 'Campaignmanager::Campaign' && self.players.any? {|c| c.affiliate == current_user.resident}  rescue NoMethodError
       # page permissions
       return true if privacy == 'Private' && record_type != 'Campaignmanager::Campaign' && self.campaign.players.any? {|c| c.affiliate == current_user.resident}  rescue NoMethodError

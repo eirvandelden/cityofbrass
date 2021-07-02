@@ -5,7 +5,7 @@ module KeysToStorybuilder
     return false if current_user.nil?
     return true if can_edit?(current_user, is_admin, record_type)
     return true if privacy == 'Residents'
-    return true if privacy == 'Affiliates' && Affiliation.are_affiliates(current_user.resident, self.resident) rescue NoMethodError
+    return true if privacy == 'Friends' && Affiliation.are_affiliates(current_user.resident, self.resident) rescue NoMethodError
     return is_admin
   end
 

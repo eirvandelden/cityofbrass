@@ -9,13 +9,13 @@
           <%= link_to "<i class='header-icon-small fa fa-edit'></i>".html_safe, message_link, title: "New Message", class: "cogs" unless message_link.nil? %>
         <% end %>
         <% if local_assigns.has_key? :message_affiliate_link %>
-          <%= link_to "<i class='header-icon-small fa fa-envelope'></i>".html_safe, message_affiliate_link, title: "Message Affiliate", class: "cogs" unless message_affiliate_link.nil? %>
+          <%= link_to "<i class='header-icon-small fa fa-envelope'></i>".html_safe, message_affiliate_link, title: "Message Friend", class: "cogs" unless message_affiliate_link.nil? %>
         <% end %>
         <% if local_assigns.has_key? :reply_link %>
           <%= link_to "<i class='header-icon-small fa fa-mail-reply'></i>".html_safe, reply_link, title: "Reply", class: "cogs" unless reply_link.nil? %>
         <% end %>
         <% if local_assigns.has_key? :add_affiliate_link %>
-          <%= link_to "<i class='header-icon-small fa fa-user-plus'></i>".html_safe, add_affiliate_link, title: "Add Affiliate", class: "cogs add", method: :post unless add_affiliate_link.nil?%>
+          <%= link_to "<i class='header-icon-small fa fa-user-plus'></i>".html_safe, add_affiliate_link, title: "Add Friend", class: "cogs add", method: :post unless add_affiliate_link.nil?%>
         <% end %>
         <% if local_assigns.has_key? :index_link %>
           <%= link_to "<i class='header-icon-small fa fa-list-ul'></i>".html_safe, index_link, title: "Index", class: "cogs" unless index_link.nil?%>

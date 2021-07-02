@@ -5,7 +5,7 @@ module KeysToEntitybuilder
       return false if current_user.nil?
       return true if can_edit?(current_user, is_admin, record_type)
       return true if privacy == 'Residents'
-      return true if privacy == 'Affiliates' && Affiliation.are_affiliates(current_user.resident, self.resident) rescue NoMethodError
+      return true if privacy == 'Friends' && Affiliation.are_affiliates(current_user.resident, self.resident) rescue NoMethodError
       return true if privacy == 'Private' && (record_type.include?"Character") && self.campaign && current_user.resident == self.campaign.resident
       return true if can_edit?(current_user, is_admin, record_type)
       return is_admin
@@ -15,7 +15,7 @@ module KeysToEntitybuilder
       return false if current_user.nil?
       return true if can_edit?(current_user, is_admin, record_type)
       return true if sheet_privacy == 'Residents'
-      return true if sheet_privacy == 'Affiliates' && Affiliation.are_affiliates(current_user.resident, self.resident) rescue NoMethodError
+      return true if sheet_privacy == 'Friends' && Affiliation.are_affiliates(current_user.resident, self.resident) rescue NoMethodError
       return true if sheet_privacy == 'Private' && (record_type.include?"Character") && self.campaign && current_user.resident == self.campaign.resident
       return true if can_edit?(current_user, is_admin, record_type)
       return is_admin

@@ -7,7 +7,7 @@ resident_one:
   name: Long Trail
   slug: long-trail
   page_label: ima label
-  privacy: Affiliates
+  privacy: Friends
   core_rules: PFRPG
   short_description: MyString
   full_description: <p>Text for test</p>

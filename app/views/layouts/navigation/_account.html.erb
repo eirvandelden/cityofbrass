@@ -1,7 +1,7 @@
   <li><label class="text-right">Resident</label></li>
   <% if current_user.resident && !current_user.resident.new_record? %>
     <li class="show-for-medium-up"><a href="/residents/<%= current_user.resident.slug %>"><i class='fa fa-home fa-fw'></i> Home</a></li>
-    <li><a href="/resident/affiliates"><i class='fa fa-group fa-fw'></i> Affiliates</a></li>
+    <li><a href="/resident/affiliates"><i class='fa fa-group fa-fw'></i> Friends</a></li>
     <li class="divider show-for-medium-up"></li>
     <li><label class="text-right">Messages</label></li>
     <li><a href="/resident/messages/new"><i class='fa fa-edit fa-fw'></i> Compose</a></li>

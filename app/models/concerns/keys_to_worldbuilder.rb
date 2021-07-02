@@ -5,7 +5,7 @@ module KeysToWorldbuilder
     return true if privacy == 'Public'
     return false if current_user.nil?
     return true if privacy == 'Residents'
-    return true if privacy == 'Affiliates' && Affiliation.are_affiliates(current_user.resident, self.resident)
+    return true if privacy == 'Friends' && Affiliation.are_affiliates(current_user.resident, self.resident)
     return true if can_edit?(current_user, is_admin)
     return is_admin
   end
