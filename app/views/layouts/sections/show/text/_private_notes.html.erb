@@ -1,6 +1,6 @@
-<% if section.header.present? %>
-<h2><%= section.header %></h2>
-<% end %>
+<h2>
+  <%= link_to "<i class='fa fa-cog'></i> ".html_safe, edit_url, class: "iconlink edit" %><%= section.header if section.header.present? %>
+</h2>
 
 <blockquote class="notes">
   <%= sanitize section.content %>

@@ -1,33 +1,14 @@
 article.features, article.notables, article.sections {
-  display: flex;
-  // min-height: 1rem;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-
-  ul {
-    flex-basis: 80%
-  }
-
-  section {
-    display: flex;
-    flex-flow: column nowrap;
-    flex-basis: 97%
-  }
-
   section.sidebar {
     background-color: initial;
     padding: 0px;
-    align-self: center;
-    // max-width: 18em;
-    // flex-grow: 1
   }
-}
 
-a.edit {
-  // align-self: flex-end;
-  flex-basis: 1.5rem;
-  // float: right;
-  i {
-    line-height: 0px;
+  a.edit {
+    font-size: 1rem important;
+
+    i {
+      line-height: 0px;
+    }
   }
 }

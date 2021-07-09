@@ -1,5 +1,5 @@
 <div class="show-for-small-only">
-  <h3 class="text-center"><%= section.header %></h3>
+  <h3 class="text-center"><%= link_to "<i class='fa fa-cog'></i> ".html_safe, edit_url, class: "iconlink edit" if can_auth %><%= section.header %></h3>
   <div class="panel sidebar">
   <%= sanitize section.content %>
   </div>
@@ -7,7 +7,7 @@
 
 <div class="show-for-medium-up">
   <div class="sidebar-float">
-    <h3 class="text-center"><%= section.header %></h3>
+    <h3 class="text-center"><%= link_to "<i class='fa fa-cog'></i> ".html_safe, edit_url, class: "iconlink edit" if can_auth %><%= section.header %></h3>
     <div class="panel sidebar">
     <%= sanitize section.content %>
     </div>

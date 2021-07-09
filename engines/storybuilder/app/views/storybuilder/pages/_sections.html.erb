@@ -9,9 +9,9 @@
             :record => @page,
             :all_pages => (@adventure.pages.block.order('sort_weight, name').to_a if section.section_style == 'blocks'),
             :resident => @resident,
-            :can_auth => @adventure.can_edit?(current_user, admin_signed_in?, @parent_type)
+            :can_auth => @adventure.can_edit?(current_user, admin_signed_in?, @parent_type),
+            :edit_url => resident_adventure_page_sections_path(@adventure, @page, section: section)
         } %>
     </section>
-    <%= link_to "<i class='fa fa-cogs'></i>".html_safe, resident_adventure_page_sections_path(@adventure, @page, section: section), class: "iconlink cogs125 edit" %>
   <% end %>
 </article>
