@@ -40,8 +40,8 @@
 
 <% if section.section_type == 'text' %>
   <% if section.section_style == 'private_notes' %>
-    <%= render :partial => "layouts/sections/show/#{section.section_type}/#{section.section_style}", :locals => { :section => section, :edit_url => edit_url } if can_auth %>
+    <%= render :partial => "layouts/sections/show/#{section.section_type}/#{section.section_style}", :locals => { :section => section, :edit_url => local_assigns[:edit_url] } if can_auth %>
   <% else %>
-    <%= render :partial => "layouts/sections/show/#{section.section_type}/#{section.section_style}", :locals => { :section => section, :can_auth => can_auth, :edit_url => edit_url } %>
+    <%= render :partial => "layouts/sections/show/#{section.section_type}/#{section.section_style}", :locals => { :section => section, :can_auth => can_auth, :edit_url => local_assigns[:edit_url] } %>
   <% end %>
 <% end %>
