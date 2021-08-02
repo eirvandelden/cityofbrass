@@ -46,7 +46,7 @@
       {
         "label": "Attacks",
         "link": "attacks",
-        "add_modifiers": "false"
+        "add_modifiers": "true"
       },
       {
         "label": "Movement",
@@ -56,7 +56,7 @@
       {
         "label": "Defenses",
         "link": "defenses",
-        "add_modifiers": "false"
+        "add_modifiers": "true"
       },
       {
         "label": "Powers",
@@ -76,7 +76,7 @@
       {
         "label": "Inventory Items",
         "link": "inventory_items",
-        "add_modifiers": "true"
+        "add_modifiers": "false"
       },
       {
         "label": "Currencies",
@@ -381,44 +381,44 @@
       "ability_scores": [
         {
           "name": "Strength",
-          "base": "10",
-          "modifier": "0",
+          "base": "16",
+          "modifier": "3",
           "dice": ""
         },
         {
           "name": "Dexterity",
-          "base": "10",
-          "modifier": "0",
+          "base": "13",
+          "modifier": "1",
           "dice": ""
         },
         {
           "name": "Constitution",
-          "base": "10",
-          "modifier": "0",
+          "base": "13",
+          "modifier": "1",
           "dice": ""
         },
         {
           "name": "Intelligence",
-          "base": "10",
-          "modifier": "0",
+          "base": "13",
+          "modifier": "1",
           "dice": ""
         },
         {
           "name": "Wisdom",
-          "base": "10",
-          "modifier": "0",
+          "base": "13",
+          "modifier": "1",
           "dice": ""
         },
         {
           "name": "Charisma",
-          "base": "10",
-          "modifier": "0",
+          "base": "13",
+          "modifier": "1",
           "dice": ""
         }
       ],
       "base_values": [
         {
-          "name": "Half level",
+          "name": "Proficiency Bonus",
           "value": "0",
           "dice": ""
         },
@@ -453,7 +453,7 @@
           "carried": "true"
         },
         {
-          "name": "Silver piec (sp)",
+          "name": "Silver piece (sp)",
           "quantity": "0",
           "weight": "0.02",
           "carried": "true"
@@ -468,23 +468,23 @@
       "defenses": [
         {
           "name": "Armor Class",
-          "base": "13",
+          "base": "14",
           "ability_score": "Dexterity"
         },
         {
           "name": "Fortitude",
-          "base": "13",
-          "ability_score": ""
+          "base": "12",
+          "ability_score": "Strength"
         },
         {
           "name": "Reflex",
-          "base": "13",
-          "ability_score": ""
+          "base": "12",
+          "ability_score": "Dexterity"
         },
         {
           "name": "Will",
-          "base": "13",
-          "ability_score": ""
+          "base": "12",
+          "ability_score": "Wisdom"
         }
       ],
       "descriptors": [
@@ -497,12 +497,12 @@
           "description": ""
         },
         {
-          "name": "Size",
-          "description": "Medium"
-        },
-        {
           "name": "Type",
           "description": ""
+        },
+        {
+          "name": "Size",
+          "description": "Medium"
         },
         {
           "name": "Alignment",
@@ -543,18 +543,23 @@
           "name": "Perception",
           "ranks": "",
           "ability_score": "Wisdom"
+        },
+        {
+          "name": "Insight",
+          "ranks": "",
+          "ability_score":"Intelligence"
         }
       ],
       "trackables": [
         {
           "name": "Hit Points",
           "maximum": "0",
-          "current": "0"
+          "current": "21"
         },
         {
           "name": "Action Points",
           "maximum": "0",
-          "current": "1"
+          "current": "0"
         }
       ]
     }
