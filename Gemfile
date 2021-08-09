@@ -55,6 +55,7 @@ gem 'report', :path => 'engines/report'
 gem 'rulebuilder', :path => 'engines/rulebuilder'
 gem 'storybuilder', :path => 'engines/storybuilder'
 gem 'support', :path => 'engines/support'
+gem 'toolbox', :path => 'engines/toolbox'
 gem 'worldbuilder', :path => 'engines/worldbuilder'
 
 group :development, :test do

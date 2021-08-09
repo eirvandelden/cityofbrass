@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   mount Worldbuilder::Engine,    :at => '/wb'
   mount Campaignmanager::Engine, :at => '/cm'
   mount Activeplay::Engine,      :at => '/ap'
+  mount Toolbox::Engine,         :at => '/tb'
 
   get 'scrolls/privacy_policy' => 'scrolls#privacy_policy'
   get 'scrolls/terms_of_service' => 'scrolls#terms_of_service'
