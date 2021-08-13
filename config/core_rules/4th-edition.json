@@ -505,6 +505,10 @@
           "description": "Medium"
         },
         {
+          "name": "Ancestry",
+          "description": "humanoid"
+        },
+        {
           "name": "Alignment",
           "description": ""
         },
