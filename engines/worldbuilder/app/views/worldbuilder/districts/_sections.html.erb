@@ -7,6 +7,7 @@
         :record => @district,
         :all_pages => (@district.pages.block.order('sort_weight, name').to_a if section.section_style == 'blocks'),
         :resident => @district.resident,
-        :can_auth => @district.can_edit?(current_user, admin_signed_in?)
+        :can_auth => @district.can_edit?(current_user, admin_signed_in?),
+        :edit_url => nil
     } %>
 <% end %>

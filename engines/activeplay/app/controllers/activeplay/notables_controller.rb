@@ -96,7 +96,7 @@ module Activeplay
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_virtual_table
-        @virtual_table = VirtualTable.joins(:user).includes([:campaign]).find_by_id(params[:virtual_table_id])
+        @virtual_table = VirtualTable.joins(:user).includes([:campaign]).find_by id: params[:virtual_table_id]
       end
 
       def check_parent_authorization
