@@ -30,7 +30,7 @@ gem 'puma'
 gem 'devise'
 gem 'omniauth'
 gem 'paperclip'
-gem 'aws-sdk', '< 3' # 2 is out but not compatible with paperclip
+gem 'aws-sdk', '>= 2.10.50', '< 3' # 2 is out but not compatible with paperclip
 gem 'redcarpet'
 gem 'simple_form'
 gem 'foundation-rails', '5.5.3.2' #git: 'https://github.com/embersds/foundation-rails', branch: 'v5'
