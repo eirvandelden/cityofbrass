@@ -26,13 +26,13 @@ gem 'sdoc', '>= 1.0.0'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
-gem 'puma', '>= 4.3.8'
-gem 'devise'
-gem 'omniauth', '>= 2.0.0'
+gem 'puma'
+gem 'devise', '>=4.7.0'
+gem 'omniauth'
 gem 'paperclip'
 gem 'aws-sdk', '< 3' # 2 is out but not compatible with paperclip
-gem 'redcarpet', '>= 3.5.1'
-gem 'simple_form'
+gem 'redcarpet'
+gem 'simple_form', '>=4.0.0'
 gem 'foundation-rails', '5.5.3.2' #git: 'https://github.com/embersds/foundation-rails', branch: 'v5'
 gem 'kaminari'
 gem 'stripe'
