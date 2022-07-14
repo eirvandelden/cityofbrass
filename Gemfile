@@ -41,7 +41,7 @@ gem 'sidekiq', '>= 6.2.1'
 gem 'delayed_paperclip', '< 4'
 # gem 'sinatra' # used for sidekiq ui
 gem 'jwt'
-gem 'font-awesome-rails', '< 5'
+gem 'font-awesome-rails', '>= 4.7.0.2', '< 5'
 gem 'bundle-audit'
 gem 'sentry-raven'
 
