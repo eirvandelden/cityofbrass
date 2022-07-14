@@ -60,7 +60,7 @@ gem 'worldbuilder', :path => 'engines/worldbuilder'
 group :development, :test do
   gem 'figaro'
   gem 'meta_request'
-  gem 'better_errors'
+  gem 'better_errors', '>= 2.8.0'
   gem 'binding_of_caller'
   gem 'foreman'
   gem 'get_process_mem'
