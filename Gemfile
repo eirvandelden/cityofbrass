@@ -38,7 +38,7 @@ gem 'kaminari'
 gem 'stripe'
 gem 'redis'
 gem 'sidekiq', '>= 6.4.0'
-gem 'delayed_paperclip', '< 4'
+gem 'delayed_paperclip', '>= 3.0.1', '< 4'
 # gem 'sinatra' # used for sidekiq ui
 gem 'jwt'
 gem 'font-awesome-rails', '< 5'
