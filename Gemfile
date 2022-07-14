@@ -3,7 +3,7 @@ ruby '2.6.7'
 
 gem 'dotenv-rails' # We want dotenv to load before everything else.
 
-gem 'rails', '>= 5.2.8.1'
+gem 'rails', '>= 6.0.3.5'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -30,7 +30,7 @@ gem 'puma', '>= 4.3.8'
 gem 'devise'
 gem 'omniauth'
 gem 'paperclip'
-gem 'aws-sdk', '>= 2.10.50', '< 3' # 2 is out but not compatible with paperclip
+gem 'aws-sdk', '< 3' # 2 is out but not compatible with paperclip
 gem 'redcarpet'
 gem 'simple_form'
 gem 'foundation-rails', '5.5.3.2' #git: 'https://github.com/embersds/foundation-rails', branch: 'v5'
