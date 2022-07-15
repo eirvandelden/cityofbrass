@@ -1,7 +1,7 @@
 module Entitybuilder
   module AttackProfileHelper
 
-    def attack_display_profile(core_rules, attack, ability_scores, all_modifiers, all_base_values)
+    def attack_display_profile(_core_rules, attack, ability_scores, all_modifiers, all_base_values)
       begin
         # get all of the calculated bonuses
         calc_attack_bonus = attack.calculated_attack_bonus(ability_scores, all_modifiers, all_base_values)

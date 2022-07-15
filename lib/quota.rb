@@ -12,7 +12,7 @@ module Quota
   FREE_USER_RULE_LIMIT = 20
   FREE_USER_IMAGE_LIMIT = 10
 
-  def self.over_limit?(user, type, count)
+  def self.over_limit?(_user, type, count)
     # GET PURCHASED COUNT HERE
     purchased = 0
 
@@ -40,7 +40,7 @@ module Quota
     end
   end
 
-  def self.limit(user, type)
+  def self.limit(_user, type)
     # GET PURCHASED COUNT HERE
     purchased = 0
 

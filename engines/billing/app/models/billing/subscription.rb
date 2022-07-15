@@ -150,7 +150,7 @@ module Billing
       end
     end
 
-    def stripe_invoices(customer)
+    def stripe_invoices(_customer)
       begin
         Stripe::Invoice.all(
           :customer => self.user.stripe_customer_token,

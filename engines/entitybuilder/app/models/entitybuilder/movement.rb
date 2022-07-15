@@ -19,7 +19,7 @@ module Entitybuilder
 
     before_validation :nil_if_blank
 
-    def calculated_bonus(ability_scores, all_modifiers, all_base_values)
+    def calculated_bonus(ability_scores, all_modifiers, _all_base_values)
       if self.bonus.present?
         return self.bonus
       else
