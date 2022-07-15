@@ -192,7 +192,7 @@ if ( !$( "<a>" ).outerWidth( 1 ).jquery ) {
 // support: jQuery <1.8
 if ( !$.fn.addBack ) {
 	$.fn.addBack = function( selector ) {
-		return this.add( selector == null ?
+		return this.add( selector === null ?
 			this.prevObject : this.prevObject.filter( selector )
 		);
 	};
@@ -326,7 +326,7 @@ var widget_uuid = 0,
 $.cleanData = (function( orig ) {
 	return function( elems ) {
 		var events, elem, i;
-		for ( i = 0; (elem = elems[i]) != null; i++ ) {
+		for ( i = 0; (elem = elems[i]) !== null; i++ ) {
 			try {
 
 				// Only trigger remove when necessary to save time
