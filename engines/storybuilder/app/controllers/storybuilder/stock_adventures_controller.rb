@@ -16,7 +16,7 @@ module Storybuilder
 
     private
       def params_id
-        params_id = params["#{@type.underscore}_id"] ||= params[:id]
+        params[:id]
       end
 
       def set_type

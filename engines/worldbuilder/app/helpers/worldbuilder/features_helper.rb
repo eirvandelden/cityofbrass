@@ -2,7 +2,7 @@ module Worldbuilder
   module FeaturesHelper
 
     def wb_feature_special_options
-      special_options = [
+      [
         'Created',
         'Updated',
         'Owner'

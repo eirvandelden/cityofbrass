@@ -10,7 +10,7 @@ module Entitybuilder
         calc_special_bonus = attack.calculated_special_damage_bonus(ability_scores, all_modifiers)
 
         # build attack vars
-        attack_name  = "<span class='color-secondary'>#{sanitize(attack.name)}</span> "
+        'color-secondary'>#{sanitize(attack.name)}</span> "
         attack_dice  = "#{attack.game_dice(core_rules)}"
         attack_bonus = "#{calc_attack_bonus}" unless (calc_attack_bonus == "+0" and attack.attack_bonus.to_s.blank?)
         attack_display = attack.display_dice_or_modifier(core_rules, attack_bonus, attack_dice, "#{attack_dice}#{attack_bonus.to_s}")

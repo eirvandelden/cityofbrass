@@ -124,11 +124,11 @@ module Campaignmanager
       end
 
       def type_class
-        type_class = "Campaignmanager::#{type}".constantize
+        "Campaignmanager::#{type}".constantize
       end
 
       def params_id
-        params_id = params["#{@type.underscore}_id"] ||= params[:id]
+        params[:id]
       end
 
       def set_campaign

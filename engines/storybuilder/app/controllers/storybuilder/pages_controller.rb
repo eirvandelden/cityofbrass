@@ -109,7 +109,7 @@ module Storybuilder
     private
       # Use callbacks to share common setup or constraints between actions.
       def params_id
-        params_id = params[:page_id] ||= params[:id]
+        params[:id]
       end
 
       def set_adventure
