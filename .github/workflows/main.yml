@@ -25,7 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - name: Ruby Gemer
-      - uses: katungi/Ruby-Gemer@V0.1-alpha
+        uses: katungi/Ruby-Gemer@V0.1-alpha
      # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
