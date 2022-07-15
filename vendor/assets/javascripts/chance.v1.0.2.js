@@ -19,7 +19,7 @@
     // Constructor
     function Chance (seed) {
         if (!(this instanceof Chance)) {
-            return seed == null ? new Chance() : new Chance(seed);
+            return seed === null ? new Chance() : new Chance(seed);
         }
 
         // if user has provided a function, use that as the generator
