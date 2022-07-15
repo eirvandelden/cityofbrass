@@ -35,7 +35,7 @@ module Entitybuilder
       end
     end
 
-    def calculated_modifier(all_modifiers)
+    def calculated_modifier(_all_modifiers)
       if self.modifier.present?
           return self.modifier
       else
