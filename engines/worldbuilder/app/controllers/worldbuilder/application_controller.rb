@@ -17,7 +17,7 @@ class Worldbuilder::ApplicationController < ApplicationController
     end
 
     def parent_klass
-      parent_klass = "Worldbuilder::#{@parent_type.camelize}".constantize
+      "Worldbuilder::#{@parent_type.camelize}".constantize
     end
 
     def set_parent_object

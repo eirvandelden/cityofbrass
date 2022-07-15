@@ -161,11 +161,11 @@ module Entitybuilder
       # Use callbacks to share common setup or constraints between actions.
 
       def klass
-        klass = "Entitybuilder::#{@type}".constantize
+        "Entitybuilder::#{@type}".constantize
       end
 
       def params_id
-        params_id = params["#{@type.underscore}_id"] ||= params[:id]
+        params[:id]
       end
 
       def set_profile
