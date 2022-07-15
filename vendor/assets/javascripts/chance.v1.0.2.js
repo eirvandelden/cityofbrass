@@ -1715,11 +1715,11 @@
     */
     Chance.prototype.cf = function (options) {
         options = options || {};
-        var gender = !!options.gender ? options.gender : this.gender(),
-            first = !!options.first ? options.first : this.first( { gender: gender, nationality: 'it'} ),
-            last = !!options.last ? options.last : this.last( { nationality: 'it'} ),
-            birthday = !!options.birthday ? options.birthday : this.birthday(),
-            city = !!options.city ? options.city : this.pickone(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'L', 'M', 'Z']) + this.pad(this.natural({max:999}), 3),
+        var gender = options.gender ? options.gender : this.gender(),
+            first = options.first ? options.first : this.first( { gender: gender, nationality: 'it'} ),
+            last = options.last ? options.last : this.last( { nationality: 'it'} ),
+            birthday = options.birthday ? options.birthday : this.birthday(),
+            city = options.city ? options.city : this.pickone(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'L', 'M', 'Z']) + this.pad(this.natural({max:999}), 3),
             cf = [],
             name_generator = function(name, isLast) {
                 var temp,
