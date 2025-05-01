@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
-ruby '2.6.7'
+ruby file: ".ruby-version"
 
-gem 'dotenv-rails' # We want dotenv to load before everything else.
+gem 'dotenv-rails' , '>= 2.2.2' # We want dotenv to load before everything else.
 
-gem 'rails'
+gem 'rails', '>= 5.2.8.1'
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', "~> 1.0"
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -22,28 +22,31 @@ gem 'gitlab-turbolinks-classic'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc'
+gem 'sdoc', '>= 1.0.0'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
-gem 'puma'
-gem 'devise'
+gem 'puma', '>= 4.3.12'
+gem 'devise', '>= 4.7.0'
 gem 'omniauth'
 gem 'paperclip'
 gem 'aws-sdk', '< 3' # 2 is out but not compatible with paperclip
 gem 'redcarpet'
-gem 'simple_form'
+gem 'simple_form', '>= 4.0.0'
 gem 'foundation-rails', '5.5.3.2' #git: 'https://github.com/embersds/foundation-rails', branch: 'v5'
 gem 'kaminari'
 gem 'stripe'
 gem 'redis'
-gem 'sidekiq'
-gem 'delayed_paperclip', '< 4'
+gem 'sidekiq', '>= 6.4.0', "<= 7.0"
+gem 'delayed_paperclip', '>= 3.0.1', '< 4'
 # gem 'sinatra' # used for sidekiq ui
 gem 'jwt'
 gem 'font-awesome-rails', '< 5'
 gem 'bundle-audit'
-gem 'sentry-raven'
+
+# Upgrade to specific version of nio4r
+gem "nio4r", ">= 2.7"
+gem "ffi", ">= 1.17"
 
 # City of Brass
 gem 'activeplay', :path => 'engines/activeplay'

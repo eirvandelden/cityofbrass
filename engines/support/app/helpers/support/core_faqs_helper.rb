@@ -1,7 +1,7 @@
 module Support
   module CoreFaqsHelper
     def core_faq_list
-      list = [
+      [
         'Resident New',
         'Resident Show',
 

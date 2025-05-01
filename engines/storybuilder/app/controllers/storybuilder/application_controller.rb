@@ -21,7 +21,7 @@ class Storybuilder::ApplicationController < ApplicationController
     end
 
     def parent_klass
-      parent_klass = "Storybuilder::#{@parent_type.camelize}".constantize
+      "Storybuilder::#{@parent_type.camelize}".constantize
     end
 
     def set_parent_object

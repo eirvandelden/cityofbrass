@@ -94,7 +94,7 @@ $.fn.extend({
 function focusable( element, isTabIndexNotNaN ) {
 	var map, mapName, img,
 		nodeName = element.nodeName.toLowerCase();
-	if ( "area" === nodeName ) {
+	if ( nodeName === "area" ) {
 		map = element.parentNode;
 		mapName = map.name;
 		if ( !element.href || !mapName || map.nodeName.toLowerCase() !== "map" ) {
@@ -105,7 +105,7 @@ function focusable( element, isTabIndexNotNaN ) {
 	}
 	return ( /^(input|select|textarea|button|object)$/.test( nodeName ) ?
 		!element.disabled :
-		"a" === nodeName ?
+		nodeName === "a" ?
 			element.href || isTabIndexNotNaN :
 			isTabIndexNotNaN) &&
 		// the element and all of its ancestors must be visible
@@ -192,7 +192,7 @@ if ( !$( "<a>" ).outerWidth( 1 ).jquery ) {
 // support: jQuery <1.8
 if ( !$.fn.addBack ) {
 	$.fn.addBack = function( selector ) {
-		return this.add( selector == null ?
+		return this.add( selector === null ?
 			this.prevObject : this.prevObject.filter( selector )
 		);
 	};
@@ -326,7 +326,7 @@ var widget_uuid = 0,
 $.cleanData = (function( orig ) {
 	return function( elems ) {
 		var events, elem, i;
-		for ( i = 0; (elem = elems[i]) != null; i++ ) {
+		for ( i = 0; (elem = elems[i]) !== null; i++ ) {
 			try {
 
 				// Only trigger remove when necessary to save time
@@ -466,7 +466,7 @@ $.widget.extend = function( target ) {
 	for ( ; inputIndex < inputLength; inputIndex++ ) {
 		for ( key in input[ inputIndex ] ) {
 			value = input[ inputIndex ][ key ];
-			if ( input[ inputIndex ].hasOwnProperty( key ) && value !== undefined ) {
+			if ( Object.prototype.hasOwnProperty.call(input.inputIndex, key) && value !== undefined ) {
 				// Clone objects
 				if ( $.isPlainObject( value ) ) {
 					target[ key ] = $.isPlainObject( target[ key ] ) ?
@@ -888,7 +888,7 @@ var mouse = $.widget("ui.mouse", {
 				return that._mouseDown(event);
 			})
 			.bind("click." + this.widgetName, function(event) {
-				if (true === $.data(event.target, that.widgetName + ".preventClickEvent")) {
+				if ($.data(event.target, that.widgetName + ".preventClickEvent") === true) {
 					$.removeData(event.target, that.widgetName + ".preventClickEvent");
 					event.stopImmediatePropagation();
 					return false;
@@ -947,7 +947,7 @@ var mouse = $.widget("ui.mouse", {
 		}
 
 		// Click event may never have fired (Gecko & Opera)
-		if (true === $.data(event.target, this.widgetName + ".preventClickEvent")) {
+		if ($.data(event.target, this.widgetName + ".preventClickEvent") === true) {
 			$.removeData(event.target, this.widgetName + ".preventClickEvent");
 		}
 
@@ -1715,7 +1715,7 @@ $.widget("ui.resizable", $.ui.mouse, {
 				axis.css({ zIndex: o.zIndex });
 
 				// TODO : What's going on here?
-				if ("se" === handle) {
+				if (handle === "se") {
 					axis.addClass("ui-icon ui-icon-gripsmall-diagonal-se");
 				}
 

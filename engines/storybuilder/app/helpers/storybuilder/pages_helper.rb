@@ -2,17 +2,17 @@ module Storybuilder
   module PagesHelper
 
     def feature_special_options_encounter
-      special_options = [
+      [
       ]
     end
 
     def feature_special_options_handout
-      special_options = [
+      [
       ]
     end
 
     def feature_special_options_story
-      special_options = [
+      [
       ]
     end
 

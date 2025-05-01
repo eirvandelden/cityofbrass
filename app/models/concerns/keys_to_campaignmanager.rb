@@ -19,7 +19,7 @@ module KeysToCampaignmanager
     end
   end
 
-  def can_edit?(current_user, is_admin)
+  def can_edit?(current_user, _is_admin)
     return false if current_user.nil?
     return true if current_user.id == self.resident.user_id
     return false

@@ -10,7 +10,7 @@ module CoreRules
 
         rules = []
         config.each do |core|
-          hash = []
+          []
           hash = [core['name'], core['rulebuilder']['rules'].collect{ |r| r['name'] }]
           rules += [hash]
         end
@@ -19,9 +19,9 @@ module CoreRules
 
       def self.hash(show_all)
         if show_all
-          config = CoreRules.rulebooks
+          CoreRules.rulebooks
         else
-          config = CoreRules.rulebooks.select{ |v| v['active'] == 'true' }
+          'true' }
         end
 
         rules = {}

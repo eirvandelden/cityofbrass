@@ -100,7 +100,7 @@ module Rulebuilder
     private
 
       def klass
-        klass = "Rulebuilder::#{@type}".constantize
+        "Rulebuilder::#{@type}".constantize
       end
 
       # Only allow a trusted parameter "white list" through.

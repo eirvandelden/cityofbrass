@@ -2,7 +2,7 @@ module Report
   module ApplicationHelper
 
     def report_menu
-      options = [
+      [
         {label: 'Dashboard', link: 'dashboards'},
         {label: 'User', link: 'user_snapshots'},
         {label: 'Resident', link: 'resident_snapshots'},

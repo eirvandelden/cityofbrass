@@ -37,7 +37,7 @@ module Entitybuilder
       end
     end
 
-    def cmd_bonus(ability_scores, all_modifiers, all_base_values)
+    def cmd_bonus(ability_scores, _all_modifiers, all_base_values)
       bonus_placeholder = 0
 
       str = ability_scores.detect { |as| as.name == 'Strength' } unless ability_scores.nil?

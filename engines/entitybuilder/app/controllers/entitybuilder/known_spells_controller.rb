@@ -123,7 +123,7 @@ module Entitybuilder
     private
 
       def params_id
-        params_id = params["known_spell_id"] ||= params[:id]
+        params[:id]
       end
 
       def set_known_spell

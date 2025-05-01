@@ -1,7 +1,7 @@
 module ResidentsHelper
 
   def resident_badges
-    options = [
+    [
       {badge: "Owner", color: "badge-secondary", url: "https://www.embersds.com"},
       {badge: "System", color: "badge-secondary", url: ""},
       {badge: "Founder", color: "badge-secondary", url: ""},

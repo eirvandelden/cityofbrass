@@ -20,7 +20,7 @@ class Entitybuilder::ApplicationController < ApplicationController
     end
 
     def parent_klass
-      parent_klass = "Entitybuilder::#{@parent_type.camelize}".constantize
+      "Entitybuilder::#{@parent_type.camelize}".constantize
     end
 
     def set_parent_object

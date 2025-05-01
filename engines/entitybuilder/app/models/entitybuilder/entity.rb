@@ -114,7 +114,7 @@ module Entitybuilder
 
     def tag_list=(names)
       self.tags = names.split(',').map do |n|
-        n = n.parameterize.gsub('-', ' ').strip
+        n.parameterize.gsub('-', ' ').strip
       end
       self.tags.uniq!
       self.tags.sort!
