@@ -1,23 +1,23 @@
 
 default: &default
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
-  host: postgres
-  username: cityofbrass
-  password: cityofbrass
-  pool: 5
-  host: <%= ENV['DOCKER_POSTGRES_HOST'] %>
-  port: <%= ENV['DOCKER_POSTGRES_PORT'] %>
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV['RAILS_MAX_THREADS'] || 5 %>
+  host: <%= ENV['DOCKER_DB_HOST'] || 'localhost' %>
+  port: <%= ENV['DOCKER_DB_PORT'] || 5432 %>
+  timeout: 100
+  default_transaction_mode: immediate
 
 development:
   <<: *default
-  database: cityofbrass_development
+  database: storage/db/development.sqlite3
 
 test:
   <<: *default
-  database: cityofbrass_test
+  database: storage/db/test.sqlite3
 
 production:
   <<: *default
-  database: cityofbrass_production
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  database: storage/db/production.sqlite3

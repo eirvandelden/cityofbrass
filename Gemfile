@@ -8,7 +8,7 @@ gem 'dotenv-rails' # We want dotenv to load before everything else.
 gem 'rails', '~> 5.2'
 gem 'bootsnap'
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'sqlite3', "~> 1.6.9"
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,9 +47,12 @@ gem 'bundle-audit'
 gem 'erubis'
 gem 'font-awesome-rails', '< 5'
 gem 'jwt'
-gem 'sentry-raven'
 gem 'symbol-fstring', require: 'fstring/all' # Performance improvement
 # gem 'bigdecimal' # BigDecimal support
+
+# bugs
+gem "json", "~> 2.0"
+gem "psych", "< 4.0" # Solved in rails 6.1
 
 # City of Brass
 gem 'activeplay', path: 'engines/activeplay'

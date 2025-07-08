@@ -15,9 +15,9 @@
 ActiveRecord::Schema.define(version: 20161111120001) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "uuid-ossp"
-  enable_extension "plpgsql"
-  enable_extension "pg_stat_statements"
+  # enable_extension "uuid-ossp"
+  # enable_extension "plpgsql"
+  # enable_extension "pg_stat_statements"
 
   create_table "activeplay_notables", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string   "name"
