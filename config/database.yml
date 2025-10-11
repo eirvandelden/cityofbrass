@@ -9,6 +9,8 @@ default: &default
   port: <%= ENV['DOCKER_DB_PORT'] || 5432 %>
   timeout: 100
   default_transaction_mode: immediate
+  extensions:
+    - <%= SqliteExtensions::UUID.to_path %>
 
 development:
   <<: *default

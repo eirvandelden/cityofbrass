@@ -1,14 +1,14 @@
 # frozen_string_literal: false
 
-source 'https://rubygems.org'
-ruby '2.7.1'
+source 'https://gem.coop'
+ruby file: ".ruby-version"
 
 gem 'dotenv-rails' # We want dotenv to load before everything else.
 
 gem 'rails', '~> 5.2'
 gem 'bootsnap'
 # Use postgresql as the database for Active Record
-gem 'sqlite3', "~> 1.6.9"
+gem 'sqlite3', "~> 2.4"
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -83,3 +83,5 @@ group :production, :staging do
   gem 'newrelic_rpm'
   gem 'rails_12factor'
 end
+
+gem "sqlite_extensions-uuid", "~> 1.0"

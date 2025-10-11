@@ -19,19 +19,19 @@ ActiveRecord::Schema.define(version: 20161111120001) do
   # enable_extension "plpgsql"
   # enable_extension "pg_stat_statements"
 
-  create_table "activeplay_notables", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "activeplay_notables", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
     t.string   "name"
     t.integer  "sort_order"
-    t.uuid     "virtual_table_id"
-    t.uuid     "entity_id"
+    t.string     "virtual_table_id"
+    t.string     "entity_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["entity_id"], name: "index_activeplay_notables_on_entity_id", using: :btree
     t.index ["virtual_table_id"], name: "index_activeplay_notables_on_virtual_table_id", using: :btree
   end
 
-  create_table "activeplay_virtual_tables", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "campaign_id"
+  create_table "activeplay_virtual_tables", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "campaign_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["campaign_id"], name: "index_activeplay_virtual_tables_on_campaign_id", unique: true, using: :btree
@@ -58,9 +58,9 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["unlock_token"], name: "index_admins_on_unlock_token", unique: true, using: :btree
   end
 
-  create_table "affiliations", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "resident_id",              null: false
-    t.uuid     "affiliate_id",             null: false
+  create_table "affiliations", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "resident_id",              null: false
+    t.string     "affiliate_id",             null: false
     t.string   "status",       limit: 255, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -69,15 +69,15 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["resident_id"], name: "index_affiliations_on_resident_id", using: :btree
   end
 
-  create_table "beta_invites", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "beta_invites", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
     t.string   "email",      limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["email"], name: "index_beta_invites_on_email", unique: true, using: :btree
   end
 
-  create_table "billing_events", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "user_id",            null: false
+  create_table "billing_events", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "user_id",            null: false
     t.text     "stripe_event_token", null: false
     t.datetime "event_date"
     t.text     "event_type"
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["user_id"], name: "index_billing_events_on_user_id", using: :btree
   end
 
-  create_table "billing_plans", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "billing_plans", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
     t.string   "name",              null: false
     t.string   "stripe_plan_token"
     t.string   "interval"
@@ -101,9 +101,9 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.datetime "updated_at",        null: false
   end
 
-  create_table "billing_subscriptions", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "user_id",                   null: false
-    t.uuid     "plan_id"
+  create_table "billing_subscriptions", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "user_id",                   null: false
+    t.string     "plan_id"
     t.string   "stripe_subscription_token", null: false
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
@@ -111,8 +111,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["user_id"], name: "index_billing_subscriptions_on_user_id", unique: true, using: :btree
   end
 
-  create_table "campaignmanager_campaigns", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "resident_id",                   null: false
+  create_table "campaignmanager_campaigns", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "resident_id",                   null: false
     t.string   "name",              limit: 255, null: false
     t.string   "slug",              limit: 255, null: false
     t.string   "page_label",        limit: 255
@@ -121,16 +121,16 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.text     "full_description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.uuid     "district_id"
-    t.uuid     "adventure_id"
+    t.string     "district_id"
+    t.string     "adventure_id"
     t.string   "core_rules"
     t.index ["adventure_id"], name: "index_campaignmanager_campaigns_on_adventure_id", using: :btree
     t.index ["district_id"], name: "index_campaignmanager_campaigns_on_district_id", using: :btree
     t.index ["resident_id"], name: "index_campaignmanager_campaigns_on_resident_id", using: :btree
   end
 
-  create_table "campaignmanager_features", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "featureable_id"
+  create_table "campaignmanager_features", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "featureable_id"
     t.string   "featureable_type", limit: 255
     t.integer  "sort_order"
     t.string   "feature_label",    limit: 255
@@ -143,10 +143,10 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["featureable_id", "featureable_type"], name: "index_campaignmanager_features_id_and_type", using: :btree
   end
 
-  create_table "campaignmanager_notables", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "notableable_id"
+  create_table "campaignmanager_notables", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "notableable_id"
     t.string   "notableable_type"
-    t.uuid     "entity_id"
+    t.string     "entity_id"
     t.string   "name"
     t.integer  "sort_order"
     t.datetime "created_at",       null: false
@@ -155,10 +155,10 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["notableable_id", "notableable_type"], name: "cm_notable_id_and_type", using: :btree
   end
 
-  create_table "campaignmanager_pages", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "campaignmanager_pages", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
     t.string   "type",              limit: 255, null: false
-    t.uuid     "campaign_id"
-    t.uuid     "parent_id"
+    t.string     "campaign_id"
+    t.string     "parent_id"
     t.string   "name",              limit: 255
     t.string   "slug",              limit: 255
     t.string   "page_label",        limit: 255
@@ -172,16 +172,16 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["parent_id"], name: "index_campaignmanager_pages_on_parent_id", using: :btree
   end
 
-  create_table "campaignmanager_players", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "campaign_id"
-    t.uuid     "affiliation_id"
+  create_table "campaignmanager_players", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "campaign_id"
+    t.string     "affiliation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["campaign_id", "affiliation_id"], name: "index_campaignmanager_players_campaign_and_affiliate", unique: true, using: :btree
   end
 
-  create_table "campaignmanager_sections", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "sectionable_id"
+  create_table "campaignmanager_sections", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "sectionable_id"
     t.string   "sectionable_type", limit: 255
     t.integer  "sort_order"
     t.string   "header",           limit: 255
@@ -195,8 +195,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["sectionable_id", "sectionable_type"], name: "index_campaignmanager_sections_id_and_type", using: :btree
   end
 
-  create_table "entitybuilder_ability_scores", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_ability_scores", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
     t.string   "name",        limit: 255, null: false
     t.text     "description"
@@ -209,8 +209,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["entity_id"], name: "index_entitybuilder_ability_scores_on_entity_id", using: :btree
   end
 
-  create_table "entitybuilder_attacks", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_attacks", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
     t.string   "name",                          limit: 255, null: false
     t.text     "description"
@@ -241,8 +241,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["entity_id"], name: "index_entitybuilder_attacks_on_entity_id", using: :btree
   end
 
-  create_table "entitybuilder_base_values", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_base_values", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
     t.string   "name",        limit: 255, null: false
     t.text     "description"
@@ -253,16 +253,16 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["entity_id"], name: "index_entitybuilder_base_values_on_entity_id", using: :btree
   end
 
-  create_table "entitybuilder_campaign_joins", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
-    t.uuid     "campaign_id"
+  create_table "entitybuilder_campaign_joins", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
+    t.string     "campaign_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["entity_id"], name: "index_entitybuilder_campaign_joins_on_entity_id", using: :btree
   end
 
-  create_table "entitybuilder_caster_levels", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_caster_levels", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
     t.string   "caster_class",  limit: 255
     t.integer  "level"
@@ -277,8 +277,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["entity_id"], name: "index_entitybuilder_caster_levels_on_entity_id", using: :btree
   end
 
-  create_table "entitybuilder_class_levels", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_class_levels", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
     t.string   "name",        limit: 255, null: false
     t.text     "description"
@@ -290,8 +290,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["entity_id"], name: "index_entitybuilder_class_levels_on_entity_id", using: :btree
   end
 
-  create_table "entitybuilder_currencies", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_currencies", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
     t.string   "name",        limit: 255
     t.text     "description"
@@ -303,8 +303,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["entity_id"], name: "index_entitybuilder_currencies_on_entity_id", using: :btree
   end
 
-  create_table "entitybuilder_defenses", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_defenses", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
     t.string   "name",          limit: 255, null: false
     t.text     "description"
@@ -318,8 +318,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["entity_id"], name: "index_entitybuilder_defenses_on_entity_id", using: :btree
   end
 
-  create_table "entitybuilder_descriptors", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_descriptors", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
     t.string   "name",        limit: 255,                 null: false
     t.string   "description", limit: 255
@@ -329,9 +329,9 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["entity_id"], name: "index_entitybuilder_descriptors_on_entity_id", using: :btree
   end
 
-  create_table "entitybuilder_entities", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "entitybuilder_entities", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
     t.string   "type",                              null: false
-    t.uuid     "resident_id"
+    t.string     "resident_id"
     t.string   "name"
     t.string   "core_rules"
     t.string   "privacy"
@@ -351,10 +351,10 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["type"], name: "index_entitybuilder_entities_on_type", using: :btree
   end
 
-  create_table "entitybuilder_inventory_items", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_inventory_items", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
-    t.uuid     "item_id"
+    t.string     "item_id"
     t.integer  "quantity"
     t.boolean  "equipped"
     t.boolean  "carried"
@@ -365,10 +365,10 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["item_id"], name: "index_entitybuilder_inventory_items_on_item_id", using: :btree
   end
 
-  create_table "entitybuilder_known_abilities", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_known_abilities", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
-    t.uuid     "ability_id"
+    t.string     "ability_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "detail"
@@ -376,10 +376,10 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["entity_id"], name: "index_entitybuilder_known_abilities_on_entity_id", using: :btree
   end
 
-  create_table "entitybuilder_known_feats", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_known_feats", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
-    t.uuid     "feat_id"
+    t.string     "feat_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "detail"
@@ -387,10 +387,10 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["feat_id"], name: "index_entitybuilder_known_feats_on_feat_id", using: :btree
   end
 
-  create_table "entitybuilder_known_spells", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_known_spells", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
-    t.uuid     "spell_id"
+    t.string     "spell_id"
     t.boolean  "prepared"
     t.boolean  "used"
     t.datetime "created_at"
@@ -403,9 +403,9 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["spell_id"], name: "index_entitybuilder_known_spells_on_spell_id", using: :btree
   end
 
-  create_table "entitybuilder_linked_rules", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
-    t.uuid     "rule_id"
+  create_table "entitybuilder_linked_rules", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
+    t.string     "rule_id"
     t.integer  "sort_order"
     t.string   "detail"
     t.datetime "created_at", null: false
@@ -414,10 +414,10 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["rule_id"], name: "index_entitybuilder_linked_rules_on_rule_id", using: :btree
   end
 
-  create_table "entitybuilder_modifiers", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "modifierable_id"
+  create_table "entitybuilder_modifiers", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "modifierable_id"
     t.string   "modifierable_type", limit: 255
-    t.uuid     "entity_id"
+    t.string     "entity_id"
     t.integer  "sort_order"
     t.string   "category",          limit: 255
     t.string   "item",              limit: 255
@@ -430,8 +430,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["modifierable_id", "modifierable_type"], name: "eb_modifier_id_and_type", using: :btree
   end
 
-  create_table "entitybuilder_movements", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_movements", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
     t.string   "name",          limit: 255, null: false
     t.integer  "base"
@@ -445,10 +445,10 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["entity_id"], name: "index_entitybuilder_movements_on_entity_id", using: :btree
   end
 
-  create_table "entitybuilder_notables", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "notableable_id"
+  create_table "entitybuilder_notables", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "notableable_id"
     t.string   "notableable_type"
-    t.uuid     "entity_id"
+    t.string     "entity_id"
     t.string   "name"
     t.integer  "sort_order"
     t.datetime "created_at",       null: false
@@ -457,8 +457,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["notableable_id", "notableable_type"], name: "eb_notable_id_and_type", using: :btree
   end
 
-  create_table "entitybuilder_saving_throws", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_saving_throws", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
     t.string   "name",          limit: 255
     t.text     "description"
@@ -473,8 +473,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["entity_id"], name: "index_entitybuilder_saving_throws_on_entity_id", using: :btree
   end
 
-  create_table "entitybuilder_skills", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_skills", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
     t.string   "name",          limit: 255, null: false
     t.text     "description"
@@ -490,8 +490,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["entity_id"], name: "index_entitybuilder_skills_on_entity_id", using: :btree
   end
 
-  create_table "entitybuilder_trackables", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_trackables", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
     t.string   "name",        limit: 255, null: false
     t.text     "description"
@@ -504,8 +504,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["entity_id"], name: "index_entitybuilder_trackables_on_entity_id", using: :btree
   end
 
-  create_table "entitybuilder_traits", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "entity_id"
+  create_table "entitybuilder_traits", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "entity_id"
     t.integer  "sort_order"
     t.string   "name",              null: false
     t.string   "short_description"
@@ -516,18 +516,18 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["entity_id"], name: "index_entitybuilder_traits_on_entity_id", using: :btree
   end
 
-  create_table "gallery_image_joins", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "image_id",                   null: false
-    t.uuid     "imageable_id",               null: false
+  create_table "gallery_image_joins", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "image_id",                   null: false
+    t.string     "imageable_id",               null: false
     t.string   "imageable_type", limit: 255, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["imageable_id", "imageable_type"], name: "index_gallery_image_joins_on_imageable_id_and_imageable_type", using: :btree
   end
 
-  create_table "gallery_images", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "gallery_images", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
     t.string   "type",              limit: 255, null: false
-    t.uuid     "resident_id"
+    t.string     "resident_id"
     t.string   "name",              limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -539,9 +539,9 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["resident_id"], name: "index_gallery_images_on_resident_id", using: :btree
   end
 
-  create_table "messages", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "sender_id",                                     null: false
-    t.uuid     "recipient_id"
+  create_table "messages", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "sender_id",                                     null: false
+    t.string     "recipient_id"
     t.boolean  "sender_deleted",                default: false
     t.boolean  "recipient_deleted",             default: false
     t.string   "subject",           limit: 255,                 null: false
@@ -553,8 +553,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["sender_id"], name: "index_messages_on_sender_id", using: :btree
   end
 
-  create_table "residents", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "user_id",                       null: false
+  create_table "residents", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "user_id",                       null: false
     t.string   "name",              limit: 255, null: false
     t.string   "slug",              limit: 255, null: false
     t.string   "short_description", limit: 255
@@ -567,16 +567,16 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["user_id"], name: "index_residents_on_user_id", unique: true, using: :btree
   end
 
-  create_table "rulebuilder_abilities", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "rulebuilder_abilities", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
     t.string   "type",                              null: false
-    t.uuid     "resident_id"
+    t.string     "resident_id"
     t.string   "core_rules"
     t.string   "name"
     t.string   "short_description"
     t.text     "full_description"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
-    t.uuid     "parent_id"
+    t.string     "parent_id"
     t.string   "publisher"
     t.string   "source"
     t.boolean  "is_3pp",            default: false
@@ -587,9 +587,9 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["type"], name: "index_rulebuilder_abilities_on_type", using: :btree
   end
 
-  create_table "rulebuilder_feats", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "rulebuilder_feats", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
     t.string   "type",                              null: false
-    t.uuid     "resident_id"
+    t.string     "resident_id"
     t.string   "core_rules"
     t.string   "name"
     t.string   "short_description"
@@ -601,7 +601,7 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.text     "categories",        default: [],                 array: true
-    t.uuid     "parent_id"
+    t.string     "parent_id"
     t.string   "publisher"
     t.string   "source"
     t.boolean  "is_3pp",            default: false
@@ -613,9 +613,9 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["type"], name: "index_rulebuilder_feats_on_type", using: :btree
   end
 
-  create_table "rulebuilder_items", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "rulebuilder_items", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
     t.string   "type",                              null: false
-    t.uuid     "resident_id"
+    t.string     "resident_id"
     t.string   "core_rules"
     t.string   "name"
     t.string   "short_description"
@@ -624,7 +624,7 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.decimal  "weight"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
-    t.uuid     "parent_id"
+    t.string     "parent_id"
     t.string   "publisher"
     t.string   "source"
     t.boolean  "is_3pp",            default: false
@@ -635,10 +635,10 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["type"], name: "index_rulebuilder_items_on_type", using: :btree
   end
 
-  create_table "rulebuilder_rules", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "rulebuilder_rules", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
     t.string   "type",                           null: false
-    t.uuid     "resident_id"
-    t.uuid     "parent_id"
+    t.string     "resident_id"
+    t.string     "parent_id"
     t.string   "core_rules"
     t.string   "rule_type"
     t.boolean  "is_shared"
@@ -663,9 +663,9 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["type"], name: "index_rulebuilder_rules_on_type", using: :btree
   end
 
-  create_table "rulebuilder_spells", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "rulebuilder_spells", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
     t.string   "type",                              null: false
-    t.uuid     "resident_id"
+    t.string     "resident_id"
     t.string   "core_rules"
     t.string   "name"
     t.string   "short_description"
@@ -683,7 +683,7 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.datetime "updated_at",                        null: false
     t.string   "spell_resistance"
     t.text     "levels",            default: [],                 array: true
-    t.uuid     "parent_id"
+    t.string     "parent_id"
     t.string   "publisher"
     t.string   "source"
     t.boolean  "is_3pp",            default: false
@@ -695,9 +695,9 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["type"], name: "index_rulebuilder_spells_on_type", using: :btree
   end
 
-  create_table "storybuilder_adventures", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "resident_id"
-    t.uuid     "parent_id"
+  create_table "storybuilder_adventures", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "resident_id"
+    t.string     "parent_id"
     t.string   "name",              limit: 255, null: false
     t.string   "slug",              limit: 255, null: false
     t.string   "page_label",        limit: 255
@@ -712,8 +712,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["resident_id"], name: "index_storybuilder_adventures_on_resident_id", using: :btree
   end
 
-  create_table "storybuilder_features", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "featureable_id"
+  create_table "storybuilder_features", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "featureable_id"
     t.string   "featureable_type", limit: 255
     t.integer  "sort_order"
     t.string   "feature_label",    limit: 255
@@ -726,9 +726,9 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["featureable_id", "featureable_type"], name: "index_storybuilder_features_id_and_type", using: :btree
   end
 
-  create_table "storybuilder_menu_item_joins", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "menu_item_id",                        null: false
-    t.uuid     "menu_item_joinable_id",               null: false
+  create_table "storybuilder_menu_item_joins", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "menu_item_id",                        null: false
+    t.string     "menu_item_joinable_id",               null: false
     t.string   "menu_item_joinable_type", limit: 255, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -736,8 +736,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["menu_item_joinable_id", "menu_item_joinable_type"], name: "sb_menu_item_join_id_and_type", using: :btree
   end
 
-  create_table "storybuilder_menu_items", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "menu_itemable_id"
+  create_table "storybuilder_menu_items", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "menu_itemable_id"
     t.string   "menu_itemable_type", limit: 255
     t.integer  "sort_order"
     t.string   "item_label",         limit: 255
@@ -747,10 +747,10 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["menu_itemable_id", "menu_itemable_type"], name: "sb_menu_item_id_and_type", using: :btree
   end
 
-  create_table "storybuilder_notables", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "notableable_id"
+  create_table "storybuilder_notables", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "notableable_id"
     t.string   "notableable_type"
-    t.uuid     "entity_id"
+    t.string     "entity_id"
     t.string   "name"
     t.integer  "sort_order"
     t.datetime "created_at",       null: false
@@ -759,9 +759,9 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["notableable_id", "notableable_type"], name: "sb_notable_id_and_type", using: :btree
   end
 
-  create_table "storybuilder_pages", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "storybuilder_pages", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
     t.string   "type",              limit: 255
-    t.uuid     "parent_id"
+    t.string     "parent_id"
     t.string   "name",              limit: 255
     t.string   "slug",              limit: 255
     t.string   "page_label",        limit: 255
@@ -770,7 +770,7 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.text     "full_description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.uuid     "adventure_id"
+    t.string     "adventure_id"
     t.text     "tags",                          default: [],                 array: true
     t.integer  "sort_weight",                   default: 1000,  null: false
     t.boolean  "player_handout",                default: false
@@ -779,8 +779,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["tags"], name: "index_storybuilder_pages_on_tags", using: :gin
   end
 
-  create_table "storybuilder_sections", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "sectionable_id"
+  create_table "storybuilder_sections", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "sectionable_id"
     t.string   "sectionable_type", limit: 255
     t.integer  "sort_order"
     t.string   "header",           limit: 255
@@ -794,15 +794,15 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["sectionable_id", "sectionable_type"], name: "index_storybuilder_sections_id_and_type", using: :btree
   end
 
-  create_table "support_core_faqs", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "faq_id",     null: false
+  create_table "support_core_faqs", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "faq_id",     null: false
     t.string   "core_item",  null: false
     t.boolean  "active",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "support_faqs", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "support_faqs", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
     t.string   "topic",      limit: 255
     t.string   "question",   limit: 255, null: false
     t.text     "answer"
@@ -811,7 +811,7 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.datetime "updated_at"
   end
 
-  create_table "users", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "users", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",      null: false
     t.string   "encrypted_password",     limit: 255, default: "",      null: false
     t.string   "reset_password_token",   limit: 255
@@ -841,16 +841,16 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
   end
 
-  create_table "worldbuilder_contributors", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "district_id",    null: false
-    t.uuid     "affiliation_id", null: false
+  create_table "worldbuilder_contributors", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "district_id",    null: false
+    t.string     "affiliation_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["district_id", "affiliation_id"], name: "index_worldbuilder_contributers_district_and_affiliate", unique: true, using: :btree
   end
 
-  create_table "worldbuilder_districts", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "resident_id"
+  create_table "worldbuilder_districts", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "resident_id"
     t.string   "name",              limit: 255, null: false
     t.string   "slug",              limit: 255, null: false
     t.string   "short_description", limit: 255
@@ -863,8 +863,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["slug"], name: "index_worldbuilder_districts_on_slug", unique: true, using: :btree
   end
 
-  create_table "worldbuilder_features", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "featureable_id"
+  create_table "worldbuilder_features", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "featureable_id"
     t.string   "featureable_type", limit: 255
     t.integer  "sort_order"
     t.string   "feature_label",    limit: 255
@@ -877,9 +877,9 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["featureable_id", "featureable_type"], name: "index_worldbuilder_features_id_and_type", using: :btree
   end
 
-  create_table "worldbuilder_menu_item_joins", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "menu_item_id",                        null: false
-    t.uuid     "menu_item_joinable_id",               null: false
+  create_table "worldbuilder_menu_item_joins", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "menu_item_id",                        null: false
+    t.string     "menu_item_joinable_id",               null: false
     t.string   "menu_item_joinable_type", limit: 255, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -887,8 +887,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["menu_item_joinable_id", "menu_item_joinable_type"], name: "wb_menu_item_joins_id_and_type", using: :btree
   end
 
-  create_table "worldbuilder_menu_items", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "menu_itemable_id"
+  create_table "worldbuilder_menu_items", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "menu_itemable_id"
     t.string   "menu_itemable_type", limit: 255
     t.integer  "sort_order"
     t.string   "item_label",         limit: 255
@@ -897,10 +897,10 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.datetime "updated_at"
   end
 
-  create_table "worldbuilder_pages", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "worldbuilder_pages", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
     t.string   "type",              limit: 255
-    t.uuid     "district_id"
-    t.uuid     "parent_id"
+    t.string     "district_id"
+    t.string     "parent_id"
     t.string   "name",              limit: 255
     t.string   "slug",              limit: 255
     t.string   "page_label",        limit: 255
@@ -915,8 +915,8 @@ ActiveRecord::Schema.define(version: 20161111120001) do
     t.index ["tags"], name: "index_worldbuilder_pages_on_tags", using: :gin
   end
 
-  create_table "worldbuilder_sections", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "sectionable_id"
+  create_table "worldbuilder_sections", id: :string, default: -> { "uuid()" }, force: :cascade do |t|
+    t.string     "sectionable_id"
     t.string   "sectionable_type", limit: 255
     t.integer  "sort_order"
     t.string   "header",           limit: 255

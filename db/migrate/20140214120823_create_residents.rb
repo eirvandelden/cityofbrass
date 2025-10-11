@@ -3,7 +3,7 @@
 class CreateResidents < ActiveRecord::Migration
   def change
     create_table :residents, id: :uuid do |t|
-      t.uuid   :user_id, :null => false
+      t.string   :user_id, :null => false
       t.string :name, 	 :null => false
       t.string :slug, 	 :null => false
       t.string :short_description
