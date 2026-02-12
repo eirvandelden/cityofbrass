@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 class Affiliation < ApplicationRecord
   belongs_to :resident
   belongs_to :affiliate, :class_name => "Resident", :foreign_key => "affiliate_id"
@@ -53,8 +55,8 @@ class Affiliation < ApplicationRecord
       return false
     else
       transaction do
-        f1.update_attributes(:status => "accepted")
-        f2.update_attributes(:status => "accepted")
+        f1.update(:status => "accepted")
+        f2.update(:status => "accepted")
       end
     end
     return true
@@ -81,8 +83,8 @@ class Affiliation < ApplicationRecord
       return false
     else
       transaction do
-        f1.update_attributes(:status => "blocked")
-        f2.update_attributes(:status => "hidden")
+        f1.update(:status => "blocked")
+        f2.update(:status => "hidden")
       end
     end
     return true
