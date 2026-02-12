@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require_dependency "entitybuilder/application_controller"
 
 module Entitybuilder
@@ -54,7 +56,7 @@ module Entitybuilder
       @type = @parent_type
       set_used = @known_spell.used == true ? false : true
 
-      @known_spell.update_attributes({:used => set_used})
+      @known_spell.update({:used => set_used})
       @prepared_spells = @parent_object.prepared_known_spells.includes(:spell).to_a
 
       respond_to do |format|

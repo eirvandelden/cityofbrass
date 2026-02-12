@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
@@ -16,7 +18,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails"
+  s.add_dependency "rails", ">= 6.1", "< 8"
   s.add_dependency 'paperclip'
   s.add_dependency 'aws-sdk'#, '~> 1.61.0' # 2 is out but not compatible with paperclip
 
