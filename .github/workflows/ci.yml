@@ -30,7 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: spinel-coop/setup-rv@v1 # b64c562
+      - uses: spinel-coop/setup-rv@main
         with:
           install-gems: true
 
