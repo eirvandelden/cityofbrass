@@ -1,4 +1,4 @@
-class AddAdditionalDamageToAttacks < ActiveRecord::Migration
+class AddAdditionalDamageToAttacks < ActiveRecord::Migration[4.2]
   def change
     add_column :entitybuilder_attacks, :damage_type, :string
 

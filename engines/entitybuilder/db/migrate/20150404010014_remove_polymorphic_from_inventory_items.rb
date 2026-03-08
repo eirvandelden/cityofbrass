@@ -1,6 +1,6 @@
-class RemovePolymorphicFromInventoryItems < ActiveRecord::Migration
+class RemovePolymorphicFromInventoryItems < ActiveRecord::Migration[4.2]
   def change
-    remove_index :entitybuilder_inventory_items, :name =>  'eb_inventory_item_id_and_type'
+    remove_index :entitybuilder_inventory_items, name: 'eb_inventory_item_id_and_type'
 
     rename_column :entitybuilder_inventory_items, :inventory_itemable_id, :entity_id
 

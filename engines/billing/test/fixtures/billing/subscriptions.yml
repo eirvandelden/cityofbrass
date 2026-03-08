@@ -1,21 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 
-  plan_id: 
-  stripe_subscription_token: MyString
-  status: MyString
-  current_period_start: 2015-03-09 06:48:56
-  current_period_end: 2015-03-09 06:48:56
-  canceled_at: 2015-03-09 06:48:56
-  cancel_at_period_end: false
+  id: sub_one
+  user_id: user_one
+  stripe_subscription_token: sub_token_one
+  created_at: 2015-01-01 00:00:00
+  updated_at: 2015-01-01 00:00:00
 
 two:
-  user_id: 
-  plan_id: 
-  stripe_subscription_token: MyString
-  status: MyString
-  current_period_start: 2015-03-09 06:48:56
-  current_period_end: 2015-03-09 06:48:56
-  canceled_at: 2015-03-09 06:48:56
-  cancel_at_period_end: false
+  id: sub_two
+  user_id: user_two
+  stripe_subscription_token: sub_token_two
+  created_at: 2015-01-01 00:00:00
+  updated_at: 2015-01-01 00:00:00

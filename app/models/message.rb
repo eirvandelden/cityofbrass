@@ -1,20 +1,19 @@
 class Message < ApplicationRecord
-
   scope :read, -> { where read_at: nil }
-  scope :short, -> { select('id, sender_id, recipient_id, sender_deleted, recipient_deleted, subject, read_at, created_at') }
+  scope :short, -> { select("id, sender_id, recipient_id, sender_deleted, recipient_deleted, subject, read_at, created_at") }
 
   belongs_to :sender,
-    :class_name => 'Resident',
-    :foreign_key => 'sender_id'
+    class_name: "Resident",
+    foreign_key: "sender_id"
   belongs_to :recipient,
-    :class_name => 'Resident',
-    :foreign_key => 'recipient_id'
+    class_name: "Resident",
+    foreign_key: "recipient_id"
 
   has_one :sender_user,
-          -> { select('users.id, email, status').where(status: User::ACTIVE_STATUS) },
-          :through => :sender,
-          :source => :user,
-          :class_name => "User"
+          -> { select("users.id, email, status").where(status: User::ACTIVE_STATUS) },
+          through: :sender,
+          source: :user,
+          class_name: "User"
 
   validates :sender_id, presence: true
   validates :recipient_id, presence: true
@@ -22,7 +21,7 @@ class Message < ApplicationRecord
   validates :body,    length: { maximum: 4000 }
 
   def self.search(search)
-    where("subject ilike ? OR body ilike?", "%#{search}%", "%#{search}%")
+    where("subject like ? OR body like ?", "%#{search}%", "%#{search}%")
   end
 
   # marks a message as deleted by either the sender or the recepient, which ever the user that was passed is.
@@ -52,5 +51,4 @@ class Message < ApplicationRecord
     return true if user == recipient.user
     false
   end
-
 end

@@ -1,10 +1,10 @@
-class CreateCampaignmanagerPages < ActiveRecord::Migration
+class CreateCampaignmanagerPages < ActiveRecord::Migration[4.2]
   def change
-    create_table :campaignmanager_pages, id: :uuid do |t|
-      t.string :type, :null => false
-      t.uuid :resident_id
-      t.uuid :campaign_id
-      t.uuid :parent_id
+    create_table :campaignmanager_pages, id: :string do |t|
+      t.string :type, null: false
+      t.string :resident_id
+      t.string :campaign_id
+      t.string :parent_id
       t.string :name
       t.string :slug
       t.string :page_label
@@ -15,7 +15,7 @@ class CreateCampaignmanagerPages < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :campaignmanager_pages, [:type, :privacy]
-    add_index :campaignmanager_pages, [:campaign_id, :type, :slug], :unique => true
+    add_index :campaignmanager_pages, [ :type, :privacy ]
+    add_index :campaignmanager_pages, [ :campaign_id, :type, :slug ], unique: true
   end
 end

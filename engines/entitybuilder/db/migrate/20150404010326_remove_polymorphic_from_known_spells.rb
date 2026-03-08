@@ -1,6 +1,6 @@
-class RemovePolymorphicFromKnownSpells < ActiveRecord::Migration
+class RemovePolymorphicFromKnownSpells < ActiveRecord::Migration[4.2]
   def change
-    remove_index :entitybuilder_known_spells, :name =>  'eb_known_spell_id_and_type'
+    remove_index :entitybuilder_known_spells, name: 'eb_known_spell_id_and_type'
 
     rename_column :entitybuilder_known_spells, :known_spellable_id, :entity_id
 

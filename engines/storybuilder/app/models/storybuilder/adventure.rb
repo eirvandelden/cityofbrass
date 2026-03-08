@@ -2,9 +2,9 @@ module Storybuilder
   class Adventure < ApplicationRecord
     include KeysToStorybuilder
 
-    PRIVACY_OPTIONS_FREE = ['Private']
-    PRIVACY_OPTIONS = ['Private', 'Friends', 'Residents']
-    NULL_ATTRS = %w( parent_id )
+    PRIVACY_OPTIONS_FREE = [ 'Private' ]
+    PRIVACY_OPTIONS = [ 'Private', 'Friends', 'Residents' ]
+    NULL_ATTRS = %w[ parent_id ]
 
     scope :short, -> { select('id, type, resident_id, name, page_label, short_description, core_rules') }
     scope :pick_list, -> { select('id, name, type') }
@@ -13,38 +13,38 @@ module Storybuilder
 
     belongs_to :resident, -> { select('residents.id, residents.user_id, residents.name, residents.slug') }
 
-    belongs_to :parent, :class_name => "Adventure"
-    has_many :children, :class_name => "Adventure", :foreign_key => "parent_id"
+    belongs_to :parent, class_name: "Adventure"
+    has_many :children, class_name: "Adventure", foreign_key: "parent_id"
 
-    has_many :features, -> { order(:sort_order) }, :as => :featureable, :dependent => :destroy
-    has_many :sections, -> { order(:sort_order) }, :as => :sectionable, :dependent => :destroy
-    has_many :notables, -> { order(:sort_order) }, :as => :notableable, :dependent => :destroy
-    has_many :entities, -> { select('id, type, name') }, :through => :notables, :source => :entity, :class_name => "Entitybuilder::Entity"
+    has_many :features, -> { order(:sort_order) }, as: :featureable, dependent: :destroy
+    has_many :sections, -> { order(:sort_order) }, as: :sectionable, dependent: :destroy
+    has_many :notables, -> { order(:sort_order) }, as: :notableable, dependent: :destroy
+    has_many :entities, -> { select('id, type, name') }, through: :notables, source: :entity, class_name: "Entitybuilder::Entity"
 
-    has_many :menu_items, -> { order(:sort_order) }, :as => :menu_itemable, :dependent => :destroy
-    has_one  :menu_item_join, :as => :menu_item_joinable, dependent: :destroy
+    has_many :menu_items, -> { order(:sort_order) }, as: :menu_itemable, dependent: :destroy
+    has_one  :menu_item_join, as: :menu_item_joinable, dependent: :destroy
 
     has_one :gallery_image_join,
-            :as => :imageable,
-            :class_name => "Gallery::ImageJoin",
-            :dependent => :destroy
+            as: :imageable,
+            class_name: "Gallery::ImageJoin",
+            dependent: :destroy
 
     has_one :gallery_image,
-            :through => :gallery_image_join,
-            :source => :image,
-            :class_name => "Gallery::Image"
+            through: :gallery_image_join,
+            source: :image,
+            class_name: "Gallery::Image"
 
     has_many :pages, dependent: :destroy
 
-    accepts_nested_attributes_for :features, :allow_destroy => true
-    accepts_nested_attributes_for :sections, :allow_destroy => true
-    accepts_nested_attributes_for :notables, :allow_destroy => true
-    accepts_nested_attributes_for :menu_items, :allow_destroy => true
-    accepts_nested_attributes_for :menu_item_join, :allow_destroy => true
-    accepts_nested_attributes_for :gallery_image_join, :allow_destroy => true
+    accepts_nested_attributes_for :features, allow_destroy: true
+    accepts_nested_attributes_for :sections, allow_destroy: true
+    accepts_nested_attributes_for :notables, allow_destroy: true
+    accepts_nested_attributes_for :menu_items, allow_destroy: true
+    accepts_nested_attributes_for :menu_item_join, allow_destroy: true
+    accepts_nested_attributes_for :gallery_image_join, allow_destroy: true
 
-    validates :name, uniqueness: { scope: [:resident_id, :core_rules] }, presence: true, length: { maximum: 64 }
-    validates :slug, uniqueness: { scope: [:resident_id, :core_rules] }, presence: true, length: { maximum: 128 }
+    validates :name, uniqueness: { scope: [ :resident_id, :core_rules ] }, presence: true, length: { maximum: 64 }
+    validates :slug, uniqueness: { scope: [ :resident_id, :core_rules ] }, presence: true, length: { maximum: 128 }
     validates :page_label, length: { maximum: 255 }
     validates :privacy, presence: true
     validate  :valid_privacy
@@ -57,15 +57,15 @@ module Storybuilder
     before_save :mark_for_removal
 
     def self.search(search)
-      where("storybuilder_adventures.name ilike ?", "%#{search}%")
+      where("storybuilder_adventures.name like ?", "%#{search}%")
     end
 
     def self.core_rules_filter(core_rules)
-      where("storybuilder_adventures.core_rules ilike ?", "%#{core_rules}%")
+      where("storybuilder_adventures.core_rules like ?", "%#{core_rules}%")
     end
 
     def self.simple_type
-      return self.type.demodulize
+      self.type.demodulize
     end
 
     private
@@ -87,6 +87,5 @@ module Storybuilder
           errors.add(:privacy, "is not valid.")
         end
       end
-
   end
 end

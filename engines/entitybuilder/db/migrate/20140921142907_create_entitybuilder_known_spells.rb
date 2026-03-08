@@ -1,10 +1,10 @@
-class CreateEntitybuilderKnownSpells < ActiveRecord::Migration
+class CreateEntitybuilderKnownSpells < ActiveRecord::Migration[4.2]
   def change
-    create_table :entitybuilder_known_spells, id: :uuid do |t|
-      t.uuid :known_spellable_id
+    create_table :entitybuilder_known_spells, id: :string do |t|
+      t.string :known_spellable_id
       t.string :known_spellable_type
       t.integer :sort_order
-      t.uuid :spell_id
+      t.string :spell_id
       t.boolean :prepared
       t.boolean :used
 
@@ -12,6 +12,6 @@ class CreateEntitybuilderKnownSpells < ActiveRecord::Migration
     end
 
     add_index :entitybuilder_known_spells, :spell_id
-    add_index :entitybuilder_known_spells, [:known_spellable_id, :known_spellable_type], :name => 'eb_known_spell_id_and_type'
+    add_index :entitybuilder_known_spells, [ :known_spellable_id, :known_spellable_type ], name: 'eb_known_spell_id_and_type'
   end
 end

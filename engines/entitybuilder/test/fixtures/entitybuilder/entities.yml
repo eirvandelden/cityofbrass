@@ -1,25 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  type: 
-  resident_id: 
+  id: entity_one
+  type: Entitybuilder::Entity
   name: MyString
   core_rules: MyString
-  privacy: MyString
-  sheet_privacy: MyString
+  privacy: Residents
+  sheet_privacy: Private
   short_description: MyString
-  full_description: MyString
-  introduction: MyString
-  notes: MyString
+  created_at: 2015-01-01 00:00:00
+  updated_at: 2015-01-01 00:00:00
 
 two:
-  type: 
-  resident_id: 
-  name: MyString
+  id: entity_two
+  type: Entitybuilder::Entity
+  name: MyString Two
   core_rules: MyString
-  privacy: MyString
-  sheet_privacy: MyString
+  privacy: Residents
+  sheet_privacy: Private
   short_description: MyString
-  full_description: MyString
-  introduction: MyString
-  notes: MyString
+  created_at: 2015-01-01 00:00:00
+  updated_at: 2015-01-01 00:00:00

@@ -1,7 +1,7 @@
-class CreateStorybuilderSections < ActiveRecord::Migration
+class CreateStorybuilderSections < ActiveRecord::Migration[4.2]
   def change
-    create_table :storybuilder_sections, id: :uuid do |t|
-      t.uuid :sectionable_id
+    create_table :storybuilder_sections, id: :string do |t|
+      t.string :sectionable_id
       t.string :sectionable_type
       t.integer :sort_order
       t.string :header
@@ -14,6 +14,6 @@ class CreateStorybuilderSections < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :storybuilder_sections, [:sectionable_id, :sectionable_type], :name => 'index_storybuilder_sections_id_and_type'
+    add_index :storybuilder_sections, [ :sectionable_id, :sectionable_type ], name: 'index_storybuilder_sections_id_and_type'
   end
 end
