@@ -1,14 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  type: 
-  resident_id: 
+  id: spell_one
+  type: Rulebuilder::Spell
   core_rules: MyString
   name: MyString
   short_description: MyString
   full_description: MyText
   school: MyString
-  level: 1
   casting_time: MyString
   components: MyString
   range: MyString
@@ -17,16 +16,17 @@ one:
   area: MyString
   duration: MyString
   saving_throw: MyString
+  created_at: 2015-01-01 00:00:00
+  updated_at: 2015-01-01 00:00:00
 
 two:
-  type: 
-  resident_id: 
+  id: spell_two
+  type: Rulebuilder::Spell
   core_rules: MyString
   name: MyString
   short_description: MyString
   full_description: MyText
   school: MyString
-  level: 1
   casting_time: MyString
   components: MyString
   range: MyString
@@ -35,3 +35,5 @@ two:
   area: MyString
   duration: MyString
   saving_throw: MyString
+  created_at: 2015-01-01 00:00:00
+  updated_at: 2015-01-01 00:00:00

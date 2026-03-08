@@ -1,8 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  type: 
-  resident_id: 
+  id: feat_one
+  type: Rulebuilder::Feat
   core_rules: MyString
   name: MyString
   short_description: MyString
@@ -11,10 +11,12 @@ one:
   benefit: MyText
   normal: MyText
   special: MyText
+  created_at: 2015-01-01 00:00:00
+  updated_at: 2015-01-01 00:00:00
 
 two:
-  type: 
-  resident_id: 
+  id: feat_two
+  type: Rulebuilder::Feat
   core_rules: MyString
   name: MyString
   short_description: MyString
@@ -23,3 +25,5 @@ two:
   benefit: MyText
   normal: MyText
   special: MyText
+  created_at: 2015-01-01 00:00:00
+  updated_at: 2015-01-01 00:00:00

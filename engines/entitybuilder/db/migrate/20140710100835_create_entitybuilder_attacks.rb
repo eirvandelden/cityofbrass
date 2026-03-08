@@ -1,10 +1,10 @@
-class CreateEntitybuilderAttacks < ActiveRecord::Migration
+class CreateEntitybuilderAttacks < ActiveRecord::Migration[4.2]
   def change
-    create_table :entitybuilder_attacks, id: :uuid do |t|
-      t.uuid :attackable_id
+    create_table :entitybuilder_attacks, id: :string do |t|
+      t.string :attackable_id
       t.string :attackable_type
       t.integer :sort_order
-      t.string :name, :null => false
+      t.string :name, null: false
       t.text :description
       t.string :attack_type
       t.string :attack_range
@@ -22,7 +22,7 @@ class CreateEntitybuilderAttacks < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :entitybuilder_attacks, [:attackable_id, :attackable_type], :name => 'eb_attack_id_and_type'
-    add_index :entitybuilder_attacks, [:attackable_id, :name], :unique => true, :name => 'eb_attack_name'
+    add_index :entitybuilder_attacks, [ :attackable_id, :attackable_type ], name: 'eb_attack_id_and_type'
+    add_index :entitybuilder_attacks, [ :attackable_id, :name ], unique: true, name: 'eb_attack_name'
   end
 end

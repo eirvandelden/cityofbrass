@@ -1,7 +1,7 @@
-class CreateEntitybuilderCasterLevels < ActiveRecord::Migration
+class CreateEntitybuilderCasterLevels < ActiveRecord::Migration[4.2]
   def change
-    create_table :entitybuilder_caster_levels, id: :uuid do |t|
-      t.uuid :caster_levelable_id
+    create_table :entitybuilder_caster_levels, id: :string do |t|
+      t.string :caster_levelable_id
       t.string :caster_levelable_type
       t.integer :sort_order
       t.string :caster_class
@@ -15,6 +15,6 @@ class CreateEntitybuilderCasterLevels < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :entitybuilder_caster_levels, [:caster_levelable_id, :caster_levelable_type], :name => 'eb_caster_level_id_and_type'
+    add_index :entitybuilder_caster_levels, [ :caster_levelable_id, :caster_levelable_type ], name: 'eb_caster_level_id_and_type'
   end
 end
