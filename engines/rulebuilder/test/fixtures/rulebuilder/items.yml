@@ -1,21 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  type: 
-  resident_id: 
+  id: item_one
+  type: Rulebuilder::Item
   core_rules: MyString
   name: MyString
   short_description: MyString
   full_description: MyText
   category: MyText
   weight: 9.99
+  created_at: 2015-01-01 00:00:00
+  updated_at: 2015-01-01 00:00:00
 
 two:
-  type: 
-  resident_id: 
+  id: item_two
+  type: Rulebuilder::Item
   core_rules: MyString
   name: MyString
   short_description: MyString
   full_description: MyText
   category: MyText
   weight: 9.99
+  created_at: 2015-01-01 00:00:00
+  updated_at: 2015-01-01 00:00:00

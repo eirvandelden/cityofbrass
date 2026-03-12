@@ -21,14 +21,12 @@ jobs:
 
       - name: Set up database
         env:
-          DATABASE_URL: sqlite3:db/test.sqlite3
           RAILS_ENV: test
         run: |
           bin/rails db:schema:load
 
       - name: Run tests
         env:
-          DATABASE_URL: sqlite3:db/test.sqlite3
           RAILS_ENV: test
         run: |
           bin/rails test

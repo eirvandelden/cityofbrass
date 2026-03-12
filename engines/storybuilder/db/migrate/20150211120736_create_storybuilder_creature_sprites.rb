@@ -1,9 +1,9 @@
-class CreateStorybuilderCreatureSprites < ActiveRecord::Migration
+class CreateStorybuilderCreatureSprites < ActiveRecord::Migration[4.2]
   def change
-    create_table :storybuilder_creature_sprites, id: :uuid do |t|
-      t.uuid :spriteable_id
+    create_table :storybuilder_creature_sprites, id: :string do |t|
+      t.string :spriteable_id
       t.string :spriteable_type
-      t.uuid :creature_id
+      t.string :creature_id
       t.string :name
       t.integer :sort_order
 
@@ -11,6 +11,6 @@ class CreateStorybuilderCreatureSprites < ActiveRecord::Migration
     end
 
     add_index :storybuilder_creature_sprites, :creature_id
-    add_index :storybuilder_creature_sprites, [:spriteable_id, :spriteable_type], :name => 'sb_creature_sprite_id_and_type'
+    add_index :storybuilder_creature_sprites, [ :spriteable_id, :spriteable_type ], name: 'sb_creature_sprite_id_and_type'
   end
 end

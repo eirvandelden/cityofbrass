@@ -1,6 +1,6 @@
-class RemovePolymorphicFromCasterLevels < ActiveRecord::Migration
+class RemovePolymorphicFromCasterLevels < ActiveRecord::Migration[4.2]
   def change
-    remove_index :entitybuilder_caster_levels, :name =>  'eb_caster_level_id_and_type'
+    remove_index :entitybuilder_caster_levels, name: 'eb_caster_level_id_and_type'
 
     rename_column :entitybuilder_caster_levels, :caster_levelable_id, :entity_id
 

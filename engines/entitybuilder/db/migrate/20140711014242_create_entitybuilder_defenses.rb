@@ -1,10 +1,10 @@
-class CreateEntitybuilderDefenses < ActiveRecord::Migration
+class CreateEntitybuilderDefenses < ActiveRecord::Migration[4.2]
   def change
-    create_table :entitybuilder_defenses, id: :uuid do |t|
-      t.uuid :defenseable_id
+    create_table :entitybuilder_defenses, id: :string do |t|
+      t.string :defenseable_id
       t.string :defenseable_type
       t.integer :sort_order
-      t.string :name, :null => false
+      t.string :name, null: false
       t.text :description
       t.integer :base
       t.integer :bonus
@@ -15,7 +15,7 @@ class CreateEntitybuilderDefenses < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :entitybuilder_defenses, [:defenseable_id, :defenseable_type], :name => 'eb_defense_id_and_type'
-    add_index :entitybuilder_defenses, [:defenseable_id, :name], :unique => true, :name => 'eb_defense_name'
+    add_index :entitybuilder_defenses, [ :defenseable_id, :defenseable_type ], name: 'eb_defense_id_and_type'
+    add_index :entitybuilder_defenses, [ :defenseable_id, :name ], unique: true, name: 'eb_defense_name'
   end
 end

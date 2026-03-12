@@ -3,50 +3,50 @@ module Worldbuilder
     include ReservedNames
     include KeysToWorldbuilder
 
-    PRIVACY_OPTIONS_FREE = ['Private']
-    PRIVACY_OPTIONS = ['Private', 'Friends', 'Residents', 'Public']
+    PRIVACY_OPTIONS_FREE = [ 'Private' ]
+    PRIVACY_OPTIONS = [ 'Private', 'Friends', 'Residents', 'Public' ]
 
     scope :short, -> { select('worldbuilder_districts.id, resident_id, worldbuilder_districts.name, worldbuilder_districts.slug, worldbuilder_districts.short_description, worldbuilder_districts.privacy, worldbuilder_districts.updated_at, worldbuilder_districts.page_label') }
     scope :pick_list, -> { select('worldbuilder_districts.id, worldbuilder_districts.name, worldbuilder_districts.slug') }
     scope :order_name, -> { order(:name) }
-    scope :order_updated_at, -> { order('updated_at desc') }
+    scope :order_updated_at, -> { order(Arel.sql('worldbuilder_districts.updated_at desc')) }
 
-  	belongs_to :resident, -> { select('residents.id, residents.user_id, residents.name, residents.slug') }
+    belongs_to :resident, -> { select('residents.id, residents.user_id, residents.name, residents.slug') }
 
     has_one :user,
             -> { select('users.id, email, status').where(status: User::ACTIVE_STATUS) },
-            :through => :resident,
-            :source => :user,
-            :class_name => "User"
+            through: :resident,
+            source: :user,
+            class_name: "User"
 
-    has_many :features, -> { order(:sort_order) }, :as => :featureable, :dependent => :destroy
-    has_many :sections, -> { order(:sort_order) }, :as => :sectionable, :dependent => :destroy
-    has_many :menu_items, -> { order(:sort_order) }, :as => :menu_itemable, :dependent => :destroy
-    has_one  :menu_item_join, :as => :menu_item_joinable, dependent: :destroy
-    has_many :contributors, :dependent => :destroy
+    has_many :features, -> { order(:sort_order) }, as: :featureable, dependent: :destroy
+    has_many :sections, -> { order(:sort_order) }, as: :sectionable, dependent: :destroy
+    has_many :menu_items, -> { order(:sort_order) }, as: :menu_itemable, dependent: :destroy
+    has_one  :menu_item_join, as: :menu_item_joinable, dependent: :destroy
+    has_many :contributors, dependent: :destroy
 
     has_one :gallery_image_join,
-            :as => :imageable,
-            :class_name => "Gallery::ImageJoin",
-            :dependent => :destroy
+            as: :imageable,
+            class_name: "Gallery::ImageJoin",
+            dependent: :destroy
 
     has_one :gallery_image,
-            :through => :gallery_image_join,
-            :source => :image,
-            :class_name => "Gallery::Image"
+            through: :gallery_image_join,
+            source: :image,
+            class_name: "Gallery::Image"
 
     has_many :pages, dependent: :destroy
 
-    accepts_nested_attributes_for :features, :allow_destroy => true
-    accepts_nested_attributes_for :sections, :allow_destroy => true
-    accepts_nested_attributes_for :menu_items, :allow_destroy => true
-    accepts_nested_attributes_for :menu_item_join, :allow_destroy => true
-    accepts_nested_attributes_for :gallery_image_join, :allow_destroy => true
+    accepts_nested_attributes_for :features, allow_destroy: true
+    accepts_nested_attributes_for :sections, allow_destroy: true
+    accepts_nested_attributes_for :menu_items, allow_destroy: true
+    accepts_nested_attributes_for :menu_item_join, allow_destroy: true
+    accepts_nested_attributes_for :gallery_image_join, allow_destroy: true
 
     validates :resident_id, presence: true
     validates :name, presence: true, length: { maximum: 64 }, uniqueness: { case_sensitive: false }
     validate  :name_not_reserved
-    validates :slug, presence: { :message => "" }, length: { maximum: 128 }, uniqueness: { case_sensitive: false }
+    validates :slug, presence: { message: "" }, length: { maximum: 128 }, uniqueness: { case_sensitive: false }
     validates :page_label, length: { maximum: 255 }
     validates :privacy, presence: true
     validate  :valid_privacy
@@ -60,11 +60,11 @@ module Worldbuilder
 
     def is_owner?(current_user)
       return true if current_user == self.user
-      return false
+      false
     end
 
     def self.search(search)
-      where("worldbuilder_districts.name ilike ?", "%#{search}%")
+      where("worldbuilder_districts.name like ?", "%#{search}%")
     end
 
     private
@@ -115,6 +115,5 @@ module Worldbuilder
           errors.add(:privacy, "is not valid.")
         end
       end
-
   end
 end

@@ -1,4 +1,4 @@
-class CleanupPolyColumns < ActiveRecord::Migration
+class CleanupPolyColumns < ActiveRecord::Migration[4.2]
   def change
     remove_column :entitybuilder_ability_scores, :ability_scoreable_type, :string
     remove_column :entitybuilder_attacks, :attackable_type, :string

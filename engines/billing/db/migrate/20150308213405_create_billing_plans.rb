@@ -1,7 +1,7 @@
-class CreateBillingPlans < ActiveRecord::Migration
+class CreateBillingPlans < ActiveRecord::Migration[4.2]
   def change
-    create_table :billing_plans, id: :uuid do |t|
-      t.string :name, :null => false
+    create_table :billing_plans, id: :string do |t|
+      t.string :name, null: false
       t.string :stripe_plan_token
       t.string :interval
       t.integer :interval_count
