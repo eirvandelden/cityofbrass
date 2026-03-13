@@ -17,6 +17,7 @@ jobs:
 
       - uses: spinel-coop/setup-rv@main
         with:
+          ruby-version: 'current'
           install-gems: true
 
       - name: Set up database
