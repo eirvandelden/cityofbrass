@@ -1,6 +1,6 @@
-class RemovePolymorphicFromKnownAbilities < ActiveRecord::Migration[4.2]
+class RemovePolymorphicFromKnownAbilities < ActiveRecord::Migration
   def change
-    remove_index :entitybuilder_known_abilities, name: 'eb_known_ability_id_and_type'
+    remove_index :entitybuilder_known_abilities, :name =>  'eb_known_ability_id_and_type'
 
     rename_column :entitybuilder_known_abilities, :known_abilityable_id, :entity_id
 

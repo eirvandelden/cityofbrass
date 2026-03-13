@@ -1,5 +1,5 @@
-class AddIsPrivateToDescriptors < ActiveRecord::Migration[4.2]
+class AddIsPrivateToDescriptors < ActiveRecord::Migration
   def change
-    add_column :entitybuilder_descriptors, :is_private, :boolean, default: false
+    add_column :entitybuilder_descriptors, :is_private, :boolean, :default => false
   end
 end

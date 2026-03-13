@@ -1,96 +1,91 @@
-require_relative "../../../../../app/models/concerns/json_array_columns"
-
 module Entitybuilder
   class Entity < ApplicationRecord
     include KeysToEntitybuilder
-    include JsonArrayColumns
 
-    PRIVACY_OPTIONS = [ 'Private', 'Friends', 'Residents' ]
-    NULL_ATTRS = %w[ ]
+    PRIVACY_OPTIONS = ['Private', 'Friends', 'Residents']
+    NULL_ATTRS = %w( )
 
     scope :short, -> { select('id, type, resident_id, name, short_description, core_rules, privacy, sheet_privacy') }
     scope :order_name, -> { order(:name) }
 
-    json_array_column :tags
-
-    has_one :campaign_join, dependent: :destroy
+    has_one :campaign_join, :dependent => :destroy
     has_one :campaign,
-            through: :campaign_join,
-            source: :campaign,
-            class_name: "Campaignmanager::Campaign"
+            :through => :campaign_join,
+            :source => :campaign,
+            :class_name => "Campaignmanager::Campaign"
 
     has_one :district,
             -> { select('worldbuilder_districts.id, worldbuilder_districts.name, worldbuilder_districts.slug') },
-            through: :campaign,
-            class_name: "Worldbuilder::District"
+            :through => :campaign,
+            :class_name => "Worldbuilder::District"
 
     has_one :gallery_image_join,
-            as: :imageable,
-            class_name: "Gallery::ImageJoin",
-            dependent: :destroy
+            :as => :imageable,
+            :class_name => "Gallery::ImageJoin",
+            :dependent => :destroy
 
     has_one :gallery_image,
-            through: :gallery_image_join,
-            source: :image,
-            class_name: "Gallery::Image"
+            :through => :gallery_image_join,
+            :source => :image,
+            :class_name => "Gallery::Image"
 
-    has_many :descriptors, -> { order(:sort_order) }, dependent: :destroy
-    has_many :ability_scores, -> { order(:sort_order) }, dependent: :destroy
-    has_many :movements, -> { order(:sort_order) }, dependent: :destroy
-    has_many :class_levels, -> { order(:sort_order) }, dependent: :destroy
-    has_many :caster_levels, -> { order(:sort_order) }, dependent: :destroy
-    has_many :base_values, -> { order(:sort_order) }, dependent: :destroy
-    has_many :skills, -> { order(:sort_order) }, dependent: :destroy
-    has_many :trackables, -> { order(:sort_order) }, dependent: :destroy
-    has_many :attacks, -> { order(:sort_order) }, dependent: :destroy
-    has_many :defenses, -> { order(:sort_order) }, dependent: :destroy
-    has_many :saving_throws, -> { order(:sort_order) }, dependent: :destroy
-    has_many :currencies, -> { order(:sort_order) }, dependent: :destroy
+    has_many :descriptors, -> { order(:sort_order) }, :dependent => :destroy
+    has_many :ability_scores, -> { order(:sort_order) }, :dependent => :destroy
+    has_many :movements, -> { order(:sort_order) }, :dependent => :destroy
+    has_many :class_levels, -> { order(:sort_order) }, :dependent => :destroy
+    has_many :caster_levels, -> { order(:sort_order) }, :dependent => :destroy
+    has_many :base_values, -> { order(:sort_order) }, :dependent => :destroy
+    has_many :skills, -> { order(:sort_order) }, :dependent => :destroy
+    has_many :trackables, -> { order(:sort_order) }, :dependent => :destroy
+    has_many :attacks, -> { order(:sort_order) }, :dependent => :destroy
+    has_many :defenses, -> { order(:sort_order) }, :dependent => :destroy
+    has_many :saving_throws, -> { order(:sort_order) }, :dependent => :destroy
+    has_many :currencies, -> { order(:sort_order) }, :dependent => :destroy
 
-    has_many :linked_rules, -> { order(:sort_order) }, dependent: :destroy
-    has_many :rules, through: :linked_rules, class_name: "Rulebuilder::Rule"
+    has_many :linked_rules, -> { order(:sort_order) }, :dependent => :destroy
+    has_many :rules, :through => :linked_rules, :class_name => "Rulebuilder::Rule"
 
-    has_many :known_spells, -> { order(:sort_order) }, dependent: :destroy
-    has_many :spells, through: :known_spells, class_name: "Rulebuilder::Spell"
-    has_many :prepared_known_spells, -> { order(:sort_order).prepared }, class_name: "KnownSpell"
-    has_many :prepared_spells, through: :prepared_known_spells, class_name: "Rulebuilder::Spell", source: :spell
+    has_many :known_spells, -> { order(:sort_order) }, :dependent => :destroy
+    has_many :spells, :through => :known_spells, :class_name => "Rulebuilder::Spell"
+    has_many :prepared_known_spells, -> { order(:sort_order).prepared }, :class_name => "KnownSpell"
+    has_many :prepared_spells, :through => :prepared_known_spells, :class_name => "Rulebuilder::Spell", :source => :spell
 
-    has_many :inventory_items, -> { order(:sort_order) }, dependent: :destroy
-    has_many :items, through: :inventory_items, class_name: "Rulebuilder::Item"
+    has_many :inventory_items, -> { order(:sort_order) }, :dependent => :destroy
+    has_many :items, :through => :inventory_items, :class_name => "Rulebuilder::Item"
 
-    has_many :modifiers, -> { order(:item) }, dependent: :destroy
+    has_many :modifiers, -> { order(:item) }, :dependent => :destroy
 
-    has_many :notables, -> { order(:sort_order) }, as: :notableable, dependent: :destroy
-    has_many :entities, -> { select('id, type, name') }, through: :notables, source: :entity, class_name: "Entitybuilder::Entity"
+    has_many :notables, -> { order(:sort_order) }, :as => :notableable, :dependent => :destroy
+    has_many :entities, -> { select('id, type, name') }, :through => :notables, :source => :entity, :class_name => "Entitybuilder::Entity"
 
-    has_many :eb_notables, -> { order(:sort_order) }, class_name: "Entitybuilder::Notable", dependent: :destroy
-    has_many :sb_notables, -> { order(:sort_order) }, class_name: "Storybuilder::Notable", dependent: :destroy
-    has_many :cm_notables, -> { order(:sort_order) }, class_name: "Campaignmanager::Notable", dependent: :destroy
-    has_many :ap_notables, -> { order(:sort_order) }, class_name: "Activeplay::Notable", dependent: :destroy
+    has_many :eb_notables, -> { order(:sort_order) }, :class_name => "Entitybuilder::Notable", :dependent => :destroy
+    has_many :sb_notables, -> { order(:sort_order) }, :class_name => "Storybuilder::Notable", :dependent => :destroy
+    has_many :cm_notables, -> { order(:sort_order) }, :class_name => "Campaignmanager::Notable", :dependent => :destroy
+    has_many :ap_notables, -> { order(:sort_order) }, :class_name => "Activeplay::Notable", :dependent => :destroy
 
-    accepts_nested_attributes_for :gallery_image_join, allow_destroy: true
-    accepts_nested_attributes_for :campaign_join, allow_destroy: true
-    accepts_nested_attributes_for :descriptors, allow_destroy: true
-    accepts_nested_attributes_for :ability_scores, allow_destroy: true
-    accepts_nested_attributes_for :movements, allow_destroy: true
-    accepts_nested_attributes_for :class_levels, allow_destroy: true
-    accepts_nested_attributes_for :caster_levels, allow_destroy: true
-    accepts_nested_attributes_for :base_values, allow_destroy: true
-    accepts_nested_attributes_for :skills, allow_destroy: true
-    accepts_nested_attributes_for :trackables, allow_destroy: true
-    accepts_nested_attributes_for :attacks, allow_destroy: true
-    accepts_nested_attributes_for :defenses, allow_destroy: true
-    accepts_nested_attributes_for :saving_throws, allow_destroy: true
-    accepts_nested_attributes_for :currencies, allow_destroy: true
+    accepts_nested_attributes_for :gallery_image_join, :allow_destroy => true
+    accepts_nested_attributes_for :campaign_join, :allow_destroy => true
+    accepts_nested_attributes_for :descriptors, :allow_destroy => true
+    accepts_nested_attributes_for :ability_scores, :allow_destroy => true
+    accepts_nested_attributes_for :movements, :allow_destroy => true
+    accepts_nested_attributes_for :class_levels, :allow_destroy => true
+    accepts_nested_attributes_for :caster_levels, :allow_destroy => true
+    accepts_nested_attributes_for :base_values, :allow_destroy => true
+    accepts_nested_attributes_for :skills, :allow_destroy => true
+    accepts_nested_attributes_for :trackables, :allow_destroy => true
+    accepts_nested_attributes_for :attacks, :allow_destroy => true
+    accepts_nested_attributes_for :defenses, :allow_destroy => true
+    accepts_nested_attributes_for :saving_throws, :allow_destroy => true
+    accepts_nested_attributes_for :currencies, :allow_destroy => true
 
-    accepts_nested_attributes_for :linked_rules, allow_destroy: true
+    accepts_nested_attributes_for :linked_rules, :allow_destroy => true
 
-    accepts_nested_attributes_for :known_spells, allow_destroy: true
-    accepts_nested_attributes_for :inventory_items, allow_destroy: true
+    accepts_nested_attributes_for :known_spells, :allow_destroy => true
+    accepts_nested_attributes_for :inventory_items, :allow_destroy => true
 
-    accepts_nested_attributes_for :notables, allow_destroy: true
+    accepts_nested_attributes_for :notables, :allow_destroy => true
 
-    accepts_nested_attributes_for :modifiers, allow_destroy: true
+    accepts_nested_attributes_for :modifiers, :allow_destroy => true
 
     validates :name, presence: true, length: { maximum: 64 }
     validates :core_rules, presence: true
@@ -110,74 +105,76 @@ module Entitybuilder
     before_save :mark_for_removal
 
     def badge_color
-      "##{SecureRandom.hex(3)}"
+      return "##{SecureRandom.hex(3)}"
     end
 
     def tag_list
-      Array(tags).join(', ')
+      tags.join(', ')
     end
 
     def tag_list=(names)
       self.tags = names.split(',').map do |n|
-        n = n.parameterize.tr('-', ' ').strip
-      end.uniq.sort
+        n = n.parameterize.gsub('-', ' ').strip
+      end
+      self.tags.uniq!
+      self.tags.sort!
     end
 
     def is_character?
-      self.type.include? "Character"
+      return self.type.include?"Character"
     end
 
     def title
-      title_builder = self.class_levels.first.name.titleize if type.exclude? "Creature" and self.class_levels.any?
-      title_builder = 'Commoner' if title_builder.blank? and type.include? "Character"
-      title_builder
+      title_builder = self.class_levels.first.name.titleize if type.exclude?"Creature" and self.class_levels.any?
+      title_builder = 'Commoner' if title_builder.blank? and type.include?"Character"
+      return title_builder
     end
 
     def index_title
       title_builder = self.core_rules.titleize
       title_builder += " - #{title}" if title.present?
-      title_builder[0, 50]
+      return title_builder[0,50]
     end
 
     def profile_title
-      descriptors = self.descriptors.where(name: [ 'Alignment', 'Size', 'Race', 'Species', 'Type', 'Classification', 'Ancestry' ]).pluck(:description)
+      descriptors = self.descriptors.where(name: ['Alignment', 'Size', 'Race', 'Species', 'Type', 'Classification', 'Ancestry']).pluck(:description)
       title_builder = descriptors.join(' ')
-      title_builder[0, 50]
+      return title_builder[0,50]
     end
 
     def badge_title
-      return self.resident.name if self.type.include? "Character"
-      # return self.profile_title if self.profile_title.present?
-      return "Character" if self.type.include? "Character"
-      return "Creature" if self.type.include? "Creature"
-      "NPC" if self.type.include? "Npc"
+      return self.resident.name if self.type.include?"Character"
+      #return self.profile_title if self.profile_title.present?
+      return "Character" if self.type.include?"Character"
+      return "Creature" if self.type.include?"Creature"
+      return "NPC" if self.type.include?"Npc"
     end
 
     def simple_type
-      return "Character" if self.type.include? "Character"
-      return "Creature" if self.type.include? "Creature"
-      "NPC" if self.type.include? "Npc"
+      return "Character" if self.type.include?"Character"
+      return "Creature" if self.type.include?"Creature"
+      return "NPC" if self.type.include?"Npc"
     end
 
     def missing_core_skills
       current_skills = skills.pluck(:name)
       skill_list = CoreRules::Entity.core_skills(core_rules).map { |m| m['name'] }
-      skill_list.reject { |d| current_skills.include?(d) }
+      return skill_list.reject { |d| current_skills.include?(d) }
     end
 
     def self.search(search)
-      where("entitybuilder_entities.name like ?", "%#{search}%")
+      where("entitybuilder_entities.name ilike ?", "%#{search}%")
     end
 
     def self.core_rules_filter(core_rules_filter)
-      where("entitybuilder_entities.core_rules like ?", "%#{core_rules_filter}%")
+      where("entitybuilder_entities.core_rules ilike ?", "%#{core_rules_filter}%")
     end
 
     def clickable?(current_user, admin_signed_in, _type)
       return true if can_edit?(current_user, admin_signed_in, _type)
-      return true if _type.include? "Stock"
-      return true if _type.include? "Proprietary"
-      false
+      return true if _type.include?"Stock"
+      return true if _type.include?"Proprietary"
+      return false
     end
 
     private

@@ -1,4 +1,4 @@
-class AddPreparedToEntitybuilderSpells < ActiveRecord::Migration[4.2]
+class AddPreparedToEntitybuilderSpells < ActiveRecord::Migration
   def change
     add_column :entitybuilder_spells, :prepared, :boolean
   end

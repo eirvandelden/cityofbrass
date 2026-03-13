@@ -1,5 +1,5 @@
-class RemovePagesIndexResidentId < ActiveRecord::Migration[4.2]
+class RemovePagesIndexResidentId < ActiveRecord::Migration
   def change
-    remove_index :storybuilder_pages, [ :resident_id, :type, :slug ]
+    remove_index :storybuilder_pages, [:resident_id, :type, :slug]
   end
 end

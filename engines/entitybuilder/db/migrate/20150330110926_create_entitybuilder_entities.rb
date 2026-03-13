@@ -1,8 +1,8 @@
-class CreateEntitybuilderEntities < ActiveRecord::Migration[4.2]
+class CreateEntitybuilderEntities < ActiveRecord::Migration
   def change
-    create_table :entitybuilder_entities, id: :string do |t|
-      t.string :type, null: false
-      t.string :resident_id
+    create_table :entitybuilder_entities, id: :uuid do |t|
+      t.string :type, :null => false
+      t.uuid :resident_id
       t.string :name
       t.string :core_rules
       t.string :privacy

@@ -1,4 +1,4 @@
-class AddIntroductionToEntitybuilderCreatures < ActiveRecord::Migration[4.2]
+class AddIntroductionToEntitybuilderCreatures < ActiveRecord::Migration
   def change
     add_column :entitybuilder_creatures, :introduction, :text
   end

@@ -1,8 +1,8 @@
-class CreateEntitybuilderLinkedRules < ActiveRecord::Migration[4.2]
+class CreateEntitybuilderLinkedRules < ActiveRecord::Migration
   def change
-    create_table :entitybuilder_linked_rules, id: :string do |t|
-      t.string :entity_id
-      t.string :rule_id
+    create_table :entitybuilder_linked_rules, id: :uuid do |t|
+      t.uuid :entity_id
+      t.uuid :rule_id
       t.integer :sort_order
       t.string :detail
 

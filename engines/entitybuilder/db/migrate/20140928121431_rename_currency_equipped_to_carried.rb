@@ -1,4 +1,4 @@
-class RenameCurrencyEquippedToCarried < ActiveRecord::Migration[4.2]
+class RenameCurrencyEquippedToCarried < ActiveRecord::Migration
   def change
     rename_column :entitybuilder_currencies, :equipped, :carried
   end

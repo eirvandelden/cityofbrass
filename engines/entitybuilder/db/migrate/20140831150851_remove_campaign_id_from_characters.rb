@@ -1,5 +1,5 @@
-class RemoveCampaignIdFromCharacters < ActiveRecord::Migration[4.2]
+class RemoveCampaignIdFromCharacters < ActiveRecord::Migration
   def change
-    remove_column :entitybuilder_characters, :campaign_id, :string
+    remove_column :entitybuilder_characters, :campaign_id, :uuid
   end
 end

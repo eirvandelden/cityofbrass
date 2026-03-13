@@ -1,16 +1,23 @@
+
 default: &default
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  # encoding: unicode
+  # host: postgres
+  # username: cityofbrass
+  # password: cityofbrass
+  # pool: 5
+  # host: <%= ENV['DOCKER_POSTGRES_HOST'] %>
+  # port: <%= ENV['DOCKER_POSTGRES_PORT'] %>
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: cityofbrass_development
 
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: cityofbrass_test
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: cityofbrass_production
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>

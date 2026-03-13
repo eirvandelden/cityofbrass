@@ -1,8 +1,8 @@
-class CreateWorldbuilderContributors < ActiveRecord::Migration[4.2]
+class CreateWorldbuilderContributors < ActiveRecord::Migration
   def change
-    create_table :worldbuilder_contributors, id: :string do |t|
-      t.string :district_id,  null: false
-      t.string :affiliation_id, null: false
+    create_table :worldbuilder_contributors, id: :uuid do |t|
+      t.uuid :district_id,  :null => false
+      t.uuid :affiliation_id, :null => false
 
       t.timestamps
     end

@@ -1,4 +1,4 @@
-class AddTypeToCharacterAndCreature < ActiveRecord::Migration[4.2]
+class AddTypeToCharacterAndCreature < ActiveRecord::Migration
   def change
     add_column :entitybuilder_characters, :type, :string
     add_column :entitybuilder_creatures, :type, :string

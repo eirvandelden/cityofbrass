@@ -1,10 +1,10 @@
-class CreateActiveplayNotables < ActiveRecord::Migration[4.2]
+class CreateActiveplayNotables < ActiveRecord::Migration
   def change
-    create_table :activeplay_notables, id: :string do |t|
+    create_table :activeplay_notables, id: :uuid do |t|
       t.string :name
       t.integer :sort_order
-      t.string :virtual_table_id
-      t.string :entity_id
+      t.uuid :virtual_table_id
+      t.uuid :entity_id
 
       t.timestamps null: false
     end

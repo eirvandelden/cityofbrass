@@ -1,7 +1,7 @@
-class CreateWorldbuilderFeatures < ActiveRecord::Migration[4.2]
+class CreateWorldbuilderFeatures < ActiveRecord::Migration
   def change
-    create_table :worldbuilder_features, id: :string do |t|
-      t.string :featureable_id
+    create_table :worldbuilder_features, id: :uuid do |t|
+      t.uuid :featureable_id
       t.string :featureable_type
       t.integer :sort_order
       t.string :feature_label
@@ -14,6 +14,6 @@ class CreateWorldbuilderFeatures < ActiveRecord::Migration[4.2]
       t.timestamps
     end
 
-    add_index :worldbuilder_features, [ :featureable_id, :featureable_type ], name: 'index_worldbuilder_features_id_and_type'
+    add_index :worldbuilder_features, [:featureable_id, :featureable_type], :name => 'index_worldbuilder_features_id_and_type'
   end
 end

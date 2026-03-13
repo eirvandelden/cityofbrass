@@ -1,4 +1,4 @@
-class ChangeQuantityToBigint < ActiveRecord::Migration[4.2]
+class ChangeQuantityToBigint < ActiveRecord::Migration
   def change
     change_column :entitybuilder_currencies, :quantity, :bigint
   end

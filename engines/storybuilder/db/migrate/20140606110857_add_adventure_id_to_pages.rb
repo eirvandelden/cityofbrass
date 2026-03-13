@@ -1,6 +1,6 @@
-class AddAdventureIdToPages < ActiveRecord::Migration[4.2]
+class AddAdventureIdToPages < ActiveRecord::Migration
   def change
-    add_column :storybuilder_pages, :adventure_id, :string
-    add_index :storybuilder_pages, [ :adventure_id, :type, :slug ]
+    add_column :storybuilder_pages, :adventure_id, :uuid
+    add_index :storybuilder_pages, [:adventure_id, :type, :slug]
   end
 end

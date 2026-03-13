@@ -1,8 +1,8 @@
-class CreateRulebuilderSpells < ActiveRecord::Migration[4.2]
+class CreateRulebuilderSpells < ActiveRecord::Migration
   def change
-    create_table :rulebuilder_spells, id: :string do |t|
-      t.string :type, null: false
-      t.string :resident_id
+    create_table :rulebuilder_spells, id: :uuid do |t|
+      t.string :type, :null => false
+      t.uuid :resident_id
       t.string :core_rules
       t.string :name
       t.string :short_description

@@ -1,4 +1,4 @@
-class RemoveNotNullFromGalleryResidentId < ActiveRecord::Migration[4.2]
+class RemoveNotNullFromGalleryResidentId < ActiveRecord::Migration
   def change
     change_column_null(:gallery_images, :resident_id, true)
   end

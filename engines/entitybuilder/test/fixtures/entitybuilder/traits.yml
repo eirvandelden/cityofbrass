@@ -1,13 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: trait_one
-  name: MyString
+  traitable_id: 
+  traitable_type: MyString
   sort_order: 1
+  name: MyString
   short_description: MyString
+  full_description: MyText
 
 two:
-  id: trait_two
-  name: MyString Two
-  sort_order: 2
+  traitable_id: 
+  traitable_type: MyString
+  sort_order: 1
+  name: MyString
   short_description: MyString
+  full_description: MyText

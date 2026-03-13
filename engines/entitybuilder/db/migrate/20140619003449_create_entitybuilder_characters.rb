@@ -1,9 +1,11 @@
-class CreateEntitybuilderCharacters < ActiveRecord::Migration[4.2]
+class CreateEntitybuilderCharacters < ActiveRecord::Migration
   def change
-    create_table :entitybuilder_characters, id: :string do |t|
-      t.string :resident_id, null: false
-      t.string :campaign_id
-      t.string :name, null: false
+    enable_extension 'uuid-ossp'
+
+    create_table :entitybuilder_characters, id: :uuid do |t|
+      t.uuid :resident_id, :null => false
+      t.uuid :campaign_id
+      t.string :name, :null => false
       t.string :slug
       t.string :race
       t.string :privacy
@@ -16,6 +18,6 @@ class CreateEntitybuilderCharacters < ActiveRecord::Migration[4.2]
       t.timestamps
     end
 
-    add_index :entitybuilder_characters, [ :resident_id, :slug ], unique: true
+    add_index :entitybuilder_characters, [:resident_id, :slug], :unique => true
   end
 end

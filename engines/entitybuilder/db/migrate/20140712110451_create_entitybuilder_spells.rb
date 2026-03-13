@@ -1,10 +1,10 @@
-class CreateEntitybuilderSpells < ActiveRecord::Migration[4.2]
+class CreateEntitybuilderSpells < ActiveRecord::Migration
   def change
-    create_table :entitybuilder_spells, id: :string do |t|
-      t.string :spellable_id
+    create_table :entitybuilder_spells, id: :uuid do |t|
+      t.uuid :spellable_id
       t.string :spellable_type
       t.integer :sort_order
-      t.string :name, null: false
+      t.string :name, :null => false
       t.string :short_description
       t.text :full_description
       t.string :school
@@ -21,7 +21,7 @@ class CreateEntitybuilderSpells < ActiveRecord::Migration[4.2]
       t.timestamps
     end
 
-    add_index :entitybuilder_spells, [ :spellable_id, :spellable_type ], name: 'eb_spell_id_and_type'
-    add_index :entitybuilder_spells, [ :spellable_id, :name ], unique: true, name: 'eb_spell_name'
+    add_index :entitybuilder_spells, [:spellable_id, :spellable_type], :name => 'eb_spell_id_and_type'
+    add_index :entitybuilder_spells, [:spellable_id, :name], :unique => true, :name => 'eb_spell_name'
   end
 end

@@ -1,4 +1,4 @@
-class AddRulebuilderTypeIndex < ActiveRecord::Migration[4.2]
+class AddRulebuilderTypeIndex < ActiveRecord::Migration
   def change
     add_index :rulebuilder_abilities, :type
     add_index :rulebuilder_feats, :type

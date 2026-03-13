@@ -1,5 +1,5 @@
-class RemoveResidentIdFromWorldbuilderPages < ActiveRecord::Migration[4.2]
+class RemoveResidentIdFromWorldbuilderPages < ActiveRecord::Migration
   def change
-    remove_column :worldbuilder_pages, :resident_id, :string
+    remove_column :worldbuilder_pages, :resident_id, :uuid
   end
 end

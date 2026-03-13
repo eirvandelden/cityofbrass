@@ -1,4 +1,4 @@
-class AddOriginalModType < ActiveRecord::Migration[4.2]
+class AddOriginalModType < ActiveRecord::Migration
   def change
     add_column :entitybuilder_modifiers, :original_mod_type, :string
   end

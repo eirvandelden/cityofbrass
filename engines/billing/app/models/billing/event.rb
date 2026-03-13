@@ -1,5 +1,6 @@
 module Billing
   class Event < ApplicationRecord
+
     belongs_to :user
 
     scope :order_event_date, -> { order('event_date desc') }
@@ -7,7 +8,7 @@ module Billing
     validates :stripe_event_token, presence: true, uniqueness: true
 
     def self.search(search)
-      joins(:user).where("stripe_event_token like ? or users.email like ?", "%#{search}%", "%#{search}%")
+      joins(:user).where("stripe_event_token ilike ? or users.email ilike ?", "%#{search}%", "%#{search}%")
     end
 
     def save_stripe_event(stripe_event, user)
@@ -27,5 +28,6 @@ module Billing
         logger.error "Error: #{e.message}"
       end
     end
+
   end
 end

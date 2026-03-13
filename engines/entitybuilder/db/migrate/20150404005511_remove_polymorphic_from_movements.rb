@@ -1,7 +1,7 @@
-class RemovePolymorphicFromMovements < ActiveRecord::Migration[4.2]
+class RemovePolymorphicFromMovements < ActiveRecord::Migration
   def change
-    remove_index :entitybuilder_movements, name: 'eb_movement_id_and_type'
-    remove_index :entitybuilder_movements, name: 'eb_movement_name'
+    remove_index :entitybuilder_movements, :name =>  'eb_movement_id_and_type'
+    remove_index :entitybuilder_movements, :name =>  'eb_movement_name'
 
     rename_column :entitybuilder_movements, :movementable_id, :entity_id
 

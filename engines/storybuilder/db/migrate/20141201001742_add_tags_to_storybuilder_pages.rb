@@ -1,6 +1,6 @@
-class AddTagsToStorybuilderPages < ActiveRecord::Migration[4.2]
+class AddTagsToStorybuilderPages < ActiveRecord::Migration
   def change
-    add_column :storybuilder_pages, :tags, :text
+    add_column :storybuilder_pages, :tags, :text, array: true, default: []
     add_index  :storybuilder_pages, :tags, using: 'gin'
   end
 end

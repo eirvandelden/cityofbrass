@@ -1,9 +1,9 @@
-class CreateRulebuilderRules < ActiveRecord::Migration[4.2]
+class CreateRulebuilderRules < ActiveRecord::Migration
   def change
-    create_table :rulebuilder_rules, id: :string do |t|
-      t.string :type, null: false
-      t.string :resident_id
-      t.string :parent_id
+    create_table :rulebuilder_rules, id: :uuid do |t|
+      t.string :type, :null => false
+      t.uuid :resident_id
+      t.uuid :parent_id
       t.string :core_rules
       t.string :rule_type
       t.boolean :is_shared
@@ -13,8 +13,8 @@ class CreateRulebuilderRules < ActiveRecord::Migration[4.2]
       t.string :publisher
       t.string :source
       t.boolean :is_3pp
-      t.text :tags
-      t.text :categories
+      t.text :tags, array: true, default: []
+      t.text :categories, array: true, default: []
       t.string :prerequisites
       t.text :benefit
       t.text :normal

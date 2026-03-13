@@ -1,9 +1,9 @@
-class CreateWorldbuilderPages < ActiveRecord::Migration[4.2]
+class CreateWorldbuilderPages < ActiveRecord::Migration
   def change
-    create_table :worldbuilder_pages, id: :string do |t|
+    create_table :worldbuilder_pages, id: :uuid do |t|
       t.string :type
-      t.string :district_id
-      t.string :parent_id
+      t.uuid :district_id
+      t.uuid :parent_id
       t.string :name
       t.string :slug
       t.string :page_label
@@ -13,7 +13,7 @@ class CreateWorldbuilderPages < ActiveRecord::Migration[4.2]
       t.timestamps
     end
 
-    add_index :worldbuilder_pages, [ :id, :type ]
-    add_index :worldbuilder_pages, [ :district_id, :type, :slug ], unique: true
+    add_index :worldbuilder_pages, [:id, :type]
+    add_index :worldbuilder_pages, [:district_id, :type, :slug], :unique => true
   end
 end

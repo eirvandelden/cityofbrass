@@ -1,4 +1,4 @@
-class StorybuilderTableChanges < ActiveRecord::Migration[4.2]
+class StorybuilderTableChanges < ActiveRecord::Migration
   def change
     drop_table :storybuilder_campaigns
     drop_table :storybuilder_players

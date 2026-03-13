@@ -1,4 +1,4 @@
-class AddTypeToAdventures < ActiveRecord::Migration[4.2]
+class AddTypeToAdventures < ActiveRecord::Migration
   def change
     add_column :storybuilder_adventures, :type, :string
   end

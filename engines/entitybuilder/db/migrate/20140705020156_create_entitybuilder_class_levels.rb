@@ -1,10 +1,10 @@
-class CreateEntitybuilderClassLevels < ActiveRecord::Migration[4.2]
+class CreateEntitybuilderClassLevels < ActiveRecord::Migration
   def change
-    create_table :entitybuilder_class_levels, id: :string do |t|
-      t.string :class_levelable_id
+    create_table :entitybuilder_class_levels, id: :uuid do |t|
+      t.uuid :class_levelable_id
       t.string :class_levelable_type
       t.integer :sort_order
-      t.string :name, null: false
+      t.string :name, :null => false
       t.text :description
       t.integer :level
       t.string :hit_dice
@@ -13,7 +13,7 @@ class CreateEntitybuilderClassLevels < ActiveRecord::Migration[4.2]
       t.timestamps
     end
 
-    add_index :entitybuilder_class_levels, [ :class_levelable_id, :class_levelable_type ], name: 'eb_class_level_id_and_type'
-    add_index :entitybuilder_class_levels, [ :class_levelable_id, :name ], unique: true, name: 'eb_class_level_name'
+    add_index :entitybuilder_class_levels, [:class_levelable_id, :class_levelable_type], :name => 'eb_class_level_id_and_type'
+    add_index :entitybuilder_class_levels, [:class_levelable_id, :name], :unique => true, :name => 'eb_class_level_name'
   end
 end

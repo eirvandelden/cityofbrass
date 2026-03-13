@@ -1,5 +1,5 @@
-class AddResidentIdToPage < ActiveRecord::Migration[4.2]
+class AddResidentIdToPage < ActiveRecord::Migration
   def change
-    add_column :worldbuilder_pages, :resident_id, :string
+    add_column :worldbuilder_pages, :resident_id, :uuid
   end
 end

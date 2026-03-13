@@ -1,4 +1,4 @@
-class DropEntitybuilderCharacteristics < ActiveRecord::Migration[4.2]
+class DropEntitybuilderCharacteristics < ActiveRecord::Migration
   def change
     drop_table :entitybuilder_characteristics
   end

@@ -1,10 +1,10 @@
-class CreateEntitybuilderSkills < ActiveRecord::Migration[4.2]
+class CreateEntitybuilderSkills < ActiveRecord::Migration
   def change
-    create_table :entitybuilder_skills, id: :string do |t|
-      t.string :skillable_id
+    create_table :entitybuilder_skills, id: :uuid do |t|
+      t.uuid :skillable_id
       t.string :skillable_type
       t.integer :sort_order
-      t.string :name, null: false
+      t.string :name, :null => false
       t.text :description
       t.integer :bonus
       t.boolean :class_skill
@@ -16,7 +16,7 @@ class CreateEntitybuilderSkills < ActiveRecord::Migration[4.2]
       t.timestamps
     end
 
-    add_index :entitybuilder_skills, [ :skillable_id, :skillable_type ], name: 'eb_skill_id_and_type'
-    add_index :entitybuilder_skills, [ :skillable_id, :name ], unique: true, name: 'eb_skill_name'
+    add_index :entitybuilder_skills, [:skillable_id, :skillable_type], :name => 'eb_skill_id_and_type'
+    add_index :entitybuilder_skills, [:skillable_id, :name], :unique => true, :name => 'eb_skill_name'
   end
 end

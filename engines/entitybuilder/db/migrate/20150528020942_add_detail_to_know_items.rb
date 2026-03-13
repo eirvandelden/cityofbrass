@@ -1,4 +1,4 @@
-class AddDetailToKnowItems < ActiveRecord::Migration[4.2]
+class AddDetailToKnowItems < ActiveRecord::Migration
   def change
     add_column :entitybuilder_known_abilities, :detail, :string
     add_column :entitybuilder_known_feats, :detail, :string

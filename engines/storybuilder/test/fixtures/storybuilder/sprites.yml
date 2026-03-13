@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  notableable_id: 
+  notableable_type: MyString
+  entity_id: 
+  name: MyString
+  sort_order: 1
+
+two:
+  notableable_id: 
+  notableable_type: MyString
+  entity_id: 
+  name: MyString
+  sort_order: 1

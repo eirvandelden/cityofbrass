@@ -1,4 +1,4 @@
-class DropTables < ActiveRecord::Migration[4.2]
+class DropTables < ActiveRecord::Migration
   def change
     drop_table :worldbuilder_atlas_entries
     drop_table :worldbuilder_deities

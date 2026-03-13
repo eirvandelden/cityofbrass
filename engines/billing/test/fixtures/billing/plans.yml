@@ -1,19 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: plan_one
-  name: Basic Plan
-  stripe_plan_token: plan_tok_one
-  interval: month
-  amount: 1000
-  created_at: 2015-01-01 00:00:00
-  updated_at: 2015-01-01 00:00:00
+  name: MyString
+  stripe_plan_token: MyString
+  interval: MyString
+  amount: 1
+  description: MyString
 
 two:
-  id: plan_two
-  name: Premium Plan
-  stripe_plan_token: plan_tok_two
-  interval: month
-  amount: 2000
-  created_at: 2015-01-01 00:00:00
-  updated_at: 2015-01-01 00:00:00
+  name: MyString
+  stripe_plan_token: MyString
+  interval: MyString
+  amount: 1
+  description: MyString

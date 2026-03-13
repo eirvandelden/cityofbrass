@@ -1,25 +1,37 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: rule_one
-  type: Rulebuilder::Rule
+  type: MyText
+  resident_id: 
+  parent_id: 
   core_rules: MyText
   rule_type: MyText
   name: MyText
   short_description: MyText
   full_description: MyText
   publisher: MyText
-  created_at: 2015-01-01 00:00:00
-  updated_at: 2015-01-01 00:00:00
+  source: MyText
+  is_3pp: MyText
+  tags: MyText
+  prerequisites: MyText
+  benefit: MyText
+  normal: MyText
+  special: MyText
 
 two:
-  id: rule_two
-  type: Rulebuilder::Rule
+  type: MyText
+  resident_id: 
+  parent_id: 
   core_rules: MyText
   rule_type: MyText
   name: MyText
   short_description: MyText
   full_description: MyText
   publisher: MyText
-  created_at: 2015-01-01 00:00:00
-  updated_at: 2015-01-01 00:00:00
+  source: MyText
+  is_3pp: MyText
+  tags: MyText
+  prerequisites: MyText
+  benefit: MyText
+  normal: MyText
+  special: MyText

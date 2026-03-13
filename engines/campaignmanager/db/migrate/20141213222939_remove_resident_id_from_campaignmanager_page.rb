@@ -1,5 +1,5 @@
-class RemoveResidentIdFromCampaignmanagerPage < ActiveRecord::Migration[4.2]
+class RemoveResidentIdFromCampaignmanagerPage < ActiveRecord::Migration
   def change
-    remove_column :campaignmanager_pages, :resident_id, :string
+    remove_column :campaignmanager_pages, :resident_id, :uuid
   end
 end

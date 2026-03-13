@@ -1,4 +1,4 @@
-class AddProficiencyBonusToStuff < ActiveRecord::Migration[4.2]
+class AddProficiencyBonusToStuff < ActiveRecord::Migration
   def change
     add_column :entitybuilder_skills, :proficient, :boolean
     add_column :entitybuilder_saving_throws, :proficient, :boolean
