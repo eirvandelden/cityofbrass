@@ -17,10 +17,164 @@
     "sheet": "default",
     "use_modifiers": "false",
     "show_core_blocks": "false",
-    "menu": [],
-    "core_skills": [],
-    "character": {},
-    "creature": {}
+    "menu": [
+      { "label": "Descriptors",      "link": "descriptors",                              "add_modifiers": "false" },
+      { "label": "Characteristics",  "link": "ability_scores",                           "add_modifiers": "false" },
+      { "label": "Base Values",      "link": "base_values",                              "add_modifiers": "false" },
+      { "label": "Trackables",       "link": "trackables",                               "add_modifiers": "false" },
+      { "label": "Movement",         "link": "movements",                                "add_modifiers": "false" },
+      { "label": "Skills",           "link": "skills",                                   "add_modifiers": "false" },
+      { "label": "Abilities",        "link": "known_spells",                             "add_modifiers": "false" },
+      { "label": "Ancestry",         "link": "linked_rules?rule_type=ancestry",          "add_modifiers": "false" },
+      { "label": "Class",            "link": "linked_rules?rule_type=class",             "add_modifiers": "false" },
+      { "label": "Kit",              "link": "linked_rules?rule_type=kit",               "add_modifiers": "false" },
+      { "label": "Career",           "link": "linked_rules?rule_type=career",            "add_modifiers": "false" },
+      { "label": "Complication",     "link": "linked_rules?rule_type=complication",      "add_modifiers": "false" },
+      { "label": "Conditions",       "link": "linked_rules?rule_type=condition",         "add_modifiers": "false" },
+      { "label": "Inventory Items",  "link": "inventory_items",                          "add_modifiers": "false" },
+      { "label": "Options",          "link": "options",                                  "add_modifiers": "false" }
+    ],
+    "core_skills": [
+      { "name": "Alchemy",        "ranks": "0", "ability_score": "", "group": "Crafting" },
+      { "name": "Architecture",   "ranks": "0", "ability_score": "", "group": "Crafting" },
+      { "name": "Blacksmithing",  "ranks": "0", "ability_score": "", "group": "Crafting" },
+      { "name": "Carpentry",      "ranks": "0", "ability_score": "", "group": "Crafting" },
+      { "name": "Cooking",        "ranks": "0", "ability_score": "", "group": "Crafting" },
+      { "name": "Fletching",      "ranks": "0", "ability_score": "", "group": "Crafting" },
+      { "name": "Forgery",        "ranks": "0", "ability_score": "", "group": "Crafting" },
+      { "name": "Jewelry",        "ranks": "0", "ability_score": "", "group": "Crafting" },
+      { "name": "Mechanics",      "ranks": "0", "ability_score": "", "group": "Crafting" },
+      { "name": "Tailoring",      "ranks": "0", "ability_score": "", "group": "Crafting" },
+
+      { "name": "Climb",      "ranks": "0", "ability_score": "", "group": "Exploration" },
+      { "name": "Drive",      "ranks": "0", "ability_score": "", "group": "Exploration" },
+      { "name": "Endurance",  "ranks": "0", "ability_score": "", "group": "Exploration" },
+      { "name": "Gymnastics", "ranks": "0", "ability_score": "", "group": "Exploration" },
+      { "name": "Heal",       "ranks": "0", "ability_score": "", "group": "Exploration" },
+      { "name": "Jump",       "ranks": "0", "ability_score": "", "group": "Exploration" },
+      { "name": "Lift",       "ranks": "0", "ability_score": "", "group": "Exploration" },
+      { "name": "Navigate",   "ranks": "0", "ability_score": "", "group": "Exploration" },
+      { "name": "Ride",       "ranks": "0", "ability_score": "", "group": "Exploration" },
+      { "name": "Swim",       "ranks": "0", "ability_score": "", "group": "Exploration" },
+
+      { "name": "Brag",           "ranks": "0", "ability_score": "", "group": "Interpersonal" },
+      { "name": "Empathize",      "ranks": "0", "ability_score": "", "group": "Interpersonal" },
+      { "name": "Flirt",          "ranks": "0", "ability_score": "", "group": "Interpersonal" },
+      { "name": "Gamble",         "ranks": "0", "ability_score": "", "group": "Interpersonal" },
+      { "name": "Handle Animals", "ranks": "0", "ability_score": "", "group": "Interpersonal" },
+      { "name": "Interrogate",    "ranks": "0", "ability_score": "", "group": "Interpersonal" },
+      { "name": "Intimidate",     "ranks": "0", "ability_score": "", "group": "Interpersonal" },
+      { "name": "Lead",           "ranks": "0", "ability_score": "", "group": "Interpersonal" },
+      { "name": "Lie",            "ranks": "0", "ability_score": "", "group": "Interpersonal" },
+      { "name": "Music",          "ranks": "0", "ability_score": "", "group": "Interpersonal" },
+      { "name": "Perform",        "ranks": "0", "ability_score": "", "group": "Interpersonal" },
+      { "name": "Persuade",       "ranks": "0", "ability_score": "", "group": "Interpersonal" },
+      { "name": "Read Person",    "ranks": "0", "ability_score": "", "group": "Interpersonal" },
+
+      { "name": "Alertness",      "ranks": "0", "ability_score": "", "group": "Intrigue" },
+      { "name": "Conceal Object", "ranks": "0", "ability_score": "", "group": "Intrigue" },
+      { "name": "Disguise",       "ranks": "0", "ability_score": "", "group": "Intrigue" },
+      { "name": "Eavesdrop",      "ranks": "0", "ability_score": "", "group": "Intrigue" },
+      { "name": "Escape Artist",  "ranks": "0", "ability_score": "", "group": "Intrigue" },
+      { "name": "Hide",           "ranks": "0", "ability_score": "", "group": "Intrigue" },
+      { "name": "Pick Lock",      "ranks": "0", "ability_score": "", "group": "Intrigue" },
+      { "name": "Pick Pocket",    "ranks": "0", "ability_score": "", "group": "Intrigue" },
+      { "name": "Sabotage",       "ranks": "0", "ability_score": "", "group": "Intrigue" },
+      { "name": "Search",         "ranks": "0", "ability_score": "", "group": "Intrigue" },
+      { "name": "Sneak",          "ranks": "0", "ability_score": "", "group": "Intrigue" },
+      { "name": "Track",          "ranks": "0", "ability_score": "", "group": "Intrigue" },
+
+      { "name": "Culture",             "ranks": "0", "ability_score": "", "group": "Lore" },
+      { "name": "Criminal Underworld", "ranks": "0", "ability_score": "", "group": "Lore" },
+      { "name": "History",             "ranks": "0", "ability_score": "", "group": "Lore" },
+      { "name": "Magic",               "ranks": "0", "ability_score": "", "group": "Lore" },
+      { "name": "Monsters",            "ranks": "0", "ability_score": "", "group": "Lore" },
+      { "name": "Nature",              "ranks": "0", "ability_score": "", "group": "Lore" },
+      { "name": "Psionics",            "ranks": "0", "ability_score": "", "group": "Lore" },
+      { "name": "Religion",            "ranks": "0", "ability_score": "", "group": "Lore" },
+      { "name": "Rumors",              "ranks": "0", "ability_score": "", "group": "Lore" },
+      { "name": "Society",             "ranks": "0", "ability_score": "", "group": "Lore" },
+      { "name": "Strategy",            "ranks": "0", "ability_score": "", "group": "Lore" },
+      { "name": "Timescape",           "ranks": "0", "ability_score": "", "group": "Lore" }
+    ],
+    "character": {
+      "ability_scores": [
+        { "name": "Might",     "base": "0", "modifier": "0", "dice": "" },
+        { "name": "Agility",   "base": "0", "modifier": "0", "dice": "" },
+        { "name": "Reason",    "base": "0", "modifier": "0", "dice": "" },
+        { "name": "Intuition", "base": "0", "modifier": "0", "dice": "" },
+        { "name": "Presence",  "base": "0", "modifier": "0", "dice": "" }
+      ],
+      "trackables": [
+        { "name": "Stamina",           "maximum": "0", "current": "0" },
+        { "name": "Temporary Stamina", "maximum": "0", "current": "0" },
+        { "name": "Recoveries",        "maximum": "0", "current": "0" },
+        { "name": "Victories",         "maximum": "0", "current": "0" },
+        { "name": "Surges",            "maximum": "0", "current": "0" },
+        { "name": "Hero Tokens",       "maximum": "0", "current": "0" },
+        { "name": "Heroic Resource",   "maximum": "0", "current": "0" },
+        { "name": "Wealth",            "maximum": "0", "current": "0" },
+        { "name": "Renown",            "maximum": "0", "current": "0" },
+        { "name": "XP",                "maximum": "0", "current": "0" }
+      ],
+      "base_values": [
+        { "name": "Size",      "value": "1", "dice": "" },
+        { "name": "Speed",     "value": "5", "dice": "" },
+        { "name": "Disengage", "value": "1", "dice": "" },
+        { "name": "Stability", "value": "0", "dice": "" },
+        { "name": "Level",     "value": "1", "dice": "" }
+      ],
+      "movements": [
+        { "name": "Speed",    "base": "5", "ability_score": "", "dice": "", "description": "Squares" },
+        { "name": "Climb",    "base": "0", "ability_score": "", "dice": "", "description": "Squares" },
+        { "name": "Fly",      "base": "0", "ability_score": "", "dice": "", "description": "Squares" },
+        { "name": "Swim",     "base": "0", "ability_score": "", "dice": "", "description": "Squares" },
+        { "name": "Teleport", "base": "0", "ability_score": "", "dice": "", "description": "Squares" }
+      ],
+      "descriptors": [
+        { "name": "Ancestry",              "description": "", "is_private": "false" },
+        { "name": "Class",                 "description": "", "is_private": "false" },
+        { "name": "Subclass",              "description": "", "is_private": "false" },
+        { "name": "Career",                "description": "", "is_private": "false" },
+        { "name": "Complication",          "description": "", "is_private": "true" },
+        { "name": "Culture: Environment",  "description": "", "is_private": "false" },
+        { "name": "Culture: Organization", "description": "", "is_private": "false" },
+        { "name": "Culture: Upbringing",   "description": "", "is_private": "false" },
+        { "name": "Languages",             "description": "", "is_private": "false" },
+        { "name": "Titles",                "description": "", "is_private": "false" }
+      ]
+    },
+    "creature": {
+      "ability_scores": [
+        { "name": "Might",     "base": "0", "modifier": "0", "dice": "" },
+        { "name": "Agility",   "base": "0", "modifier": "0", "dice": "" },
+        { "name": "Reason",    "base": "0", "modifier": "0", "dice": "" },
+        { "name": "Intuition", "base": "0", "modifier": "0", "dice": "" },
+        { "name": "Presence",  "base": "0", "modifier": "0", "dice": "" }
+      ],
+      "base_values": [
+        { "name": "Level",     "value": "1", "dice": "" },
+        { "name": "EV",        "value": "0", "dice": "" },
+        { "name": "Speed",     "value": "5", "dice": "" },
+        { "name": "Stability", "value": "0", "dice": "" }
+      ],
+      "descriptors": [
+        { "name": "Level",        "description": "" },
+        { "name": "Role",         "description": "" },
+        { "name": "Organization", "description": "" },
+        { "name": "Size",         "description": "M" },
+        { "name": "Ancestry",     "description": "" },
+        { "name": "Keywords",     "description": "" },
+        { "name": "Movement",     "description": "" },
+        { "name": "Languages",    "description": "" }
+      ],
+      "movements": [
+        { "name": "Speed", "base": "5", "ability_score": "", "dice": "", "description": "Squares" }
+      ],
+      "trackables": [
+        { "name": "Stamina", "maximum": "0", "current": "0" }
+      ]
+    }
   },
   "rulebuilder": {
     "rules": [
