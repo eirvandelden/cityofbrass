@@ -1,3 +1,12 @@
+function destroyRulebuilderSelect2() {
+  $('.select2-rule_type_search.select2-hidden-accessible').select2('destroy');
+  $('.select2-rule_type.select2-hidden-accessible').select2('destroy');
+}
+
+$(document).on('turbolinks:before-cache', function () {
+  destroyRulebuilderSelect2();
+});
+
 // SEARCH
 $(document).on('turbolinks:load', function () {
   var core_rules_param = getQueryVariable('core_rules');

@@ -35,15 +35,16 @@
   var campaign = '<%= @virtual_table.id %>'
   var token = '<%= @token %>'
 
-  $(document).on('page:fetch', function () {
-    //disconnect ActivePlay socket if it exists when you navigate always
-    if(socket){
+  $(document).off('turbolinks:before-cache.activeplayCleanup turbolinks:before-visit.activeplayCleanup');
+  $(document).on('turbolinks:before-cache.activeplayCleanup turbolinks:before-visit.activeplayCleanup', function () {
+    if (typeof socket !== 'undefined' && socket) {
       socket.disconnect();
       socket = null;
     }
   });
 
-$(window).bind('resize', function () {
+$(window).off('resize.activeplayCleanup');
+$(window).on('resize.activeplayCleanup', function () {
   windowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
   $('.ap-scroll-msg').css('height', function(){
     return windowHeight - 253;

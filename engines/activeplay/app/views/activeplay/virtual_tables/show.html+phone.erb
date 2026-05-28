@@ -18,9 +18,9 @@
   var campaign = '<%= @virtual_table.id %>'
   var token = '<%= @token %>'
 
-  $(document).on('page:fetch', function () {
-    //disconnect ActivePlay socket if it exists when you navigate always
-    if(socket){
+  $(document).off('turbolinks:before-cache.activeplayCleanup turbolinks:before-visit.activeplayCleanup');
+  $(document).on('turbolinks:before-cache.activeplayCleanup turbolinks:before-visit.activeplayCleanup', function () {
+    if (typeof socket !== 'undefined' && socket) {
       socket.disconnect();
       socket = null;
     }
