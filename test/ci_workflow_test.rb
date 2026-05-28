@@ -2,10 +2,11 @@ require "test_helper"
 require "yaml"
 
 class CiWorkflowTest < ActiveSupport::TestCase
-  def test_ci_uses_bundler_to_install_gems
+  def test_ci_uses_rv_to_install_gems
     assert_nil setup_rv_step.dig("with", "install-gems")
-    assert_match(/bundle install/, bundle_install_step.fetch("run"))
+    assert_match(/rv clean-install --force/, gem_install_step.fetch("run"))
     assert_equal "vendor/bundle", test_job.dig("env", "BUNDLE_PATH")
+    assert_nil test_job.dig("env", "BUNDLE_FORCE_RUBY_PLATFORM")
   end
 
   private
@@ -26,7 +27,7 @@ class CiWorkflowTest < ActiveSupport::TestCase
     steps.find { |step| step["uses"] == "spinel-coop/setup-rv@main" }
   end
 
-  def bundle_install_step
+  def gem_install_step
     steps.find { |step| step["name"] == "Install gems" }
   end
 end

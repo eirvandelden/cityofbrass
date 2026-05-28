@@ -22,7 +22,7 @@ jobs:
           ruby-version: 'current'
 
       - name: Install gems
-        run: bundle install
+        run: rv clean-install --force
 
       - name: Set up database
         env:
