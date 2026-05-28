@@ -247,3 +247,12 @@ proprietary_npc_two:
   full_description: <p>Text for test</p>
   introduction: <p>Text for test</p>
   notes: <p>Text for test</p>
+
+draw_steel_character:
+  type: Entitybuilder::ResidentCharacter
+  resident: razune
+  name: Steelborn
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: Draw Steel
+  short_description: A Draw Steel test character
