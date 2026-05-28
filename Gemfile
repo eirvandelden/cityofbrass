@@ -1,5 +1,6 @@
 source "https://gem.coop"
-# ruby file: ".ruby-version"
+
+ruby file: ".ruby-version"
 
 gem "dotenv-rails" # We want dotenv to load before everything else.
 
@@ -56,6 +57,10 @@ gem "bigdecimal"  # bundled gem in Ruby 3.4+
 gem "logger"      # bundled gem in Ruby 3.4+, fixes Rails 6.1 boot order
 gem "ostruct"     # bundled gem in Ruby 3.4+, silences ActiveSupport JSON warning
 gem "drb"         # bundled gem in Ruby 3.4+, required by ActiveSupport test parallelization
+
+# Gems that are no longer part of default Ruby as of Ruby 4.0
+gem "benchmark"
+gem "reline"
 
 # City of Brass
 gem "activeplay", path: "engines/activeplay"
