@@ -28,6 +28,7 @@
 
 <%= render 'layouts/popbox' %>
 <%= render 'entitybuilder/entities/layouts/sheet' %>
+<%= render 'layouts/license/attribution', core_rules: @entity.core_rules %>
 <% if @type.include?"Stock" %>
   <%= render 'layouts/license/link', core_rules: @entity.core_rules %>
   <%= render 'layouts/license/modal' %>

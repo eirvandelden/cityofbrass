@@ -1,17 +1,17 @@
-require 'test_helper'
+require "test_helper"
 
 module Rulebuilder
   class SpellTest < ActiveSupport::TestCase
     test "resident should have the necessary required validators" do
       spell = ResidentSpell.new(name: "ResidentSpellTest")
       assert_not spell.valid?
-      assert_equal [:core_rules, :resident_id], spell.errors.keys
+      assert_equal [ :core_rules, :resident_id ], spell.errors.attribute_names
     end
 
     test "proprietary should have the necessary required validators" do
       spell = ProprietarySpell.new(name: "ProprietarySpellTest")
       assert_not spell.valid?
-      assert_equal [:core_rules], spell.errors.keys
+      assert_equal [ :core_rules ], spell.errors.attribute_names
     end
 
     test "list helpers return comma separated values" do
@@ -19,6 +19,16 @@ module Rulebuilder
 
       assert_equal "hello1, world2", spell.tag_list
       assert_equal "One, Two", spell.level_list
+    end
+
+    test "allows long full descriptions" do
+      spell = StockSpell.new(
+        name: "Long Spell",
+        core_rules: "PFRPG",
+        full_description: "x" * 100_000
+      )
+
+      assert spell.valid?, spell.errors.full_messages.to_sentence
     end
   end
 end

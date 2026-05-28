@@ -6,6 +6,7 @@
       <% if f.object.new_record? %>
         <%= f.input :core_rules, collection: CoreRules.options(admin_signed_in?), :include_blank => true %>
       <% end %>
+      <%= render 'layouts/license/attribution', core_rules: f.object.core_rules %>
 
       <% unless f.object.new_record?%>
         <% unless @type.include?"Character" %>

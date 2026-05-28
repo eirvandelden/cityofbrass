@@ -33,6 +33,7 @@
   <%= render 'layouts/publisher', publisher: @entity.publisher, is_3pp: @entity.is_3pp, source: @entity.source %>
 <% end %>
 
+<%= render 'layouts/license/attribution', core_rules: @entity.core_rules %>
 <% if @type.include?"Stock" %>
   <%= render 'layouts/license/link', core_rules: @entity.core_rules %>
   <%= render 'layouts/license/modal' %>

@@ -38,7 +38,7 @@ module Rulebuilder
 
     validates :name, presence: true, length: { maximum: 64 }
     validates :short_description, length: { maximum: 255 }
-    validates :full_description, length: { maximum: 12000 }
+    validates :full_description, length: { maximum: 250_000 }
     validates :prerequisites, length: { maximum: 255 }
     validates :benefit, length: { maximum: 6000 }
     validates :normal, length: { maximum: 6000 }

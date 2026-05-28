@@ -113,13 +113,14 @@ module CoreRules
 
     def self.add_core_skills(entity)
       add_skills = core_skills(entity.core_rules)
-      add_skills.each_with_index do |r,i|
+      add_skills.each_with_index do |r, i|
         ar = entity.skills.new
         ar.sort_order    = i
         ar.name          = r['name']
         ar.ranks         = r['ranks']
         ar.ability_score = r['ability_score']
-        ar.save(:validate => false)
+        ar.skill_group   = r["group"] if r["group"].present?
+        ar.save(validate: false)
       end
     end
   end
