@@ -1,4 +1,4 @@
-$(document).on('ready page:load', function () {
+$(document).on('turbolinks:load', function () {
 
   $('#selectEngineWB').change(function () {
     if ($(this).data('options') === undefined) {

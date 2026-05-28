@@ -1,4 +1,4 @@
-$(document).on('ready page:change', function () {
+$(document).on('turbolinks:load', function () {
 	// Show or hide the sticky footer button
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 200) {

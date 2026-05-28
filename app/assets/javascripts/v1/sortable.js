@@ -59,7 +59,7 @@ function setLockIcon() {
   }
 }
 
-$(document).on('ready page:change', function () {
+$(document).on('turbolinks:load', function () {
   if ($('#sortable_unlock').length){
     if (matchMedia(Foundation.media_queries['medium']).matches){
       $sort_enabled = true;

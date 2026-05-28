@@ -31,7 +31,7 @@
 //= require activeplay/application
 
 
-$(document).on('ready page:load', function () {
+$(document).on('turbolinks:load', function () {
   $(document).foundation();
 
   $('.popbox').popbox();
@@ -52,13 +52,10 @@ $(document).on('ready page:load', function () {
     }
   });
 
-  Turbolinks.enableTransitionCache();
-  Turbolinks.enableProgressBar();
-
 });
 
 
-$(document).on('page:change', function () {
+$(document).on('turbolinks:load', function () {
   //FIX OFFSCREEN/BODY SO ITS 100% HIEGHT
   $(function() {
     var timer;
