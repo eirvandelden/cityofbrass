@@ -1,0 +1,38 @@
+{
+  "name": "Draw Steel",
+  "active": "true",
+  "stock": "true",
+  "default_dice": "2d10",
+  "d20_system": "false",
+  "publisher": {
+    "name": "MCDM Productions",
+    "logo": "",
+    "url": "https://www.mcdmproductions.com/"
+  },
+  "license": {
+    "label": "Draw Steel Creator License",
+    "core_faq": "This is an independent product published under the Draw Steel Creator License and is not affiliated with MCDM Productions, LLC. Draw Steel © 2026 MCDM Productions, LLC."
+  },
+  "entitybuilder": {
+    "sheet": "default",
+    "use_modifiers": "false",
+    "show_core_blocks": "false",
+    "menu": [],
+    "core_skills": [],
+    "character": {},
+    "creature": {}
+  },
+  "rulebuilder": {
+    "rules": [
+      { "name": "Ancestry",     "is_shared": "true" },
+      { "name": "Class",        "is_shared": "true" },
+      { "name": "Kit",          "is_shared": "true" },
+      { "name": "Career",       "is_shared": "true" },
+      { "name": "Complication", "is_shared": "true" },
+      { "name": "Condition",    "is_shared": "true" }
+    ],
+    "powers": [
+      { "name": "Ability", "is_shared": "true" }
+    ]
+  }
+}
