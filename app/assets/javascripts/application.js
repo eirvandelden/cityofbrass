@@ -31,12 +31,13 @@
 //= require activeplay/application
 
 
-$(document).on('ready page:load', function () {
+$(document).on('turbolinks:load', function () {
   $(document).foundation();
 
   $('.popbox').popbox();
 
-  $(document).on('closed.fndtn.reveal', '[data-reveal]', function () {
+  $(document).off('closed.fndtn.reveal.brasscore');
+  $(document).on('closed.fndtn.reveal.brasscore', '[data-reveal]', function () {
     var modal = $(this);
 
     // deprecated: this will get removed after modal migration
@@ -52,23 +53,21 @@ $(document).on('ready page:load', function () {
     }
   });
 
-  Turbolinks.enableTransitionCache();
-  Turbolinks.enableProgressBar();
-
 });
 
 
-$(document).on('page:change', function () {
+$(document).on('turbolinks:load', function () {
   //FIX OFFSCREEN/BODY SO ITS 100% HIEGHT
   $(function() {
     var timer;
 
-    $(window).resize(function() {
+    $(window).off('resize.brasscore');
+    $(window).on('resize.brasscore', function() {
       clearTimeout(timer);
       timer = setTimeout(function() {
         $(document).foundation('equalizer', 'reflow'); // fixes reflow on elements with images
         $('.inner-wrap').css("min-height", $(window).height() - 102 + "px" );
       }, 40);
-    }).resize();
+    }).trigger('resize');
   });
 });

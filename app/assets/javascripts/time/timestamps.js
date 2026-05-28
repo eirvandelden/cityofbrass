@@ -12,7 +12,7 @@ var TimeStamp = function () {
   });
 };
 
-$(document).on('page:change', function () {
+$(document).on('turbolinks:load', function () {
   TimeStamp();
 });
 

@@ -1,18 +1,9 @@
-$(document).on('ready page:load', function () {
+$(document).on('turbolinks:load', function () {
   var clearAlert = setTimeout(function(){
     $(".alert-box").fadeOut('slow')
   }, 2000);
 
-  $(document).on("click", ".alert-box a.close", function(event){
-    clearTimeout(clearAlert);
-  });
-
-  $(document).on("click", ".alert-box a.close", function(event) {
-    event.preventDefault();
-    $(this).closest(".alert-box").fadeOut(function(event){
-      $(this).remove();
-    });
-  });
+  bindAlertCloseHandlers(clearAlert);
 });
 
 // AJAX FLASH NOTICE ANIMATION
@@ -22,14 +13,16 @@ $( document ).ajaxComplete(function(event, xhr) {
     $(".alert-box").fadeOut('slow')
   }, 2000);
 
-  $(document).on("click", ".alert-box a.close", function(event){
-    clearTimeout(clearAlert);
-  });
+  bindAlertCloseHandlers(clearAlert);
+});
 
-  $(document).on("click", ".alert-box a.close", function(event) {
+function bindAlertCloseHandlers(clearAlert) {
+  $(document).off('click.alertBox', '.alert-box a.close');
+  $(document).on('click.alertBox', '.alert-box a.close', function(event) {
     event.preventDefault();
+    clearTimeout(clearAlert);
     $(this).closest(".alert-box").fadeOut(function(event){
       $(this).remove();
     });
   });
-});
+}

@@ -45,21 +45,22 @@
       }
     };
 
-    $(document).bind('keyup', function(event){
+    $(document).off('.popbox');
+    $(document).on('keyup.popbox', function(event){
       if(event.keyCode == 27){
         methods.close();
       }
     });
 
-    $(document).bind('touchstart click', function(event){
+    $(document).on('touchstart.popbox click.popbox', function(event){
       if(!$(event.target).closest(settings['selector']).length){
         methods.close();
       }
     });
 
     return this.each(function(){
-      $(settings['open'], this).bind('click', methods.open);
-      $(settings['open'], this).parent().find(settings['close']).bind('click', function(event){
+      $(settings['open'], this).off('click.popbox').on('click.popbox', methods.open);
+      $(settings['open'], this).parent().find(settings['close']).off('click.popbox').on('click.popbox', function(event){
         methods.close();
       });
     });

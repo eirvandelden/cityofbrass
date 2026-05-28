@@ -9,6 +9,10 @@ class CiWorkflowTest < ActiveSupport::TestCase
     assert_nil test_job.dig("env", "BUNDLE_FORCE_RUBY_PLATFORM")
   end
 
+  def test_ci_disables_spring_for_binstub_commands
+    assert_equal "1", test_job.dig("env", "DISABLE_SPRING")
+  end
+
   private
 
   def workflow

@@ -1,5 +1,14 @@
+function destroyRulebuilderSelect2() {
+  $('.select2-rule_type_search.select2-hidden-accessible').select2('destroy');
+  $('.select2-rule_type.select2-hidden-accessible').select2('destroy');
+}
+
+$(document).on('turbolinks:before-cache', function () {
+  destroyRulebuilderSelect2();
+});
+
 // SEARCH
-$(document).on('ready page:change', function () {
+$(document).on('turbolinks:load', function () {
   var core_rules_param = getQueryVariable('core_rules');
   $('.select2-rule_type_search > optgroup').each(function () {
     if (this.label !== core_rules_param && core_rules_param !== false) {
@@ -17,7 +26,7 @@ $(document).on('ready page:change', function () {
 });
 
 // NEW FORM
-$(document).on('ready page:change', function () {
+$(document).on('turbolinks:load', function () {
 
   $('.select2-rule_type > optgroup').each(function () {
     if (this.label !== $('select[id$="rule_core_rules"] option:selected').text()) {
@@ -40,7 +49,7 @@ $(document).on('ready page:change', function () {
 });
 
 // CORE RULES SELECTION
-$(document).on('ready page:change', function () {
+$(document).on('turbolinks:load', function () {
   $('select[id$="rule_core_rules"]').on('change', function () {
     $('.select2-rule_type').prop('disabled', false);
     $core_rule = this.value;
