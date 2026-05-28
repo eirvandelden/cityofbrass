@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      BUNDLE_PATH: vendor/bundle
 
     steps:
       - uses: actions/checkout@v4
@@ -18,7 +20,9 @@ jobs:
       - uses: spinel-coop/setup-rv@main
         with:
           ruby-version: 'current'
-          install-gems: true
+
+      - name: Install gems
+        run: bundle install
 
       - name: Set up database
         env:
