@@ -55,7 +55,7 @@ namespace :draw_steel do
           core_rules: attrs["core_rules"],
           rule_type:  attrs["rule_type"],
           name:       attrs["name"]
-        )
+        ) { |new_rule| new_rule.id = SecureRandom.uuid }
         rule.assign_attributes(seed_attributes(attrs, [
           "is_shared", "is_3pp", "publisher", "source",
           "short_description", "full_description"
@@ -71,7 +71,7 @@ namespace :draw_steel do
         spell = Rulebuilder::StockSpell.find_or_initialize_by(
           core_rules: attrs["core_rules"],
           name:       attrs["name"]
-        )
+        ) { |new_spell| new_spell.id = SecureRandom.uuid }
         spell.assign_attributes(seed_attributes(attrs, [
           "is_3pp", "publisher", "source", "school",
           "casting_time", "components", "range", "target", "duration",
