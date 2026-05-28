@@ -51,6 +51,11 @@ gem "symbol-fstring", require: "fstring/all" # Performance improvement
 # bugs - allow json to upgrade for Rails 6.1
 gem "json", ">= 2.0"
 gem "mutex_m" # Moved from Ruby stdlib to bundled gem in Ruby 3.3+
+gem "base64"      # bundled gem in Ruby 3.4+, required before Rails boots
+gem "bigdecimal"  # bundled gem in Ruby 3.4+
+gem "logger"      # bundled gem in Ruby 3.4+, fixes Rails 6.1 boot order
+gem "ostruct"     # bundled gem in Ruby 3.4+, silences ActiveSupport JSON warning
+gem "drb"         # bundled gem in Ruby 3.4+, required by ActiveSupport test parallelization
 
 # City of Brass
 gem "activeplay", path: "engines/activeplay"
