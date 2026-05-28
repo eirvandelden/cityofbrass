@@ -38,6 +38,17 @@ class DrawSteelSeedTest < ActiveSupport::TestCase
     assert_equal first_count, second_count, "seed should be idempotent"
   end
 
+  test "classes seed task creates valid StockRules with long descriptions" do
+    Rulebuilder::StockRule.where(core_rules: "Draw Steel", rule_type: "Class").destroy_all
+
+    Rake::Task["draw_steel:seed:classes"].reenable
+    Rake::Task["draw_steel:seed:classes"].invoke
+
+    rules = Rulebuilder::StockRule.where(core_rules: "Draw Steel", rule_type: "Class")
+    assert_equal 9, rules.count
+    assert rules.all?(&:valid?), "expected seeded class records to be valid"
+  end
+
   test "abilities seed task creates StockSpells with attribution" do
     Rulebuilder::StockSpell.where(core_rules: "Draw Steel").destroy_all
 

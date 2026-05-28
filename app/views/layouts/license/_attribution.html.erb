@@ -1,6 +1,6 @@
 <% core_rules_name = local_assigns[:core_rules] || @entity&.core_rules %>
 <% license = CoreRules.license(core_rules_name) if core_rules_name.present? %>
-<% attribution = license["attribution"].presence || license["core_faq"] if license.present? %>
+<% attribution = license["attribution"].presence if license.present? %>
 <% if attribution.present? %>
   <footer class="rpg-system-attribution" aria-label="<%= t("layouts.license.attribution.aria_label") %>">
     <small><%= attribution %></small>

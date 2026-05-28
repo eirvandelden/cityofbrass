@@ -6,4 +6,11 @@ class LicenseLinkTest < ActionView::TestCase
 
     assert_no_match(/scrolls\/license/, rendered)
   end
+
+  test "does not render attribution when system only has a FAQ lookup key" do
+    render partial: "layouts/license/attribution", locals: { core_rules: "PFRPG" }
+
+    assert_no_match(/rpg-system-attribution/, rendered)
+    assert_no_match(/License d20 OGL/, rendered)
+  end
 end

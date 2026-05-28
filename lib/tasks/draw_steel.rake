@@ -60,7 +60,7 @@ namespace :draw_steel do
           "is_shared", "is_3pp", "publisher", "source",
           "short_description", "full_description"
         ]))
-        rule.save!(validate: false)
+        rule.save!
       end
       puts "seeded #{records.size} #{records.first&.dig("rule_type") || "(none)"} records from #{file}"
     end
@@ -77,7 +77,7 @@ namespace :draw_steel do
           "casting_time", "components", "range", "target", "duration",
           "short_description", "full_description"
         ]))
-        spell.save!(validate: false)
+        spell.save!
       end
       puts "seeded #{records.size} ability/spell records from #{file}"
     end
