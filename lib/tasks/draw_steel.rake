@@ -70,7 +70,8 @@ namespace :draw_steel do
       records.each do |attrs|
         spell = Rulebuilder::StockSpell.find_or_initialize_by(
           core_rules: attrs["core_rules"],
-          name:       attrs["name"]
+          name:       attrs["name"],
+          school:     attrs["school"]
         ) { |new_spell| new_spell.id = SecureRandom.uuid }
         spell.assign_attributes(seed_attributes(attrs, [
           "is_3pp", "publisher", "source", "school",

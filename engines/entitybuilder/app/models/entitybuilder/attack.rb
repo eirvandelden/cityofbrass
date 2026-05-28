@@ -2,7 +2,7 @@ module Entitybuilder
   class Attack < ApplicationRecord
     include Dice
 
-    NULL_ATTRS = %w( attack_dice damage_dice critical_damage_dice special_damage_dice )
+    NULL_ATTRS = %w[ attack_dice damage_dice critical_damage_dice special_damage_dice ]
 
     belongs_to :entity
 
@@ -45,21 +45,17 @@ module Entitybuilder
       return true if special_damage_name.present?
       return true if special_damage_dice.present?
       return true if calculated_special_damage_bonus(ability_scores, modifiers).present?
-      return false
+      false
     end
 
     def game_dice(core_rules)
-      core_rules_dice_array = CORE_RULES_DICE.detect{ |v| v[:core_rules] == core_rules }
-      core_rules_dice = core_rules_dice_array[:dice] unless core_rules_dice_array.nil?
-
       return self.attack_dice if self.attack_dice?
-      return core_rules_dice unless core_rules_dice.nil?
-      return '1d20'
+      core_rules_dice(core_rules)
     end
 
     def display_dice?(dice)
-      return false if CORE_DICE_MECHANICS.include?dice
-      return true
+      return false if CORE_DICE_MECHANICS.include? dice
+      true
     end
 
     def calculated_attack_bonus(ability_scores, all_modifiers, all_base_values)
@@ -72,10 +68,10 @@ module Entitybuilder
         ability_score = ability_scores.detect { |as| as.name == self.attack_ability_score } unless ability_scores.nil?
         bonus_placeholder += ability_score.modifier.to_i unless ability_score.nil?
 
-        proficiency_bonus = all_base_values.detect{ |d| d.name == "Proficiency Bonus" } if proficient?
+        proficiency_bonus = all_base_values.detect { |d| d.name == "Proficiency Bonus" } if proficient?
         bonus_placeholder += proficiency_bonus.value.to_i unless proficiency_bonus.nil?
 
-        base_attack_bonus = all_base_values.detect{ |d| d.name == "Base Attack Bonus" }
+        base_attack_bonus = all_base_values.detect { |d| d.name == "Base Attack Bonus" }
         bonus_placeholder += base_attack_bonus.value.to_i unless base_attack_bonus.nil?
 
         unless all_modifiers.nil?
@@ -96,8 +92,7 @@ module Entitybuilder
 
       bonus_placeholder = "+#{bonus_placeholder}" if bonus_placeholder > -1
 
-      return bonus_placeholder
-
+      bonus_placeholder
     end
 
     def calculated_damage_bonus(ability_scores, all_modifiers)
@@ -128,7 +123,7 @@ module Entitybuilder
       bonus_placeholder = "+#{bonus_placeholder}" if bonus_placeholder > -1
 
       return '' if bonus_placeholder == '+0'
-      return bonus_placeholder
+      bonus_placeholder
     end
 
     def calculated_critical_damage_bonus(ability_scores, all_modifiers)
@@ -152,7 +147,7 @@ module Entitybuilder
       bonus_placeholder = "+#{bonus_placeholder}" if bonus_placeholder > -1
 
       return '' if bonus_placeholder == '+0'
-      return bonus_placeholder
+      bonus_placeholder
     end
 
     def calculated_special_damage_bonus(ability_scores, all_modifiers)
@@ -176,13 +171,12 @@ module Entitybuilder
       bonus_placeholder = "+#{bonus_placeholder}" if bonus_placeholder > -1
 
       return '' if bonus_placeholder == '+0'
-      return bonus_placeholder
+      bonus_placeholder
     end
 
     private
       def nil_if_blank
         NULL_ATTRS.each { |attr| self[attr] = nil if self[attr].blank? }
       end
-
   end
 end
