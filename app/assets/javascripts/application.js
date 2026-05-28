@@ -36,7 +36,8 @@ $(document).on('turbolinks:load', function () {
 
   $('.popbox').popbox();
 
-  $(document).on('closed.fndtn.reveal', '[data-reveal]', function () {
+  $(document).off('closed.fndtn.reveal.brasscore');
+  $(document).on('closed.fndtn.reveal.brasscore', '[data-reveal]', function () {
     var modal = $(this);
 
     // deprecated: this will get removed after modal migration
@@ -60,12 +61,13 @@ $(document).on('turbolinks:load', function () {
   $(function() {
     var timer;
 
-    $(window).resize(function() {
+    $(window).off('resize.brasscore');
+    $(window).on('resize.brasscore', function() {
       clearTimeout(timer);
       timer = setTimeout(function() {
         $(document).foundation('equalizer', 'reflow'); // fixes reflow on elements with images
         $('.inner-wrap').css("min-height", $(window).height() - 102 + "px" );
       }, 40);
-    }).resize();
+    }).trigger('resize');
   });
 });
