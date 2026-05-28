@@ -10,6 +10,14 @@ class EngineGemfileTest < ActiveSupport::TestCase
     assert_empty missing.map { |gemfile| engine_name(gemfile) }
   end
 
+  def test_sqlite_uses_ruby_platform
+    missing = sqlite_gemfiles.reject do |gemfile|
+      sqlite_dependency(gemfile).force_ruby_platform
+    end
+
+    assert_empty missing.map { |gemfile| gemfile.relative_path_from(Rails.root).to_s }
+  end
+
   private
 
   def ruby_34_engine_gemfiles
@@ -23,7 +31,21 @@ class EngineGemfileTest < ActiveSupport::TestCase
   end
 
   def dependency_names(gemfile)
-    Bundler::Dsl.evaluate(gemfile.to_s, nil, {}).dependencies.map(&:name)
+    dependencies(gemfile).map(&:name)
+  end
+
+  def sqlite_gemfiles
+    Dir[Rails.root.join("{Gemfile,engines/*/Gemfile}")].filter_map do |gemfile|
+      Pathname(gemfile) if dependency_names(gemfile).include?("sqlite3")
+    end
+  end
+
+  def sqlite_dependency(gemfile)
+    dependencies(gemfile).find { |dependency| dependency.name == "sqlite3" }
+  end
+
+  def dependencies(gemfile)
+    Bundler::Dsl.evaluate(gemfile.to_s, nil, {}).dependencies
   end
 
   def engine_name(gemfile)

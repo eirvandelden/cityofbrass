@@ -6,7 +6,7 @@ gem "dotenv-rails" # We want dotenv to load before everything else.
 gem "rails", "~> 6.1"
 gem "bootsnap", ">= 1.4.4"
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1"
+gem "sqlite3", "~> 1", force_ruby_platform: true
 # Use SCSS for stylesheets
 gem "sass-rails"
 # Use Uglifier as compressor for JavaScript assets
