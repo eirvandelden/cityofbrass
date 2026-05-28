@@ -149,7 +149,7 @@ module Entitybuilder
       end
 
       def set_rule_type
-        rule_type = params[:rule_type].present? ? params[:rule_type].capitalize : ""
+        rule_type = params[:rule_type].present? ? params[:rule_type].titleize : ""
         @rule_type = (CoreRules::Rule.rule_types(@parent_object.core_rules).include?rule_type) ? rule_type : nil
         if @rule_type.nil?
           render template: 'errors/404', layout: 'layouts/application', status: 404

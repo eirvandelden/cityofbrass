@@ -74,6 +74,21 @@
         "add_modifiers": "true"
       },
       {
+        "label": "Backgrounds",
+        "link": "linked_rules?rule_type=backgrounds",
+        "add_modifiers": "true"
+      },
+      {
+        "label": "Paragon Paths",
+        "link": "linked_rules?rule_type=paragon_paths",
+        "add_modifiers": "true"
+      },
+      {
+        "label": "Epic Destinies",
+        "link": "linked_rules?rule_type=epic_destinies",
+        "add_modifiers": "true"
+      },
+      {
         "label": "Inventory Items",
         "link": "inventory_items",
         "add_modifiers": "false"
@@ -252,19 +267,19 @@
         },
         {
           "name": "Gold piece (gp)",
-          "quantity": "0",
+          "quantity": 0,
           "weight": "0.02",
           "carried": "true"
         },
         {
-          "name": "Silver piec (sp)",
-          "quantity": "0",
+          "name": "Silver piece (sp)",
+          "quantity": 0,
           "weight": "0.02",
           "carried": "true"
         },
         {
           "name": "Copper piece (cp)",
-          "quantity": "0",
+          "quantity": 0,
           "weight": "0.02",
           "carried": "true"
         }
@@ -348,7 +363,7 @@
         },
         {
           "name": "Speed",
-          "base": "5",
+          "base": "6",
           "ability_score": "",
           "dice": "",
           "description": "Squares"
@@ -375,6 +390,11 @@
           "maximum": "0",
           "current": "0"
         }
+      ],
+      "linked_rules": [
+        { "detail": "", "rule": { "name": "Background",   "rule_type": "Backgrounds" } },
+        { "detail": "", "rule": { "name": "Paragon Path", "rule_type": "Paragon Paths" } },
+        { "detail": "", "rule": { "name": "Epic Destiny", "rule_type": "Epic Destinies" } }
       ]
     },
     "creature": {
@@ -418,7 +438,7 @@
       ],
       "base_values": [
         {
-          "name": "Proficiency Bonus",
+          "name": "Half level",
           "value": "0",
           "dice": ""
         },
@@ -448,19 +468,19 @@
         },
         {
           "name": "Gold piece (gp)",
-          "quantity": "0",
+          "quantity": 0,
           "weight": "0.02",
           "carried": "true"
         },
         {
           "name": "Silver piece (sp)",
-          "quantity": "0",
+          "quantity": 0,
           "weight": "0.02",
           "carried": "true"
         },
         {
           "name": "Copper piece (cp)",
-          "quantity": "0",
+          "quantity": 0,
           "weight": "0.02",
           "carried": "true"
         }
@@ -490,39 +510,48 @@
       "descriptors": [
         {
           "name": "Level",
-          "description": ""
+          "description": "",
+          "is_private": "false"
         },
         {
           "name": "Role",
-          "description": ""
+          "description": "",
+          "is_private": "false"
         },
         {
           "name": "Type",
-          "description": ""
+          "description": "",
+          "is_private": "false"
         },
         {
           "name": "Size",
-          "description": "Medium"
+          "description": "Medium",
+          "is_private": "false"
         },
         {
-          "name": "Ancestry",
-          "description": "humanoid"
+          "name": "Race",
+          "description": "humanoid",
+          "is_private": "false"
         },
         {
           "name": "Alignment",
-          "description": ""
+          "description": "",
+          "is_private": "false"
         },
         {
           "name": "Senses",
-          "description": ""
+          "description": "",
+          "is_private": "false"
         },
         {
           "name": "Languages",
-          "description": ""
+          "description": "",
+          "is_private": "false"
         },
         {
           "name": "Experience",
-          "description": ""
+          "description": "",
+          "is_private": "false"
         }
       ],
       "movements": [
@@ -558,7 +587,7 @@
         {
           "name": "Hit Points",
           "maximum": "0",
-          "current": "21"
+          "current": "0"
         },
         {
           "name": "Action Points",
