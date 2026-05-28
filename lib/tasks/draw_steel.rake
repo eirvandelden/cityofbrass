@@ -1,6 +1,14 @@
 namespace :draw_steel do
   namespace :seed do
     SEED_DIR = Rails.root.join("db", "seeds", "draw-steel") unless defined?(SEED_DIR)
+    MARKDOWN_OPTIONS = {
+      filter_html: true,
+      autolink: true,
+      space_after_headers: true,
+      tables: true,
+      safe_links_only: true,
+      with_toc_data: true
+    }.freeze unless defined?(MARKDOWN_OPTIONS)
 
     desc "Seed Draw Steel Ancestries"
     task ancestries: :environment do
@@ -48,10 +56,10 @@ namespace :draw_steel do
           rule_type:  attrs["rule_type"],
           name:       attrs["name"]
         )
-        rule.assign_attributes(attrs.slice(
+        rule.assign_attributes(seed_attributes(attrs, [
           "is_shared", "is_3pp", "publisher", "source",
           "short_description", "full_description"
-        ))
+        ]))
         rule.save!(validate: false)
       end
       puts "seeded #{records.size} #{records.first&.dig("rule_type") || "(none)"} records from #{file}"
@@ -64,14 +72,30 @@ namespace :draw_steel do
           core_rules: attrs["core_rules"],
           name:       attrs["name"]
         )
-        spell.assign_attributes(attrs.slice(
+        spell.assign_attributes(seed_attributes(attrs, [
           "is_3pp", "publisher", "source", "school",
           "casting_time", "components", "range", "target", "duration",
           "short_description", "full_description"
-        ))
+        ]))
         spell.save!(validate: false)
       end
       puts "seeded #{records.size} ability/spell records from #{file}"
+    end
+
+    def seed_attributes(attrs, keys)
+      attrs.slice(*keys).tap do |seed_attrs|
+        seed_attrs["full_description"] = render_markdown(seed_attrs["full_description"])
+      end
+    end
+
+    def render_markdown(text)
+      return text unless text.present?
+
+      markdown_renderer.render(text)
+    end
+
+    def markdown_renderer
+      @markdown_renderer ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML, MARKDOWN_OPTIONS)
     end
   end
 end

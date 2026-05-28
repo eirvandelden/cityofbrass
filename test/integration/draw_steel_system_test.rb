@@ -19,6 +19,14 @@ class DrawSteelSystemTest < ActiveSupport::TestCase
     assert_equal %w[Crafting Exploration Interpersonal Intrigue Lore], groups
   end
 
+  test "Draw Steel separates inline attribution from FAQ lookup key" do
+    license = CoreRules.license("Draw Steel")
+
+    assert license["core_faq"].blank?
+    assert_match(/Draw Steel Creator License/, license["attribution"])
+    assert_match(/MCDM Productions/, license["attribution"])
+  end
+
   test "Draw Steel character has 5 ability scores: the characteristics" do
     abilities = CoreRules::Entity.defaults_values("Draw Steel", "character", "ability_scores") || []
     assert_equal %w[Might Agility Reason Intuition Presence],

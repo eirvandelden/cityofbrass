@@ -11,7 +11,8 @@
   },
   "license": {
     "label": "Draw Steel Creator License",
-    "core_faq": "This is an independent product published under the Draw Steel Creator License and is not affiliated with MCDM Productions, LLC. Draw Steel © 2026 MCDM Productions, LLC."
+    "core_faq": "",
+    "attribution": "This is an independent product published under the Draw Steel Creator License and is not affiliated with MCDM Productions, LLC. Draw Steel © 2026 MCDM Productions, LLC."
   },
   "entitybuilder": {
     "sheet": "default",

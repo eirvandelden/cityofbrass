@@ -1,5 +1,5 @@
 <% license = CoreRules.license(core_rules)  %>
-<% if license.present? %>
+<% if license.present? && license["core_faq"].present? %>
   <p class="license-link text-center">
     <%= link_to "#{license['label']}", "/scrolls/license?license=#{license['core_faq']}", "data-reveal-id" => "licenseModal", :remote => true %>
   </p>

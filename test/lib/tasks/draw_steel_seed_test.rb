@@ -51,4 +51,23 @@ class DrawSteelSeedTest < ActiveSupport::TestCase
     assert_equal "MCDM Productions", sample.publisher
     assert sample.full_description.include?("Draw Steel Creator License")
   end
+
+  test "seed tasks store rendered HTML descriptions" do
+    Rulebuilder::StockRule.where(core_rules: "Draw Steel", rule_type: "Ancestry").destroy_all
+    Rulebuilder::StockSpell.where(core_rules: "Draw Steel").destroy_all
+
+    Rake::Task["draw_steel:seed:ancestries"].reenable
+    Rake::Task["draw_steel:seed:ancestries"].invoke
+
+    Rake::Task["draw_steel:seed:abilities"].reenable
+    Rake::Task["draw_steel:seed:abilities"].invoke
+
+    rule = Rulebuilder::StockRule.find_by!(core_rules: "Draw Steel", rule_type: "Ancestry")
+    spell = Rulebuilder::StockSpell.find_by!(core_rules: "Draw Steel")
+
+    assert_match(/<h\d/, rule.full_description)
+    assert_match(/<h\d/, spell.full_description)
+    assert_no_match(/^##/, rule.full_description)
+    assert_no_match(/^######/, spell.full_description)
+  end
 end
