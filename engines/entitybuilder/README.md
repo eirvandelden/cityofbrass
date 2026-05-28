@@ -147,6 +147,12 @@ Every sub-model row has these columns:
 Sub-model-specific columns are summarised under each
 [`character` / `creature` block](#character-and-creature-blocks) entry below.
 
+### `entitybuilder_skills` — additional columns
+
+| Column        | Type   | Limit | Required | Notes                                                                                         |
+| ------------- | ------ | ----- | -------- | --------------------------------------------------------------------------------------------- |
+| `skill_group` | string | 64    | no       | Optional grouping label. NULL for systems without grouped skills. See `core_skills[]` for the JSON-to-DB mapping. |
+
 ---
 
 ## Entity creation: how JSON becomes sheet rows
@@ -270,7 +276,7 @@ block does not seed `skills` directly (`add_core_skills` only fires if
 
 ```json
 "core_skills": [
-  { "name": "Acrobatics", "ranks": "", "ability_score": "Dexterity"    },
+  { "name": "Acrobatics", "ranks": "", "ability_score": "Dexterity",    "group": "Crafting" },
   { "name": "Arcana",     "ranks": "", "ability_score": "Intelligence" },
   { "name": "Athletics",  "ranks": "", "ability_score": "Strength"     },
   ...
@@ -280,6 +286,16 @@ block does not seed `skills` directly (`add_core_skills` only fires if
 Each entry seeds an `entitybuilder_skills` row with `name`, `ranks`,
 `ability_score` (a string — must match a row in `ability_scores` for skill
 calculations to find an ability modifier).
+
+The optional `group` field (added 2026-05-28) maps to the `skill_group` column
+on `entitybuilder_skills`. When any skill on an entity has a non-NULL
+`skill_group`, the sheet view renders skills clustered by group; otherwise it
+renders a flat list.
+
+This is used by systems with formally grouped skill lists — Draw Steel (5
+groups: Crafting, Exploration, Interpersonal, Intrigue, Lore), PFRPG (Knowledge
+sub-skills), d20 Modern, and d20 Future. 4e, 5e, Fate Core, and W.O.I.N. omit
+the field and render flat as before.
 
 > **Variation — PFRPG**: 35 skills including parenthesised knowledges
 > (`"Knowledge (arcana)"`, `"Knowledge (dungeoneering)"`, …). Names are stored

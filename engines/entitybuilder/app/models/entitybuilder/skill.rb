@@ -14,6 +14,7 @@ module Entitybuilder
     validates :description, length: { maximum: 6000 }
     validates :bonus, numericality: { only_integer: true, greater_than: -1000, less_than: 1000 }, allow_nil: true
     validates :ability_score, length: { maximum: 255 }
+    validates :skill_group, length: { maximum: 64 }, allow_nil: true
     validates :ranks, numericality: { only_integer: true, greater_than: -1000, less_than: 1000 }, allow_nil: true
     validates :misc_modifier, numericality: { only_integer: true, greater_than: -1000, less_than: 1000 }, allow_nil: true
     validates :dice, length: { maximum: 255 }, format: { with: VALID_DICE_MECHANIC }, allow_nil: true
