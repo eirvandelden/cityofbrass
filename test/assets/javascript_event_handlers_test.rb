@@ -22,6 +22,14 @@ class JavascriptEventHandlersTest < ActiveSupport::TestCase
     assert_includes source, "$(document).on('touchstart.popbox click.popbox'"
   end
 
+  test "alert close handlers bound on document are reset before rebinding" do
+    source = Rails.root.join("app/assets/javascripts/v1/alert.js").read
+
+    assert_includes source, "$(document).off('click.alertBox'"
+    assert_includes source, "$(document).on('click.alertBox'"
+    assert_not_includes source, '$(document).on("click", ".alert-box a.close"'
+  end
+
   test "rulebuilder select2 widgets are destroyed before turbolinks caches the page" do
     source = Rails.root.join("engines/rulebuilder/app/assets/javascripts/rulebuilder/rules.js").read
 
