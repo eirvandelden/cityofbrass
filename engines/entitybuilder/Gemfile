@@ -7,9 +7,10 @@ gemspec
 
 gem 'rails', '~> 6.1'
 gem 'minitest', '~> 5'
-gem 'sqlite3', '~> 1'
+gem 'sqlite3', '~> 1', force_ruby_platform: true
 gem 'bigdecimal'
 gem 'mutex_m'
+gem 'drb'
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or

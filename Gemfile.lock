@@ -171,9 +171,11 @@ GEM
     dotenv-rails (3.2.0)
       dotenv (= 3.2.0)
       railties (>= 6.1)
+    drb (2.2.3)
     erb (6.0.2)
     erubi (1.13.1)
     execjs (2.10.0)
+    ffi (1.17.3)
     ffi (1.17.3-aarch64-linux-gnu)
     ffi (1.17.3-aarch64-linux-musl)
     ffi (1.17.3-arm-linux-gnu)
@@ -257,6 +259,7 @@ GEM
       nokogiri (~> 1)
       rake
     mini_mime (1.1.5)
+    mini_portile2 (2.8.9)
     minitest (5.27.0)
     msgpack (1.8.0)
     mutex_m (0.3.0)
@@ -272,6 +275,9 @@ GEM
     newrelic_rpm (10.2.0)
       logger
     nio4r (2.7.5)
+    nokogiri (1.19.1)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
     nokogiri (1.19.1-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.19.1-aarch64-linux-musl)
@@ -294,6 +300,7 @@ GEM
       rack (>= 2.2.3)
       rack-protection
     orm_adapter (0.5.0)
+    ostruct (0.6.3)
     paperclip (6.1.0)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
@@ -444,11 +451,8 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
-    sqlite3 (1.7.3-aarch64-linux)
-    sqlite3 (1.7.3-arm-linux)
-    sqlite3 (1.7.3-arm64-darwin)
-    sqlite3 (1.7.3-x86_64-darwin)
-    sqlite3 (1.7.3-x86_64-linux)
+    sqlite3 (1.7.3)
+      mini_portile2 (~> 2.8.0)
     stringio (3.2.0)
     stripe (18.4.0)
     symbol-fstring (1.0.2)
@@ -484,6 +488,7 @@ PLATFORMS
   arm-linux-gnu
   arm-linux-musl
   arm64-darwin
+  ruby
   x86_64-darwin
   x86_64-linux
   x86_64-linux-gnu
@@ -492,7 +497,9 @@ PLATFORMS
 DEPENDENCIES
   activeplay!
   aws-sdk (< 3)
+  base64
   better_errors
+  bigdecimal
   billing!
   binding_of_caller
   bootsnap (>= 1.4.4)
@@ -501,6 +508,7 @@ DEPENDENCIES
   delayed_paperclip (< 4)
   devise
   dotenv-rails
+  drb
   entitybuilder!
   figaro
   font-awesome-rails
@@ -514,11 +522,13 @@ DEPENDENCIES
   jwt
   kaminari
   listen (~> 3)
+  logger
   meta_request
   minitest (~> 5)
   mutex_m
   newrelic_rpm
   omniauth
+  ostruct
   paperclip
   puma
   rails (~> 6.1)
