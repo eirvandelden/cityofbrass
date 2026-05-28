@@ -9,10 +9,6 @@
     "logo": "",
     "url": "http://dnd.wizards.com"
   },
-  "license": {
-    "label": "Game System License",
-    "core_faq": ""
-  },
   "entitybuilder": {
     "sheet": "default",
     "use_modifiers": "true",
