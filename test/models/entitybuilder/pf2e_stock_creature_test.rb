@@ -5,83 +5,8 @@ class Pf2eStockCreatureTest < ActiveSupport::TestCase
   SAMPLE_SEED_FILE = Rails.root.join("db", "seeds", "pf2e", "creatures-sample.json")
 
   setup do
-    # Clean up any existing PF2e stock creatures from prior runs
-    Entitybuilder::StockCreature.where(core_rules: "Pathfinder 2e").each do |c|
-      c.ability_scores.delete_all
-      c.trackables.delete_all
-      c.base_values.delete_all
-      c.defenses.delete_all
-      c.saving_throws.delete_all
-      c.attacks.delete_all
-      c.destroy
-    end
-
-    # Seed from the small sample file
-    records = JSON.parse(File.read(SAMPLE_SEED_FILE))
-    records.each do |attrs|
-      creature = Entitybuilder::StockCreature.find_or_initialize_by(
-        name:       attrs["name"],
-        core_rules: attrs["core_rules"]
-      ) { |c| c.id = SecureRandom.uuid }
-
-      creature.assign_attributes(attrs.slice(
-        "short_description", "full_description", "publisher", "source", "is_3pp"
-      ))
-      creature.save!
-
-      creature.ability_scores.delete_all
-      creature.trackables.delete_all
-      creature.base_values.delete_all
-      creature.defenses.delete_all
-      creature.saving_throws.delete_all
-      creature.attacks.delete_all
-
-      Array(attrs["ability_scores"]).each do |as_attrs|
-        creature.ability_scores.build(
-          name:     as_attrs["name"],
-          base:     as_attrs["base"].to_i,
-          modifier: as_attrs["modifier"].to_i,
-          dice:     as_attrs["dice"].presence
-        )
-      end
-      Array(attrs["trackables"]).each do |t_attrs|
-        creature.trackables.build(
-          name:    t_attrs["name"],
-          maximum: t_attrs["maximum"].to_i,
-          current: t_attrs["current"].to_i
-        )
-      end
-      Array(attrs["base_values"]).each do |bv_attrs|
-        creature.base_values.build(
-          name:  bv_attrs["name"],
-          value: bv_attrs["value"].to_i,
-          dice:  bv_attrs["dice"].presence
-        )
-      end
-      Array(attrs["defenses"]).each do |d_attrs|
-        creature.defenses.build(
-          name:          d_attrs["name"],
-          base:          d_attrs["base"].to_i,
-          ability_score: d_attrs["ability_score"]
-        )
-      end
-      Array(attrs["saving_throws"]).each do |st_attrs|
-        creature.saving_throws.build(
-          name:          st_attrs["name"],
-          base:          st_attrs["base"].to_i,
-          ability_score: st_attrs["ability_score"]
-        )
-      end
-      Array(attrs["attacks"]).each do |atk_attrs|
-        creature.attacks.build(
-          name:                 atk_attrs["name"],
-          attack_type:          atk_attrs["attack_type"],
-          attack_ability_score: atk_attrs["attack_ability_score"],
-          description:          atk_attrs["description"]
-        )
-      end
-      creature.save!
-    end
+    destroy_pf2e_creatures
+    seed_sample_creatures
   end
 
   test "sample creatures are seeded (10 creatures)" do
@@ -129,66 +54,151 @@ class Pf2eStockCreatureTest < ActiveSupport::TestCase
   end
 
   test "creature seeding is idempotent — re-seeding preserves child-row counts" do
-    # Record counts before re-seed
-    counts_before = Entitybuilder::StockCreature.where(core_rules: "Pathfinder 2e").map do |c|
-      [c.name, {
-        ability_scores: c.ability_scores.count,
-        trackables:     c.trackables.count,
-        defenses:       c.defenses.count,
-        saving_throws:  c.saving_throws.count,
-        attacks:        c.attacks.count
-      }]
-    end.to_h
-
-    # Re-seed
-    records = JSON.parse(File.read(SAMPLE_SEED_FILE))
-    records.each do |attrs|
-      creature = Entitybuilder::StockCreature.find_or_initialize_by(
-        name:       attrs["name"],
-        core_rules: attrs["core_rules"]
-      ) { |c| c.id = SecureRandom.uuid }
-      creature.assign_attributes(attrs.slice(
-        "short_description", "full_description", "publisher", "source", "is_3pp"
-      ))
-      creature.save!
-      creature.ability_scores.delete_all
-      creature.trackables.delete_all
-      creature.base_values.delete_all
-      creature.defenses.delete_all
-      creature.saving_throws.delete_all
-      creature.attacks.delete_all
-      Array(attrs["ability_scores"]).each do |a|
-        creature.ability_scores.build(name: a["name"], base: a["base"].to_i, modifier: a["modifier"].to_i, dice: a["dice"].presence)
-      end
-      Array(attrs["trackables"]).each do |t|
-        creature.trackables.build(name: t["name"], maximum: t["maximum"].to_i, current: t["current"].to_i)
-      end
-      Array(attrs["base_values"]).each do |b|
-        creature.base_values.build(name: b["name"], value: b["value"].to_i, dice: b["dice"].presence)
-      end
-      Array(attrs["defenses"]).each do |d|
-        creature.defenses.build(name: d["name"], base: d["base"].to_i, ability_score: d["ability_score"])
-      end
-      Array(attrs["saving_throws"]).each do |s|
-        creature.saving_throws.build(name: s["name"], base: s["base"].to_i, ability_score: s["ability_score"])
-      end
-      Array(attrs["attacks"]).each do |a|
-        creature.attacks.build(name: a["name"], attack_type: a["attack_type"], attack_ability_score: a["attack_ability_score"], description: a["description"])
-      end
-      creature.save!
-    end
-
-    # Verify counts unchanged
-    counts_after = Entitybuilder::StockCreature.where(core_rules: "Pathfinder 2e").map do |c|
-      [c.name, {
-        ability_scores: c.ability_scores.count,
-        trackables:     c.trackables.count,
-        defenses:       c.defenses.count,
-        saving_throws:  c.saving_throws.count,
-        attacks:        c.attacks.count
-      }]
-    end.to_h
+    counts_before = creature_child_counts
+    seed_sample_creatures
+    counts_after = creature_child_counts
 
     assert_equal counts_before, counts_after, "re-seeding should not change child row counts"
+  end
+
+  private
+
+  def creature_child_counts
+    pf2e_creatures.map do |creature|
+      [creature.name, child_counts_for(creature)]
+    end.to_h
+  end
+
+  def child_counts_for(creature)
+    {
+      ability_scores: creature.ability_scores.count,
+      trackables: creature.trackables.count,
+      defenses: creature.defenses.count,
+      saving_throws: creature.saving_throws.count,
+      attacks: creature.attacks.count
+    }
+  end
+
+  def destroy_pf2e_creatures
+    pf2e_creatures.each do |creature|
+      destroy_creature(creature)
+    end
+  end
+
+  def destroy_creature(creature)
+    clear_creature_children(creature)
+    creature.destroy
+  end
+
+  def pf2e_creatures
+    Entitybuilder::StockCreature.where(core_rules: "Pathfinder 2e")
+  end
+
+  def sample_records
+    JSON.parse(File.read(SAMPLE_SEED_FILE))
+  end
+
+  def seed_sample_creatures
+    sample_records.each do |attrs|
+      creature = find_or_build_creature(attrs)
+      assign_creature_attributes(creature, attrs)
+      rebuild_creature_children(creature, attrs)
+      creature.save!
+    end
+  end
+
+  def find_or_build_creature(attrs)
+    Entitybuilder::StockCreature.find_or_initialize_by(
+      name: attrs["name"],
+      core_rules: attrs["core_rules"]
+    ) { |creature| creature.id = SecureRandom.uuid }
+  end
+
+  def assign_creature_attributes(creature, attrs)
+    creature.assign_attributes(
+      attrs.slice("short_description", "full_description", "publisher", "source", "is_3pp")
+    )
+    creature.save!
+  end
+
+  def rebuild_creature_children(creature, attrs)
+    clear_creature_children(creature)
+    build_ability_scores(creature, attrs["ability_scores"])
+    build_trackables(creature, attrs["trackables"])
+    build_base_values(creature, attrs["base_values"])
+    build_defenses(creature, attrs["defenses"])
+    build_saving_throws(creature, attrs["saving_throws"])
+    build_attacks(creature, attrs["attacks"])
+  end
+
+  def clear_creature_children(creature)
+    creature.ability_scores.delete_all
+    creature.trackables.delete_all
+    creature.base_values.delete_all
+    creature.defenses.delete_all
+    creature.saving_throws.delete_all
+    creature.attacks.delete_all
+  end
+
+  def build_ability_scores(creature, ability_scores)
+    Array(ability_scores).each do |attrs|
+      creature.ability_scores.build(
+        name: attrs["name"],
+        base: attrs["base"].to_i,
+        modifier: attrs["modifier"].to_i,
+        dice: attrs["dice"].presence
+      )
+    end
+  end
+
+  def build_trackables(creature, trackables)
+    Array(trackables).each do |attrs|
+      creature.trackables.build(
+        name: attrs["name"],
+        maximum: attrs["maximum"].to_i,
+        current: attrs["current"].to_i
+      )
+    end
+  end
+
+  def build_base_values(creature, base_values)
+    Array(base_values).each do |attrs|
+      creature.base_values.build(
+        name: attrs["name"],
+        value: attrs["value"].to_i,
+        dice: attrs["dice"].presence
+      )
+    end
+  end
+
+  def build_defenses(creature, defenses)
+    Array(defenses).each do |attrs|
+      creature.defenses.build(
+        name: attrs["name"],
+        base: attrs["base"].to_i,
+        ability_score: attrs["ability_score"]
+      )
+    end
+  end
+
+  def build_saving_throws(creature, saving_throws)
+    Array(saving_throws).each do |attrs|
+      creature.saving_throws.build(
+        name: attrs["name"],
+        base: attrs["base"].to_i,
+        ability_score: attrs["ability_score"]
+      )
+    end
+  end
+
+  def build_attacks(creature, attacks)
+    Array(attacks).each do |attrs|
+      creature.attacks.build(
+        name: attrs["name"],
+        attack_type: attrs["attack_type"],
+        attack_ability_score: attrs["attack_ability_score"],
+        description: attrs["description"]
+      )
+    end
   end
 end
