@@ -1,0 +1,78 @@
+service: cityofbrass
+
+image: cityofbrass
+
+servers:
+  web:
+    - 192.168.1.101
+  job:
+    hosts:
+      - 192.168.1.101
+    cmd: bundle exec sidekiq -c 8 -q default -q mailers -q paperclip
+
+proxy:
+  ssl: false
+  hosts:
+    - dnd.vandelden.family
+  forward_headers: true
+  app_port: 3000
+  healthcheck:
+    path: /up
+    interval: 2
+    timeout: 2
+
+registry:
+  server: registry.vandelden.family
+  username: root
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+builder:
+  arch: amd64
+  remote: ssh://root@192.168.1.102
+  context: "."
+  args:
+    RUBY_VERSION: <%= File.read('.ruby-version').strip %>
+
+env:
+  clear:
+    APP_NAME: CityOfBrass
+    RAILS_ENV: production
+    RAILS_LOG_TO_STDOUT: "1"
+    RAILS_SERVE_STATIC_FILES: "1"
+    DEFAULT_BASE_URL: dnd.vandelden.family
+    AWS_REGION: us-east-1
+    REDIS_URL: redis://cityofbrass-redis:6379/0
+    ACTIVEPLAY_URL: https://activeplay.dnd.vandelden.family
+  secret:
+    - SECRET_KEY_BASE
+    - PAPERCLIP_SECRET
+    - SES_USER
+    - SES_PASS
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - FOG_DIRECTORY
+    - NEW_RELIC_LICENSE_KEY
+    - ACTIVEPLAY_SECRET
+
+aliases:
+  apps: server exec docker exec kamal-proxy kamal-proxy list
+  shell: app exec --interactive --reuse "bash"
+  console: app exec --interactive --reuse "bin/rails console"
+  dbconsole: app exec --interactive --reuse "bin/rails dbconsole"
+  migrate: app exec --reuse "bin/rails db:migrate"
+
+volumes:
+  - "/home/app_storage/cityofbrass/storage:/rails/storage"
+
+asset_path: /rails/public/assets
+
+deploy_timeout: 30
+
+accessories:
+  redis:
+    image: redis:7-alpine
+    host: 192.168.1.101
+    cmd: redis-server --save 60 1 --loglevel warning --appendonly yes
+    directories:
+      - /home/app_storage/cityofbrass/redis:/data
