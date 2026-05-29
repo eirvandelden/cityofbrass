@@ -256,3 +256,12 @@ draw_steel_character:
   sheet_privacy: Residents
   core_rules: Draw Steel
   short_description: A Draw Steel test character
+
+fifth_edition_character:
+  type: Entitybuilder::ResidentCharacter
+  resident: razune
+  name: Valra
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: 5th Edition
+  short_description: A 5th Edition test character

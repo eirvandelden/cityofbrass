@@ -5,13 +5,13 @@
   "default_dice": "1d20",
   "d20_system": "false",
   "publisher": {
-    "name": "Wizards of the Coast",
+    "name": "Wizards of the Coast LLC",
     "logo": "",
     "url": "http://dnd.wizards.com"
   },
   "license": {
-    "label": "Open Game License",
-    "core_faq": "License d20 OGL"
+    "label": "Creative Commons Attribution 4.0 International",
+    "attribution": "This work includes material from the System Reference Document 5.2.1 (\"SRD 5.2.1\") by Wizards of the Coast LLC, available at https://www.dndbeyond.com/srd. The SRD 5.2.1 is licensed under the Creative Commons Attribution 4.0 International License, available at https://creativecommons.org/licenses/by/4.0/legalcode."
   },
   "entitybuilder": {
     "sheet": "default",
@@ -80,7 +80,7 @@
         {"name": "Armor Class", "base": "10", "ability_score": "Dexterity"}
       ],
       "descriptors": [
-        {"name": "Race", "description": "", "is_private": "false"},
+        {"name": "Species", "description": "", "is_private": "false"},
         {"name": "Age", "description": "", "is_private": "false"},
         {"name": "Height", "description": "", "is_private": "false"},
         {"name": "Weight", "description": "", "is_private": "false"},
@@ -170,7 +170,13 @@
   "rulebuilder": {
     "rules": [
       {"name": "Ability", "is_shared": "true"},
-      {"name": "Feat", "is_shared": "true"}
+      {"name": "Background", "is_shared": "true"},
+      {"name": "Class", "is_shared": "true"},
+      {"name": "Condition", "is_shared": "true"},
+      {"name": "Feat", "is_shared": "true"},
+      {"name": "Rule Reference", "is_shared": "true"},
+      {"name": "Species", "is_shared": "true"},
+      {"name": "Subclass", "is_shared": "true"}
     ],
     "powers": [
       {"name": "Spell", "is_shared": "true"}

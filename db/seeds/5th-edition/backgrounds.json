@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Acolyte",
+    "rule_type": "Background",
+    "core_rules": "5th Edition",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Wizards of the Coast LLC",
+    "source": "SRD 5.2.1",
+    "short_description": "A devoted servant of a faith, trained in religious ritual with the Magic Initiate (Cleric) feat.",
+    "full_description": "# Acolyte\n\n**Ability Scores:** Intelligence, Wisdom, Charisma\n\n**Feat:** Magic Initiate (Cleric) (see \"Feats\")\n\n**Skill Proficiencies:** Insight and Religion\n\n**Tool Proficiency:** Calligrapher's Supplies\n\n**Equipment:** *Choose A or B:* (A) Calligrapher's Supplies, Book (prayers), Holy Symbol, Parchment (10 sheets), Robe, 8 GP; or (B) 50 GP\n\n---\n*This work includes material from the System Reference Document 5.2.1 (\"SRD 5.2.1\") by Wizards of the Coast LLC, available at https://www.dndbeyond.com/srd. The SRD 5.2.1 is licensed under the Creative Commons Attribution 4.0 International License, available at https://creativecommons.org/licenses/by/4.0/legalcode.*",
+    "tags": [],
+    "categories": []
+  },
+  {
+    "name": "Criminal",
+    "rule_type": "Background",
+    "core_rules": "5th Edition",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Wizards of the Coast LLC",
+    "source": "SRD 5.2.1",
+    "short_description": "A practiced lawbreaker skilled in stealth and subterfuge, trained with the Alert feat.",
+    "full_description": "# Criminal\n\n**Ability Scores:** Dexterity, Constitution, Intelligence\n\n**Feat:** Alert (see \"Feats\")\n\n**Skill Proficiencies:** Sleight of Hand and Stealth\n\n**Tool Proficiency:** Thieves' Tools\n\n**Equipment:** *Choose A or B:* (A) 2 Daggers, Thieves' Tools, Crowbar, 2 Pouches, Traveler's Clothes, 16 GP; or (B) 50 GP\n\n---\n*This work includes material from the System Reference Document 5.2.1 (\"SRD 5.2.1\") by Wizards of the Coast LLC, available at https://www.dndbeyond.com/srd. The SRD 5.2.1 is licensed under the Creative Commons Attribution 4.0 International License, available at https://creativecommons.org/licenses/by/4.0/legalcode.*",
+    "tags": [],
+    "categories": []
+  },
+  {
+    "name": "Sage",
+    "rule_type": "Background",
+    "core_rules": "5th Edition",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Wizards of the Coast LLC",
+    "source": "SRD 5.2.1",
+    "short_description": "A scholarly seeker of knowledge schooled in arcana and history, trained with the Magic Initiate (Wizard) feat.",
+    "full_description": "# Sage\n\n**Ability Scores:** Constitution, Intelligence, Wisdom\n\n**Feat:** Magic Initiate (Wizard) (see \"Feats\")\n\n**Skill Proficiencies:** Arcana and History\n\n**Tool Proficiency:** Calligrapher's Supplies\n\n**Equipment:** *Choose A or B:* (A) Quarterstaff, Calligrapher's Supplies, Book (history), Parchment (8 sheets), Robe, 8 GP; or (B) 50 GP\n\n---\n*This work includes material from the System Reference Document 5.2.1 (\"SRD 5.2.1\") by Wizards of the Coast LLC, available at https://www.dndbeyond.com/srd. The SRD 5.2.1 is licensed under the Creative Commons Attribution 4.0 International License, available at https://creativecommons.org/licenses/by/4.0/legalcode.*",
+    "tags": [],
+    "categories": []
+  },
+  {
+    "name": "Soldier",
+    "rule_type": "Background",
+    "core_rules": "5th Edition",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Wizards of the Coast LLC",
+    "source": "SRD 5.2.1",
+    "short_description": "A military veteran trained in athletics and intimidation, taking the Savage Attacker feat.",
+    "full_description": "# Soldier\n\n**Ability Scores:** Strength, Dexterity, Constitution\n\n**Feat:** Savage Attacker (see \"Feats\")\n\n**Skill Proficiencies:** Athletics and Intimidation\n\n**Tool Proficiency:** *Choose one kind of Gaming Set*\n\n**Equipment:** *Choose A or B:* (A) Spear, Shortbow, 20 Arrows, Gaming Set (same as above), Healer's Kit, Quiver, Traveler's Clothes, 14 GP; or (B) 50 GP\n\n---\n*This work includes material from the System Reference Document 5.2.1 (\"SRD 5.2.1\") by Wizards of the Coast LLC, available at https://www.dndbeyond.com/srd. The SRD 5.2.1 is licensed under the Creative Commons Attribution 4.0 International License, available at https://creativecommons.org/licenses/by/4.0/legalcode.*",
+    "tags": [],
+    "categories": []
+  }
+]
