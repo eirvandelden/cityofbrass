@@ -31,6 +31,15 @@ class ImporterPreviewUploadTest < ActionDispatch::IntegrationTest
     assert_equal 1, campaign.entity_counts["npcs"]
   end
 
+  test "resident preview form renders a file input" do
+    sign_in users(:dan)
+
+    get "/imports/previews/new"
+
+    assert_response :success
+    assert_select "input[type=file][name='files[]'][multiple]"
+  end
+
   test "admin upload creates an admin stock preview without a resident" do
     sign_in admins(:dan)
 
@@ -41,6 +50,15 @@ class ImporterPreviewUploadTest < ActionDispatch::IntegrationTest
     assert_equal "admin_stock", preview.mode
     assert_nil preview.resident
     assert_equal "compendium", preview.preview_files.first.detected_kind
+  end
+
+  test "admin preview form renders a file input" do
+    sign_in admins(:dan)
+
+    get "/admin/imports/previews/new"
+
+    assert_response :success
+    assert_select "input[type=file][name='files[]'][multiple]"
   end
 
   private

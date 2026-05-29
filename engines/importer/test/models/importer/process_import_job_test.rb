@@ -90,6 +90,26 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal [ "already exists" ], import.import_results.skipped.distinct.pluck(:reason)
   end
 
+  test "unsupported imports do not report success" do
+    import = import_for_kind("unsupported", mode: Importer::Preview::RESIDENT_CONTENT)
+
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    assert_equal "partial", import.reload.status
+    assert_equal "failed", import.import_files.first.parse_status
+    assert_equal [ "unsupported file kind" ], import.import_results.failed.distinct.pluck(:reason)
+  end
+
+  test "standalone pc imports do not report success before support exists" do
+    import = import_for_kind("pc", mode: Importer::Preview::RESIDENT_CONTENT)
+
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    assert_equal "partial", import.reload.status
+    assert_equal "failed", import.import_files.first.parse_status
+    assert_equal [ "unsupported file kind" ], import.import_results.failed.distinct.pluck(:reason)
+  end
+
   private
 
   def import_for(file_name, mode:)
@@ -97,6 +117,15 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     preview.add_uploads([ uploaded_file(file_name) ])
     Importer::Import.create!(resident: preview.resident, mode: preview.mode, source: preview.source,
                              status: Importer::Import::QUEUED, preview: preview)
+  end
+
+  def import_for_kind(kind, mode:)
+    import = Importer::Import.create!(resident: resident_for(mode), mode: mode, source: Importer::Preview::GAME_MASTER_5_XML,
+                                      status: Importer::Import::QUEUED)
+    File.open(importer_fixture_file("sample_compendium.xml")) do |file|
+      import.import_files.create!(kind: kind, parse_status: "pending", file: file)
+    end
+    import
   end
 
   def preview_for(mode)
