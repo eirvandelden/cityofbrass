@@ -21,6 +21,16 @@ class CiWorkflowTest < ActiveSupport::TestCase
     assert_includes run_commands("test"), "bin/rails test"
   end
 
+  def test_ci_sets_up_chrome_before_running_system_tests
+    assert_operator setup_chrome_step_index, :<, system_test_step_index
+    assert_equal "${{ steps.setup-chrome.outputs.chrome-path }}", system_test_step.dig("env", "BROWSER_PATH")
+  end
+
+  def test_ci_runs_regular_and_system_tests_separately
+    assert_match(/bin\/rails test$/, regular_test_step.fetch("run"))
+    assert_match(/bin\/rails test:system$/, system_test_step.fetch("run"))
+  end
+
   private
 
   def workflow
@@ -41,5 +51,25 @@ class CiWorkflowTest < ActiveSupport::TestCase
 
   def run_commands(job_name)
     steps(job_name).filter_map { |step| step["run"] }
+  end
+
+  def regular_test_step
+    steps("test").find { |step| step["name"] == "Run tests" }
+  end
+
+  def setup_chrome_step_index
+    steps("test").index(setup_chrome_step)
+  end
+
+  def setup_chrome_step
+    steps("test").find { |step| step["uses"] == "browser-actions/setup-chrome@v1" }
+  end
+
+  def system_test_step
+    steps("test").find { |step| step["name"] == "Run system tests" }
+  end
+
+  def system_test_step_index
+    steps("test").index(system_test_step)
   end
 end

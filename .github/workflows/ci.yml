@@ -45,7 +45,16 @@ jobs:
           RAILS_ENV: test
         run: bin/rails db:schema:load
 
+      - uses: browser-actions/setup-chrome@v1
+        id: setup-chrome
+
       - name: Run tests
         env:
           RAILS_ENV: test
         run: bin/rails test
+
+      - name: Run system tests
+        env:
+          BROWSER_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
+          RAILS_ENV: test
+        run: bin/rails test:system
