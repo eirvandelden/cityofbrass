@@ -89,6 +89,11 @@ group :development, :test do
   gem "rubocop-rails-omakase"
 end
 
+group :test do
+  gem "capybara"
+  gem "cuprite"
+end
+
 group :production, :staging do
   gem "rails_12factor"
 end
