@@ -21,6 +21,7 @@ var onCurrentInstance = function(){
 function ckeditorStandard() {
   CKEDITOR.env.isCompatible = true;
   CKEDITOR.replaceAll(function( textarea, config ){
+    if (!$(textarea).hasClass('editorblank')) return false;
     config.contentsCss = ["https://fonts.googleapis.com/css?family=Marcellus+SC","https://fonts.googleapis.com/css?family=Open+Sans:400,700","<%= asset_path 'ckeditor/standard.css' %>"];
     config.uiColor = '#c5c5c5';
     config.forcePasteAsPlainText = false;
@@ -42,6 +43,7 @@ function ckeditorStandard() {
 function ckeditorMini() {
   CKEDITOR.env.isCompatible = true;
   CKEDITOR.replaceAll(function( textarea, config ){
+    if (!$(textarea).hasClass('editorblank')) return false;
     config.contentsCss = ["https://fonts.googleapis.com/css?family=Marcellus+SC","https://fonts.googleapis.com/css?family=Open+Sans:400,700","<%= asset_path 'ckeditor/standard.css' %>"];
     config.uiColor = '#c5c5c5';
     config.forcePasteAsPlainText = false;
@@ -61,6 +63,7 @@ function ckeditorMini() {
 function ckeditorBasic() {
   CKEDITOR.env.isCompatible = true;
   CKEDITOR.replaceAll(function( textarea, config ){
+    if (!$(textarea).hasClass('editorblank')) return false;
     config.contentsCss = ["https://fonts.googleapis.com/css?family=Marcellus+SC","https://fonts.googleapis.com/css?family=Open+Sans:400,700","<%= asset_path 'ckeditor/standard.css' %>"];
     config.uiColor = '#c5c5c5';
     config.forcePasteAsPlainText = false;
@@ -97,6 +100,7 @@ function ckeditorCard() {
 
   CKEDITOR.env.isCompatible = true;
   CKEDITOR.replaceAll(function( textarea, config ){
+    if (!$(textarea).hasClass('editorblank')) return false;
     config.contentsCss = ["https://fonts.googleapis.com/css?family=Marcellus+SC","https://fonts.googleapis.com/css?family=Open+Sans:400,700","<%= asset_path 'ckeditor/standard.css' %>"];
     config.uiColor = '#c5c5c5';
     config.forcePasteAsPlainText = false;
@@ -120,6 +124,7 @@ function ckeditorCard() {
 function ckeditorFAQ() {
   CKEDITOR.env.isCompatible = true;
   CKEDITOR.replaceAll(function( textarea, config ){
+    if (!$(textarea).hasClass('editorblank')) return false;
     config.contentsCss = ["https://fonts.googleapis.com/css?family=Marcellus+SC","https://fonts.googleapis.com/css?family=Open+Sans:400,700","<%= asset_path 'ckeditor/standard.css' %>"];
     config.uiColor = '#c5c5c5';
     config.forcePasteAsPlainText = false;

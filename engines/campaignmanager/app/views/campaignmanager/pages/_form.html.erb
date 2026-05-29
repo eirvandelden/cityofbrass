@@ -24,7 +24,7 @@
         <%= f.input :page_date, label: 'Session Date', :include_blank => true %>
       <% end %>
       <%= f.input :short_description %>
-      <%= f.input :full_description, class: "editorblank" %>
+      <%= f.input :full_description, input_html: { class: "editorblank" } %>
     </div>
   </div>
 </fieldset>

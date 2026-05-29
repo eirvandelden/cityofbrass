@@ -4,7 +4,7 @@
     <div class="medium-12 columns">
       <%= f.association :recipient, collection: @resident.affiliates, label_method: :name, value_method: :id, :prompt => 'Please Select' %>
       <%= f.input :subject %>
-      <%= f.input :body, class: "editorblank" %>
+      <%= f.input :body, input_html: { class: "editorblank" } %>
     </div>
   </div>
 </fieldset>

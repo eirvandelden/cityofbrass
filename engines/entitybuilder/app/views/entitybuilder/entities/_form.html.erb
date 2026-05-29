@@ -43,11 +43,11 @@
     <div class="small-12 columns">
       <%= f.input :tag_list, label: 'Tag list (separated by commas)' %>
       <%= f.input :short_description %>
-      <%= f.input :full_description, label: "Full Description ( Summary & Profile )", class: "editorblank" %>
+      <%= f.input :full_description, label: "Full Description ( Summary & Profile )", input_html: { class: "editorblank" } %>
       <br>
-      <%= f.input :introduction, label: "Introduction ( Profile )", class: "editorblank" %>
+      <%= f.input :introduction, label: "Introduction ( Profile )", input_html: { class: "editorblank" } %>
       <br>
-      <%= f.input :notes, class: "editorblank" %>
+      <%= f.input :notes, input_html: { class: "editorblank" } %>
     </div>
   </div>
   <% end %>
