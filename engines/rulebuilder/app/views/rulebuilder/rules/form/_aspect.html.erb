@@ -38,7 +38,7 @@
 </div>
 <div class="row">
   <div class="medium-12 columns">
-    <%= f.input :full_description, class: "editorblank" %>
+    <%= f.input :full_description, input_html: { class: "editorblank" } %>
     <br>
     <% if f.object.is_shared == true %>
       <% f.input :tag_list, label: 'Tag list (separated by commas)' %>

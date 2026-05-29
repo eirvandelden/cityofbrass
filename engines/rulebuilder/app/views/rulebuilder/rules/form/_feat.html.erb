@@ -45,14 +45,14 @@
 </div>
 <div class="row">
   <div class="medium-12 columns">
-    <%= f.input :full_description, class: "editorblank" %>
+    <%= f.input :full_description, input_html: { class: "editorblank" } %>
     <br>
     <% if CoreRules.d20_system?(f.object.core_rules) %>
-      <%= f.input :benefit, class: "editorblank" %>
+      <%= f.input :benefit, input_html: { class: "editorblank" } %>
       <br>
-      <%= f.input :normal, class: "editorblank" %>
+      <%= f.input :normal, input_html: { class: "editorblank" } %>
       <br>
-      <%= f.input :special, class: "editorblank" %>
+      <%= f.input :special, input_html: { class: "editorblank" } %>
       <br>
     <% end %>
   </div>
