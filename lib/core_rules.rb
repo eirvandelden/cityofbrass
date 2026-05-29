@@ -1,5 +1,6 @@
-require "core_rules/rule"
 require "core_rules/entity"
+require "core_rules/rule"
+require "core_rules/seeder"
 
 module CoreRules
   mattr_accessor :rulebooks
