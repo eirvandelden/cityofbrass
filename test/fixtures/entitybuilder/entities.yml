@@ -265,3 +265,12 @@ fifth_edition_character:
   sheet_privacy: Residents
   core_rules: 5th Edition
   short_description: A 5th Edition test character
+
+pf2e_character:
+  type: Entitybuilder::ResidentCharacter
+  resident: razune
+  name: Valeros
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: Pathfinder 2e
+  short_description: A Pathfinder 2e test character
