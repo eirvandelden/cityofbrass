@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+require Rails.root.join("lib/support/core_faq_bootstrap")
+
+Support::CoreFaqBootstrap.call
+
 user = User.new(
   email: "user@example.com",
   password: "password1",

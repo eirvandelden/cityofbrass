@@ -5,7 +5,7 @@ class LefthookConfigTest < ActiveSupport::TestCase
   def test_pre_commit_lints_staged_ruby_files
     rubocop_command = config.dig("pre-commit", "commands", "rubocop")
 
-    assert_equal "*.rb", rubocop_command.fetch("glob")
+    assert_equal "*.{rb,rake}", rubocop_command.fetch("glob")
     assert_match(/bundle exec rubocop --force-exclusion \{staged_files\}/, rubocop_command.fetch("run"))
   end
 

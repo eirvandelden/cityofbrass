@@ -54,11 +54,17 @@ module CoreRules
 
     def render_markdown(text)
       return text unless text.present?
+      return text if html_fragment?(text)
+
       markdown_renderer.render(text)
     end
 
     def markdown_renderer
       Redcarpet::Markdown.new(Redcarpet::Render::HTML, MARKDOWN_OPTIONS)
+    end
+
+    def html_fragment?(text)
+      text.match?(%r{</?[a-z][^>]*>}i)
     end
   end
 end
