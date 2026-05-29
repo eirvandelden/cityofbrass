@@ -1,13 +1,23 @@
 require "test_helper"
 require "capybara/cuprite"
 
+Capybara.register_driver(:cuprite) do |app|
+  Capybara::Cuprite::Driver.new(
+    app,
+    window_size: [ 1400, 1400 ],
+    js_errors: true,
+    process_timeout: 30,
+    browser_options: {
+      "disable-dev-shm-usage" => nil,
+      "no-sandbox" => nil
+    }
+  )
+end
+
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   include ActiveJob::TestHelper
 
-  driven_by :cuprite, screen_size: [ 1400, 1400 ], options: {
-    js_errors: true,
-    process_timeout: 15
-  }
+  driven_by :cuprite
 
   setup do
     @previous_queue_adapter = ActiveJob::Base.queue_adapter
