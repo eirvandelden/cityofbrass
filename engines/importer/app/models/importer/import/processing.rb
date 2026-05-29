@@ -32,12 +32,33 @@ module Importer
 
       def process_import_file(import_file)
         document = Sources::GameMaster5Xml::Document.new(import_file.file.path)
-        import_file.kind == "campaign" ? import_campaign(import_file, document) : import_compendium(import_file, document)
-        import_file.update!(parse_status: "parsed")
+        if import_file.kind == "campaign"
+          import_campaign(import_file, document)
+          import_file.update!(parse_status: "parsed")
+          return
+        end
+
+        if import_file.kind == "compendium"
+          import_compendium(import_file, document)
+          import_file.update!(parse_status: "parsed")
+          return
+        end
+
+        unsupported_import_file(import_file)
       end
 
       def import_compendium(import_file, document)
         document.compendium_records.each { |record| import_compendium_record(import_file, record) }
+      end
+
+      def unsupported_import_file(import_file)
+        import_file.import_results.create!(
+          entity_type: import_file.kind,
+          entity_name: import_file.file_file_name,
+          outcome: "failed",
+          reason: "unsupported file kind"
+        )
+        import_file.update!(parse_status: "failed")
       end
 
       def import_compendium_record(import_file, record)
