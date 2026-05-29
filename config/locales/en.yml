@@ -17,6 +17,43 @@ en:
   errors:
     messages:
       invalid_privacy: is not valid.
+  navigation:
+    admin:
+      stock_imports: Stock Imports
+  importer:
+    previews:
+      new:
+        title: Import Files
+        submit: Preview Import
+      show:
+        title: Import Preview
+        confirm: Confirm Import
+        file: File
+        kind: Kind
+        counts: Counts
+    imports:
+      index:
+        title: Imports
+      show:
+        title: Import Status
+        status: Status
+        results: Results
+        entity: Entity
+        outcome: Outcome
+        reason: Reason
+    admin:
+      previews:
+        new:
+          title: Stock Imports
+          submit: Preview Stock Import
+        show:
+          title: Stock Import Preview
+          confirm: Confirm Stock Import
+      imports:
+        index:
+          title: Stock Imports
+        show:
+          title: Stock Import Status
   gallery:
     images:
       image_modal:

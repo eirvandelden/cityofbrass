@@ -13,6 +13,11 @@ Rails.application.routes.draw do
     patch '/residents/:id' => "residents#admin_update", :as => :admin_resident_update
   end
 
+  scope "/admin/imports", module: "importer/admin", as: "admin_importer" do
+    resources :previews, only: [:new, :create, :show, :update, :destroy]
+    resources :imports, path: "", only: [:create, :show, :index]
+  end
+
   # authenticate :admin do
   #  mount Sidekiq::Web => '/sidekiq' # used for sidekiq ui
   # end
@@ -43,6 +48,7 @@ Rails.application.routes.draw do
   mount Billing::Engine,         :at => '/billing'
   mount Support::Engine,         :at => '/support'
   mount Gallery::Engine,         :at => '/gallery'
+  mount Importer::Engine,        :at => '/imports'
   mount Rulebuilder::Engine,     :at => '/rb'
   mount Entitybuilder::Engine,   :at => '/eb'
   mount Storybuilder::Engine,    :at => '/sb'

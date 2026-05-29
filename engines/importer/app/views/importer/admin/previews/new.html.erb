@@ -1,0 +1,8 @@
+<main>
+  <h1><%= t("importer.admin.previews.new.title") %></h1>
+
+  <%= form_for @preview, url: "/admin/imports/previews", html: { multipart: true } do |f| %>
+    <%= f.hidden_field :source %>
+    <%= f.submit t("importer.admin.previews.new.submit") %>
+  <% end %>
+</main>
