@@ -3,13 +3,13 @@ require "rake"
 
 class FifthEditionSeedTest < ActiveSupport::TestCase
   setup do
-    Rails.application.load_tasks unless Rake::Task.task_defined?("fifth_edition:seed:classes")
+    Rails.application.load_tasks unless Rake::Task.task_defined?("db:seed:5e:classes")
   end
 
   test "classes seed task creates valid StockRules with normalized source fields" do
     Rulebuilder::StockRule.where(core_rules: "5th Edition", rule_type: "Class").destroy_all
 
-    run_task("fifth_edition:seed:classes")
+    run_task("db:seed:5e:classes")
 
     rules = Rulebuilder::StockRule.where(core_rules: "5th Edition", rule_type: "Class")
     assert_equal 12, rules.count
@@ -24,10 +24,10 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
   test "spells seed task is idempotent" do
     Rulebuilder::StockSpell.where(core_rules: "5th Edition").destroy_all
 
-    run_task("fifth_edition:seed:spells")
+    run_task("db:seed:5e:spells")
     first_count = Rulebuilder::StockSpell.where(core_rules: "5th Edition").count
 
-    run_task("fifth_edition:seed:spells")
+    run_task("db:seed:5e:spells")
     second_count = Rulebuilder::StockSpell.where(core_rules: "5th Edition").count
 
     assert_equal first_count, second_count
@@ -38,9 +38,9 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
     Rulebuilder::StockSpell.where(core_rules: "5th Edition").destroy_all
     Rulebuilder::StockItem.where(core_rules: "5th Edition").destroy_all
 
-    run_task("fifth_edition:seed:species")
-    run_task("fifth_edition:seed:spells")
-    run_task("fifth_edition:seed:items")
+    run_task("db:seed:5e:species")
+    run_task("db:seed:5e:spells")
+    run_task("db:seed:5e:items")
 
     species = Rulebuilder::StockRule.find_by!(core_rules: "5th Edition", rule_type: "Species", name: "Elf")
     spell = Rulebuilder::StockSpell.find_by!(core_rules: "5th Edition", name: "Acid Splash")
@@ -57,8 +57,8 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
   test "creature and animal seed tasks create valid StockCreatures and stay idempotent" do
     Entitybuilder::StockCreature.where(core_rules: "5th Edition").destroy_all
 
-    run_task("fifth_edition:seed:creatures")
-    run_task("fifth_edition:seed:animals")
+    run_task("db:seed:5e:creatures")
+    run_task("db:seed:5e:animals")
 
     monster = Entitybuilder::StockCreature.find_by!(core_rules: "5th Edition", name: "Adult Black Dragon")
     animal = Entitybuilder::StockCreature.find_by!(core_rules: "5th Edition", name: "Ape")
@@ -75,8 +75,8 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
 
     first_snapshot = snapshot_creature(monster)
 
-    run_task("fifth_edition:seed:creatures")
-    run_task("fifth_edition:seed:animals")
+    run_task("db:seed:5e:creatures")
+    run_task("db:seed:5e:animals")
 
     second_snapshot = snapshot_creature(
       Entitybuilder::StockCreature.find_by!(core_rules: "5th Edition", name: "Adult Black Dragon")
@@ -92,14 +92,14 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
     Entitybuilder::StockCreature.where(core_rules: "5th Edition").destroy_all
 
     %w[
-      fifth_edition:seed:classes
-      fifth_edition:seed:species
-      fifth_edition:seed:feats
-      fifth_edition:seed:conditions
-      fifth_edition:seed:spells
-      fifth_edition:seed:items
-      fifth_edition:seed:creatures
-      fifth_edition:seed:animals
+      db:seed:5e:classes
+      db:seed:5e:species
+      db:seed:5e:feats
+      db:seed:5e:conditions
+      db:seed:5e:spells
+      db:seed:5e:items
+      db:seed:5e:creatures
+      db:seed:5e:animals
     ].each { |task_name| run_task(task_name) }
 
     assert Rulebuilder::StockRule.exists?(core_rules: "5th Edition", rule_type: "Class", name: "Barbarian")
@@ -110,6 +110,10 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
     assert Rulebuilder::StockItem.exists?(core_rules: "5th Edition", name: "Club")
     assert Entitybuilder::StockCreature.exists?(core_rules: "5th Edition", name: "Adult Black Dragon")
     assert Entitybuilder::StockCreature.exists?(core_rules: "5th Edition", name: "Ape")
+  end
+
+  test "5e seed namespace exposes aggregate task under db:seed" do
+    assert Rake::Task.task_defined?("db:seed:5e:all")
   end
 
   private

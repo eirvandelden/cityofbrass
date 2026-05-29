@@ -7,16 +7,21 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 user = User.new(
-    :email => 'user@example.com',
-    :password => 'password1',
-    :password_confirmation => 'password1'
-  )
+  email: "user@example.com",
+  password: "password1",
+  password_confirmation: "password1"
+)
 user.skip_confirmation!
 user.save!
 
 admin = Admin.new(
-    :email => 'user@example.com',
-    :password => 'password1',
-    :password_confirmation => 'password1'
-  )
+  email: "user@example.com",
+  password: "password1",
+  password_confirmation: "password1"
+)
 admin.save!
+
+%w[db:seed:draw_steel:all db:seed:5e:all].each do |task_name|
+  Rake::Task[task_name].reenable
+  Rake::Task[task_name].invoke
+end
