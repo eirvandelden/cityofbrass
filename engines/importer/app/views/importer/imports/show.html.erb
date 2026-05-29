@@ -1,0 +1,24 @@
+<main>
+  <h1><%= t("importer.imports.show.title") %></h1>
+  <p><%= t("importer.imports.show.status") %>: <%= @import.status %></p>
+
+  <h2><%= t("importer.imports.show.results") %></h2>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("importer.imports.show.entity") %></th>
+        <th><%= t("importer.imports.show.outcome") %></th>
+        <th><%= t("importer.imports.show.reason") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @import.import_results.each do |result| %>
+        <tr>
+          <td><%= result.entity_name %></td>
+          <td><%= result.outcome %></td>
+          <td><%= result.reason %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</main>

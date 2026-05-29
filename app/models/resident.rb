@@ -28,6 +28,8 @@ class Resident < ApplicationRecord
   has_many :resident_items,     -> { order(:name) }, class_name: "Rulebuilder::ResidentItem"
   has_many :resident_spells,    -> { order(:name) }, class_name: "Rulebuilder::ResidentSpell"
   has_many :resident_rules,     -> { order(:name) }, class_name: "Rulebuilder::ResidentRule"
+  has_many :importer_previews,  -> { order(created_at: :desc) }, class_name: "Importer::Preview"
+  has_many :importer_imports,   -> { order(created_at: :desc) }, class_name: "Importer::Import"
 
   has_many :resident_images, -> { order(:name) }, class_name: "Gallery::ResidentImage"
 

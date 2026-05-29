@@ -1,0 +1,2 @@
+# Importer tests boot the host app, so use the host bundle.
+eval_gemfile "../../Gemfile"
