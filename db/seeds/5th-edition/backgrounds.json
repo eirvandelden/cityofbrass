@@ -1,7 +1,7 @@
 [
   {
     "name": "Acolyte",
-    "rule_type": "Background",
+    "rule_type": "Backgrounds",
     "core_rules": "5th Edition",
     "is_shared": true,
     "is_3pp": false,
@@ -14,7 +14,7 @@
   },
   {
     "name": "Criminal",
-    "rule_type": "Background",
+    "rule_type": "Backgrounds",
     "core_rules": "5th Edition",
     "is_shared": true,
     "is_3pp": false,
@@ -27,7 +27,7 @@
   },
   {
     "name": "Sage",
-    "rule_type": "Background",
+    "rule_type": "Backgrounds",
     "core_rules": "5th Edition",
     "is_shared": true,
     "is_3pp": false,
@@ -40,7 +40,7 @@
   },
   {
     "name": "Soldier",
-    "rule_type": "Background",
+    "rule_type": "Backgrounds",
     "core_rules": "5th Edition",
     "is_shared": true,
     "is_3pp": false,

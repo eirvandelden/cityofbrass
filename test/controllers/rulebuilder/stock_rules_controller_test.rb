@@ -80,7 +80,7 @@ module Rulebuilder
       sign_in @user
       sign_in @admin
 
-      %w[Background Class Condition Rule\ Reference Species Subclass].each do |rule_type|
+      %w[Backgrounds Class Condition Rule\ Reference Species Subclass].each do |rule_type|
         rule = Rulebuilder::StockRule.create!(
           core_rules: "5th Edition",
           rule_type: rule_type,

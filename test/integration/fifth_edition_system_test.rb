@@ -9,7 +9,7 @@ class FifthEditionSystemTest < ActiveSupport::TestCase
   test "5th Edition declares the expected 2024 rule types" do
     types = CoreRules::Rule.rule_types("5th Edition")
 
-    assert_equal %w[Ability Background Class Condition Feat Rule\ Reference Species Subclass].sort,
+    assert_equal %w[Ability Backgrounds Class Condition Feat Rule\ Reference Species Subclass].sort,
                  types.sort
   end
 

@@ -170,7 +170,7 @@
   "rulebuilder": {
     "rules": [
       {"name": "Ability", "is_shared": "true"},
-      {"name": "Background", "is_shared": "true"},
+      {"name": "Backgrounds", "is_shared": "true"},
       {"name": "Class", "is_shared": "true"},
       {"name": "Condition", "is_shared": "true"},
       {"name": "Feat", "is_shared": "true"},

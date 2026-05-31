@@ -35,18 +35,25 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
 
   test "seed tasks store rendered HTML descriptions" do
     Rulebuilder::StockRule.where(core_rules: "5th Edition", rule_type: "Species").destroy_all
+    Rulebuilder::StockRule.where(core_rules: "5th Edition", rule_type: "Backgrounds").destroy_all
     Rulebuilder::StockSpell.where(core_rules: "5th Edition").destroy_all
     Rulebuilder::StockItem.where(core_rules: "5th Edition").destroy_all
 
     run_task("db:seed:5e:species")
+    run_task("db:seed:5e:backgrounds")
     run_task("db:seed:5e:spells")
     run_task("db:seed:5e:items")
 
     species = Rulebuilder::StockRule.find_by!(core_rules: "5th Edition", rule_type: "Species", name: "Elf")
+    background = Rulebuilder::StockRule.find_by!(
+      core_rules: "5th Edition",
+      rule_type: "Backgrounds",
+      name: "Acolyte"
+    )
     spell = Rulebuilder::StockSpell.find_by!(core_rules: "5th Edition", name: "Acid Splash")
     item = Rulebuilder::StockItem.find_by!(core_rules: "5th Edition", name: "Club")
 
-    [ species, spell, item ].each do |record|
+    [ species, background, spell, item ].each do |record|
       assert_match(/<h\d/, record.full_description)
       assert_no_match(/^#/, record.full_description)
       assert_equal "Wizards of the Coast LLC", record.publisher
@@ -104,6 +111,7 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
 
     %w[
       db:seed:5e:classes
+      db:seed:5e:backgrounds
       db:seed:5e:species
       db:seed:5e:feats
       db:seed:5e:conditions
@@ -114,6 +122,7 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
     ].each { |task_name| run_task(task_name) }
 
     assert Rulebuilder::StockRule.exists?(core_rules: "5th Edition", rule_type: "Class", name: "Barbarian")
+    assert Rulebuilder::StockRule.exists?(core_rules: "5th Edition", rule_type: "Backgrounds", name: "Acolyte")
     assert Rulebuilder::StockRule.exists?(core_rules: "5th Edition", rule_type: "Species", name: "Elf")
     assert Rulebuilder::StockRule.exists?(core_rules: "5th Edition", rule_type: "Feat", name: "Alert")
     assert Rulebuilder::StockRule.exists?(core_rules: "5th Edition", rule_type: "Condition", name: "Blinded")
