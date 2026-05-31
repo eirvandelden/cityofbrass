@@ -174,9 +174,21 @@ namespace :db do
           association.reset
 
           Array(attrs[association_name.to_s]).each_with_index do |record, index|
-            association.build(record.slice(*keys).merge("sort_order" => index))
+            association.build(
+              fifth_normalized_creature_record(association_name, record, keys).merge("sort_order" => index)
+            )
           end
         end
+      end
+
+      def fifth_normalized_creature_record(association_name, record, keys)
+        normalized_record = record.slice(*keys)
+
+        if association_name == :attacks && normalized_record["attack_type"] == "Ranged"
+          normalized_record["attack_type"] = "Range"
+        end
+
+        normalized_record
       end
 
       def fifth_render_markdown(text)

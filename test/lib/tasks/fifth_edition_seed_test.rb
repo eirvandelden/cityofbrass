@@ -85,6 +85,17 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
     assert_equal first_snapshot, second_snapshot
   end
 
+  test "creature seed task normalizes ranged attacks to the app range bucket" do
+    Entitybuilder::StockCreature.where(core_rules: "5th Edition").destroy_all
+
+    run_task("db:seed:5e:creatures")
+
+    assassin = Entitybuilder::StockCreature.find_by!(core_rules: "5th Edition", name: "Assassin")
+
+    assert assassin.attacks.exists?(attack_type: "Range")
+    assert_not assassin.attacks.exists?(attack_type: "Ranged")
+  end
+
   test "all seed categories provide spot-check records" do
     Rulebuilder::StockRule.where(core_rules: "5th Edition").destroy_all
     Rulebuilder::StockSpell.where(core_rules: "5th Edition").destroy_all
