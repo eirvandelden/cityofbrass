@@ -8,6 +8,8 @@ module Importer
       def process!
         update!(status: "running", started_at: Time.current)
         prepare_files_from_preview! if import_files.empty?
+        raise ArgumentError, "no import files available" if import_files.empty?
+
         ordered_import_files.each { |import_file| process_import_file(import_file) }
         finish!
       rescue StandardError => error
@@ -15,6 +17,8 @@ module Importer
       end
 
       def prepare_files_from_preview!
+        return if preview.blank?
+
         preview.preview_files.find_each { |preview_file| copy_preview_file(preview_file) }
       end
 
@@ -73,18 +77,22 @@ module Importer
         campaign = document.campaign_record
         return if campaign.blank?
 
-        root = import_campaign_root(import_file, campaign)
+        return import_stock_campaign(import_file, campaign) if admin_stock?
+
+        root = resident_campaign(import_file, campaign)
         campaign[:adventures].each { |adventure| import_adventure(import_file, adventure, root) }
         campaign[:notes].each { |note| import_note(import_file, note, root) }
         campaign[:pcs].each { |pc| import_pc(import_file, pc) }
         campaign[:npcs].each { |npc| import_npc(import_file, npc) }
       end
 
-      def import_campaign_root(import_file, campaign)
-        return resident_campaign(import_file, campaign) if resident_content?
+      def import_stock_campaign(import_file, campaign)
+        adventures = campaign[:adventures].map { |adventure| import_stock_adventure(import_file, adventure) }
+        root = adventures.first || stock_adventure(import_file, { name: campaign[:name] })
 
-        first_adventure = campaign[:adventures].first || { name: campaign[:name] }
-        stock_adventure(import_file, first_adventure)
+        campaign[:notes].each { |note| import_stock_note(import_file, note, root) }
+        campaign[:pcs].each { |pc| import_pc(import_file, pc) }
+        campaign[:npcs].each { |npc| import_npc(import_file, npc) }
       end
 
       def resident_campaign(import_file, campaign)
@@ -100,8 +108,14 @@ module Importer
         record
       end
 
+      def import_stock_adventure(import_file, adventure)
+        record = stock_adventure(import_file, adventure)
+        adventure[:encounters].each { |encounter| import_encounter(import_file, encounter, record) }
+        record
+      end
+
       def import_adventure(import_file, adventure, root)
-        record = resident_content? ? resident_adventure(import_file, adventure, root) : root
+        record = resident_adventure(import_file, adventure, root)
         adventure[:encounters].each { |encounter| import_encounter(import_file, encounter, record) }
       end
 
@@ -149,7 +163,7 @@ module Importer
 
       def compendium_class_for(type)
         return admin_stock? ? Entitybuilder::StockCreature : Entitybuilder::ResidentCreature if type == "monster"
-        return admin_stock? ? Rulebuilder::StockItem : Rulebuilder::ResidentItem if type == "item"
+        return admin_stock? ? Rulebuilder::StockItem : Rulebuilder::ResidentItem if %w[item container].include?(type)
         return admin_stock? ? Rulebuilder::StockSpell : Rulebuilder::ResidentSpell if type == "spell"
 
         admin_stock? ? Rulebuilder::StockRule : Rulebuilder::ResidentRule
@@ -167,7 +181,7 @@ module Importer
 
       def type_attributes(record)
         return { rule_type: record[:type].titleize, is_shared: true } if %w[race background feat class].include?(record[:type])
-        return { category: "container" } if record[:type] == "item"
+        return { category: "container" } if record[:type] == "container"
 
         {}
       end

@@ -21,11 +21,23 @@ module Importer
     validate :resident_required_for_resident_content
 
     def add_uploads(files)
-      Array(files).each { |file| add_upload(file) }
-      update!(status: "ready")
+      uploads = Array(files).compact
+      return missing_uploads unless uploads.any?
+
+      transaction do
+        uploads.each { |file| add_upload(file) }
+        update!(status: "ready")
+      end
+
+      true
     end
 
     private
+
+    def missing_uploads
+      errors.add(:base, :missing_files)
+      false
+    end
 
     def add_upload(file)
       detector = Sources::GameMaster5Xml::Detector.new(file_io(file))

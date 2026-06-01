@@ -9,7 +9,7 @@ module Importer
         end
 
         def compendium_records
-          records_for("monster", "monster") + records_for("item", "item") + records_for("container", "item") +
+          records_for("monster", "monster") + records_for("item", "item") + records_for("container", "container") +
             records_for("spell", "spell") + rule_records + class_records
         end
 

@@ -5,14 +5,14 @@ class ImporterPreviewUploadTest < ActionDispatch::IntegrationTest
 
   test "resident upload creates preview files with detected kinds and counts" do
     sign_in users(:dan)
+    preview_count = Importer::Preview.count
+    preview_file_count = Importer::PreviewFile.count
 
-    assert_difference("Importer::Preview.count", 1) do
-      assert_difference("Importer::PreviewFile.count", 2) do
-        post "/imports/previews", params: { files: [ uploaded_file("sample_compendium.xml"), uploaded_file("sample_campaign.xml") ] }
-      end
-    end
+    post "/imports/previews", params: { files: [ uploaded_file("sample_compendium.xml"), uploaded_file("sample_campaign.xml") ] }
 
     preview = Importer::Preview.order(:created_at).last
+    assert_equal preview_count + 1, Importer::Preview.count
+    assert_equal preview_file_count + 2, Importer::PreviewFile.count
     assert_redirected_to "/imports/previews/#{preview.id}"
     assert_equal "resident_content", preview.mode
     assert_equal residents(:razune), preview.resident
@@ -42,10 +42,14 @@ class ImporterPreviewUploadTest < ActionDispatch::IntegrationTest
 
   test "admin upload creates an admin stock preview without a resident" do
     sign_in admins(:dan)
+    preview_count = Importer::Preview.count
+    preview_file_count = Importer::PreviewFile.count
 
     post "/admin/imports/previews", params: { files: [ uploaded_file("sample_compendium.xml") ] }
 
     preview = Importer::Preview.order(:created_at).last
+    assert_equal preview_count + 1, Importer::Preview.count
+    assert_equal preview_file_count + 1, Importer::PreviewFile.count
     assert_redirected_to "/admin/imports/previews/#{preview.id}"
     assert_equal "admin_stock", preview.mode
     assert_nil preview.resident

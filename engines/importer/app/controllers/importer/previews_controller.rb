@@ -11,11 +11,10 @@ module Importer
       @preview.status = "parsing"
       @preview.resident = current_user.resident
 
-      if @preview.save
-        @preview.add_uploads(params[:files])
+      if persist_preview_uploads
         redirect_to preview_path(@preview)
       else
-        render :new
+        render :new, status: :unprocessable_entity
       end
     end
 
@@ -38,6 +37,19 @@ module Importer
     end
 
     private
+
+    def persist_preview_uploads
+      persisted = false
+
+      Preview.transaction do
+        persisted = @preview.save && @preview.add_uploads(params[:files])
+        next if persisted
+
+        raise ActiveRecord::Rollback
+      end
+
+      persisted
+    end
 
     def preview_params
       params.fetch(:preview, {}).permit(:source)
