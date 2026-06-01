@@ -96,3 +96,5 @@ end
 # gem "sqlite_extensions-uuid", "~> 1.0"  # Removed - using UuidPrimaryKey concern instead
 
 gem "minitest", "~> 5"
+
+gem "ed25519", "~> 1.4"

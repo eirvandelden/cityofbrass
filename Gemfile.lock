@@ -173,6 +173,7 @@ GEM
       dotenv (= 3.2.0)
       railties (>= 6.1)
     drb (2.2.3)
+    ed25519 (1.4.0)
     erb (6.0.2)
     erubi (1.13.1)
     execjs (2.10.0)
@@ -511,6 +512,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   drb
+  ed25519 (~> 1.4)
   entitybuilder!
   figaro
   font-awesome-rails
