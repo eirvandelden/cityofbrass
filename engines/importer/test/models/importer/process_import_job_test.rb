@@ -18,6 +18,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal 8, import.import_results.created.count
     assert_equal "Residents", Entitybuilder::StockCreature.find_by!(name: "Goblin").privacy
     assert_equal "Residents", Entitybuilder::StockCreature.find_by!(name: "Goblin").sheet_privacy
+    assert_equal "Backgrounds", Rulebuilder::StockRule.find_by!(name: "Sailor").rule_type
     assert_equal "Class", Rulebuilder::StockRule.find_by!(name: "Fighter").rule_type
   end
 
@@ -38,7 +39,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal residents(:razune), Entitybuilder::ResidentCreature.find_by!(name: "Goblin").resident
     assert_equal "Private", Entitybuilder::ResidentCreature.find_by!(name: "Goblin").privacy
     assert_nil Rulebuilder::ResidentItem.find_by!(name: "Longsword").category
-    assert_equal "Race", Rulebuilder::ResidentRule.find_by!(name: "Elf").rule_type
+    assert_equal "Species", Rulebuilder::ResidentRule.find_by!(name: "Elf").rule_type
   end
 
   test "resident campaign import creates campaign records and skips nothing" do
