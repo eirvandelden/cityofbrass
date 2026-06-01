@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compendium version="5" HB="HB">
+  <monster>
+    <name>Goblin</name>
+  </monster>
+  <monster>
+    <name>Orc</name>
+  </monster>
+  <item>
+    <name>Longsword</name>
+  </item>
+  <spell>
+    <name>Fire Bolt</name>
+  </spell>
+  <race>
+    <name>Elf</name>
+  </race>
+  <background>
+    <name>Sailor</name>
+  </background>
+  <feat>
+    <name>Alert</name>
+  </feat>
+  <baseclass>
+    <name>Fighter</name>
+  </baseclass>
+  <subclass baseclass="Fighter">
+    <name>Champion</name>
+  </subclass>
+</compendium>

@@ -96,6 +96,12 @@ module Importer
       end
 
       def resident_campaign(import_file, campaign)
+        existing = existing_record(Campaignmanager::Campaign, campaign[:name])
+        if existing
+          result(import_file, { type: "campaign", name: campaign[:name] }, "skipped", existing, "already exists")
+          return existing
+        end
+
         record = Campaignmanager::Campaign.create!(resident: resident, name: campaign[:name], privacy: "Private",
                                                    core_rules: CORE_RULES)
         result(import_file, { type: "campaign", name: campaign[:name] }, "created", record)
@@ -103,6 +109,12 @@ module Importer
       end
 
       def stock_adventure(import_file, adventure)
+        existing = existing_record(Storybuilder::StockAdventure, adventure[:name])
+        if existing
+          result(import_file, adventure.merge(type: "adventure"), "skipped", existing, "already exists")
+          return existing
+        end
+
         record = Storybuilder::StockAdventure.create!(name: adventure[:name], privacy: "Residents", core_rules: CORE_RULES)
         result(import_file, adventure.merge(type: "adventure"), "created", record)
         record
@@ -120,14 +132,24 @@ module Importer
       end
 
       def resident_adventure(import_file, adventure, campaign)
+        existing = existing_record(Storybuilder::ResidentAdventure, adventure[:name])
+        if existing
+          campaign.update!(adventure: existing) if campaign.adventure.blank?
+          result(import_file, adventure, "skipped", existing, "already exists")
+          return existing
+        end
+
         record = Storybuilder::ResidentAdventure.create!(resident: resident, name: adventure[:name], privacy: "Private",
                                                          core_rules: CORE_RULES)
-        campaign.update!(adventure: record)
+        campaign.update!(adventure: record) if campaign.adventure.blank?
         result(import_file, adventure, "created", record)
         record
       end
 
       def import_encounter(import_file, encounter, adventure)
+        existing = existing_page(adventure, encounter[:name])
+        return result(import_file, encounter, "skipped", existing, "already exists") if existing
+
         record = Storybuilder::Page.create!(adventure: adventure, name: encounter[:name], privacy: privacy)
         result(import_file, encounter, "created", record)
       end
@@ -135,17 +157,26 @@ module Importer
       def import_note(import_file, note, root)
         return import_stock_note(import_file, note, root) if admin_stock?
 
+        existing = existing_note(root, note[:name])
+        return result(import_file, note, "skipped", existing, "already exists") if existing
+
         record = Campaignmanager::GameMasterNote.create!(campaign: root, name: note[:name], privacy: "Private")
         result(import_file, note, "created", record)
       end
 
       def import_stock_note(import_file, note, adventure)
+        existing = existing_page(adventure, note[:name])
+        return result(import_file, note, "skipped", existing, "already exists") if existing
+
         record = Storybuilder::Page.create!(adventure: adventure, name: note[:name], privacy: "Residents", tags: [ "note" ])
         result(import_file, note, "created", record)
       end
 
       def import_pc(import_file, pc)
         return result(import_file, pc, "skipped", nil, "no stock character target") if admin_stock?
+
+        existing = existing_record(Entitybuilder::ResidentCharacter, pc[:name])
+        return result(import_file, pc, "skipped", existing, "already exists") if existing
 
         record = Entitybuilder::ResidentCharacter.create!(resident: resident, name: pc[:name], core_rules: CORE_RULES)
         enforce_entity_privacy!(record)
@@ -154,6 +185,9 @@ module Importer
 
       def import_npc(import_file, npc)
         klass = admin_stock? ? Entitybuilder::StockNpc : Entitybuilder::ResidentNpc
+        existing = existing_record(klass, npc[:name])
+        return result(import_file, npc, "skipped", existing, "already exists") if existing
+
         result(import_file, npc, "created", create_record!(klass, npc))
       end
 
@@ -203,6 +237,14 @@ module Importer
         scope = klass.where("lower(name) = ?", name.downcase)
         scope = scope.where(resident: resident) if resident_content? && klass.column_names.include?("resident_id")
         scope.first
+      end
+
+      def existing_page(adventure, name)
+        adventure.pages.where("lower(name) = ?", name.downcase).first
+      end
+
+      def existing_note(campaign, name)
+        campaign.game_master_notes.where("lower(name) = ?", name.downcase).first
       end
 
       def result(import_file, record, outcome, created_record = nil, reason = nil)
