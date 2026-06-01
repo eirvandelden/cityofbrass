@@ -12,6 +12,7 @@ namespace :db do
       }.freeze unless defined?(FIFTH_MARKDOWN_OPTIONS)
       FIFTH_CREATURE_COLLECTIONS = {
         ability_scores: %w[name base modifier],
+        defenses: %w[name base ability_score description],
         descriptors: %w[name description],
         movements: %w[name base ability_score description],
         trackables: %w[name maximum current],
@@ -131,12 +132,14 @@ namespace :db do
 
       def fifth_seed_creatures(file)
         records = JSON.parse(File.read(FIFTH_SEED_DIR.join(file)))
-        records.each do |attrs|
+        records.each_with_index do |attrs, index|
           creature = Entitybuilder::StockCreature.find_or_initialize_by(
             core_rules: attrs["core_rules"],
             name:       attrs["name"]
           ) { |c| c.id = SecureRandom.uuid }
-          creature.assign_attributes(fifth_seed_creature_attributes(attrs))
+          creature.assign_attributes(
+            fifth_seed_creature_attributes(attrs, next_name: records[index + 1]&.dig("name"))
+          )
           fifth_replace_creature_children(creature, attrs)
           creature.save!
         end
@@ -158,12 +161,14 @@ namespace :db do
         end
       end
 
-      def fifth_seed_creature_attributes(attrs)
+      def fifth_seed_creature_attributes(attrs, next_name: nil)
         {
           publisher:         attrs["publisher"],
           source:            attrs["source"],
           short_description: attrs["short_description"],
-          full_description:  fifth_render_markdown(attrs["full_description"])
+          full_description:  fifth_render_markdown(
+            fifth_sanitized_creature_description(attrs["full_description"], next_name: next_name)
+          )
         }
       end
 
@@ -173,7 +178,7 @@ namespace :db do
           association.destroy_all if creature.persisted?
           association.reset
 
-          Array(attrs[association_name.to_s]).each_with_index do |record, index|
+          fifth_creature_records(association_name, attrs).each_with_index do |record, index|
             association.build(
               fifth_normalized_creature_record(association_name, record, keys).merge("sort_order" => index)
             )
@@ -189,6 +194,32 @@ namespace :db do
         end
 
         normalized_record
+      end
+
+      def fifth_creature_records(association_name, attrs)
+        return fifth_creature_defenses(attrs) if association_name == :defenses
+
+        Array(attrs[association_name.to_s])
+      end
+
+      def fifth_creature_defenses(attrs)
+        armor_class = attrs["full_description"][/\*\*Armor Class:\*\*\s*(\d+)/, 1]
+        return [] if armor_class.blank?
+
+        [ {
+          "name" => "Armor Class",
+          "base" => armor_class.to_i,
+          "ability_score" => "",
+          "description" => ""
+        } ]
+      end
+
+      def fifth_sanitized_creature_description(text, next_name: nil)
+        return text unless text.present?
+
+        sanitized_text = text.dup
+        sanitized_text.sub!(/\n\n#{Regexp.escape(next_name)}\n\n---\n\n\*/, "\n\n---\n\n*") if next_name.present?
+        sanitized_text.sub(/\n\n[^\n.?!:]+\n\n---\n\n\*/, "\n\n---\n\n*")
       end
 
       def fifth_render_markdown(text)

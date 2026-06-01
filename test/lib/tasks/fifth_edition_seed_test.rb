@@ -71,14 +71,13 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
     animal = Entitybuilder::StockCreature.find_by!(core_rules: "5th Edition", name: "Ape")
 
     [ monster, animal ].each do |creature|
-      assert creature.valid?, "expected #{creature.name} to be valid"
-      assert_equal "Wizards of the Coast LLC", creature.publisher
-      assert_equal "SRD 5.2.1", creature.source
-      assert_match(/<h\d|<p>/, creature.full_description)
-      assert creature.ability_scores.any?, "expected ability scores on #{creature.name}"
-      assert creature.descriptors.any?, "expected descriptors on #{creature.name}"
-      assert creature.trackables.any?, "expected trackables on #{creature.name}"
+      assert_seeded_creature_basics(creature)
     end
+
+    assert_equal "Armor Class", monster.defenses.first.name
+    assert_equal 19, monster.defenses.first.base
+    assert_equal "Armor Class", animal.defenses.first.name
+    assert_equal 12, animal.defenses.first.base
 
     first_snapshot = snapshot_creature(monster)
 
@@ -101,6 +100,18 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
 
     assert assassin.attacks.exists?(attack_type: "Range")
     assert_not assassin.attacks.exists?(attack_type: "Ranged")
+  end
+
+  test "creature descriptions stop at the current stat block" do
+    Entitybuilder::StockCreature.where(core_rules: "5th Edition").destroy_all
+
+    run_task("db:seed:5e:creatures")
+
+    aboleth = Entitybuilder::StockCreature.find_by!(core_rules: "5th Edition", name: "Aboleth")
+    air_elemental = Entitybuilder::StockCreature.find_by!(core_rules: "5th Edition", name: "Air Elemental")
+
+    assert_no_match(/Air Elemental/, aboleth.full_description)
+    assert_no_match(/Animated Objects/, air_elemental.full_description)
   end
 
   test "all seed categories provide spot-check records" do
@@ -142,10 +153,22 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
       Rake::Task[task_name].invoke
     end
 
+    def assert_seeded_creature_basics(creature)
+      assert creature.valid?, "expected #{creature.name} to be valid"
+      assert_equal "Wizards of the Coast LLC", creature.publisher
+      assert_equal "SRD 5.2.1", creature.source
+      assert_match(/<h\d|<p>/, creature.full_description)
+      assert creature.ability_scores.any?, "expected ability scores on #{creature.name}"
+      assert creature.descriptors.any?, "expected descriptors on #{creature.name}"
+      assert creature.defenses.any?, "expected defenses on #{creature.name}"
+      assert creature.trackables.any?, "expected trackables on #{creature.name}"
+    end
+
     def snapshot_creature(creature)
       {
         descriptors: creature.descriptors.pluck(:name, :description),
         ability_scores: creature.ability_scores.pluck(:name, :base, :modifier),
+        defenses: creature.defenses.pluck(:name, :base, :ability_score, :description),
         movements: creature.movements.pluck(:name, :base, :description),
         trackables: creature.trackables.pluck(:name, :maximum, :current),
         saving_throws: creature.saving_throws.pluck(:name, :base, :ability_score),
