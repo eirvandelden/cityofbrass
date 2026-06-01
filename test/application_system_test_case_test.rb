@@ -13,6 +13,21 @@ class ApplicationSystemTestCaseTest < ActiveSupport::TestCase
     assert_includes driver.options[:browser_options], "disable-dev-shm-usage"
   end
 
+  test "disables transactional tests for browser-driven system tests" do
+    assert_equal false, ApplicationSystemTestCase.use_transactional_tests
+  end
+
+  test "restores the configured queue adapter after each system test" do
+    test_case = ApplicationSystemTestCase.allocate
+    original_adapter = ActiveJob::Base.queue_adapter
+
+    test_case.send(:swap_queue_adapter_for_system_tests)
+    assert_equal "test", ActiveJob::Base.queue_adapter_name
+
+    test_case.send(:restore_queue_adapter)
+    assert_equal original_adapter.class, ActiveJob::Base.queue_adapter.class
+  end
+
   test "prefers the configured browser path" do
     with_env("BROWSER_PATH" => "/tmp/browser") do
       assert_equal "/tmp/browser", ApplicationSystemTestCase.browser_path
