@@ -148,6 +148,19 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal [ "already exists" ], import.import_results.skipped.distinct.pluck(:reason)
   end
 
+  test "import ignores same-name records from a different ruleset" do
+    Entitybuilder::StockCreature.create!(name: "Goblin", core_rules: "Pathfinder", privacy: "Residents",
+                                         sheet_privacy: "Residents")
+    import = import_for("sample_compendium.xml", mode: Importer::Preview::ADMIN_STOCK)
+
+    assert_difference("Entitybuilder::StockCreature.where(name: 'Goblin', core_rules: '5th Edition').count", 1) do
+      Importer::ProcessImportJob.perform_now(import.id)
+    end
+
+    result = import.reload.import_results.find_by!(entity_type: "monster", entity_name: "Goblin")
+    assert_equal "created", result.outcome
+  end
+
   test "unsupported imports do not report success" do
     import = import_for_kind("unsupported", mode: Importer::Preview::RESIDENT_CONTENT)
 
