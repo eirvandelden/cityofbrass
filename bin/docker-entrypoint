@@ -4,4 +4,7 @@ if [ -f /usr/lib/*/libjemalloc.so.2 ]; then
   export LD_PRELOAD="$(echo /usr/lib/*/libjemalloc.so.2) $LD_PRELOAD"
 fi
 
+storage_path="${RAILS_STORAGE_PATH:-/rails/storage}"
+mkdir -p "${storage_path}/db"
+
 exec "${@}"
