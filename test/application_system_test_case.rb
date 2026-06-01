@@ -11,6 +11,8 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge"
   ].freeze
 
+  self.use_transactional_tests = false
+
   driven_by :cuprite
 
   class << self
@@ -24,17 +26,29 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   end
 
   setup do
-    @previous_queue_adapter = ActiveJob::Base.queue_adapter
-    ActiveJob::Base.queue_adapter = :test
+    swap_queue_adapter_for_system_tests
   end
 
   teardown do
     clear_enqueued_jobs
     clear_performed_jobs
-    ActiveJob::Base.queue_adapter = @previous_queue_adapter
+    restore_queue_adapter
   end
 
   private
+
+  def swap_queue_adapter_for_system_tests
+    @previous_queue_adapter_name = ActiveJob::Base.queue_adapter_name
+    ActiveJob::Base.queue_adapter = :test
+  end
+
+  def restore_queue_adapter
+    ActiveJob::Base.queue_adapter = previous_queue_adapter_name
+  end
+
+  def previous_queue_adapter_name
+    @previous_queue_adapter_name&.to_sym || Rails.application.config.active_job.queue_adapter
+  end
 
   def sign_in_as(account, scope:)
     visit public_send("new_#{scope}_session_path")
