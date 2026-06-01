@@ -48,7 +48,8 @@ FROM base
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y \
       curl libsqlite3-0 libvips \
-      libxml2 libxslt1.1 zlib1g && \
+      libxml2 libxslt1.1 zlib1g \
+      imagemagick && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
