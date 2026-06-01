@@ -38,10 +38,11 @@ class ImporterImportFlowTest < ActionDispatch::IntegrationTest
     preview = admin_preview
     sign_in users(:dan)
 
-    post "/admin/imports", params: { preview_id: preview.id }
+    assert_no_difference("Importer::Import.admin_stock.count") do
+      post "/admin/imports", params: { preview_id: preview.id }
+    end
 
     assert_response :forbidden
-    assert_equal 0, Importer::Import.admin_stock.count
   end
 
   private

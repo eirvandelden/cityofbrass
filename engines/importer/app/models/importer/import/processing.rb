@@ -242,6 +242,7 @@ module Importer
 
       def existing_record(klass, name)
         scope = klass.where("lower(name) = ?", name.downcase)
+        scope = scope.where(core_rules: CORE_RULES) if klass.column_names.include?("core_rules")
         scope = scope.where(resident: resident) if resident_content? && klass.column_names.include?("resident_id")
         scope.first
       end
