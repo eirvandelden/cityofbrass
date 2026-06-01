@@ -100,4 +100,13 @@ class DrawSteelSeedTest < ActiveSupport::TestCase
   test "draw steel seed namespace exposes aggregate task under db:seed" do
     assert Rake::Task.task_defined?("db:seed:draw_steel:all")
   end
+
+  test "draw steel aggregate seed task explains that creatures are not seeded" do
+    stdout, = capture_io do
+      Rake::Task["db:seed:draw_steel:all"].reenable
+      Rake::Task["db:seed:draw_steel:all"].invoke
+    end
+
+    assert_match(/does not seed stock creatures/i, stdout)
+  end
 end

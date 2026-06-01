@@ -51,6 +51,7 @@ namespace :db do
       desc "Seed everything for Draw Steel"
       task all: "environment" do
         invoke_seed_tasks(DRAW_STEEL_SEED_TASKS)
+        puts "Draw Steel seed does not seed stock creatures; no Draw Steel creature dataset is present."
       end
 
       def seed_rules(file)
