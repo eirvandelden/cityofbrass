@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 module Rulebuilder
   class StockRulesControllerTest < ActionController::TestCase
@@ -40,7 +40,7 @@ module Rulebuilder
     test "should create rule" do
       sign_in @user
       sign_in @admin
-      assert_difference('Rule.count') do
+      assert_difference("Rule.count") do
         post :create, params: { stock_rule: { rule_type: @rule.rule_type, is_shared: @rule.is_shared, benefit: @rule.benefit, core_rules: @rule.core_rules, full_description: @rule.full_description, name: @rule.name, normal: @rule.normal, prerequisites: @rule.prerequisites, short_description: @rule.short_description, special: @rule.special, type: @rule.type, publisher: @rule.publisher, is_3pp: @rule.is_3pp, source: @rule.source, tags: @rule.tags } }
       end
       assert_redirected_to edit_stock_rule_path(assigns(:rule))
@@ -76,6 +76,48 @@ module Rulebuilder
       assert_response :success
     end
 
+    test "should get edit for 5th Edition stock rule types" do
+      sign_in @user
+      sign_in @admin
+
+      %w[Backgrounds Class Condition Rule\ Reference Species Subclass].each do |rule_type|
+        rule = Rulebuilder::StockRule.create!(
+          core_rules: "5th Edition",
+          rule_type: rule_type,
+          is_shared: true,
+          name: "Test #{rule_type}",
+          short_description: "Short #{rule_type}",
+          full_description: "Full #{rule_type}"
+        )
+
+        get :edit, params: { id: rule }
+        assert_response :success, "expected edit view to render for #{rule_type}"
+      end
+    end
+
+    test "species and condition use trait style fields on edit" do
+      sign_in @user
+      sign_in @admin
+
+      %w[Condition Species].each do |rule_type|
+        rule = Rulebuilder::StockRule.create!(
+          core_rules: "5th Edition",
+          rule_type: rule_type,
+          is_shared: true,
+          name: "Trait #{rule_type}",
+          short_description: "Short #{rule_type}",
+          full_description: "Full #{rule_type}"
+        )
+
+        get :edit, params: { id: rule }
+
+        assert_response :success
+        assert_match(/stock_rule_short_description/, response.body)
+        assert_no_match(/stock_rule_categories/, response.body)
+        assert_no_match(/stock_rule_prerequisites/, response.body)
+      end
+    end
+
     test "should not update rule" do
       sign_in @user
       patch :update, params: { id: @rule, stock_rule: { rule_type: @rule.rule_type, is_shared: @rule.is_shared, benefit: @rule.benefit, core_rules: @rule.core_rules, full_description: @rule.full_description, name: @rule.name, normal: @rule.normal, prerequisites: @rule.prerequisites, short_description: @rule.short_description, special: @rule.special, type: @rule.type, publisher: @rule.publisher, is_3pp: @rule.is_3pp, source: @rule.source, tags: @rule.tags } }
@@ -104,7 +146,7 @@ module Rulebuilder
 
     test "should not destroy rule" do
       sign_in @user
-      assert_difference('Rule.count', 0) do
+      assert_difference("Rule.count", 0) do
         delete :destroy, params: { id: @rule, stock_rule: { name: @rule.name } }
       end
       assert_response 403
@@ -113,7 +155,7 @@ module Rulebuilder
     test "should destroy rule" do
       sign_in @user
       sign_in @admin
-      assert_difference('Rule.count', -1) do
+      assert_difference("Rule.count", -1) do
         delete :destroy, params: { id: @rule, stock_rule: { name: @rule.name } }
       end
       assert_redirected_to stock_rules_path
