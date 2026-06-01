@@ -274,8 +274,6 @@ GEM
       timeout
     net-smtp (0.5.1)
       net-protocol
-    newrelic_rpm (10.2.0)
-      logger
     nio4r (2.7.5)
     nokogiri (1.19.1)
       mini_portile2 (~> 2.8.2)
@@ -500,7 +498,6 @@ PLATFORMS
 
 DEPENDENCIES
   activeplay!
-  aws-sdk (< 3)
   base64
   benchmark
   better_errors
@@ -531,7 +528,6 @@ DEPENDENCIES
   meta_request
   minitest (~> 5)
   mutex_m
-  newrelic_rpm
   omniauth
   ostruct
   paperclip

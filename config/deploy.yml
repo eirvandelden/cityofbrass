@@ -41,18 +41,11 @@ env:
     RAILS_LOG_TO_STDOUT: "1"
     RAILS_SERVE_STATIC_FILES: "1"
     DEFAULT_BASE_URL: dnd.vandelden.family
-    AWS_REGION: us-east-1
     REDIS_URL: redis://cityofbrass-redis:6379/0
     ACTIVEPLAY_URL: https://activeplay.dnd.vandelden.family
   secret:
     - SECRET_KEY_BASE
-    - PAPERCLIP_SECRET
-    - SES_USER
-    - SES_PASS
-    - AWS_ACCESS_KEY_ID
-    - AWS_SECRET_ACCESS_KEY
-    - FOG_DIRECTORY
-    - NEW_RELIC_LICENSE_KEY
+    - SMTP_URL
     - ACTIVEPLAY_SECRET
 
 aliases:

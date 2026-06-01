@@ -1,27 +1,25 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.action_mailer.default_url_options = { :host => ENV["DEFAULT_BASE_URL"] }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              'email-smtp.us-east-1.amazonaws.com',
-    port:                 587,
-    user_name:            ENV["SES_USER"],
-    password:             ENV["SES_PASS"],
-    enable_starttls_auto: true
-  }
+  config.action_mailer.default_url_options = { host: ENV["DEFAULT_BASE_URL"] }
+  if ENV["SMTP_URL"].present?
+    require "uri"
+    smtp_uri = URI.parse(ENV["SMTP_URL"])
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address:              smtp_uri.host,
+      port:                 smtp_uri.port || 587,
+      user_name:            smtp_uri.user && URI.decode_www_form_component(smtp_uri.user),
+      password:             smtp_uri.password && URI.decode_www_form_component(smtp_uri.password),
+      enable_starttls_auto: true
+    }
+  else
+    config.action_mailer.perform_deliveries = false
+  end
 
   config.paperclip_defaults = {
-    :storage => :s3,
-    :url => ':s3_domain_url',
-    :hash_secret => ENV['PAPERCLIP_SECRET'],
-    :s3_protocol => :https,
-    :s3_permissions => :private,
-    :s3_region => ENV['AWS_REGION'],
-    :s3_credentials => {
-      :bucket => ENV['FOG_DIRECTORY'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    }
+    storage: :file_system,
+    path: ":rails_root/storage/attachments/:class/:attachment/:id_partition/:style/:filename",
+    url: "/attachments/:class/:attachment/:id_partition/:style/:filename"
   }
 
   # Code is not reloaded between requests.

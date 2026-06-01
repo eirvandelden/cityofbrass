@@ -27,11 +27,8 @@ gem "sdoc"
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
-# Keep old aws-sdk v2 for Paperclip - will switch to aws-sdk-s3 in Phase 2
-gem "aws-sdk", "< 3"
 gem "delayed_paperclip", "< 4"
 gem "paperclip"
-# TODO Phase 2: Add aws-sdk-s3 and image_processing when migrating to ActiveStorage
 gem "devise"
 gem "foundation-rails", "5.5.3.2" # git: 'https://github.com/embersds/foundation-rails', branch: 'v5'
 gem "kaminari"
@@ -93,7 +90,6 @@ group :development, :test do
 end
 
 group :production, :staging do
-  gem "newrelic_rpm"
   gem "rails_12factor"
 end
 
