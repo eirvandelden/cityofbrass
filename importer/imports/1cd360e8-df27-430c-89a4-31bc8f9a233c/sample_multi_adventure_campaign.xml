@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+  <campaign>
+    <name>Red Hand</name>
+    <adventure>
+      <name>Elsir Vale</name>
+      <encounter>
+        <name>Road Ambush</name>
+      </encounter>
+    </adventure>
+    <adventure>
+      <name>Witchwood</name>
+      <encounter>
+        <name>Forest Shrine</name>
+      </encounter>
+    </adventure>
+  </campaign>
+</data>

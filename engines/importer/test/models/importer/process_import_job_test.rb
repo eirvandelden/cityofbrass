@@ -96,6 +96,46 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal "Witchwood", Storybuilder::Page.find_by!(name: "Forest Shrine").adventure.name
   end
 
+  test "resident campaign reimport skips existing records" do
+    Importer::ProcessImportJob.perform_now(import_for("sample_campaign.xml", mode: Importer::Preview::RESIDENT_CONTENT).id)
+    import = import_for("sample_campaign.xml", mode: Importer::Preview::RESIDENT_CONTENT)
+
+    assert_no_difference("Campaignmanager::Campaign.count") do
+      assert_no_difference("Storybuilder::ResidentAdventure.count") do
+        assert_no_difference("Storybuilder::Page.count") do
+          assert_no_difference("Campaignmanager::GameMasterNote.count") do
+            assert_no_difference("Entitybuilder::ResidentCharacter.count") do
+              assert_no_difference("Entitybuilder::ResidentNpc.count") do
+                Importer::ProcessImportJob.perform_now(import.id)
+              end
+            end
+          end
+        end
+      end
+    end
+
+    assert_equal "succeeded", import.reload.status
+    assert_equal [ "already exists" ], import.import_results.skipped.distinct.pluck(:reason)
+    assert_equal %w[adventure campaign encounter note npc pc], import.import_results.skipped.order(:entity_type).pluck(:entity_type)
+  end
+
+  test "admin stock campaign reimport skips existing records" do
+    Importer::ProcessImportJob.perform_now(import_for("sample_campaign.xml", mode: Importer::Preview::ADMIN_STOCK).id)
+    import = import_for("sample_campaign.xml", mode: Importer::Preview::ADMIN_STOCK)
+
+    assert_no_difference("Storybuilder::StockAdventure.count") do
+      assert_no_difference("Storybuilder::Page.count") do
+        assert_no_difference("Entitybuilder::StockNpc.count") do
+          Importer::ProcessImportJob.perform_now(import.id)
+        end
+      end
+    end
+
+    assert_equal "partial", import.reload.status
+    assert_equal [ "already exists", "no stock character target" ], import.import_results.order(:reason).distinct.pluck(:reason)
+    assert_equal %w[adventure encounter note npc], import.import_results.where(reason: "already exists").order(:entity_type).pluck(:entity_type)
+  end
+
   test "reimport succeeds with already exists skips" do
     Importer::ProcessImportJob.perform_now(import_for("sample_compendium.xml", mode: Importer::Preview::ADMIN_STOCK).id)
     import = import_for("sample_compendium.xml", mode: Importer::Preview::ADMIN_STOCK)
