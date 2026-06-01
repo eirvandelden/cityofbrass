@@ -72,16 +72,24 @@ module Support
 
       def upsert_license_faq(core_item)
         faq = Support::Faq.find_or_initialize_by(question: faq_attributes(core_item).fetch(:question))
-        faq.assign_attributes(faq_attributes(core_item).merge(active: true))
-        faq.save!
+        create_faq!(faq, core_item) if faq.new_record?
 
         core_faq = Support::CoreFaq.find_or_initialize_by(core_item: core_item)
-        core_faq.assign_attributes(faq: faq, active: true)
-        core_faq.save!
+        create_core_faq!(core_faq, faq) if core_faq.new_record?
       end
 
       def faq_attributes(core_item)
         LICENSE_FAQS.fetch(core_item)
+      end
+
+      def create_faq!(faq, core_item)
+        faq.assign_attributes(faq_attributes(core_item).merge(active: true))
+        faq.save!
+      end
+
+      def create_core_faq!(core_faq, faq)
+        core_faq.assign_attributes(faq: faq, active: true)
+        core_faq.save!
       end
     end
   end
