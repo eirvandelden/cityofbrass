@@ -37,6 +37,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal "succeeded", import.reload.status
     assert_equal residents(:razune), Entitybuilder::ResidentCreature.find_by!(name: "Goblin").resident
     assert_equal "Private", Entitybuilder::ResidentCreature.find_by!(name: "Goblin").privacy
+    assert_nil Rulebuilder::ResidentItem.find_by!(name: "Longsword").category
     assert_equal "Race", Rulebuilder::ResidentRule.find_by!(name: "Elf").rule_type
   end
 
@@ -79,6 +80,22 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal "no stock character target", import.import_results.find_by!(entity_type: "pc").reason
   end
 
+  test "admin stock campaign import creates one stock adventure per imported adventure" do
+    import = import_for("sample_multi_adventure_campaign.xml", mode: Importer::Preview::ADMIN_STOCK)
+
+    assert_difference("Storybuilder::StockAdventure.count", 2) do
+      assert_difference("Storybuilder::Page.count", 2) do
+        Importer::ProcessImportJob.perform_now(import.id)
+      end
+    end
+
+    assert_equal "succeeded", import.reload.status
+    assert_equal "Residents", Storybuilder::StockAdventure.find_by!(name: "Elsir Vale").privacy
+    assert_equal "Residents", Storybuilder::StockAdventure.find_by!(name: "Witchwood").privacy
+    assert_equal "Elsir Vale", Storybuilder::Page.find_by!(name: "Road Ambush").adventure.name
+    assert_equal "Witchwood", Storybuilder::Page.find_by!(name: "Forest Shrine").adventure.name
+  end
+
   test "reimport succeeds with already exists skips" do
     Importer::ProcessImportJob.perform_now(import_for("sample_compendium.xml", mode: Importer::Preview::ADMIN_STOCK).id)
     import = import_for("sample_compendium.xml", mode: Importer::Preview::ADMIN_STOCK)
@@ -108,6 +125,16 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal "partial", import.reload.status
     assert_equal "failed", import.import_files.first.parse_status
     assert_equal [ "unsupported file kind" ], import.import_results.failed.distinct.pluck(:reason)
+  end
+
+  test "imports without preview files do not report success" do
+    import = Importer::Import.create!(resident: residents(:razune), mode: Importer::Preview::RESIDENT_CONTENT,
+                                      source: Importer::Preview::GAME_MASTER_5_XML, status: Importer::Import::QUEUED)
+
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    assert_equal "failed", import.reload.status
+    assert_equal({ "error" => "no import files available" }, import.summary)
   end
 
   private

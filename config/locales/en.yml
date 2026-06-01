@@ -17,6 +17,13 @@ en:
   errors:
     messages:
       invalid_privacy: is not valid.
+  activerecord:
+    errors:
+      models:
+        importer/preview:
+          attributes:
+            base:
+              missing_files: must include at least one file
   navigation:
     admin:
       stock_imports: Stock Imports
