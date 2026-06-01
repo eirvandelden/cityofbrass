@@ -214,10 +214,17 @@ module Importer
       end
 
       def type_attributes(record)
-        return { rule_type: record[:type].titleize, is_shared: true } if %w[race background feat class].include?(record[:type])
+        return { rule_type: shared_rule_type(record[:type]), is_shared: true } if %w[race background feat class].include?(record[:type])
         return { category: "container" } if record[:type] == "container"
 
         {}
+      end
+
+      def shared_rule_type(type)
+        return "Species" if type == "race"
+        return "Backgrounds" if type == "background"
+
+        type.titleize
       end
 
       def privacy_attributes_for(klass)
