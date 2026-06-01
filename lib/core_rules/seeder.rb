@@ -64,7 +64,7 @@ module CoreRules
     end
 
     def html_fragment?(text)
-      text.match?(%r{</?[a-z][^>]*>}i)
+      text.lstrip.start_with?("<")
     end
   end
 end
