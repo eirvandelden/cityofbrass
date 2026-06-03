@@ -10,20 +10,22 @@ require Rails.root.join("lib/support/core_faq_bootstrap")
 
 Support::CoreFaqBootstrap.call
 
-user = User.new(
-  email: "user@example.com",
-  password: "password1",
-  password_confirmation: "password1"
-)
-user.skip_confirmation!
-user.save!
+if Rails.env.development? || Rails.env.test?
+  user = User.new(
+    email: "user@example.com",
+    password: "password1",
+    password_confirmation: "password1"
+  )
+  user.skip_confirmation!
+  user.save!
 
-admin = Admin.new(
-  email: "user@example.com",
-  password: "password1",
-  password_confirmation: "password1"
-)
-admin.save!
+  admin = Admin.new(
+    email: "user@example.com",
+    password: "password1",
+    password_confirmation: "password1"
+  )
+  admin.save!
+end
 
 %w[db:seed:draw_steel:all db:seed:5e:all db:seed:pf2e:all].each do |task_name|
   Rake::Task[task_name].reenable
