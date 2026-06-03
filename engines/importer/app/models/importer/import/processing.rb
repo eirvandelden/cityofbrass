@@ -274,7 +274,11 @@ module Importer
         return if character_has_stats?(character)
 
         build_ability_scores(character, pc)
-        build_basic_stats(character, pc)
+        begin
+          build_basic_stats(character, pc)
+        rescue ActiveRecord::RecordInvalid
+          # duplicate stats are ok during merge
+        end
         build_character_name_info(character, pc)
         build_saves_and_skills(character, pc)
         build_creature_attacks(character, pc[:actions], "melee")
@@ -409,25 +413,13 @@ module Importer
 
       def build_basic_stats(entity, record)
         if (ac = parse_leading_number(record[:ac]))
-          begin
-            entity.defenses.create!(name: "Armor Class", base: ac)
-          rescue ActiveRecord::RecordInvalid
-            # skip if duplicate or validation error
-          end
+          entity.defenses.create!(name: "Armor Class", base: ac)
         end
         if (hp = parse_leading_number(record[:hp]))
-          begin
-            entity.trackables.create!(name: "Hit Points", maximum: hp, current: hp)
-          rescue ActiveRecord::RecordInvalid
-            # skip if duplicate or validation error
-          end
+          entity.trackables.create!(name: "Hit Points", maximum: hp, current: hp)
         end
         if (speed = parse_leading_number(record[:speed]))
-          begin
-            entity.movements.create!(name: "Speed", base: speed)
-          rescue ActiveRecord::RecordInvalid
-            # skip if duplicate or validation error
-          end
+          entity.movements.create!(name: "Speed", base: speed)
         end
       end
 
