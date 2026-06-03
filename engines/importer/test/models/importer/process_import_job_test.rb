@@ -191,6 +191,58 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal({ "error" => "no import files available" }, import.summary)
   end
 
+  test "resident compendium + campaign import links encounter combatants to creatures via notables" do
+    import = import_for_multiple(
+      { file: "sample_compendium.xml", kind: "compendium" },
+      { file: "sample_campaign.xml", kind: "campaign" },
+      mode: Importer::Preview::RESIDENT_CONTENT
+    )
+
+    assert_difference("Storybuilder::Notable.count", 1) do
+      Importer::ProcessImportJob.perform_now(import.id)
+    end
+
+    page = Storybuilder::Page.find_by!(name: "Road Ambush")
+    goblin = Entitybuilder::ResidentCreature.find_by!(name: "Goblin")
+    assert page.notables.exists?(entity: goblin)
+    assert_equal "Goblin", page.notables.find_by!(entity: goblin).name
+  end
+
+  test "admin stock compendium + campaign import links encounter combatants to stock creatures via notables" do
+    import = import_for_multiple(
+      { file: "sample_compendium.xml", kind: "compendium" },
+      { file: "sample_campaign.xml", kind: "campaign" },
+      mode: Importer::Preview::ADMIN_STOCK
+    )
+
+    assert_difference("Storybuilder::Notable.count", 1) do
+      Importer::ProcessImportJob.perform_now(import.id)
+    end
+
+    page = Storybuilder::Page.find_by!(name: "Road Ambush")
+    goblin = Entitybuilder::StockCreature.find_by!(name: "Goblin")
+    assert page.notables.exists?(entity: goblin)
+  end
+
+  test "reimport does not create duplicate notables" do
+    import = import_for_multiple(
+      { file: "sample_compendium.xml", kind: "compendium" },
+      { file: "sample_campaign.xml", kind: "campaign" },
+      mode: Importer::Preview::RESIDENT_CONTENT
+    )
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    reimport = import_for_multiple(
+      { file: "sample_compendium.xml", kind: "compendium" },
+      { file: "sample_campaign.xml", kind: "campaign" },
+      mode: Importer::Preview::RESIDENT_CONTENT
+    )
+
+    assert_no_difference("Storybuilder::Notable.count") do
+      Importer::ProcessImportJob.perform_now(reimport.id)
+    end
+  end
+
   private
 
   def import_for(file_name, mode:)
@@ -198,6 +250,17 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     preview.add_uploads([ uploaded_file(file_name) ])
     Importer::Import.create!(resident: preview.resident, mode: preview.mode, source: preview.source,
                              status: Importer::Import::QUEUED, preview: preview)
+  end
+
+  def import_for_multiple(*file_specs, mode:)
+    import = Importer::Import.create!(resident: resident_for(mode), mode: mode, source: Importer::Preview::GAME_MASTER_5_XML,
+                                      status: Importer::Import::QUEUED)
+    file_specs.each do |spec|
+      File.open(importer_fixture_file(spec[:file])) do |file|
+        import.import_files.create!(kind: spec[:kind], parse_status: "pending", file: file)
+      end
+    end
+    import
   end
 
   def import_for_kind(kind, mode:)
