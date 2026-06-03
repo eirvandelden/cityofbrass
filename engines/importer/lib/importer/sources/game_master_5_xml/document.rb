@@ -1,4 +1,6 @@
 require "nokogiri"
+require_relative "pc_name_parser"
+require_relative "attack_notation_parser"
 
 module Importer
   module Sources
@@ -9,8 +11,8 @@ module Importer
         end
 
         def compendium_records
-          records_for("monster", "monster") + records_for("item", "item") + records_for("container", "container") +
-            records_for("spell", "spell") + rule_records + class_records
+          monster_records + item_records + container_records +
+            spell_records + rule_records + class_records
         end
 
         def campaign_record
@@ -20,36 +22,288 @@ module Importer
           {
             name: text_at(node, "name"),
             adventures: nodes(node, "./adventure").map { |adventure| adventure_record(adventure) },
-            notes: records_for("note", "note", node),
-            pcs: nodes(node, ".//pc").map { |pc| { type: "pc", name: text_at(pc, "label").presence || text_at(pc, "name") } },
-            npcs: records_for("npc", "npc", node)
+            notes: nodes(node, "./note").map { |note| note_record(note) },
+            pcs: nodes(node, ".//pc").map { |pc| pc_campaign_record(pc) },
+            npcs: nodes(node, ".//npc").map { |npc| npc_record(npc) }
           }
+        end
+
+        def character_records
+          pc_nodes = if root.name == "pc"
+            [ root ]
+          elsif root.name == "characters"
+            nodes(root, "./pc")
+          else
+            []
+          end
+          pc_nodes.map { |pc| character_record(pc) }
         end
 
         private
 
         attr_reader :document
 
-        def records_for(xml_name, type, node = root)
-          nodes(node, "./#{xml_name}").map { |record| named_record(type, record) }
+        # ---------------------------------------------------------------------------
+        # Compendium entity records
+        # ---------------------------------------------------------------------------
+
+        def monster_records
+          nodes(root, "./monster").map { |node| monster_record(node) }
+        end
+
+        def item_records
+          nodes(root, "./item").map { |node| item_record("item", node) }
+        end
+
+        def container_records
+          nodes(root, "./container").map { |node| item_record("container", node) }
+        end
+
+        def spell_records
+          nodes(root, "./spell").map { |node| spell_record(node) }
         end
 
         def rule_records
-          records_for("race", "race") + records_for("background", "background") + records_for("feat", "feat")
+          race_records + background_records + feat_records
+        end
+
+        def race_records
+          nodes(root, "./race").map { |node| race_record(node) }
+        end
+
+        def background_records
+          nodes(root, "./background").map { |node| background_record(node) }
+        end
+
+        def feat_records
+          nodes(root, "./feat").map { |node| feat_record(node) }
         end
 
         def class_records
-          nodes(root, "./baseclass").map do |baseclass|
-            named_record("class", baseclass).merge(description: subclass_names_for(baseclass).join(", "))
+          nodes(root, "./baseclass").map { |baseclass| class_record(baseclass) }
+        end
+
+        # ---------------------------------------------------------------------------
+        # Individual entity builders
+        # ---------------------------------------------------------------------------
+
+        def monster_record(node)
+          {
+            type: "monster",
+            name: text_at(node, "name"),
+            size: text_at(node, "size"),
+            ac: text_at(node, "ac"),
+            hp: text_at(node, "hp"),
+            speed: text_at(node, "speed"),
+            str: text_at(node, "str"),
+            dex: text_at(node, "dex"),
+            con: text_at(node, "con"),
+            int: text_at(node, "int"),
+            wis: text_at(node, "wis"),
+            cha: text_at(node, "cha"),
+            saves: nodes(node, "./save").map(&:text),
+            skills: nodes(node, "./skill").map(&:text),
+            senses: text_at(node, "senses"),
+            immune: text_at(node, "immune"),
+            resist: text_at(node, "resist"),
+            vulnerable: text_at(node, "vulnerable"),
+            condition: text_at(node, "conditionImmune"),
+            languages: text_at(node, "languages"),
+            cr: text_at(node, "cr"),
+            traits: named_text_nodes(node, "./trait"),
+            actions: action_nodes(node, "./action"),
+            reactions: named_text_nodes(node, "./reaction"),
+            legendary: named_text_nodes(node, "./legendary"),
+            spells: text_at(node, "spells"),
+            source: source
+          }
+        end
+
+        def item_record(type, node)
+          {
+            type: type,
+            name: text_at(node, "name"),
+            item_type: text_at(node, "type"),
+            weight: text_at(node, "weight"),
+            dmg1: text_at(node, "dmg1"),
+            dmg2: text_at(node, "dmg2"),
+            dmg_type: text_at(node, "dmgType"),
+            property: text_at(node, "property"),
+            ac: text_at(node, "ac"),
+            range: text_at(node, "range"),
+            strength: text_at(node, "strength"),
+            stealth: text_at(node, "stealth"),
+            magic: text_at(node, "magic"),
+            text: nodes(node, "./text").map(&:text),
+            source: source
+          }
+        end
+
+        def spell_record(node)
+          {
+            type: "spell",
+            name: text_at(node, "name"),
+            level: text_at(node, "level"),
+            school: text_at(node, "school"),
+            time: text_at(node, "time"),
+            range: text_at(node, "range"),
+            components_v: node.at_xpath("./components/v").present? || node.at_xpath("./v").present?,
+            components_s: node.at_xpath("./components/s").present? || node.at_xpath("./s").present?,
+            components_m: node.at_xpath("./components/m").present? || node.at_xpath("./m").present?,
+            materials: text_at(node, "components/m") || text_at(node, "m"),
+            duration: text_at(node, "duration"),
+            text: nodes(node, "./text").map(&:text),
+            classes: text_at(node, "classes"),
+            source: source
+          }
+        end
+
+        def race_record(node)
+          {
+            type: "race",
+            name: text_at(node, "name"),
+            size: text_at(node, "size"),
+            speed: text_at(node, "speed"),
+            abilities: nodes(node, "./ability").map(&:text),
+            proficiencies: nodes(node, "./proficiency").map(&:text),
+            traits: named_text_nodes(node, "./trait"),
+            source: source
+          }
+        end
+
+        def background_record(node)
+          {
+            type: "background",
+            name: text_at(node, "name"),
+            proficiencies: nodes(node, "./proficiency").map(&:text),
+            traits: named_text_nodes(node, "./trait"),
+            source: source
+          }
+        end
+
+        def feat_record(node)
+          {
+            type: "feat",
+            name: text_at(node, "name"),
+            prerequisite: text_at(node, "prerequisite"),
+            modifiers: nodes(node, "./modifier").map(&:text),
+            text: nodes(node, "./text").map(&:text),
+            source: source
+          }
+        end
+
+        def class_record(baseclass)
+          {
+            type: "class",
+            name: text_at(baseclass, "name"),
+            hd: text_at(baseclass, "hd"),
+            proficiencies: nodes(baseclass, "./proficiency").map(&:text),
+            num_skills: text_at(baseclass, "numSkills"),
+            text: text_at(baseclass, "text"),
+            subclass_names: subclass_names_for(baseclass),
+            source: source
+          }
+        end
+
+        # ---------------------------------------------------------------------------
+        # Campaign entity records
+        # ---------------------------------------------------------------------------
+
+        def adventure_record(adventure)
+          {
+            type: "adventure",
+            name: text_at(adventure, "name"),
+            description: text_at(adventure, "text"),
+            encounters: nodes(adventure, "./encounter").map { |enc| encounter_record(enc) }
+          }
+        end
+
+        def encounter_record(node)
+          {
+            type: "encounter",
+            name: text_at(node, "name"),
+            description: nodes(node, "./text").map(&:text).join("\n"),
+            combatants: nodes(node, "./combatant").map { |c| { name: text_at(c, "monster") } }.reject { |c| c[:name].blank? }
+          }
+        end
+
+        def note_record(node)
+          {
+            type: "note",
+            name: text_at(node, "name"),
+            description: nodes(node, "./text").map(&:text).join("\n")
+          }
+        end
+
+        def npc_record(node)
+          {
+            type: "npc",
+            name: text_at(node, "name"),
+            size: text_at(node, "size"),
+            hp: text_at(node, "hp"),
+            ac: text_at(node, "ac"),
+            npc_type: text_at(node, "type"),
+            alignment: text_at(node, "alignment"),
+            cr: text_at(node, "cr"),
+            description: text_at(node, "description"),
+            source: source
+          }
+        end
+
+        def pc_campaign_record(node)
+          {
+            type: "pc",
+            label: text_at(node, "label"),
+            name: text_at(node, "label").presence || text_at(node, "name"),
+            description: text_at(node, "description")
+          }
+        end
+
+        # ---------------------------------------------------------------------------
+        # Character file PC record
+        # ---------------------------------------------------------------------------
+
+        def character_record(node)
+          {
+            type: "pc",
+            label: text_at(node, "label"),
+            name: text_at(node, "name"),
+            size: text_at(node, "size"),
+            ac: text_at(node, "ac"),
+            hp: text_at(node, "hp"),
+            speed: text_at(node, "speed"),
+            str: text_at(node, "str"),
+            dex: text_at(node, "dex"),
+            con: text_at(node, "con"),
+            int: text_at(node, "int"),
+            wis: text_at(node, "wis"),
+            cha: text_at(node, "cha"),
+            saves: nodes(node, "./save").map(&:text),
+            skills: nodes(node, "./skill").map(&:text),
+            passive: text_at(node, "passive"),
+            senses: text_at(node, "senses"),
+            languages: text_at(node, "languages"),
+            actions: action_nodes(node, "./action"),
+            spells: nodes(node, "./spell").map(&:text),
+            items: nodes(node, "./item").map { |item| { name: text_at(item, "name"), quantity: text_at(item, "quantity") } },
+            source: source
+          }
+        end
+
+        # ---------------------------------------------------------------------------
+        # Shared helpers
+        # ---------------------------------------------------------------------------
+
+        def named_text_nodes(parent, xpath)
+          nodes(parent, xpath).map do |child|
+            { name: text_at(child, "name"), text: text_at(child, "text") }
           end
         end
 
-        def adventure_record(adventure)
-          named_record("adventure", adventure).merge(encounters: records_for("encounter", "encounter", adventure))
-        end
-
-        def named_record(type, node)
-          { type: type, name: text_at(node, "name"), description: text_at(node, "text"), source: source }
+        def action_nodes(parent, xpath)
+          nodes(parent, xpath).map do |child|
+            { name: text_at(child, "name"), text: text_at(child, "text"), attack: text_at(child, "attack") }
+          end
         end
 
         def subclass_names_for(baseclass)
