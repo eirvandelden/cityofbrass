@@ -11,17 +11,9 @@ Rails.application.configure do
   }
 
   config.paperclip_defaults = {
-    :storage => :s3,
-    :url => ':s3_domain_url',
-    :hash_secret => ENV['PAPERCLIP_SECRET'],
-    :s3_protocol => :https,
-    :s3_permissions => :private,
-    :s3_region => ENV['AWS_REGION'],
-    :s3_credentials => {
-      :bucket => ENV['FOG_DIRECTORY'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    }
+    storage: :filesystem,
+    path: ":rails_root/storage/paperclip/:class/:attachment/:id_partition/:style/:filename",
+    url: "/paperclip/:class/:attachment/:id_partition/:style/:filename"
   }
 
   logger           = ActiveSupport::Logger.new(STDOUT)

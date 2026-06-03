@@ -4,7 +4,9 @@ module Importer
 
     belongs_to :preview
 
-    has_attached_file :file, path: "importer/previews/:id/:filename"
+    has_attached_file :file,
+      path: ":rails_root/storage/paperclip/importer/previews/:id/:filename",
+      url: "/paperclip/importer/previews/:id/:filename"
 
     validates :detected_kind, presence: true
     validate :valid_detected_kind

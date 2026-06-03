@@ -56,3 +56,6 @@ bower.json
 
 # Ignore any plans made by agents
 .context/**/*
+
+# Ignore Paperclip upload storage
+/storage/paperclip/
