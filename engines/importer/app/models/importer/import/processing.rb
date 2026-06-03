@@ -157,7 +157,32 @@ module Importer
           privacy: privacy,
           full_description: encounter[:description].presence
         )
+        link_encounter_combatants(record, encounter[:combatants])
         result(import_file, encounter, "created", record)
+      end
+
+      def link_encounter_combatants(page, combatants)
+        return if combatants.blank?
+
+        creature_class = admin_stock? ? Entitybuilder::StockCreature : Entitybuilder::ResidentCreature
+
+        combatants.each do |combatant|
+          next if combatant[:name].blank?
+
+          creature = name_index_find("monster", combatant[:name]) ||
+                     existing_record(creature_class, combatant[:name])
+          next if creature.nil?
+
+          next if page.notables.exists?(entity: creature)
+
+          Storybuilder::Notable.create!(
+            notableable: page,
+            entity: creature,
+            name: creature.name.truncate(64)
+          )
+        rescue ActiveRecord::RecordInvalid
+          # skip if notable already exists or invalid
+        end
       end
 
       def import_note(import_file, note, root)

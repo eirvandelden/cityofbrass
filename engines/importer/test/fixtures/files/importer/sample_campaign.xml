@@ -6,6 +6,9 @@
       <name>Elsir Vale</name>
       <encounter>
         <name>Road Ambush</name>
+        <combatant>
+          <monster>Goblin</monster>
+        </combatant>
       </encounter>
     </adventure>
     <note>
