@@ -48,11 +48,21 @@ module Importer
           return
         end
 
+        if import_file.kind.in?(%w[characters pc])
+          process_character_file(import_file, document)
+          import_file.update!(parse_status: "parsed")
+          return
+        end
+
         unsupported_import_file(import_file)
       end
 
       def import_compendium(import_file, document)
         document.compendium_records.each { |record| import_compendium_record(import_file, record) }
+      end
+
+      def process_character_file(import_file, document)
+        document.character_records.each { |record| import_character(import_file, record) }
       end
 
       def unsupported_import_file(import_file)
@@ -235,6 +245,90 @@ module Importer
         result(import_file, pc, "created", record)
       end
 
+      def import_character(import_file, pc)
+        return result(import_file, pc, "skipped", nil, "no stock character target") if admin_stock?
+
+        label = pc[:label].presence || pc[:name]
+        return if label.blank?
+
+        existing = name_index_find("pc", label) || existing_record(Entitybuilder::ResidentCharacter, label)
+
+        if existing
+          merge_character_stats(existing, pc)
+          return result(import_file, pc, "skipped", existing, "already exists")
+        end
+
+        character = Entitybuilder::ResidentCharacter.create!(
+          resident: resident,
+          name: label.truncate(255),
+          core_rules: CORE_RULES,
+          full_description: pc[:description].presence
+        )
+        enforce_entity_privacy!(character)
+        build_character_associations(character, pc)
+        name_index_add("pc", label, character)
+        result(import_file, pc, "created", character)
+      end
+
+      def merge_character_stats(character, pc)
+        return if character_has_stats?(character)
+
+        build_ability_scores(character, pc)
+        build_basic_stats(character, pc)
+        build_character_name_info(character, pc)
+        build_saves_and_skills(character, pc)
+        build_creature_attacks(character, pc[:actions], "melee")
+      end
+
+      def character_has_stats?(character)
+        character.ability_scores.exists?
+      end
+
+      def build_character_associations(character, pc)
+        build_ability_scores(character, pc)
+        build_basic_stats(character, pc)
+        build_character_name_info(character, pc)
+        build_saves_and_skills(character, pc)
+        build_creature_attacks(character, pc[:actions], "melee")
+      end
+
+      def build_character_name_info(character, pc)
+        if pc[:size].present?
+          begin
+            character.descriptors.create!(name: "Size", description: pc[:size].truncate(255))
+          rescue ActiveRecord::RecordInvalid
+            # skip if duplicate or validation error
+          end
+        end
+
+        parsed_name = Sources::GameMaster5Xml::PcNameParser.parse(pc[:name])
+        return unless parsed_name
+
+        begin
+          character.class_levels.create!(name: parsed_name[:class_name], level: parsed_name[:level])
+        rescue ActiveRecord::RecordInvalid
+          # skip if duplicate or validation error
+        end
+      end
+
+      def build_saves_and_skills(character, pc)
+        pc[:saves].each do |save_str|
+          next unless (m = save_str.match(/\A(.+?)\s+([+\-]\d+)\z/))
+
+          character.saving_throws.create!(name: m[1].strip, base: m[2].to_i)
+        rescue ActiveRecord::RecordInvalid
+          # skip if duplicate or validation error
+        end
+
+        pc[:skills].each do |skill_str|
+          next unless (m = skill_str.match(/\A(.+?)\s+([+\-]\d+)\z/))
+
+          character.skills.create!(name: m[1].strip, bonus: m[2].to_i)
+        rescue ActiveRecord::RecordInvalid
+          # skip if duplicate or validation error
+        end
+      end
+
       def import_npc(import_file, npc)
         klass = admin_stock? ? Entitybuilder::StockNpc : Entitybuilder::ResidentNpc
         existing = existing_record(klass, npc[:name])
@@ -294,28 +388,47 @@ module Importer
       end
 
       def build_creature_associations(creature, record)
-        { "Strength" => record[:str], "Dexterity" => record[:dex], "Constitution" => record[:con],
-          "Intelligence" => record[:int], "Wisdom" => record[:wis], "Charisma" => record[:cha] }.each do |name, value|
-          next if value.blank?
-
-          creature.ability_scores.create!(name: name, base: value.to_i)
-        rescue ActiveRecord::RecordInvalid
-          # skip if duplicate or validation error
-        end
-
-        ac = parse_leading_number(record[:ac])
-        creature.defenses.create!(name: "Armor Class", base: ac) if ac
-
-        hp = parse_leading_number(record[:hp])
-        creature.trackables.create!(name: "Hit Points", maximum: hp, current: hp) if hp
-
-        speed = parse_leading_number(record[:speed])
-        creature.movements.create!(name: "Speed", base: speed) if speed
-
+        build_ability_scores(creature, record)
+        build_basic_stats(creature, record)
         build_creature_descriptors(creature, record)
         build_creature_attacks(creature, record[:actions], "melee")
         build_creature_attacks(creature, record[:reactions], "melee")
         build_creature_attacks(creature, record[:legendary], "melee")
+      end
+
+      def build_ability_scores(entity, record)
+        { "Strength" => record[:str], "Dexterity" => record[:dex], "Constitution" => record[:con],
+          "Intelligence" => record[:int], "Wisdom" => record[:wis], "Charisma" => record[:cha] }.each do |name, value|
+          next if value.blank?
+
+          entity.ability_scores.create!(name: name, base: value.to_i)
+        rescue ActiveRecord::RecordInvalid
+          # skip if duplicate or validation error
+        end
+      end
+
+      def build_basic_stats(entity, record)
+        if (ac = parse_leading_number(record[:ac]))
+          begin
+            entity.defenses.create!(name: "Armor Class", base: ac)
+          rescue ActiveRecord::RecordInvalid
+            # skip if duplicate or validation error
+          end
+        end
+        if (hp = parse_leading_number(record[:hp]))
+          begin
+            entity.trackables.create!(name: "Hit Points", maximum: hp, current: hp)
+          rescue ActiveRecord::RecordInvalid
+            # skip if duplicate or validation error
+          end
+        end
+        if (speed = parse_leading_number(record[:speed]))
+          begin
+            entity.movements.create!(name: "Speed", base: speed)
+          rescue ActiveRecord::RecordInvalid
+            # skip if duplicate or validation error
+          end
+        end
       end
 
       def build_creature_descriptors(creature, record)
