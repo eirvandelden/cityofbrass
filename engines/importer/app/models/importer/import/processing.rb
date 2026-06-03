@@ -230,7 +230,11 @@ module Importer
         end
 
         if (ac = parse_leading_number(npc[:ac]))
-          entity.defenses.create!(name: "Armor Class", base: ac) rescue nil
+          begin
+            entity.defenses.create!(name: "Armor Class", base: ac)
+          rescue ActiveRecord::RecordInvalid
+            # skip if duplicate or validation error
+          end
         end
 
         if (hp = parse_leading_number(npc[:hp]))
@@ -291,7 +295,7 @@ module Importer
       def build_creature_descriptors(creature, record)
         [
           [ "Size", record[:size] ],
-          [ "Type", record[:condition_or_type] ],
+          [ "Type", record[:creature_type] ],
           [ "Senses", record[:senses] ],
           [ "Languages", record[:languages] ],
           [ "Immunities", record[:immune] ],
@@ -379,14 +383,6 @@ module Importer
         )
         name_index_add(record[:type], record[:name], rule)
         result(import_file, record, "created", rule)
-      end
-
-      def compendium_class_for(type)
-        return admin_stock? ? Entitybuilder::StockCreature : Entitybuilder::ResidentCreature if type == "monster"
-        return admin_stock? ? Rulebuilder::StockItem : Rulebuilder::ResidentItem if %w[item container].include?(type)
-        return admin_stock? ? Rulebuilder::StockSpell : Rulebuilder::ResidentSpell if type == "spell"
-
-        admin_stock? ? Rulebuilder::StockRule : Rulebuilder::ResidentRule
       end
 
       def shared_rule_type(type)
