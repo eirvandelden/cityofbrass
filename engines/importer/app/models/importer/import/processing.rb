@@ -165,6 +165,7 @@ module Importer
         return if combatants.blank?
 
         creature_class = admin_stock? ? Entitybuilder::StockCreature : Entitybuilder::ResidentCreature
+        existing_entity_ids = page.notables.pluck(:entity_id).to_set
 
         combatants.each do |combatant|
           next if combatant[:name].blank?
@@ -172,14 +173,14 @@ module Importer
           creature = name_index_find("monster", combatant[:name]) ||
                      existing_record(creature_class, combatant[:name])
           next if creature.nil?
-
-          next if page.notables.exists?(entity: creature)
+          next if existing_entity_ids.include?(creature.id)
 
           Storybuilder::Notable.create!(
             notableable: page,
             entity: creature,
             name: creature.name.truncate(64)
           )
+          existing_entity_ids << creature.id
         rescue ActiveRecord::RecordInvalid
           # skip if notable already exists or invalid
         end
