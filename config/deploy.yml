@@ -21,6 +21,9 @@ proxy:
     interval: 2
     timeout: 2
 
+ssh:
+  proxy_command: "nc %h %p"
+
 registry:
   server: registry.vandelden.family
   username: root
