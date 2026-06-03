@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resources :imports, path: "", only: [:create, :show, :index]
   end
 
+  get "/paperclip/gallery/*path" => "paperclip_files#show", as: :paperclip_file, format: false
+
   # authenticate :admin do
   #  mount Sidekiq::Web => '/sidekiq' # used for sidekiq ui
   # end

@@ -6,7 +6,9 @@ module Importer
     belongs_to :import
     has_many :import_results, dependent: :destroy
 
-    has_attached_file :file, path: "importer/imports/:id/:filename"
+    has_attached_file :file,
+      path: ":rails_root/storage/paperclip/importer/imports/:id/:filename",
+      url: "/paperclip/importer/imports/:id/:filename"
 
     validates :kind, presence: true
     validates :parse_status, presence: true
