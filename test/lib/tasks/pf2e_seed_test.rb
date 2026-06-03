@@ -70,4 +70,26 @@ class Pf2eSeedTest < ActiveSupport::TestCase
     count = Rulebuilder::StockRule.where(core_rules: "Pathfinder 2e", rule_type: "Condition").count
     assert_equal 43, count
   end
+
+  test "creatures seed normalises Ranged attack_type to Range" do
+    Entitybuilder::StockCreature.where(core_rules: "Pathfinder 2e").destroy_all
+
+    Rake::Task["db:seed:pf2e:creatures"].reenable
+    Rake::Task["db:seed:pf2e:creatures"].invoke
+
+    creature = Entitybuilder::StockCreature.find_by!(name: "Aapoph Granitescale", core_rules: "Pathfinder 2e")
+    assert creature.attacks.exists?(attack_type: "Range"), "expected ranged attack stored as 'Range'"
+    assert_not creature.attacks.exists?(attack_type: "Ranged"), "expected no attacks stored as 'Ranged'"
+  end
+
+  test "creatures seed assigns sort_order to child records" do
+    Entitybuilder::StockCreature.where(core_rules: "Pathfinder 2e").destroy_all
+
+    Rake::Task["db:seed:pf2e:creatures"].reenable
+    Rake::Task["db:seed:pf2e:creatures"].invoke
+
+    creature = Entitybuilder::StockCreature.find_by!(name: "Aapoph Granitescale", core_rules: "Pathfinder 2e")
+    assert creature.attacks.exists?(sort_order: 0), "expected first attack to have sort_order 0"
+    assert creature.ability_scores.exists?(sort_order: 0), "expected first ability score to have sort_order 0"
+  end
 end

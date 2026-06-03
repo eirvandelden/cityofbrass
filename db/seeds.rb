@@ -25,7 +25,7 @@ admin = Admin.new(
 )
 admin.save!
 
-%w[db:seed:draw_steel:all db:seed:5e:all].each do |task_name|
+%w[db:seed:draw_steel:all db:seed:5e:all db:seed:pf2e:all].each do |task_name|
   Rake::Task[task_name].reenable
   Rake::Task[task_name].invoke
 end

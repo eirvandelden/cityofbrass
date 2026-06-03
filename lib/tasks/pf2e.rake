@@ -134,53 +134,59 @@ namespace :db do
           creature.saving_throws.delete_all
           creature.attacks.delete_all
 
-          Array(attrs["ability_scores"]).each do |as_attrs|
+          Array(attrs["ability_scores"]).each_with_index do |as_attrs, index|
             creature.ability_scores.build(
-              name:     as_attrs["name"],
-              base:     as_attrs["base"].to_i,
-              modifier: as_attrs["modifier"].to_i,
-              dice:     as_attrs["dice"].presence
+              name:       as_attrs["name"],
+              base:       as_attrs["base"].to_i,
+              modifier:   as_attrs["modifier"].to_i,
+              dice:       as_attrs["dice"].presence,
+              sort_order: index
             )
           end
 
-          Array(attrs["trackables"]).each do |t_attrs|
+          Array(attrs["trackables"]).each_with_index do |t_attrs, index|
             creature.trackables.build(
-              name:    t_attrs["name"],
-              maximum: t_attrs["maximum"].to_i,
-              current: t_attrs["current"].to_i
+              name:       t_attrs["name"],
+              maximum:    t_attrs["maximum"].to_i,
+              current:    t_attrs["current"].to_i,
+              sort_order: index
             )
           end
 
-          Array(attrs["base_values"]).each do |bv_attrs|
+          Array(attrs["base_values"]).each_with_index do |bv_attrs, index|
             creature.base_values.build(
-              name:  bv_attrs["name"],
-              value: bv_attrs["value"].to_i,
-              dice:  bv_attrs["dice"].presence
+              name:       bv_attrs["name"],
+              value:      bv_attrs["value"].to_i,
+              dice:       bv_attrs["dice"].presence,
+              sort_order: index
             )
           end
 
-          Array(attrs["defenses"]).each do |d_attrs|
+          Array(attrs["defenses"]).each_with_index do |d_attrs, index|
             creature.defenses.build(
               name:          d_attrs["name"],
               base:          d_attrs["base"].to_i,
-              ability_score: d_attrs["ability_score"]
+              ability_score: d_attrs["ability_score"],
+              sort_order:    index
             )
           end
 
-          Array(attrs["saving_throws"]).each do |st_attrs|
+          Array(attrs["saving_throws"]).each_with_index do |st_attrs, index|
             creature.saving_throws.build(
               name:          st_attrs["name"],
               base:          st_attrs["base"].to_i,
-              ability_score: st_attrs["ability_score"]
+              ability_score: st_attrs["ability_score"],
+              sort_order:    index
             )
           end
 
-          Array(attrs["attacks"]).each do |atk_attrs|
+          Array(attrs["attacks"]).each_with_index do |atk_attrs, index|
             creature.attacks.build(
               name:                 atk_attrs["name"],
-              attack_type:          atk_attrs["attack_type"],
+              attack_type:          atk_attrs["attack_type"] == "Ranged" ? "Range" : atk_attrs["attack_type"],
               attack_ability_score: atk_attrs["attack_ability_score"],
-              description:          atk_attrs["description"]
+              description:          atk_attrs["description"],
+              sort_order:           index
             )
           end
 
