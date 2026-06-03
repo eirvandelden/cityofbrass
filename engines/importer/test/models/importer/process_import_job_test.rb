@@ -171,14 +171,14 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal [ "unsupported file kind" ], import.import_results.failed.distinct.pluck(:reason)
   end
 
-  test "standalone pc imports do not report success before support exists" do
+  test "standalone pc file kind is parsed (not treated as unsupported)" do
     import = import_for_kind("pc", mode: Importer::Preview::RESIDENT_CONTENT)
 
     Importer::ProcessImportJob.perform_now(import.id)
 
-    assert_equal "partial", import.reload.status
-    assert_equal "failed", import.import_files.first.parse_status
-    assert_equal [ "unsupported file kind" ], import.import_results.failed.distinct.pluck(:reason)
+    assert_equal "succeeded", import.reload.status
+    assert_equal "parsed", import.import_files.first.parse_status
+    assert import.import_results.failed.none?
   end
 
   test "imports without preview files do not report success" do
