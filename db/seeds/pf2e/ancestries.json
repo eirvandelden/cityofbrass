@@ -1,0 +1,601 @@
+[
+  {
+    "name": "Athamaru",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Howl of the Wild",
+    "short_description": "Athamarus are fish-like humanoids who form tight-knit undersea communities. In small settlements, they engage in the subsistence farming of seaweed, train eels to serve as mounts, and create elaborate works of coral art. Their interactions with other",
+    "full_description": "<p>Athamarus are fish-like humanoids who form tight-knit undersea communities. In small settlements, they engage in the subsistence farming of seaweed, train eels to serve as mounts, and create elaborate works of coral art. Their interactions with other aquatic ancestries are strained, as athamarus have suffered mistreatment at their hands. However, they remain curious about potential connections and what new opportunities may offer.</p>\n<p><em>Athamaru</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "amphibious",
+      "athamaru",
+      "humanoid"
+    ],
+    "categories": [
+      "amphibious",
+      "athamaru",
+      "humanoid"
+    ]
+  },
+  {
+    "name": "Automaton",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Guns & Gears",
+    "short_description": "These intelligent constructs house actual souls and represent what remains of a dying empire's last attempt at greatness. Automatons combine technological ingenuity with magical power, creating a blended being wholly unique to Golarion. Automaton",
+    "full_description": "<p><em>These intelligent constructs house actual souls and represent what remains of a dying empire's last attempt at greatness. Automatons combine technological ingenuity with magical power, creating a blended being wholly unique to Golarion.</em></p>\n<p>Automaton</p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "automaton",
+      "construct"
+    ],
+    "categories": [
+      "automaton",
+      "construct"
+    ]
+  },
+  {
+    "name": "Awakened Animal",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Howl of the Wild",
+    "short_description": "You once enjoyed the simple and boundless pleasures of nature with an innocent, uncluttered mind. You lived from moment to moment, never questioning what comes next or pondering the ramifications of what happened before. You were at one with the wild.",
+    "full_description": "<p>You once enjoyed the simple and boundless pleasures of nature with an innocent, uncluttered mind. You lived from moment to moment, never questioning what comes next or pondering the ramifications of what happened before. You were at one with the wild. Then came the event that changed everything. You drank from a glowing lake, someone pulled a magical prank, a druid sought to elevate your mind. You were pulled out of the present moment of the wild and into a land of thought.</p>\n<p><em>Awakened Animal</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "awakened-animal",
+      "beast"
+    ],
+    "categories": [
+      "awakened-animal",
+      "beast"
+    ]
+  },
+  {
+    "name": "Catfolk",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Player Core 2",
+    "short_description": "Curious and gregarious wanderers, catfolk combine the features of felines and humanoids in both appearance and temperament. They enjoy learning new things, collecting new tales and trinkets, and ensuring their loved ones are safe and happy. Catfolk view",
+    "full_description": "<p><em>Curious and gregarious wanderers, catfolk combine the features of felines and humanoids in both appearance and temperament. They enjoy learning new things, collecting new tales and trinkets, and ensuring their loved ones are safe and happy. Catfolk view themselves as the chosen guardians of natural places in the world and are often recklessly brave, even in the face of overwhelming opposition. They believe that strong communities, breadth of experience, and continual self-improvement aid them in this fight.</em></p>\n<p><em>Catfolk</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "catfolk",
+      "humanoid"
+    ],
+    "categories": [
+      "catfolk",
+      "humanoid"
+    ]
+  },
+  {
+    "name": "Centaur",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Howl of the Wild",
+    "short_description": "Centaurs are proud nomads who range far and wide across their ancestral territories, protecting their lands from exploitation and intrusion. They are survivalists who forge tight bonds with family and community and stand firm in the face of danger. Many",
+    "full_description": "<p>Centaurs are proud nomads who range far and wide across their ancestral territories, protecting their lands from exploitation and intrusion. They are survivalists who forge tight bonds with family and community and stand firm in the face of danger. Many are skilled hunters, trackers, and warriors who do battle with bow, steel, and hooves. Brave and stubborn, they're willing to challenge even the fiercest foes and largest forces to protect their homes, kin, and the land within their domain.</p>\n<p><em>Centaur</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "beast",
+      "centaur",
+      "humanoid"
+    ],
+    "categories": [
+      "beast",
+      "centaur",
+      "humanoid"
+    ]
+  },
+  {
+    "name": "Dragonet",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Lost Omens Draconic Codex",
+    "short_description": "Dragonets are miniature dragons, complete with wings, dagger-like teeth, and magical breath. They can be fiercely independent and proud, at times protective or avaricious, and they delight in the finer things in life. Dragonet",
+    "full_description": "<p><em>Dragonets are miniature dragons, complete with wings, dagger-like teeth, and magical breath. They can be fiercely independent and proud, at times protective or avaricious, and they delight in the finer things in life.</em></p>\n<p>Dragonet</p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "dragon"
+    ],
+    "categories": [
+      "dragon"
+    ]
+  },
+  {
+    "name": "Dwarf",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Player Core",
+    "short_description": "Dwarves have a well-earned reputation as a stoic and stern people, ensconced within citadels and cities carved from solid rock. While some see them as dour and humorless crafters of stone and metal, dwarves and those who have spent time among them",
+    "full_description": "<p><em>Dwarves have a well-earned reputation as a stoic and stern people, ensconced within citadels and cities carved from solid rock. While some see them as dour and humorless crafters of stone and metal, dwarves and those who have spent time among them understand their unbridled zeal for their work, caring far more about quality than quantity. To a stranger, they can seem untrusting and clannish, but to their friends and family, they are warm and caring, their halls filled with the sounds of laughter and hammers hitting anvils.</em></p>\n<p><em>Dwarf</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "dwarf",
+      "humanoid"
+    ],
+    "categories": [
+      "dwarf",
+      "humanoid"
+    ]
+  },
+  {
+    "name": "Elf",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Player Core",
+    "short_description": "As an ancient people, elves have seen great change and have the perspective that can come only from watching the arc of history. After leaving the world in ancient times, they returned to a changed land, and they still struggle to reclaim their ancestral",
+    "full_description": "<p><em>As an ancient people, elves have seen great change and have the perspective that can come only from watching the arc of history. After leaving the world in ancient times, they returned to a changed land, and they still struggle to reclaim their ancestral homes, most notably from terrible demons that have invaded parts of their lands. To some, the elves are objects of awe—graceful and beautiful, with immense talent and knowledge. Among themselves, however, the elves place far more importance on personal freedom than on living up to these ideals.</em></p>\n<p><em>Elf</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "elf",
+      "humanoid"
+    ],
+    "categories": [
+      "elf",
+      "humanoid"
+    ]
+  },
+  {
+    "name": "Gnome",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Player Core",
+    "short_description": "Long ago, early gnome ancestors emigrated from the First World, realm of the fey. While it's unclear why the first gnomes wandered to Golarion, this lineage manifests in modern gnomes as bizarre reasoning, eccentricity, obsessive tendencies, and what",
+    "full_description": "<p><em>Long ago, early gnome ancestors emigrated from the First World, realm of the fey. While it's unclear why the first gnomes wandered to Golarion, this lineage manifests in modern gnomes as bizarre reasoning, eccentricity, obsessive tendencies, and what some see as naivete. These qualities are further reflected in their physical characteristics, such as spindly limbs, brightly colored hair, and childlike and extremely expressive facial features that further reflect their otherworldly origins.</em></p>\n<p><em>Gnome</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "gnome",
+      "humanoid"
+    ],
+    "categories": [
+      "gnome",
+      "humanoid"
+    ]
+  },
+  {
+    "name": "Goblin",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Player Core",
+    "short_description": "The convoluted histories other people cling to don't interest goblins. These small folk live in the moment, and they prefer tall tales over factual records. The wars of a few decades ago might as well be from the ancient past. Misunderstood by other",
+    "full_description": "<p><em>The convoluted histories other people cling to don't interest goblins. These small folk live in the moment, and they prefer tall tales over factual records. The wars of a few decades ago might as well be from the ancient past. Misunderstood by other people, goblins are happy how they are. Goblin virtues are about being present, creative, and honest. They strive to lead fulfilled lives, rather than worrying about how their journeys will end. To tell stories, not nitpick the facts. To be small, but dream big.</em></p>\n<p><em>Goblin</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "goblin",
+      "humanoid"
+    ],
+    "categories": [
+      "goblin",
+      "humanoid"
+    ]
+  },
+  {
+    "name": "Halfling",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Player Core",
+    "short_description": "Claiming no place as their own, halflings control few settlements larger than villages. Instead, they frequently live among humans within the walls of larger cities, carving out small communities alongside taller folk. Many halflings lead perfectly",
+    "full_description": "<p><em>Claiming no place as their own, halflings control few settlements larger than villages. Instead, they frequently live among humans within the walls of larger cities, carving out small communities alongside taller folk. Many halflings lead perfectly fulfilling lives in the shadows of their larger neighbors, while others prefer a nomadic existence, traveling the world and taking advantage of opportunities and adventures as they come.</em></p>\n<p><em>Halfling</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "halfling",
+      "humanoid"
+    ],
+    "categories": [
+      "halfling",
+      "humanoid"
+    ]
+  },
+  {
+    "name": "Hobgoblin",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Player Core 2",
+    "short_description": "Taller and stronger than their goblin kin, hobgoblins are equals in strength and size to humans, with broad shoulders and long, powerful arms. Hobgoblin",
+    "full_description": "<p><em>Taller and stronger than their goblin kin, hobgoblins are equals in strength and size to humans, with broad shoulders and long, powerful arms.</em></p>\n<p><em>Hobgoblin</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "hobgoblin",
+      "humanoid"
+    ],
+    "categories": [
+      "hobgoblin",
+      "humanoid"
+    ]
+  },
+  {
+    "name": "Human",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Player Core",
+    "short_description": "As unpredictable and varied as any of Golarion's peoples, humans have exceptional drive and the capacity to endure and expand. Though many civilizations thrived before humanity rose to prominence, humans have built some of the greatest and the most",
+    "full_description": "<p><em>As unpredictable and varied as any of Golarion's peoples, humans have exceptional drive and the capacity to endure and expand. Though many civilizations thrived before humanity rose to prominence, humans have built some of the greatest and the most terrible societies throughout the course of history, and today they are the most populous people in the realms around the Inner Sea.</em></p>\n<p><em>Human</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "human",
+      "humanoid"
+    ],
+    "categories": [
+      "human",
+      "humanoid"
+    ]
+  },
+  {
+    "name": "Jotunborn",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Battlecry!",
+    "short_description": "According to their oldest stories, the first jotunborn were the direct creations of the earliest gods. Having just completed the majority of the creation of Golarion, these gods created several groups of people to act as stewards for this new world.",
+    "full_description": "<p><em>According to their oldest stories, the first jotunborn were the direct creations of the earliest gods. Having just completed the majority of the creation of Golarion, these gods created several groups of people to act as stewards for this new world. Among these groups were jotunborn, beings who were formed from the remains of titans who dared rebel against the gods in the earliest days of existence. Rather than give jotunborn the full power they gave the titans, the gods instead instilled the first jotunborn with the faintest spark of creation and gave them slighter forms. These new servitors would be just as capable at helping to shape the rest of Golarion but would also be weaker and easier to strike down should they rebel like their progenitors.</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "giant",
+      "humanoid",
+      "jotunborn"
+    ],
+    "categories": [
+      "giant",
+      "humanoid",
+      "jotunborn"
+    ]
+  },
+  {
+    "name": "Kholo",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Player Core 2",
+    "short_description": "Kholo have bad reputations as brutal raiders and demon-worshipers. Many believe that kholo are witches, cannibals, and worse. The truth is more complex. Kholo are eminently practical and pragmatic hunters and raiders. To them, honor is just another word",
+    "full_description": "<p><em>Kholo have bad reputations as brutal raiders and demon-worshipers. Many believe that kholo are witches, cannibals, and worse. The truth is more complex. Kholo are eminently practical and pragmatic hunters and raiders. To them, honor is just another word for pointless risk. Any loss of a kholo affects not just the individual, but their packmates and kin as well. Wasting time on anything but victory, whether it's mercy or cruelty, is seen as little shy of immoral. Kholo are masters of ambushes, tactical feints, and psychological warfare. Equally misunderstood is the kholo practice of ancestor worship and endocannibalism. Kholo consume their dead as a sign of reverence, holding a grand feast and transforming the bones into art or weapons. Kholo extend this honor to respected foes, hoping to bring their enemy's cunning or strength into the clan.</em></p>\n<p><em></em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "humanoid",
+      "kholo"
+    ],
+    "categories": [
+      "humanoid",
+      "kholo"
+    ]
+  },
+  {
+    "name": "Kobold",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Player Core 2",
+    "short_description": "Every kobold instinctively understands the importance of power, and many are inclined to venerate those who have it, whether they be mighty dragons, cruel fiends, imperious fey, or even ancient artifacts. Kobolds seek out these alliances out of a sense",
+    "full_description": "<p><em>Every kobold instinctively understands the importance of power, and many are inclined to venerate those who have it, whether they be mighty dragons, cruel fiends, imperious fey, or even ancient artifacts. Kobolds seek out these alliances out of a sense of pragmatism—after all, who would dare bully a kobold who serves an ancient dragon?—but also because kobold eggs incubated near such loci of power take on physical traits (and sometimes abilities) similar to those of the warren's benefactor. On their own, kobolds are ingenious crafters and devoted allies, but outsiders who trespass into their territory find them to be inspired skirmishers and clever ambushers. However, these reptilian opportunists prove happy to cooperate with other humanoids when it's to their benefit, combining caution and cunning to make their fortunes in the wider world.</em></p>\n<p><em>Kobold</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "humanoid",
+      "kobold"
+    ],
+    "categories": [
+      "humanoid",
+      "kobold"
+    ]
+  },
+  {
+    "name": "Leshy",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Player Core",
+    "short_description": "Guardians and emissaries of the environment, leshies are immortal spirits of nature temporarily granted a physical form. Leshy",
+    "full_description": "<p><em>Guardians and emissaries of the environment, leshies are immortal spirits of nature temporarily granted a physical form.</em></p>\n<p><em>Leshy</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "leshy",
+      "plant"
+    ],
+    "categories": [
+      "leshy",
+      "plant"
+    ]
+  },
+  {
+    "name": "Lizardfolk",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Player Core 2",
+    "short_description": "Lizardfolk are consummate survivors, heirs to empires considered ancient even by the elves. Lizardfolk",
+    "full_description": "<p><em>Lizardfolk are consummate survivors, heirs to empires considered ancient even by the elves.</em></p>\n<p><em>Lizardfolk</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "humanoid",
+      "lizardfolk"
+    ],
+    "categories": [
+      "humanoid",
+      "lizardfolk"
+    ]
+  },
+  {
+    "name": "Merfolk",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Howl of the Wild",
+    "short_description": "Merfolk live in every ocean of Golarion, infinite in their variety and awe-inspiring in their majesty. They consider themselves, not without some merit, the rulers of the sea. Among the tropical reefs of the Fever Sea, merfolk build temples and palaces",
+    "full_description": "<p>Merfolk live in every ocean of Golarion, infinite in their variety and awe-inspiring in their majesty. They consider themselves, not without some merit, the rulers of the sea. Among the tropical reefs of the Fever Sea, merfolk build temples and palaces of brightly colored corals. Beneath the ice floes of the Shining Sea, merfolk hunt seals and whales for food in small, standoffish clans. In the Embaral Ocean, merfolk populate the great trading city of Alohmab, built into the shell of a titanic snail that crawls across the ocean floor.</p>\n<p><em>Merfolk</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "amphibious",
+      "humanoid",
+      "merfolk"
+    ],
+    "categories": [
+      "amphibious",
+      "humanoid",
+      "merfolk"
+    ]
+  },
+  {
+    "name": "Minotaur",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Howl of the Wild",
+    "short_description": "Minotaurs stalk complex passageways, whether natural or artificial, and are masters of stone architecture. Inquisitive and steadfast, these bovine humanoids spend their lives perfecting the pursuit that calls to them, which can sometimes lead them far",
+    "full_description": "<p>Minotaurs stalk complex passageways, whether natural or artificial, and are masters of stone architecture. Inquisitive and steadfast, these bovine humanoids spend their lives perfecting the pursuit that calls to them, which can sometimes lead them far from the enclaves where they were raised. Minotaurs are originally from the Iblydos archipelago but have spread far and wide across Golarion, forming close-knit communities often near mountains or beneath the surface of the earth. Though sometimes mistaken for simple brutes, minotaurs have scholars and warriors alike. Those who can look past their appearance will find an affinity for building and navigation, as well as creative problem-solving.</p>\n<p><em>Minotaur</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "beast",
+      "humanoid",
+      "minotaur"
+    ],
+    "categories": [
+      "beast",
+      "humanoid",
+      "minotaur"
+    ]
+  },
+  {
+    "name": "Orc",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Player Core",
+    "short_description": "Orcs are forged in the fires of violence and conflict, often from the moment they are born. As they live lives that are frequently cut brutally short, orcs revel in testing their strength against worthy foes, whether by challenging a higher-ranking",
+    "full_description": "<p><em>Orcs are forged in the fires of violence and conflict, often from the moment they are born. As they live lives that are frequently cut brutally short, orcs revel in testing their strength against worthy foes, whether by challenging a higher-ranking member of their community for dominance or raiding a neighboring settlement. Many orcs seek glory as soon as they can walk and carry a blade or club, taming wild beasts or hunting deadly monsters.</em></p>\n<p><em>Orc</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "humanoid",
+      "orc"
+    ],
+    "categories": [
+      "humanoid",
+      "orc"
+    ]
+  },
+  {
+    "name": "Ratfolk",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Player Core 2",
+    "short_description": "Ysoki are beings that most surface-dwelling humanoids refer to as \"ratfolk.\" They are a communal people who prefer cramped conditions, with up to 100 individuals living in a given home. If they can't find homes in town, ratfolk may instead live in caves",
+    "full_description": "<p><em>Ysoki are beings that most surface-dwelling humanoids refer to as \"ratfolk.\" They are a communal people who prefer cramped conditions, with up to 100 individuals living in a given home. If they can't find homes in town, ratfolk may instead live in caves and cavern complexes, as these provide great storage for the many and varied goods they bring back from trading expeditions.</em></p>\n<p>Ratfolk</p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "humanoid",
+      "ratfolk"
+    ],
+    "categories": [
+      "humanoid",
+      "ratfolk"
+    ]
+  },
+  {
+    "name": "Samsaran",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Lost Omens Tian Xia Character Guide",
+    "short_description": "Samsarans, as the tale goes, originated with a group of scholars in Zi Ha who ventured into the mountains to find the cure for an illness ravaging their village. After weeks of peril, they found a freshwater spring filled with pure magical life essence.",
+    "full_description": "<p><em>Samsarans, as the tale goes, originated with a group of scholars in Zi Ha who ventured into the mountains to find the cure for an illness ravaging their village. After weeks of peril, they found a freshwater spring filled with pure magical life essence. This water brought the scholars back from the brink of death and cured the villagers. Given a new chance at life, everyone who drank the water devoted the rest of their life to learning and experiencing the world fully. Upon death, this devotion, combined with the magical essence now infused in their bodies, transformed these people into the first samsarans.</em></p>\n<p><em>Samsaran</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "humanoid",
+      "samsaran"
+    ],
+    "categories": [
+      "humanoid",
+      "samsaran"
+    ]
+  },
+  {
+    "name": "Sarangay",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Lost Omens Tian Xia Character Guide",
+    "short_description": "Sarangay are carabao-headed people who have long survived deep in the forests across Tian Xia. Many adventurers have thought them to be monsters at first, but sarangay are nothing more than a thriving society who value their community and their souls",
+    "full_description": "<p><em>Sarangay are carabao-headed people who have long survived deep in the forests across Tian Xia. Many adventurers have thought them to be monsters at first, but sarangay are nothing more than a thriving society who value their community and their souls above all else. Their cultures are built upon the intense desire to protect their communities and their chosen leader. Their horns are said to be a crescent moon, and their towering statures are said to have come from their ancestors being stretched so far up to reach their Father Moon while their Mother Earth kept them close to her bosom. They revere the great Father Moon, their First Ancestor, and endeavor to protect and exalt nature above all else, for they understand that they're part of it.</em></p>\n<p><em>Sarangay</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "humanoid",
+      "sarangay"
+    ],
+    "categories": [
+      "humanoid",
+      "sarangay"
+    ]
+  },
+  {
+    "name": "Surki",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Howl of the Wild",
+    "short_description": "Surkis are an insectile species who subsist on the latent magic in the world around them. As a subterranean species native to the Darklands, surkis have rarely been seen on the surface, and always with long pauses between historical sightings. This is",
+    "full_description": "<p>Surkis are an insectile species who subsist on the latent magic in the world around them. As a subterranean species native to the Darklands, surkis have rarely been seen on the surface, and always with long pauses between historical sightings. This is due to surkis' life cycle—long dormancies followed by so-called \"generation digs,\" as they migrate great distances in response to happenings underground. The healing of the Worldwound initiated one of the largest such digs in their history, bringing surkis up into the caverns and passages of the Sarkoris Scar and emerging onto the surface for the first time in many years. Since their emergence, several small surki settlements have been established in secluded corners of Sarkoris, voraciously cataloging the wildlife, magics, and various other inhabitants of the area as they explore the alien environment of the surface.</p>\n<p><em>Surki</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "humanoid",
+      "surki"
+    ],
+    "categories": [
+      "humanoid",
+      "surki"
+    ]
+  },
+  {
+    "name": "Tanuki",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Lost Omens Tian Xia Character Guide",
+    "short_description": "Tian Xia is replete with magically gifted ancestries—such as tengu, kitsune, yakshas, and yaoguai—whose powers bring them high regard and who, in turn, use their gifts for responsible ends. Tanuki aren't one of these ancestries. Instead, the",
+    "full_description": "<p><em>Tian Xia is replete with magically gifted ancestries—such as tengu, kitsune, yakshas, and yaoguai—whose powers bring them high regard and who, in turn, use their gifts for responsible ends. Tanuki aren't one of these ancestries. Instead, the shapeshifting raccoon dog–like humanoids use their powers of illusion and transformation in ways more people should: for fun! Tanuki delight in pranks and practical jokes, especially those that allow them to take the high and mighty down a notch and show them what life is like for everyone else. Where other peoples take pride in their storied histories, noble traditions, or intricate ceremonies, tanuki take pride in their simplicity and disregard for the world's many rules. Though some might claim this outlook reduces tanuki to uncouth rubes, tanuki feel it makes them more cultured; after all, one must know a rule to bend it, and one must understand a norm to break it.</em></p>\n<p><em>Tanuki</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "humanoid",
+      "tanuki"
+    ],
+    "categories": [
+      "humanoid",
+      "tanuki"
+    ]
+  },
+  {
+    "name": "Tengu",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Player Core 2",
+    "short_description": "Tengu are survivalists and conversationalists, equally at home living off the wilderness and finding a niche in dense cities. They accumulate knowledge, tools, and companions, adding them to their collection as they travel. Tengu",
+    "full_description": "<p><em>Tengu are survivalists and conversationalists, equally at home living off the wilderness and finding a niche in dense cities. They accumulate knowledge, tools, and companions, adding them to their collection as they travel.</em></p>\n<p>Tengu</p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "humanoid",
+      "tengu"
+    ],
+    "categories": [
+      "humanoid",
+      "tengu"
+    ]
+  },
+  {
+    "name": "Tripkee",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Player Core 2",
+    "short_description": "Tripkees are a shy and cautious people who generally seek to avoid being drawn into the affairs of others. Despite their cautious outlook and small stature, adventurous tripkees still take bold and noble action when the situation demands it.",
+    "full_description": "<p><em>Tripkees are a shy and cautious people who generally seek to avoid being drawn into the affairs of others. Despite their cautious outlook and small stature, adventurous tripkees still take bold and noble action when the situation demands it.</em></p>\n<p></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "humanoid",
+      "tripkee"
+    ],
+    "categories": [
+      "humanoid",
+      "tripkee"
+    ]
+  },
+  {
+    "name": "Wayang",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Lost Omens Tian Xia Character Guide",
+    "short_description": "Wayangs are diasporic sojourners from the Netherworld where they lived and worked alongside their allies, lightweaving d'ziriaks. Both peoples shared affinities for artistic expression and spiritual introspection, inspiring each other's sensitivities to",
+    "full_description": "<p><em>Wayangs are diasporic sojourners from the Netherworld where they lived and worked alongside their allies, lightweaving d'ziriaks. Both peoples shared affinities for artistic expression and spiritual introspection, inspiring each other's sensitivities to color, form, and function; they also bolstered each other's defense against rampaging dragons, oni, and undead. This idyll collapsed from divine meddling; some say when Abadar sentenced Zon-Kuthon to exile in the Netherworld, the Midnight Lord's deific presence distorted the plane into a nightmarish domain, while others accounts ascribe fiendish sources to this doom.</em></p>\n<p><em>Wayang</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "humanoid",
+      "shadow",
+      "wayang"
+    ],
+    "categories": [
+      "humanoid",
+      "shadow",
+      "wayang"
+    ]
+  },
+  {
+    "name": "Yaksha",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Lost Omens Tian Xia Character Guide",
+    "short_description": "Away from shining citadels and opulent palaces, reticent yakshas shelter Tian Xia's rural hinterlands from natural disasters and otherworldly depredations. Famed for resolute vows and prowess with primal magic, yakshas shield the indigent and protect the",
+    "full_description": "<p><em>Away from shining citadels and opulent palaces, reticent yakshas shelter Tian Xia's rural hinterlands from natural disasters and otherworldly depredations. Famed for resolute vows and prowess with primal magic, yakshas shield the indigent and protect the wilderness, punishing those who threaten either with bone-crushing fury. Yaksha legends recall their origins as divine spirits, overseeing the safety of roads and abodes in a primeval world of vast storm forests and titanic flame floods—the First World, a realm of boundless potentiality. During the Great Abandonment, when the gods left the First World, many yakshas rejected this exodus, instead staying to perform their duties as caretakers. Despite the realm's sudden dearth of divine power, the remaining yakshas swore primordial vows, allowing them to channel power from the nearby Creation's Forge into primal magic and transform swathes of the metamorphic First World into stable regions to provide refuge for destitute fey.</em></p>\n<p><em>Yaksha</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "spirit",
+      "yaksha"
+    ],
+    "categories": [
+      "spirit",
+      "yaksha"
+    ]
+  },
+  {
+    "name": "Yaoguai",
+    "rule_type": "Ancestry",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Lost Omens Tian Xia Character Guide",
+    "short_description": "Yaoguai usually begin as simple animals, plants, or objects before finding a way to awaken to sapience, becoming strange shapeshifting creatures in the process. Often originating from an infusion of ambient energy into their original form, yaoguai attain",
+    "full_description": "<p><em>Yaoguai usually begin as simple animals, plants, or objects before finding a way to awaken to sapience, becoming strange shapeshifting creatures in the process. Often originating from an infusion of ambient energy into their original form, yaoguai attain their powers through training their innate magic. Taking care not to expose their true appearance and nature, yaoguai of the same origins or species sometimes form enclaves in which they dedicate their lives to honing their powers or engaging in hedonistic pursuits—though the two aren't mutually exclusive. Yaoguai who lack a solid community, meanwhile, feel compelled to cultivate themselves until they transcend their origin, which might allow them to join society and experience a new kind of freedom.</em></p>\n<p><em>Yaoguai</em></p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "tags": [
+      "humanoid",
+      "yaoguai"
+    ],
+    "categories": [
+      "humanoid",
+      "yaoguai"
+    ]
+  }
+]

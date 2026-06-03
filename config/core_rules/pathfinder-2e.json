@@ -1,0 +1,183 @@
+{
+  "name": "Pathfinder 2e",
+  "active": "true",
+  "stock": "true",
+  "default_dice": "1d20",
+  "d20_system": "true",
+  "publisher": {
+    "name": "Paizo Inc.",
+    "logo": "",
+    "url": "https://paizo.com/pathfinder"
+  },
+  "license": {
+    "label": "ORC License",
+    "core_faq": "License ORC",
+    "attribution": "This product is published under the ORC License, located at the Library of Congress at TX 9-307-067, and available online at various locations including paizo.com/orclicense. All warranties are disclaimed as set forth therein. This product is based on material published by Paizo Inc. under the ORC License and those portions are © Paizo Inc. Paizo, the Paizo golem logo, Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc."
+  },
+  "entitybuilder": {
+    "sheet": "default",
+    "use_modifiers": "true",
+    "show_core_blocks": "true",
+    "menu": [
+      { "label": "Descriptors",       "link": "descriptors",                                    "add_modifiers": "false" },
+      { "label": "Base Values",       "link": "base_values",                                    "add_modifiers": "false" },
+      { "label": "Ability Scores",    "link": "ability_scores",                                 "add_modifiers": "true" },
+      { "label": "Class Levels",      "link": "class_levels",                                   "add_modifiers": "true" },
+      { "label": "Trackables",        "link": "trackables",                                     "add_modifiers": "false" },
+      { "label": "Attacks",           "link": "attacks",                                        "add_modifiers": "false" },
+      { "label": "Movement",          "link": "movements",                                      "add_modifiers": "true" },
+      { "label": "Defenses",          "link": "defenses",                                       "add_modifiers": "false" },
+      { "label": "Saving Throws",     "link": "saving_throws",                                  "add_modifiers": "false" },
+      { "label": "Caster Levels",     "link": "caster_levels",                                  "add_modifiers": "false" },
+      { "label": "Spells",            "link": "known_spells",                                   "add_modifiers": "false" },
+      { "label": "Skills",            "link": "skills",                                         "add_modifiers": "true" },
+      { "label": "Ancestry",          "link": "linked_rules?rule_type=ancestry",                "add_modifiers": "false" },
+      { "label": "Heritage",          "link": "linked_rules?rule_type=heritage",                "add_modifiers": "false" },
+      { "label": "Background",        "link": "linked_rules?rule_type=background",              "add_modifiers": "false" },
+      { "label": "Class",             "link": "linked_rules?rule_type=class",                   "add_modifiers": "false" },
+      { "label": "Ancestry Feats",    "link": "linked_rules?rule_type=ancestry+feat",          "add_modifiers": "false" },
+      { "label": "Class Feats",       "link": "linked_rules?rule_type=class+feat",             "add_modifiers": "false" },
+      { "label": "General Feats",     "link": "linked_rules?rule_type=general+feat",           "add_modifiers": "false" },
+      { "label": "Skill Feats",       "link": "linked_rules?rule_type=skill+feat",             "add_modifiers": "false" },
+      { "label": "Conditions",        "link": "linked_rules?rule_type=condition",               "add_modifiers": "false" },
+      { "label": "Deities",           "link": "linked_rules?rule_type=deity",                   "add_modifiers": "false" },
+      { "label": "Inventory Items",   "link": "inventory_items",                                "add_modifiers": "false" },
+      { "label": "Currencies",        "link": "currencies",                                     "add_modifiers": "false" },
+      { "label": "Modifiers",         "link": "modifiers",                                      "add_modifiers": "false" },
+      { "label": "Options",           "link": "options",                                        "add_modifiers": "false" }
+    ],
+    "core_skills": [
+      { "name": "Athletics",    "ranks": "0", "ability_score": "Strength",     "group": "Strength" },
+
+      { "name": "Acrobatics",   "ranks": "0", "ability_score": "Dexterity",    "group": "Dexterity" },
+      { "name": "Stealth",      "ranks": "0", "ability_score": "Dexterity",    "group": "Dexterity" },
+      { "name": "Thievery",     "ranks": "0", "ability_score": "Dexterity",    "group": "Dexterity" },
+
+      { "name": "Arcana",       "ranks": "0", "ability_score": "Intelligence", "group": "Intelligence" },
+      { "name": "Crafting",     "ranks": "0", "ability_score": "Intelligence", "group": "Intelligence" },
+      { "name": "Lore",         "ranks": "0", "ability_score": "Intelligence", "group": "Intelligence" },
+      { "name": "Occultism",    "ranks": "0", "ability_score": "Intelligence", "group": "Intelligence" },
+      { "name": "Society",      "ranks": "0", "ability_score": "Intelligence", "group": "Intelligence" },
+
+      { "name": "Medicine",     "ranks": "0", "ability_score": "Wisdom",       "group": "Wisdom" },
+      { "name": "Nature",       "ranks": "0", "ability_score": "Wisdom",       "group": "Wisdom" },
+      { "name": "Religion",     "ranks": "0", "ability_score": "Wisdom",       "group": "Wisdom" },
+      { "name": "Survival",     "ranks": "0", "ability_score": "Wisdom",       "group": "Wisdom" },
+
+      { "name": "Deception",    "ranks": "0", "ability_score": "Charisma",     "group": "Charisma" },
+      { "name": "Diplomacy",    "ranks": "0", "ability_score": "Charisma",     "group": "Charisma" },
+      { "name": "Intimidation", "ranks": "0", "ability_score": "Charisma",     "group": "Charisma" },
+      { "name": "Performance",  "ranks": "0", "ability_score": "Charisma",     "group": "Charisma" }
+    ],
+    "character": {
+      "ability_scores": [
+        { "name": "Strength",     "base": "10", "modifier": "0", "dice": "" },
+        { "name": "Dexterity",    "base": "10", "modifier": "0", "dice": "" },
+        { "name": "Constitution", "base": "10", "modifier": "0", "dice": "" },
+        { "name": "Intelligence", "base": "10", "modifier": "0", "dice": "" },
+        { "name": "Wisdom",       "base": "10", "modifier": "0", "dice": "" },
+        { "name": "Charisma",     "base": "10", "modifier": "0", "dice": "" }
+      ],
+      "trackables": [
+        { "name": "Hit Points",   "maximum": "0", "current": "0" },
+        { "name": "Hero Points",  "maximum": "3", "current": "1" },
+        { "name": "Focus Points", "maximum": "0", "current": "0" }
+      ],
+      "base_values": [
+        { "name": "Level",                "value": "1", "dice": "" },
+        { "name": "Class DC",             "value": "0", "dice": "" },
+        { "name": "Speed",                "value": "25", "dice": "" },
+        { "name": "Size",                 "value": "2", "dice": "" },
+        { "name": "Proficiency Bonus",    "value": "0", "dice": "" }
+      ],
+      "defenses": [
+        { "name": "Armor Class", "base": "10", "ability_score": "Dexterity" }
+      ],
+      "saving_throws": [
+        { "name": "Fortitude", "base": "0", "ability_score": "Constitution" },
+        { "name": "Reflex",    "base": "0", "ability_score": "Dexterity" },
+        { "name": "Will",      "base": "0", "ability_score": "Wisdom" }
+      ],
+      "descriptors": [
+        { "name": "Ancestry",  "description": "", "is_private": "false" },
+        { "name": "Heritage",  "description": "", "is_private": "false" },
+        { "name": "Background","description": "", "is_private": "false" },
+        { "name": "Class",     "description": "", "is_private": "false" },
+        { "name": "Deity",     "description": "", "is_private": "true" },
+        { "name": "Alignment", "description": "", "is_private": "true" },
+        { "name": "Languages", "description": "", "is_private": "false" },
+        { "name": "Age",       "description": "", "is_private": "false" },
+        { "name": "Gender",    "description": "", "is_private": "false" }
+      ],
+      "movements": [
+        { "name": "Speed", "base": "25", "ability_score": "", "dice": "", "description": "Feet" }
+      ],
+      "currencies": [
+        { "name": "Platinum", "quantity": "0", "weight": "0.02", "carried": "true" },
+        { "name": "Gold",     "quantity": "0", "weight": "0.02", "carried": "true" },
+        { "name": "Silver",   "quantity": "0", "weight": "0.02", "carried": "true" },
+        { "name": "Copper",   "quantity": "0", "weight": "0.02", "carried": "true" }
+      ]
+    },
+    "creature": {
+      "ability_scores": [
+        { "name": "Strength",     "base": "10", "modifier": "0", "dice": "" },
+        { "name": "Dexterity",    "base": "10", "modifier": "0", "dice": "" },
+        { "name": "Constitution", "base": "10", "modifier": "0", "dice": "" },
+        { "name": "Intelligence", "base": "10", "modifier": "0", "dice": "" },
+        { "name": "Wisdom",       "base": "10", "modifier": "0", "dice": "" },
+        { "name": "Charisma",     "base": "10", "modifier": "0", "dice": "" }
+      ],
+      "trackables": [
+        { "name": "Hit Points", "maximum": "0", "current": "0" }
+      ],
+      "base_values": [
+        { "name": "Level",             "value": "1", "dice": "" },
+        { "name": "Speed",             "value": "25", "dice": "" },
+        { "name": "Size",              "value": "2", "dice": "" },
+        { "name": "Proficiency Bonus", "value": "0", "dice": "" }
+      ],
+      "defenses": [
+        { "name": "Armor Class", "base": "10", "ability_score": "Dexterity" }
+      ],
+      "saving_throws": [
+        { "name": "Fortitude", "base": "0", "ability_score": "Constitution" },
+        { "name": "Reflex",    "base": "0", "ability_score": "Dexterity" },
+        { "name": "Will",      "base": "0", "ability_score": "Wisdom" }
+      ],
+      "descriptors": [
+        { "name": "Alignment",    "description": "", "is_private": "false" },
+        { "name": "Size",         "description": "", "is_private": "false" },
+        { "name": "Creature Type", "description": "", "is_private": "false" },
+        { "name": "Level",        "description": "", "is_private": "false" },
+        { "name": "Languages",    "description": "", "is_private": "false" }
+      ],
+      "movements": [
+        { "name": "Speed", "base": "25", "ability_score": "", "dice": "", "description": "Feet" }
+      ],
+      "currencies": [
+        { "name": "Platinum", "quantity": "0", "weight": "0.02", "carried": "true" },
+        { "name": "Gold",     "quantity": "0", "weight": "0.02", "carried": "true" },
+        { "name": "Silver",   "quantity": "0", "weight": "0.02", "carried": "true" },
+        { "name": "Copper",   "quantity": "0", "weight": "0.02", "carried": "true" }
+      ]
+    }
+  },
+  "rulebuilder": {
+    "rules": [
+      { "name": "Ancestry",      "is_shared": "true" },
+      { "name": "Heritage",      "is_shared": "true" },
+      { "name": "Background",    "is_shared": "true" },
+      { "name": "Class",         "is_shared": "true" },
+      { "name": "Ancestry Feat", "is_shared": "true" },
+      { "name": "Class Feat",    "is_shared": "true" },
+      { "name": "General Feat",  "is_shared": "true" },
+      { "name": "Skill Feat",    "is_shared": "true" },
+      { "name": "Condition",     "is_shared": "true" },
+      { "name": "Deity",         "is_shared": "true" }
+    ],
+    "powers": [
+      { "name": "Spell", "is_shared": "true" }
+    ]
+  }
+}

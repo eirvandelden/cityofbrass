@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+require Rails.root.join("lib/support/core_faq_bootstrap")
+
+Support::CoreFaqBootstrap.call
+
 user = User.new(
   email: "user@example.com",
   password: "password1",
@@ -21,7 +25,7 @@ admin = Admin.new(
 )
 admin.save!
 
-%w[db:seed:draw_steel:all db:seed:5e:all].each do |task_name|
+%w[db:seed:draw_steel:all db:seed:5e:all db:seed:pf2e:all].each do |task_name|
   Rake::Task[task_name].reenable
   Rake::Task[task_name].invoke
 end

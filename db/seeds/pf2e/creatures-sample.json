@@ -1,0 +1,1051 @@
+[
+  {
+    "name": "Animated Broom",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Monster Core",
+    "short_description": "Level -1 Construct",
+    "full_description": "<h2>Animated Broom</h2>\n<p><strong>Creature -1</strong></p>\n<p><strong>Traits</strong> construct, mindless</p>\n<hr/>\n<p><strong>Perception</strong> +3</p>\n\n<p><strong>Skills</strong> Athletics +5</p>\n<p>Str +0, Dex +1, Con +0, Int -5, Wis +0, Cha -5</p>\n<hr/>\n<p><strong>AC</strong> 15; <strong>Fort</strong> +3, <strong>Ref</strong> +6, <strong>Will</strong> +3</p>\n<p><strong>HP</strong> 6</p>\n\n<hr/>\n<p><strong>Speed</strong> 15 feet</p>\n<p><strong>Construct Armor (Hardness 2)</strong> <p>Like normal objects, an animated broom has Hardness. This Hardness reduces any damage it takes by an amount equal to the Hardness. Once an animated broom is reduced to less than half its Hit Points, or immediately upon being damaged by a critical hit, its construct armor breaks and reducing its Armor Class to 13.</p></p>\n<p><strong>Dust</strong> <p>A creature hit by an animated broom's bristles must succeed at a DC 15 Fortitude save or spend its next action coughing. Even if hit by multiple dust attacks, the creature has to spend only 1 action coughing to clear the dust out.</p>\n<p>A creature that doesn't breathe is immune to this effect.</p></p>\n\n<p>Animated brooms perform menial tasks of cleaning and upkeep, but they can step in to defend a room from intrusion if needed. These simple animated objects can be found with greater frequency than more complicated and costly objects.</p>\n<hr />\n<p>Granted a semblance of life through the use of rituals or other strange magic, animated objects take many forms and serve a variety of uses. A few examples of typical animated objects are listed below. Many of these creatures serve as guardians, surprising unsuspecting adventurers when they suddenly attack. Others serve as idle distractions for the exceptionally rich, simple servants created to handle odd jobs, and the like.</p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "ability_scores": [
+      {
+        "name": "Strength",
+        "base": "10",
+        "modifier": "0",
+        "dice": ""
+      },
+      {
+        "name": "Dexterity",
+        "base": "10",
+        "modifier": "1",
+        "dice": ""
+      },
+      {
+        "name": "Constitution",
+        "base": "10",
+        "modifier": "0",
+        "dice": ""
+      },
+      {
+        "name": "Intelligence",
+        "base": "10",
+        "modifier": "-5",
+        "dice": ""
+      },
+      {
+        "name": "Wisdom",
+        "base": "10",
+        "modifier": "0",
+        "dice": ""
+      },
+      {
+        "name": "Charisma",
+        "base": "10",
+        "modifier": "-5",
+        "dice": ""
+      }
+    ],
+    "trackables": [
+      {
+        "name": "Hit Points",
+        "maximum": "6",
+        "current": "6"
+      }
+    ],
+    "base_values": [
+      {
+        "name": "Level",
+        "value": "-1",
+        "dice": ""
+      },
+      {
+        "name": "Proficiency Bonus",
+        "value": "-1",
+        "dice": ""
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Armor Class",
+        "base": "15",
+        "ability_score": "Dexterity"
+      }
+    ],
+    "saving_throws": [
+      {
+        "name": "Fortitude",
+        "base": "3",
+        "ability_score": "Constitution"
+      },
+      {
+        "name": "Reflex",
+        "base": "6",
+        "ability_score": "Dexterity"
+      },
+      {
+        "name": "Will",
+        "base": "3",
+        "ability_score": "Wisdom"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Bristles",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+6 to hit (agile, finesse, magical); 1d4 bludgeoning"
+      }
+    ]
+  },
+  {
+    "name": "Air Scamp",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Monster Core",
+    "short_description": "Level 1 Air",
+    "full_description": "<h2>Air Scamp</h2>\n<p><strong>Creature 1</strong></p>\n<p><strong>Traits</strong> air, elemental</p>\n<hr/>\n<p><strong>Perception</strong> +3</p>\n<p><strong>Languages</strong> sussuran</p>\n<p><strong>Skills</strong> Acrobatics +7, Stealth +7</p>\n<p>Str +1, Dex +4, Con +0, Int -2, Wis +0, Cha +0</p>\n<hr/>\n<p><strong>AC</strong> 16; <strong>Fort</strong> +3, <strong>Ref</strong> +9, <strong>Will</strong> +7</p>\n<p><strong>HP</strong> 12</p>\n<p><strong>Immunities</strong> bleed, paralyzed, poison, sleep</p>\n<hr/>\n<p><strong>Speed</strong> 20 feet</p>\n<p><strong>Fog Vision</strong> <p>The air scamp ignores the  condition from fog and mist.</p></p>\n<p><strong>Fast Healing 2 (In Open Air)</strong> <p></p></p>\n<p><strong>[Two Actions] Sirocco Breath</strong> <p>The air scamp creates cutting winds in a  that deal 2d6 damage|options:area-damage] damage to each creature within the area (DC 17 basic Reflex save). A creature that fails its save is also pushed back 10 feet.</p>\n<p>The air scamp can't use Sirocco Breath again for 1d4 rounds.</p></p>\n\n<p>A pale blue head and paper-thin wings peek out from the cloud that clings to the air scamp. Air scamps are short-sighted and flighty, even relative to their kin; they are as likely to fly recklessly into battle as they are to whine in terror at a loud noise.</p>\n<hr />\n<p>Elemental scamps are bat-like critters marked by elemental powers. Scamps are dispatched from the Elemental Planes by more powerful residents or called to the Universe by neophyte summoners. All scamps have a hint of magical power due to a lingering connection to their home plane, which they largely use to pull simple pranks.</p>\n<p>Scamps rapidly form a pecking order of cleverness. Humanoids often confuse scamps when meeting such creatures for the first time. These confused scamps usually resort to an escalating series of pranks and mischief, seeing what they can get away with to establish their place in the hierarchy.</p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "ability_scores": [
+      {
+        "name": "Strength",
+        "base": "10",
+        "modifier": "1",
+        "dice": ""
+      },
+      {
+        "name": "Dexterity",
+        "base": "10",
+        "modifier": "4",
+        "dice": ""
+      },
+      {
+        "name": "Constitution",
+        "base": "10",
+        "modifier": "0",
+        "dice": ""
+      },
+      {
+        "name": "Intelligence",
+        "base": "10",
+        "modifier": "-2",
+        "dice": ""
+      },
+      {
+        "name": "Wisdom",
+        "base": "10",
+        "modifier": "0",
+        "dice": ""
+      },
+      {
+        "name": "Charisma",
+        "base": "10",
+        "modifier": "0",
+        "dice": ""
+      }
+    ],
+    "trackables": [
+      {
+        "name": "Hit Points",
+        "maximum": "12",
+        "current": "12"
+      }
+    ],
+    "base_values": [
+      {
+        "name": "Level",
+        "value": "1",
+        "dice": ""
+      },
+      {
+        "name": "Proficiency Bonus",
+        "value": "1",
+        "dice": ""
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Armor Class",
+        "base": "16",
+        "ability_score": "Dexterity"
+      }
+    ],
+    "saving_throws": [
+      {
+        "name": "Fortitude",
+        "base": "3",
+        "ability_score": "Constitution"
+      },
+      {
+        "name": "Reflex",
+        "base": "9",
+        "ability_score": "Dexterity"
+      },
+      {
+        "name": "Will",
+        "base": "7",
+        "ability_score": "Wisdom"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Jaws",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+9 to hit (finesse, unarmed); 1d6+1 piercing"
+      }
+    ]
+  },
+  {
+    "name": "Aapoph Serpentfolk",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Monster Core",
+    "short_description": "Level 3 Humanoid",
+    "full_description": "<h2>Aapoph Serpentfolk</h2>\n<p><strong>Creature 3</strong></p>\n<p><strong>Traits</strong> humanoid, mutant, serpentfolk</p>\n<hr/>\n<p><strong>Perception</strong> +8</p>\n<p><strong>Languages</strong> aklo, sakvroth</p>\n<p><strong>Skills</strong> Acrobatics +7, Athletics +11, Intimidation +6</p>\n<p>Str +4, Dex +2, Con +3, Int -1, Wis +1, Cha -1</p>\n<hr/>\n<p><strong>AC</strong> 18; <strong>Fort</strong> +10, <strong>Ref</strong> +7, <strong>Will</strong> +6</p>\n<p><strong>HP</strong> 60</p>\n<p><strong>Resistances</strong> poison 5</p>\n<hr/>\n<p><strong>Speed</strong> 25 feet</p>\n<p><strong>Telepathy 100 feet</strong> <p></p></p>\n<p><strong>+2 Status to Will Saves vs. Mental</strong></p>\n<p><strong>[Reaction] Reactive Strike</strong> <p></p></p>\n<p><strong>Serpentfolk Venom</strong> <p><strong>Saving Throw</strong> DC 20 Fortitude</p>\n<hr />\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> 1d4 damage] damage and Enfeebled 1 (1 round)</p>\n<p><strong>Stage 2</strong> 2d4 damage] damage and enfeebled 1 (1 round)</p></p>\n<p><strong>[Action] Slithering Attack</strong> <p>The aapoph serpentfolk makes one scimitar or fangs Strike and one tail Strike, each targeting a different creature. These attacks both count toward the aapoph's multiple attack penalty, but the penalty doesn't increase until after the aapoph makes both attacks.</p></p>\n<p><strong>[Action] Knockdown</strong> <p></p></p>\n\n<p>Aapophs possess greater strength and stronger venom than their zyss kin, but they lack zyss's innate magic. Unlike their selfish superiors, aapophs are communal and group together to hunt, wrestle, and sleep curled together in pits.</p>\n<p>Aapophs often have physical mutations—horns, vestigial tails, or spines protruding from their scales—yet these have little impact on their overall combat prowess—and combat prowess is the measure by which zyss judge them.</p>\n<hr />\n<p>Before their ancient clash with humanity devastated their civilization, serpentfolk were masters of a sprawling underground empire. Their power was shattered and their god Ydersius decapitated (although not quite slain). The cunning, intelligence, and magical abilities of serpentfolk have diminished from their ancient heights, and most are born without these boons. This is partially the result of cruel genetic meddling among serpentfolk—though the ruling class, zyss, are born with an innate spellcasting ability, their blood runs thin, making them susceptible to wounds. Seen as the failures of the serpentfolk's experiments are the aapophs, who are strong but prone to mutation and lack innate spellcasting.</p>\n<p>Today, the central realm of the Darklands retains the old name of the serpentfolk empire that once dominated this region—Sekamina. This name is also the source of the serpentfolk's Aklo title, sekmin, which they are often called in ancient texts. Serpentfolk dominion had declined before ghouls, gugs, umbral gnomes, and other forces. Yet their recent ventures have brought them back to a stronger place in the Darklands. Many serpentfolk sleeping in torpor in secluded vaults have awakened.</p>\n<p>Zyss serpentfolk tend toward megalomania, with dreams of returning to their place of dominance. Many of their plans hinge on resurrecting Ydersius, their decapitated god. His headless body still thrashes about, mindless, in the Darklands, waiting to be reunited with his lost skull. Serpentfolk numbers are so small that reclaiming their dominance seems a distant dream, especially since their reproduction is slow. Though a parent can birth a dozen young at once, the gestation period lasts up to a decade, and the likelihood that even one will be zyss is low. There's no telling whether a child will be zyss or aapoph, regardless of parentage. A coveted zyss child is just as likely to arise from aapoph parents as from two zyss, and every serpentfolk colony has someone in charge of sorting the young, identifying the earliest signs of magic in them.</p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "ability_scores": [
+      {
+        "name": "Strength",
+        "base": "10",
+        "modifier": "4",
+        "dice": ""
+      },
+      {
+        "name": "Dexterity",
+        "base": "10",
+        "modifier": "2",
+        "dice": ""
+      },
+      {
+        "name": "Constitution",
+        "base": "10",
+        "modifier": "3",
+        "dice": ""
+      },
+      {
+        "name": "Intelligence",
+        "base": "10",
+        "modifier": "-1",
+        "dice": ""
+      },
+      {
+        "name": "Wisdom",
+        "base": "10",
+        "modifier": "1",
+        "dice": ""
+      },
+      {
+        "name": "Charisma",
+        "base": "10",
+        "modifier": "-1",
+        "dice": ""
+      }
+    ],
+    "trackables": [
+      {
+        "name": "Hit Points",
+        "maximum": "60",
+        "current": "60"
+      }
+    ],
+    "base_values": [
+      {
+        "name": "Level",
+        "value": "3",
+        "dice": ""
+      },
+      {
+        "name": "Proficiency Bonus",
+        "value": "3",
+        "dice": ""
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Armor Class",
+        "base": "18",
+        "ability_score": "Dexterity"
+      }
+    ],
+    "saving_throws": [
+      {
+        "name": "Fortitude",
+        "base": "10",
+        "ability_score": "Constitution"
+      },
+      {
+        "name": "Reflex",
+        "base": "7",
+        "ability_score": "Dexterity"
+      },
+      {
+        "name": "Will",
+        "base": "6",
+        "ability_score": "Wisdom"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Scimitar",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+11 to hit (forceful, sweep); 1d6+6 slashing"
+      },
+      {
+        "name": "Fangs",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+11 to hit; 1d8+6 piercing"
+      },
+      {
+        "name": "Tail",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+11 to hit (agile); 1d6+6 bludgeoning"
+      }
+    ]
+  },
+  {
+    "name": "Army Ant Swarm",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Monster Core",
+    "short_description": "Level 5 Animal",
+    "full_description": "<h2>Army Ant Swarm</h2>\n<p><strong>Creature 5</strong></p>\n<p><strong>Traits</strong> animal, swarm</p>\n<hr/>\n<p><strong>Perception</strong> +11</p>\n\n<p><strong>Skills</strong> Athletics +7</p>\n<p>Str -2, Dex +4, Con +4, Int -5, Wis +2, Cha -4</p>\n<hr/>\n<p><strong>AC</strong> 21; <strong>Fort</strong> +13, <strong>Ref</strong> +11, <strong>Will</strong> +9</p>\n<p><strong>HP</strong> 55</p>\n<p><strong>Resistances</strong> bludgeoning 2, piercing 5, slashing 5</p><p><strong>Immunities</strong> precision, swarm-mind</p>\n<hr/>\n<p><strong>Speed</strong> 30 feet</p>\n<p><strong>Swarm Mind</strong> <p></p></p>\n<p><strong>[Reaction] Cling</strong> <p><strong>Trigger</strong> A creature leaves the swarm's space</p>\n<hr />\n<p><strong>Effect</strong> The swarm takes 1d6 damage] damage as ants cling to the creature and continue biting, dealing 3d6 damage] damage. High winds or immersion in water reduces the DC of the flat check to end this persistent damage to 5. Any area damage dealt to the creature destroys these clinging ants.</p></p>\n<p><strong>[Action] Swarming Bites</strong> <p>Each enemy in the swarm's space takes 3d6 damage|options:area-damage] damage (DC 21 basic Fortitude save). A creature that fails its save against Swarming Bites becomes Clumsy 1 for 1 round. If the creature attempts a concentrate or manipulate action while affected, it must succeed at a DC 5 Flat or the action is lost; roll the check after spending the action, but before any effects are applied.</p>\n<p></p></p>\n\n<p>An army ant swarm is a terrifying carpet of stinging insects that devours all in its path.</p>\n<hr />\n<p>Ants are industrious insects that aid the natural processes of decay and renewal.</p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "ability_scores": [
+      {
+        "name": "Strength",
+        "base": "10",
+        "modifier": "-2",
+        "dice": ""
+      },
+      {
+        "name": "Dexterity",
+        "base": "10",
+        "modifier": "4",
+        "dice": ""
+      },
+      {
+        "name": "Constitution",
+        "base": "10",
+        "modifier": "4",
+        "dice": ""
+      },
+      {
+        "name": "Intelligence",
+        "base": "10",
+        "modifier": "-5",
+        "dice": ""
+      },
+      {
+        "name": "Wisdom",
+        "base": "10",
+        "modifier": "2",
+        "dice": ""
+      },
+      {
+        "name": "Charisma",
+        "base": "10",
+        "modifier": "-4",
+        "dice": ""
+      }
+    ],
+    "trackables": [
+      {
+        "name": "Hit Points",
+        "maximum": "55",
+        "current": "55"
+      }
+    ],
+    "base_values": [
+      {
+        "name": "Level",
+        "value": "5",
+        "dice": ""
+      },
+      {
+        "name": "Proficiency Bonus",
+        "value": "5",
+        "dice": ""
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Armor Class",
+        "base": "21",
+        "ability_score": "Dexterity"
+      }
+    ],
+    "saving_throws": [
+      {
+        "name": "Fortitude",
+        "base": "13",
+        "ability_score": "Constitution"
+      },
+      {
+        "name": "Reflex",
+        "base": "11",
+        "ability_score": "Dexterity"
+      },
+      {
+        "name": "Will",
+        "base": "9",
+        "ability_score": "Wisdom"
+      }
+    ],
+    "attacks": []
+  },
+  {
+    "name": "Aesra",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Monster Core",
+    "short_description": "Level 7 Archon",
+    "full_description": "<h2>Aesra</h2>\n<p><strong>Creature 7</strong></p>\n<p><strong>Traits</strong> archon, celestial, holy</p>\n<hr/>\n<p><strong>Perception</strong> +15</p>\n<p><strong>Languages</strong> diabolic, draconic, empyrean, utopian</p>\n<p><strong>Skills</strong> Acrobatics +13, Arcana +14, Diplomacy +16, Intimidation +16, Religion +13, Survival +14</p>\n<p>Str +5, Dex +2, Con +4, Int +1, Wis +2, Cha +5</p>\n<hr/>\n<p><strong>AC</strong> 27; <strong>Fort</strong> +17, <strong>Ref</strong> +11, <strong>Will</strong> +15</p>\n<p><strong>HP</strong> 100</p>\n<p><strong>Resistances</strong> fire 15</p><p><strong>Immunities</strong> fear-effects</p>\n<hr/>\n<p><strong>Speed</strong> 30 feet</p>\n<p><strong>At-Will Spells</strong> <p></p></p>\n<p><strong>Constant Spells</strong> <p></p></p>\n<p><strong>All-Around Vision</strong> <p></p></p>\n<p><strong>+1 Status to All Saves vs. Magic</strong></p>\n<p><strong>[Reaction] Archon's Protection</strong> <p><strong>Trigger</strong> An enemy damages the archon's ally and both are within 15 feet of the archon</p>\n<hr />\n<p><strong>Effect</strong> The ally gains resistance 10 to all damage against the triggering damage and the archon can make a Strike against the enemy.</p></p>\n<p><strong>Flame of Justice</strong> <p>An aesra's spirit of righteousness manifests as a two-handed sword of fire. If disarmed or thrown as a ranged weapon, the flame of justice vanishes after landing or dealing damage and reappears in the aesra's hands again instantly. On a critical hit, the target also takes 2d6 damage] damage.</p></p>\n<p><strong>[Two Actions] Flaming Slash</strong> <p>The aesra sweeps their sword, creating a  of sacred flame that deals 5d6 damage|options:area-damage] damage with a DC 23 basic Reflex save.</p></p>\n<p><strong>Maintain Formation</strong> <p>When an aesra casts , they can bring an adjacent willing archon along with them. That archon appears in an empty space adjacent to the aesra's new space.</p></p>\n\n<p>Despite their flaming blades and ring of unblinking eyes, aesras are the diplomats of peace among the archons, preferring justice via compromise and mutual benefit rather than justice by the sword. Nonetheless, when forced to fight against fiendish powers aesras don't hesitate in battle, mounting offensives under divine commanders like Iomedae.</p>\n<hr />\n<p>Archons are guardians of Heaven and enemies of corruption. Before gods and their servants set foot in the celestial planes, archons already resided in Heaven, the original inhabitants of the realm. Upon meeting, the archons and divine angels quickly discovered they were of a kind, holding justice and righteousness in their hearts. An alliance was formed, and archons now serve as stalwart allies to all celestials and mortals they find worthy.</p>\n<p>While the first archons coalesced from the immense seven-tiered mountain of Heaven, they choose willing and worthy Heaven-bound souls to join their ranks. These mortals hear and answer the call of a mysterious voice, manifesting in the Garden at the mountain's peak. There they swear to forever serve the cause of justice and transform into their new archon forms.</p>\n<p>Though deeply concerned with defending mortal life and willing to sacrifice themselves in battle against fiends, archons often feel rote and inscrutable to others, and their forms can border on frightening and bizarre. For this reason, they often have issues with interacting with mortals, or with the free spirited azatas. Despite this, archons draw great strength from others, especially those who exemplify virtue.</p>\n<p>Beyond their celestial allies, archons also maintain ancient ties with aeons. The inscrutable factions can still be seen working together to defend longforgotten secrets and enforce rules that predate mortal life. Archons explain these missions as necessary without further elaboration, leaving even their angelic allies frustrated with archons' obstinance.</p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "ability_scores": [
+      {
+        "name": "Strength",
+        "base": "10",
+        "modifier": "5",
+        "dice": ""
+      },
+      {
+        "name": "Dexterity",
+        "base": "10",
+        "modifier": "2",
+        "dice": ""
+      },
+      {
+        "name": "Constitution",
+        "base": "10",
+        "modifier": "4",
+        "dice": ""
+      },
+      {
+        "name": "Intelligence",
+        "base": "10",
+        "modifier": "1",
+        "dice": ""
+      },
+      {
+        "name": "Wisdom",
+        "base": "10",
+        "modifier": "2",
+        "dice": ""
+      },
+      {
+        "name": "Charisma",
+        "base": "10",
+        "modifier": "5",
+        "dice": ""
+      }
+    ],
+    "trackables": [
+      {
+        "name": "Hit Points",
+        "maximum": "100",
+        "current": "100"
+      }
+    ],
+    "base_values": [
+      {
+        "name": "Level",
+        "value": "7",
+        "dice": ""
+      },
+      {
+        "name": "Proficiency Bonus",
+        "value": "7",
+        "dice": ""
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Armor Class",
+        "base": "27",
+        "ability_score": "Dexterity"
+      }
+    ],
+    "saving_throws": [
+      {
+        "name": "Fortitude",
+        "base": "17",
+        "ability_score": "Constitution"
+      },
+      {
+        "name": "Reflex",
+        "base": "11",
+        "ability_score": "Dexterity"
+      },
+      {
+        "name": "Will",
+        "base": "15",
+        "ability_score": "Wisdom"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Flame of Justice (1)",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+18 to hit (holy, magical, versatile-p); 1d6 fire, 2d10+5 slashing"
+      },
+      {
+        "name": "Flame of Justice (2)",
+        "attack_type": "Ranged",
+        "attack_ability_score": "Dexterity",
+        "description": "+15 to hit (holy, magical, versatile-p); 1d6 fire, 2d10+5 slashing"
+      }
+    ]
+  },
+  {
+    "name": "Brontosaurus",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Monster Core",
+    "short_description": "Level 10 Animal",
+    "full_description": "<h2>Brontosaurus</h2>\n<p><strong>Creature 10</strong></p>\n<p><strong>Traits</strong> animal, dinosaur</p>\n<hr/>\n<p><strong>Perception</strong> +16</p>\n\n<p><strong>Skills</strong> Athletics +23</p>\n<p>Str +9, Dex +0, Con +5, Int -4, Wis +2, Cha +1</p>\n<hr/>\n<p><strong>AC</strong> 28; <strong>Fort</strong> +21, <strong>Ref</strong> +14, <strong>Will</strong> +16</p>\n<p><strong>HP</strong> 220</p>\n\n<hr/>\n<p><strong>Speed</strong> 35 feet</p>\n<p><strong>[Two Actions] Tail Sweep</strong> <p>The brontosaurus makes a tail Strike and compares the attack roll to the AC of up to three foes, each of whom must be within its tail's melee reach and adjacent to at least one other target. It rolls damage only once and applies it to each creature hit.</p>\n<p>A Tail Sweep counts as two attacks for its multiple attack penalty.</p></p>\n<p><strong>[Three Actions] Trample</strong> <p>Huge or smaller, foot, DC 29 basic Reflex</p>\n<hr />\n<p></p></p>\n<p><strong>[Free Action] Improved Knockdown</strong> <p></p></p>\n\n<p>Brontosauruses are truly gigantic behemoths, herbivores large enough to be unafraid of all but the most massive predators. Brontosauruses have stout bodies and long, sinuous necks and tails. Although their feet are capable of crushing entire buildings, these herbivores are generally considerate of where they step.</p>\n<hr />\n<p>Remnants from the world's primeval era, these enormous reptilian animals still exist in large numbers in remote wildernesses or underground in magical Darklands caverns. Lizardfolk, orcs, giants, and other humanoids who live near dinosaurs use the animals as mounts, guards, or hunting beasts. Occasionally, rich nobles will collect dinosaurs to display them in menageries, which almost inevitably leads to cast-offs being nursed back to health by druids and other champions of nature. When dinosaurs establish themselves in regions outside their normal habitats, it's often the result of a large collection being released.</p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "ability_scores": [
+      {
+        "name": "Strength",
+        "base": "10",
+        "modifier": "9",
+        "dice": ""
+      },
+      {
+        "name": "Dexterity",
+        "base": "10",
+        "modifier": "0",
+        "dice": ""
+      },
+      {
+        "name": "Constitution",
+        "base": "10",
+        "modifier": "5",
+        "dice": ""
+      },
+      {
+        "name": "Intelligence",
+        "base": "10",
+        "modifier": "-4",
+        "dice": ""
+      },
+      {
+        "name": "Wisdom",
+        "base": "10",
+        "modifier": "2",
+        "dice": ""
+      },
+      {
+        "name": "Charisma",
+        "base": "10",
+        "modifier": "1",
+        "dice": ""
+      }
+    ],
+    "trackables": [
+      {
+        "name": "Hit Points",
+        "maximum": "220",
+        "current": "220"
+      }
+    ],
+    "base_values": [
+      {
+        "name": "Level",
+        "value": "10",
+        "dice": ""
+      },
+      {
+        "name": "Proficiency Bonus",
+        "value": "10",
+        "dice": ""
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Armor Class",
+        "base": "28",
+        "ability_score": "Dexterity"
+      }
+    ],
+    "saving_throws": [
+      {
+        "name": "Fortitude",
+        "base": "21",
+        "ability_score": "Constitution"
+      },
+      {
+        "name": "Reflex",
+        "base": "14",
+        "ability_score": "Dexterity"
+      },
+      {
+        "name": "Will",
+        "base": "16",
+        "ability_score": "Wisdom"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Tail",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+23 to hit (reach-20, sweep); 2d10+13 bludgeoning"
+      },
+      {
+        "name": "Foot",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+23 to hit (reach-15, unarmed); 2d8+13 bludgeoning"
+      }
+    ]
+  },
+  {
+    "name": "Aeolaeka",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Monster Core",
+    "short_description": "Level 12 Azata",
+    "full_description": "<h2>Aeolaeka</h2>\n<p><strong>Creature 12</strong></p>\n<p><strong>Traits</strong> azata, celestial, earth, holy</p>\n<hr/>\n<p><strong>Perception</strong> +23</p>\n<p><strong>Languages</strong> draconic, empyrean, petran</p>\n<p><strong>Skills</strong> Athletics +25, Diplomacy +22, Intimidation +22, Nature +23</p>\n<p>Str +6, Dex +4, Con +7, Int +2, Wis +5, Cha +4</p>\n<hr/>\n<p><strong>AC</strong> 33; <strong>Fort</strong> +25, <strong>Ref</strong> +20, <strong>Will</strong> +23</p>\n<p><strong>HP</strong> 250</p>\n\n<hr/>\n<p><strong>Speed</strong> 25 feet</p>\n<p><strong>Tremorsense (Precise) 60 feet</strong> <p></p></p>\n<p><strong>Constant Spells</strong> <p></p></p>\n<p><strong>Earth Glide</strong> <p>An aeolaeka can Burrow through any earthen matter, including rock. When they do so, the aeolaeka moves at their full burrow Speed, leaving no tunnels or signs of their passing.</p></p>\n<p><strong>[Two Actions] Liberate the Earth</strong> <p>The aeolaeka conjures churning stones, creating a  of rolling boulders. Creatures in the line take 10d6 damage|options:area-damage] damage with a DC 35 Reflex save. The area is difficult terrain for 24 hours before the leftover stone crumbles to dust. The aeolaeka can't Liberate the Earth for 1d4 rounds.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature takes no damage.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is knocked .</p>\n<p><strong>Critical Failure</strong> The creature takes double damage, is knocked prone, and is  by the rubble ().</p></p>\n<p><strong>[Action] Statue</strong> <p>Until the next time they act, the aeolaeka appears to be a statue. They have an automatic result of 45 on Deception checks and DCs to pass as a statue.</p></p>\n\n<p>Aeolaekas, also known as stone azatas, embody the joy of stone carved by artists' hands or natural forces. Stone is often thought to be steadfast and unchanging, but, when viewed on a grander scale over vast periods of time, it can transform into things as diverse as intricate crystals and fine powder. Aeolaekas are fascinated by the gradual changes found within stone, from sand to diamonds to fossils to towering mountains.</p>\n<p>As a result of their stone affinity, aeolaekas appear less capricious than other azatas—though this is mainly due to them acting on a different geological scale—and some have willingly forged lasting accords or agreements with mortals. Aeolaekas often visit the Plane of Earth, fighting against evil earth elementals, joining jabali festivals, or simply wandering the veins and tunnels of that realm as they bask in its stony wonders. Their stone skin means aeolaekas are sometimes mistaken for statues; they use this fact to hide in plain sight when they don't want their presence known.</p>\n<hr />\n<p>Azatas are manifestations of freedom and unestrained joy—kindly celestials with a penchant for curious exploration, spontaneous revelry, and whimsical quests. Born of good dreams and heartfelt wishes for a better world, they reside in the untamable wilds of Elysium. Azatas are passionate and mercurial, as beautiful and bright as a child's fantasy, but also fiercely loyal to those they hold dear. They act quickly and directly against fiendish and foul influences, but they tend to avoid guiding mortal affairs otherwise, allowing people to choose their own destiny without the meddling of otherworldly forces.</p>\n<p>Azatas reject the dual chains of both duty and tyranny, but also the heavy chains of despair that reality so often inflicts upon those who live in it. This can give them a dubious reputation with other celestials, who consider azatas to be flighty and unreliable, but azatas know that unrelenting self-sacrifice can be just as destructive to the soul as evil. Azatas refuse to compromise the beauty of the world with such banality, instead living without regret and savoring every triumph and agony they encounter upon the way.</p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "ability_scores": [
+      {
+        "name": "Strength",
+        "base": "10",
+        "modifier": "6",
+        "dice": ""
+      },
+      {
+        "name": "Dexterity",
+        "base": "10",
+        "modifier": "4",
+        "dice": ""
+      },
+      {
+        "name": "Constitution",
+        "base": "10",
+        "modifier": "7",
+        "dice": ""
+      },
+      {
+        "name": "Intelligence",
+        "base": "10",
+        "modifier": "2",
+        "dice": ""
+      },
+      {
+        "name": "Wisdom",
+        "base": "10",
+        "modifier": "5",
+        "dice": ""
+      },
+      {
+        "name": "Charisma",
+        "base": "10",
+        "modifier": "4",
+        "dice": ""
+      }
+    ],
+    "trackables": [
+      {
+        "name": "Hit Points",
+        "maximum": "250",
+        "current": "250"
+      }
+    ],
+    "base_values": [
+      {
+        "name": "Level",
+        "value": "12",
+        "dice": ""
+      },
+      {
+        "name": "Proficiency Bonus",
+        "value": "12",
+        "dice": ""
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Armor Class",
+        "base": "33",
+        "ability_score": "Dexterity"
+      }
+    ],
+    "saving_throws": [
+      {
+        "name": "Fortitude",
+        "base": "25",
+        "ability_score": "Constitution"
+      },
+      {
+        "name": "Reflex",
+        "base": "20",
+        "ability_score": "Dexterity"
+      },
+      {
+        "name": "Will",
+        "base": "23",
+        "ability_score": "Wisdom"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Warhammer",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+25 to hit (holy, magical, shove); 2d8+12 bludgeoning"
+      }
+    ]
+  },
+  {
+    "name": "Benthic Worm",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Monster Core",
+    "short_description": "Level 15 Amphibious",
+    "full_description": "<h2>Benthic Worm</h2>\n<p><strong>Creature 15</strong></p>\n<p><strong>Traits</strong> amphibious, animal</p>\n<hr/>\n<p><strong>Perception</strong> +22</p>\n\n<p><strong>Skills</strong> Athletics +33, Stealth +20</p>\n<p>Str +10, Dex -1, Con +8, Int -5, Wis -1, Cha -1</p>\n<hr/>\n<p><strong>AC</strong> 35; <strong>Fort</strong> +32, <strong>Ref</strong> +20, <strong>Will</strong> +23</p>\n<p><strong>HP</strong> 320</p>\n\n<hr/>\n<p><strong>Speed</strong> 40 feet</p>\n<p><strong>Tremorsense (Imprecise) 100 feet</strong> <p></p></p>\n<p><strong>Inexorable</strong> <p>The benthic worm recovers from the , , and  conditions at the end of its turn. It's also immune to penalties to its Speeds and the  condition, and it ignores difficult terrain and greater difficult terrain.</p></p>\n<p><strong>[Reaction] Slough Skin</strong> <p><strong>Frequency</strong> once per day</p>\n<p><strong>Trigger</strong> The benthic worm would be affected by a condition or adverse effect (such as )</p>\n<hr />\n<p><strong>Effect</strong> The benthic worm negates the triggering condition or effect by sloughing an outer layer of its skin. Effects from artifacts, deities, or a similarly powerful source can't be avoided in this way.</p></p>\n<p><strong>Benthic Worm Venom</strong> <p><strong>Saving Throw</strong> DC 37 Fortitude</p>\n<hr />\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> 3d6 damage] damage and Clumsy 2 (1 round)</p>\n<p><strong>Stage 2</strong> 4d6 damage] damage and clumsy 2 (1 round)</p>\n<p><strong>Stage 3</strong> 6d6 damage] damage and clumsy 2 (1 round)</p></p>\n<p><strong>[Two Actions] Breach</strong> <p>The benthic worm Swims up to its swim Speed, then Leaps vertically out of the water up to 30 feet, making a Strike against a creature at the apex of the jump (this lets it attack a creature within 45 feet of the water's surface). After the Strike, the worm splashes back down. It can use  on this Strike and follow it up with Fast Swallow.</p></p>\n<p><strong>[Reaction] Fast Swallow</strong> <p><strong>Trigger</strong> The worm Grabs a creature.</p>\n<hr />\n<p><strong>Effect</strong> The worm uses Swallow Whole.</p></p>\n<p><strong>[Action] Swallow Whole</strong> <p>Huge, (3d8+10) damage], Rupture 27</p>\n<hr />\n<p></p></p>\n<p><strong>[Two Actions] Thrash</strong> <p>The worm makes a Strike once against each creature in its reach. It can Strike up to once with its jaws, up to once with its stinger, and any number of times with its body. Each attack counts toward the worm's multiple attack penalty, but the multiple attack penalty doesn't increase until after it makes all the attacks.</p></p>\n<p><strong>[Free Action] Improved Grab</strong> <p></p></p>\n\n<p>The benthic worm is a deep-blue creature that is more at home in flooded tunnels than dry caves. While a benthic worm is a strong swimmer, it prefers to lie in wait within the walls, floor, or even ceiling of flooded caverns, ready to spring out and ambush creatures swimming past its hiding spot. The benthic worm is particularly hated and feared by Darklands-dwelling cultures, due to the fact that a benthic worm that burrows into a tunnel often brings with it waters from the submerged river or lake it calls home. When it becomes obvious that a benthic worm is near a Darklands settlement, the inhabitants quickly establish a hunting party to deal with the menace before it can bring ruin.</p>\n<hr />\n<p>Cave worms are gigantic scavengers that bore through the depths of the world, eating whatever material they find. Named for their distinctive habitats, these worms are ravenous and display overwhelming destructive capabilities. Cave worms of different types and abilities lurk in the more remote corners of the world—tales speak of arctic worms that dwell within immense glaciers or icebergs and grave worms that burrow through the boneyards of long-forgotten ruins, to name a few.</p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "ability_scores": [
+      {
+        "name": "Strength",
+        "base": "10",
+        "modifier": "10",
+        "dice": ""
+      },
+      {
+        "name": "Dexterity",
+        "base": "10",
+        "modifier": "-1",
+        "dice": ""
+      },
+      {
+        "name": "Constitution",
+        "base": "10",
+        "modifier": "8",
+        "dice": ""
+      },
+      {
+        "name": "Intelligence",
+        "base": "10",
+        "modifier": "-5",
+        "dice": ""
+      },
+      {
+        "name": "Wisdom",
+        "base": "10",
+        "modifier": "-1",
+        "dice": ""
+      },
+      {
+        "name": "Charisma",
+        "base": "10",
+        "modifier": "-1",
+        "dice": ""
+      }
+    ],
+    "trackables": [
+      {
+        "name": "Hit Points",
+        "maximum": "320",
+        "current": "320"
+      }
+    ],
+    "base_values": [
+      {
+        "name": "Level",
+        "value": "15",
+        "dice": ""
+      },
+      {
+        "name": "Proficiency Bonus",
+        "value": "15",
+        "dice": ""
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Armor Class",
+        "base": "35",
+        "ability_score": "Dexterity"
+      }
+    ],
+    "saving_throws": [
+      {
+        "name": "Fortitude",
+        "base": "32",
+        "ability_score": "Constitution"
+      },
+      {
+        "name": "Reflex",
+        "base": "20",
+        "ability_score": "Dexterity"
+      },
+      {
+        "name": "Will",
+        "base": "23",
+        "ability_score": "Wisdom"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Jaws",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+31 to hit (deadly-2d10, reach-15, unarmed); 3d12+16 piercing"
+      },
+      {
+        "name": "Stinger",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+31 to hit (agile, poison, reach-15); 4d6+16 piercing"
+      },
+      {
+        "name": "Body",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+29 to hit (reach-15); 2d8+14 bludgeoning"
+      }
+    ]
+  },
+  {
+    "name": "Adamantine Dragon (Ancient, Spellcaster)",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Monster Core",
+    "short_description": "Level 18 Dragon",
+    "full_description": "<h2>Adamantine Dragon (Ancient, Spellcaster)</h2>\n<p><strong>Creature 18</strong></p>\n<p><strong>Traits</strong> dragon, primal</p>\n<hr/>\n<p><strong>Perception</strong> +30</p>\n<p><strong>Languages</strong> common, draconic, fey, petran, sakvroth, aklo</p>\n<p><strong>Skills</strong> Acrobatics +28, Athletics +36, Intimidation +32, Nature +29, Survival +31</p>\n<p>Str +9, Dex +4, Con +8, Int +4, Wis +5, Cha +6</p>\n<hr/>\n<p><strong>AC</strong> 41; <strong>Fort</strong> +32, <strong>Ref</strong> +26, <strong>Will</strong> +29</p>\n<p><strong>HP</strong> 300</p>\n<p><strong>Immunities</strong> paralyzed, petrified, sleep</p>\n<hr/>\n<p><strong>Speed</strong> 40 feet</p>\n<p><strong>Tremorsense (Imprecise) 120 feet</strong> <p></p></p>\n<p><strong>+2 Status to All Saves vs. Primal</strong></p>\n<p><strong>Abandon Armor</strong> <p>Once the adamantine dragon is reduced to fewer than half their Hit Points, their resistance is reduced by 10 and they gain a +10 circumstance bonus to their Speeds.</p></p>\n<p><strong>Frightful Presence</strong> <p>90 feet. DC 37 Will</p>\n<hr />\n<p></p></p>\n<p><strong>[Reaction] Resilient Form</strong> <p><strong>Trigger</strong> The dragon is critically hit with a weapon or unarmed attack;</p>\n<hr />\n<p><strong>Effect</strong> The dragon's tough scales ward off deadly attacks. The dragon attempts a DC 17 Flat. On a success, the triggering attack becomes a normal hit.</p></p>\n<p><strong>Adamantine Body</strong> <p>The dragon's unarmed melee Strikes are adamantine.</p></p>\n<p><strong>[Two Actions] Avalanche Breath</strong> <p>The dragon belches a mass of boulders that deals 15d8 damage|options:area-damage] damage in a  (DC 40 basic Reflex save).</p>\n<p>They can't use Avalanche Breath again for 1d4 rounds.</p></p>\n<p><strong>[Three Actions] Burrowing Pounce</strong> <p><strong>Requirements</strong> The dragon is burrowed</p>\n<hr />\n<p><strong>Effect</strong> The dragon Burrows, then Leaps out of the ground, landing at a point within 25 feet. The dragon makes a melee Strike against a creature within reach when they land. If the Strike is a critical hit, the target is knocked .</p></p>\n<p><strong>[Reaction] Fast Swallow</strong> <p><strong>Trigger</strong> The dragon Grabs a creature</p>\n<hr />\n<p><strong>Effect</strong> The dragon uses Swallow Whole.</p></p>\n<p><strong>Rock Tunneler</strong> <p>The dragon can burrow through solid stone at a Speed of 20 feet. They can leave a tunnel if they desire, and they usually don't.</p></p>\n<p><strong>[Action] Swallow Whole</strong> <p>Large, (3d12+14) damage], Rupture 35</p>\n<hr />\n<p></p></p>\n<p><strong>[Action] Throw Rock</strong> <p></p></p>\n<p><strong>[Free Action] Improved Grab</strong> <p></p></p>\n<p><strong>[Action] Knockdown</strong> <p></p></p>\n\n<p>The powerful adamantine dragons are one of several dragons known as skymetal dragons. The innate magic that flows through these dragons causes them to draw particular metals to their bodies like magnets or, in some cases, naturally grow these skymetals on their bodies. Adamantine dragons begin their lives with tough scales that are naturally replaced with thicker and even tougher adamantine plating as they grow older. Adamantine dragons are typically steadfast and loyal. Once they commit to a certain purpose, changing their minds is nigh impossible.</p>\n<hr />\n<p>Dragons come in myriad forms, with many having magical abilities or connections to magic. Some dragons draw greater power from magic than others, allowing them to manifest abilities or alter their physiques with prolonged exposure to magic. These dragons become more powerful as they age and strengthen their connections with their magical origins. Scholars debate the classification of these dragons, with some preferring the name magical dragons and others using traditional dragons due to their connection to specific magical traditions. Regardless of their names, these dragons share a number of characteristics: their ability to tap into magical energies, intensified might and cunning as they grow older, and an inclination to hoard vast amounts of treasure and wealth.</p>\n<h2>Draconic Spellcasters</h2>\n<p>Each dragon features a sidebar on spellcasting dragons of that type. To make a dragon spellcaster, remove the dragon's Draconic Frenzy and Draconic Momentum abilities, and give them the spells outlined in their sidebar. You can swap out any number of these with other spells, provided you keep the same number of spells for each rank. You might also want to increase the dragon's Intelligence, Wisdom, or Charisma modifier by 1 or 2 to reflect their mastery of magic.</p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "ability_scores": [
+      {
+        "name": "Strength",
+        "base": "10",
+        "modifier": "9",
+        "dice": ""
+      },
+      {
+        "name": "Dexterity",
+        "base": "10",
+        "modifier": "4",
+        "dice": ""
+      },
+      {
+        "name": "Constitution",
+        "base": "10",
+        "modifier": "8",
+        "dice": ""
+      },
+      {
+        "name": "Intelligence",
+        "base": "10",
+        "modifier": "4",
+        "dice": ""
+      },
+      {
+        "name": "Wisdom",
+        "base": "10",
+        "modifier": "5",
+        "dice": ""
+      },
+      {
+        "name": "Charisma",
+        "base": "10",
+        "modifier": "6",
+        "dice": ""
+      }
+    ],
+    "trackables": [
+      {
+        "name": "Hit Points",
+        "maximum": "300",
+        "current": "300"
+      }
+    ],
+    "base_values": [
+      {
+        "name": "Level",
+        "value": "18",
+        "dice": ""
+      },
+      {
+        "name": "Proficiency Bonus",
+        "value": "18",
+        "dice": ""
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Armor Class",
+        "base": "41",
+        "ability_score": "Dexterity"
+      }
+    ],
+    "saving_throws": [
+      {
+        "name": "Fortitude",
+        "base": "32",
+        "ability_score": "Constitution"
+      },
+      {
+        "name": "Reflex",
+        "base": "26",
+        "ability_score": "Dexterity"
+      },
+      {
+        "name": "Will",
+        "base": "29",
+        "ability_score": "Wisdom"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Jaws",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+36 to hit (magical, reach-20, unarmed); 3d12+18 piercing"
+      },
+      {
+        "name": "Claw",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+36 to hit (agile, magical, reach-15, unarmed); 3d8+18 slashing"
+      },
+      {
+        "name": "Tail",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+34 to hit (magical, reach-25); 3d10+18 bludgeoning"
+      },
+      {
+        "name": "Rock",
+        "attack_type": "Ranged",
+        "attack_ability_score": "Dexterity",
+        "description": "+34 to hit (brutal); 3d8+18 bludgeoning"
+      }
+    ]
+  },
+  {
+    "name": "Diabolic Dragon (Ancient, Spellcaster)",
+    "core_rules": "Pathfinder 2e",
+    "is_shared": true,
+    "is_3pp": false,
+    "publisher": "Paizo Inc.",
+    "source": "Pathfinder Monster Core",
+    "short_description": "Level 20 Divine",
+    "full_description": "<h2>Diabolic Dragon (Ancient, Spellcaster)</h2>\n<p><strong>Creature 20</strong></p>\n<p><strong>Traits</strong> divine, dragon, unholy</p>\n<hr/>\n<p><strong>Perception</strong> +33</p>\n<p><strong>Languages</strong> common, diabolic, draconic, empyrean, necril, pyric, aklo, chthonian</p>\n<p><strong>Skills</strong> Acrobatics +33, Athletics +38, Deception +34, Diplomacy +36, Intimidation +34, Religion +35, Society +33, Thievery +33</p>\n<p>Str +10, Dex +5, Con +8, Int +5, Wis +7, Cha +8</p>\n<hr/>\n<p><strong>AC</strong> 44; <strong>Fort</strong> +36, <strong>Ref</strong> +32, <strong>Will</strong> +32</p>\n<p><strong>HP</strong> 390</p>\n<p><strong>Immunities</strong> fire, paralyzed, sleep</p>\n<hr/>\n<p><strong>Speed</strong> 70 feet</p>\n<p><strong>Smoke Vision</strong> <p>Smoke doesn't impair the dragon's vision; they ignore the  condition from smoke.</p></p>\n<p><strong>+2 Status to All Saves vs. Divine</strong></p>\n<p><strong>Frightful Presence</strong> <p>90 feet. DC 40 Will</p>\n<hr />\n<p></p></p>\n<p><strong>[Reaction] Hell's Sting</strong> <p><strong>Trigger</strong> The dragon is critically hit with a melee attack</p>\n<hr />\n<p><strong>Effect</strong> The dragon channels the rancor of Hell back through the body of their foe, overwhelming it with an infernal assault on the mind. The triggering creature takes 10d6 damage] damage with a DC 42 basic Will save. Holy creatures use an outcome one degree of success worse than they roll on their saving throw.</p></p>\n<p><strong>[Reaction] Reactive Strike</strong> <p></p></p>\n<p><strong>Diabolic Fire</strong> <p>Any fire damage that a diabolic dragon deals, including fire damage from spells, is imbued with the unholy power of Hell to scorch the spirit as well. A creature takes spirit damage instead of fire damage if that would be more detrimental to the creature (as determined by the GM). A diabolic dragon is immune to the diabolic fire of other diabolic dragons, the fire from divine immolation, and similar effects.</p></p>\n<p><strong>[Two Actions] Hellfire Breath</strong> <p>The dragon unleashes a blast of infernal fire that deals 21d6 damage|options:area-damage] damage in a  (DC 42 basic Reflex save).</p>\n<p>The dragon can't use Hellfire Breath again for 1d4 rounds.</p></p>\n<p><strong>[Free Action] Improved Grab</strong> <p></p></p>\n<p><strong>[Free Action] Improved Knockdown</strong> <p></p></p>\n\n<p>Hell, according to some theologians, is a living entity in and of itself. Diabolic dragons, these scholars argue, are just extensions of the plane, living creatures that break off from Hell to enact its will. Whether this is true or whether diabolical dragons are simply the reborn souls of dragons sent to Hell, the fact remains that these dragons are powerful, cunning, and tyrannical. Every diabolic dragon's goal is to further Hell's will, though how this happens can vary. Regardless of their goals, these dragons always approach newcomers with an unsettling calmness.</p>\n<hr />\n<p>Dragons come in myriad forms, with many having magical abilities or connections to magic. Some dragons draw greater power from magic than others, allowing them to manifest abilities or alter their physiques with prolonged exposure to magic. These dragons become more powerful as they age and strengthen their connections with their magical origins. Scholars debate the classification of these dragons, with some preferring the name magical dragons and others using traditional dragons due to their connection to specific magical traditions. Regardless of their names, these dragons share a number of characteristics: their ability to tap into magical energies, intensified might and cunning as they grow older, and an inclination to hoard vast amounts of treasure and wealth.</p>\n<h2>Draconic Spellcasters</h2>\n<p>Each dragon features a sidebar on spellcasting dragons of that type. To make a dragon spellcaster, remove the dragon's Draconic Frenzy and Draconic Momentum abilities, and give them the spells outlined in their sidebar. You can swap out any number of these with other spells, provided you keep the same number of spells for each rank. You might also want to increase the dragon's Intelligence, Wisdom, or Charisma modifier by 1 or 2 to reflect their mastery of magic.</p>\n\n---\n*This product is published under the ORC License. © Paizo Inc. Pathfinder, and the Pathfinder logo are registered trademarks of Paizo Inc.*",
+    "ability_scores": [
+      {
+        "name": "Strength",
+        "base": "10",
+        "modifier": "10",
+        "dice": ""
+      },
+      {
+        "name": "Dexterity",
+        "base": "10",
+        "modifier": "5",
+        "dice": ""
+      },
+      {
+        "name": "Constitution",
+        "base": "10",
+        "modifier": "8",
+        "dice": ""
+      },
+      {
+        "name": "Intelligence",
+        "base": "10",
+        "modifier": "5",
+        "dice": ""
+      },
+      {
+        "name": "Wisdom",
+        "base": "10",
+        "modifier": "7",
+        "dice": ""
+      },
+      {
+        "name": "Charisma",
+        "base": "10",
+        "modifier": "8",
+        "dice": ""
+      }
+    ],
+    "trackables": [
+      {
+        "name": "Hit Points",
+        "maximum": "390",
+        "current": "390"
+      }
+    ],
+    "base_values": [
+      {
+        "name": "Level",
+        "value": "20",
+        "dice": ""
+      },
+      {
+        "name": "Proficiency Bonus",
+        "value": "20",
+        "dice": ""
+      }
+    ],
+    "defenses": [
+      {
+        "name": "Armor Class",
+        "base": "44",
+        "ability_score": "Dexterity"
+      }
+    ],
+    "saving_throws": [
+      {
+        "name": "Fortitude",
+        "base": "36",
+        "ability_score": "Constitution"
+      },
+      {
+        "name": "Reflex",
+        "base": "32",
+        "ability_score": "Dexterity"
+      },
+      {
+        "name": "Will",
+        "base": "32",
+        "ability_score": "Wisdom"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Jaws",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+38 to hit (fire, magical, reach-20, unarmed, unholy); 2d6 fire, 4d12+18 piercing"
+      },
+      {
+        "name": "Claws",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+38 to hit (agile, fire, magical, reach-15, unholy); 2d6 fire, 4d8+18 piercing"
+      },
+      {
+        "name": "Tail",
+        "attack_type": "Melee",
+        "attack_ability_score": "Strength",
+        "description": "+36 to hit (fire, magical, reach-25, unholy); 4d8+18 bludgeoning, 2d6 fire"
+      }
+    ]
+  }
+]

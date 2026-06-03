@@ -46,6 +46,7 @@ module Support
         'WB Page Tutorial',
 
         'License d20 OGL',
+        'License ORC',
 
         'Home World Builder',
         'Home Entity Builder',

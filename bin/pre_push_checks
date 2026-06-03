@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative "../lib/pre_push_checks"
+
+exit(PrePushChecks.run! ? 0 : 1)

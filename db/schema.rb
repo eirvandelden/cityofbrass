@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2026_05_28_112556) do
+ActiveRecord::Schema.define(version: 2026_05_29_000001) do
 
   create_table "activeplay_notables", id: :string, force: :cascade do |t|
     t.string "name"
