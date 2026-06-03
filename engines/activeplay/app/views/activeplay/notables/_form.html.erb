@@ -1,5 +1,5 @@
 <div id="form_div">
-<%= simple_form_for [@virtual_table, @notable], :url => "#{virtual_table_path(@virtual_table)}/notables/#{@notable.id}", :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+<%= simple_form_for [@virtual_table, @notable], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
   <fieldset>
     <div class="row inline text-right">
       <div class="small-12 columns">
