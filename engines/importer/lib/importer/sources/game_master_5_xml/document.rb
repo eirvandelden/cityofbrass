@@ -92,6 +92,7 @@ module Importer
             type: "monster",
             name: text_at(node, "name"),
             size: text_at(node, "size"),
+            creature_type: text_at(node, "type"),
             ac: text_at(node, "ac"),
             hp: text_at(node, "hp"),
             speed: text_at(node, "speed"),
