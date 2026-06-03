@@ -307,7 +307,8 @@ module Importer
         end
 
         def subclass_names_for(baseclass)
-          nodes(root, "./subclass[@baseclass='#{text_at(baseclass, "name")}']").map { |subclass| text_at(subclass, "name") }
+          name = text_at(baseclass, "name")
+          root.xpath("./subclass[@baseclass=$name]", nil, name: name).map { |subclass| text_at(subclass, "name") }
         end
 
         def campaign_node
