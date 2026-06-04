@@ -2,6 +2,22 @@
 <compendium version="5" HB="HB">
   <monster>
     <name>Goblin</name>
+    <size>S</size>
+    <type>humanoid (goblinoid)</type>
+    <ac>15 (leather armor, shield)</ac>
+    <hp>7 (2d6)</hp>
+    <speed>30 ft.</speed>
+    <str>8</str><dex>14</dex><con>10</con>
+    <int>10</int><wis>8</wis><cha>8</cha>
+    <save>Dex +4</save>
+    <skill>Stealth +6</skill>
+    <senses>darkvision 60 ft., passive Perception 9</senses>
+    <immune>poison</immune>
+    <languages>Common, Goblin</languages>
+    <cr>1/4</cr>
+    <trait><name>Nimble Escape</name><text>The goblin can take the Disengage or Hide action as a bonus action on each of its turns.</text></trait>
+    <action><name>Scimitar</name><text>Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6+2) slashing damage.</text><attack>Scimitar|+4|1d6+2</attack></action>
+    <action><name>Shortbow</name><text>Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6+2) piercing damage.</text><attack>Shortbow|+4|1d6+2</attack></action>
   </monster>
   <monster>
     <name>Orc</name>
@@ -11,6 +27,8 @@
   </item>
   <spell>
     <name>Fire Bolt</name>
+    <text>A ranged spell attack.</text>
+    <text>Deals fire damage.</text>
   </spell>
   <race>
     <name>Elf</name>

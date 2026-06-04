@@ -243,6 +243,128 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     end
   end
 
+  test "monster import creates ability scores, defense, trackable, movement, and attacks" do
+    import = import_for("sample_compendium.xml", mode: Importer::Preview::RESIDENT_CONTENT)
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    goblin = Entitybuilder::ResidentCreature.find_by!(name: "Goblin")
+    assert_equal 6, goblin.ability_scores.count
+    assert_equal 8, goblin.ability_scores.find_by!(name: "Strength").base
+    assert_equal 14, goblin.ability_scores.find_by!(name: "Dexterity").base
+
+    assert goblin.defenses.exists?(name: "Armor Class")
+    assert_equal 15, goblin.defenses.find_by!(name: "Armor Class").base
+
+    assert goblin.trackables.exists?(name: "Hit Points")
+    assert_equal 7, goblin.trackables.find_by!(name: "Hit Points").maximum
+
+    assert goblin.movements.exists?(name: "Speed")
+    assert_equal 30, goblin.movements.find_by!(name: "Speed").base
+
+    assert_equal 2, goblin.attacks.count
+    scimitar = goblin.attacks.find_by!(name: "Scimitar")
+    assert_equal "melee", scimitar.attack_type
+    assert_equal 4, scimitar.attack_bonus
+    assert_equal "1d6", scimitar.damage_dice
+    assert_equal 2, scimitar.damage_bonus
+    assert_equal "ranged", goblin.attacks.find_by!(name: "Shortbow").attack_type
+
+    assert_equal "1/4", goblin.short_description
+  end
+
+  test "monster import creates creature type descriptor" do
+    import = import_for("sample_compendium.xml", mode: Importer::Preview::RESIDENT_CONTENT)
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    goblin = Entitybuilder::ResidentCreature.find_by!(name: "Goblin")
+    assert goblin.descriptors.exists?(name: "Type")
+    assert_equal "humanoid (goblinoid)", goblin.descriptors.find_by!(name: "Type").description
+  end
+
+  test "spell import creates record with full description from multiple text nodes" do
+    import = import_for("sample_compendium.xml", mode: Importer::Preview::RESIDENT_CONTENT)
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    spell = Rulebuilder::ResidentSpell.find_by!(name: "Fire Bolt")
+    assert_equal "A ranged spell attack.\nDeals fire damage.", spell.full_description
+  end
+
+  test "standalone pc file import creates resident character with ability scores, saves, skills, and attack" do
+    import = import_for_kind_with_file("sample_pc.xml", kind: "pc", mode: Importer::Preview::RESIDENT_CONTENT)
+
+    assert_difference("Entitybuilder::ResidentCharacter.count", 1) do
+      Importer::ProcessImportJob.perform_now(import.id)
+    end
+
+    assert_equal "succeeded", import.reload.status
+    character = Entitybuilder::ResidentCharacter.find_by!(name: "Quinthya")
+    assert_equal residents(:razune), character.resident
+    assert_equal "Private", character.privacy
+
+    assert_equal 6, character.ability_scores.count
+    assert_equal 10, character.ability_scores.find_by!(name: "Strength").base
+    assert_equal 16, character.ability_scores.find_by!(name: "Dexterity").base
+
+    assert character.defenses.exists?(name: "Armor Class")
+    assert_equal 15, character.defenses.find_by!(name: "Armor Class").base
+
+    assert character.trackables.exists?(name: "Hit Points")
+    assert_equal 14, character.trackables.find_by!(name: "Hit Points").maximum
+
+    assert character.saving_throws.exists?(name: "Strength")
+    assert_equal 2, character.saving_throws.find_by!(name: "Strength").base
+    assert character.saving_throws.exists?(name: "Dexterity")
+
+    assert character.skills.exists?(name: "Acrobatics")
+    assert_equal 5, character.skills.find_by!(name: "Acrobatics").bonus
+
+    assert character.attacks.exists?(name: "Unarmed Strike")
+    unarmed = character.attacks.find_by!(name: "Unarmed Strike")
+    assert_equal "melee", unarmed.attack_type
+    assert_equal 5, unarmed.attack_bonus
+  end
+
+  test "standalone pc file reimport skips existing character" do
+    Importer::ProcessImportJob.perform_now(
+      import_for_kind_with_file("sample_pc.xml", kind: "pc", mode: Importer::Preview::RESIDENT_CONTENT).id
+    )
+    reimport = import_for_kind_with_file("sample_pc.xml", kind: "pc", mode: Importer::Preview::RESIDENT_CONTENT)
+
+    assert_no_difference("Entitybuilder::ResidentCharacter.count") do
+      Importer::ProcessImportJob.perform_now(reimport.id)
+    end
+
+    assert_equal "succeeded", reimport.reload.status
+    assert_equal [ "already exists" ], reimport.import_results.skipped.distinct.pluck(:reason)
+  end
+
+  test "pc file and campaign with same label merge into one character with both stats and backstory" do
+    import = import_for_multiple(
+      { file: "sample_pc.xml", kind: "pc" },
+      { file: "sample_pc_campaign.xml", kind: "campaign" },
+      mode: Importer::Preview::RESIDENT_CONTENT
+    )
+
+    assert_difference("Entitybuilder::ResidentCharacter.count", 1) do
+      Importer::ProcessImportJob.perform_now(import.id)
+    end
+
+    character = Entitybuilder::ResidentCharacter.find_by!(name: "Quinthya")
+    assert_equal 6, character.ability_scores.count
+    assert_equal "A mysterious elven monk from the woods, seeking enlightenment.", character.full_description
+  end
+
+  test "admin stock mode skips standalone pc files" do
+    import = import_for_kind_with_file("sample_pc.xml", kind: "pc", mode: Importer::Preview::ADMIN_STOCK)
+
+    assert_no_difference("Entitybuilder::ResidentCharacter.count") do
+      Importer::ProcessImportJob.perform_now(import.id)
+    end
+
+    assert_equal "partial", import.reload.status
+    assert_equal "no stock character target", import.import_results.find_by!(entity_type: "pc").reason
+  end
+
   private
 
   def import_for(file_name, mode:)
@@ -283,5 +405,14 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
 
   def uploaded_file(file_name)
     Rack::Test::UploadedFile.new(importer_fixture_file(file_name), "text/xml")
+  end
+
+  def import_for_kind_with_file(file_name, kind:, mode:)
+    import = Importer::Import.create!(resident: resident_for(mode), mode: mode, source: Importer::Preview::GAME_MASTER_5_XML,
+                                      status: Importer::Import::QUEUED)
+    File.open(importer_fixture_file(file_name)) do |file|
+      import.import_files.create!(kind: kind, parse_status: "pending", file: file)
+    end
+    import
   end
 end
