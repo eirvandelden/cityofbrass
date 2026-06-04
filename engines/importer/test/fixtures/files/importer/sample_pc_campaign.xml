@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign>
+  <name>Quinthya's Story</name>
+  <adventure>
+    <name>Chapter 1</name>
+    <encounter>
+      <name>The Beginning</name>
+    </encounter>
+  </adventure>
+  <pc>
+    <label>Quinthya</label>
+    <description>A mysterious elven monk from the woods, seeking enlightenment.</description>
+  </pc>
+</campaign>
