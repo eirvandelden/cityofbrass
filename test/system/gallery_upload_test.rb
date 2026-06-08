@@ -2,13 +2,13 @@ require "application_system_test_case"
 
 class GalleryUploadTest < ApplicationSystemTestCase
   setup do
-    @file_definition = Gallery::ResidentImage.paperclip_definitions[:file].dup
-    Gallery::ResidentImage.paperclip_definitions[:file][:path] = test_file_path
-    Gallery::ResidentImage.paperclip_definitions[:file][:url] = test_file_url
+    @file_definition = Gallery::ResidentImage.attachment_definitions[:file].dup
+    Gallery::ResidentImage.attachment_definitions[:file][:path] = test_file_path
+    Gallery::ResidentImage.attachment_definitions[:file][:url] = test_file_url
   end
 
   teardown do
-    Gallery::ResidentImage.paperclip_definitions[:file] = @file_definition
+    Gallery::ResidentImage.attachment_definitions[:file] = @file_definition
   end
 
   test "user uploads a resident image" do
