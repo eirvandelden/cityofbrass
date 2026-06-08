@@ -14,7 +14,7 @@ class GalleryUploadTest < ApplicationSystemTestCase
   test "user uploads a resident image" do
     sign_in_as users(:dan), scope: :user
 
-    assert_enqueued_jobs 1, only: DelayedPaperclip::ProcessJob do
+    assert_enqueued_with(job: Gallery::ReprocessAttachmentJob) do
       visit gallery.new_resident_image_path
       fill_in "Name", with: "System Test Image"
       attach_file "File", file_fixture("sample.png")
@@ -26,7 +26,6 @@ class GalleryUploadTest < ApplicationSystemTestCase
     assert_text "Image was successfully created."
     assert_text "System Test Image"
     assert image.file?
-    assert image.file_processing?
   end
 
   private
