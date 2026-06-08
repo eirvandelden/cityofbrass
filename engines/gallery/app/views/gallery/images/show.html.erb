@@ -31,11 +31,7 @@
       <div class="medium-12 columns">
         <label id="thumbLabel">Thumb</label>
         <input type="text" value="<%= @image.file.url(:thumb) %>" id="copyThumbUrl">
-        <% if @image.file.processing? %>
-          <span class="color-c5">Processing...</span>
-        <% else %>
-          <%= image_tag @image.file.url(:thumb), :alt => @image.name, :style => "padding-bottom:1rem;" %>
-        <% end %>
+        <%= image_tag @image.file.url(:thumb), :alt => @image.name, :style => "padding-bottom:1rem;" %>
       </div>
     </div>
 
@@ -45,11 +41,7 @@
       <div class="medium-12 columns">
         <label id="mediumLabel">Medium</label>
         <input type="text" value="<%= @image.file.url(:medium) %>" id="copyMediumUrl">
-        <% if @image.file.processing? %>
-          <span class="color-c5">Processing...</span>
-        <% else %>
-          <%= image_tag @image.file.url(:medium), :alt => @image.name, :style => "padding-bottom:1rem;" %>
-        <% end %>
+        <%= image_tag @image.file.url(:medium), :alt => @image.name, :style => "padding-bottom:1rem;" %>
       </div>
     </div>
 
@@ -69,12 +61,6 @@
 <% end %>
 
 <script type="text/javascript">
-  <% if @image.file.processing? %>
-    setTimeout(function(){
-        Turbolinks.visit(location.href);
-      }, 3000);
-  <% end %>
-
   $(function() {
     $("#thumbLabel").click(function() {
       $("#copyThumbUrl").focus();
