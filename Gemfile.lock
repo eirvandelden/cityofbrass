@@ -27,7 +27,7 @@ PATH
   specs:
     gallery (1.0.1)
       aws-sdk
-      paperclip
+      kt-paperclip
       rails (>= 6.1, < 8)
 
 PATH
@@ -249,6 +249,12 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
+    kt-paperclip (6.4.2)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
+      mime-types
+      mimemagic (~> 0.3.0)
+      terrapin (~> 0.6.0)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     listen (3.10.0)
@@ -549,6 +555,7 @@ DEPENDENCIES
   json (>= 2.0)
   jwt
   kaminari
+  kt-paperclip
   listen (~> 3)
   logger
   meta_request
@@ -556,7 +563,6 @@ DEPENDENCIES
   mutex_m
   omniauth
   ostruct
-  paperclip
   puma
   rails (~> 6.1)
   rails-controller-testing
