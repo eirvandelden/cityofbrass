@@ -171,9 +171,6 @@ GEM
       ferrum (~> 0.17.0)
     date (3.5.1)
     debug_inspector (1.2.0)
-    delayed_paperclip (3.0.1)
-      activejob (>= 4.2)
-      paperclip (>= 3.3)
     devise (4.9.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -327,12 +324,6 @@ GEM
       rack-protection
     orm_adapter (0.5.0)
     ostruct (0.6.3)
-    paperclip (6.1.0)
-      activemodel (>= 4.2.0)
-      activesupport (>= 4.2.0)
-      mime-types
-      mimemagic (~> 0.3.0)
-      terrapin (~> 0.6.0)
     parallel (1.27.0)
     parser (3.3.10.2)
       ast (~> 2.4.1)
@@ -538,7 +529,6 @@ DEPENDENCIES
   campaignmanager!
   capybara
   cuprite
-  delayed_paperclip (< 4)
   devise
   dotenv-rails
   drb

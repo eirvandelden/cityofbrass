@@ -15,8 +15,6 @@ module Gallery
       styles: { :thumb => {:geometry =>'200x200>'}, :medium => {:geometry =>'400x400>'} },
       :path => 'gallery/residents/:part_id/:resident_id/images/:id/:style.:extension'
 
-    process_in_background :file, url_with_processing: false
-
     validates :resident_id, presence: true
 
     validates :file, presence: true
