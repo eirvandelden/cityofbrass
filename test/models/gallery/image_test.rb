@@ -27,5 +27,10 @@ module Gallery
       assert_equal [:file], image.errors.keys
     end
 
+    test "kt-paperclip gem is loaded (not upstream paperclip)" do
+      spec = Gem.loaded_specs["kt-paperclip"]
+      assert spec, "kt-paperclip gem not loaded — is paperclip still in Gemfile?"
+    end
+
   end
 end

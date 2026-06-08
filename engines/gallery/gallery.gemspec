@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", ">= 6.1", "< 8"
-  s.add_dependency 'paperclip'
+  s.add_dependency 'kt-paperclip'
   s.add_dependency 'aws-sdk'#, '~> 1.61.0' # 2 is out but not compatible with paperclip
 
   s.add_development_dependency "pg"

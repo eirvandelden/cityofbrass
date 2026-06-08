@@ -28,7 +28,7 @@ gem "sdoc"
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
 gem "delayed_paperclip", "< 4"
-gem "paperclip"
+gem "kt-paperclip"
 gem "devise"
 gem "foundation-rails", "5.5.3.2" # git: 'https://github.com/embersds/foundation-rails', branch: 'v5'
 gem "kaminari"
