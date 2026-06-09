@@ -19,10 +19,11 @@ class GalleryUploadTest < ApplicationSystemTestCase
     attach_file "File", file_fixture("sample.png")
     click_button "Save"
 
-    image = Gallery::ResidentImage.find_by!(name: "System Test Image")
-
     assert_text "Image was successfully created."
     assert_text "System Test Image"
+
+    image = Gallery::ResidentImage.find_by!(name: "System Test Image")
+
     assert image.file?
   end
 
