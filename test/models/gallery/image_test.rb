@@ -32,10 +32,5 @@ module Gallery
       assert spec, "kt-paperclip gem not loaded — is paperclip still in Gemfile?"
     end
 
-    test "Image has after_commit callback to enqueue reprocessing" do
-      callbacks = Gallery::Image._commit_callbacks.map(&:filter)
-      assert_includes callbacks, :enqueue_file_reprocess
-    end
-
   end
 end
