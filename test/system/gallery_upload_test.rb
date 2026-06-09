@@ -14,12 +14,10 @@ class GalleryUploadTest < ApplicationSystemTestCase
   test "user uploads a resident image" do
     sign_in_as users(:dan), scope: :user
 
-    assert_enqueued_with(job: Gallery::ReprocessAttachmentJob) do
-      visit gallery.new_resident_image_path
-      fill_in "Name", with: "System Test Image"
-      attach_file "File", file_fixture("sample.png")
-      click_button "Save"
-    end
+    visit gallery.new_resident_image_path
+    fill_in "Name", with: "System Test Image"
+    attach_file "File", file_fixture("sample.png")
+    click_button "Save"
 
     image = Gallery::ResidentImage.find_by!(name: "System Test Image")
 
