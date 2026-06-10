@@ -23,6 +23,7 @@ en:
         importer/preview:
           attributes:
             base:
+              invalid_file: must be an XML file
               missing_files: must include at least one file
   navigation:
     admin:
@@ -41,6 +42,7 @@ en:
     imports:
       index:
         title: Imports
+        new_preview: New import
       show:
         title: Import Status
         status: Status
@@ -59,6 +61,7 @@ en:
       imports:
         index:
           title: Stock Imports
+          new_preview: New stock import
         show:
           title: Stock Import Status
   gallery:
