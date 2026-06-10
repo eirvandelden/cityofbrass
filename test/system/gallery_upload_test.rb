@@ -21,10 +21,7 @@ class GalleryUploadTest < ApplicationSystemTestCase
 
     assert_text "Image was successfully created."
     assert_text "System Test Image"
-
-    image = Gallery::ResidentImage.find_by!(name: "System Test Image")
-
-    assert image.file?
+    assert_selector "img[alt='System Test Image']", minimum: 1
   end
 
   private
