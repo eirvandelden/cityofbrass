@@ -324,6 +324,19 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal 5, unarmed.attack_bonus
   end
 
+  test "characters file imports resident npcs counted during preview" do
+    import = import_for_kind_with_file("sample_characters.xml", kind: "characters", mode: Importer::Preview::RESIDENT_CONTENT)
+
+    assert_difference("Entitybuilder::ResidentNpc.count", 1) do
+      Importer::ProcessImportJob.perform_now(import.id)
+    end
+
+    assert_equal "succeeded", import.reload.status
+    npc = Entitybuilder::ResidentNpc.find_by!(name: "Captain Soranna")
+    assert_equal residents(:razune), npc.resident
+    assert_equal "Leader of the town guard.", npc.full_description
+  end
+
   test "standalone pc file reimport skips existing character" do
     Importer::ProcessImportJob.perform_now(
       import_for_kind_with_file("sample_pc.xml", kind: "pc", mode: Importer::Preview::RESIDENT_CONTENT).id

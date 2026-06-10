@@ -29,19 +29,27 @@ module Importer
         end
 
         def character_records
-          pc_nodes = if root.name == "pc"
-            [ root ]
-          elsif root.name == "characters"
-            nodes(root, "./pc")
-          else
-            []
-          end
-          pc_nodes.map { |pc| character_record(pc) }
+          character_pc_nodes.map { |pc| character_record(pc) } +
+            character_npc_nodes.map { |npc| npc_record(npc) }
         end
 
         private
 
         attr_reader :document
+
+        def character_pc_nodes
+          return [ root ] if root.name == "pc"
+          return nodes(root, "./pc") if root.name == "characters"
+
+          []
+        end
+
+        def character_npc_nodes
+          return [ root ] if root.name == "npc"
+          return nodes(root, "./npc") if root.name == "characters"
+
+          []
+        end
 
         # ---------------------------------------------------------------------------
         # Compendium entity records

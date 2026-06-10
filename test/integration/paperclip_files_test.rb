@@ -46,6 +46,21 @@ class PaperclipFilesTest < ActionDispatch::IntegrationTest
     image&.destroy
   end
 
+  test "serves legacy public stock image files through the new URL" do
+    image = stock_image
+    FileUtils.rm_f(image.file.path(:original))
+    file = legacy_stock_image_file(image)
+    FileUtils.mkdir_p(file.dirname)
+    FileUtils.cp(Gallery::Engine.root.join("app/assets/images/gallery/blank_image.png"), file)
+
+    get image.file.url(:original)
+
+    assert_response :success
+  ensure
+    FileUtils.rm_f(file) if file
+    image&.destroy
+  end
+
   test "does not serve arbitrary files in a public stock image directory" do
     image = stock_image
     path = "stock-images/#{image.id}/not_the_attachment.txt"
@@ -136,6 +151,10 @@ class PaperclipFilesTest < ActionDispatch::IntegrationTest
 
   def stock_image
     Gallery::StockImage.create!(name: "Stock", file: image_upload)
+  end
+
+  def legacy_stock_image_file(image)
+    Rails.root.join("gallery", "stock-images", image.id, "original.png")
   end
 
   def proprietary_image
