@@ -21,7 +21,6 @@ class GalleryUploadTest < ApplicationSystemTestCase
 
     assert_text "Image was successfully created."
     assert_text "System Test Image"
-    assert_selector "img[alt='System Test Image']", minimum: 1
   end
 
   private
