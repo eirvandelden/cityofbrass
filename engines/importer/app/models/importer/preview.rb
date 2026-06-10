@@ -5,6 +5,7 @@ module Importer
     GAME_MASTER_5_XML = "game_master_5_xml"
     MODES = [ RESIDENT_CONTENT, ADMIN_STOCK ].freeze
     STATUSES = %w[parsing ready expired].freeze
+    XML_CONTENT_TYPES = %w[application/xml text/xml].freeze
 
     belongs_to :resident, optional: true
     has_many :preview_files, dependent: :destroy
@@ -24,12 +25,13 @@ module Importer
       uploads = Array(files).compact
       return missing_uploads unless uploads.any?
 
+      persisted = false
       transaction do
-        uploads.each { |file| add_upload(file) }
-        update!(status: "ready")
+        uploads.each { |file| raise ActiveRecord::Rollback unless add_upload(file) }
+        persisted = update!(status: "ready")
       end
 
-      true
+      persisted
     end
 
     private
@@ -40,6 +42,8 @@ module Importer
     end
 
     def add_upload(file)
+      return invalid_upload unless xml_upload?(file)
+
       detector = Sources::GameMaster5Xml::Detector.new(file_io(file))
       preview_files.create!(
         file: file,
@@ -47,10 +51,27 @@ module Importer
         entity_counts: detector.entity_counts,
         parse_errors: []
       )
+
+      true
+    rescue ActiveRecord::RecordInvalid, ArgumentError
+      invalid_upload
     end
 
     def file_io(file)
       file.respond_to?(:tempfile) ? file.tempfile : file
+    end
+
+    def xml_upload?(file)
+      XML_CONTENT_TYPES.include?(upload_content_type(file))
+    end
+
+    def upload_content_type(file)
+      file.content_type.to_s.split(";").first
+    end
+
+    def invalid_upload
+      errors.add(:base, :invalid_file)
+      false
     end
 
     def valid_mode

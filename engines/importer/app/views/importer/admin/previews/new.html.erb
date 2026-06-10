@@ -1,6 +1,10 @@
 <main>
   <h1><%= t("importer.admin.previews.new.title") %></h1>
 
+  <% if @preview.errors.any? %>
+    <p><%= @preview.errors.full_messages.to_sentence %></p>
+  <% end %>
+
   <%= form_for @preview, url: main_app.admin_importer_previews_path, html: { multipart: true } do |f| %>
     <%= f.hidden_field :source %>
     <%= file_field_tag "files[]", multiple: true, accept: ".xml,text/xml,application/xml", required: true %>

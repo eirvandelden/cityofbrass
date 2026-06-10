@@ -40,6 +40,25 @@ class ImporterPreviewUploadTest < ActionDispatch::IntegrationTest
     assert_select "input[type=file][name='files[]'][multiple]"
   end
 
+  test "resident import index links to the preview form" do
+    sign_in users(:dan)
+
+    get "/imports"
+
+    assert_response :success
+    assert_select "a[href='/imports/previews/new']"
+  end
+
+  test "resident upload with an invalid file rerenders the form" do
+    sign_in users(:dan)
+
+    assert_no_difference("Importer::Preview.count") do
+      post "/imports/previews", params: { files: [ invalid_upload ] }
+    end
+
+    assert_response :unprocessable_entity
+  end
+
   test "admin upload creates an admin stock preview without a resident" do
     sign_in admins(:dan)
     preview_count = Importer::Preview.count
@@ -65,9 +84,32 @@ class ImporterPreviewUploadTest < ActionDispatch::IntegrationTest
     assert_select "input[type=file][name='files[]'][multiple]"
   end
 
+  test "admin import index links to the preview form" do
+    sign_in admins(:dan)
+
+    get "/admin/imports"
+
+    assert_response :success
+    assert_select "a[href='/admin/imports/previews/new']"
+  end
+
+  test "admin upload with an invalid file rerenders the form" do
+    sign_in admins(:dan)
+
+    assert_no_difference("Importer::Preview.count") do
+      post "/admin/imports/previews", params: { files: [ invalid_upload ] }
+    end
+
+    assert_response :unprocessable_entity
+  end
+
   private
 
   def uploaded_file(name)
     fixture_file_upload(importer_fixture_file(name), "text/xml")
+  end
+
+  def invalid_upload
+    fixture_file_upload(Gallery::Engine.root.join("app/assets/images/gallery/blank_image.png"), "image/png")
   end
 end
