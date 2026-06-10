@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<characters>
+  <pc>
+    <label>Quinthya</label>
+    <name>Elf (Wood) Monk 2</name>
+  </pc>
+  <npc>
+    <name>Captain Soranna</name>
+    <size>M</size>
+    <hp>16</hp>
+    <ac>15</ac>
+    <type>humanoid</type>
+    <alignment>lawful good</alignment>
+    <description>Leader of the town guard.</description>
+  </npc>
+</characters>

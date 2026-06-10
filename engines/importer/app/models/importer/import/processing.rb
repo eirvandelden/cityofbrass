@@ -62,7 +62,13 @@ module Importer
       end
 
       def process_character_file(import_file, document)
-        document.character_records.each { |record| import_character(import_file, record) }
+        document.character_records.each { |record| import_character_record(import_file, record) }
+      end
+
+      def import_character_record(import_file, record)
+        return import_character(import_file, record) if record[:type] == "pc"
+
+        import_npc(import_file, record) if record[:type] == "npc"
       end
 
       def unsupported_import_file(import_file)
