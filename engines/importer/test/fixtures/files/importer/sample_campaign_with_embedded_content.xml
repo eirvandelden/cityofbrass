@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data version="5">
+  <campaign>
+    <name>Inheritance</name>
+    <adventure>
+      <name>Shade Vault</name>
+      <encounter>
+        <name>Silent Guardians</name>
+        <combatant>
+          <monster>
+            <label>Magic Crossbow Turret</label>
+            <name>Brute CR1</name>
+            <size>M</size>
+            <ac>12</ac>
+            <hpMax>28</hpMax>
+            <abilities>10,12,14,8,9,11</abilities>
+            <action>
+              <name>Crossbow</name>
+              <attack><atk>6</atk><dmg>3+2d6</dmg></attack>
+            </action>
+          </monster>
+        </combatant>
+      </encounter>
+      <encounter>
+        <name>Dark Haunts</name>
+        <combatant>
+          <monster>
+            <label>Second Turret</label>
+            <name>Brute CR1</name>
+            <size>M</size>
+            <ac>12</ac>
+            <hpMax>28</hpMax>
+            <abilities>10,12,14,8,9,11</abilities>
+          </monster>
+        </combatant>
+      </encounter>
+    </adventure>
+    <item>
+      <name>Symbol Of Life</name>
+      <detail>holy symbol</detail>
+      <text>Whenever you heal a target, they regain additional hit points.</text>
+      <magic>1</magic>
+    </item>
+  </campaign>
+</data>

@@ -22,6 +22,8 @@ module Importer
           {
             name: text_at(node, "name"),
             adventures: nodes(node, "./adventure").map { |adventure| adventure_record(adventure) },
+            monsters: campaign_monster_records(node),
+            items: campaign_item_records(node),
             notes: nodes(node, "./note").map { |note| note_record(note) },
             pcs: nodes(node, ".//pc").map { |pc| pc_campaign_record(pc) },
             npcs: nodes(node, ".//npc").map { |npc| npc_record(npc) }
@@ -102,14 +104,14 @@ module Importer
             size: text_at(node, "size"),
             creature_type: text_at(node, "type"),
             ac: text_at(node, "ac"),
-            hp: text_at(node, "hp"),
+            hp: text_at(node, "hp").presence || text_at(node, "hpMax"),
             speed: text_at(node, "speed"),
-            str: text_at(node, "str"),
-            dex: text_at(node, "dex"),
-            con: text_at(node, "con"),
-            int: text_at(node, "int"),
-            wis: text_at(node, "wis"),
-            cha: text_at(node, "cha"),
+            str: ability_at(node, :str),
+            dex: ability_at(node, :dex),
+            con: ability_at(node, :con),
+            int: ability_at(node, :int),
+            wis: ability_at(node, :wis),
+            cha: ability_at(node, :cha),
             saves: nodes(node, "./save").map(&:text),
             skills: nodes(node, "./skill").map(&:text),
             senses: text_at(node, "senses"),
@@ -218,6 +220,18 @@ module Importer
         # Campaign entity records
         # ---------------------------------------------------------------------------
 
+        def campaign_monster_records(node)
+          nodes(node, ".//combatant/monster")
+            .map { |monster| monster_record(monster) }
+            .reject { |record| record[:name].blank? }
+            .uniq { |record| record[:name].downcase }
+        end
+
+        def campaign_item_records(node)
+          nodes(node, "./item").map { |item| item_record("item", item) } +
+            nodes(node, "./container").map { |container| item_record("container", container) }
+        end
+
         def adventure_record(adventure)
           {
             type: "adventure",
@@ -232,7 +246,7 @@ module Importer
             type: "encounter",
             name: name_or_title(node),
             description: nodes(node, "./text").map(&:text).join("\n"),
-            combatants: nodes(node, "./combatant").map { |c| { name: text_at(c, "monster") } }.reject { |c| c[:name].blank? }
+            combatants: nodes(node, "./combatant").map { |c| { name: combatant_name(c) } }.reject { |c| c[:name].blank? }
           }
         end
 
@@ -313,6 +327,22 @@ module Importer
           nodes(parent, xpath).map do |child|
             { name: text_at(child, "name"), text: text_at(child, "text"), attack: text_at(child, "attack") }
           end
+        end
+
+        def ability_at(node, ability)
+          text_at(node, ability.to_s).presence || split_abilities(node)[ability_names.index(ability)]
+        end
+
+        def split_abilities(node)
+          text_at(node, "abilities").split(",").map(&:strip)
+        end
+
+        def ability_names
+          %i[str dex con int wis cha]
+        end
+
+        def combatant_name(node)
+          text_at(node, "monster/name").presence || text_at(node, "monster")
         end
 
         def subclass_names_for(baseclass)

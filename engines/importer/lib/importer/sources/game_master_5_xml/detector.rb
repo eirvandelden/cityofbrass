@@ -74,11 +74,24 @@ module Importer
           {
             "adventures" => node.xpath(".//adventure").size,
             "encounters" => node.xpath(".//encounter").size,
+            "monsters" => campaign_monster_names(node).size,
+            "items" => node.xpath("./item | ./container").size,
             "notes" => node.xpath("./note").size,
             "pcs" => node.xpath(".//pc").size,
             "npcs" => node.xpath(".//npc").size,
             "combatants" => node.xpath(".//combatant").size
           }
+        end
+
+        def campaign_monster_names(node)
+          node.xpath(".//combatant/monster")
+            .filter_map { |monster| monster_name(monster) }
+            .uniq(&:downcase)
+        end
+
+        def monster_name(node)
+          name = node.at_xpath("./name")&.text.to_s.strip
+          name.presence || node.text.to_s.strip.presence
         end
 
         def characters_counts(root)
