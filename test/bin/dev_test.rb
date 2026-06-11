@@ -1,14 +1,17 @@
 require "test_helper"
 
 class BinDevTest < ActiveSupport::TestCase
-  test "bin/dev starts the development procfile with app redis defaults" do
+  test "bin/dev starts sidekiq and rails with app redis defaults" do
     script = Rails.root.join("bin/dev")
+    contents = script.read
 
     assert_predicate script, :exist?
     assert_predicate script, :executable?
-    assert_includes script.read, 'export REDIS_URL="${REDIS_URL:-redis://localhost:6379/1}"'
-    assert_includes script.read, 'export PORT="${PORT:-3000}"'
-    assert_includes script.read, 'exec foreman start -f Procfile.dev "$@"'
+    assert_includes contents, 'export REDIS_URL="${REDIS_URL:-redis://localhost:6379/1}"'
+    assert_includes contents, 'export PORT="${PORT:-3000}"'
+    assert_includes contents, "bundle exec sidekiq -c 8 -q default -q mailers -q paperclip &"
+    assert_includes contents, 'exec bin/rails server "$@"'
+    assert_not_includes contents, "gem install"
   end
 
   test "development procfile starts rails and sidekiq" do

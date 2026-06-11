@@ -1,11 +1,7 @@
 #!/usr/bin/env sh
 
-if ! gem list foreman -i --silent; then
-  echo "Installing foreman..."
-  gem install foreman
-fi
-
 export REDIS_URL="${REDIS_URL:-redis://localhost:6379/1}"
 export PORT="${PORT:-3000}"
 
-exec foreman start -f Procfile.dev "$@"
+bundle exec sidekiq -c 8 -q default -q mailers -q paperclip &
+exec bin/rails server "$@"
