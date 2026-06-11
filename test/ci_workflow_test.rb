@@ -17,8 +17,17 @@ class CiWorkflowTest < ActiveSupport::TestCase
     assert_equal true, setup_rv_step("test").dig("with", "install-gems")
     assert_equal "current", setup_rv_step("test").dig("with", "ruby-version")
     assert_equal "1", test_job.dig("env", "DISABLE_SPRING")
+    assert_equal "redis://localhost:6379/0", test_job.dig("env", "REDIS_URL")
     assert_includes run_commands("test"), "bin/rails db:schema:load"
     assert_includes run_commands("test"), "bin/rails test"
+  end
+
+  def test_test_job_provides_redis_for_sidekiq_web
+    redis = test_job.dig("services", "redis")
+
+    assert_equal "redis:7-alpine", redis.fetch("image")
+    assert_includes redis.fetch("ports"), "6379:6379"
+    assert_match(/redis-cli ping/, redis.fetch("options"))
   end
 
   def test_ci_sets_up_chrome_before_running_system_tests
