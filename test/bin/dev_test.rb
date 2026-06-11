@@ -34,4 +34,10 @@ class BinDevTest < ActiveSupport::TestCase
     assert_includes sidekiq_initializer, 'Rails.env.development? ? "redis://localhost:6379/1" : nil'
     assert_includes redis_initializer, 'Rails.env.development? ? "redis://localhost:6379/1" : nil'
   end
+
+  test "sidekiq scheduler can sleep with installed connection pool" do
+    stack = ConnectionPool::TimedStack.new
+
+    assert_raises(ConnectionPool::TimeoutError) { stack.pop(0) }
+  end
 end
