@@ -1,12 +1,12 @@
-  <li><label class="text-right">Search</label></li>
+  <li><label class="text-right"><%= t("navigation.sections.search") %></label></li>
 <% if user_signed_in? %>
-  <li><a href="/residents"><i class='fa fa-users fa-fw'></i> Residents</a></li>
-  <li><a href="/cm/campaigns"><i class='fa fa-sitemap fa-fw'></i> Campaigns</a></li>
+  <li><a href="/residents"><i class='fa fa-users fa-fw'></i> <%= t("navigation.links.residents") %></a></li>
+  <li><a href="/cm/campaigns"><i class='fa fa-sitemap fa-fw'></i> <%= t("navigation.links.campaigns") %></a></li>
 <% end %>
-  <li><a href="/wb"><i class='fa icon-globe fa-fw'></i> Worlds</a></li>
+  <li><a href="/wb"><i class='fa icon-globe fa-fw'></i> <%= t("navigation.links.worlds") %></a></li>
   <li class="divider show-for-medium-up"></li>
-<li><label class="text-right">Support</label></li>
-<li><a href="/support/faqs"><i class='fa icon-graduation-cap fa-fw'></i> FAQs</a></li>
+<li><label class="text-right"><%= t("navigation.sections.support") %></label></li>
+<li><a href="/support/faqs"><i class='fa icon-graduation-cap fa-fw'></i> <%= t("navigation.links.faqs") %></a></li>
 <% if user_signed_in? %>
-  <li><a href="/scrolls/terms_of_service"><i class='fa fa-book fa-fw'></i> Terms of Service</a></li>
+  <li><a href="/scrolls/terms_of_service"><i class='fa fa-book fa-fw'></i> <%= t("navigation.links.terms_of_service") %></a></li>
 <% end %>

@@ -27,8 +27,57 @@ en:
               invalid_file: must be an XML file
               missing_files: must include at least one file
   navigation:
-    admin:
+    sections:
+      account: Account
+      customers: Customers
+      game_master: Game Master
+      group: Group
+      images: Images
+      imports: Imports
+      messages: Messages
+      player: Player
+      reports: Reports
+      resident: Resident
+      rule_builder: Rule Builder
+      search: Search
+      session: Session
+      support: Support
+    links:
+      adventure_builder: Adventure Builder
+      adventures: Adventures
+      billing_events: Billing Events
+      campaigns: Campaigns
+      characters: Characters
+      compose: Compose
+      core_faqs: Core FAQs
+      create_resident: Create Resident
+      creatures: Creatures
+      dashboard: Dashboard
+      faqs: FAQs
+      faq_images: FAQ Images
+      friends: Friends
+      home: Home
+      images: Images
+      import: Import
+      inbox: Inbox
+      items: Items
+      login: Login
+      logout: Logout
+      maps: Maps
+      npcs: NPCs
+      resident: Resident
+      residents: Residents
+      rules: Rules
+      sent: Sent
+      settings: Settings
+      sign_up: Sign up
+      spells: Spells
       stock_imports: Stock Imports
+      subscription: Subscription
+      terms_of_service: Terms of Service
+      user_admin: User Admin
+      world_builder: World Builder
+      worlds: Worlds
   importer:
     previews:
       new:
@@ -47,6 +96,10 @@ en:
       show:
         title: Import Status
         status: Status
+        files: Files
+        file: File
+        kind: Kind
+        counts: Counts
         results: Results
         entity: Entity
         outcome: Outcome

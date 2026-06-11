@@ -1,15 +1,15 @@
-<li><label class="text-right">Images</label></li>
-<li><a href="/gallery/faq/images"><i class='fa icon-images fa-fw'></i> FAQ Images</a></li>
+<li><label class="text-right"><%= t("navigation.sections.images") %></label></li>
+<li><a href="/gallery/faq/images"><i class='fa icon-images fa-fw'></i> <%= t("navigation.links.faq_images") %></a></li>
 <li class="divider show-for-medium-up"></li>
-<li><label class="text-right">Customers</label></li>
-<li><a href="/admin/users"><i class='fa fa-users fa-fw'></i> User Admin</a></li>
-<li><a href="/billing/events"><i class='fa fa-cloud-download fa-fw'></i> Billing Events</a></li>
-<li><label class="text-right">Support</label></li>
-<li><a href="/support/faqs"><i class='fa icon-graduation-cap fa-fw'></i> FAQs</a></li>
-<li><a href="/support/core_faqs"><i class='fa fa-info-circle fa-fw'></i> Core FAQs</a></li>
-<li><label class="text-right">Imports</label></li>
-<li><a href="/admin/imports"><i class='fa fa-upload fa-fw'></i> <%= t("navigation.admin.stock_imports") %></a></li>
-<li><label class="text-right">Reports</label></li>
-<li><a href="/report/dashboards"><i class='fa fa-bar-chart fa-fw'></i> Dashboard</a></li>
-<li><label class="text-right">Session</label></li>
-<li><%= link_to "<i class='fa fa-sign-out fa-fw'></i> Logout".html_safe, "/admins/logout", :method => :delete %></li>
+<li><label class="text-right"><%= t("navigation.sections.customers") %></label></li>
+<li><a href="/admin/users"><i class='fa fa-users fa-fw'></i> <%= t("navigation.links.user_admin") %></a></li>
+<li><a href="/billing/events"><i class='fa fa-cloud-download fa-fw'></i> <%= t("navigation.links.billing_events") %></a></li>
+<li><label class="text-right"><%= t("navigation.sections.support") %></label></li>
+<li><a href="/support/faqs"><i class='fa icon-graduation-cap fa-fw'></i> <%= t("navigation.links.faqs") %></a></li>
+<li><a href="/support/core_faqs"><i class='fa fa-info-circle fa-fw'></i> <%= t("navigation.links.core_faqs") %></a></li>
+<li><label class="text-right"><%= t("navigation.sections.imports") %></label></li>
+<li><a href="/admin/imports"><i class='fa fa-upload fa-fw'></i> <%= t("navigation.links.stock_imports") %></a></li>
+<li><label class="text-right"><%= t("navigation.sections.reports") %></label></li>
+<li><a href="/report/dashboards"><i class='fa fa-bar-chart fa-fw'></i> <%= t("navigation.links.dashboard") %></a></li>
+<li><label class="text-right"><%= t("navigation.sections.session") %></label></li>
+<li><%= link_to safe_join([tag.i(class: "fa fa-sign-out fa-fw"), t("navigation.links.logout")], " "), "/admins/logout", method: :delete %></li>

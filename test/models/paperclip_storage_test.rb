@@ -29,4 +29,11 @@ class PaperclipStorageTest < ActiveSupport::TestCase
   test "paperclip uses filesystem storage" do
     assert_equal :filesystem, Paperclip::Attachment.default_options[:storage]
   end
+
+  test "production paperclip defaults keep legacy attachment folder" do
+    production_config = Rails.root.join("config/environments/production.rb").read
+
+    assert_includes production_config, 'path: ":rails_root/storage/attachments/:class/:attachment/:id_partition/:style/:filename"'
+    assert_includes production_config, 'url: "/attachments/:class/:attachment/:id_partition/:style/:filename"'
+  end
 end

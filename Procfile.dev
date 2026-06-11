@@ -1,2 +1,2 @@
 web: bin/rails server
-worker: bundle exec sidekiq -c 8 -q default -q mailers -q paperclip
+worker: bundle exec sidekiq -c 8 -q imports -q default -q mailers -q paperclip
