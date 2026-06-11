@@ -18,8 +18,8 @@ Rails.application.configure do
 
   config.paperclip_defaults = {
     storage: :filesystem,
-    path: ":rails_root/storage/paperclip/:class/:attachment/:id_partition/:style/:filename",
-    url: "/paperclip/:class/:attachment/:id_partition/:style/:filename"
+    path: ":rails_root/storage/attachments/:class/:attachment/:id_partition/:style/:filename",
+    url: "/attachments/:class/:attachment/:id_partition/:style/:filename"
   }
 
   # Code is not reloaded between requests.

@@ -4,6 +4,28 @@
       <h1><%= t("importer.imports.show.title") %></h1>
       <p><%= t("importer.imports.show.status") %>: <%= @import.status %></p>
 
+      <h2><%= t("importer.imports.show.files") %></h2>
+      <table>
+        <thead>
+          <tr>
+            <th><%= t("importer.imports.show.file") %></th>
+            <th><%= t("importer.imports.show.kind") %></th>
+            <th><%= t("importer.imports.show.status") %></th>
+            <th><%= t("importer.imports.show.counts") %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @import.source_file_rows.each do |file| %>
+            <tr>
+              <td><%= file[:name] %></td>
+              <td><%= file[:kind] %></td>
+              <td><%= file[:status] %></td>
+              <td><%= file[:counts].map { |key, value| "#{key}: #{value}" }.join(", ") %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
       <h2><%= t("importer.imports.show.results") %></h2>
       <table>
         <thead>

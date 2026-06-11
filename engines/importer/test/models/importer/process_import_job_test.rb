@@ -1,6 +1,10 @@
 require_relative "../../test_helper"
 
 class ImporterProcessImportJobTest < ActiveSupport::TestCase
+  test "process import job uses the imports queue" do
+    assert_equal "imports", Importer::ProcessImportJob.queue_name
+  end
+
   test "admin stock compendium import creates stock records and results" do
     import = import_for("sample_compendium.xml", mode: Importer::Preview::ADMIN_STOCK)
 
