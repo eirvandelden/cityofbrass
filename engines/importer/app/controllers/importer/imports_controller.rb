@@ -1,7 +1,7 @@
 module Importer
   class ImportsController < ApplicationController
     def index
-      @imports = current_user.resident.importer_imports
+      @imports = current_user.resident.importer_imports.includes(:import_files, :import_results)
     end
 
     def create
@@ -13,7 +13,7 @@ module Importer
     end
 
     def show
-      @import = current_user.resident.importer_imports.find(params[:id])
+      @import = current_user.resident.importer_imports.includes(import_results: :record).find(params[:id])
     end
   end
 end

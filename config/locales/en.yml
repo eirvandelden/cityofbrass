@@ -93,8 +93,14 @@ en:
       index:
         title: Imports
         new_preview: New import
+        history: Import History
+        created_at: Created
+        status: Status
+        files: Files
+        results: Results
       show:
         title: Import Status
+        back: Back to imports
         status: Status
         files: Files
         file: File

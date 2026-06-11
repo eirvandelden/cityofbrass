@@ -2,6 +2,7 @@
   <div class="medium-10 medium-centered columns">
     <main>
       <h1><%= t("importer.admin.imports.show.title") %></h1>
+      <p><%= link_to t("importer.imports.show.back"), main_app.admin_importer_imports_path %></p>
       <p><%= t("importer.imports.show.status") %>: <%= @import.status %></p>
 
       <h2><%= t("importer.imports.show.files") %></h2>
@@ -38,7 +39,7 @@
         <tbody>
           <% @import.import_results.each do |result| %>
             <tr>
-              <td><%= result.entity_name %></td>
+              <td><%= render "importer/imports/result_entity", result: result %></td>
               <td><%= result.outcome %></td>
               <td><%= result.reason %></td>
             </tr>
