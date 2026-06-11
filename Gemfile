@@ -100,6 +100,9 @@ group :test do
   gem "cuprite"
 end
 
+group :production do
+  gem "rails_12factor"
+end
 
 # gem "sqlite_extensions-uuid", "~> 1.0"  # Removed - using UuidPrimaryKey concern instead
 
