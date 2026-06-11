@@ -10,7 +10,7 @@ module Importer
         prepare_files_from_preview! if import_files.empty?
         raise ArgumentError, "no import files available" if import_files.empty?
 
-        ordered_import_files.each { |import_file| process_import_file(import_file) }
+        ordered_import_files.each { |import_file| process_import_file_safely(import_file) }
         finish!
       rescue StandardError => error
         update!(status: "failed", finished_at: Time.current, summary: { "error" => error.message })
@@ -32,6 +32,18 @@ module Importer
 
       def ordered_import_files
         import_files.sort_by { |import_file| %w[compendium characters pc campaign unsupported].index(import_file.kind) || 99 }
+      end
+
+      def process_import_file_safely(import_file)
+        process_import_file(import_file)
+      rescue StandardError => error
+        import_file.import_results.create!(
+          entity_type: import_file.kind,
+          entity_name: import_file.file_file_name,
+          outcome: "failed",
+          reason: error.message
+        )
+        import_file.update!(parse_status: "failed")
       end
 
       def process_import_file(import_file)
@@ -107,7 +119,7 @@ module Importer
 
       def import_stock_campaign(import_file, campaign)
         adventures = campaign[:adventures].map { |adventure| import_stock_adventure(import_file, adventure) }
-        root = adventures.first || stock_adventure(import_file, { name: campaign[:name] })
+        root = adventures.first || stock_adventure(import_file, { name: campaign_name(import_file, campaign) })
 
         campaign[:notes].each { |note| import_stock_note(import_file, note, root) }
         campaign[:pcs].each { |pc| import_pc(import_file, pc) }
@@ -115,16 +127,20 @@ module Importer
       end
 
       def resident_campaign(import_file, campaign)
-        existing = existing_record(Campaignmanager::Campaign, campaign[:name])
+        name = campaign_name(import_file, campaign)
+        existing = existing_record(Campaignmanager::Campaign, name)
         if existing
-          result(import_file, { type: "campaign", name: campaign[:name] }, "skipped", existing, "already exists")
+          result(import_file, { type: "campaign", name: name }, "skipped", existing, "already exists")
           return existing
         end
 
-        record = Campaignmanager::Campaign.create!(resident: resident, name: campaign[:name], privacy: "Private",
-                                                   core_rules: CORE_RULES)
-        result(import_file, { type: "campaign", name: campaign[:name] }, "created", record)
+        record = Campaignmanager::Campaign.create!(resident: resident, name: name, privacy: "Private", core_rules: CORE_RULES)
+        result(import_file, { type: "campaign", name: name }, "created", record)
         record
+      end
+
+      def campaign_name(import_file, campaign)
+        campaign[:name].presence || File.basename(import_file.file_file_name.to_s, ".*").tr("_-", " ")
       end
 
       def stock_adventure(import_file, adventure)

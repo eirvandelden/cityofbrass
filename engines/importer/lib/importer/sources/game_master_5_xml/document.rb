@@ -221,7 +221,7 @@ module Importer
         def adventure_record(adventure)
           {
             type: "adventure",
-            name: text_at(adventure, "name"),
+            name: name_or_title(adventure),
             description: text_at(adventure, "text"),
             encounters: nodes(adventure, "./encounter").map { |enc| encounter_record(enc) }
           }
@@ -230,7 +230,7 @@ module Importer
         def encounter_record(node)
           {
             type: "encounter",
-            name: text_at(node, "name"),
+            name: name_or_title(node),
             description: nodes(node, "./text").map(&:text).join("\n"),
             combatants: nodes(node, "./combatant").map { |c| { name: text_at(c, "monster") } }.reject { |c| c[:name].blank? }
           }
@@ -239,7 +239,7 @@ module Importer
         def note_record(node)
           {
             type: "note",
-            name: text_at(node, "name"),
+            name: name_or_title(node),
             description: nodes(node, "./text").map(&:text).join("\n")
           }
         end
@@ -336,6 +336,10 @@ module Importer
 
         def text_at(node, xpath)
           node.at_xpath(xpath)&.text.to_s.strip
+        end
+
+        def name_or_title(node)
+          text_at(node, "name").presence || text_at(node, "title")
         end
 
         def root

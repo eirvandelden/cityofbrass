@@ -69,6 +69,38 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal "created", import.import_results.find_by!(entity_type: "pc").outcome
   end
 
+  test "campaign import uses file name when campaign name is blank and reads note titles" do
+    import = import_for_kind_with_file("blank_campaign_titles.xml", kind: "campaign",
+                                                                    mode: Importer::Preview::RESIDENT_CONTENT)
+
+    assert_difference("Campaignmanager::Campaign.count", 1) do
+      assert_difference("Campaignmanager::GameMasterNote.count", 1) do
+        Importer::ProcessImportJob.perform_now(import.id)
+      end
+    end
+
+    assert_equal "succeeded", import.reload.status
+    assert Campaignmanager::Campaign.exists?(name: "blank campaign titles")
+    assert Campaignmanager::GameMasterNote.exists?(name: "Session 1: Bridge Trouble")
+    assert_equal "parsed", import.import_files.first.parse_status
+  end
+
+  test "file failure does not leave later files pending" do
+    import = import_for_multiple(
+      { file: "blank_item_compendium.xml", kind: "compendium" },
+      { file: "sample_campaign.xml", kind: "campaign" },
+      mode: Importer::Preview::RESIDENT_CONTENT
+    )
+
+    assert_difference("Campaignmanager::Campaign.count", 1) do
+      Importer::ProcessImportJob.perform_now(import.id)
+    end
+
+    assert_equal "partial", import.reload.status
+    assert_equal %w[failed parsed], import.import_files.order(:created_at).pluck(:parse_status)
+    assert import.import_results.failed.exists?(entity_type: "compendium", entity_name: "blank_item_compendium.xml")
+  end
+
   test "admin stock campaign import creates stock adventure records and skips pcs" do
     import = import_for("sample_campaign.xml", mode: Importer::Preview::ADMIN_STOCK)
 
