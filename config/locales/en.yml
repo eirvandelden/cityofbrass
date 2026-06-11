@@ -79,6 +79,14 @@ en:
       world_builder: World Builder
       worlds: Worlds
   importer:
+    provenance_notes:
+      name: "Imported %{entity_type}: %{entity_name}"
+      import_label: "import details"
+      description_html: >
+        <p>Imported from a Game Master 5 XML file on %{created_at}.</p>
+        <p>Source file: %{source_file}</p>
+        <p>Created %{entity_type}: %{entity_name}</p>
+        <p><a href="%{import_path}">%{import_label}</a></p>
     previews:
       new:
         title: Import Files
