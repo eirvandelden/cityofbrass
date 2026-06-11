@@ -35,6 +35,8 @@ module Importer
       end
 
       def process_import_file(import_file)
+        return unsupported_import_file(import_file) if import_file.kind == "unsupported"
+
         document = Sources::GameMaster5Xml::Document.new(import_file.file.path)
         if import_file.kind == "campaign"
           import_campaign(import_file, document)

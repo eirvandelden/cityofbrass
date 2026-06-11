@@ -171,6 +171,16 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal [ "unsupported file kind" ], import.import_results.failed.distinct.pluck(:reason)
   end
 
+  test "unsupported malformed XML records a file failure instead of failing the whole import" do
+    import = import_for_kind_with_file("malformed.xml", kind: "unsupported", mode: Importer::Preview::RESIDENT_CONTENT)
+
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    assert_equal "partial", import.reload.status
+    assert_equal "failed", import.import_files.first.parse_status
+    assert_equal [ "unsupported file kind" ], import.import_results.failed.distinct.pluck(:reason)
+  end
+
   test "standalone pc file kind is parsed (not treated as unsupported)" do
     import = import_for_kind("pc", mode: Importer::Preview::RESIDENT_CONTENT)
 
