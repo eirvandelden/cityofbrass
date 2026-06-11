@@ -52,7 +52,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_difference("Campaignmanager::Campaign.count", 1) do
       assert_difference("Storybuilder::ResidentAdventure.count", 1) do
         assert_difference("Storybuilder::Page.count", 1) do
-          assert_difference("Campaignmanager::GameMasterNote.count", 1) do
+          assert_difference("Campaignmanager::GameMasterNote.count", 7) do
             assert_difference("Entitybuilder::ResidentCharacter.count", 1) do
               assert_difference("Entitybuilder::ResidentNpc.count", 1) do
                 Importer::ProcessImportJob.perform_now(import.id)
@@ -74,7 +74,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
                                                                     mode: Importer::Preview::RESIDENT_CONTENT)
 
     assert_difference("Campaignmanager::Campaign.count", 1) do
-      assert_difference("Campaignmanager::GameMasterNote.count", 1) do
+      assert_difference("Campaignmanager::GameMasterNote.count", 3) do
         Importer::ProcessImportJob.perform_now(import.id)
       end
     end
@@ -107,6 +107,50 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert Entitybuilder::ResidentCreature.exists?(name: "Brute CR1", resident: residents(:razune))
     assert Rulebuilder::ResidentItem.exists?(name: "Symbol Of Life", resident: residents(:razune))
     assert Storybuilder::Page.find_by!(name: "Silent Guardians").notables.exists?(entity: Entitybuilder::ResidentCreature.find_by!(name: "Brute CR1"))
+  end
+
+  test "resident campaign import creates provenance game master notes for created records" do
+    import = import_for("sample_campaign.xml", mode: Importer::Preview::RESIDENT_CONTENT)
+
+    assert_difference("Campaignmanager::GameMasterNote.count", 7) do
+      Importer::ProcessImportJob.perform_now(import.id)
+    end
+
+    campaign = Campaignmanager::Campaign.find_by!(name: "Red Hand")
+    notes = imported_provenance_notes(campaign)
+
+    assert_equal 6, notes.count
+    notes.each do |note|
+      assert_includes note.full_description, "Game Master 5 XML"
+      assert_includes note.full_description, "/imports/#{import.id}"
+      assert_match(/\d{4}-\d{2}-\d{2}/, note.full_description)
+    end
+
+    npc = Entitybuilder::ResidentNpc.find_by!(name: "Captain Soranna")
+    npc_note = notes.find { |note| note.full_description.include?("Captain Soranna") }
+
+    assert npc_note.notables.exists?(entity: npc)
+  end
+
+  test "resident campaign import links created creatures and npcs to the created adventure" do
+    import = import_for("sample_campaign_with_embedded_content.xml", mode: Importer::Preview::RESIDENT_CONTENT)
+
+    assert_difference("Storybuilder::Notable.count", 3) do
+      Importer::ProcessImportJob.perform_now(import.id)
+    end
+
+    adventure = Storybuilder::ResidentAdventure.find_by!(name: "Shade Vault")
+    creature = Entitybuilder::ResidentCreature.find_by!(name: "Brute CR1")
+
+    assert adventure.notables.exists?(entity: creature)
+
+    import = import_for("sample_campaign.xml", mode: Importer::Preview::RESIDENT_CONTENT)
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    adventure = Storybuilder::ResidentAdventure.find_by!(name: "Elsir Vale")
+    npc = Entitybuilder::ResidentNpc.find_by!(name: "Captain Soranna")
+
+    assert adventure.notables.exists?(entity: npc)
   end
 
   test "file failure does not leave later files pending" do
@@ -268,13 +312,17 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
       mode: Importer::Preview::RESIDENT_CONTENT
     )
 
-    assert_difference("Storybuilder::Notable.count", 1) do
+    assert_difference("Storybuilder::Notable.count", 2) do
       Importer::ProcessImportJob.perform_now(import.id)
     end
 
     page = Storybuilder::Page.find_by!(name: "Road Ambush")
+    adventure = Storybuilder::ResidentAdventure.find_by!(name: "Elsir Vale")
     goblin = Entitybuilder::ResidentCreature.find_by!(name: "Goblin")
+    npc = Entitybuilder::ResidentNpc.find_by!(name: "Captain Soranna")
+
     assert page.notables.exists?(entity: goblin)
+    assert adventure.notables.exists?(entity: npc)
     assert_equal "Goblin", page.notables.find_by!(entity: goblin).name
   end
 
@@ -285,13 +333,17 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
       mode: Importer::Preview::ADMIN_STOCK
     )
 
-    assert_difference("Storybuilder::Notable.count", 1) do
+    assert_difference("Storybuilder::Notable.count", 2) do
       Importer::ProcessImportJob.perform_now(import.id)
     end
 
     page = Storybuilder::Page.find_by!(name: "Road Ambush")
+    adventure = Storybuilder::StockAdventure.find_by!(name: "Elsir Vale")
     goblin = Entitybuilder::StockCreature.find_by!(name: "Goblin")
+    npc = Entitybuilder::StockNpc.find_by!(name: "Captain Soranna")
+
     assert page.notables.exists?(entity: goblin)
+    assert adventure.notables.exists?(entity: npc)
   end
 
   test "reimport does not create duplicate notables" do
@@ -497,5 +549,12 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
       import.import_files.create!(kind: kind, parse_status: "pending", file: file)
     end
     import
+  end
+
+  def imported_provenance_notes(campaign)
+    campaign.game_master_notes.select do |note|
+      note.full_description.to_s.include?("Game Master 5 XML") &&
+        note.full_description.to_s.include?("/imports/")
+    end
   end
 end

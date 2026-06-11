@@ -111,23 +111,27 @@ module Importer
         return import_stock_campaign(import_file, campaign) if admin_stock?
 
         root = resident_campaign(import_file, campaign)
-        import_campaign_monsters(import_file, campaign)
-        import_campaign_items(import_file, campaign)
-        campaign[:adventures].each { |adventure| import_adventure(import_file, adventure, root) }
-        campaign[:notes].each { |note| import_note(import_file, note, root) }
-        campaign[:pcs].each { |pc| import_pc(import_file, pc) }
-        campaign[:npcs].each { |npc| import_npc(import_file, npc) }
+        with_campaign_import_tracking(root) do
+          import_campaign_monsters(import_file, campaign)
+          import_campaign_items(import_file, campaign)
+          campaign[:adventures].each { |adventure| import_adventure(import_file, adventure, root) }
+          campaign[:notes].each { |note| import_note(import_file, note, root) }
+          campaign[:pcs].each { |pc| import_pc(import_file, pc) }
+          campaign[:npcs].each { |npc| import_npc(import_file, npc) }
+        end
       end
 
       def import_stock_campaign(import_file, campaign)
-        import_campaign_monsters(import_file, campaign)
-        import_campaign_items(import_file, campaign)
-        adventures = campaign[:adventures].map { |adventure| import_stock_adventure(import_file, adventure) }
-        root = adventures.first || stock_adventure(import_file, { name: campaign_name(import_file, campaign) })
+        with_campaign_import_tracking(nil) do
+          import_campaign_monsters(import_file, campaign)
+          import_campaign_items(import_file, campaign)
+          adventures = campaign[:adventures].map { |adventure| import_stock_adventure(import_file, adventure) }
+          root = adventures.first || stock_adventure(import_file, { name: campaign_name(import_file, campaign) })
 
-        campaign[:notes].each { |note| import_stock_note(import_file, note, root) }
-        campaign[:pcs].each { |pc| import_pc(import_file, pc) }
-        campaign[:npcs].each { |npc| import_npc(import_file, npc) }
+          campaign[:notes].each { |note| import_stock_note(import_file, note, root) }
+          campaign[:pcs].each { |pc| import_pc(import_file, pc) }
+          campaign[:npcs].each { |npc| import_npc(import_file, npc) }
+        end
       end
 
       def import_campaign_monsters(import_file, campaign)
@@ -147,7 +151,9 @@ module Importer
         end
 
         record = Campaignmanager::Campaign.create!(resident: resident, name: name, privacy: "Private", core_rules: CORE_RULES)
-        result(import_file, { type: "campaign", name: name }, "created", record)
+        with_import_provenance_campaign(record) do
+          result(import_file, { type: "campaign", name: name }, "created", record)
+        end
         record
       end
 
@@ -588,8 +594,119 @@ module Importer
       end
 
       def result(import_file, record, outcome, created_record = nil, reason = nil)
-        import_file.import_results.create!(entity_type: record[:type], entity_name: record[:name], outcome: outcome,
-                                           record: created_record, reason: reason)
+        import_result = import_file.import_results.create!(entity_type: record[:type], entity_name: record[:name],
+                                                           outcome: outcome, record: created_record, reason: reason)
+        track_campaign_import_result(import_result)
+        create_import_provenance_note(import_file, import_result)
+        import_result
+      end
+
+      def with_campaign_import_tracking(provenance_campaign)
+        previous_adventures = @campaign_import_adventures
+        previous_entities = @campaign_import_entities
+        @campaign_import_adventures = []
+        @campaign_import_entities = []
+
+        with_import_provenance_campaign(provenance_campaign) do
+          yield
+          link_created_entities_to_campaign_adventures
+        end
+      ensure
+        @campaign_import_adventures = previous_adventures
+        @campaign_import_entities = previous_entities
+      end
+
+      def with_import_provenance_campaign(campaign)
+        previous_campaign = @import_provenance_campaign
+        @import_provenance_campaign = campaign
+        yield
+      ensure
+        @import_provenance_campaign = previous_campaign
+      end
+
+      def track_campaign_import_result(import_result)
+        return unless import_result.outcome == "created"
+        return if @campaign_import_adventures.nil? || @campaign_import_entities.nil?
+
+        @campaign_import_adventures << import_result.record if import_result.record.is_a?(Storybuilder::Adventure)
+        @campaign_import_entities << import_result.record if campaign_import_notable_entity?(import_result.record)
+      end
+
+      def create_import_provenance_note(import_file, import_result)
+        return if @import_provenance_campaign.blank?
+        return unless import_result.outcome == "created"
+        return if import_result.record.blank?
+
+        note = @import_provenance_campaign.game_master_notes.create!(
+          name: import_provenance_note_name(import_result),
+          privacy: "Private",
+          full_description: import_provenance_note_description(import_file, import_result)
+        )
+        link_campaign_note_to_entity(note, import_result.record)
+      end
+
+      def import_provenance_note_name(import_result)
+        I18n.t(
+          "importer.provenance_notes.name",
+          entity_type: import_result.entity_type,
+          entity_name: import_result.entity_name
+        ).truncate(55) + " #{import_result.id.first(8)}"
+      end
+
+      def import_provenance_note_description(import_file, import_result)
+        I18n.t(
+          "importer.provenance_notes.description_html",
+          created_at: import_provenance_timestamp(import_result),
+          entity_type: import_result.entity_type,
+          entity_name: import_result.entity_name,
+          import_path: import_provenance_path,
+          import_label: I18n.t("importer.provenance_notes.import_label"),
+          source_file: import_file.file_file_name
+        )
+      end
+
+      def import_provenance_timestamp(import_result)
+        (import_result.record.created_at || import_result.created_at).iso8601
+      end
+
+      def import_provenance_path
+        "/imports/#{id}"
+      end
+
+      def link_campaign_note_to_entity(note, record)
+        return unless record.is_a?(Entitybuilder::Entity)
+
+        note.notables.create!(entity: record, name: record.name.truncate(64))
+      rescue ActiveRecord::RecordInvalid
+        # skip duplicate or invalid note links
+      end
+
+      def link_created_entities_to_campaign_adventures
+        return if @campaign_import_adventures.blank? || @campaign_import_entities.blank?
+
+        @campaign_import_adventures.each do |adventure|
+          link_entities_to_storybuilder_notableable(adventure, @campaign_import_entities)
+        end
+      end
+
+      def link_entities_to_storybuilder_notableable(notableable, entities)
+        existing_entity_ids = notableable.notables.pluck(:entity_id).to_set
+
+        entities.each do |entity|
+          next if existing_entity_ids.include?(entity.id)
+
+          Storybuilder::Notable.create!(notableable: notableable, entity: entity, name: entity.name.truncate(64))
+          existing_entity_ids << entity.id
+        rescue ActiveRecord::RecordInvalid
+          # skip duplicate or invalid notable links
+        end
+      end
+
+      def campaign_import_notable_entity?(record)
+        record.is_a?(Entitybuilder::ResidentCreature) ||
+          record.is_a?(Entitybuilder::ResidentNpc) ||
+          record.is_a?(Entitybuilder::StockCreature) ||
+          record.is_a?(Entitybuilder::StockNpc)
       end
 
       def finish!
