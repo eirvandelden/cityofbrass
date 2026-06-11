@@ -111,6 +111,8 @@ module Importer
         return import_stock_campaign(import_file, campaign) if admin_stock?
 
         root = resident_campaign(import_file, campaign)
+        import_campaign_monsters(import_file, campaign)
+        import_campaign_items(import_file, campaign)
         campaign[:adventures].each { |adventure| import_adventure(import_file, adventure, root) }
         campaign[:notes].each { |note| import_note(import_file, note, root) }
         campaign[:pcs].each { |pc| import_pc(import_file, pc) }
@@ -118,12 +120,22 @@ module Importer
       end
 
       def import_stock_campaign(import_file, campaign)
+        import_campaign_monsters(import_file, campaign)
+        import_campaign_items(import_file, campaign)
         adventures = campaign[:adventures].map { |adventure| import_stock_adventure(import_file, adventure) }
         root = adventures.first || stock_adventure(import_file, { name: campaign_name(import_file, campaign) })
 
         campaign[:notes].each { |note| import_stock_note(import_file, note, root) }
         campaign[:pcs].each { |pc| import_pc(import_file, pc) }
         campaign[:npcs].each { |npc| import_npc(import_file, npc) }
+      end
+
+      def import_campaign_monsters(import_file, campaign)
+        campaign.fetch(:monsters, []).each { |record| import_monster(import_file, record) }
+      end
+
+      def import_campaign_items(import_file, campaign)
+        campaign.fetch(:items, []).each { |record| import_item(import_file, record) }
       end
 
       def resident_campaign(import_file, campaign)

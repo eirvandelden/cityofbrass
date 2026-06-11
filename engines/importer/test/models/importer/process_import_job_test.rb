@@ -85,6 +85,30 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal "parsed", import.import_files.first.parse_status
   end
 
+  test "resident campaign import creates encounter pages and embedded content" do
+    import = import_for("sample_campaign_with_embedded_content.xml", mode: Importer::Preview::RESIDENT_CONTENT)
+
+    assert_difference("Campaignmanager::Campaign.count", 1) do
+      assert_difference("Storybuilder::ResidentAdventure.count", 1) do
+        assert_difference("Storybuilder::Page.count", 2) do
+          assert_difference("Entitybuilder::ResidentCreature.count", 1) do
+            assert_difference("Rulebuilder::ResidentItem.count", 1) do
+              Importer::ProcessImportJob.perform_now(import.id)
+            end
+          end
+        end
+      end
+    end
+
+    assert_equal "succeeded", import.reload.status
+    assert_equal %w[adventure campaign encounter item monster], import.import_results.created.order(:entity_type).distinct.pluck(:entity_type)
+    assert Storybuilder::Page.exists?(name: "Silent Guardians")
+    assert Storybuilder::Page.exists?(name: "Dark Haunts")
+    assert Entitybuilder::ResidentCreature.exists?(name: "Brute CR1", resident: residents(:razune))
+    assert Rulebuilder::ResidentItem.exists?(name: "Symbol Of Life", resident: residents(:razune))
+    assert Storybuilder::Page.find_by!(name: "Silent Guardians").notables.exists?(entity: Entitybuilder::ResidentCreature.find_by!(name: "Brute CR1"))
+  end
+
   test "file failure does not leave later files pending" do
     import = import_for_multiple(
       { file: "blank_item_compendium.xml", kind: "compendium" },

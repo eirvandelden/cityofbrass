@@ -79,6 +79,20 @@ class ImporterGameMaster5XmlDocumentTest < ActiveSupport::TestCase
     end
   end
 
+  test "campaign record extracts embedded items and combatant monsters" do
+    document = Importer::Sources::GameMaster5Xml::Document.new(importer_fixture_file("sample_campaign_with_embedded_content.xml"))
+    campaign = document.campaign_record
+    encounter = campaign[:adventures].first[:encounters].first
+
+    assert_equal 2, campaign[:adventures].first[:encounters].size
+    assert_equal [ "Brute CR1" ], encounter[:combatants].map { |combatant| combatant[:name] }
+    assert_equal [ "Brute CR1" ], campaign[:monsters].map { |monster| monster[:name] }
+    assert_equal [ "Symbol Of Life" ], campaign[:items].map { |item| item[:name] }
+    assert_equal "28", campaign[:monsters].first[:hp]
+    assert_equal "10", campaign[:monsters].first[:str]
+    assert_equal "12", campaign[:monsters].first[:dex]
+  end
+
   # rubocop:disable Metrics/BlockLength
   test "character_records parses standalone PC file" do
     xml = <<~XML
