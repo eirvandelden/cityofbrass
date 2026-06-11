@@ -2,7 +2,7 @@ module Importer
   module Admin
     class ImportsController < Admin::ApplicationController
       def index
-        @imports = Import.admin_stock.order(created_at: :desc)
+        @imports = Import.admin_stock.includes(:import_files, :import_results).order(created_at: :desc)
       end
 
       def create
@@ -14,7 +14,7 @@ module Importer
       end
 
       def show
-        @import = Import.admin_stock.find(params[:id])
+        @import = Import.admin_stock.includes(import_results: :record).find(params[:id])
       end
     end
   end

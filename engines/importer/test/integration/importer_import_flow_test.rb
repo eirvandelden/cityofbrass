@@ -35,6 +35,42 @@ class ImporterImportFlowTest < ActionDispatch::IntegrationTest
     assert_select "td", text: "queued"
   end
 
+  test "resident import history links back to import details" do
+    sign_in users(:dan)
+    import = Importer::Import.create!(resident: residents(:razune), mode: Importer::Preview::RESIDENT_CONTENT,
+                                      source: Importer::Preview::GAME_MASTER_5_XML, status: Importer::Import::QUEUED)
+
+    get "/imports"
+
+    assert_response :success
+    assert_select "a[href='/imports/#{import.id}']"
+
+    get "/imports/#{import.id}"
+
+    assert_response :success
+    assert_select "main a[href='/imports']", text: I18n.t("importer.imports.show.back")
+  end
+
+  test "resident import results link to created records" do
+    sign_in users(:dan)
+    post "/imports/previews", params: { files: [ uploaded_file("sample_compendium.xml") ] }
+    preview = Importer::Preview.order(:created_at).last
+
+    perform_enqueued_jobs do
+      post "/imports", params: { preview_id: preview.id }
+    end
+
+    import = Importer::Import.order(:created_at).last
+    goblin = Entitybuilder::ResidentCreature.find_by!(name: "Goblin")
+    longsword = Rulebuilder::ResidentItem.find_by!(name: "Longsword")
+
+    get "/imports/#{import.id}"
+
+    assert_response :success
+    assert_select "a[href='#{ApplicationController.helpers.tcob_path(goblin)}']", text: "Goblin"
+    assert_select "a[href='/rb/resident/items/#{longsword.id}']", text: "Longsword"
+  end
+
   test "admin confirms a stock preview and imports shared content" do
     sign_in admins(:dan)
     post "/admin/imports/previews", params: { files: [ uploaded_file("sample_compendium.xml") ] }
@@ -48,6 +84,23 @@ class ImporterImportFlowTest < ActionDispatch::IntegrationTest
     assert_redirected_to "/admin/imports/#{import.id}"
     assert_equal "succeeded", import.status
     assert_equal "Residents", Entitybuilder::StockCreature.find_by!(name: "Goblin").privacy
+  end
+
+  test "admin import history links back to import details" do
+    sign_in admins(:dan)
+    import = Importer::Import.create!(mode: Importer::Preview::ADMIN_STOCK,
+                                      source: Importer::Preview::GAME_MASTER_5_XML,
+                                      status: Importer::Import::QUEUED)
+
+    get "/admin/imports"
+
+    assert_response :success
+    assert_select "a[href='/admin/imports/#{import.id}']"
+
+    get "/admin/imports/#{import.id}"
+
+    assert_response :success
+    assert_select "main a[href='/admin/imports']", text: I18n.t("importer.imports.show.back")
   end
 
   test "normal user cannot confirm an admin stock preview" do

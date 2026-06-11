@@ -1,0 +1,23 @@
+<h2><%= t("importer.imports.index.history") %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t("importer.imports.index.created_at") %></th>
+      <th><%= t("importer.imports.index.status") %></th>
+      <th><%= t("importer.imports.index.files") %></th>
+      <th><%= t("importer.imports.index.results") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% imports.each do |import| %>
+      <% show_path = admin ? main_app.admin_importer_import_path(import) : import_path(import) %>
+      <tr>
+        <td><%= link_to l(import.created_at, format: :short), show_path %></td>
+        <td><%= import.status %></td>
+        <td><%= import.import_files.size %></td>
+        <td><%= import.import_results.group_by(&:outcome).map { |outcome, results| "#{outcome}: #{results.size}" }.join(", ") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
