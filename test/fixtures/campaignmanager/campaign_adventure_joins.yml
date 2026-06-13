@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+resident_two_active:
+  campaign: resident_two
+  adventure: resident_two
+  active: true
+
+resident_two_inactive:
+  campaign: resident_two
+  adventure: resident_one
+  active: false
