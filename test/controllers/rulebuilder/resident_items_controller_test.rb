@@ -50,9 +50,15 @@ module Rulebuilder
       assert_redirected_to edit_resident_item_path(assigns(:item))
     end
 
-    test "should not show item" do
+    test "should not show item when logged out and private" do
       get :show, params: { id: @item }
-      assert_response 302
+      assert_response 403
+    end
+
+    test "should show public item when logged out" do
+      @item.update!(privacy: 'Public')
+      get :show, params: { id: @item }
+      assert_response :success
     end
 
     test "should show item" do
@@ -61,9 +67,9 @@ module Rulebuilder
       assert_response :success
     end
 
-    test "should not show.js item" do
+    test "should not show.js item when logged out and private" do
       get :show, xhr: true, format: :js, params: { id: @item }
-      assert_response 401
+      assert_response 403
     end
 
     test "should show.js item" do

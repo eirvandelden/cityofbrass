@@ -5,6 +5,9 @@ module Rulebuilder
     include KeysToRulebuilder
     include JsonArrayColumns
 
+    PRIVACY_OPTIONS_FREE = [ 'Private', 'Public' ]
+    PRIVACY_OPTIONS = [ 'Private', 'Friends', 'Residents', 'Public' ]
+
     scope :order_name, -> { order(:name) }
     scope :short, -> { select('id, type, resident_id, name, core_rules, short_description') }
     scope :basic, -> { select('id, type, resident_id, name, core_rules') }
@@ -36,8 +39,11 @@ module Rulebuilder
     validates :publisher, length: { maximum: 255 }
     validates :source, length: { maximum: 255 }
     validates_confirmation_of :name
+    validates :privacy, presence: true
+    validate  :valid_privacy
 
     before_save :mark_for_removal
+    before_validation :set_privacy, on: :create
 
     def tag_list
       Array(tags).join(', ')
@@ -60,6 +66,16 @@ module Rulebuilder
     private
       def mark_for_removal
         self.gallery_image_join.mark_for_destruction if gallery_image_join && gallery_image_join.image_id.blank?
+      end
+
+      def set_privacy
+        self.privacy ||= 'Private'
+      end
+
+      def valid_privacy
+        if privacy.present? && PRIVACY_OPTIONS.exclude?(privacy)
+          errors.add(:privacy, "is not valid.")
+        end
       end
   end
 end

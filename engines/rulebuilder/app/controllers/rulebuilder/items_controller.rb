@@ -109,6 +109,7 @@ module Rulebuilder
           :parent_id,
           :resident_id,
           :name,
+          :privacy,
           :publisher,
           :source,
           :is_3pp,

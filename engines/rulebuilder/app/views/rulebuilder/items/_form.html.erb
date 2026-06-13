@@ -19,6 +19,7 @@
         </div>
       </div>
       <%= f.input :source %>
+      <%= f.input :privacy, collection: Rulebuilder::Item::PRIVACY_OPTIONS, include_blank: false %>
       <div class="row">
         <div class="medium-6 columns">
           <%= f.input :category, collection: rb_item_category_options, :include_blank => true %>
