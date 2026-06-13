@@ -632,7 +632,9 @@ ActiveRecord::Schema.define(version: 2026_06_13_162630) do
     t.string "source"
     t.boolean "is_3pp", default: false
     t.text "tags"
+    t.string "privacy", default: "Private", null: false
     t.index ["parent_id"], name: "index_rulebuilder_items_on_parent_id"
+    t.index ["privacy"], name: "index_rulebuilder_items_on_privacy"
     t.index ["resident_id"], name: "index_rulebuilder_items_on_resident_id"
     t.index ["tags"], name: "index_rulebuilder_items_on_tags"
     t.index ["type"], name: "index_rulebuilder_items_on_type"

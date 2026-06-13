@@ -46,9 +46,9 @@ module Rulebuilder
       assert_redirected_to edit_stock_item_path(assigns(:item))
     end
 
-    test "should not show item" do
+    test "should show item when logged out" do
       get :show, params: { id: @item }
-      assert_response 302
+      assert_response :success
     end
 
     test "should show item" do

@@ -2,8 +2,16 @@ module KeysToRulebuilder
   extend ActiveSupport::Concern
 
     def can_show?(current_user, is_admin, record_type)
-      return can_edit?(current_user, is_admin, record_type)
-      return is_admin
+      if respond_to?(:privacy)
+        return true if privacy == "Public"
+        return false if current_user.nil?
+        return true if can_edit?(current_user, is_admin, record_type)
+        return true if privacy == "Residents"
+        return true if privacy == "Friends" && Affiliation.are_affiliates(current_user.resident, self.resident) rescue NoMethodError
+        return is_admin
+      else
+        return can_edit?(current_user, is_admin, record_type)
+      end
     end
 
     def can_edit?(current_user, is_admin, record_type)

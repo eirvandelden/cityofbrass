@@ -3,6 +3,9 @@ require_dependency "rulebuilder/application_controller"
 module Rulebuilder
   class StockItemsController < ItemsController
 
+    skip_before_action :authenticate_user!, only: [:show]
+    skip_before_action :check_user_status,  only: [:show]
+
     before_action :set_type
     before_action :check_authorization, only: [:new, :create, :edit, :update, :destroy, :options]
     before_action :set_item,            only: [:show, :edit, :update, :destroy, :options]

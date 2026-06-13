@@ -5,6 +5,7 @@ resident_one:
   resident: razune
   core_rules: PFRPG
   name: MyString
+  privacy: Private
   publisher: Embers Design Studios
   is_3pp: true
   source: Book of Terniel
@@ -19,6 +20,7 @@ resident_two:
   resident: razune
   core_rules: PFRPG
   name: MyString
+  privacy: Private
   publisher: Embers Design Studios
   is_3pp: true
   source: Book of Terniel
@@ -32,6 +34,7 @@ stock_one:
   type: Rulebuilder::StockItem
   core_rules: PFRPG
   name: MyString
+  privacy: Private
   publisher: Embers Design Studios
   is_3pp: true
   source: Book of Terniel
@@ -45,6 +48,7 @@ stock_two:
   type: Rulebuilder::StockItem
   core_rules: PFRPG
   name: MyString
+  privacy: Private
   publisher: Embers Design Studios
   is_3pp: true
   source: Book of Terniel

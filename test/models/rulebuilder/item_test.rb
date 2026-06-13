@@ -17,5 +17,22 @@ module Rulebuilder
     test "tag_list returns a comma separated list" do
       assert_equal "hello1, world2", rulebuilder_items(:resident_one).tag_list
     end
+
+    test "privacy defaults to Private" do
+      item = Rulebuilder::ResidentItem.new
+      assert_equal 'Private', item.privacy
+    end
+
+    test "can_show? returns true for Public with nil user" do
+      item = rulebuilder_items(:resident_one)
+      item.privacy = 'Public'
+      assert item.can_show?(nil, false, item.type)
+    end
+
+    test "can_show? returns false for Private with nil user" do
+      item = rulebuilder_items(:resident_one)
+      item.privacy = 'Private'
+      assert_not item.can_show?(nil, false, item.type)
+    end
   end
 end
