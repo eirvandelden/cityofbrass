@@ -5,8 +5,8 @@ module Rulebuilder
     include KeysToRulebuilder
     include JsonArrayColumns
 
-    PRIVACY_OPTIONS_FREE = [ 'Private', 'Public' ]
     PRIVACY_OPTIONS = [ 'Private', 'Friends', 'Residents', 'Public' ]
+    PRIVACY_OPTIONS_FREE = PRIVACY_OPTIONS
 
     scope :order_name, -> { order(:name) }
     scope :short, -> { select('id, type, resident_id, name, core_rules, short_description') }

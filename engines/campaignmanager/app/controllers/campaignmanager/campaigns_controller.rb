@@ -77,12 +77,6 @@ module Campaignmanager
       @campaign.resident_id = current_user.resident.id
       @campaign.build_gallery_image_join if @campaign.gallery_image_join.nil?
 
-      if current_user.is_free?
-        unless Campaignmanager::Campaign::PRIVACY_OPTIONS_FREE.include? @campaign.privacy
-          @campaign.privacy = 'invalid'
-        end
-      end
-
       respond_to do |format|
         if @campaign.save
           cm_new_activeplay_virtual_table(@campaign) if @campaign.activeplay.blank?
@@ -96,13 +90,6 @@ module Campaignmanager
     # PATCH/PUT /campaigns/1
     # PATCH/PUT /campaigns/1.json
     def update
-
-      if current_user.is_free?
-        unless Campaignmanager::Campaign::PRIVACY_OPTIONS_FREE.include?(campaign_params[:privacy])
-          params[:campaign][:privacy] = 'invalid'
-        end
-      end
-
       respond_to do |format|
         if @campaign.update(campaign_params)
           requested_active_id = params.dig(:campaign, :active_adventure_id)

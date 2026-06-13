@@ -6,11 +6,7 @@
 
       <div class="row">
         <div class="medium-6 columns">
-          <% if current_user.is_free? %>
-            <%= f.input :privacy, collection: Storybuilder::Adventure::PRIVACY_OPTIONS_FREE, :include_blank => false %>
-          <% else %>
-            <%= f.input :privacy, collection: Storybuilder::Adventure::PRIVACY_OPTIONS %>
-          <% end %>
+          <%= f.input :privacy, collection: Storybuilder::Adventure::PRIVACY_OPTIONS %>
         </div>
         <div class="medium-6 columns text-center">
           <label>Player Handout <span data-tooltip aria-haspopup="true" class="has-tip question-mark" title="This will cause the menu to be suppressed when viewed by anyone other than you."><i class="fa fa-question-circle"></i></span></label>

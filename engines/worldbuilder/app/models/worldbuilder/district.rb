@@ -3,8 +3,8 @@ module Worldbuilder
     include ReservedNames
     include KeysToWorldbuilder
 
-    PRIVACY_OPTIONS_FREE = [ 'Private' ]
     PRIVACY_OPTIONS = [ 'Private', 'Friends', 'Residents', 'Public' ]
+    PRIVACY_OPTIONS_FREE = PRIVACY_OPTIONS
 
     scope :short, -> { select('worldbuilder_districts.id, resident_id, worldbuilder_districts.name, worldbuilder_districts.slug, worldbuilder_districts.short_description, worldbuilder_districts.privacy, worldbuilder_districts.updated_at, worldbuilder_districts.page_label') }
     scope :pick_list, -> { select('worldbuilder_districts.id, worldbuilder_districts.name, worldbuilder_districts.slug') }

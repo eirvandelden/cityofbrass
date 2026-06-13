@@ -71,12 +71,6 @@ module Campaignmanager
         @parent = type_class.find_by_id(@page.parent_id)
       end
 
-      if current_user.is_free?
-        unless Campaignmanager::Campaign::PRIVACY_OPTIONS_FREE.include? @page.privacy
-          @page.privacy = 'invalid'
-        end
-      end
-
       respond_to do |format|
         if @page.save
           format.html { redirect_to sti_edit_page_path(@page), notice: @page.name + ' was successfully created.' }
