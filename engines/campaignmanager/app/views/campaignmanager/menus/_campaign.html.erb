@@ -32,9 +32,9 @@
 
 <% if @campaign.can_edit?(current_user, admin_signed_in?) %>
 <dl class="left-menu show-for-medium-up">
-  <% if @campaign.adventure.present? %>
-  <dd class="<%= 'active' if current_page?("#{storybuilder.polymorphic_path(@campaign.adventure)}/campaign/#{@campaign.id}") %>">
-    <h3><%= link_to 'Adventure', "#{storybuilder.polymorphic_path(@campaign.adventure)}/campaign/#{@campaign.id}", :style => 'display:block;' %></h3>
+  <% if @campaign.active_adventure.present? %>
+  <dd class="<%= 'active' if current_page?("#{storybuilder.polymorphic_path(@campaign.active_adventure)}/campaign/#{@campaign.id}") %>">
+    <h3><%= link_to 'Adventure', "#{storybuilder.polymorphic_path(@campaign.active_adventure)}/campaign/#{@campaign.id}", :style => 'display:block;' %></h3>
   </dd>
   <% end %>
   <dd class="<%= 'active' if page == "GameMasterNote" if local_assigns.has_key? :page %>">

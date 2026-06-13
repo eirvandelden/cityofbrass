@@ -9,10 +9,10 @@
     <%= link_to campaign.district.name, worldbuilder.district_path(campaign.district.slug) %>
   </li>
 <% end %>
-<% if campaign.adventure.present? and campaign.can_edit?(current_user, admin_signed_in?) %>
+<% if campaign.active_adventure.present? and campaign.can_edit?(current_user, admin_signed_in?) %>
   <li>
     <strong>Adventure: </strong>
-    <%= link_to campaign.adventure.name, "#{tcob_path(campaign.adventure)}" %>
+    <%= link_to campaign.active_adventure.name, "#{tcob_path(campaign.active_adventure)}" %>
   </li>
 <% end %>
 <% campaign.features.each do |feature| %>

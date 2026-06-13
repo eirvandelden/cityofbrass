@@ -153,7 +153,7 @@ module Campaignmanager
       end
 
       def set_campaign_for_show
-        @campaign = Campaign.joins(:user).includes([:features, :sections, :player_residents, :adventure, :district]).find_by_id(params_id)
+        @campaign = Campaign.joins(:user).includes([:features, :sections, :player_residents, :active_adventure, :district]).find_by_id(params_id)
         if @campaign.nil?
           render template: 'errors/404', layout: 'layouts/application', status: 404
         end
@@ -213,7 +213,6 @@ module Campaignmanager
           :privacy,
           :core_rules,
           :district_id,
-          :adventure_id,
           :short_description,
           :full_description,
           :name_confirmation,
