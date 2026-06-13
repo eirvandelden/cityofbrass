@@ -118,10 +118,6 @@ module Storybuilder
         @entities = current_user.resident.resident_creatures.where(core_rules: @adventure.core_rules).order_name                          if params[:entity_type] == "resident_creature"
         @entities = Entitybuilder::StockNpc.where(core_rules: @adventure.core_rules).where(privacy: "Residents").order_name               if params[:entity_type] == "stock_npc"
         @entities = Entitybuilder::StockCreature.where(core_rules: @adventure.core_rules).where(privacy: "Residents").order_name          if params[:entity_type] == "stock_creature"
-        if admin_signed_in?
-          @entities = Entitybuilder::ProprietaryNpc.where(core_rules: @adventure.core_rules).where(privacy: "Residents").order_name       if params[:entity_type] == "proprietary_npc"
-          @entities = Entitybuilder::ProprietaryCreature.where(core_rules: @adventure.core_rules).where(privacy: "Residents").order_name  if params[:entity_type] == "proprietary_creature"
-        end
       end
 
       # Only allow a trusted parameter "white list" through.

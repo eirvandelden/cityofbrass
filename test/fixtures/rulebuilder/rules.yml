@@ -92,39 +92,3 @@ stock_two:
   normal: MyText
   special: MyText
   categories: ["One", "Two"]
-
-proprietary_one:
-  type: Rulebuilder::ProprietaryRule
-  core_rules: PFRPG
-  rule_type: Feat
-  is_shared: true
-  name: MyString
-  publisher: Embers Design Studios
-  is_3pp: true
-  source: Book of Terniel
-  tags: ["hello1", "world2"]
-  short_description: MyString
-  full_description: MyText
-  prerequisites: MyString
-  benefit: MyText
-  normal: MyText
-  special: MyText
-  categories: ["One", "Two"]
-
-proprietary_two:
-  type: Rulebuilder::ProprietaryRule
-  core_rules: PFRPG
-  rule_type: Feat
-  is_shared: true
-  name: MyString
-  publisher: Embers Design Studios
-  is_3pp: true
-  source: Book of Terniel
-  tags: ["hello1", "world2"]
-  short_description: MyString
-  full_description: MyText
-  prerequisites: MyString
-  benefit: MyText
-  normal: MyText
-  special: MyText
-  categories: ["One", "Two"]

@@ -14,12 +14,6 @@ module Rulebuilder
       assert_equal [ :core_rules, :rule_type ], rule.errors.attribute_names
     end
 
-    test "proprietary should have the necessary required validators" do
-      rule = ProprietaryRule.new(name: "ProprietaryRuleTest")
-      assert_not rule.valid?
-      assert_equal [ :core_rules, :rule_type ], rule.errors.attribute_names
-    end
-
     test "list helpers return comma separated values" do
       rule = rulebuilder_rules(:resident_one)
 

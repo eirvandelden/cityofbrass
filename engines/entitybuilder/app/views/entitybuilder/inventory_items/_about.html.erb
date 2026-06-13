@@ -9,10 +9,6 @@
       <strong><%= link_to "<i class='fa fa-plus-circle'></i> Stock Item".html_safe, "#{polymorphic_path(@parent_object)}/inventory_items/new?rule_type=stock", :remote => true %></strong>
       <p>Add a Stock Item.</p>
     <% end %>
-    <% if admin_signed_in? %>
-      <strong><%= link_to "<i class='fa fa-plus-circle'></i> Proprietary Item".html_safe, "#{polymorphic_path(@parent_object)}/inventory_items/new?rule_type=proprietary", :remote => true %></strong>
-      <p>Add a Proprietary Item.</p>
-    <% end %>
     <% if @parent_type.include?"resident" %>
       <strong><%= link_to "<i class='fa fa-plus-circle'></i> Resident Item".html_safe, "#{polymorphic_path(@parent_object)}/inventory_items/new", :remote => true %></strong>
       <p>Add an item from your resident list.</p>

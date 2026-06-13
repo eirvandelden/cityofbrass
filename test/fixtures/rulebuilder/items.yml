@@ -53,29 +53,3 @@ stock_two:
   full_description: MyText
   category: MyText
   weight: 9.99
-
-proprietary_one:
-  type: Rulebuilder::ProprietaryItem
-  core_rules: PFRPG
-  name: MyString
-  publisher: Embers Design Studios
-  is_3pp: true
-  source: Book of Terniel
-  tags: ["hello1", "world2"]
-  short_description: MyString
-  full_description: MyText
-  category: MyText
-  weight: 9.99
-
-proprietary_two:
-  type: Rulebuilder::ProprietaryItem
-  core_rules: PFRPG
-  name: MyString
-  publisher: Embers Design Studios
-  is_3pp: true
-  source: Book of Terniel
-  tags: ["hello1", "world2"]
-  short_description: MyString
-  full_description: MyText
-  category: MyText
-  weight: 9.99

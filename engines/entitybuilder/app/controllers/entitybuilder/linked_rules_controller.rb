@@ -133,7 +133,6 @@ module Entitybuilder
       def base_type
         base_type = "Rulebuilder::ResidentRule"
         base_type = "Rulebuilder::StockRule" if @parent_object.type.include?"Stock"
-        base_type = "Rulebuilder::ProprietaryRule" if @parent_object.type.include?"Proprietary"
         return base_type
       end
 
@@ -163,8 +162,6 @@ module Entitybuilder
       def set_rule_options
         if params[:type] == "stock" && CoreRules.stock?(@parent_object.core_rules)
           @rule_options = Rulebuilder::StockRule.basic.order_name.core_rules_filter(@parent_object.core_rules).rule_type_filter(@rule_type).shared
-        elsif params[:type] == "proprietary" && admin_signed_in?
-          @rule_options = Rulebuilder::ProprietaryRule.basic.order_name.core_rules_filter(@parent_object.core_rules).rule_type_filter(@rule_type).shared
         elsif params[:type] == "resident"
           @rule_options = @parent_object.resident.resident_rules.basic.core_rules_filter(@parent_object.core_rules).rule_type_filter(@rule_type).shared
         end

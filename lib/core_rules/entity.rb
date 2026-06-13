@@ -91,7 +91,6 @@ module CoreRules
 
         base_type = "Rulebuilder::ResidentRule"
         base_type = "Rulebuilder::StockRule" if entity.type.include?"Stock"
-        base_type = "Rulebuilder::ProprietaryRule" if entity.type.include?"Proprietary"
 
         rule = Rulebuilder::Rule.new
         rule.type = base_type

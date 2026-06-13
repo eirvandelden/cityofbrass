@@ -8,12 +8,6 @@ module Rulebuilder
       assert_equal [ :core_rules, :resident_id ], spell.errors.attribute_names
     end
 
-    test "proprietary should have the necessary required validators" do
-      spell = ProprietarySpell.new(name: "ProprietarySpellTest")
-      assert_not spell.valid?
-      assert_equal [ :core_rules ], spell.errors.attribute_names
-    end
-
     test "list helpers return comma separated values" do
       spell = rulebuilder_spells(:resident_one)
 

@@ -3,7 +3,7 @@ Gallery::Engine.routes.draw do
   scope '/pkr/' do
     get 'resident'    => 'resident_images#pkr',    as: :resident_images_pkr
     get 'stock'       => 'stock_images#pkr',       as: :stock_images_pkr
-    get 'proprietary' => 'proprietary_images#pkr', as: :proprietary_images_pkr
+    get 'admin_stock' => 'admin/stock_images#pkr', as: :admin_stock_images_pkr
     get 'map'         => 'map_images#pkr',         as: :map_images_pkr
   end
 
@@ -19,8 +19,10 @@ Gallery::Engine.routes.draw do
     resources :stock_images, path: :images, concerns: [:swoosh]
   end
 
-  scope '/proprietary/' do
-    resources :proprietary_images, path: :images, concerns: [:swoosh]
+  namespace :admin do
+    scope '/stock/' do
+      resources :stock_images, path: :images, concerns: [:swoosh]
+    end
   end
 
   scope '/map/' do
