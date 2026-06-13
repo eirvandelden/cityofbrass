@@ -20,11 +20,11 @@ module Importer
     private
 
     def valid_detected_kind
-      errors.add(:detected_kind, "is not valid") if detected_kind.present? && KINDS.exclude?(detected_kind)
+      errors.add(:detected_kind, :invalid) if detected_kind.present? && KINDS.exclude?(detected_kind)
     end
 
     def valid_override_kind
-      errors.add(:override_kind, "is not valid") if override_kind.present? && KINDS.exclude?(override_kind)
+      errors.add(:override_kind, :invalid) if override_kind.present? && KINDS.exclude?(override_kind)
     end
   end
 end
