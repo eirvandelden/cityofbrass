@@ -56,15 +56,15 @@ module Importer
     end
 
     def valid_mode
-      errors.add(:mode, "is not valid") if mode.present? && MODES.exclude?(mode)
+      errors.add(:mode, :invalid) if mode.present? && MODES.exclude?(mode)
     end
 
     def valid_status
-      errors.add(:status, "is not valid") if status.present? && STATUSES.exclude?(status)
+      errors.add(:status, :invalid) if status.present? && STATUSES.exclude?(status)
     end
 
     def resident_required_for_resident_content
-      errors.add(:resident, "can't be blank") if mode == RESIDENT_CONTENT && resident.blank?
+      errors.add(:resident, :blank) if mode == RESIDENT_CONTENT && resident.blank?
     end
   end
 end

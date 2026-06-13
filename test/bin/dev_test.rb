@@ -27,6 +27,12 @@ class BinDevTest < ActiveSupport::TestCase
     assert_includes deploy_config, "cmd: bundle exec sidekiq -c 8 -q imports -q default -q mailers -q paperclip"
   end
 
+  test "root procfile worker handles importer jobs" do
+    procfile = Rails.root.join("Procfile").read
+
+    assert_includes procfile, "worker: bundle exec sidekiq -c 8 -q imports -q default -q mailers -q paperclip"
+  end
+
   test "development redis defaults use the app redis database" do
     sidekiq_initializer = Rails.root.join("config/initializers/sidekiq.rb").read
     redis_initializer = Rails.root.join("config/initializers/redis.rb").read

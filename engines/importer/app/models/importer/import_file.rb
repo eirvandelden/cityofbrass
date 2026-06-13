@@ -19,11 +19,11 @@ module Importer
     private
 
     def valid_kind
-      errors.add(:kind, "is not valid") if kind.present? && KINDS.exclude?(kind)
+      errors.add(:kind, :invalid) if kind.present? && KINDS.exclude?(kind)
     end
 
     def valid_parse_status
-      errors.add(:parse_status, "is not valid") if parse_status.present? && PARSE_STATUSES.exclude?(parse_status)
+      errors.add(:parse_status, :invalid) if parse_status.present? && PARSE_STATUSES.exclude?(parse_status)
     end
   end
 end

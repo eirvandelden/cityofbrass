@@ -17,7 +17,7 @@ module Importer
     private
 
     def valid_outcome
-      errors.add(:outcome, "is not valid") if outcome.present? && OUTCOMES.exclude?(outcome)
+      errors.add(:outcome, :invalid) if outcome.present? && OUTCOMES.exclude?(outcome)
     end
   end
 end

@@ -18,6 +18,6 @@ class ImporterImportTest < ActiveSupport::TestCase
     import = Importer::Import.new(mode: "shared_library", source: "game_master_5_xml", status: "queued")
 
     assert_not import.valid?
-    assert_includes import.errors[:mode], "is not valid"
+    assert_equal :invalid, import.errors.details[:mode].first[:error]
   end
 end
