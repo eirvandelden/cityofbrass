@@ -9,5 +9,17 @@ module Storybuilder
       assert_equal [:privacy, :resident_id], adventure.errors.keys
     end
 
+    test "can_show? returns true for Public privacy with nil user" do
+      adventure = storybuilder_adventures(:resident_one)
+      adventure.privacy = 'Public'
+      assert adventure.can_show?(nil, false)
+    end
+
+    test "can_show? returns false for Private privacy with nil user" do
+      adventure = storybuilder_adventures(:resident_one)
+      adventure.privacy = 'Private'
+      assert_not adventure.can_show?(nil, false)
+    end
+
   end
 end

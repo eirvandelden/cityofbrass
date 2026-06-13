@@ -3,6 +3,9 @@ require_dependency "storybuilder/application_controller"
 module Storybuilder
   class ResidentAdventuresController < AdventuresController
 
+    skip_before_action :authenticate_user!, only: [:show, :campaign]
+    skip_before_action :check_user_status,  only: [:show, :campaign]
+
     before_action :set_type
     before_action :set_adventure,           only: [:edit, :update, :destroy, :options]
     before_action :set_parent_options,      only: [:new, :create, :edit, :update]
