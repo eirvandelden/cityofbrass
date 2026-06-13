@@ -2,6 +2,7 @@ module KeysToEntitybuilder
   extend ActiveSupport::Concern
 
     def can_show?(current_user, is_admin, record_type)
+      return true if privacy == 'Public'
       return false if current_user.nil?
       return true if can_edit?(current_user, is_admin, record_type)
       return true if privacy == 'Residents'
@@ -12,6 +13,7 @@ module KeysToEntitybuilder
     end
 
     def can_sheet?(current_user, is_admin, record_type)
+      return true if sheet_privacy == 'Public'
       return false if current_user.nil?
       return true if can_edit?(current_user, is_admin, record_type)
       return true if sheet_privacy == 'Residents'

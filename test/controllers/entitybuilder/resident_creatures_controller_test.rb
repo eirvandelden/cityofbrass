@@ -58,9 +58,21 @@ module Entitybuilder
       assert_redirected_to "/billing/subscriptions"
     end
 
-    test "should not show creature" do
+    test "should not show residents creature when logged out" do
       get :show, params: { id: @creature }
-      assert_response 302
+      assert_response 403
+    end
+
+    test "should show public creature when logged out" do
+      @creature.update!(privacy: 'Public')
+      get :show, params: { id: @creature }
+      assert_response :success
+    end
+
+    test "should not show private creature when logged out" do
+      @creature.update!(privacy: 'Private')
+      get :show, params: { id: @creature }
+      assert_response 403
     end
 
     test "should show creature" do
