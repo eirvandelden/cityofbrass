@@ -2,7 +2,7 @@ module KeysToRulebuilder
   extend ActiveSupport::Concern
 
     def can_show?(current_user, is_admin, record_type)
-      if respond_to?(:privacy)
+      if self.class.const_defined?(:PRIVACY_OPTIONS)
         return true if privacy == "Public"
         return false if current_user.nil?
         return true if can_edit?(current_user, is_admin, record_type)
