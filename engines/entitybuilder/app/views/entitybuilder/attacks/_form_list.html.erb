@@ -1,4 +1,4 @@
-<%= form_for @parent_object, :url => send("#{@parent_type}_attacks_path"), :remote => true, :html => {"data-sortable" => ''} do |f| %>
+<%= form_for @parent_object, :url => route_child_path(@parent_object, :attacks), :remote => true, :html => {"data-sortable" => ''} do |f| %>
   <fieldset>
     <div class="row inline">
       <div class="small-8 columns">
@@ -23,8 +23,8 @@
           <div class="small-4 columns text-right">
             <h3>
               <span class="right cogs125">
-              <%= link_to "<i class='fa fa-cogs'></i>".html_safe, "#{polymorphic_path(@parent_object)}/attacks/#{attack.object.id}/edit", class: "iconlink", :remote => true %>
-              <%= link_to "<i class='fa fa-times-circle'></i>".html_safe, "#{polymorphic_path(@parent_object)}/attacks/#{attack.object.id}", class: "iconlink delete", method: :delete, data: { confirm: 'Are you sure?' }, :remote => true %>
+              <%= link_to "<i class='fa fa-cogs'></i>".html_safe, "#{route_path(@parent_object)}/attacks/#{attack.object.id}/edit", class: "iconlink", :remote => true %>
+              <%= link_to "<i class='fa fa-times-circle'></i>".html_safe, "#{route_path(@parent_object)}/attacks/#{attack.object.id}", class: "iconlink delete", method: :delete, data: { confirm: 'Are you sure?' }, :remote => true %>
               </span>
             </h3>
           </div>

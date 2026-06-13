@@ -15,7 +15,7 @@
         <% bonus = skill.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) %>
           <tr class="roll">
             <td class="<%= "color-c5" unless skill.class_skill? or skill.proficient %>">
-              <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{polymorphic_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
+              <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{route_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
             </td>
             <td class="text-center roll">
               <% dice = skill.game_dice(@parent_object.core_rules) %>
@@ -36,7 +36,7 @@
       <% bonus = skill.calculated_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) %>
         <tr class="roll">
           <td class="<%= "color-c5" unless skill.class_skill? or skill.proficient %>">
-            <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{polymorphic_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
+            <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{route_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
           </td>
           <td class="text-center roll">
             <% dice = skill.game_dice(@parent_object.core_rules) %>

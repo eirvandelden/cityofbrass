@@ -9,7 +9,7 @@
       <tr>
         <td><%= currency.name %></td>
         <td class="name text-right"><%= number_with_delimiter(currency.quantity) %></td>
-        <td class="name text-center"><%= link_to "<i class='fa fa-cogs'></i>".html_safe, "#{polymorphic_path(@parent_object)}/currencies/#{currency.id}/edit_sheet", "data-reveal-id" => "currency_modal", class: "cogs125", :remote => true if @clickable %></td>
+        <td class="name text-center"><%= link_to "<i class='fa fa-cogs'></i>".html_safe, "#{route_path(@parent_object)}/currencies/#{currency.id}/edit_sheet", "data-reveal-id" => "currency_modal", class: "cogs125", :remote => true if @clickable %></td>
       </tr>
     <% end %>
   </tbody>

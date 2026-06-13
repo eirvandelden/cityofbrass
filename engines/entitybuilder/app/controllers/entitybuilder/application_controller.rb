@@ -5,8 +5,13 @@
 class Entitybuilder::ApplicationController < ApplicationController
   before_action :authenticate_user!
   before_action :check_user_status
+  before_action :set_route_namespace
 
   private
+    def set_route_namespace
+      @route_namespace = :admin if request.path.include?("/admin/stock/")
+    end
+
     def set_parent_type
       @parent_type = parent_type
     end

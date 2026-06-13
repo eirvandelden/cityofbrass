@@ -8,7 +8,7 @@
     <% @parent_object.ability_scores.each do |ability_score| %>
       <tr class="roll">
         <td>
-          <%= link_to_if (@clickable && ability_score.description.present?), ability_score.name.upcase[0..2], "#{polymorphic_path(@parent_object)}/ability_scores/#{ability_score.id}", "data-reveal-id" => "ability_score_modal", :remote => true %>
+          <%= link_to_if (@clickable && ability_score.description.present?), ability_score.name.upcase[0..2], "#{route_path(@parent_object)}/ability_scores/#{ability_score.id}", "data-reveal-id" => "ability_score_modal", :remote => true %>
         </td>
         <td class="text-center"><%= ability_score.calculated_score(@parent_object.modifiers) %></td>
         <td class="text-center">
