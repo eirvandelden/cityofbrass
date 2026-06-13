@@ -4,6 +4,7 @@ module Rulebuilder
   module Admin
     class StockItemsController < ItemsController
       before_action :set_type
+      before_action :set_route_namespace
       before_action :check_authorization, only: [ :index, :new, :create, :edit, :update, :destroy, :options ]
       before_action :set_item,            only: [ :show, :edit, :update, :destroy, :options ]
       before_action :set_items,           only: [ :index ]
@@ -51,6 +52,10 @@ module Rulebuilder
       end
 
       private
+        def set_route_namespace
+          @route_namespace = :admin
+        end
+
         def set_type
           @type = 'StockItem'
         end

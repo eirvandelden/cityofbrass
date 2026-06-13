@@ -7,7 +7,7 @@
       <% spells.each do |spell| %>
       <div class="row">
         <div class="small-12 columns">
-          <%= link_to spell.name, polymorphic_path(spell) %><%= " - #{spell.short_description}" if spell.short_description.present? %>
+          <%= link_to spell.name, route_path(spell) %><%= " - #{spell.short_description}" if spell.short_description.present? %>
         </div>
       </div>
       <% end %>

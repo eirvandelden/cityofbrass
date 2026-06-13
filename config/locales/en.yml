@@ -25,3 +25,28 @@ en:
     license:
       attribution:
         aria_label: "RPG system attribution"
+    navigation:
+      manage_stock:
+        game_master: "Game Master"
+        rule_builder: "Rule Builder"
+        creatures: "Creatures"
+        npcs: "NPCs"
+        rules: "Rules"
+        spells: "Spells"
+        items: "Items"
+        images: "Images"
+    topbar:
+      manage_stock:
+        title: "Manage Stock"
+    offcanvas:
+      manage_stock:
+        title: "Manage Stock"
+        back: "Back"
+  gallery:
+    images:
+      image_modal:
+        title: "Images"
+        my_images: "My Images"
+        stock_images: "Stock Images"
+        stock_images_admin: "Stock Images (Admin)"
+        map_images: "Map Images"

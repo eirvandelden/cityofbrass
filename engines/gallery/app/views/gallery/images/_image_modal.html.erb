@@ -4,15 +4,15 @@
 
 <div id="pkrGalleryModal" class="reveal-modal" data-reveal>
   <div>
-    <h2><i class="icon-images"></i> Images</h2>
+    <h2><i class="icon-images"></i> <%= t('.title') %></h2>
     <hr class="faded">
     <div class="reveal-modal-scroll">
-      <i class="icon-images"></i> <%= link_to "My Images", gallery.resident_images_pkr_path, :remote => true %> |
-      <i class="icon-images"></i> <%= link_to "Stock Images", gallery.stock_images_pkr_path, :remote => true %> |
+      <i class="icon-images"></i> <%= link_to t('.my_images'), gallery.resident_images_pkr_path, :remote => true %> |
+      <i class="icon-images"></i> <%= link_to t('.stock_images'), gallery.stock_images_pkr_path, :remote => true %> |
       <% if admin_signed_in? %>
-        <i class="icon-images"></i> <%= link_to "Stock Images (Admin)", gallery.admin_stock_images_pkr_path, :remote => true %> |
+        <i class="icon-images"></i> <%= link_to t('.stock_images_admin'), gallery.admin_stock_images_pkr_path, :remote => true %> |
       <% end %>
-      <i class="icon-images"></i> <%= link_to "Map Images", gallery.map_images_pkr_path, :remote => true %> |
+      <i class="icon-images"></i> <%= link_to t('.map_images'), gallery.map_images_pkr_path, :remote => true %> |
     </div>
     <div>
       <span id="show_placeholder"></span>

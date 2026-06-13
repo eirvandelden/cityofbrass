@@ -30,6 +30,8 @@ module Gallery
         get :index
         assert_response :success
         assert_not_nil assigns(:images)
+        assert_select "a[href='#{new_admin_stock_image_path}']"
+        assert_select "a[href='#{edit_admin_stock_image_path(@image)}']"
       end
 
       test "should not get new" do
@@ -93,6 +95,7 @@ module Gallery
         sign_in @admin
         get :edit, params: { id: @image }
         assert_response :success
+        assert_select "form[action='#{admin_stock_image_path(@image)}']"
       end
 
       test "should not update image" do

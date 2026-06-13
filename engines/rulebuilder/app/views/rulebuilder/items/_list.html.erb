@@ -7,7 +7,7 @@
       <% items.each do |item| %>
       <div class="row">
         <div class="small-12 columns">
-          <%= link_to item.name, polymorphic_path(item) %><%= " - #{item.short_description}" if item.short_description.present? %>
+          <%= link_to item.name, route_path(item) %><%= " - #{item.short_description}" if item.short_description.present? %>
         </div>
       </div>
       <% end %>

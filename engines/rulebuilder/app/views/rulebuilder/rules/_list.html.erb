@@ -16,7 +16,7 @@
 
                 <div class="row">
                   <div class="small-12 columns">
-                    <%= link_to rule.name, polymorphic_path(rule) %><%= " - #{rule.short_description}" if rule.short_description.present? %>
+                    <%= link_to rule.name, route_path(rule) %><%= " - #{rule.short_description}" if rule.short_description.present? %>
                   </div>
                 </div>
 

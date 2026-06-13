@@ -14,7 +14,7 @@
         :icon => 'icon-price-tag',
         :main => 'Items',
         :sub => @sub,
-        :add_link  => new_polymorphic_path(@type.tableize.singularize),
+        :add_link  => new_route_collection_path(@type.tableize.singularize),
         :can_auth => can_add(current_user, @type)
       }
     %>
@@ -22,7 +22,7 @@
 
     <div class="row">
       <div class="small-10 small-centered columns">
-        <%= render 'layouts/form/search_with_rules', url: rulebuilder.polymorphic_path(@type.tableize) %>
+        <%= render 'layouts/form/search_with_rules', url: route_collection_path(@type.tableize) %>
       </div>
     </div>
 
