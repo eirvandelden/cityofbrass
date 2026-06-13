@@ -13,8 +13,6 @@
         <% if f.object.new_record? %>
           <% if params[:rule_type] == "stock" && CoreRules.stock?(@parent_object.core_rules) %>
             <%= f.association :spell, label: 'Name', collection: Rulebuilder::StockSpell.basic.order_name.where(core_rules: @parent_object.core_rules), label_method: :name, value_method: :id, include_blank: true %>
-          <% elsif params[:rule_type] == "proprietary" && admin_signed_in? %>
-            <%= f.association :spell, label: 'Name', collection: Rulebuilder::ProprietarySpell.basic.order_name.where(core_rules: @parent_object.core_rules), label_method: :name, value_method: :id, include_blank: true %>
           <% else %>
           <%= f.association :spell, label: 'Name', collection: @parent_object.resident.resident_spells.where(core_rules: @parent_object.core_rules), label_method: :name, value_method: :id, include_blank: true %>
           <% end %>

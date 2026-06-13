@@ -14,12 +14,6 @@ module Rulebuilder
       assert_equal [:core_rules], item.errors.keys
     end
 
-    test "proprietary should have the necessary required validators" do
-      item = ProprietaryItem.new(name: "ProprietaryItemTest")
-      assert_not item.valid?
-      assert_equal [:core_rules], item.errors.keys
-    end
-
     test "tag_list returns a comma separated list" do
       assert_equal "hello1, world2", rulebuilder_items(:resident_one).tag_list
     end

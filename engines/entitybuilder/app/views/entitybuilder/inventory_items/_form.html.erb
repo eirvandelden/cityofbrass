@@ -13,8 +13,6 @@
         <% if f.object.new_record? %>
           <% if params[:rule_type] == "stock" && CoreRules.stock?(@parent_object.core_rules) %>
             <%= f.association :item, label: 'Name', collection: Rulebuilder::StockItem.basic.order_name.where(core_rules: @parent_object.core_rules), label_method: :name, value_method: :id, :include_blank => true %>
-          <% elsif params[:rule_type] == "proprietary" && admin_signed_in? %>
-            <%= f.association :item, label: 'Name', collection: Rulebuilder::ProprietaryItem.basic.order_name.where(core_rules: @parent_object.core_rules), label_method: :name, value_method: :id, :include_blank => true %>
           <% else %>
           <%= f.association :item, label: 'Name', collection: @parent_object.resident.resident_items.where(core_rules: @parent_object.core_rules), label_method: :name, value_method: :id, :include_blank => true %>
           <% end %>

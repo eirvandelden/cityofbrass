@@ -9,9 +9,6 @@ module Entitybuilder
         ['fa fa-paw','StockCreature'],
         ['fa fa-male','StockNpc'],
 
-        ['fa fa-paw','ProprietaryCreature'],
-        ['fa fa-male','ProprietaryNpc'],
-
         ['fa fa-shield','ResidentCharacter'],
         ['fa fa-paw','ResidentCreature'],
         ['fa fa-male','ResidentNpc']

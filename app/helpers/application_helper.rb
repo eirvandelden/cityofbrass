@@ -52,7 +52,6 @@ module ApplicationHelper
       base_link = record.class.to_s.underscore
       record_type = "resident"
       record_type = "stock" if base_link.include?("stock")
-      record_type = "proprietary" if base_link.include?("proprietary")
       link_type = 'id' if base_link.include?("entitybuilder")
 
       if base_link.include?("worldbuilder")

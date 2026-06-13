@@ -18,14 +18,6 @@ stock_two:
   type: Gallery::StockImage
   name: MyString
 
-proprietary_one:
-  type: Gallery::ProprietaryImage
-  name: MyString
-
-proprietary_two:
-  type: Gallery::ProprietaryImage
-  name: MyString
-
 map_one:
   type: Gallery::MapImage
   name: MyString

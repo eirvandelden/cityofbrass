@@ -10,7 +10,7 @@
       <i class="icon-images"></i> <%= link_to "My Images", gallery.resident_images_pkr_path, :remote => true %> |
       <i class="icon-images"></i> <%= link_to "Stock Images", gallery.stock_images_pkr_path, :remote => true %> |
       <% if admin_signed_in? %>
-        <i class="icon-images"></i> <%= link_to "Proprietary Images", gallery.proprietary_images_pkr_path, :remote => true %> |
+        <i class="icon-images"></i> <%= link_to "Stock Images (Admin)", gallery.admin_stock_images_pkr_path, :remote => true %> |
       <% end %>
       <i class="icon-images"></i> <%= link_to "Map Images", gallery.map_images_pkr_path, :remote => true %> |
     </div>
