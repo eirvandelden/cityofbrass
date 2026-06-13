@@ -4,6 +4,7 @@ module Entitybuilder
   module Admin
     class StockCreaturesController < EntitiesController
       before_action :set_type
+      before_action :set_route_namespace
       before_action :check_authorization,  only: [ :index, :new, :create, :edit, :update, :update_notes, :destroy, :options ]
       before_action :set_entity,           only: [ :edit, :update, :update_notes, :destroy, :options ]
       before_action :set_entity_for_show,  only: [ :show, :card_summary ]
@@ -65,6 +66,10 @@ module Entitybuilder
       end
 
       private
+        def set_route_namespace
+          @route_namespace = :admin
+        end
+
         def set_type
           @type = 'StockCreature'
         end

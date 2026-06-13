@@ -3,7 +3,7 @@
 <% content_for :breadcrumb do %>
   <%=  breadcrumb [
     { type_array[0] => nil },
-    { type_array[1] => polymorphic_path(@type.tableize) },
+    { type_array[1] => route_collection_path(@type.tableize) },
     { "New #{type_array[1].singularize}" => nil }
   ] %>
 <% end %>
@@ -13,12 +13,12 @@
     <%= render :partial => 'menus/manage',
       :locals => {
         :active => 'details',
-        :index_link => polymorphic_path(@type.tableize)
+        :index_link => route_collection_path(@type.tableize)
       } %>
   </div>
 
   <div class="medium-9 large-10 columns" id="brass_form">
-    <%= simple_form_for @entity do |f| %>
+    <%= simple_form_for [@route_namespace, @entity].compact do |f| %>
       <%= render :partial => 'form', :locals => { :f => f } %>
     <% end %>
   </div>

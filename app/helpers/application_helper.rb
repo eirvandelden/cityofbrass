@@ -16,6 +16,30 @@ module ApplicationHelper
     false
   end
 
+  def route_target(record)
+    [ @route_namespace, record ].compact
+  end
+
+  def route_path(record)
+    polymorphic_path(route_target(record))
+  end
+
+  def edit_route_path(record)
+    edit_polymorphic_path(route_target(record))
+  end
+
+  def route_collection_path(route_name)
+    polymorphic_path(namespaced_route_name(route_name))
+  end
+
+  def new_route_collection_path(route_name)
+    new_polymorphic_path(namespaced_route_name(route_name))
+  end
+
+  def namespaced_route_name(route_name)
+    [ @route_namespace, route_name ].compact.join("_")
+  end
+
   def active_menu_item(menu_item, page=nil, menu_link=nil)
     return 'active' if !page.nil? && menu_item.id==page.menu_item_id
     return 'active' if current_page?(menu_link)

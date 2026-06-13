@@ -116,11 +116,15 @@ Entitybuilder::Engine.routes.draw do
     resources :stock_npcs,            path: :npcs,       concerns: [:entity_core, :profile, :sheet, :card]
   end
 
-  namespace :admin do
-    scope '/stock/' do
-      resources :stock_creatures, path: :creatures,  concerns: [:entity_core, :profile, :sheet, :card]
-      resources :stock_npcs,      path: :npcs,       concerns: [:entity_core, :profile, :sheet, :card]
-    end
+  scope '/admin/stock/', as: :admin do
+    resources :stock_creatures,
+              path: :creatures,
+              controller: 'admin/stock_creatures',
+              concerns: [:entity_core, :profile, :sheet, :card]
+    resources :stock_npcs,
+              path: :npcs,
+              controller: 'admin/stock_npcs',
+              concerns: [:entity_core, :profile, :sheet, :card]
   end
 
   resources :campaign_joins, only: [:destroy]

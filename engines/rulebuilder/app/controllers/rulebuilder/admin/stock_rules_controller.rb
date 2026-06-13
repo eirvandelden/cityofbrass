@@ -4,6 +4,7 @@ module Rulebuilder
   module Admin
     class StockRulesController < RulesController
       before_action :set_type
+      before_action :set_route_namespace
       before_action :check_authorization, only: [ :index, :new, :create, :edit, :update, :destroy, :options ]
       before_action :set_rule,            only: [ :show, :edit, :update, :destroy, :options ]
       before_action :set_rules,           only: [ :index ]
@@ -51,12 +52,16 @@ module Rulebuilder
       end
 
       private
+        def set_route_namespace
+          @route_namespace = :admin
+        end
+
         def set_type
           @type = 'StockRule'
         end
 
         def set_rules
-          @rules = StockRule.short.order_name.shared.search(params[:search]).core_rules_filter(params[:core_rules_filter]).rule_type_filter(params[:rule_type]).page(params[:page]).per(100)
+          @rules = StockRule.short.order_name.shared.search(params[:search]).core_rules_filter(params[:core_rules]).rule_type_filter(params[:rule_type]).page(params[:page]).per(100)
         end
 
         def set_rule

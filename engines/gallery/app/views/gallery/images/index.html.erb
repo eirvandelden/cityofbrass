@@ -17,7 +17,7 @@
       :main => title,
       :sub => @sub,
       :icon => 'icon-images',
-      :add_link => new_polymorphic_path(@type.tableize.singularize),
+      :add_link => new_route_collection_path(@type.tableize.singularize),
       :can_auth => can_add(current_user, @type)
     }
     %>
@@ -33,16 +33,16 @@
           <li>
             <div class="row">
               <div class="medium-10 columns">
-                <h3><%= link_to image.name, polymorphic_path(image) %></h3>
+                <h3><%= link_to image.name, route_path(image) %></h3>
               </div>
               <div class="medium-2 columns text-right">
-                <h3><% if image.can_edit?(current_user, admin_signed_in?, @type) %><%= link_to "<i class='fa fa-cogs'></i>".html_safe, edit_polymorphic_path(image), class: "cogs125" %><% end %></h3>
+                <h3><% if image.can_edit?(current_user, admin_signed_in?, @type) %><%= link_to "<i class='fa fa-cogs'></i>".html_safe, edit_route_path(image), class: "cogs125" %><% end %></h3>
               </div>
             </div>
           </li>
           <li class="text-center">
             <% if image.file? %>
-            <%= link_to image_tag(image.file.url(:thumb), :alt => image.name), image %>
+            <%= link_to image_tag(image.file.url(:thumb), :alt => image.name), route_path(image) %>
             <% end %>
           </li>
         </ul>

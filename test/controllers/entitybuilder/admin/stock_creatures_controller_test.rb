@@ -31,6 +31,8 @@ module Entitybuilder
         get :index
         assert_response :success
         assert_not_nil assigns(:entities)
+        assert_select "a[href='#{new_admin_stock_creature_path}']"
+        assert_select "a[href='#{edit_admin_stock_creature_path(@creature)}']"
       end
 
       test "should not get new" do
@@ -92,6 +94,19 @@ module Entitybuilder
         sign_in @admin
         get :edit, params: { id: @creature }
         assert_response :success
+        assert_select "form[action='#{admin_stock_creature_path(@creature)}']"
+      end
+
+      test "should route admin nested resources to existing controllers" do
+        assert_recognizes(
+          {
+            controller: "entitybuilder/descriptors",
+            action: "index",
+            stock_creature_id: @creature.id.to_s
+          },
+          "/admin/stock/creatures/#{@creature.id}/descriptors",
+        )
+        assert_equal "/eb/admin/stock/creatures/#{@creature.id}/descriptors", admin_stock_creature_descriptors_path(@creature)
       end
 
       test "should not update creature" do

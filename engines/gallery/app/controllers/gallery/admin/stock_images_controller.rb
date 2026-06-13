@@ -4,6 +4,7 @@ module Gallery
   module Admin
     class StockImagesController < ImagesController
       before_action :set_type
+      before_action :set_route_namespace
       before_action :check_authorization, only: [ :index, :show, :new, :create, :edit, :update, :destroy ]
       before_action :set_image,           only: [ :show, :edit, :update, :destroy, :swoosh ]
       before_action :set_images,          only: [ :index ]
@@ -39,6 +40,10 @@ module Gallery
       end
 
       private
+        def set_route_namespace
+          @route_namespace = :admin
+        end
+
         def set_type
           @type = 'StockImage'
         end

@@ -30,6 +30,24 @@ module Rulebuilder
         get :index
         assert_response :success
         assert_not_nil assigns(:rules)
+        assert_select "a[href='#{new_admin_stock_rule_path}']"
+        assert_select "a[href='#{admin_stock_rule_path(@rule)}']"
+      end
+
+      test "should filter index by core rules" do
+        Rulebuilder::StockRule.create!(
+          core_rules: "Fate Core",
+          rule_type: "Stunt",
+          is_shared: true,
+          name: "Different ruleset"
+        )
+
+        sign_in @user
+        sign_in @admin
+        get :index, params: { core_rules: "PFRPG" }
+
+        assert_response :success
+        assert_equal [ "PFRPG" ], assigns(:rules).map(&:core_rules).uniq
       end
 
       test "should not get new" do
@@ -82,6 +100,7 @@ module Rulebuilder
         sign_in @admin
         get :edit, params: { id: @rule }
         assert_response :success
+        assert_select "form[action='#{admin_stock_rule_path(@rule)}']"
       end
 
       test "should not update rule" do
