@@ -4,4 +4,19 @@ export REDIS_URL="${REDIS_URL:-redis://localhost:6379/1}"
 export PORT="${PORT:-3000}"
 
 bundle exec sidekiq -c 8 -q imports -q default -q mailers -q paperclip &
-exec bin/rails server "$@"
+sidekiq_pid=$!
+
+cleanup() {
+  if kill -0 "$sidekiq_pid" 2>/dev/null; then
+    kill "$sidekiq_pid" 2>/dev/null || true
+    wait "$sidekiq_pid" 2>/dev/null || true
+  fi
+}
+
+trap 'status=$?; cleanup; exit "$status"' EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
+
+bin/rails server "$@" &
+rails_pid=$!
+wait "$rails_pid"
