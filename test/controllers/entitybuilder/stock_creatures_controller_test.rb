@@ -62,9 +62,9 @@ module Entitybuilder
       assert_redirected_to edit_stock_creature_path(assigns(:entity))
     end
 
-    test "should not show creature" do
+    test "should not show residents creature when logged out" do
       get :show, params: { id: @creature }
-      assert_response 302
+      assert_response 403
     end
 
     test "should show creature" do

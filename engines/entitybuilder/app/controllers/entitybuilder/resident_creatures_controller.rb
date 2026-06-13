@@ -3,6 +3,9 @@ require_dependency "entitybuilder/application_controller"
 module Entitybuilder
   class ResidentCreaturesController < EntitiesController
 
+    skip_before_action :authenticate_user!, only: [:show, :card_summary, :profile, :sheet, :card]
+    skip_before_action :check_user_status,  only: [:show, :card_summary, :profile, :sheet, :card]
+
     before_action :set_type
     before_action :set_entity,          only: [:edit, :update, :update_notes, :notes, :destroy, :options]
     before_action :set_entity_for_show, only: [:show, :card_summary]

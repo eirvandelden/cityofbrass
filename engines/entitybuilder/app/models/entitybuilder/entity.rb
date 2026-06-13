@@ -5,7 +5,7 @@ module Entitybuilder
     include KeysToEntitybuilder
     include JsonArrayColumns
 
-    PRIVACY_OPTIONS = [ 'Private', 'Friends', 'Residents' ]
+    PRIVACY_OPTIONS = [ 'Private', 'Friends', 'Residents', 'Public' ]
     NULL_ATTRS = %w[ ]
 
     scope :short, -> { select('id, type, resident_id, name, short_description, core_rules, privacy, sheet_privacy') }
