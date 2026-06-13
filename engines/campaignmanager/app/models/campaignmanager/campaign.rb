@@ -5,9 +5,9 @@ module Campaignmanager
 
     PRIVACY_OPTIONS_FREE = [ 'Private' ]
     PRIVACY_OPTIONS = [ 'Private', 'Friends', 'Residents', 'Public' ]
-    NULL_ATTRS = %w[ district_id adventure_id ]
+    NULL_ATTRS = %w[ district_id ]
 
-    scope :short, -> { select('campaignmanager_campaigns.id, campaignmanager_campaigns.resident_id, campaignmanager_campaigns.core_rules, campaignmanager_campaigns.district_id, campaignmanager_campaigns.adventure_id, campaignmanager_campaigns.name, campaignmanager_campaigns.privacy, campaignmanager_campaigns.short_description, campaignmanager_campaigns.page_label, campaignmanager_campaigns.updated_at') }
+    scope :short, -> { select('campaignmanager_campaigns.id, campaignmanager_campaigns.resident_id, campaignmanager_campaigns.core_rules, campaignmanager_campaigns.district_id, campaignmanager_campaigns.name, campaignmanager_campaigns.privacy, campaignmanager_campaigns.short_description, campaignmanager_campaigns.page_label, campaignmanager_campaigns.updated_at') }
     scope :order_name, -> { order(:name) }
     scope :order_updated_at, -> { order(Arel.sql('campaignmanager_campaigns.updated_at desc')) }
 
@@ -22,10 +22,6 @@ module Campaignmanager
     belongs_to :district,
             -> { select('worldbuilder_districts.id, worldbuilder_districts.name, worldbuilder_districts.slug') },
             class_name: "Worldbuilder::District"
-
-    belongs_to :adventure,
-            -> { select('storybuilder_adventures.id, storybuilder_adventures.name, storybuilder_adventures.slug, storybuilder_adventures.type') },
-            class_name: "Storybuilder::Adventure"
 
     has_many :features, -> { order(:sort_order) }, as: :featureable, dependent: :destroy
     has_many :sections, -> { order(:sort_order) }, as: :sectionable, dependent: :destroy
@@ -44,6 +40,24 @@ module Campaignmanager
     has_many :entity_joins,
              class_name: "Entitybuilder::CampaignJoin",
              dependent: :destroy
+
+    has_many :campaign_adventure_joins,
+             class_name: "Campaignmanager::CampaignAdventureJoin",
+             dependent: :destroy
+
+    has_many :adventures,
+             -> { select('storybuilder_adventures.id, storybuilder_adventures.name, storybuilder_adventures.slug, storybuilder_adventures.type') },
+             through: :campaign_adventure_joins,
+             class_name: "Storybuilder::Adventure"
+
+    has_one :active_adventure_join,
+            -> { where(active: true) },
+            class_name: "Campaignmanager::CampaignAdventureJoin"
+
+    has_one :active_adventure,
+            through: :active_adventure_join,
+            source: :adventure,
+            class_name: "Storybuilder::Adventure"
 
     has_many :characters,
              -> { select('entitybuilder_entities.id, entitybuilder_entities.type, entitybuilder_entities.resident_id, entitybuilder_entities.privacy, entitybuilder_entities.sheet_privacy, entitybuilder_entities.name, entitybuilder_entities.core_rules, entitybuilder_entities.short_description').order(:name) },
@@ -96,6 +110,11 @@ module Campaignmanager
 
     def self.search(search)
       where("campaignmanager_campaigns.name like ?", "%#{search}%")
+    end
+
+    def active_adventure_id=(adventure_id)
+      campaign_adventure_joins.update_all(active: false)
+      campaign_adventure_joins.where(adventure_id: adventure_id).update_all(active: true)
     end
 
     private

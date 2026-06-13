@@ -3,7 +3,6 @@
 resident_one:
   resident: razune
   district:
-  adventure:
   name: Long Trail
   slug: long-trail
   page_label: ima label
@@ -15,7 +14,6 @@ resident_one:
 resident_two:
   resident: tuandn
   district: district2
-  adventure: resident_two
   name: See the World
   slug: see-the-world
   page_label:

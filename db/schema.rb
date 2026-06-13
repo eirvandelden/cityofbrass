@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2026_06_13_000001) do
+ActiveRecord::Schema.define(version: 2026_06_13_162630) do
 
   create_table "activeplay_notables", id: :string, force: :cascade do |t|
     t.string "name"
@@ -104,6 +104,16 @@ ActiveRecord::Schema.define(version: 2026_06_13_000001) do
     t.index ["user_id"], name: "index_billing_subscriptions_on_user_id", unique: true
   end
 
+  create_table "campaignmanager_campaign_adventure_joins", id: :string, force: :cascade do |t|
+    t.string "campaign_id", null: false
+    t.string "adventure_id", null: false
+    t.boolean "active", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["campaign_id", "active"], name: "idx_cm_campaign_adventure_joins_active"
+    t.index ["campaign_id", "adventure_id"], name: "idx_cm_campaign_adventure_joins_unique", unique: true
+  end
+
   create_table "campaignmanager_campaigns", id: :string, force: :cascade do |t|
     t.string "resident_id", null: false
     t.string "name", limit: 255, null: false
@@ -115,9 +125,7 @@ ActiveRecord::Schema.define(version: 2026_06_13_000001) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string "district_id"
-    t.string "adventure_id"
     t.string "core_rules"
-    t.index ["adventure_id"], name: "index_campaignmanager_campaigns_on_adventure_id"
     t.index ["district_id"], name: "index_campaignmanager_campaigns_on_district_id"
     t.index ["resident_id"], name: "index_campaignmanager_campaigns_on_resident_id"
   end
