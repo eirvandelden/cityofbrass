@@ -67,9 +67,9 @@ module Storybuilder
       assert_redirected_to edit_resident_adventure_path(assigns(:adventure))
     end
 
-    test "should not show adventure" do
+    test "should not show residents adventure when logged out" do
       get :show, params: { id: @adventure }
-      assert_response 302
+      assert_response 403
     end
 
     test "should not show private adventure" do
@@ -82,6 +82,17 @@ module Storybuilder
       sign_in @user
       get :show, params: { id: @adventure }
       assert_response :success
+    end
+
+    test "should show public adventure when logged out" do
+      @adventure.update!(privacy: 'Public')
+      get :show, params: { id: @adventure }
+      assert_response :success
+    end
+
+    test "should not show private adventure when logged out" do
+      get :show, params: { id: @adventure2 }
+      assert_response 403
     end
 
     test "should not get edit" do
