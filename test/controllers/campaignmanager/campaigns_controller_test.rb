@@ -110,5 +110,35 @@ module Campaignmanager
       assert_redirected_to "/residents/#{@campaign.resident.slug}/campaigns"
     end
 
+    test "should update campaign adventures" do
+      sign_in @user
+      adventure = storybuilder_adventures(:resident_one)
+      patch :update, params: {
+        id: @campaign,
+        campaign: {
+          name: @campaign.name,
+          privacy: @campaign.privacy,
+          adventure_ids: [ adventure.id ]
+        }
+      }
+      assert_redirected_to edit_campaign_path(assigns(:campaign))
+      assert_includes @campaign.reload.adventures, adventure
+    end
+
+    test "should set active adventure" do
+      sign_in @user2
+      adventure = @campaign2.adventures.first
+      patch :update, params: {
+        id: @campaign2,
+        campaign: {
+          name: @campaign2.name,
+          privacy: 'Private',
+          active_adventure_id: adventure.id
+        }
+      }
+      assert_redirected_to edit_campaign_path(assigns(:campaign))
+      assert_equal adventure, @campaign2.reload.active_adventure
+    end
+
   end
 end

@@ -13,6 +13,22 @@
       <% unless @campaign.new_record? %>
         <%= f.input :core_rules, collection: CoreRules.options(admin_signed_in?), :include_blank => true %>
         <%= f.association :district, collection: current_user.resident.district_list, label_method: :name, value_method: :id, :include_blank => true %>
+        <%= f.input :adventure_ids,
+            as: :check_boxes,
+            collection: current_user.resident.adventure_list(@campaign.core_rules).values.flatten,
+            label_method: :name,
+            value_method: :id,
+            label: 'Adventures' %>
+        <% if @campaign.adventures.any? %>
+          <%= f.input :active_adventure_id,
+              as: :select,
+              collection: @campaign.adventures,
+              label_method: :name,
+              value_method: :id,
+              include_blank: true,
+              label: 'Active Adventure',
+              selected: @campaign.active_adventure&.id %>
+        <% end %>
       <% end %>
     </div>
     <div class="medium-4 columns text-center">

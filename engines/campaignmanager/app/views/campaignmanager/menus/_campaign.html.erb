@@ -34,7 +34,7 @@
 <dl class="left-menu show-for-medium-up">
   <% if @campaign.active_adventure.present? %>
   <dd class="<%= 'active' if current_page?("#{storybuilder.polymorphic_path(@campaign.active_adventure)}/campaign/#{@campaign.id}") %>">
-    <h3><%= link_to 'Adventure', "#{storybuilder.polymorphic_path(@campaign.active_adventure)}/campaign/#{@campaign.id}", :style => 'display:block;' %></h3>
+    <h3><%= link_to 'Active Adventure', "#{storybuilder.polymorphic_path(@campaign.active_adventure)}/campaign/#{@campaign.id}", :style => 'display:block;' %></h3>
   </dd>
   <% end %>
   <dd class="<%= 'active' if page == "GameMasterNote" if local_assigns.has_key? :page %>">
