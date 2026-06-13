@@ -112,6 +112,10 @@ module Campaignmanager
       where("campaignmanager_campaigns.name like ?", "%#{search}%")
     end
 
+    def active_adventure_id
+      active_adventure_join&.adventure_id
+    end
+
     def active_adventure_id=(adventure_id)
       campaign_adventure_joins.update_all(active: false)
       campaign_adventure_joins.where(adventure_id: adventure_id).update_all(active: true)

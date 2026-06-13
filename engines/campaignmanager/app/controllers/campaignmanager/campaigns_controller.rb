@@ -105,7 +105,10 @@ module Campaignmanager
 
       respond_to do |format|
         if @campaign.update(campaign_params)
-          @campaign.active_adventure_id = params[:campaign][:active_adventure_id] if params.dig(:campaign, :active_adventure_id).present?
+          requested_active_id = params.dig(:campaign, :active_adventure_id)
+          if requested_active_id.present? && @campaign.campaign_adventure_joins.where(adventure_id: requested_active_id).exists?
+            @campaign.active_adventure_id = requested_active_id
+          end
           cm_new_activeplay_virtual_table(@campaign) if @campaign.activeplay.blank?
           format.html { redirect_to edit_campaign_path(@campaign) }
           format.js   { flash.now[:notice] = "#{@campaign.name} has been updated." }
