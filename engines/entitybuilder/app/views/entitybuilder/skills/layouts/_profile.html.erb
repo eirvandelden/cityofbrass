@@ -2,7 +2,7 @@
 <strong>Skills:</strong>
   <% @parent_object.skills.each do |skill| %>
     <span class="nowrap">
-      <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{polymorphic_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
+      <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{route_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
       <% if skill.dice? %>
         <%= skill.dice  %><%= ", " unless skill == @parent_object.skills.last %>
       <% else %>

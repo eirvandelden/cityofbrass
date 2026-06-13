@@ -32,7 +32,7 @@
       </td>
       <% skills_superb.each do |skill| %>
         <td  class="color-c5">
-          <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{polymorphic_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
+          <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{route_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
         </td>
       <% end %>
     </tr>
@@ -48,7 +48,7 @@
       </td>
       <% skills_great.each do |skill| %>
         <td class="color-c5">
-          <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{polymorphic_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
+          <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{route_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
         </td>
       <% end %>
     </tr>
@@ -64,7 +64,7 @@
       </td>
       <% skills_good.each do |skill| %>
         <td class="color-c5">
-          <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{polymorphic_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
+          <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{route_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
         </td>
       <% end %>
     </tr>
@@ -80,7 +80,7 @@
       </td>
       <% skills_fair.each do |skill| %>
         <td class="color-c5">
-          <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{polymorphic_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
+          <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{route_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
         </td>
       <% end %>
     </tr>
@@ -96,7 +96,7 @@
       </td>
       <% skills_average.each do |skill| %>
         <td class="color-c5">
-          <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{polymorphic_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
+          <%= link_to_if (@clickable && skill.description.present?), skill.name, "#{route_path(@parent_object)}/skills/#{skill.id}", "data-reveal-id" => "skill_modal", :remote => true %>
         </td>
       <% end %>
     </tr>

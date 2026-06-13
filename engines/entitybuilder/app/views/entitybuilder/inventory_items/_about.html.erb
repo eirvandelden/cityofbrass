@@ -6,11 +6,11 @@
       Phat loot picked up with dungeon crawling.
     </p>
     <% if CoreRules.stock?(@parent_object.core_rules) %>
-      <strong><%= link_to "<i class='fa fa-plus-circle'></i> Stock Item".html_safe, "#{polymorphic_path(@parent_object)}/inventory_items/new?rule_type=stock", :remote => true %></strong>
+      <strong><%= link_to "<i class='fa fa-plus-circle'></i> Stock Item".html_safe, "#{route_path(@parent_object)}/inventory_items/new?rule_type=stock", :remote => true %></strong>
       <p>Add a Stock Item.</p>
     <% end %>
     <% if @parent_type.include?"resident" %>
-      <strong><%= link_to "<i class='fa fa-plus-circle'></i> Resident Item".html_safe, "#{polymorphic_path(@parent_object)}/inventory_items/new", :remote => true %></strong>
+      <strong><%= link_to "<i class='fa fa-plus-circle'></i> Resident Item".html_safe, "#{route_path(@parent_object)}/inventory_items/new", :remote => true %></strong>
       <p>Add an item from your resident list.</p>
     <% end %>
   </fieldset>

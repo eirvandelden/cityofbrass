@@ -3,7 +3,7 @@
 <% content_for :breadcrumb do %>
   <%=  breadcrumb [
     { type_array[0] => nil },
-    { type_array[1] => send("#{@parent_object.class.to_s.demodulize.tableize.pluralize}_path") },
+    { type_array[1] => route_collection_path(@parent_type.pluralize) },
     { @parent_object.name => nil },
     { @modifier.name => nil }
   ] %>

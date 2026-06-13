@@ -1,4 +1,4 @@
-<%= form_for @parent_object, :url => send("#{@parent_type}_known_spells_path"), :remote => true, :html => {"data-sortable" => ''} do |f| %>
+<%= form_for @parent_object, :url => route_child_path(@parent_object, :known_spells), :remote => true, :html => {"data-sortable" => ''} do |f| %>
   <fieldset>
     <div class="row inline">
       <div class="small-6 columns">
@@ -21,7 +21,7 @@
         <%= known_spell.hidden_field :sort_order %>
         <div class="row">
           <div class="small-6 columns clipper">
-            <%= "<i class='icon-feather'></i>".html_safe if known_spell.object.prepared %> <strong><%= link_to known_spell.object.spell.name[0,20], "#{polymorphic_path(@parent_object)}/known_spells/#{known_spell.object.id}" %></strong>
+            <%= "<i class='icon-feather'></i>".html_safe if known_spell.object.prepared %> <strong><%= link_to known_spell.object.spell.name[0,20], "#{route_path(@parent_object)}/known_spells/#{known_spell.object.id}" %></strong>
           </div>
           <div class="small-2 columns text-center">
             <strong><%= known_spell.object.level %></strong>
@@ -29,8 +29,8 @@
           <div class="small-4 columns text-right">
             <h3>
               <span class="right cogs125">
-              <%= link_to "<i class='fa fa-cogs'></i>".html_safe, "#{polymorphic_path(@parent_object)}/known_spells/#{known_spell.object.id}/edit", class: "iconlink", :remote => true %>
-              <%= link_to "<i class='fa fa-times-circle'></i>".html_safe, "#{polymorphic_path(@parent_object)}/known_spells/#{known_spell.object.id}", class: "iconlink delete", method: :delete, data: { confirm: 'Are you sure?' }, :remote => true %>
+              <%= link_to "<i class='fa fa-cogs'></i>".html_safe, "#{route_path(@parent_object)}/known_spells/#{known_spell.object.id}/edit", class: "iconlink", :remote => true %>
+              <%= link_to "<i class='fa fa-times-circle'></i>".html_safe, "#{route_path(@parent_object)}/known_spells/#{known_spell.object.id}", class: "iconlink delete", method: :delete, data: { confirm: 'Are you sure?' }, :remote => true %>
               </span>
             </h3>
           </div>

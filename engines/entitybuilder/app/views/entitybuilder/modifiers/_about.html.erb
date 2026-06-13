@@ -7,7 +7,7 @@
     </p>
     <ul>
       <% CoreRules::Entity.modifier_list(@parent_object.core_rules).each do |item| %>
-        <li><%= link_to item['label'], "#{polymorphic_path(@parent_object)}/#{item['link']}", :style => 'display:block;' %></li>
+        <li><%= link_to item['label'], "#{route_path(@parent_object)}/#{item['link']}", :style => 'display:block;' %></li>
       <% end %>
     </ul>
   </fieldset>

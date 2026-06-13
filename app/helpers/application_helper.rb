@@ -28,6 +28,14 @@ module ApplicationHelper
     edit_polymorphic_path(route_target(record))
   end
 
+  def route_child_path(record, route_name)
+    polymorphic_path(route_child_target(record, route_name))
+  end
+
+  def new_route_child_path(record, route_name)
+    new_polymorphic_path(route_child_target(record, route_name))
+  end
+
   def route_collection_path(route_name)
     polymorphic_path(namespaced_route_name(route_name))
   end
@@ -38,6 +46,10 @@ module ApplicationHelper
 
   def namespaced_route_name(route_name)
     [ @route_namespace, route_name ].compact.join("_")
+  end
+
+  def route_child_target(record, route_name)
+    [ @route_namespace, record, route_name ].compact
   end
 
   def active_menu_item(menu_item, page=nil, menu_link=nil)

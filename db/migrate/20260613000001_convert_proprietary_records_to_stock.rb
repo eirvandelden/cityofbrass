@@ -24,6 +24,8 @@ class ConvertProprietaryRecordsToStock < ActiveRecord::Migration[6.1]
         update_types(table_name, old_type, new_type)
       end
     end
+
+    update_polymorphic_types
   end
 
   def down
@@ -36,6 +38,33 @@ class ConvertProprietaryRecordsToStock < ActiveRecord::Migration[6.1]
         UPDATE #{quote_table_name(table_name)}
         SET type = #{quote(new_type)}
         WHERE type = #{quote(old_type)}
+      SQL
+    end
+
+    def update_polymorphic_types
+      update_polymorphic_gallery_image_joins
+      update_polymorphic_entity_notables
+    end
+
+    def update_polymorphic_gallery_image_joins
+      TYPE_MAPPINGS.except("gallery_images").each_value do |mappings|
+        mappings.each do |old_type, new_type|
+          update_column("gallery_image_joins", "imageable_type", old_type, new_type)
+        end
+      end
+    end
+
+    def update_polymorphic_entity_notables
+      TYPE_MAPPINGS.fetch("entitybuilder_entities").each do |old_type, new_type|
+        update_column("entitybuilder_notables", "notableable_type", old_type, new_type)
+      end
+    end
+
+    def update_column(table_name, column_name, old_type, new_type)
+      update(<<~SQL.squish)
+        UPDATE #{quote_table_name(table_name)}
+        SET #{quote_column_name(column_name)} = #{quote(new_type)}
+        WHERE #{quote_column_name(column_name)} = #{quote(old_type)}
       SQL
     end
 end

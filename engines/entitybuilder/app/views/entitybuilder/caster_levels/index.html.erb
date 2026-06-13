@@ -3,7 +3,7 @@
 <% content_for :breadcrumb do %>
   <%=  breadcrumb [
     { type_array[0] => nil },
-    { type_array[1] => send("#{@parent_object.class.to_s.demodulize.tableize.pluralize}_path") },
+    { type_array[1] => route_collection_path(@parent_type.pluralize) },
     { @parent_object.name => nil }
   ] %>
 <% end %>
@@ -12,9 +12,9 @@
   <div class="medium-3 large-2 columns">
     <%= render :partial => "entitybuilder/menus/manage",
       :locals => {
-        :view_link => polymorphic_path(@parent_object),
-        :about_link => edit_polymorphic_path(@parent_object),
-        :base_link => polymorphic_path(@parent_object)
+        :view_link => route_path(@parent_object),
+        :about_link => edit_route_path(@parent_object),
+        :base_link => route_path(@parent_object)
       } %>
   </div>
 
@@ -23,7 +23,7 @@
       :locals => {
         :main => @parent_object.name,
         :sub => 'Caster Levels',
-        :add_remote_link => send("new_#{@parent_object.class.to_s.demodulize.underscore}_caster_level_path"),
+        :add_remote_link => new_route_child_path(@parent_object, :caster_level),
         :can_auth => @parent_object.can_edit?(current_user, admin_signed_in?, @parent_type)
       }
     %>

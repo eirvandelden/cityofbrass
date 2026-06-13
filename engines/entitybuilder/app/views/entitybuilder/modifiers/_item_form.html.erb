@@ -20,6 +20,6 @@
 </div>
 
 <script>
-    var base_url = '<%= "#{polymorphic_path(@parent_object)}/" %>';
+    var base_url = '<%= "#{route_path(@parent_object)}/" %>';
 </script>
 <%= javascript_include_tag "entitybuilder/modifiers" %>
