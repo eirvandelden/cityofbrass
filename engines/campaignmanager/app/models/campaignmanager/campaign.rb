@@ -3,8 +3,8 @@ module Campaignmanager
     include ReservedNames
     include KeysToCampaignmanager
 
-    PRIVACY_OPTIONS_FREE = [ 'Private' ]
     PRIVACY_OPTIONS = [ 'Private', 'Friends', 'Residents', 'Public' ]
+    PRIVACY_OPTIONS_FREE = PRIVACY_OPTIONS
     NULL_ATTRS = %w[ district_id ]
 
     scope :short, -> { select('campaignmanager_campaigns.id, campaignmanager_campaigns.resident_id, campaignmanager_campaigns.core_rules, campaignmanager_campaigns.district_id, campaignmanager_campaigns.name, campaignmanager_campaigns.privacy, campaignmanager_campaigns.short_description, campaignmanager_campaigns.page_label, campaignmanager_campaigns.updated_at') }

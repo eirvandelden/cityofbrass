@@ -52,12 +52,6 @@ module Worldbuilder
       @district = current_user.resident.districts.new(district_params)
       @district.build_gallery_image_join if @district.gallery_image_join.nil?
 
-      if current_user.is_free?
-        unless Worldbuilder::District::PRIVACY_OPTIONS_FREE.include? @district.privacy
-          @district.privacy = 'invalid'
-        end
-      end
-
       respond_to do |format|
         if @district.save
           wb_district_mockup(@district)
@@ -70,13 +64,6 @@ module Worldbuilder
 
     # PATCH/PUT /districts/1
     def update
-
-      if current_user.is_free?
-        unless Worldbuilder::District::PRIVACY_OPTIONS_FREE.include?(district_params[:privacy])
-          params[:district][:privacy] = 'invalid'
-        end
-      end
-
       respond_to do |format|
         if @district.update(district_params)
           format.html { redirect_to edit_district_path(@district) }

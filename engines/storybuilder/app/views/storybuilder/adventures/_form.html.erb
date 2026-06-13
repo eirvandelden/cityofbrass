@@ -3,11 +3,7 @@
     <div class="medium-8 columns">
       <%= f.input :name %>
       <%= f.input :page_label, label: 'Label' %>
-      <% if current_user.is_free? %>
-        <%= f.input :privacy, collection: Storybuilder::Adventure::PRIVACY_OPTIONS_FREE, :include_blank => false %>
-      <% else %>
-        <%= f.input :privacy, collection: Storybuilder::Adventure::PRIVACY_OPTIONS %>
-      <% end %>
+      <%= f.input :privacy, collection: Storybuilder::Adventure::PRIVACY_OPTIONS %>
       <%= f.input :core_rules, collection: CoreRules.options(admin_signed_in?), :include_blank => true %>
       <%= f.fields_for :menu_item_join do |p| %>
         <%= p.association :menu_item, collection: @adventure.menu_items, label_method: :item_label, value_method: :id, :include_blank => true %>
