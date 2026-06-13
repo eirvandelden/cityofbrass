@@ -13,7 +13,6 @@
       <% unless @campaign.new_record? %>
         <%= f.input :core_rules, collection: CoreRules.options(admin_signed_in?), :include_blank => true %>
         <%= f.association :district, collection: current_user.resident.district_list, label_method: :name, value_method: :id, :include_blank => true %>
-        <%= f.association :adventure, collection: current_user.resident.adventure_list(@campaign.core_rules), label_method: :name, value_method: :id, as: :grouped_select, group_method: :last, :include_blank => true %>
       <% end %>
     </div>
     <div class="medium-4 columns text-center">

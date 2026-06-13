@@ -16,8 +16,8 @@
 <% end %>
 
 <% if @campaign.can_edit?(current_user, admin_signed_in?) %>
-  <% if @campaign.adventure.present? %>
-    <li><%= link_to 'Adventure', "#{storybuilder.resident_adventure_path(@campaign.adventure)}/campaign/#{@campaign.id}" %></li>
+  <% if @campaign.active_adventure.present? %>
+    <li><%= link_to 'Adventure', "#{storybuilder.resident_adventure_path(@campaign.active_adventure)}/campaign/#{@campaign.id}" %></li>
   <% end %>
   <li><%= link_to 'GM Notes', campaignmanager.polymorphic_path([@campaign, :game_master_notes]) %></li>
 <% end %>
