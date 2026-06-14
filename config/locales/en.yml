@@ -21,6 +21,9 @@
 
 en:
   hello: "Hello world"
+  errors:
+    messages:
+      invalid_privacy: "is not valid."
   layouts:
     license:
       attribution:

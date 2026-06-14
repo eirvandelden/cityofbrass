@@ -118,6 +118,8 @@ module Campaignmanager
 
     def active_adventure_id=(adventure_id)
       campaign_adventure_joins.update_all(active: false)
+      return if adventure_id.blank?
+
       campaign_adventure_joins.where(adventure_id: adventure_id).update_all(active: true)
     end
 

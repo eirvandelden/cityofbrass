@@ -93,7 +93,7 @@ module Campaignmanager
       respond_to do |format|
         if @campaign.update(campaign_params)
           requested_active_id = params.dig(:campaign, :active_adventure_id)
-          if requested_active_id.present? && @campaign.campaign_adventure_joins.where(adventure_id: requested_active_id).exists?
+          if params[:campaign].key?(:active_adventure_id) && active_adventure_selectable?(requested_active_id)
             @campaign.active_adventure_id = requested_active_id
           end
           cm_new_activeplay_virtual_table(@campaign) if @campaign.activeplay.blank?
@@ -210,6 +210,10 @@ module Campaignmanager
           adventure_ids: [],
           gallery_image_join_attributes: [:id, :image_id, :_destroy]
         )
+      end
+
+      def active_adventure_selectable?(adventure_id)
+        adventure_id.blank? || @campaign.campaign_adventure_joins.where(adventure_id: adventure_id).exists?
       end
   end
 end
