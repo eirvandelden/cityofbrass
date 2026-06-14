@@ -1,6 +1,8 @@
 module Importer
   module Admin
     class ApplicationController < ::ApplicationController
+      helper Importer::ImportsHelper
+
       before_action :check_authorization
 
       private
