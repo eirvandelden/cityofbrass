@@ -86,6 +86,24 @@ class ImporterImportFlowTest < ActionDispatch::IntegrationTest
     assert_equal "Residents", Entitybuilder::StockCreature.find_by!(name: "Goblin").privacy
   end
 
+  test "admin import results link to created stock records" do
+    sign_in admins(:dan)
+    post "/admin/imports/previews", params: { files: [ uploaded_file("sample_compendium.xml") ] }
+    preview = Importer::Preview.order(:created_at).last
+
+    perform_enqueued_jobs do
+      post "/admin/imports", params: { preview_id: preview.id }
+    end
+
+    import = Importer::Import.order(:created_at).last
+    goblin = Entitybuilder::StockCreature.find_by!(name: "Goblin")
+
+    get "/admin/imports/#{import.id}"
+
+    assert_response :success
+    assert_select "a[href='/eb/stock/creatures/#{goblin.id}']", text: "Goblin"
+  end
+
   test "admin import history links back to import details" do
     sign_in admins(:dan)
     import = Importer::Import.create!(mode: Importer::Preview::ADMIN_STOCK,
