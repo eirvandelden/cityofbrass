@@ -74,7 +74,7 @@ module Rulebuilder
 
       def valid_privacy
         if privacy.present? && PRIVACY_OPTIONS.exclude?(privacy)
-          errors.add(:privacy, "is not valid.")
+          errors.add(:privacy, :invalid_privacy)
         end
       end
   end

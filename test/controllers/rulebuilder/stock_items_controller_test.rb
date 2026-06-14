@@ -46,19 +46,27 @@ module Rulebuilder
       assert_redirected_to edit_stock_item_path(assigns(:item))
     end
 
-    test "should show item when logged out" do
+    test "should not show private item when logged out" do
+      get :show, params: { id: @item }
+      assert_response 403
+    end
+
+    test "should show public item when logged out" do
+      @item.update!(privacy: 'Public')
       get :show, params: { id: @item }
       assert_response :success
     end
 
     test "should show item" do
       sign_in @user
+      @item.update!(privacy: 'Public')
       get :show, params: { id: @item }
       assert_response :success
     end
 
     test "should show.js item" do
       sign_in @user
+      @item.update!(privacy: 'Public')
       get :show, xhr: true, format: :js, params: { id: @item }
       assert_response :success
     end

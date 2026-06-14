@@ -10,6 +10,7 @@ module Rulebuilder
     before_action :check_authorization, only: [:new, :create, :edit, :update, :destroy, :options]
     before_action :set_item,            only: [:show, :edit, :update, :destroy, :options]
     before_action :set_items,           only: [:index]
+    before_action :can_show,            only: [:show]
 
     private
       def set_type
@@ -31,6 +32,12 @@ module Rulebuilder
 
       def check_authorization
         unless admin_signed_in?
+          render template: 'errors/403', layout: 'layouts/application', status: 403
+        end
+      end
+
+      def can_show
+        unless @item.can_show?(current_user, admin_signed_in?, @type)
           render template: 'errors/403', layout: 'layouts/application', status: 403
         end
       end

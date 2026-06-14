@@ -140,5 +140,19 @@ module Campaignmanager
       assert_equal adventure, @campaign2.reload.active_adventure
     end
 
+    test "should clear active adventure" do
+      sign_in @user2
+      patch :update, params: {
+        id: @campaign2,
+        campaign: {
+          name: @campaign2.name,
+          privacy: 'Private',
+          active_adventure_id: ''
+        }
+      }
+      assert_redirected_to edit_campaign_path(assigns(:campaign))
+      assert_nil @campaign2.reload.active_adventure
+    end
+
   end
 end
