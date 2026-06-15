@@ -79,6 +79,46 @@ en:
       world_builder: World Builder
       worlds: Worlds
   importer:
+    statuses:
+      expired: Expired
+      failed: Failed
+      parsed: Parsed
+      parsing: Parsing
+      partial: Partial
+      pending: Pending
+      queued: Queued
+      ready: Ready
+      running: Running
+      succeeded: Succeeded
+    kinds:
+      campaign: Campaign
+      characters: Characters
+      compendium: Compendium
+      pc: Player character
+      unsupported: Unsupported
+    outcomes:
+      created: Created
+      failed: Failed
+      skipped: Skipped
+    reasons:
+      already_exists: Already exists
+      no_stock_character_target: No stock character target
+      unsupported_file_kind: Unsupported file kind
+    counts:
+      adventures: Adventures
+      backgrounds: Backgrounds
+      classes: Classes
+      combatants: Combatants
+      encounters: Encounters
+      feats: Feats
+      items: Items
+      monsters: Monsters
+      notes: Notes
+      npcs: NPCs
+      pcs: Player characters
+      races: Species
+      spells: Spells
+      subclasses: Subclasses
     provenance_notes:
       name: "Imported %{entity_type}: %{entity_name}"
       import_label: "import details"

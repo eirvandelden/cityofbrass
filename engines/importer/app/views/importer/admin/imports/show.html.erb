@@ -3,7 +3,7 @@
     <main>
       <h1><%= t("importer.admin.imports.show.title") %></h1>
       <p><%= link_to t("importer.imports.show.back"), main_app.admin_importer_imports_path %></p>
-      <p><%= t("importer.imports.show.status") %>: <%= @import.status %></p>
+      <p><%= t("importer.imports.show.status") %>: <%= importer_status_label(@import.status) %></p>
 
       <h2><%= t("importer.imports.show.files") %></h2>
       <table>
@@ -19,9 +19,9 @@
           <% @import.source_file_rows.each do |file| %>
             <tr>
               <td><%= file[:name] %></td>
-              <td><%= file[:kind] %></td>
-              <td><%= file[:status] %></td>
-              <td><%= file[:counts].map { |key, value| "#{key}: #{value}" }.join(", ") %></td>
+              <td><%= importer_kind_label(file[:kind]) %></td>
+              <td><%= importer_status_label(file[:status]) %></td>
+              <td><%= importer_counts_label(file[:counts]) %></td>
             </tr>
           <% end %>
         </tbody>
@@ -40,8 +40,8 @@
           <% @import.import_results.each do |result| %>
             <tr>
               <td><%= render "importer/imports/result_entity", result: result %></td>
-              <td><%= result.outcome %></td>
-              <td><%= result.reason %></td>
+              <td><%= importer_outcome_label(result.outcome) %></td>
+              <td><%= importer_reason_label(result.reason) %></td>
             </tr>
           <% end %>
         </tbody>

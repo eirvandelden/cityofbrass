@@ -15,8 +15,8 @@
           <% @preview.preview_files.each do |preview_file| %>
             <tr>
               <td><%= preview_file.file_file_name %></td>
-              <td><%= preview_file.kind %></td>
-              <td><%= preview_file.entity_counts.to_h.map { |key, value| "#{key}: #{value}" }.join(", ") %></td>
+              <td><%= importer_kind_label(preview_file.kind) %></td>
+              <td><%= importer_counts_label(preview_file.entity_counts.to_h) %></td>
             </tr>
           <% end %>
         </tbody>

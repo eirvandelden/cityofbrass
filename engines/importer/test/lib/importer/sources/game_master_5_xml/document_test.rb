@@ -1,56 +1,11 @@
 require_relative "../../../../test_helper"
 
 class ImporterGameMaster5XmlDocumentTest < ActiveSupport::TestCase
-  # rubocop:disable Metrics/BlockLength
   test "monster record extracts all stat fields" do
-    xml = <<~XML
-      <compendium>
-        <monster>
-          <name>Test Goblin</name>
-          <size>S</size>
-          <type>humanoid (goblinoid)</type>
-          <ac>15 (leather armor)</ac>
-          <hp>7 (2d6)</hp>
-          <speed>30 ft.</speed>
-          <str>8</str><dex>14</dex><con>10</con>
-          <int>10</int><wis>8</wis><cha>8</cha>
-          <save>Dex +4</save>
-          <skill>Stealth +6</skill>
-          <senses>darkvision 60 ft., passive Perception 9</senses>
-          <immune>poison</immune>
-          <resist>fire</resist>
-          <languages>Common, Goblin</languages>
-          <cr>1/4</cr>
-          <trait><name>Nimble Escape</name><text>The goblin can Disengage.</text></trait>
-          <action><name>Scimitar</name><text>Melee Weapon Attack.</text><attack>Scimitar|+4|1d6+2</attack></action>
-        </monster>
-      </compendium>
-    XML
+    document = Importer::Sources::GameMaster5Xml::Document.new(importer_fixture_file("sample_compendium.xml"))
 
-    document_for(xml) do |doc|
-      records = doc.compendium_records
-      assert_equal 1, records.size
-      monster = records.first
-      assert_equal "monster", monster[:type]
-      assert_equal "Test Goblin", monster[:name]
-      assert_equal "S", monster[:size]
-      assert_equal "humanoid (goblinoid)", monster[:creature_type]
-      assert_equal "15 (leather armor)", monster[:ac]
-      assert_equal "7 (2d6)", monster[:hp]
-      assert_equal "8", monster[:str]
-      assert_equal "14", monster[:dex]
-      assert_equal [ "Dex +4" ], monster[:saves]
-      assert_equal [ "Stealth +6" ], monster[:skills]
-      assert_equal "1/4", monster[:cr]
-      assert_equal "poison", monster[:immune]
-      assert_equal 1, monster[:traits].size
-      assert_equal "Nimble Escape", monster[:traits].first[:name]
-      assert_equal 1, monster[:actions].size
-      assert_equal "Scimitar", monster[:actions].first[:name]
-      assert_equal "Scimitar|+4|1d6+2", monster[:actions].first[:attack]
-    end
+    assert_monster_record document.compendium_records.find { |record| record[:name] == "Goblin" }
   end
-  # rubocop:enable Metrics/BlockLength
 
   test "encounter record extracts combatants" do
     xml = <<~XML
@@ -93,52 +48,11 @@ class ImporterGameMaster5XmlDocumentTest < ActiveSupport::TestCase
     assert_equal "12", campaign[:monsters].first[:dex]
   end
 
-  # rubocop:disable Metrics/BlockLength
   test "character_records parses standalone PC file" do
-    xml = <<~XML
-      <pc version="5">
-        <label>Quinthya</label>
-        <name>Elf (Wood) Monk 2</name>
-        <size>M</size>
-        <ac>15</ac>
-        <hp>14 (2d8)</hp>
-        <speed>30 ft.</speed>
-        <str>10</str><dex>16</dex><con>12</con>
-        <int>10</int><wis>14</wis><cha>8</cha>
-        <save>Strength +2</save>
-        <save>Dexterity +5</save>
-        <skill>Acrobatics +5</skill>
-        <skill>Perception +4</skill>
-        <senses>passive Perception 14</senses>
-        <languages>Common, Elvish</languages>
-        <passive>14</passive>
-        <action>
-          <name>Unarmed Strike</name>
-          <text>Melee Weapon Attack.</text>
-          <attack>Unarmed Strike|+5|1d4+3</attack>
-        </action>
-      </pc>
-    XML
+    document = Importer::Sources::GameMaster5Xml::Document.new(importer_fixture_file("sample_pc.xml"))
 
-    document_for(xml) do |doc|
-      records = doc.character_records
-      assert_equal 1, records.size
-      pc = records.first
-      assert_equal "pc", pc[:type]
-      assert_equal "Quinthya", pc[:label]
-      assert_equal "Elf (Wood) Monk 2", pc[:name]
-      assert_equal "M", pc[:size]
-      assert_equal "15", pc[:ac]
-      assert_equal "14 (2d8)", pc[:hp]
-      assert_equal "10", pc[:str]
-      assert_equal "16", pc[:dex]
-      assert_equal [ "Strength +2", "Dexterity +5" ], pc[:saves]
-      assert_equal [ "Acrobatics +5", "Perception +4" ], pc[:skills]
-      assert_equal 1, pc[:actions].size
-      assert_equal "Unarmed Strike|+5|1d4+3", pc[:actions].first[:attack]
-    end
+    assert_pc_record only_record(document.character_records)
   end
-  # rubocop:enable Metrics/BlockLength
 
   test "note record joins all text nodes as description" do
     xml = <<~XML
@@ -160,6 +74,33 @@ class ImporterGameMaster5XmlDocumentTest < ActiveSupport::TestCase
   end
 
   private
+
+  def assert_monster_record(monster)
+    assert_equal "monster", monster[:type]
+    assert_equal "Goblin", monster[:name]
+    assert_equal "humanoid (goblinoid)", monster[:creature_type]
+    assert_equal [ "S", "15 (leather armor, shield)", "7 (2d6)", "8", "14", "1/4", "poison" ],
+                 monster.values_at(:size, :ac, :hp, :str, :dex, :cr, :immune)
+    assert_equal [ "Dex +4" ], monster[:saves]
+    assert_equal [ "Stealth +6" ], monster[:skills]
+    assert_equal "Nimble Escape", only_record(monster[:traits])[:name]
+    assert_equal "Scimitar|+4|1d6+2", monster[:actions].first[:attack]
+  end
+
+  def assert_pc_record(pc)
+    assert_equal "pc", pc[:type]
+    assert_equal "Quinthya", pc[:label]
+    assert_equal "Elf (Wood) Monk 2", pc[:name]
+    assert_equal [ "M", "15", "14 (2d8)", "10", "16" ], pc.values_at(:size, :ac, :hp, :str, :dex)
+    assert_equal [ "Strength +2", "Dexterity +5" ], pc[:saves]
+    assert_equal [ "Acrobatics +5", "Perception +4" ], pc[:skills]
+    assert_equal "Unarmed Strike|+5|1d4+3", only_record(pc[:actions])[:attack]
+  end
+
+  def only_record(records)
+    assert_equal 1, records.size
+    records.first
+  end
 
   def document_for(xml)
     Tempfile.create([ "test", ".xml" ]) do |f|
