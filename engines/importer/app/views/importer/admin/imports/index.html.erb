@@ -1,12 +1,15 @@
 <div class="row">
-  <div class="medium-10 medium-centered columns">
-    <main>
-      <h1><%= t("importer.admin.imports.index.title") %></h1>
-      <p><%= t("importer.admin.imports.index.description") %></p>
-      <%= link_to t("importer.admin.imports.index.new_preview"), main_app.new_admin_importer_preview_path,
-                  class: "button" %>
+  <div class="medium-12 columns">
+    <%= render :partial => 'layouts/header',
+      :locals => {
+        :main => t("importer.admin.imports.index.title"),
+        :icon => 'fa fa-upload',
+        :add_link => main_app.new_admin_importer_preview_path,
+        :can_auth => true
+      }
+    %>
+    <hr class="faded">
 
-      <%= render "importer/imports/history", imports: @imports, admin: true %>
-    </main>
+    <%= render "importer/imports/history", imports: @imports, admin: true %>
   </div>
 </div>
