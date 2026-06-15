@@ -18,7 +18,13 @@ module Rulebuilder
       end
 
       def set_items
-        @items = StockItem.short.order_name.search(params[:search]).core_rules_filter(params[:core_rules_filter]).page(params[:page]).per(100)
+        @items = visible_items.short.order_name.search(params[:search]).core_rules_filter(params[:core_rules_filter]).page(params[:page]).per(100)
+      end
+
+      def visible_items
+        return StockItem.all if admin_signed_in?
+
+        StockItem.where(privacy: [ "Public", "Residents" ])
       end
 
       def set_item

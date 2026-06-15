@@ -12,7 +12,7 @@
   <%= render :partial => 'entitybuilder/inventory_items/item_details', :locals => { :inventory_item => @inventory_item } %>
   <%= sanitize @inventory_item.item.full_description %>
 
-  <% if @inventory_item.item.parent.present? %>
+  <% if @inventory_item.item.parent.present? && visible_record?(@inventory_item.item.parent) %>
     <h2><%= @inventory_item.item.parent.name %></h2>
     <hr class="faded">
     <%= sanitize @inventory_item.item.parent.full_description %>

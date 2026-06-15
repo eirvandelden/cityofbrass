@@ -8,6 +8,7 @@ module Entitybuilder
     before_action :check_parent_authorization, except: [:show]
     before_action :can_sheet, only: [:show]
     before_action :set_inventory_item, only: [:show, :edit, :update, :destroy]
+    before_action :can_show_item, only: [:show]
     before_action :set_core_faq, only: [:index, :create, :update]
 
     # GET /inventory_items
@@ -112,6 +113,12 @@ module Entitybuilder
       def set_inventory_item
         @inventory_item = @parent_object.inventory_items.find(params[:id])
         @modifier_parent_object = @inventory_item
+      end
+
+      def can_show_item
+        unless @inventory_item.item.can_show?(current_user, admin_signed_in?, @inventory_item.item.type.demodulize)
+          render template: 'errors/403', layout: 'layouts/application', status: 403
+        end
       end
 
       def set_core_faq
