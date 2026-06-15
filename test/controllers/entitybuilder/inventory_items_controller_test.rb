@@ -36,6 +36,21 @@ module Entitybuilder
       assert_response :success
     end
 
+    test "admin should get stock item options for non-stock core rules" do
+      item = Rulebuilder::StockItem.create!(
+        core_rules: "Generic",
+        name: "Generic stock item"
+      )
+      @character.update!(core_rules: "Generic")
+
+      sign_in @user
+      sign_in admins(:dan)
+      get :new, xhr: true, format: :js, params: { resident_character_id: @character.id, rule_type: "stock" }
+
+      assert_response :success
+      assert_includes @response.body, item.name
+    end
+
     test "should not create inventory_item" do
       assert_difference('InventoryItem.count', 0) do
         post :create, format: :js, params: { inventory_item: { name: 'NewName' }, resident_character_id: @character.id }

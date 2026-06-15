@@ -43,6 +43,7 @@ module Rulebuilder
         sign_in @admin
         get :new
         assert_response :success
+        assert_select "a[href='#{admin_stock_items_path}']"
       end
 
       test "should create item" do
@@ -63,6 +64,7 @@ module Rulebuilder
         sign_in @user
         get :show, params: { id: @item }
         assert_response :success
+        assert_select "a[href='#{admin_stock_items_path}']"
       end
 
       test "should show.js item" do
@@ -82,6 +84,15 @@ module Rulebuilder
         sign_in @admin
         get :edit, params: { id: @item }
         assert_response :success
+      end
+
+      test "should get options" do
+        sign_in @user
+        sign_in @admin
+        get :options, params: { stock_item_id: @item.id }
+        assert_response :success
+        assert_select "a[href='#{admin_stock_items_path}']"
+        assert_select "a[href='#{admin_stock_item_path(@item)}']"
       end
 
       test "should not update item" do

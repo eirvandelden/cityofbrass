@@ -36,6 +36,21 @@ module Entitybuilder
       assert_response :success
     end
 
+    test "admin should get stock spell options for non-stock core rules" do
+      spell = Rulebuilder::StockSpell.create!(
+        core_rules: "Generic",
+        name: "Generic stock spell"
+      )
+      @character.update!(core_rules: "Generic")
+
+      sign_in @user
+      sign_in admins(:dan)
+      get :new, xhr: true, format: :js, params: { resident_character_id: @character.id, rule_type: "stock" }
+
+      assert_response :success
+      assert_includes @response.body, spell.name
+    end
+
     test "should not create known_spell" do
       assert_difference('KnownSpell.count', 0) do
         post :create, format: :js, params: { known_spell: { name: 'NewName' }, resident_character_id: @character.id }

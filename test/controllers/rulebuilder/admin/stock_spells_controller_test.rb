@@ -43,6 +43,7 @@ module Rulebuilder
         sign_in @admin
         get :new
         assert_response :success
+        assert_select "a[href='#{admin_stock_spells_path}']"
       end
 
       test "should create spell" do
@@ -63,6 +64,7 @@ module Rulebuilder
         sign_in @user
         get :show, params: { id: @spell }
         assert_response :success
+        assert_select "a[href='#{admin_stock_spells_path}']"
       end
 
       test "should show.js spell" do
@@ -82,6 +84,15 @@ module Rulebuilder
         sign_in @admin
         get :edit, params: { id: @spell }
         assert_response :success
+      end
+
+      test "should get options" do
+        sign_in @user
+        sign_in @admin
+        get :options, params: { stock_spell_id: @spell.id }
+        assert_response :success
+        assert_select "a[href='#{admin_stock_spells_path}']"
+        assert_select "a[href='#{admin_stock_spell_path(@spell)}']"
       end
 
       test "should not update spell" do

@@ -3,7 +3,7 @@
 <% content_for :breadcrumb do %>
   <%=  breadcrumb [
     { type_array[0] => nil },
-    { type_array[1] => polymorphic_path(@type.tableize) },
+    { type_array[1] => route_collection_path(@type.tableize) },
     { @rule.name => nil }
   ] %>
 <% end %>

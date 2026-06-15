@@ -160,7 +160,7 @@ module Entitybuilder
       end
 
       def set_rule_options
-        if params[:type] == "stock" && CoreRules.stock?(@parent_object.core_rules)
+        if params[:type] == "stock" && stock_content_available?(@parent_object.core_rules)
           @rule_options = Rulebuilder::StockRule.basic.order_name.core_rules_filter(@parent_object.core_rules).rule_type_filter(@rule_type).shared
         elsif params[:type] == "resident"
           @rule_options = @parent_object.resident.resident_rules.basic.core_rules_filter(@parent_object.core_rules).rule_type_filter(@rule_type).shared
