@@ -1,5 +1,6 @@
 {
   "name": "3.5 Edition",
+  "slug": "dnd35e",
   "active": "true",
   "stock": "true",
   "default_dice": "1d20",

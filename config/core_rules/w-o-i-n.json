@@ -1,5 +1,6 @@
 {
   "name": "W.O.I.N",
+  "slug": "woin",
   "active": "true",
   "stock": "true",
   "default_dice": "1d6",

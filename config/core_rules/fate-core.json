@@ -1,5 +1,6 @@
 {
   "name": "Fate Core",
+  "slug": "fateCore",
   "active": "true",
   "stock": "true",
   "default_dice": "Fate",
