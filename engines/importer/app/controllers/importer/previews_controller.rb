@@ -1,5 +1,5 @@
 module Importer
-  class PreviewsController < ApplicationController
+  class PreviewsController < Importer::ApplicationController
     helper Importer::ImportsHelper
 
     def new

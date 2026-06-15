@@ -1,5 +1,5 @@
 module Importer
-  class ImportsController < ApplicationController
+  class ImportsController < Importer::ApplicationController
     helper Importer::ImportsHelper
 
     def index
