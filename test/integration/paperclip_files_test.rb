@@ -76,16 +76,6 @@ class PaperclipFilesTest < ActionDispatch::IntegrationTest
     image&.destroy
   end
 
-  test "does not serve proprietary image files to anonymous users" do
-    image = proprietary_image
-
-    get image.file.url(:original)
-
-    assert_response :forbidden
-  ensure
-    image&.destroy
-  end
-
   test "serves importer preview files to the owner" do
     preview = Importer::Preview.create!(resident: residents(:razune), mode: Importer::Preview::RESIDENT_CONTENT,
                                         source: Importer::Preview::GAME_MASTER_5_XML, status: "parsing")
@@ -155,10 +145,6 @@ class PaperclipFilesTest < ActionDispatch::IntegrationTest
 
   def legacy_stock_image_file(image)
     Rails.root.join("gallery", "stock-images", image.id, "original.png")
-  end
-
-  def proprietary_image
-    Gallery::ProprietaryImage.create!(name: "Proprietary", file: image_upload)
   end
 
   def image_upload

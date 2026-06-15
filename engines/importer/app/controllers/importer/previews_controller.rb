@@ -1,5 +1,7 @@
 module Importer
   class PreviewsController < ApplicationController
+    helper Importer::ImportsHelper
+
     def new
       @preview = Preview.new(mode: Preview::RESIDENT_CONTENT, source: Preview::GAME_MASTER_5_XML)
     end
