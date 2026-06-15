@@ -30,6 +30,12 @@ class CiWorkflowTest < ActiveSupport::TestCase
     assert_match(/redis-cli ping/, redis.fetch("options"))
   end
 
+  def test_test_job_installs_imagemagick_for_paperclip
+    assert imagemagick_step, "Expected CI test job to install ImageMagick"
+    assert_operator imagemagick_step_index, :<, database_setup_step_index
+    assert_match(/apt-get install -y imagemagick/, imagemagick_step.fetch("run"))
+  end
+
   def test_ci_sets_up_chrome_before_running_system_tests
     assert_operator setup_chrome_step_index, :<, system_test_step_index
     assert_equal "${{ steps.setup-chrome.outputs.chrome-path }}", system_test_step.dig("env", "BROWSER_PATH")
@@ -64,6 +70,22 @@ class CiWorkflowTest < ActiveSupport::TestCase
 
   def regular_test_step
     steps("test").find { |step| step["name"] == "Run tests" }
+  end
+
+  def database_setup_step_index
+    steps("test").index(database_setup_step)
+  end
+
+  def database_setup_step
+    steps("test").find { |step| step["name"] == "Set up database" }
+  end
+
+  def imagemagick_step_index
+    steps("test").index(imagemagick_step)
+  end
+
+  def imagemagick_step
+    steps("test").find { |step| step["name"] == "Install ImageMagick" }
   end
 
   def setup_chrome_step_index
