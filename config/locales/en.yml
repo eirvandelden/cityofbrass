@@ -172,6 +172,7 @@ en:
           title: Stock Imports
           description: Upload Game Master 5 XML files to preview shared stock content before adding creatures, adventures, rules, spells, and items.
           new_preview: New stock import
+          add_new: Add New
         show:
           title: Stock Import Status
   gallery:
