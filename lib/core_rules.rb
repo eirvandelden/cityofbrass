@@ -6,7 +6,7 @@ require "core_rules/seeder"
 module CoreRules
   mattr_accessor :rulebooks
 
-  def self.all(show_all = true)
+  def self.all(show_all = false)
     config = show_all ? rulebooks : rulebooks.select { |v| v["active"] == "true" }
     config.map do |v|
       Rulebook.new(
@@ -26,13 +26,11 @@ module CoreRules
   end
 
   def self.display_name(slug)
-    rulebook = rulebooks.detect { |v| v["slug"] == slug }
-    rulebook["name"] if rulebook.present?
+    find(slug)&.name
   end
 
   def self.options(show_all)
-    config = show_all ? rulebooks : rulebooks.select { |v| v["active"] == "true" }
-    config.map { |r| [ r["name"], r["slug"] ] }
+    all(show_all).map { |r| [ r.name, r.slug ] }
   end
 
   def self.d20_system?(slug)
