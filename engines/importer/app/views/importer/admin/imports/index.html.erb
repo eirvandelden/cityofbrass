@@ -1,15 +1,22 @@
 <div class="row">
-  <div class="medium-12 columns">
-    <%= render :partial => 'layouts/header',
-      :locals => {
-        :main => t("importer.admin.imports.index.title"),
-        :icon => 'fa fa-upload',
-        :add_link => main_app.new_admin_importer_preview_path,
-        :can_auth => true
-      }
-    %>
-    <hr class="faded">
+  <div class="small-7 medium-8 large-9 columns">
+    <h1 class="header clipper">
+      <i class="header-icon text-center fa fa-upload"></i>
+      <%= t("importer.admin.imports.index.title") %>
+    </h1>
+  </div>
+  <div class="small-5 medium-4 large-3 columns text-right">
+    <h3>
+      <%= link_to "<i class='header-icon-edit fa fa-plus-circle'></i>".html_safe,
+                  main_app.new_admin_importer_preview_path,
+                  title: "Add New", class: "cogs add" %>
+    </h3>
+  </div>
+</div>
+<hr class="faded">
 
+<div class="row">
+  <div class="medium-12 columns">
     <%= render "importer/imports/history", imports: @imports, admin: true %>
   </div>
 </div>
