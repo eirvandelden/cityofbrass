@@ -80,6 +80,18 @@ module Campaignmanager
       assert_no_match district.name, @response.body
     end
 
+    test "should hide private world when public campaign is shown to another resident" do
+      district = worldbuilder_districts(:district_three)
+      district.update!(privacy: 'Private')
+      @campaign2.update!(privacy: 'Public', district: district)
+
+      sign_in @user2
+      get :show, params: { id: @campaign2 }
+
+      assert_response :success
+      assert_no_match district.name, @response.body
+    end
+
     test "should hide private character when public campaign characters are shown logged out" do
       character = entitybuilder_entities(:resident_character_one)
       character.update!(name: 'Hidden Campaign Character', privacy: 'Private', sheet_privacy: 'Private')
