@@ -7,6 +7,28 @@ module Importer
       link_to result.entity_name, record_path
     end
 
+    def importer_status_label(status)
+      t("importer.statuses.#{status}")
+    end
+
+    def importer_kind_label(kind)
+      t("importer.kinds.#{kind}")
+    end
+
+    def importer_outcome_label(outcome)
+      t("importer.outcomes.#{outcome}")
+    end
+
+    def importer_reason_label(reason)
+      return if reason.blank?
+
+      t("importer.reasons.#{reason.to_s.tr(' ', '_')}")
+    end
+
+    def importer_counts_label(counts)
+      counts.map { |key, value| "#{t("importer.counts.#{key}")}: #{value}" }.join(", ")
+    end
+
     private
 
     def importer_result_record_path(result)

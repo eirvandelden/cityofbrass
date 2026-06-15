@@ -31,8 +31,9 @@ class ImporterImportFlowTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "h2", text: I18n.t("importer.imports.show.files")
     assert_select "td", text: "sample_compendium.xml"
-    assert_select "td", text: "compendium"
-    assert_select "td", text: "queued"
+    assert_select "td", text: "Compendium"
+    assert_select "td", text: "Queued"
+    assert_select "p", text: /Queued/
   end
 
   test "resident import history links back to import details" do
@@ -69,6 +70,7 @@ class ImporterImportFlowTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "a[href='#{ApplicationController.helpers.tcob_path(goblin)}']", text: "Goblin"
     assert_select "a[href='/rb/resident/items/#{longsword.id}']", text: "Longsword"
+    assert_select "td", text: "Created"
   end
 
   test "admin confirms a stock preview and imports shared content" do

@@ -14,9 +14,9 @@
       <% show_path = admin ? main_app.admin_importer_import_path(import) : import_path(import) %>
       <tr>
         <td><%= link_to l(import.created_at, format: :short), show_path %></td>
-        <td><%= import.status %></td>
+        <td><%= importer_status_label(import.status) %></td>
         <td><%= import.import_files.size %></td>
-        <td><%= import.import_results.group_by(&:outcome).map { |outcome, results| "#{outcome}: #{results.size}" }.join(", ") %></td>
+        <td><%= import.import_results.group_by(&:outcome).map { |outcome, results| "#{importer_outcome_label(outcome)}: #{results.size}" }.join(", ") %></td>
       </tr>
     <% end %>
   </tbody>
