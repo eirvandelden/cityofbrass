@@ -78,6 +78,28 @@ module Storybuilder
       assert_response :success
     end
 
+    test "should hide private tagged pages when public page is shown logged out" do
+      @page.update!(privacy: 'Public')
+      private_page = @parent_object.pages.create!(
+        name: 'Secret Spoilers',
+        privacy: 'Private',
+        short_description: 'Secret',
+        full_description: '<p>Secret</p>',
+        tags: [ 'secret' ]
+      )
+      @page.features.create!(
+        feature_label: 'Tagged',
+        feature_type: 'tag',
+        record_type: 'Storybuilder',
+        search_tags: 'secret'
+      )
+
+      get :show, params: { id: @page.id, resident_adventure_id: @parent_object }
+
+      assert_response :success
+      assert_no_match private_page.name, @response.body
+    end
+
     test "should show page" do
       sign_in @user
       get :show, params: { id: @page.id, resident_adventure_id: @parent_object }

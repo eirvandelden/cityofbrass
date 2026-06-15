@@ -3,16 +3,16 @@
   <%= render :partial => "layouts/sections/show/#{section.section_type}/#{section.section_style}",
     :locals => {
       :section => section,
-      :list => record.children.order(:name),
-      :all_pages => all_pages,
+      :list => visible_records(record.children.order(:name)),
+      :all_pages => visible_records(all_pages),
       :can_auth => can_auth
     } %>
   <% else %>
   <%= render :partial => "layouts/sections/show/#{section.section_type}/#{section.section_style}",
     :locals => {
       :section => section,
-      :list => record.children.order('sort_weight, name'),
-      :all_pages => all_pages,
+      :list => visible_records(record.children.order('sort_weight, name')),
+      :all_pages => visible_records(all_pages),
       :can_auth => can_auth
     } %>
   <% end %>
@@ -27,13 +27,14 @@
       tag_children = @district.pages.order('sort_weight, name').all_tags(section.search_tags.split(',')) if section.record_type.include? "Worldbuilder"
       tag_children = @adventure.pages.order('sort_weight, name').all_tags(section.search_tags.split(',')) if section.record_type.include? "Storybuilder"
     end
+    tag_children = visible_records(tag_children)
 %>
 
   <%= render :partial => "layouts/sections/show/#{section.section_type}/#{section.section_style}",
       :locals => {
         :section => section,
         :list => tag_children,
-        :all_pages => all_pages,
+        :all_pages => visible_records(all_pages),
         :can_auth => can_auth
       } %>
 <% end %>

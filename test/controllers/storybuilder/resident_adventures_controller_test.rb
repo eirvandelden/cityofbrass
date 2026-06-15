@@ -90,6 +90,17 @@ module Storybuilder
       assert_response :success
     end
 
+    test "should hide private child adventures when public adventure is shown logged out" do
+      @adventure.update!(privacy: 'Public')
+      @adventure.features.create!(feature_label: 'Children', feature_type: 'child')
+      @adventure2.update!(parent_id: @adventure.id, privacy: 'Private')
+
+      get :show, params: { id: @adventure }
+
+      assert_response :success
+      assert_no_match @adventure2.name, @response.body
+    end
+
     test "should not show private adventure when logged out" do
       get :show, params: { id: @adventure2 }
       assert_response 403

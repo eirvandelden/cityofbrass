@@ -147,6 +147,19 @@ module ApplicationHelper
     end
   end
 
+  def visible_records(records)
+    Array(records).select { |record| visible_record?(record) }
+  end
+
+  def visible_record?(record)
+    return true unless record.respond_to?(:can_show?)
+    return true if record.class.respond_to?(:column_names) && record.class.column_names.exclude?('privacy')
+
+    record.can_show?(current_user, admin_signed_in?, record.class.name)
+  rescue ArgumentError
+    record.can_show?(current_user, admin_signed_in?)
+  end
+
   def notable_sentence(list)
     begin
       buildlist = []
