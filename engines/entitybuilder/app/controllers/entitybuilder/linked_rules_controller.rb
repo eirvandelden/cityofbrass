@@ -6,6 +6,7 @@ module Entitybuilder
     before_action :set_parent_type
     before_action :set_parent_object
     before_action :check_parent_authorization, except: [:show]
+    before_action :can_sheet, only: [:show]
     before_action :set_linked_rule,  only: [:show, :edit, :update, :destroy]
     before_action :set_core_faq,     only: [:index, :create, :update]
     before_action :set_rule_type,    only: [:index, :new, :update_list]

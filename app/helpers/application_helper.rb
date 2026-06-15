@@ -160,21 +160,47 @@ module ApplicationHelper
     record.can_show?(current_user, admin_signed_in?)
   end
 
+  def visible_notables(list)
+    Array(list).select { |record| record.entity.blank? || visible_record?(record.entity) }
+  end
+
+  def visible_inventory_items(inventory_items)
+    Array(inventory_items).select { |inventory_item| visible_record?(inventory_item.item) }
+  end
+
+  def notable_link(record)
+    return record.name if record.entity.blank?
+
+    link_to record.name, notable_entity_path(record), "data-reveal-id" => "showModal", remote: true
+  end
+
+  def notable_entity_path(record)
+    return "#{entitybuilder.polymorphic_path(record.entity)}/profile" if notable_profile_link?(record)
+
+    entitybuilder.polymorphic_path(record.entity)
+  end
+
+  def notable_profile_link?(record)
+    record.notableable_type.include?("Storybuilder") &&
+      record.entity.can_sheet?(current_user, admin_signed_in?, record.entity.type.demodulize)
+  end
+
+  def visible_storybuilder_menu_items(menu_items)
+    Array(menu_items).select { |menu_item| visible_storybuilder_menu_item?(menu_item) }
+  end
+
+  def visible_storybuilder_menu_item?(menu_item)
+    join = Storybuilder::MenuItemJoin.find_by(menu_item_id: menu_item.id)
+    return true if join.blank? || join.menu_item_joinable.blank?
+
+    visible_record?(join.menu_item_joinable)
+  end
+
   def notable_sentence(list)
     begin
       buildlist = []
       if list
-        list.each do |record|
-
-        if record.entity.blank?
-          link = record.name
-        elsif  record.notableable_type.include?"Storybuilder"
-          link = link_to record.name, "#{entitybuilder.polymorphic_path(record.entity)}/profile", "data-reveal-id" => "showModal", :remote => true
-        else
-          link = link_to record.name, "#{entitybuilder.polymorphic_path(record.entity)}", "data-reveal-id" => "showModal", :remote => true
-        end
-          buildlist << link
-        end
+        visible_notables(list).each { |record| buildlist << notable_link(record) }
         buildlist.to_sentence(:two_words_connector => ' & ', :last_word_connector => ' & ').html_safe
       else
         nil

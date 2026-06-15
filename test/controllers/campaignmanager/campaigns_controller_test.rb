@@ -70,6 +70,47 @@ module Campaignmanager
       assert_response :success
     end
 
+    test "should hide private world when public campaign is shown logged out" do
+      district = worldbuilder_districts(:district_three)
+      @campaign2.update!(privacy: 'Public', district: district)
+
+      get :show, params: { id: @campaign2 }
+
+      assert_response :success
+      assert_no_match district.name, @response.body
+    end
+
+    test "should hide private character when public campaign characters are shown logged out" do
+      character = entitybuilder_entities(:resident_character_one)
+      character.update!(name: 'Hidden Campaign Character', privacy: 'Private', sheet_privacy: 'Private')
+      character.campaign_join&.destroy!
+      character.create_campaign_join!(campaign: @campaign2)
+      @campaign2.update!(privacy: 'Public')
+
+      get :characters, params: { campaign_id: @campaign2 }
+
+      assert_response :success
+      assert_no_match character.name, @response.body
+    end
+
+    test "should hide private notable entity when public campaign notables are shown logged out" do
+      entity = entitybuilder_entities(:resident_character_one)
+      entity.update!(
+        name: 'Hidden Campaign Notable Character',
+        privacy: 'Private',
+        sheet_privacy: 'Private',
+        short_description: 'Hidden campaign notable text'
+      )
+      @campaign2.notables.create!(entity: entity, name: entity.name, sort_order: 99)
+      @campaign2.update!(privacy: 'Public')
+
+      get :notables, params: { campaign_id: @campaign2 }
+
+      assert_response :success
+      assert_no_match entity.name, @response.body
+      assert_no_match entity.short_description, @response.body
+    end
+
     test "should not get edit" do
       sign_in @user2
       get :edit, params: { id: @campaign }

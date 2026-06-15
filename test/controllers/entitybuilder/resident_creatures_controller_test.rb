@@ -69,6 +69,12 @@ module Entitybuilder
       assert_response :success
     end
 
+    test "should not show public creature card summary when sheet privacy is private" do
+      @creature.update!(privacy: 'Public', sheet_privacy: 'Private')
+      get :card_summary, xhr: true, format: :js, params: { resident_creature_id: @creature }
+      assert_response 403
+    end
+
     test "should not show private creature when logged out" do
       @creature.update!(privacy: 'Private')
       get :show, params: { id: @creature }

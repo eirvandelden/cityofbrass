@@ -48,7 +48,7 @@ class Entitybuilder::ApplicationController < ApplicationController
     end
 
     def can_sheet
-      unless @parent_object.can_sheet?(current_user, admin_signed_in?, @type)
+      unless @parent_object.can_sheet?(current_user, admin_signed_in?, @type || @parent_type)
         render template: 'errors/403', layout: 'layouts/application', status: 403
       end
     end

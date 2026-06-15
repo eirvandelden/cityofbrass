@@ -20,7 +20,7 @@ module Entitybuilder
             class_name: "Campaignmanager::Campaign"
 
     has_one :district,
-            -> { select('worldbuilder_districts.id, worldbuilder_districts.name, worldbuilder_districts.slug') },
+            -> { select('worldbuilder_districts.id, worldbuilder_districts.name, worldbuilder_districts.slug, worldbuilder_districts.privacy') },
             through: :campaign,
             class_name: "Worldbuilder::District"
 

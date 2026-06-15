@@ -70,10 +70,61 @@ module Entitybuilder
       assert_response :success
     end
 
+    test "should hide private campaign when public character is shown logged out" do
+      campaign = campaignmanager_campaigns(:resident_two)
+      @character.update!(privacy: 'Public')
+      @character.campaign_join&.destroy!
+      @character.create_campaign_join!(campaign: campaign)
+      campaign.update!(privacy: 'Private', district: worldbuilder_districts(:district_two))
+
+      get :show, params: { id: @character }
+
+      assert_response :success
+      assert_no_match campaign.name, @response.body
+      assert_no_match campaign.resident.name, @response.body
+    end
+
+    test "should hide private campaign world when public character is shown logged out" do
+      campaign = campaignmanager_campaigns(:resident_two)
+      district = worldbuilder_districts(:district_three)
+      @character.update!(privacy: 'Public')
+      @character.campaign_join&.destroy!
+      @character.create_campaign_join!(campaign: campaign)
+      campaign.update!(privacy: 'Public', district: district)
+
+      get :show, params: { id: @character }
+
+      assert_response :success
+      assert_match campaign.name, @response.body
+      assert_no_match district.name, @response.body
+    end
+
     test "should show public character sheet when logged out" do
       @character.update!(sheet_privacy: 'Public')
       get :sheet, params: { resident_character_id: @character }
       assert_response :success
+    end
+
+    test "should hide private inventory item when public character sheet is shown logged out" do
+      inventory_item = entitybuilder_inventory_items(:one)
+      inventory_item.item.update!(
+        name: 'Hidden Sheet Item',
+        privacy: 'Private',
+        short_description: 'Hidden sheet item text'
+      )
+      @character.update!(sheet_privacy: 'Public')
+
+      get :sheet, params: { resident_character_id: @character }
+
+      assert_response :success
+      assert_no_match inventory_item.item.name, @response.body
+      assert_no_match inventory_item.item.short_description, @response.body
+    end
+
+    test "should not show public character card summary when sheet privacy is private" do
+      @character.update!(privacy: 'Public', sheet_privacy: 'Private')
+      get :card_summary, xhr: true, format: :js, params: { resident_character_id: @character }
+      assert_response 403
     end
 
     test "should show character" do

@@ -79,6 +79,13 @@ module Entitybuilder
       assert_response 401
     end
 
+    test "should not show inventory_item when sheet is private" do
+      sign_in @user2
+      @character.update!(sheet_privacy: 'Private')
+      get :show, xhr: true, format: :js, params: { id: @inventory_item, resident_character_id: @character.id }
+      assert_response 403
+    end
+
     test "should show inventory_item" do
       sign_in @user
       get :show, xhr: true, format: :js, params: { id: @inventory_item, resident_character_id: @character.id }

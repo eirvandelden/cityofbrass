@@ -1,7 +1,7 @@
 <article class="features">
   <% if @adventure.features.size > 0 || @adventure.parent_id.present? %>
     <ul class="no-bullet">
-      <% if @page.parent %>
+      <% if @page.parent && visible_record?(@page.parent) %>
         <li>
           <strong>Parent: </strong>
           <%= link_to @page.parent.name, storybuilder.polymorphic_path([@adventure, @page.parent]) %><br>
@@ -22,7 +22,7 @@
   <% end %>
 </article>
 <article class='notables'>
-  <% if @page.notables.size > 0 %>
+  <% if visible_notables(@page.notables).any? %>
     <%= render "layouts/notables/entity_feature_list", list: @page.notables %>
     <%= link_to "<i class='header-icon-edit fa fa-cog'></i>".html_safe, resident_adventure_notables_path(@adventure), title: "Edit Notables", class: "edit" %>
   <% end %>

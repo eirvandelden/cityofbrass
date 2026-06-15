@@ -101,6 +101,29 @@ module Storybuilder
       assert_no_match @adventure2.name, @response.body
     end
 
+    test "should hide private parent adventure when public child adventure is shown logged out" do
+      @adventure2.update!(full_description: '<p>Private parent adventure text</p>')
+      @adventure.update!(parent_id: @adventure2.id, privacy: 'Public')
+
+      get :show, params: { id: @adventure }
+
+      assert_response :success
+      assert_no_match @adventure2.name, @response.body
+      assert_no_match @adventure2.full_description, @response.body
+    end
+
+    test "should hide private notable entity when public adventure is shown logged out" do
+      entity = entitybuilder_entities(:resident_character_one)
+      entity.update!(name: 'Private Notable Character', privacy: 'Private', sheet_privacy: 'Private')
+      @adventure.update!(privacy: 'Public')
+      @adventure.notables.create!(entity: entity, name: entity.name, sort_order: 99)
+
+      get :show, params: { id: @adventure }
+
+      assert_response :success
+      assert_no_match entity.name, @response.body
+    end
+
     test "should not show private adventure when logged out" do
       get :show, params: { id: @adventure2 }
       assert_response 403

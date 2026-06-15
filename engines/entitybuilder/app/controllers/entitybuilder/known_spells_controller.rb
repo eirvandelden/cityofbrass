@@ -8,6 +8,7 @@ module Entitybuilder
     before_action :set_parent_type
     before_action :set_parent_object
     before_action :check_parent_authorization, except: [:show]
+    before_action :can_sheet, only: [:show]
     before_action :set_known_spell, only: [:show, :edit, :use_spell, :update, :destroy]
     before_action :set_core_faq, only: [:index, :create, :update]
 

@@ -66,6 +66,40 @@ module Campaignmanager
       assert_response 404
     end
 
+    test "should hide private parent page when public child page is shown logged out" do
+      private_page = @parent_object.adventure_logs.create!(
+        name: 'Private Campaign Parent Page',
+        privacy: 'Private',
+        short_description: 'Secret',
+        full_description: '<p>Secret campaign parent text</p>'
+      )
+      child_page = @parent_object.adventure_logs.create!(
+        parent_id: private_page.id,
+        name: 'Public Campaign Child Page',
+        privacy: 'Public',
+        short_description: 'Public',
+        full_description: '<p>Public campaign child text</p>'
+      )
+
+      get :show, params: { id: child_page.id, campaign_id: @parent_object, type: @page.type.demodulize }
+
+      assert_response :success
+      assert_no_match private_page.name, @response.body
+      assert_no_match private_page.full_description, @response.body
+    end
+
+    test "should hide private notable entity when public page is shown logged out" do
+      entity = entitybuilder_entities(:resident_character_one)
+      entity.update!(name: 'Private Campaign Notable Character', privacy: 'Private', sheet_privacy: 'Private')
+      @page.update!(privacy: 'Public')
+      @page.notables.create!(entity: entity, name: entity.name, sort_order: 99)
+
+      get :show, params: { id: @page.id, campaign_id: @parent_object, type: @page.type.demodulize }
+
+      assert_response :success
+      assert_no_match entity.name, @response.body
+    end
+
     test "should show page" do
       sign_in @user
       get :show, params: { id: @page.id, campaign_id: @parent_object, type: @page.type.demodulize }
