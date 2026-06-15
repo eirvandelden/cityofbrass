@@ -51,6 +51,11 @@ jobs:
           ruby-version: current
           install-gems: true
 
+      - name: Install ImageMagick
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+
       - name: Set up database
         env:
           RAILS_ENV: test
