@@ -3,7 +3,7 @@
     :locals => {
       :icon => 'fa fa-magic',
       :main => @spell.name,
-      :edit_link => edit_polymorphic_path(@spell),
+      :edit_link => edit_route_path(@spell),
       :can_auth => @spell.can_edit?(current_user, admin_signed_in?, @type)
     }
   %>

@@ -6,8 +6,8 @@
           :icon => @entity.icon,
           :main => @entity.name,
           :sub => @entity.profile_title,
-          :view_link_remote => polymorphic_path(@entity),
-          :profile_link_remote => ("#{polymorphic_path(@entity)}/profile" if @entity.can_sheet?(current_user, admin_signed_in?, @type))
+          :view_link_remote => route_path(@entity),
+          :profile_link_remote => ("#{route_path(@entity)}/profile" if @entity.can_sheet?(current_user, admin_signed_in?, @type))
         }
       %>
       <hr class="faded">

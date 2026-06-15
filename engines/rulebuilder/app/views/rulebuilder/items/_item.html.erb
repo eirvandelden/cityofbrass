@@ -3,7 +3,7 @@
     :locals => {
       :icon => 'icon-price-tag',
       :main => @item.name,
-      :edit_link => edit_polymorphic_path(@item),
+      :edit_link => edit_route_path(@item),
       :can_auth => @item.can_edit?(current_user, admin_signed_in?, @type)
     }
   %>

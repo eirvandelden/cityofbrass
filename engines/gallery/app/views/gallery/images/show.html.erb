@@ -2,7 +2,7 @@
 
 <% content_for :breadcrumb do %>
   <%=  breadcrumb [
-          { "Images" => polymorphic_path(@type.tableize) },
+          { "Images" => route_collection_path(@type.tableize) },
           { @image.name => nil }
       ] %>
 <% end %>
@@ -14,12 +14,12 @@
         :main => @image.name,
         :sub => @image.file_size,
         :icon => 'icon-images',
-        :edit_link => edit_polymorphic_path(@image),
+        :edit_link => edit_route_path(@image),
         :can_auth => @image.can_edit?(current_user, admin_signed_in?, @type)
       }
     %>
     <hr class="faded">
-    <p><i class='fa fa-angle-double-left'></i> <%= link_to "Return to Index".html_safe, polymorphic_path(@type.tableize) %></p>
+    <p><i class='fa fa-angle-double-left'></i> <%= link_to "Return to Index".html_safe, route_collection_path(@type.tableize) %></p>
   </div>
 </div>
 <% if @image.file? %>

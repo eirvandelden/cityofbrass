@@ -4,7 +4,7 @@
       :icon => 'fa fa-book',
       :main => @rule.name,
       :sub => ("(#{@rule.category_list})" if @rule.category_list.present?),
-      :edit_link => edit_polymorphic_path(@rule),
+      :edit_link => edit_route_path(@rule),
       :can_auth => @rule.can_edit?(current_user, admin_signed_in?, @type)
     }
   %>
