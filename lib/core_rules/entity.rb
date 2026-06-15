@@ -2,25 +2,25 @@ module CoreRules
   module Entity
 
     def self.sheet_layout(core_rules)
-      rulebook = CoreRules.rulebooks.detect { |v| v['name'] == core_rules }
+      rulebook = CoreRules.rulebooks.detect { |v| v['slug'] == core_rules }
       sheet = rulebook['entitybuilder']['sheet'] unless rulebook.blank?
       return sheet
     end
 
     def self.use_modifiers?(core_rules)
-      rulebook = CoreRules.rulebooks.detect { |v| v['name'] == core_rules }
+      rulebook = CoreRules.rulebooks.detect { |v| v['slug'] == core_rules }
       use_modifiers = rulebook['entitybuilder']['use_modifiers'] unless rulebook.blank?
       return use_modifiers == "true" ? true : false
     end
 
     def self.show_core_blocks?(core_rules)
-      rulebook = CoreRules.rulebooks.detect { |v| v['name'] == core_rules }
+      rulebook = CoreRules.rulebooks.detect { |v| v['slug'] == core_rules }
       show_core_blocks = rulebook['entitybuilder']['show_core_blocks'] unless rulebook.blank?
       return show_core_blocks == "true" ? true : false
     end
 
     def self.menu(core_rules)
-      rulebook = CoreRules.rulebooks.detect { |v| v['name'] == core_rules }
+      rulebook = CoreRules.rulebooks.detect { |v| v['slug'] == core_rules }
       menu = rulebook['entitybuilder']['menu'] unless rulebook.blank?
       return menu
     end
@@ -30,7 +30,7 @@ module CoreRules
     end
 
     def self.core_skills(core_rules)
-      rulebook = CoreRules.rulebooks.detect { |v| v['name'] == core_rules }
+      rulebook = CoreRules.rulebooks.detect { |v| v['slug'] == core_rules }
       core_skills = rulebook['entitybuilder']['core_skills'] unless rulebook.blank?
       return core_skills
     end
@@ -40,13 +40,13 @@ module CoreRules
     end
 
     def self.default_types(core_rules, entity_type)
-      config = CoreRules.rulebooks.detect { |v| v['name'] == core_rules }
+      config = CoreRules.rulebooks.detect { |v| v['slug'] == core_rules }
       default_types = config['entitybuilder'][entity_type].keys unless config.blank?
       return default_types
     end
 
     def self.defaults_values(core_rules, entity_type, default_type)
-      rulebook = CoreRules.rulebooks.detect { |v| v['name'] == core_rules }
+      rulebook = CoreRules.rulebooks.detect { |v| v['slug'] == core_rules }
       defaults = rulebook['entitybuilder'][entity_type][default_type] unless rulebook.blank?
       return defaults
     end

@@ -1,3 +1,4 @@
+require "core_rules/rulebook"
 require "core_rules/entity"
 require "core_rules/rule"
 require "core_rules/seeder"
@@ -5,46 +6,50 @@ require "core_rules/seeder"
 module CoreRules
   mattr_accessor :rulebooks
 
+  def self.all(show_all = true)
+    config = show_all ? rulebooks : rulebooks.select { |v| v["active"] == "true" }
+    config.map do |v|
+      Rulebook.new(
+        slug:         v["slug"],
+        name:         v["name"],
+        active:       v["active"],
+        stock:        v["stock"],
+        d20_system:   v["d20_system"],
+        default_dice: v["default_dice"],
+        license:      v["license"]
+      )
+    end
+  end
+
+  def self.find(slug)
+    all.detect { |r| r.slug == slug }
+  end
+
+  def self.display_name(slug)
+    rulebook = rulebooks.detect { |v| v["slug"] == slug }
+    rulebook["name"] if rulebook.present?
+  end
+
   def self.options(show_all)
-    if show_all
-      config = CoreRules.rulebooks
-    else
-      config = CoreRules.rulebooks.select { |v| v["active"] == "true" }
-    end
-    options = []
-    config.each_with_index do |r, i|
-      options[i] = r["name"]
-    end
-    options
+    config = show_all ? rulebooks : rulebooks.select { |v| v["active"] == "true" }
+    config.map { |r| [ r["name"], r["slug"] ] }
   end
 
-  def self.d20_system?(core_rules)
-    options = rulebooks.detect { |v| v["name"] == core_rules && v["d20_system"] == "true" }
-    if options.present?
-      true
-    else
-      false
-    end
+  def self.d20_system?(slug)
+    rulebooks.any? { |v| v["slug"] == slug && v["d20_system"] == "true" }
   end
 
-  def self.stock?(core_rules)
-    options = rulebooks.detect { |v| v["name"] == core_rules && v["stock"] == "true" }
-    if options.present?
-      true
-    else
-      false
-    end
+  def self.stock?(slug)
+    rulebooks.any? { |v| v["slug"] == slug && v["stock"] == "true" }
   end
 
-  def self.license(core_rules)
-    rulebook = rulebooks.detect { |v| v["name"] == core_rules }
-    license = rulebook["license"] if rulebook.present?
-    license
+  def self.license(slug)
+    rulebook = rulebooks.detect { |v| v["slug"] == slug }
+    rulebook["license"] if rulebook.present?
   end
 
-  def self.default_dice(core_rules)
-    rulebook = rulebooks.detect { |v| v["name"] == core_rules }
-    dice = rulebook["default_dice"] if rulebook.present?
-    dice
+  def self.default_dice(slug)
+    rulebook = rulebooks.detect { |v| v["slug"] == slug }
+    rulebook["default_dice"] if rulebook.present?
   end
 end
