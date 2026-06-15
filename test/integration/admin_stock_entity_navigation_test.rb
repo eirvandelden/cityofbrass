@@ -9,6 +9,21 @@ class AdminStockEntityNavigationTest < ActionDispatch::IntegrationTest
     @creature = entitybuilder_entities(:stock_creature_one)
     @character = entitybuilder_entities(:resident_character_one)
     @adventure = storybuilder_adventures(:resident_one)
+    @rule = rulebuilder_rules(:stock_one)
+    @image = gallery_images(:stock_one)
+  end
+
+  test "entity detail pages keep admin stock links" do
+    sign_in @user
+    sign_in @admin
+
+    [ "", "/profile", "/sheet", "/card" ].each do |path|
+      get "/eb/admin/stock/creatures/#{@creature.id}#{path}"
+
+      assert_response :success
+      assert_select "a[href='/eb/admin/stock/creatures/#{@creature.id}/edit']"
+      assert_select "a[href^='/eb/stock/creatures/#{@creature.id}']", false
+    end
   end
 
   test "nested entity pages keep admin stock links" do
@@ -19,6 +34,27 @@ class AdminStockEntityNavigationTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select "a[href='/eb/admin/stock/creatures/#{@creature.id}/descriptors/new']"
+  end
+
+  test "rule detail pages keep admin stock links" do
+    sign_in @user
+    sign_in @admin
+
+    get "/rb/admin/stock/rules/#{@rule.id}"
+
+    assert_response :success
+    assert_select "a[href='/rb/admin/stock/rules/#{@rule.id}/edit']"
+  end
+
+  test "image detail pages keep admin stock links" do
+    sign_in @user
+    sign_in @admin
+
+    get "/gallery/admin/stock/images/#{@image.id}"
+
+    assert_response :success
+    assert_select "a[href='/gallery/admin/stock/images/#{@image.id}/edit']"
+    assert_select "a[href='/gallery/admin/stock/images']"
   end
 
   test "admin can add stock notables for non-stock entity core rules" do

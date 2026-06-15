@@ -3,7 +3,7 @@
 <% content_for :breadcrumb do %>
   <%=  breadcrumb [
     { type_array[0] => nil },
-    { type_array[1] => polymorphic_path(@type.tableize) },
+    { type_array[1] => route_collection_path(@type.tableize) },
     { @entity.name => nil }
   ] %>
 <% end %>
@@ -15,10 +15,10 @@
         :icon => @entity.icon,
         :main => @entity.name,
         :sub => @entity.title,
-        :view_link => polymorphic_path(@entity),
-        :profile_link => ("#{polymorphic_path(@entity)}/profile" if @entity.can_sheet?(current_user, admin_signed_in?, @type)),
-        :sheet_link => ("#{polymorphic_path(@entity)}/sheet" if @entity.can_sheet?(current_user, admin_signed_in?, @type)),
-        :edit_link => edit_polymorphic_path(@entity),
+        :view_link => route_path(@entity),
+        :profile_link => ("#{route_path(@entity)}/profile" if @entity.can_sheet?(current_user, admin_signed_in?, @type)),
+        :sheet_link => ("#{route_path(@entity)}/sheet" if @entity.can_sheet?(current_user, admin_signed_in?, @type)),
+        :edit_link => edit_route_path(@entity),
         :can_auth => @entity.can_edit?(current_user, admin_signed_in?, @type)
       }
     %>
