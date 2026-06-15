@@ -24,7 +24,7 @@
 
       <%= form_with url: imports_path, method: :post do |form| %>
         <%= form.hidden_field :preview_id, value: @preview.id %>
-        <%= form.submit t("importer.previews.show.confirm") %>
+        <%= form.submit t("importer.previews.show.confirm"), class: "button" %>
       <% end %>
     </main>
   </div>

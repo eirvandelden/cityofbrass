@@ -24,7 +24,7 @@
 
       <%= form_with url: main_app.admin_importer_imports_path, method: :post do |form| %>
         <%= form.hidden_field :preview_id, value: @preview.id %>
-        <%= form.submit t("importer.admin.previews.show.confirm") %>
+        <%= form.submit t("importer.admin.previews.show.confirm"), class: "button" %>
       <% end %>
     </main>
   </div>

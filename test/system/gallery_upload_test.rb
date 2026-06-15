@@ -2,13 +2,15 @@ require "application_system_test_case"
 
 class GalleryUploadTest < ApplicationSystemTestCase
   setup do
-    @file_definition = Gallery::ResidentImage.attachment_definitions[:file].dup
-    Gallery::ResidentImage.attachment_definitions[:file][:path] = test_file_path
-    Gallery::ResidentImage.attachment_definitions[:file][:url] = test_file_url
+    @file_options = resident_image_file_options
+    @file_definition = @file_options.dup
+    @file_options[:path] = test_file_path
+    @file_options[:url] = test_file_url
   end
 
   teardown do
-    Gallery::ResidentImage.attachment_definitions[:file] = @file_definition
+    @file_options.clear
+    @file_options.merge!(@file_definition)
   end
 
   test "user uploads a resident image" do
@@ -24,6 +26,14 @@ class GalleryUploadTest < ApplicationSystemTestCase
   end
 
   private
+
+  def resident_image_file_options
+    Paperclip::AttachmentRegistry.each_definition do |klass, name, options|
+      return options if klass == Gallery::ResidentImage && name == :file
+    end
+
+    raise "Missing Gallery::ResidentImage file attachment"
+  end
 
   def test_file_path
     ":rails_root/public/system/gallery/residents/:part_id/:resident_id/images/:id/:style.:extension"

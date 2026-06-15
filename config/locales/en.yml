@@ -100,6 +100,7 @@ en:
     imports:
       index:
         title: Imports
+        description: Upload Game Master 5 XML files to preview campaigns, characters, creatures, rules, spells, and items before adding them to your resident content.
         new_preview: New import
         history: Import History
         created_at: Created
@@ -129,6 +130,7 @@ en:
       imports:
         index:
           title: Stock Imports
+          description: Upload Game Master 5 XML files to preview shared stock content before adding creatures, adventures, rules, spells, and items.
           new_preview: New stock import
         show:
           title: Stock Import Status
