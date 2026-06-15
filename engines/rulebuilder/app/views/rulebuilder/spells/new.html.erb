@@ -3,7 +3,7 @@
 <% content_for :breadcrumb do %>
   <%=  breadcrumb [
     { type_array[0] => nil },
-    { type_array[1] => polymorphic_path(@type.tableize) },
+    { type_array[1] => route_collection_path(@type.tableize) },
     { "New Spell" => nil }
   ] %>
 <% end %>
@@ -13,7 +13,7 @@
     <%= render :partial => 'menus/manage',
       :locals => {
         :active => 'new',
-        :index_link => polymorphic_path(@type.tableize)
+        :index_link => route_collection_path(@type.tableize)
       } %>
   </div>
   <div class="medium-10 columns" id="brass_form">

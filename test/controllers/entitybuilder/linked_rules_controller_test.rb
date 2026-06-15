@@ -48,6 +48,24 @@ module Entitybuilder
       assert_response :success
     end
 
+    test "admin should get stock rule options for non-stock core rules" do
+      rule = Rulebuilder::StockRule.create!(
+        core_rules: "Generic",
+        rule_type: "Rule",
+        is_shared: true,
+        name: "Generic stock rule"
+      )
+      @character.update!(core_rules: "Generic")
+
+      sign_in @user
+      sign_in admins(:dan)
+      get :new, xhr: true, format: :js, params: { resident_character_id: @character.id, type: "stock", rule_type: "rule" }
+
+      assert_response :success
+      assert_includes assigns(:rule_options), rule
+      assert_includes @response.body, rule.name
+    end
+
     test "should not create linked_rule" do
       assert_difference('LinkedRule.count', 0) do
         post :create, format: :js, params: { linked_rule: { name: 'NewName' }, resident_character_id: @character.id }

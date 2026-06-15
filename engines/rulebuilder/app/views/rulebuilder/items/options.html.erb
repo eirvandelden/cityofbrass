@@ -3,7 +3,7 @@
 <% content_for :breadcrumb do %>
   <%=  breadcrumb [
     { type_array[0] => nil },
-    { type_array[1] => polymorphic_path(@type.tableize) },
+    { type_array[1] => route_collection_path(@type.tableize) },
     { @item.name => nil }
   ] %>
 <% end %>
@@ -13,10 +13,10 @@
     <%= render :partial =>'menus/manage',
       :locals => {
         :active => 'options',
-        :index_link => polymorphic_path(@type.tableize),
-        :view_link => polymorphic_path(@item),
-        :details_link => edit_polymorphic_path(@item),
-        :options_link => "#{polymorphic_path(@item)}/options"
+        :index_link => route_collection_path(@type.tableize),
+        :view_link => route_path(@item),
+        :details_link => edit_route_path(@item),
+        :options_link => "#{route_path(@item)}/options"
       } %>
   </div>
   <div class="medium-10 columns">

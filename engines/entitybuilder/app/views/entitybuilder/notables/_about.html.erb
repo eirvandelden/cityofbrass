@@ -6,7 +6,7 @@
       </div>
     </div>
 
-    <% if CoreRules.stock?(@parent_object.core_rules) %>
+    <% if stock_content_available?(@parent_object.core_rules) %>
       <strong><%= link_to "<i class='fa fa-plus-circle'></i> Stock Creature".html_safe, "#{route_path(@parent_object)}/notables/new?entity_type=stock_creature", :remote => true %></strong>
       <p>Add a Creature from the stock beastiary.</p>
       <strong><%= link_to "<i class='fa fa-plus-circle'></i> Stock NPC".html_safe, "#{route_path(@parent_object)}/notables/new?entity_type=stock_npc", :remote => true %></strong>

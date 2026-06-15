@@ -19,6 +19,8 @@ class ApplicationController < ActionController::Base
   helper Storybuilder::Engine.helpers
   helper Worldbuilder::Engine.helpers
 
+  helper_method :stock_content_available?
+
   def clear_ajax_flash
     flash.discard if request.format.js?
   end
@@ -27,6 +29,10 @@ class ApplicationController < ActionController::Base
     if current_user.inactive?
       redirect_to main_app.root_path
     end
+  end
+
+  def stock_content_available?(core_rules)
+    admin_signed_in? || CoreRules.stock?(core_rules)
   end
 
   protected

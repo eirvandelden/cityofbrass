@@ -5,7 +5,7 @@
     <p>
       Fireball anyone?
     </p>
-    <% if CoreRules.stock?(@parent_object.core_rules) %>
+    <% if stock_content_available?(@parent_object.core_rules) %>
       <strong><%= link_to "<i class='fa fa-plus-circle'></i> Stock Spell".html_safe, "#{route_path(@parent_object)}/known_spells/new?rule_type=stock", :remote => true %></strong>
       <p>Add a Stock Spell.</p>
     <% end %>

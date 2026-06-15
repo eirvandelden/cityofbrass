@@ -7,7 +7,7 @@
       </div>
     </div>
 
-    <% if CoreRules.stock?(@adventure.core_rules) %>
+    <% if stock_content_available?(@adventure.core_rules) %>
       <strong><%= link_to "<i class='fa fa-plus-circle'></i> Stock Creature".html_safe, "#{tcob_path(@parent_object, 'id')}/notables/new?entity_type=stock_creature", :remote => true %></strong>
       <p>Add a Creature from the stock beastiary.</p>
       <strong><%= link_to "<i class='fa fa-plus-circle'></i> Stock NPC".html_safe, "#{tcob_path(@parent_object, 'id')}/notables/new?entity_type=stock_npc", :remote => true %></strong>
