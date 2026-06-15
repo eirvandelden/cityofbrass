@@ -13,6 +13,7 @@ class ConvertProprietaryRecordsToStockTest < ActiveSupport::TestCase
     ConvertProprietaryRecordsToStock.new.up
 
     assert_equal "Entitybuilder::StockCreature", entity_type(creature_id)
+    assert_equal "Gallery::StockImage", image_type(image_id)
     assert_equal [ "Entitybuilder::StockCreature" ], imageable_types(creature_id)
     assert_equal [ "Rulebuilder::StockRule" ], imageable_types(rule_id)
     assert_equal [ "Entitybuilder::StockCreature" ], notableable_types(creature_id)
@@ -45,7 +46,7 @@ class ConvertProprietaryRecordsToStockTest < ActiveSupport::TestCase
     end
 
     def insert_image
-      insert_row("gallery_images", type: "Gallery::StockImage", name: "Legacy image")
+      insert_row("gallery_images", type: "Gallery::ProprietaryImage", name: "Legacy image")
     end
 
     def insert_image_join(image_id, imageable_id, imageable_type)
@@ -81,6 +82,10 @@ class ConvertProprietaryRecordsToStockTest < ActiveSupport::TestCase
 
     def entity_type(id)
       select_value("entitybuilder_entities", "type", id)
+    end
+
+    def image_type(id)
+      select_value("gallery_images", "type", id)
     end
 
     def imageable_types(id)

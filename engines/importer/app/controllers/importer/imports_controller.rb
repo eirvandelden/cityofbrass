@@ -1,5 +1,7 @@
 module Importer
   class ImportsController < ApplicationController
+    helper Importer::ImportsHelper
+
     def index
       @imports = current_user.resident.importer_imports.includes(:import_files, :import_results)
     end

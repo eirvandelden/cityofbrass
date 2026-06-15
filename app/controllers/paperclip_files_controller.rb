@@ -40,7 +40,7 @@ class PaperclipFilesController < ApplicationController
     in [ "gallery", "residents", _, _, _, _, "images", id, _ ]
       Gallery::ResidentImage.find_by(id: id)
     in [ "gallery", "stock-images", id, _ ]
-      Gallery::Image.where(type: %w[Gallery::StockImage Gallery::ProprietaryImage]).find_by(id: id)
+      Gallery::StockImage.find_by(id: id)
     in [ "gallery", "map-images", id, _ ]
       Gallery::MapImage.find_by(id: id)
     in [ "gallery", "faq-images", id, _ ]
@@ -54,7 +54,7 @@ class PaperclipFilesController < ApplicationController
     case attachment_record
     when Gallery::StockImage, Gallery::MapImage
       true
-    when Gallery::ProprietaryImage, Gallery::FaqImage
+    when Gallery::FaqImage
       admin_signed_in?
     when Gallery::ResidentImage
       admin_signed_in? || attachment_record.resident.user_id == current_user&.id
@@ -92,7 +92,7 @@ class PaperclipFilesController < ApplicationController
     when Gallery::ResidentImage
       [ "gallery", "residents", *resident_part_id, attachment_record.resident_id, "images", attachment_record.id,
         "#{style}.#{attachment_extension}" ]
-    when Gallery::StockImage, Gallery::ProprietaryImage
+    when Gallery::StockImage
       [ "gallery", "stock-images", attachment_record.id, "#{style}.#{attachment_extension}" ]
     when Gallery::MapImage
       [ "gallery", "map-images", attachment_record.id, "#{style}.#{attachment_extension}" ]
