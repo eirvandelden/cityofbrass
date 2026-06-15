@@ -15,7 +15,7 @@ string that names the game system it belongs to (`"5th Edition"`, `"PFRPG"`,
 ## Contents
 
 - [Models at a glance](#models-at-a-glance)
-- [The three ownership tiers](#the-three-ownership-tiers)
+- [Ownership tiers](#ownership-tiers)
 - [Schema reference](#schema-reference)
 - [The `core_rules` + `rule_type` contract](#the-core_rules--rule_type-contract)
 - [System config (JSON)](#system-config-json)
@@ -31,19 +31,20 @@ string that names the game system it belongs to (`"5th Edition"`, `"PFRPG"`,
 
 ## Models at a glance
 
-Three parent models, each with three Single-Table-Inheritance variants by
+Three parent models, each with two Single-Table-Inheritance variants by
 ownership. The variant is stored in the `type` column.
 
-| Parent             | Table                  | Stock variant                  | Resident variant                  | Proprietary variant                  |
-| ------------------ | ---------------------- | ------------------------------ | --------------------------------- | ------------------------------------ |
-| `Rulebuilder::Rule`  | `rulebuilder_rules`    | `Rulebuilder::StockRule`         | `Rulebuilder::ResidentRule`         | `Rulebuilder::ProprietaryRule`         |
-| `Rulebuilder::Spell` | `rulebuilder_spells`   | `Rulebuilder::StockSpell`        | `Rulebuilder::ResidentSpell`        | `Rulebuilder::ProprietarySpell`        |
-| `Rulebuilder::Item`  | `rulebuilder_items`    | `Rulebuilder::StockItem`         | `Rulebuilder::ResidentItem`         | `Rulebuilder::ProprietaryItem`         |
+| Parent               | Table                 | Stock variant             | Resident variant             |
+| -------------------- | --------------------- | ------------------------- | ---------------------------- |
+| `Rulebuilder::Rule`  | `rulebuilder_rules`   | `Rulebuilder::StockRule`  | `Rulebuilder::ResidentRule`  |
+| `Rulebuilder::Spell` | `rulebuilder_spells`  | `Rulebuilder::StockSpell` | `Rulebuilder::ResidentSpell` |
+| `Rulebuilder::Item`  | `rulebuilder_items`   | `Rulebuilder::StockItem`  | `Rulebuilder::ResidentItem`  |
 
 The parent classes (e.g. `Rulebuilder::Rule`) hold all validations, scopes, and
 relationships. The STI variants are mostly empty shells — they exist so
 authorization and ownership policy can differ per tier without forking the
-schema.
+schema. Admin stock routes edit the same stock records that public stock routes
+display.
 
 Parent files:
 
@@ -53,18 +54,20 @@ Parent files:
 
 ---
 
-## The three ownership tiers
+## Ownership tiers
 
 | Tier             | Owner                       | Who can edit         | Visible to     | Typical use                                              |
 | ---------------- | --------------------------- | -------------------- | -------------- | -------------------------------------------------------- |
 | **Stock**        | The platform (no `resident_id`) | Admins only       | All users      | Free / SRD content shipped with the app                  |
 | **Resident**     | A single user (`resident_id` required) | That resident; admins | Per the record's privacy policy (`can_show?`, `can_edit?`) | User-created homebrew content                  |
-| **Proprietary**  | Third-party publisher (`is_3pp = true`) | Admins only       | All users (often gated by purchase) | Licensed/paid content from outside publishers |
+
+Third-party-publisher metadata is represented on stock records with `is_3pp`,
+`publisher`, and `source`. It does not use a separate ownership tier.
 
 Authorization is enforced in the controllers, not the models:
 
-- `StockRulesController#check_authorization` requires `admin_signed_in?`
-  (`app/controllers/rulebuilder/stock_rules_controller.rb:29-33`).
+- `Admin::StockRulesController#check_authorization` requires
+  `admin_signed_in?` for stock management routes.
 - `ResidentRulesController#can_show` / `#can_edit` defer to the record's
   `can_show?` / `can_edit?` methods
   (`app/controllers/rulebuilder/resident_rules_controller.rb:36-46`).
@@ -72,7 +75,7 @@ Authorization is enforced in the controllers, not the models:
   (`app/models/rulebuilder/resident_rule.rb:12`).
 
 Spells and items follow the same pattern; see their `stock_*`, `resident_*`,
-and `proprietary_*` files alongside the rule equivalents.
+and `admin/stock_*` files alongside the rule equivalents.
 
 ---
 
@@ -86,7 +89,7 @@ keys (UUIDs). Indexes are omitted here — see the schema for the full picture.
 | Column              | Type    | Required | Notes                                                                       |
 | ------------------- | ------- | -------- | --------------------------------------------------------------------------- |
 | `type`              | string  | yes      | STI discriminator (`Rulebuilder::StockRule`, etc.)                          |
-| `resident_id`       | string  | conditional | Required on `ResidentRule`; absent on Stock; optional on Proprietary    |
+| `resident_id`       | string  | conditional | Required on `ResidentRule`; absent on Stock                             |
 | `parent_id`         | string  | no       | Self-reference for variants / sub-rules — see [Hierarchy](#hierarchy-parent_id) |
 | `core_rules`        | string  | **yes**  | Game system name (must match a `name` in a `config/core_rules/*.json` file) |
 | `rule_type`         | string  | **yes**  | Must be in the system's declared `rulebuilder.rules` list (e.g. `Ability`, `Feat`, `Stunt`) |
@@ -253,12 +256,14 @@ Mounted in the host app (typically under `/rulebuilder`). The engine's
 resources :rules                            # generic, polymorphic-by-type
 scope '/resident/'    do resources :resident_{rules,spells,items} end
 scope '/stock/'       do resources :stock_{rules,spells,items}    end
-scope '/proprietary/' do resources :proprietary_{rules,spells,items} end
+namespace :admin do
+  scope '/stock/' do resources :stock_{rules,spells,items} end
+end
 ```
 
-Each tiered controller (e.g. `StockRulesController`,
-`ResidentRulesController`, `ProprietaryRulesController`) inherits from the
-generic `RulesController` and provides:
+Each tiered controller (e.g. `StockRulesController`, `ResidentRulesController`,
+`Admin::StockRulesController`) inherits from the generic `RulesController` and
+provides:
 
 - `set_type` — sets `@type` to a string like `'StockRule'`
   (`stock_rules_controller.rb:12-14`).
@@ -360,8 +365,8 @@ Rulebuilder::ResidentSpell.create!(
   duration:     "No more than 1 hour/level or until discharged"
 )
 
-# A 3pp item
-Rulebuilder::ProprietaryItem.create!(
+# A 3pp stock item
+Rulebuilder::StockItem.create!(
   core_rules: "PFRPG",
   name:       "Sunwrought Lantern",
   category:   "wondrous item",
@@ -402,7 +407,7 @@ When adding STI subclasses, remember:
   the controller — `klass.constantize` resolves it.
 - If the subclass requires an extra column (e.g. `resident_id`), validate
   presence in the subclass, not the parent (see `ResidentRule`).
-- Empty STI subclasses (`StockRule`, `ProprietaryRule`) are fine — their
+- Empty STI subclasses (`StockRule`, `ResidentRule`) are fine — their
   existence is what differentiates rows, not their behaviour.
 
 ---

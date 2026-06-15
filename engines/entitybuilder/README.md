@@ -7,7 +7,7 @@ scores, skills, defenses, trackables, and so on it has — comes from the
 this engine.
 
 If you haven't already, read the [`rulebuilder` README](../rulebuilder/README.md)
-first. It explains the `core_rules` string contract, the Stock/Resident/Proprietary
+first. It explains the `core_rules` string contract, the Stock/Resident
 ownership pattern, and the JSON file layout. This document covers only the
 `entitybuilder` half.
 
@@ -50,9 +50,9 @@ The engine's models fall into four groups.
 
 ### 1. Entity STI tree
 
-`Entitybuilder::Entity` is the parent. Seven concrete subclasses split entities
+`Entitybuilder::Entity` is the parent. Five concrete subclasses split entities
 along two axes — **kind** (character / NPC / creature) and **ownership**
-(stock / resident / proprietary):
+(stock / resident):
 
 | Subclass                                       | Kind      | Ownership   | Allowed |
 | ---------------------------------------------- | --------- | ----------- | ------- |
@@ -61,11 +61,8 @@ along two axes — **kind** (character / NPC / creature) and **ownership**
 | `Entitybuilder::ResidentCreature`              | creature  | resident    | |
 | `Entitybuilder::StockNpc`                      | NPC       | stock       | |
 | `Entitybuilder::StockCreature`                 | creature  | stock       | |
-| `Entitybuilder::ProprietaryNpc`                | NPC       | proprietary | |
-| `Entitybuilder::ProprietaryCreature`           | creature  | proprietary | |
 
-There is intentionally no `StockCharacter` or `ProprietaryCharacter` — only
-residents own characters.
+There is intentionally no `StockCharacter` — only residents own characters.
 
 The `type` column is the STI discriminator. `is_character?` and `simple_type`
 on the parent (`entity.rb:126-160`) classify by substring match on `type`.
@@ -509,9 +506,9 @@ Fate Core uses it for the canonical aspects:
 
 `add_linked_rules` (`lib/core_rules/entity.rb:89-112`) does, per entry:
 
-1. Creates a `Rulebuilder::Rule` row — Stock/Resident/Proprietary variant chosen
-   by the entity's STI type — with `is_shared: false`, the entry's
-   `rule.rule_type` and `rule.name`.
+1. Creates a `Rulebuilder::Rule` row — Stock or Resident variant chosen by the
+   entity's STI type — with `is_shared: false`, the entry's `rule.rule_type`
+   and `rule.name`.
 2. Creates an `Entitybuilder::LinkedRule` row tying the new rule to the entity,
    with `detail` from the JSON.
 
@@ -629,8 +626,8 @@ If you add a new system with a fundamentally different attack mechanic
 - A `core_skill` re-add route: `GET /skills/new/:skill_type` → `skills#new_core_skill`,
   used to re-introduce a deleted core skill.
 
-The three entity tiers (resident, stock, proprietary) each mount the concern
-under their own scope:
+Resident entities, public stock entities, and admin stock management each mount
+the concern under their own scope:
 
 ```ruby
 scope '/resident/' do
@@ -639,8 +636,12 @@ scope '/resident/' do
   resources :resident_npcs,       path: :npcs,       concerns: [...]
 end
 
-scope '/stock/'       do ... end
-scope '/proprietary/' do ... end
+scope '/stock/' do ... end
+
+scope '/admin/stock/', as: :admin do
+  resources :stock_creatures, path: :creatures, controller: 'admin/stock_creatures', concerns: [...]
+  resources :stock_npcs,      path: :npcs,      controller: 'admin/stock_npcs',      concerns: [...]
+end
 ```
 
 The tiered concern set differs slightly — `:notes` is only mounted on the
