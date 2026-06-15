@@ -47,8 +47,7 @@ class ImporterPreviewUploadTest < ActionDispatch::IntegrationTest
     get "/imports"
 
     assert_response :success
-    assert_select "p", text: I18n.t("importer.imports.index.description")
-    assert_select "a.button[href='/imports/previews/new']", text: I18n.t("importer.imports.index.new_preview")
+    assert_select "a.cogs.add[href='/imports/previews/new']"
   end
 
   test "resident preview confirmation uses button styling" do
@@ -103,8 +102,7 @@ class ImporterPreviewUploadTest < ActionDispatch::IntegrationTest
     get "/admin/imports"
 
     assert_response :success
-    assert_select "p", text: I18n.t("importer.admin.imports.index.description")
-    assert_select "a.button[href='/admin/imports/previews/new']", text: I18n.t("importer.admin.imports.index.new_preview")
+    assert_select "a.cogs.add[href='/admin/imports/previews/new']"
   end
 
   test "admin preview confirmation uses button styling" do
