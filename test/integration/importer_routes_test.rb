@@ -21,6 +21,14 @@ class ImporterRoutesTest < ActionDispatch::IntegrationTest
     assert_select "div.row div.medium-10.medium-centered.columns main"
   end
 
+  test "normal user without resident is sent to resident setup" do
+    sign_in users(:courtney)
+
+    get "/imports"
+
+    assert_redirected_to "/residents/new"
+  end
+
   test "normal user cannot open admin stock import preview form" do
     sign_in users(:dan)
 
