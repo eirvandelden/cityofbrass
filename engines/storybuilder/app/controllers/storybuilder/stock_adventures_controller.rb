@@ -12,10 +12,9 @@ module Storybuilder
     before_action :set_adventure,           only: [:edit, :update, :destroy, :options]
     before_action :set_parent_options,      only: [:new, :create, :edit, :update]
     before_action :set_adventure_for_show,  only: [:show, :campaign]
+    before_action :can_show,                only: [:show, :campaign]
     before_action :set_campaign,            only: [:campaign]
     before_action :set_adventures,          only: [:index]
-
-    before_action :can_show,                only: [:show]
 
     private
       def params_id
@@ -69,7 +68,7 @@ module Storybuilder
         @type = ""
 
         @campaign = Campaignmanager::Campaign.find_by_id(params[:campaign_id]) unless params[:campaign_id].nil?
-        if @campaign.nil? || !@campaign.can_show?(current_user, admin_signed_in?, @campaign.type)
+        if @campaign.nil? || !@campaign.can_show?(current_user, admin_signed_in?, 'Campaign')
           render template: 'errors/404', layout: 'layouts/application', status: 404
         end
         @resident = @campaign.resident

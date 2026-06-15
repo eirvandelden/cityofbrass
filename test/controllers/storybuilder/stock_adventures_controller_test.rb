@@ -98,6 +98,14 @@ module Storybuilder
       assert_response 403
     end
 
+    test "should not show private adventure in public campaign when logged out" do
+      campaign = campaignmanager_campaigns(:resident_two)
+
+      get :campaign, params: { stock_adventure_id: @adventure2.id, campaign_id: campaign.id }
+
+      assert_response 403
+    end
+
     test "should not get edit" do
       sign_in @user
       get :edit, params: { id: @adventure }
