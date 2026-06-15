@@ -1,7 +1,7 @@
 <% provide(:title, "#{@parent_object.name}") %>
 <% type_array = type_split(@parent_type) %>
 <% content_for :breadcrumb do %>
-  <%=  breadcrumb [
+  <%= breadcrumb [
     { type_array[0] => nil },
     { type_array[1] => route_collection_path(@parent_type.pluralize) },
     { @parent_object.name => nil },
@@ -21,7 +21,7 @@
   </div>
 
   <div class="medium-10 columns">
-    <%= render "item" %>
-    <p><i class='fa fa-angle-double-left'></i> <%= link_to "Return".html_safe, :back %></p>
+    <%= render "item", inventory_item: @inventory_item %>
+    <p><i class="fa fa-angle-double-left"></i> <%= link_to "Return", :back %></p>
   </div>
 </div>
