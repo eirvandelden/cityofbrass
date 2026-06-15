@@ -18,7 +18,7 @@ class ImporterRoutesTest < ActionDispatch::IntegrationTest
     get "/imports"
 
     assert_response :success
-    assert_select "div.row div.medium-10.medium-centered.columns main"
+    assert_select "div.row div.medium-12.columns"
   end
 
   test "normal user without resident is sent to resident setup" do
@@ -52,6 +52,6 @@ class ImporterRoutesTest < ActionDispatch::IntegrationTest
     get "/admin/imports"
 
     assert_response :success
-    assert_select "div.row div.medium-10.medium-centered.columns main"
+    assert_select "div.row div.medium-12.columns"
   end
 end
