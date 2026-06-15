@@ -10,7 +10,7 @@
       <%= form_for @preview, url: previews_path, html: { multipart: true } do |f| %>
         <%= f.hidden_field :source %>
         <%= file_field_tag "files[]", multiple: true, accept: ".xml,text/xml,application/xml", required: true %>
-        <%= f.submit t("importer.previews.new.submit") %>
+        <%= f.submit t("importer.previews.new.submit"), class: "button" %>
       <% end %>
     </main>
   </div>

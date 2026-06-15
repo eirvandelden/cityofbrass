@@ -38,6 +38,7 @@ class ImporterPreviewUploadTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select "input[type=file][name='files[]'][multiple]"
+    assert_select "input[type=submit].button[value='#{I18n.t("importer.previews.new.submit")}']"
   end
 
   test "resident import index links to the preview form" do
@@ -46,7 +47,18 @@ class ImporterPreviewUploadTest < ActionDispatch::IntegrationTest
     get "/imports"
 
     assert_response :success
-    assert_select "a[href='/imports/previews/new']"
+    assert_select "p", text: I18n.t("importer.imports.index.description")
+    assert_select "a.button[href='/imports/previews/new']", text: I18n.t("importer.imports.index.new_preview")
+  end
+
+  test "resident preview confirmation uses button styling" do
+    sign_in users(:dan)
+    post "/imports/previews", params: { files: [ uploaded_file("sample_compendium.xml") ] }
+
+    get "/imports/previews/#{Importer::Preview.order(:created_at).last.id}"
+
+    assert_response :success
+    assert_select "input[type=submit].button[value='#{I18n.t("importer.previews.show.confirm")}']"
   end
 
   test "resident upload with an invalid file rerenders the form" do
@@ -82,6 +94,7 @@ class ImporterPreviewUploadTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select "input[type=file][name='files[]'][multiple]"
+    assert_select "input[type=submit].button[value='#{I18n.t("importer.admin.previews.new.submit")}']"
   end
 
   test "admin import index links to the preview form" do
@@ -90,7 +103,18 @@ class ImporterPreviewUploadTest < ActionDispatch::IntegrationTest
     get "/admin/imports"
 
     assert_response :success
-    assert_select "a[href='/admin/imports/previews/new']"
+    assert_select "p", text: I18n.t("importer.admin.imports.index.description")
+    assert_select "a.button[href='/admin/imports/previews/new']", text: I18n.t("importer.admin.imports.index.new_preview")
+  end
+
+  test "admin preview confirmation uses button styling" do
+    sign_in admins(:dan)
+    post "/admin/imports/previews", params: { files: [ uploaded_file("sample_compendium.xml") ] }
+
+    get "/admin/imports/previews/#{Importer::Preview.order(:created_at).last.id}"
+
+    assert_response :success
+    assert_select "input[type=submit].button[value='#{I18n.t("importer.admin.previews.show.confirm")}']"
   end
 
   test "admin upload with an invalid file rerenders the form" do

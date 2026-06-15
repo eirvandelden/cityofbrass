@@ -2,7 +2,8 @@
   <div class="medium-10 medium-centered columns">
     <main>
       <h1><%= t("importer.imports.index.title") %></h1>
-      <%= link_to t("importer.imports.index.new_preview"), new_preview_path %>
+      <p><%= t("importer.imports.index.description") %></p>
+      <%= link_to t("importer.imports.index.new_preview"), new_preview_path, class: "button" %>
 
       <%= render "importer/imports/history", imports: @imports, admin: false %>
     </main>
