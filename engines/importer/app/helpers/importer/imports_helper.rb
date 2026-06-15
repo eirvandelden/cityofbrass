@@ -22,7 +22,7 @@ module Importer
     def importer_reason_label(reason)
       return if reason.blank?
 
-      t("importer.reasons.#{reason.to_s.tr(' ', '_')}")
+      t("importer.reasons.#{reason.to_s.tr(' ', '_')}", default: reason)
     end
 
     def importer_counts_label(counts)
