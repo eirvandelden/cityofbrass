@@ -7,7 +7,9 @@ module Importer
     class GameMaster5Xml
       class Document
         def initialize(path)
-          @document = Nokogiri::XML(File.open(path)) { |config| config.strict.noblanks }
+          File.open(path) do |file|
+            @document = Nokogiri::XML(file) { |config| config.strict.noblanks }
+          end
         end
 
         def compendium_records

@@ -201,6 +201,24 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal "Witchwood", Storybuilder::Page.find_by!(name: "Forest Shrine").adventure.name
   end
 
+  test "resident multi adventure campaign links every adventure to the campaign" do
+    import = import_for("sample_multi_adventure_campaign.xml", mode: Importer::Preview::RESIDENT_CONTENT)
+
+    assert_difference("Campaignmanager::Campaign.count", 1) do
+      assert_difference("Storybuilder::ResidentAdventure.count", 2) do
+        assert_difference("Storybuilder::Page.count", 2) do
+          Importer::ProcessImportJob.perform_now(import.id)
+        end
+      end
+    end
+
+    campaign = Campaignmanager::Campaign.find_by!(name: "Red Hand")
+
+    assert_equal "succeeded", import.reload.status
+    assert_equal [ "Elsir Vale", "Witchwood" ], campaign.adventures.order(:name).pluck(:name)
+    assert_equal 1, campaign.campaign_adventure_joins.where(active: true).count
+  end
+
   test "resident campaign reimport skips existing records" do
     Importer::ProcessImportJob.perform_now(import_for("sample_campaign.xml", mode: Importer::Preview::RESIDENT_CONTENT).id)
     import = import_for("sample_campaign.xml", mode: Importer::Preview::RESIDENT_CONTENT)

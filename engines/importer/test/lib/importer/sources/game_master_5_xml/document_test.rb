@@ -54,6 +54,18 @@ class ImporterGameMaster5XmlDocumentTest < ActiveSupport::TestCase
     assert_pc_record only_record(document.character_records)
   end
 
+  test "document parsing closes the source file" do
+    path = importer_fixture_file("sample_compendium.xml").to_s
+    open_files_before = open_files_for(path)
+
+    GC.disable
+    3.times { Importer::Sources::GameMaster5Xml::Document.new(path).compendium_records }
+
+    assert_equal open_files_before, open_files_for(path)
+  ensure
+    GC.enable
+  end
+
   test "note record joins all text nodes as description" do
     xml = <<~XML
       <campaign>
@@ -108,5 +120,9 @@ class ImporterGameMaster5XmlDocumentTest < ActiveSupport::TestCase
       f.flush
       yield Importer::Sources::GameMaster5Xml::Document.new(f.path)
     end
+  end
+
+  def open_files_for(path)
+    ObjectSpace.each_object(File).count { |file| file.path == path && !file.closed? }
   end
 end
