@@ -5,16 +5,16 @@ module Dice
   VALID_DICE_MECHANIC = /\A([0-9]+)(d)([0-9]+)(\+*([0-9]+)(d)([0-9]+))*\z|\b(Standard)\b|\b(Fate)\b|\b(Roll Under)\b/
 
   CORE_RULES_DICE = [
-    { core_rules: "3.5 Edition",       dice: "1d20" },
-    { core_rules: "4th Edition",       dice: "1d20" },
-    { core_rules: "5th Edition",       dice: "1d20" },
-    { core_rules: "d20 Future",        dice: "1d20" },
-    { core_rules: "d20 Modern",        dice: "1d20" },
-    { core_rules: "Dungeon World",     dice: "2d6" },
-    { core_rules: "Fate Core",         dice: "Fate" },
-    { core_rules: "PFRPG",             dice: "1d20" },
-    { core_rules: "W.O.I.N",           dice: "1d20" },
-    { core_rules: "Generic",           dice: "1d20" },
+    { core_rules: "dnd35e",           dice: "1d20" },
+    { core_rules: "dnd4e",            dice: "1d20" },
+    { core_rules: "dnd5e",            dice: "1d20" },
+    { core_rules: "d20Future",        dice: "1d20" },
+    { core_rules: "d20Modern",        dice: "1d20" },
+    { core_rules: "Dungeon World",    dice: "2d6" },
+    { core_rules: "fateCore",         dice: "Fate" },
+    { core_rules: "pf1e",             dice: "1d20" },
+    { core_rules: "woin",             dice: "1d20" },
+    { core_rules: "generic",          dice: "1d20" },
     { core_rules: "Mutant Chronicles", dice: "2d20" }
   ]
 
