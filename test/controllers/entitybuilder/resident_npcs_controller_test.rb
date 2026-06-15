@@ -69,6 +69,12 @@ module Entitybuilder
       assert_response :success
     end
 
+    test "should not show public npc card summary when sheet privacy is private" do
+      @npc.update!(privacy: 'Public', sheet_privacy: 'Private')
+      get :card_summary, xhr: true, format: :js, params: { resident_npc_id: @npc }
+      assert_response 403
+    end
+
     test "should show npc" do
       sign_in @user
       get :show, params: { id: @npc }

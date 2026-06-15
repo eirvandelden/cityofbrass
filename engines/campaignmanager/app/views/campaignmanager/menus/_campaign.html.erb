@@ -2,17 +2,17 @@
   <dd class="<%= 'active' if current_page?(campaignmanager.polymorphic_path(@campaign)) %>">
   	<h3><%= link_to 'Overview', campaignmanager.polymorphic_path(@campaign), :style => 'display:block;' %></h3>
   </dd>
-<% if @campaign.district.present? %>
+<% if @campaign.district.present? && visible_record?(@campaign.district) %>
   <dd class="<%= 'active' if current_page?("#{worldbuilder.district_path(@campaign.district.slug)}/campaign/#{@campaign.id}") %>">
     <h3><%= link_to 'World', "#{worldbuilder.district_path(@campaign.district.slug)}/campaign/#{@campaign.id}", :style => 'display:block;' %></h3>
   </dd>
 <% end %>
-<% if @campaign.entity_joins.size > 0 %>
+<% if visible_records(@campaign.characters).any? %>
   <dd class="<%= 'active' if current_page?(campaignmanager.polymorphic_path([@campaign, :characters])) %>">
     <h3><%= link_to 'Characters', campaignmanager.polymorphic_path([@campaign, :characters]), :style => 'display:block;' %></h3>
   </dd>
 <% end %>
-<% if @campaign.notables.size > 0 %>
+<% if visible_notables(@campaign.notables).any? %>
   <dd class="<%= 'active' if current_page?("#{campaignmanager.polymorphic_path(@campaign)}/notables/list") %>">
     <h3><%= link_to 'Notables', "#{campaignmanager.polymorphic_path(@campaign)}/notables/list", :style => 'display:block;' %></h3>
   </dd>

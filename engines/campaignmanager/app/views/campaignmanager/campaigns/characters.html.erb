@@ -21,7 +21,7 @@
     %>
     <hr class="faded">
 
-    <% @campaign.characters.each do |character| %>
+    <% visible_records(@campaign.characters).each do |character| %>
       <%= render 'entitybuilder/entities/layouts/campaign', character: character %>
     <% end %>
 

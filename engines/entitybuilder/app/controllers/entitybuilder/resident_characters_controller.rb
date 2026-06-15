@@ -17,7 +17,7 @@ module Entitybuilder
     before_action :set_entities,        only: [:index]
 
     before_action :can_show,            only: [:show, :card_summary]
-    before_action :can_sheet,           only: [:sheet, :profile, :card]
+    before_action :can_sheet,           only: [:sheet, :profile, :card, :card_summary]
     before_action :can_edit,          except: [:index, :show, :profile, :sheet, :card, :card_summary, :new, :create]
 
     before_action :check_quota,         only: [:new, :create]

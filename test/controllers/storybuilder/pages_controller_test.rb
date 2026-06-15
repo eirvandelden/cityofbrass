@@ -100,6 +100,34 @@ module Storybuilder
       assert_no_match private_page.name, @response.body
     end
 
+    test "should hide private parent page when public child page is shown logged out" do
+      private_page = @parent_object.pages.create!(
+        name: 'Private Parent Page',
+        privacy: 'Private',
+        short_description: 'Secret',
+        full_description: '<p>Secret parent text</p>'
+      )
+      child_page = @parent_object.pages.create!(
+        parent_id: private_page.id,
+        name: 'Public Child Page',
+        privacy: 'Public',
+        short_description: 'Public',
+        full_description: '<p>Public child text</p>'
+      )
+      menu_item = @parent_object.menu_items.create!(
+        item_label: private_page.name,
+        item_link: "/pages/#{private_page.slug}",
+        sort_order: 99
+      )
+      Storybuilder::MenuItemJoin.create!(menu_item: menu_item, menu_item_joinable: private_page)
+
+      get :show, params: { id: child_page.id, resident_adventure_id: @parent_object }
+
+      assert_response :success
+      assert_no_match private_page.name, @response.body
+      assert_no_match private_page.full_description, @response.body
+    end
+
     test "should show page" do
       sign_in @user
       get :show, params: { id: @page.id, resident_adventure_id: @parent_object }

@@ -3,7 +3,7 @@
     <%= link_to 'Home', storybuilder.polymorphic_path(@adventure) %>
   </li>
 <% end %>
-<% @adventure.menu_items.each do |menu_item| %>
+<% visible_storybuilder_menu_items(@adventure.menu_items).each do |menu_item| %>
   <li>
     <% if menu_item.item_link.start_with?("http") %>
       <%= link_to menu_item.item_label, menu_item.item_link %>

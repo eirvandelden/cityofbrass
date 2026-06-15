@@ -79,6 +79,13 @@ module Entitybuilder
       assert_response 401
     end
 
+    test "should not show known_spell when sheet is private" do
+      sign_in @user2
+      @character.update!(sheet_privacy: 'Private')
+      get :show, xhr: true, format: :js, params: { id: @known_spell, resident_character_id: @character.id }
+      assert_response 403
+    end
+
     test "should show known_spell" do
       sign_in @user
       get :show, xhr: true, format: :js, params: { id: @known_spell, resident_character_id: @character.id }

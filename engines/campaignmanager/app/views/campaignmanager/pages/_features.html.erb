@@ -1,5 +1,5 @@
 <ul class="no-bullet">
-<% if @page.parent %>
+<% if @page.parent && visible_record?(@page.parent) %>
   <li>
     <strong>Parent: </strong>
     <%= link_to @page.parent.name, city_path(@campaign, @page.parent) %>
@@ -22,7 +22,7 @@
   </li>
 <% end %>
 
-<% if @page.notables.size > 0 %>
+<% if visible_notables(@page.notables).any? %>
   <%= render "layouts/notables/entity_feature_sentence", list: @page.notables %>
 <% end %>
 

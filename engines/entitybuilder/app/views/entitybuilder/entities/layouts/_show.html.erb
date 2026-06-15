@@ -13,7 +13,7 @@
     <div class="row">
       <div class="medium-12 columns">
         <ul class="no-bullet">
-        <% if (@type.include?"Character") && @parent_object.campaign.present? %>
+        <% if (@type.include?"Character") && @parent_object.campaign.present? && visible_record?(@parent_object.campaign) %>
           <li>
             <div class="indent">
               <strong>Campaign: </strong><%= link_to @parent_object.campaign.name, campaignmanager.polymorphic_path(@parent_object.campaign) %>
@@ -24,7 +24,7 @@
               <strong>Game Master: </strong><%= link_to @parent_object.campaign.resident.name, main_app.resident_path(@parent_object.campaign.resident.slug) %>
             </div>
           </li>
-          <% unless @parent_object.campaign.district_id.nil? %>
+          <% if @parent_object.campaign.district_id.present? && visible_record?(@parent_object.district) %>
             <li>
               <div class="indent">
                 <strong>World: </strong><%= link_to @parent_object.district.name, worldbuilder.district_path(@parent_object.district.slug) %>

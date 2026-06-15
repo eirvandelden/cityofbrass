@@ -23,7 +23,7 @@
     %>
     <hr class="faded">
 
-    <% @campaign.notables.each do |notable| %>
+    <% visible_notables(@campaign.notables).each do |notable| %>
       <%= render 'notable', notable: notable %>
     <% end %>
 

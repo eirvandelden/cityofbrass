@@ -1,6 +1,7 @@
 <div class="indent">
 <strong>Items:</strong>
-  <% @parent_object.inventory_items.each do |inventory_item| %>
-  <%= link_to_if @clickable, inventory_item.item.name, "#{route_path(@parent_object)}/inventory_items/#{inventory_item.id}", "data-reveal-id" => "inventory_item_modal", :remote => true %><%= " (#{inventory_item.detail})" if inventory_item.detail.present? %><%= ", " unless inventory_item == @parent_object.inventory_items.last %>
+  <% inventory_items = visible_inventory_items(@parent_object.inventory_items) %>
+  <% inventory_items.each do |inventory_item| %>
+  <%= link_to_if @clickable, inventory_item.item.name, "#{route_path(@parent_object)}/inventory_items/#{inventory_item.id}", "data-reveal-id" => "inventory_item_modal", :remote => true %><%= " (#{inventory_item.detail})" if inventory_item.detail.present? %><%= ", " unless inventory_item == inventory_items.last %>
   <% end %>
 </div>
