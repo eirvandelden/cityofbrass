@@ -33,7 +33,7 @@ module CoreRules
       end
 
       def self.rule_types(core_rules)
-        config = CoreRules.rulebooks.detect { |v| v['name'] == core_rules }
+        config = CoreRules.rulebooks.detect { |v| v['slug'] == core_rules }
         rule_types = config['rulebuilder']['rules'].collect{ |r| r['name'] }.to_a unless config.blank?
         return rule_types
       end
