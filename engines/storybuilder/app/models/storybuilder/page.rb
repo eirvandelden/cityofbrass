@@ -7,8 +7,10 @@ module Storybuilder
 
     NULL_ATTRS = %w[ parent_id ]
 
-    scope :short, -> { select('storybuilder_pages.id, storybuilder_pages.adventure_id, storybuilder_pages.parent_id, storybuilder_pages.name, storybuilder_pages.short_description, storybuilder_pages.page_label') }
-    scope :block, -> { select('storybuilder_pages.id, storybuilder_pages.adventure_id, storybuilder_pages.parent_id, storybuilder_pages.name') }
+    scope :short, -> {
+      select(:id, :adventure_id, :parent_id, :name, :short_description, :page_label, :privacy)
+    }
+    scope :block, -> { select(:id, :adventure_id, :parent_id, :name, :privacy) }
     scope :order_name, -> { order(:name) }
 
     json_array_column :tags

@@ -61,6 +61,23 @@ module Rulebuilder
       assert_response :success
     end
 
+    test "should hide private parent when public child item is shown logged out" do
+      parent = @item
+      child = Rulebuilder::ResidentItem.create!(
+        parent_id: parent.id,
+        resident_id: parent.resident_id,
+        core_rules: parent.core_rules,
+        name: 'Public Child Item',
+        privacy: 'Public',
+        full_description: 'Public child text'
+      )
+
+      get :show, params: { id: child }
+
+      assert_response :success
+      assert_no_match parent.full_description, @response.body
+    end
+
     test "should show item" do
       sign_in @user
       get :show, params: { id: @item }

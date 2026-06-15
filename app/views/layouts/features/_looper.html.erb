@@ -3,13 +3,13 @@
     <%= render :partial => "layouts/features/show/#{feature.feature_type}",
       :locals => {
         :feature => feature,
-        :list => record.children.order(:name)
+        :list => visible_records(record.children.order(:name))
       } %>
   <% else %>
     <%= render :partial => "layouts/features/show/#{feature.feature_type}",
       :locals => {
         :feature => feature,
-        :list => record.children.order('sort_weight, name')
+        :list => visible_records(record.children.order('sort_weight, name'))
       } %>
   <% end %>
 <% end %>
@@ -23,6 +23,7 @@
       tag_children = @district.pages.order('sort_weight, name').all_tags(feature.search_tags.split(',')) if feature.record_type.include? "Worldbuilder"
       tag_children = @adventure.pages.order('sort_weight, name').all_tags(feature.search_tags.split(',')) if feature.record_type.include? "Storybuilder"
     end
+    tag_children = visible_records(tag_children)
 %>
   <%= render :partial => "layouts/features/show/#{feature.feature_type}",
       :locals => {
