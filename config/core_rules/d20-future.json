@@ -1,5 +1,6 @@
 {
   "name": "d20 Future",
+  "slug": "d20Future",
   "active": "true",
   "stock": "true",
   "default_dice": "1d20",

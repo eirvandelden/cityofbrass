@@ -1,5 +1,6 @@
 {
   "name": "Generic",
+  "slug": "generic",
   "active": "true",
   "stock": "false",
   "default_dice": "1d20",

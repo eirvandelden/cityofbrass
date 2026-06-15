@@ -1,5 +1,6 @@
 {
   "name": "Draw Steel",
+  "slug": "drawSteel",
   "active": "true",
   "stock": "true",
   "default_dice": "2d10",

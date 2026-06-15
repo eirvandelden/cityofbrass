@@ -1,5 +1,6 @@
 {
-  "name": "Pathfinder 2e",
+  "name": "Pathfinder 2E",
+  "slug": "pf2e",
   "active": "true",
   "stock": "true",
   "default_dice": "1d20",

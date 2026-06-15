@@ -1,5 +1,6 @@
 {
-  "name": "PFRPG",
+  "name": "Pathfinder 1E",
+  "slug": "pf1e",
   "active": "true",
   "stock": "true",
   "default_dice": "1d20",

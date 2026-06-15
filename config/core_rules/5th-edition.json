@@ -1,5 +1,6 @@
 {
   "name": "5th Edition",
+  "slug": "dnd5e",
   "active": "true",
   "stock": "true",
   "default_dice": "1d20",

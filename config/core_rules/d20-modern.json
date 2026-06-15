@@ -1,5 +1,6 @@
 {
   "name": "d20 Modern",
+  "slug": "d20Modern",
   "active": "false",
   "stock": "true",
   "default_dice": "1d20",
