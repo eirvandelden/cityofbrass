@@ -187,14 +187,14 @@ module Importer
       def resident_adventure(import_file, adventure, campaign)
         existing = existing_record(Storybuilder::ResidentAdventure, adventure[:name])
         if existing
-          campaign.update!(adventure: existing) if campaign.adventure.blank?
+          campaign.campaign_adventure_joins.create!(adventure: existing, active: true) if campaign.active_adventure.blank?
           result(import_file, adventure, "skipped", existing, "already exists")
           return existing
         end
 
         record = Storybuilder::ResidentAdventure.create!(resident: resident, name: adventure[:name], privacy: "Private",
                                                          core_rules: CORE_RULES)
-        campaign.update!(adventure: record) if campaign.adventure.blank?
+        campaign.campaign_adventure_joins.create!(adventure: record, active: true) if campaign.active_adventure.blank?
         result(import_file, adventure, "created", record)
         record
       end
@@ -567,9 +567,11 @@ module Importer
 
       def privacy_attributes_for(klass)
         return {} unless klass.column_names.include?("privacy")
-        return { privacy: "Residents", sheet_privacy: "Residents" } if admin_stock?
 
-        { privacy: "Private", sheet_privacy: "Private" }
+        privacy_value = admin_stock? ? "Residents" : "Private"
+        attrs = { privacy: privacy_value }
+        attrs[:sheet_privacy] = privacy_value if klass.column_names.include?("sheet_privacy")
+        attrs
       end
 
       def enforce_entity_privacy!(record)
