@@ -69,7 +69,13 @@ module Storybuilder
 
     test "should not show page" do
       get :show, params: { id: @page.id, resident_adventure_id: @parent_object }
-      assert_response 302
+      assert_response 403
+    end
+
+    test "should show public page when logged out" do
+      @page.update!(privacy: 'Public')
+      get :show, params: { id: @page.id, resident_adventure_id: @parent_object }
+      assert_response :success
     end
 
     test "should show page" do

@@ -10,10 +10,10 @@ module Storybuilder
     before_action :set_adventure,           only: [:edit, :update, :destroy, :options]
     before_action :set_parent_options,      only: [:new, :create, :edit, :update]
     before_action :set_adventure_for_show,  only: [:show, :campaign]
+    before_action :can_show,                only: [:show, :campaign]
     before_action :set_campaign,            only: [:campaign]
     before_action :set_adventures,          only: [:index]
 
-    before_action :can_show,                only: [:show]
     before_action :can_edit,              except: [:index, :show, :campaign, :new, :create]
 
     before_action :check_quota, only: [:new, :create]

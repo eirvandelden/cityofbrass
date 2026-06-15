@@ -61,7 +61,19 @@ module Entitybuilder
 
     test "should not show character" do
       get :show, params: { id: @character }
-      assert_response 302
+      assert_response 403
+    end
+
+    test "should show public character when logged out" do
+      @character.update!(privacy: 'Public')
+      get :show, params: { id: @character }
+      assert_response :success
+    end
+
+    test "should show public character sheet when logged out" do
+      @character.update!(sheet_privacy: 'Public')
+      get :sheet, params: { resident_character_id: @character }
+      assert_response :success
     end
 
     test "should show character" do

@@ -64,7 +64,13 @@ module Entitybuilder
 
     test "should not show npc" do
       get :show, params: { id: @npc }
-      assert_response 302
+      assert_response 403
+    end
+
+    test "should show public npc when logged out" do
+      @npc.update!(privacy: 'Public')
+      get :show, params: { id: @npc }
+      assert_response :success
     end
 
     test "should show npc" do

@@ -3,6 +3,9 @@ require_dependency "storybuilder/application_controller"
 module Storybuilder
   class PagesController < ApplicationController
 
+    skip_before_action :authenticate_user!, only: [:show]
+    skip_before_action :check_user_status,  only: [:show]
+
     before_action :set_parent_type
     before_action :set_parent_object
     before_action :check_parent_authorization, except: [:show, :index]
