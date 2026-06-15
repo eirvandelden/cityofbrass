@@ -187,16 +187,26 @@ module Importer
       def resident_adventure(import_file, adventure, campaign)
         existing = existing_record(Storybuilder::ResidentAdventure, adventure[:name])
         if existing
-          campaign.campaign_adventure_joins.create!(adventure: existing, active: true) if campaign.active_adventure.blank?
+          link_adventure_to_campaign(campaign, existing)
           result(import_file, adventure, "skipped", existing, "already exists")
           return existing
         end
 
         record = Storybuilder::ResidentAdventure.create!(resident: resident, name: adventure[:name], privacy: "Private",
                                                          core_rules: CORE_RULES)
-        campaign.campaign_adventure_joins.create!(adventure: record, active: true) if campaign.active_adventure.blank?
+        link_adventure_to_campaign(campaign, record)
         result(import_file, adventure, "created", record)
         record
+      end
+
+      def link_adventure_to_campaign(campaign, adventure)
+        return if campaign.campaign_adventure_joins.exists?(adventure: adventure)
+
+        campaign.campaign_adventure_joins.create!(adventure: adventure, active: campaign_active_adventure_missing?(campaign))
+      end
+
+      def campaign_active_adventure_missing?(campaign)
+        !campaign.campaign_adventure_joins.where(active: true).exists?
       end
 
       def import_encounter(import_file, encounter, adventure)
