@@ -1,4 +1,4 @@
-class CreateBetaInvites < ActiveRecord::Migration
+class CreateBetaInvites < ActiveRecord::Migration[4.2]
   def change
     create_table :beta_invites, id: :uuid  do |t|
       t.string :email
