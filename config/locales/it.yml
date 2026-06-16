@@ -1,3 +1,4 @@
+---
 it:
   campaignmanager:
     navigation:
@@ -11,3 +12,36 @@ it:
         active_adventure_label: "Avventura attiva"
         active_adventure_hint: "L'avventura attualmente in corso. Viene evidenziata nella panoramica e collegata nel menu della campagna."
         no_active_adventure: "Nessuna"
+  errors:
+    messages:
+      invalid_privacy: non è valido.
+  gallery:
+    images:
+      image_modal:
+        map_images: Immagini Mappa
+        my_images: Le Mie Immagini
+        stock_images: Immagini Stock
+        stock_images_admin: Immagini Stock (Admin)
+        title: Immagini
+  hello: Ciao mondo
+  layouts:
+    license:
+      attribution:
+        aria_label: Attribuzione sistema RPG
+    navigation:
+      manage_stock:
+        creatures: Creature
+        game_master: Game Master
+        images: Immagini
+        items: Oggetti
+        npcs: PNG
+        rule_builder: Costruttore di Regole
+        rules: Regole
+        spells: Incantesimi
+    offcanvas:
+      manage_stock:
+        back: Indietro
+        title: Gestione Inventario
+    topbar:
+      manage_stock:
+        title: Gestione Inventario

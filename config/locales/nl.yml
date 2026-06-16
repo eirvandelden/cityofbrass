@@ -1,3 +1,4 @@
+---
 nl:
   campaignmanager:
     navigation:
@@ -11,3 +12,36 @@ nl:
         active_adventure_label: "Actief avontuur"
         active_adventure_hint: "Het avontuur dat nu gespeeld wordt. Het wordt uitgelicht op het overzicht en gelinkt in het campagnemenu."
         no_active_adventure: "Geen"
+  errors:
+    messages:
+      invalid_privacy: is niet geldig.
+  gallery:
+    images:
+      image_modal:
+        map_images: Kaartafbeeldingen
+        my_images: Mijn Afbeeldingen
+        stock_images: Stockafbeeldingen
+        stock_images_admin: Stockafbeeldingen (Beheerder)
+        title: Afbeeldingen
+  hello: Hallo wereld
+  layouts:
+    license:
+      attribution:
+        aria_label: RPG systeem toeschrijving
+    navigation:
+      manage_stock:
+        creatures: Wezens
+        game_master: Spelleider
+        images: Afbeeldingen
+        items: Voorwerpen
+        npcs: NPC's
+        rule_builder: Regelenbouwer
+        rules: Regels
+        spells: Spreuken
+    offcanvas:
+      manage_stock:
+        back: Terug
+        title: Voorraad Beheren
+    topbar:
+      manage_stock:
+        title: Voorraad Beheren
