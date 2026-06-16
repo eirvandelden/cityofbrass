@@ -542,6 +542,86 @@ ActiveRecord::Schema.define(version: 2026_06_16_053635) do
     t.index ["resident_id"], name: "index_gallery_images_on_resident_id"
   end
 
+  create_table "importer_import_files", id: :string, force: :cascade do |t|
+    t.string "import_id", null: false
+    t.string "kind", null: false
+    t.string "parse_status", default: "pending", null: false
+    t.json "parse_errors"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.bigint "file_file_size"
+    t.datetime "file_updated_at"
+    t.index ["import_id"], name: "index_importer_import_files_on_import_id"
+    t.index ["kind"], name: "index_importer_import_files_on_kind"
+    t.index ["parse_status"], name: "index_importer_import_files_on_parse_status"
+  end
+
+  create_table "importer_import_results", id: :string, force: :cascade do |t|
+    t.string "import_file_id", null: false
+    t.string "entity_type", null: false
+    t.string "entity_name", null: false
+    t.string "outcome", null: false
+    t.text "reason"
+    t.string "record_type"
+    t.string "record_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["import_file_id"], name: "index_importer_import_results_on_import_file_id"
+    t.index ["outcome"], name: "index_importer_import_results_on_outcome"
+    t.index ["record_type", "record_id"], name: "index_importer_import_results_on_record_type_and_record_id"
+  end
+
+  create_table "importer_imports", id: :string, force: :cascade do |t|
+    t.string "resident_id"
+    t.string "preview_id"
+    t.string "mode", null: false
+    t.string "source", null: false
+    t.string "status", null: false
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.json "progress"
+    t.json "summary"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["mode"], name: "index_importer_imports_on_mode"
+    t.index ["preview_id"], name: "index_importer_imports_on_preview_id"
+    t.index ["resident_id"], name: "index_importer_imports_on_resident_id"
+    t.index ["status"], name: "index_importer_imports_on_status"
+  end
+
+  create_table "importer_preview_files", id: :string, force: :cascade do |t|
+    t.string "preview_id", null: false
+    t.string "detected_kind", null: false
+    t.string "override_kind"
+    t.json "entity_counts"
+    t.json "parse_errors"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.bigint "file_file_size"
+    t.datetime "file_updated_at"
+    t.index ["detected_kind"], name: "index_importer_preview_files_on_detected_kind"
+    t.index ["preview_id"], name: "index_importer_preview_files_on_preview_id"
+  end
+
+  create_table "importer_previews", id: :string, force: :cascade do |t|
+    t.string "resident_id"
+    t.string "mode", null: false
+    t.string "source", null: false
+    t.string "status", null: false
+    t.json "summary"
+    t.json "validation_errors"
+    t.datetime "expires_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["mode"], name: "index_importer_previews_on_mode"
+    t.index ["resident_id"], name: "index_importer_previews_on_resident_id"
+    t.index ["status"], name: "index_importer_previews_on_status"
+  end
+
   create_table "messages", id: :string, force: :cascade do |t|
     t.string "sender_id", null: false
     t.string "recipient_id"
