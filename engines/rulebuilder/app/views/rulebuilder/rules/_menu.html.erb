@@ -2,9 +2,9 @@
   <dd class="<%= 'active' if current_page?(route_collection_path(@type.tableize)) && params[:core_rules].blank? %>">
     <h3><%= link_to 'All', route_collection_path(@type.tableize), :style => 'display:block;' %></h3>
   </dd>
-  <% CoreRules.options(admin_signed_in?).each do |item| %>
-    <dd class="<%= 'active' if current_page?("#{route_collection_path(@type.tableize)}?core_rules=#{item}") %>">
-      <h3><%= link_to "#{item}", "#{route_collection_path(@type.tableize)}?core_rules=#{item}", :style => 'display:block;' %></h3>
+  <% CoreRules.all(admin_signed_in?).each do |rulebook| %>
+    <dd class="<%= 'active' if current_page?("#{route_collection_path(@type.tableize)}?core_rules=#{rulebook.slug}") %>">
+      <h3><%= link_to rulebook.name, "#{route_collection_path(@type.tableize)}?core_rules=#{rulebook.slug}", :style => 'display:block;' %></h3>
     </dd>
   <% end %>
 </dl>
@@ -19,8 +19,8 @@
   <li><label>Rules</label></li>
   <li><%= link_to 'All', route_collection_path(@type.tableize) %></li>
 
-  <% CoreRules.options(admin_signed_in?).each do |item| %>
-    <li><%= link_to "#{item}", "#{route_collection_path(@type.tableize)}?core_rules=#{item}" %></li>
+  <% CoreRules.all(admin_signed_in?).each do |rulebook| %>
+    <li><%= link_to rulebook.name, "#{route_collection_path(@type.tableize)}?core_rules=#{rulebook.slug}" %></li>
   <% end %>
 <% end %>
 
@@ -29,8 +29,8 @@
     <ul class="dropdown">
       <li><%= link_to 'All', route_collection_path(@type.tableize) %></li>
 
-      <% CoreRules.options(admin_signed_in?).each do |item| %>
-        <li><%= link_to "#{item}", "#{route_collection_path(@type.tableize)}?core_rules=#{item}" %></li>
+      <% CoreRules.all(admin_signed_in?).each do |rulebook| %>
+        <li><%= link_to rulebook.name, "#{route_collection_path(@type.tableize)}?core_rules=#{rulebook.slug}" %></li>
       <% end %>
     </ul>
   </li>

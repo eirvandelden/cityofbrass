@@ -4,7 +4,7 @@
       <%= f.input :name %>
 
       <% if f.object.new_record? %>
-        <%= f.input :core_rules, collection: CoreRules.options(admin_signed_in?), :include_blank => true %>
+        <%= f.input :core_rules, collection: CoreRules.all(admin_signed_in?), label_method: :name, value_method: :slug, :include_blank => true %>
       <% end %>
       <%= render 'layouts/license/attribution', core_rules: f.object.core_rules %>
 

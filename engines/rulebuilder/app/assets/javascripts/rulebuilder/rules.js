@@ -29,7 +29,7 @@ $(document).on('turbolinks:load', function () {
 $(document).on('turbolinks:load', function () {
 
   $('.select2-rule_type > optgroup').each(function () {
-    if (this.label !== $('select[id$="rule_core_rules"] option:selected').text()) {
+    if (this.label !== $('select[id$="rule_core_rules"] option:selected').val()) {
       this.remove();
     }
   });

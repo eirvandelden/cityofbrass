@@ -4,7 +4,7 @@
       <%= f.input :name %>
       <%= f.input :page_label, label: 'Label' %>
       <%= f.input :privacy, collection: Storybuilder::Adventure::PRIVACY_OPTIONS %>
-      <%= f.input :core_rules, collection: CoreRules.options(admin_signed_in?), :include_blank => true %>
+      <%= f.input :core_rules, collection: CoreRules.all(admin_signed_in?), label_method: :name, value_method: :slug, :include_blank => true %>
       <%= f.fields_for :menu_item_join do |p| %>
         <%= p.association :menu_item, collection: @adventure.menu_items, label_method: :item_label, value_method: :id, :include_blank => true %>
       <% end %>

@@ -6,7 +6,7 @@
         <span class="prefix core-rules">Core Rules</span>
       </div>
       <div class="medium-7 small-12 columns">
-        <%= select_tag :core_rules_filter, options_for_select(CoreRules.options(admin_signed_in?), params[:core_rules_filter]), {prompt: 'All', onchange: "javascript: $( this ).trigger('submit.rails')", class: 'postfix'} %>
+        <%= select_tag :core_rules_filter, options_from_collection_for_select(CoreRules.all(admin_signed_in?), :slug, :name, params[:core_rules_filter]), {prompt: 'All', onchange: "javascript: $( this ).trigger('submit.rails')", class: 'postfix'} %>
       </div>
     </div>
   </div>
