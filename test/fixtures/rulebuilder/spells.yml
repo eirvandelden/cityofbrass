@@ -3,7 +3,7 @@
 resident_one:
   type: Rulebuilder::ResidentSpell
   resident: razune
-  core_rules: PFRPG
+  core_rules: pf1e
   name: MyString
   publisher: Embers Design Studios
   is_3pp: true
@@ -26,7 +26,7 @@ resident_one:
 resident_two:
   type: Rulebuilder::ResidentSpell
   resident: razune
-  core_rules: PFRPG
+  core_rules: pf1e
   name: MyString
   publisher: Embers Design Studios
   is_3pp: true
@@ -48,7 +48,7 @@ resident_two:
 
 stock_one:
   type: Rulebuilder::StockSpell
-  core_rules: PFRPG
+  core_rules: pf1e
   name: MyString
   publisher: Embers Design Studios
   is_3pp: true
@@ -70,7 +70,7 @@ stock_one:
 
 stock_two:
   type: Rulebuilder::StockSpell
-  core_rules: PFRPG
+  core_rules: pf1e
   name: MyString
   publisher: Embers Design Studios
   is_3pp: true

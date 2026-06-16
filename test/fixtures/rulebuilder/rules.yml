@@ -3,7 +3,7 @@
 resident_one:
   type: Rulebuilder::ResidentRule
   resident: razune
-  core_rules: PFRPG
+  core_rules: pf1e
   rule_type: Feat
   is_shared: true
   name: MyString
@@ -22,7 +22,7 @@ resident_one:
 resident_two:
   type: Rulebuilder::ResidentRule
   resident: razune
-  core_rules: PFRPG
+  core_rules: pf1e
   rule_type: Ability
   is_shared: false
   name: MyString
@@ -41,7 +41,7 @@ resident_two:
 resident_three:
   type: Rulebuilder::ResidentRule
   resident: razune
-  core_rules: PFRPG
+  core_rules: pf1e
   rule_type: Stunt
   is_shared: false
   name: MyString
@@ -59,7 +59,7 @@ resident_three:
 
 stock_one:
   type: Rulebuilder::StockRule
-  core_rules: PFRPG
+  core_rules: pf1e
   rule_type: Feat
   is_shared: true
   name: MyString
@@ -77,7 +77,7 @@ stock_one:
 
 stock_two:
   type: Rulebuilder::StockRule
-  core_rules: PFRPG
+  core_rules: pf1e
   rule_type: Feat
   is_shared: true
   name: MyString

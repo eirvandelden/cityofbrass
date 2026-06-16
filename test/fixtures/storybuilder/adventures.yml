@@ -7,7 +7,7 @@ resident_one:
   name: Kobold Layer
   slug: kobold-layer
   privacy: Residents
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
 
@@ -18,7 +18,7 @@ resident_two:
   name: Wizards Tower
   slug: wizards-tower
   privacy: Private
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
 
@@ -29,7 +29,7 @@ stock_one:
   name: Kobold Layer
   slug: kobold-layer
   privacy: Residents
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
 
@@ -40,6 +40,6 @@ stock_two:
   name: Wizards Tower
   slug: wizards-tower
   privacy: Private
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>

@@ -3,7 +3,7 @@
 resident_one:
   type: Rulebuilder::ResidentItem
   resident: razune
-  core_rules: PFRPG
+  core_rules: pf1e
   name: MyString
   privacy: Private
   publisher: Embers Design Studios
@@ -18,7 +18,7 @@ resident_one:
 resident_two:
   type: Rulebuilder::ResidentItem
   resident: razune
-  core_rules: PFRPG
+  core_rules: pf1e
   name: MyString
   privacy: Private
   publisher: Embers Design Studios
@@ -32,7 +32,7 @@ resident_two:
 
 stock_one:
   type: Rulebuilder::StockItem
-  core_rules: PFRPG
+  core_rules: pf1e
   name: MyString
   privacy: Private
   publisher: Embers Design Studios
@@ -46,7 +46,7 @@ stock_one:
 
 stock_two:
   type: Rulebuilder::StockItem
-  core_rules: PFRPG
+  core_rules: pf1e
   name: MyString
   privacy: Private
   publisher: Embers Design Studios

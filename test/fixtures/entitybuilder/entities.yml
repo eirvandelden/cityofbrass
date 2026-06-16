@@ -10,7 +10,7 @@ resident_character_one:
   tags: ["hello1", "world2"]
   privacy: Residents
   sheet_privacy: Residents
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
   introduction: <p>Text for test</p>
@@ -26,7 +26,7 @@ resident_character_two:
   tags: ["hello1", "world2"]
   privacy: Residents
   sheet_privacy: Residents
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
   introduction: <p>Text for test</p>
@@ -42,7 +42,7 @@ resident_character_three:
   tags: ["hello1", "world2"]
   privacy: Residents
   sheet_privacy: Residents
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
   introduction: <p>Text for test</p>
@@ -58,7 +58,7 @@ resident_creature_one:
   tags: ["hello1", "world2"]
   privacy: Residents
   sheet_privacy: Residents
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
   introduction: <p>Text for test</p>
@@ -74,7 +74,7 @@ resident_creature_two:
   tags: ["hello1", "world2"]
   privacy: Residents
   sheet_privacy: Residents
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
   introduction: <p>Text for test</p>
@@ -90,7 +90,7 @@ resident_creature_three:
   tags: ["hello1", "world2"]
   privacy: Residents
   sheet_privacy: Residents
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
   introduction: <p>Text for test</p>
@@ -106,7 +106,7 @@ resident_npc_one:
   tags: ["hello1", "world2"]
   privacy: Residents
   sheet_privacy: Residents
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
   introduction: <p>Text for test</p>
@@ -122,7 +122,7 @@ resident_npc_two:
   tags: ["hello1", "world2"]
   privacy: Residents
   sheet_privacy: Residents
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
   introduction: <p>Text for test</p>
@@ -137,7 +137,7 @@ stock_creature_one:
   tags: ["hello1", "world2"]
   privacy: Residents
   sheet_privacy: Residents
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
   introduction: <p>Text for test</p>
@@ -152,7 +152,7 @@ stock_creature_two:
   tags: ["hello1", "world2"]
   privacy: Residents
   sheet_privacy: Residents
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
   introduction: <p>Text for test</p>
@@ -167,7 +167,7 @@ stock_npc_one:
   tags: ["hello1", "world2"]
   privacy: Residents
   sheet_privacy: Residents
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
   introduction: <p>Text for test</p>
@@ -182,7 +182,7 @@ stock_npc_two:
   tags: ["hello1", "world2"]
   privacy: Residents
   sheet_privacy: Residents
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
   introduction: <p>Text for test</p>
@@ -194,7 +194,7 @@ draw_steel_character:
   name: Steelborn
   privacy: Residents
   sheet_privacy: Residents
-  core_rules: Draw Steel
+  core_rules: drawSteel
   short_description: A Draw Steel test character
 
 fifth_edition_character:
@@ -203,7 +203,7 @@ fifth_edition_character:
   name: Valra
   privacy: Residents
   sheet_privacy: Residents
-  core_rules: 5th Edition
+  core_rules: dnd5e
   short_description: A 5th Edition test character
 
 pf2e_character:
@@ -212,5 +212,5 @@ pf2e_character:
   name: Valeros
   privacy: Residents
   sheet_privacy: Residents
-  core_rules: Pathfinder 2e
+  core_rules: pf2e
   short_description: A Pathfinder 2e test character
