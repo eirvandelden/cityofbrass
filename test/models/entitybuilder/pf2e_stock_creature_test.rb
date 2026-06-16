@@ -10,12 +10,12 @@ class Pf2eStockCreatureTest < ActiveSupport::TestCase
   end
 
   test "sample creatures are seeded (10 creatures)" do
-    count = Entitybuilder::StockCreature.where(core_rules: "Pathfinder 2e").count
+    count = Entitybuilder::StockCreature.where(core_rules: "pf2e").count
     assert_equal 10, count
   end
 
   test "each creature has exactly 6 ability scores" do
-    Entitybuilder::StockCreature.where(core_rules: "Pathfinder 2e").each do |c|
+    Entitybuilder::StockCreature.where(core_rules: "pf2e").each do |c|
       assert_equal 6, c.ability_scores.count, "#{c.name} should have 6 ability scores"
       names = c.ability_scores.map(&:name)
       %w[Strength Dexterity Constitution Intelligence Wisdom Charisma].each do |n|
@@ -25,19 +25,19 @@ class Pf2eStockCreatureTest < ActiveSupport::TestCase
   end
 
   test "each creature has Hit Points trackable" do
-    Entitybuilder::StockCreature.where(core_rules: "Pathfinder 2e").each do |c|
+    Entitybuilder::StockCreature.where(core_rules: "pf2e").each do |c|
       assert c.trackables.exists?(name: "Hit Points"), "#{c.name} missing Hit Points"
     end
   end
 
   test "each creature has Armor Class defense" do
-    Entitybuilder::StockCreature.where(core_rules: "Pathfinder 2e").each do |c|
+    Entitybuilder::StockCreature.where(core_rules: "pf2e").each do |c|
       assert c.defenses.exists?(name: "Armor Class"), "#{c.name} missing Armor Class"
     end
   end
 
   test "each creature has Fort, Reflex, Will saving throws" do
-    Entitybuilder::StockCreature.where(core_rules: "Pathfinder 2e").each do |c|
+    Entitybuilder::StockCreature.where(core_rules: "pf2e").each do |c|
       save_names = c.saving_throws.map(&:name)
       assert_includes save_names, "Fortitude", "#{c.name} missing Fortitude"
       assert_includes save_names, "Reflex",    "#{c.name} missing Reflex"
@@ -46,7 +46,7 @@ class Pf2eStockCreatureTest < ActiveSupport::TestCase
   end
 
   test "each creature has Level and Proficiency Bonus base values" do
-    Entitybuilder::StockCreature.where(core_rules: "Pathfinder 2e").each do |c|
+    Entitybuilder::StockCreature.where(core_rules: "pf2e").each do |c|
       bv_names = c.base_values.map(&:name)
       assert_includes bv_names, "Level",             "#{c.name} missing Level"
       assert_includes bv_names, "Proficiency Bonus", "#{c.name} missing Proficiency Bonus"
@@ -91,7 +91,7 @@ class Pf2eStockCreatureTest < ActiveSupport::TestCase
   end
 
   def pf2e_creatures
-    Entitybuilder::StockCreature.where(core_rules: "Pathfinder 2e")
+    Entitybuilder::StockCreature.where(core_rules: "pf2e")
   end
 
   def sample_records

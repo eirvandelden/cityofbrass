@@ -24,7 +24,7 @@ module Rulebuilder
     test "allows long full descriptions" do
       rule = StockRule.new(
         name: "Long Rule",
-        core_rules: "PFRPG",
+        core_rules: "pf1e",
         rule_type: "Ability",
         full_description: "x" * 100_000
       )

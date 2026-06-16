@@ -2,7 +2,7 @@
   {
     "name": "Adopted Ancestry",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -19,7 +19,7 @@
   {
     "name": "Armor Proficiency",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -36,7 +36,7 @@
   {
     "name": "Breath Control",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -53,7 +53,7 @@
   {
     "name": "Canny Acumen",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -70,7 +70,7 @@
   {
     "name": "Diehard",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -87,7 +87,7 @@
   {
     "name": "Fast Recovery",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -105,7 +105,7 @@
   {
     "name": "Feather Step",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -123,7 +123,7 @@
   {
     "name": "Fleet",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -140,7 +140,7 @@
   {
     "name": "Incredible Initiative",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -157,7 +157,7 @@
   {
     "name": "Pet",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -174,7 +174,7 @@
   {
     "name": "Ride",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -191,7 +191,7 @@
   {
     "name": "Shield Block",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -208,7 +208,7 @@
   {
     "name": "Speedrun Strats",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -221,7 +221,7 @@
   {
     "name": "Toughness",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -238,7 +238,7 @@
   {
     "name": "Weapon Proficiency",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -255,7 +255,7 @@
   {
     "name": "A Home in Every Port",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -275,7 +275,7 @@
   {
     "name": "Caravan Leader",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -293,7 +293,7 @@
   {
     "name": "Incredible Investiture",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -311,7 +311,7 @@
   {
     "name": "Incredible Scout",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -331,7 +331,7 @@
   {
     "name": "Sanguine Tenacity",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -345,7 +345,7 @@
   {
     "name": "True Perception",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -365,7 +365,7 @@
   {
     "name": "Ancestral Paragon",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -383,7 +383,7 @@
   {
     "name": "Improvised Repair",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -401,7 +401,7 @@
   {
     "name": "Keen Follower",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -419,7 +419,7 @@
   {
     "name": "Pick up the Pace",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -437,7 +437,7 @@
   {
     "name": "Prescient Planner",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -455,7 +455,7 @@
   {
     "name": "Robust Health",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -473,7 +473,7 @@
   {
     "name": "Thorough Search",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -491,7 +491,7 @@
   {
     "name": "Untrained Improvisation",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -509,7 +509,7 @@
   {
     "name": "Bloodsense",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -523,7 +523,7 @@
   {
     "name": "Expeditious Search",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -541,7 +541,7 @@
   {
     "name": "Numb to Death",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -559,7 +559,7 @@
   {
     "name": "Prescient Consumable",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -577,7 +577,7 @@
   {
     "name": "Supertaster",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -595,7 +595,7 @@
   {
     "name": "Devil's Eye",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -615,7 +615,7 @@
   {
     "name": "Dormant Eruption",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -637,7 +637,7 @@
   {
     "name": "Echo of the Fallen",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -655,7 +655,7 @@
   {
     "name": "Elysium's Cadence",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -675,7 +675,7 @@
   {
     "name": "Fey Life",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -697,7 +697,7 @@
   {
     "name": "Gift of the Hoard",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -717,7 +717,7 @@
   {
     "name": "Jelly Body",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -737,7 +737,7 @@
   {
     "name": "Lingering Chill",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -759,7 +759,7 @@
   {
     "name": "Petrified Skin",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -779,7 +779,7 @@
   {
     "name": "Sink and Swim",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -801,7 +801,7 @@
   {
     "name": "Siphon Life",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -825,7 +825,7 @@
   {
     "name": "Walk on the Wind",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -847,7 +847,7 @@
   {
     "name": "Awakened Power",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -865,7 +865,7 @@
   {
     "name": "Blasting Beams",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -887,7 +887,7 @@
   {
     "name": "Bone Spikes",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -907,7 +907,7 @@
   {
     "name": "Borrowed Ability",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -929,7 +929,7 @@
   {
     "name": "Consume Energy",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -949,7 +949,7 @@
   {
     "name": "Defensive Growth",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -973,7 +973,7 @@
   {
     "name": "Disperse Into Petals",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -997,7 +997,7 @@
   {
     "name": "Distant Wandering",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1017,7 +1017,7 @@
   {
     "name": "Draining Touch",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1041,7 +1041,7 @@
   {
     "name": "Eerie Flicker",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1061,7 +1061,7 @@
   {
     "name": "Enervating Wail",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1083,7 +1083,7 @@
   {
     "name": "Feed the Void",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1109,7 +1109,7 @@
   {
     "name": "Ghostly Grasp (Deviant)",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1129,7 +1129,7 @@
   {
     "name": "Greater Awakened Power",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1147,7 +1147,7 @@
   {
     "name": "High-Speed Regeneration",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1169,7 +1169,7 @@
   {
     "name": "Irradiate",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1191,7 +1191,7 @@
   {
     "name": "Kinetic Dampening",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1211,7 +1211,7 @@
   {
     "name": "Lightspeed Assault",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1231,7 +1231,7 @@
   {
     "name": "Overclock Senses",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1251,7 +1251,7 @@
   {
     "name": "Propulsive Leap",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1271,7 +1271,7 @@
   {
     "name": "Release Spores",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1295,7 +1295,7 @@
   {
     "name": "Rotten Slurry",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1317,7 +1317,7 @@
   {
     "name": "Sonic Dash",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1337,7 +1337,7 @@
   {
     "name": "Sprout Fruit",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1361,7 +1361,7 @@
   {
     "name": "Storming Breath",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1381,7 +1381,7 @@
   {
     "name": "Tectonic Stomp",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1401,7 +1401,7 @@
   {
     "name": "Titan Swing",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1421,7 +1421,7 @@
   {
     "name": "Unleash the Blight",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1443,7 +1443,7 @@
   {
     "name": "Unstable Gearshift",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1463,7 +1463,7 @@
   {
     "name": "Vine Lash",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1487,7 +1487,7 @@
   {
     "name": "Animal Soul Siblings",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1505,7 +1505,7 @@
   {
     "name": "Boneyard Acquaintance",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1525,7 +1525,7 @@
   {
     "name": "Clinging to Life",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1543,7 +1543,7 @@
   {
     "name": "Empathy Incarnate",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1561,7 +1561,7 @@
   {
     "name": "I Sense Malevolence",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1579,7 +1579,7 @@
   {
     "name": "Indomitable Spirit",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1599,7 +1599,7 @@
   {
     "name": "I've Had Many Jobs",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1619,7 +1619,7 @@
   {
     "name": "Let's Try That Again",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1638,7 +1638,7 @@
   {
     "name": "Like a Roach",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1657,7 +1657,7 @@
   {
     "name": "Lingering Echoes",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1675,7 +1675,7 @@
   {
     "name": "Linguistic Revival",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1693,7 +1693,7 @@
   {
     "name": "Pain is Temporary",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1713,7 +1713,7 @@
   {
     "name": "Plant Soul Siblings",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1731,7 +1731,7 @@
   {
     "name": "Rapid Retraining",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1751,7 +1751,7 @@
   {
     "name": "Reincarnated Ridiculer",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1769,7 +1769,7 @@
   {
     "name": "Release the Light",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1791,7 +1791,7 @@
   {
     "name": "See You in Hell",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1809,7 +1809,7 @@
   {
     "name": "Sleep of the Reborn",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1827,7 +1827,7 @@
   {
     "name": "Stone Soul Siblings",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1845,7 +1845,7 @@
   {
     "name": "This is What it's Like to Die",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1863,7 +1863,7 @@
   {
     "name": "Unbreakable Resolve",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1883,7 +1883,7 @@
   {
     "name": "Weight of Experience",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1900,7 +1900,7 @@
   {
     "name": "Wisdom from Another Life",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1917,7 +1917,7 @@
   {
     "name": "You Seem Somewhat Familiar",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1935,7 +1935,7 @@
   {
     "name": "Arc of Destruction",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1953,7 +1953,7 @@
   {
     "name": "Arms That Cut the Waves",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1971,7 +1971,7 @@
   {
     "name": "Avenger of Envy",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1989,7 +1989,7 @@
   {
     "name": "Avenger of Gluttony",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2007,7 +2007,7 @@
   {
     "name": "Avenger of Greed",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2025,7 +2025,7 @@
   {
     "name": "Avenger of Lust",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2043,7 +2043,7 @@
   {
     "name": "Avenger of Sloth",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2061,7 +2061,7 @@
   {
     "name": "Avenger of Wrath",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2079,7 +2079,7 @@
   {
     "name": "Become Destiny",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2099,7 +2099,7 @@
   {
     "name": "Become Shadow",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2117,7 +2117,7 @@
   {
     "name": "Binds That Tie",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2135,7 +2135,7 @@
   {
     "name": "Call From Death's Door",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2153,7 +2153,7 @@
   {
     "name": "Correct the Story",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2173,7 +2173,7 @@
   {
     "name": "Cutting Rebuke",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2191,7 +2191,7 @@
   {
     "name": "Divert Destiny",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2209,7 +2209,7 @@
   {
     "name": "Ears That Hear the Truth",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2227,7 +2227,7 @@
   {
     "name": "Eyes That See Eternity",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2247,7 +2247,7 @@
   {
     "name": "Feet That Stride the Sky",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2265,7 +2265,7 @@
   {
     "name": "Fiery Rebirth",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2287,7 +2287,7 @@
   {
     "name": "Fling Into Action",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2305,7 +2305,7 @@
   {
     "name": "Fool's Fleeting Plan",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2323,7 +2323,7 @@
   {
     "name": "Godspeed",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2341,7 +2341,7 @@
   {
     "name": "Hands That Unweave Disaster",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2359,7 +2359,7 @@
   {
     "name": "Hydra's Bond",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2377,7 +2377,7 @@
   {
     "name": "Mythic Allies",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2395,7 +2395,7 @@
   {
     "name": "Mythic Casting",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2415,7 +2415,7 @@
   {
     "name": "Mythic Containment",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2433,7 +2433,7 @@
   {
     "name": "Mythic Counterspell",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2451,7 +2451,7 @@
   {
     "name": "Mythic Magic",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2469,7 +2469,7 @@
   {
     "name": "Mythic Refocus",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2487,7 +2487,7 @@
   {
     "name": "Mythic Strike",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2505,7 +2505,7 @@
   {
     "name": "Prescience",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2523,7 +2523,7 @@
   {
     "name": "Read the Wind",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2541,7 +2541,7 @@
   {
     "name": "Repel Assault",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2559,7 +2559,7 @@
   {
     "name": "Sovereign's Blade",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2579,7 +2579,7 @@
   {
     "name": "Stages of Fate",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2597,7 +2597,7 @@
   {
     "name": "Steal Magic",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2615,7 +2615,7 @@
   {
     "name": "Storied Companion",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2635,7 +2635,7 @@
   {
     "name": "Summon Mythic Power",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2653,7 +2653,7 @@
   {
     "name": "Unbelievable Interception",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2671,7 +2671,7 @@
   {
     "name": "Unbelievably Believable",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2689,7 +2689,7 @@
   {
     "name": "Unbreaking Castle",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2707,7 +2707,7 @@
   {
     "name": "Unending Subsistence",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2725,7 +2725,7 @@
   {
     "name": "Unrivaled Retort",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2743,7 +2743,7 @@
   {
     "name": "We've Met Before",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2761,7 +2761,7 @@
   {
     "name": "Windborne Shove",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2779,7 +2779,7 @@
   {
     "name": "You Can't Hide From Us",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2797,7 +2797,7 @@
   {
     "name": "You Can't Keep Us Down",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2817,7 +2817,7 @@
   {
     "name": "You Can't Kill an Idea",
     "rule_type": "General Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",

@@ -38,10 +38,10 @@ module Entitybuilder
 
     test "admin should get stock spell options for non-stock core rules" do
       spell = Rulebuilder::StockSpell.create!(
-        core_rules: "Generic",
+        core_rules: "generic",
         name: "Generic stock spell"
       )
-      @character.update!(core_rules: "Generic")
+      @character.update!(core_rules: "generic")
 
       sign_in @user
       sign_in admins(:dan)

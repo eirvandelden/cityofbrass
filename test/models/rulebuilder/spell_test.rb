@@ -18,7 +18,7 @@ module Rulebuilder
     test "allows long full descriptions" do
       spell = StockSpell.new(
         name: "Long Spell",
-        core_rules: "PFRPG",
+        core_rules: "pf1e",
         full_description: "x" * 100_000
       )
 

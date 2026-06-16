@@ -2,7 +2,7 @@
   {
     "name": "Censor",
     "rule_type": "Class",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -15,7 +15,7 @@
   {
     "name": "Conduit",
     "rule_type": "Class",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -28,7 +28,7 @@
   {
     "name": "Elementalist",
     "rule_type": "Class",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -41,7 +41,7 @@
   {
     "name": "Fury",
     "rule_type": "Class",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -54,7 +54,7 @@
   {
     "name": "Null",
     "rule_type": "Class",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -67,7 +67,7 @@
   {
     "name": "Shadow",
     "rule_type": "Class",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -80,7 +80,7 @@
   {
     "name": "Tactician",
     "rule_type": "Class",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -93,7 +93,7 @@
   {
     "name": "Talent",
     "rule_type": "Class",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -106,7 +106,7 @@
   {
     "name": "Troubadour",
     "rule_type": "Class",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",

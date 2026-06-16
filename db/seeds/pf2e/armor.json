@@ -1,7 +1,7 @@
 [
   {
     "name": "Alkenstar Phalanx",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -17,7 +17,7 @@
   },
   {
     "name": "Ankhrav Carapace",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -32,7 +32,7 @@
   },
   {
     "name": "Anti-Dragon Barding (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -48,7 +48,7 @@
   },
   {
     "name": "Anti-Dragon Barding",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -64,7 +64,7 @@
   },
   {
     "name": "Arachnid Harness (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -76,7 +76,7 @@
   },
   {
     "name": "Arachnid Harness",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -88,7 +88,7 @@
   },
   {
     "name": "Arctic Worm Chitin Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -103,7 +103,7 @@
   },
   {
     "name": "Assassin's Skin",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -118,7 +118,7 @@
   },
   {
     "name": "Aurochs Hide Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -133,7 +133,7 @@
   },
   {
     "name": "Autoload Leathers",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -148,7 +148,7 @@
   },
   {
     "name": "Autumn's Embrace",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -162,7 +162,7 @@
   },
   {
     "name": "Bakuwa Lizardfolk Bony Plates",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -177,7 +177,7 @@
   },
   {
     "name": "Balloon Padding",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -191,7 +191,7 @@
   },
   {
     "name": "Barding of the Zephyr",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -207,7 +207,7 @@
   },
   {
     "name": "Bastion of the Inheritor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -223,7 +223,7 @@
   },
   {
     "name": "Bastion Plate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -239,7 +239,7 @@
   },
   {
     "name": "Bismuth Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -255,7 +255,7 @@
   },
   {
     "name": "Bivouac Targe",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -269,7 +269,7 @@
   },
   {
     "name": "Black Hole Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -285,7 +285,7 @@
   },
   {
     "name": "Blade Byrnie (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -300,7 +300,7 @@
   },
   {
     "name": "Blade Byrnie (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -315,7 +315,7 @@
   },
   {
     "name": "Blade Byrnie",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -330,7 +330,7 @@
   },
   {
     "name": "Bloodroot Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -346,7 +346,7 @@
   },
   {
     "name": "Bone Dreadnought Plate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -363,7 +363,7 @@
   },
   {
     "name": "Breastplate of the Mountain",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -379,7 +379,7 @@
   },
   {
     "name": "Breastplate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -391,7 +391,7 @@
   },
   {
     "name": "Broadleaf Shield (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -407,7 +407,7 @@
   },
   {
     "name": "Broadleaf Shield (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -423,7 +423,7 @@
   },
   {
     "name": "Broadleaf Shield (True)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -439,7 +439,7 @@
   },
   {
     "name": "Broadleaf Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -455,7 +455,7 @@
   },
   {
     "name": "Buckler",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -467,7 +467,7 @@
   },
   {
     "name": "Buoyant Buckle",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -482,7 +482,7 @@
   },
   {
     "name": "Canopy Bulwark",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -498,7 +498,7 @@
   },
   {
     "name": "Caster's Targe",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -512,7 +512,7 @@
   },
   {
     "name": "Ceramic Plate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -527,7 +527,7 @@
   },
   {
     "name": "Chain Mail",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -542,7 +542,7 @@
   },
   {
     "name": "Chain Shirt",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -557,7 +557,7 @@
   },
   {
     "name": "Clockwork Diving Suit",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -569,7 +569,7 @@
   },
   {
     "name": "Clockwork Shield (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -583,7 +583,7 @@
   },
   {
     "name": "Clockwork Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -597,7 +597,7 @@
   },
   {
     "name": "Cloister Robe (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -613,7 +613,7 @@
   },
   {
     "name": "Cloister Robe (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -628,7 +628,7 @@
   },
   {
     "name": "Cloister Robe (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -644,7 +644,7 @@
   },
   {
     "name": "Cloister Robe (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -659,7 +659,7 @@
   },
   {
     "name": "Command Cuirass",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -674,7 +674,7 @@
   },
   {
     "name": "Coral Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -689,7 +689,7 @@
   },
   {
     "name": "Crafting Leathers",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -704,7 +704,7 @@
   },
   {
     "name": "Crushing Coils",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -720,7 +720,7 @@
   },
   {
     "name": "Dart Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -734,7 +734,7 @@
   },
   {
     "name": "Deep Pockets",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -749,7 +749,7 @@
   },
   {
     "name": "Deep Sea Plate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -765,7 +765,7 @@
   },
   {
     "name": "Devil's Bargain",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -779,7 +779,7 @@
   },
   {
     "name": "Dragon Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -793,7 +793,7 @@
   },
   {
     "name": "Dragon Turtle Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -809,7 +809,7 @@
   },
   {
     "name": "Dragon Turtle Plate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -823,7 +823,7 @@
   },
   {
     "name": "Dragonaut's Wingsuit",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -838,7 +838,7 @@
   },
   {
     "name": "Dragonplate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -854,7 +854,7 @@
   },
   {
     "name": "Dragonslayer's Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -868,7 +868,7 @@
   },
   {
     "name": "Eagle Wing",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -883,7 +883,7 @@
   },
   {
     "name": "Electric Eelskin",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -898,7 +898,7 @@
   },
   {
     "name": "Elven Chain (High-Grade)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -912,7 +912,7 @@
   },
   {
     "name": "Elven Chain (Standard-Grade)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -926,7 +926,7 @@
   },
   {
     "name": "Energized Shield (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -940,7 +940,7 @@
   },
   {
     "name": "Energized Shield (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -954,7 +954,7 @@
   },
   {
     "name": "Energized Shield (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -968,7 +968,7 @@
   },
   {
     "name": "Energized Shield (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -982,7 +982,7 @@
   },
   {
     "name": "Energizing Lattice",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -996,7 +996,7 @@
   },
   {
     "name": "Evil-Reflecting Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1010,7 +1010,7 @@
   },
   {
     "name": "Exploding Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1024,7 +1024,7 @@
   },
   {
     "name": "Explorer's Clothing",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1038,7 +1038,7 @@
   },
   {
     "name": "Faerie Queen's Bower",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1055,7 +1055,7 @@
   },
   {
     "name": "Fiendsbane Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1070,7 +1070,7 @@
   },
   {
     "name": "Floating Shield (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1084,7 +1084,7 @@
   },
   {
     "name": "Floating Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1098,7 +1098,7 @@
   },
   {
     "name": "Force Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1113,7 +1113,7 @@
   },
   {
     "name": "Forge Warden",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1127,7 +1127,7 @@
   },
   {
     "name": "Fortress Plate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1143,7 +1143,7 @@
   },
   {
     "name": "Fortress Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1157,7 +1157,7 @@
   },
   {
     "name": "Frost Furs",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1173,7 +1173,7 @@
   },
   {
     "name": "Full Plate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1187,7 +1187,7 @@
   },
   {
     "name": "Gauntlet Buckler",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1201,7 +1201,7 @@
   },
   {
     "name": "Ghoul Hide",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1216,7 +1216,7 @@
   },
   {
     "name": "Gi",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1230,7 +1230,7 @@
   },
   {
     "name": "Glamorous Buckler",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1244,7 +1244,7 @@
   },
   {
     "name": "Grisly Brigandine",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1259,7 +1259,7 @@
   },
   {
     "name": "Half Plate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1271,7 +1271,7 @@
   },
   {
     "name": "Hardshell Surki Carapace",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1285,7 +1285,7 @@
   },
   {
     "name": "Harnessed Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1299,7 +1299,7 @@
   },
   {
     "name": "Heavy Barding (Large)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1314,7 +1314,7 @@
   },
   {
     "name": "Heavy Barding (Small or Medium)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1329,7 +1329,7 @@
   },
   {
     "name": "Heavy Rondache",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1341,7 +1341,7 @@
   },
   {
     "name": "Hellknight Breastplate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1353,7 +1353,7 @@
   },
   {
     "name": "Hellknight Half Plate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1365,7 +1365,7 @@
   },
   {
     "name": "Hellknight Plate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1379,7 +1379,7 @@
   },
   {
     "name": "Helmsman's Recourse (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1394,7 +1394,7 @@
   },
   {
     "name": "Helmsman's Recourse (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1409,7 +1409,7 @@
   },
   {
     "name": "Helmsman's Recourse",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1424,7 +1424,7 @@
   },
   {
     "name": "Hero's Plate (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1438,7 +1438,7 @@
   },
   {
     "name": "Hero's Plate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1452,7 +1452,7 @@
   },
   {
     "name": "Hide Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1464,7 +1464,7 @@
   },
   {
     "name": "Hide Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1478,7 +1478,7 @@
   },
   {
     "name": "Hippopotamus Klar",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1494,7 +1494,7 @@
   },
   {
     "name": "Hodag Leather",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1509,7 +1509,7 @@
   },
   {
     "name": "Hollow Robes",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1526,7 +1526,7 @@
   },
   {
     "name": "Holy Chain",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1543,7 +1543,7 @@
   },
   {
     "name": "Immortal Bastion",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1559,7 +1559,7 @@
   },
   {
     "name": "Impenetrable Scale",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1574,7 +1574,7 @@
   },
   {
     "name": "Imposing Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1588,7 +1588,7 @@
   },
   {
     "name": "Incendiary Plate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1605,7 +1605,7 @@
   },
   {
     "name": "Indestructible Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1619,7 +1619,7 @@
   },
   {
     "name": "Juggernaut Plate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1635,7 +1635,7 @@
   },
   {
     "name": "Kilted Breastplate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1649,7 +1649,7 @@
   },
   {
     "name": "Kizidhar's Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1664,7 +1664,7 @@
   },
   {
     "name": "Klar",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1678,7 +1678,7 @@
   },
   {
     "name": "Lamellar Breastplate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1693,7 +1693,7 @@
   },
   {
     "name": "Lattice Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1705,7 +1705,7 @@
   },
   {
     "name": "Leaf Weave",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1719,7 +1719,7 @@
   },
   {
     "name": "Leather Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1731,7 +1731,7 @@
   },
   {
     "name": "Leather Lamellar",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1745,7 +1745,7 @@
   },
   {
     "name": "Library Robes (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1759,7 +1759,7 @@
   },
   {
     "name": "Library Robes (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1773,7 +1773,7 @@
   },
   {
     "name": "Library Robes (True)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1787,7 +1787,7 @@
   },
   {
     "name": "Library Robes",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1801,7 +1801,7 @@
   },
   {
     "name": "Life-Saver Mail (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1815,7 +1815,7 @@
   },
   {
     "name": "Life-Saver Mail",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1829,7 +1829,7 @@
   },
   {
     "name": "Lifting Leather",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1844,7 +1844,7 @@
   },
   {
     "name": "Light Barding",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1859,7 +1859,7 @@
   },
   {
     "name": "Limestone Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1874,7 +1874,7 @@
   },
   {
     "name": "Linnorm's Sankeit",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1888,7 +1888,7 @@
   },
   {
     "name": "Lion's Armor (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1903,7 +1903,7 @@
   },
   {
     "name": "Lion's Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1918,7 +1918,7 @@
   },
   {
     "name": "Lion's Pelt (Chain)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1933,7 +1933,7 @@
   },
   {
     "name": "Lion's Pelt (Leather)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1945,7 +1945,7 @@
   },
   {
     "name": "Lion's Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1959,7 +1959,7 @@
   },
   {
     "name": "Living Leaf Weave",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1976,7 +1976,7 @@
   },
   {
     "name": "Locust Leather",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1991,7 +1991,7 @@
   },
   {
     "name": "Lodestone Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2005,7 +2005,7 @@
   },
   {
     "name": "Magnetic Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2020,7 +2020,7 @@
   },
   {
     "name": "Mamlambo Scale",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2035,7 +2035,7 @@
   },
   {
     "name": "Mantis Plate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2051,7 +2051,7 @@
   },
   {
     "name": "Mantis Shell",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2065,7 +2065,7 @@
   },
   {
     "name": "Mariner's Splint",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2080,7 +2080,7 @@
   },
   {
     "name": "Martyr's Shield (Hellbreakers)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2092,7 +2092,7 @@
   },
   {
     "name": "Martyr's Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2107,7 +2107,7 @@
   },
   {
     "name": "Medic's Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2121,7 +2121,7 @@
   },
   {
     "name": "Medusa Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2137,7 +2137,7 @@
   },
   {
     "name": "Medusa's Scream (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2151,7 +2151,7 @@
   },
   {
     "name": "Medusa's Scream",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2165,7 +2165,7 @@
   },
   {
     "name": "Message Mail",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2182,7 +2182,7 @@
   },
   {
     "name": "Meteor Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2196,7 +2196,7 @@
   },
   {
     "name": "Mitigation Mail (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2213,7 +2213,7 @@
   },
   {
     "name": "Mitigation Mail (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2230,7 +2230,7 @@
   },
   {
     "name": "Mitigation Mail",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2247,7 +2247,7 @@
   },
   {
     "name": "Moonlit Chain",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2264,7 +2264,7 @@
   },
   {
     "name": "Niyaháat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2278,7 +2278,7 @@
   },
   {
     "name": "O-Yoroi",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2293,7 +2293,7 @@
   },
   {
     "name": "Onslaught Hide",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2308,7 +2308,7 @@
   },
   {
     "name": "Ooze Skin",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2322,7 +2322,7 @@
   },
   {
     "name": "Ouroboros Buckles",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2337,7 +2337,7 @@
   },
   {
     "name": "Padded Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2351,7 +2351,7 @@
   },
   {
     "name": "Parachute Mail",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2368,7 +2368,7 @@
   },
   {
     "name": "Power Suit",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2380,7 +2380,7 @@
   },
   {
     "name": "Powered Full Plate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2395,7 +2395,7 @@
   },
   {
     "name": "Quilted Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2409,7 +2409,7 @@
   },
   {
     "name": "Rattan Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2423,7 +2423,7 @@
   },
   {
     "name": "Razor Disc",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2438,7 +2438,7 @@
   },
   {
     "name": "Reactive Mail (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2455,7 +2455,7 @@
   },
   {
     "name": "Reactive Mail (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2472,7 +2472,7 @@
   },
   {
     "name": "Reactive Mail",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2489,7 +2489,7 @@
   },
   {
     "name": "Reef Heart (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2503,7 +2503,7 @@
   },
   {
     "name": "Reef Heart",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2517,7 +2517,7 @@
   },
   {
     "name": "Reflecting Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2531,7 +2531,7 @@
   },
   {
     "name": "Reinforced Chassis",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2545,7 +2545,7 @@
   },
   {
     "name": "Robes of Xin-Edasseril",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2561,7 +2561,7 @@
   },
   {
     "name": "Rusting Carapace",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2575,7 +2575,7 @@
   },
   {
     "name": "Salvo Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2589,7 +2589,7 @@
   },
   {
     "name": "Sanguine Klar (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2604,7 +2604,7 @@
   },
   {
     "name": "Sanguine Klar",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2619,7 +2619,7 @@
   },
   {
     "name": "Sankeit",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2633,7 +2633,7 @@
   },
   {
     "name": "Sapling Shield (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2647,7 +2647,7 @@
   },
   {
     "name": "Sapling Shield (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2661,7 +2661,7 @@
   },
   {
     "name": "Sapling Shield (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2675,7 +2675,7 @@
   },
   {
     "name": "Sapling Shield (Minor)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2689,7 +2689,7 @@
   },
   {
     "name": "Sapling Shield (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2703,7 +2703,7 @@
   },
   {
     "name": "Sapling Shield (True)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2717,7 +2717,7 @@
   },
   {
     "name": "Scale Mail",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2729,7 +2729,7 @@
   },
   {
     "name": "Scale of Igroon",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2744,7 +2744,7 @@
   },
   {
     "name": "Scene Stealer's Tunic",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2759,7 +2759,7 @@
   },
   {
     "name": "Scroll Robes",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2773,7 +2773,7 @@
   },
   {
     "name": "Shadow Shroud",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2788,7 +2788,7 @@
   },
   {
     "name": "Shared-Pain Sankeit",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2805,7 +2805,7 @@
   },
   {
     "name": "Shield of Snakes",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2820,7 +2820,7 @@
   },
   {
     "name": "Siege Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2834,7 +2834,7 @@
   },
   {
     "name": "Slithermaw's Bane (Heroic)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2853,7 +2853,7 @@
   },
   {
     "name": "Slithermaw's Bane",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2869,7 +2869,7 @@
   },
   {
     "name": "Smoldering Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2884,7 +2884,7 @@
   },
   {
     "name": "Sorshen's Scintillating Garment",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2901,7 +2901,7 @@
   },
   {
     "name": "Spellguard Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2915,7 +2915,7 @@
   },
   {
     "name": "Spined Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2929,7 +2929,7 @@
   },
   {
     "name": "Splint Mail",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2941,7 +2941,7 @@
   },
   {
     "name": "Starfall Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2955,7 +2955,7 @@
   },
   {
     "name": "Steel Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2967,7 +2967,7 @@
   },
   {
     "name": "Studded Leather Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2979,7 +2979,7 @@
   },
   {
     "name": "Sturdy Shield (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2993,7 +2993,7 @@
   },
   {
     "name": "Sturdy Shield (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3007,7 +3007,7 @@
   },
   {
     "name": "Sturdy Shield (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3021,7 +3021,7 @@
   },
   {
     "name": "Sturdy Shield (Minor)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3035,7 +3035,7 @@
   },
   {
     "name": "Sturdy Shield (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3049,7 +3049,7 @@
   },
   {
     "name": "Sturdy Shield (Supreme)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3063,7 +3063,7 @@
   },
   {
     "name": "Subterfuge Suit",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3075,7 +3075,7 @@
   },
   {
     "name": "Sun Slayer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3089,7 +3089,7 @@
   },
   {
     "name": "Swordstealer Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3103,7 +3103,7 @@
   },
   {
     "name": "Tales in Timber (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3119,7 +3119,7 @@
   },
   {
     "name": "Tales in Timber (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3135,7 +3135,7 @@
   },
   {
     "name": "Tales in Timber",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3151,7 +3151,7 @@
   },
   {
     "name": "Testudo Shield (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3165,7 +3165,7 @@
   },
   {
     "name": "Testudo Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3179,7 +3179,7 @@
   },
   {
     "name": "Thunder Mail",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3196,7 +3196,7 @@
   },
   {
     "name": "Tideplate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3208,7 +3208,7 @@
   },
   {
     "name": "Tiger Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3222,7 +3222,7 @@
   },
   {
     "name": "Tower Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3234,7 +3234,7 @@
   },
   {
     "name": "Troll Hide",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3249,7 +3249,7 @@
   },
   {
     "name": "Trollhound Vest",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3261,7 +3261,7 @@
   },
   {
     "name": "Turnabout Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3276,7 +3276,7 @@
   },
   {
     "name": "Umbral Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3291,7 +3291,7 @@
   },
   {
     "name": "Unholy Plate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3308,7 +3308,7 @@
   },
   {
     "name": "Vambrace of Gorum",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3324,7 +3324,7 @@
   },
   {
     "name": "Vanguard's Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3338,7 +3338,7 @@
   },
   {
     "name": "Vernai Shell",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3355,7 +3355,7 @@
   },
   {
     "name": "War Mage's Buckler",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3369,7 +3369,7 @@
   },
   {
     "name": "Warding Escutcheon (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3383,7 +3383,7 @@
   },
   {
     "name": "Warding Escutcheon",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3397,7 +3397,7 @@
   },
   {
     "name": "Warleader's Bulwark (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3412,7 +3412,7 @@
   },
   {
     "name": "Warleader's Bulwark",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3427,7 +3427,7 @@
   },
   {
     "name": "Wasp Guard",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3439,7 +3439,7 @@
   },
   {
     "name": "Wilderness Weave",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3455,7 +3455,7 @@
   },
   {
     "name": "Wisp Chain (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3471,7 +3471,7 @@
   },
   {
     "name": "Wisp Chain (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3487,7 +3487,7 @@
   },
   {
     "name": "Wisp Chain (True)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3503,7 +3503,7 @@
   },
   {
     "name": "Wisp Chain",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3519,7 +3519,7 @@
   },
   {
     "name": "Wolfjaw Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3533,7 +3533,7 @@
   },
   {
     "name": "Wooden Breastplate",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3545,7 +3545,7 @@
   },
   {
     "name": "Wooden Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3557,7 +3557,7 @@
   },
   {
     "name": "Worldscale Shield",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3572,7 +3572,7 @@
   },
   {
     "name": "Zetogeki Hide Armor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",

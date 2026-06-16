@@ -2,7 +2,7 @@
   {
     "name": "Arcane Archer",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -15,7 +15,7 @@
   {
     "name": "Battlemind",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -28,7 +28,7 @@
   {
     "name": "Cloak and Dagger",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -41,7 +41,7 @@
   {
     "name": "Dual Wielder",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -54,7 +54,7 @@
   {
     "name": "Guisarmier",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -67,7 +67,7 @@
   {
     "name": "Martial Artist",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -80,7 +80,7 @@
   {
     "name": "Mountain",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -93,7 +93,7 @@
   {
     "name": "Panther",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -106,7 +106,7 @@
   {
     "name": "Pugilist",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -119,7 +119,7 @@
   {
     "name": "Raider",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -132,7 +132,7 @@
   {
     "name": "Ranger",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -145,7 +145,7 @@
   {
     "name": "Rapid-Fire",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -158,7 +158,7 @@
   {
     "name": "Retiarius",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -171,7 +171,7 @@
   {
     "name": "Shining Armor",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -184,7 +184,7 @@
   {
     "name": "Sniper",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -197,7 +197,7 @@
   {
     "name": "Spellsword",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -210,7 +210,7 @@
   {
     "name": "Stick and Robe",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -223,7 +223,7 @@
   {
     "name": "Swashbuckler",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -236,7 +236,7 @@
   {
     "name": "Sword and Board",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -249,7 +249,7 @@
   {
     "name": "Warrior Priest",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -262,7 +262,7 @@
   {
     "name": "Whirlwind",
     "rule_type": "Kit",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",

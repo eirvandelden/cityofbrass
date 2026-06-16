@@ -36,7 +36,7 @@ module Rulebuilder
     end
 
     test "invalid privacy adds symbolic error" do
-      item = Rulebuilder::ResidentItem.new(name: "ResidentItemTest", core_rules: "PFRPG", privacy: "Invalid")
+      item = Rulebuilder::ResidentItem.new(name: "ResidentItemTest", core_rules: "pf1e", privacy: "Invalid")
       item.valid?
       assert_equal :invalid_privacy, item.errors.details[:privacy].first[:error]
       assert_equal "is not valid.", item.errors[:privacy].first
