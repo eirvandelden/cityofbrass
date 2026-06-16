@@ -1,0 +1,13 @@
+it:
+  campaignmanager:
+    navigation:
+      active_adventure: "Avventura attiva"
+    campaigns:
+      features:
+        adventures: "Avventure"
+      form:
+        adventures_label: "Avventure in questa campagna"
+        adventures_hint: "Seleziona le avventure che fanno parte di questa campagna. Appaiono nella panoramica della campagna."
+        active_adventure_label: "Avventura attiva"
+        active_adventure_hint: "L'avventura attualmente in corso. Viene evidenziata nella panoramica e collegata nel menu della campagna."
+        no_active_adventure: "Nessuna"

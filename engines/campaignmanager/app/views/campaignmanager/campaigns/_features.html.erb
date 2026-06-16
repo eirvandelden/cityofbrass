@@ -13,7 +13,7 @@
 <% if visible_adventures.any? %>
   <% active_adventure_id = campaign.active_adventure&.id %>
   <li>
-    <strong>Adventures: </strong>
+    <strong><%= t("campaignmanager.campaigns.features.adventures") %>: </strong>
     <%= safe_join(visible_adventures.map { |adventure|
           link = link_to(adventure.name, tcob_path(adventure))
           adventure.id == active_adventure_id ? content_tag(:strong, link) : link

@@ -87,7 +87,7 @@ module Campaignmanager
       get :show, params: { id: @campaign2 }
 
       assert_response :success
-      assert_match 'Active Adventure', @response.body
+      assert_match I18n.t("campaignmanager.navigation.active_adventure"), @response.body
       assert_match storybuilder_adventures(:resident_two).name, @response.body
     end
 
@@ -97,7 +97,7 @@ module Campaignmanager
       get :show, params: { id: @campaign2 }
 
       assert_response :success
-      assert_no_match 'Active Adventure', @response.body
+      assert_no_match I18n.t("campaignmanager.navigation.active_adventure"), @response.body
       assert_no_match storybuilder_adventures(:resident_two).name, @response.body
     end
 
