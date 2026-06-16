@@ -13,7 +13,7 @@ class LefthookConfigTest < ActiveSupport::TestCase
     commands = config.dig("pre-push", "commands")
     runs = commands.values.map { |command| command.fetch("run") }
 
-    assert_includes runs, "bin/pre_push_checks"
+    assert_includes runs, "rv run bin/pre_push_checks"
   end
 
   private

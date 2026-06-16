@@ -7,7 +7,7 @@
         <%= f.input :password_confirmation, placeholder: "confirm your new password" %>
         <%= f.input :current_password, required: true %>
         <%= f.input :locale,
-            collection: [['English', 'en'], ['Nederlands', 'nl'], ['Italiano', 'it']],
+            collection: [[t("locales.en"), "en"], [t("locales.nl"), "nl"], [t("locales.it"), "it"]],
             include_blank: false %>
       </fieldset>
 
