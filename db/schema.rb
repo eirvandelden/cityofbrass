@@ -291,8 +291,18 @@ ActiveRecord::Schema.define(version: 2026_06_13_162630) do
     t.index ["entity_id"], name: "index_entitybuilder_class_levels_on_entity_id"
   end
 
-# Could not dump table "entitybuilder_currencies" because of following StandardError
-#   Unknown type 'REAL' for column 'weight'
+  create_table "entitybuilder_currencies", id: :text, default: "uuid()", force: :cascade do |t|
+    t.text "entity_id"
+    t.integer "sort_order"
+    t.text "name"
+    t.text "description"
+    t.float "weight"
+    t.bigint "quantity"
+    t.boolean "carried"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["entity_id"], name: "index_entitybuilder_currencies_on_entity_id"
+  end
 
   create_table "entitybuilder_defenses", id: :text, default: "uuid()", force: :cascade do |t|
     t.text "entity_id"
