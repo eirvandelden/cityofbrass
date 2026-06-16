@@ -10,8 +10,7 @@ module CoreRules
 
         rules = []
         config.each do |core|
-          hash = []
-          hash = [core['name'], core['rulebuilder']['rules'].collect{ |r| r['name'] }]
+          hash = [core['slug'], core['rulebuilder']['rules'].collect{ |r| r['name'] }]
           rules += [hash]
         end
         return rules
@@ -25,8 +24,8 @@ module CoreRules
         end
 
         rules = {}
-        CoreRules.rulebooks.each do |core|
-          hash = { core['name'] => core['rulebuilder']['rules'].collect{ |r| r['name'] } }
+        config.each do |core|
+          hash = { core['slug'] => core['rulebuilder']['rules'].collect{ |r| r['name'] } }
           rules.merge!(hash)
         end
         return rules.to_json

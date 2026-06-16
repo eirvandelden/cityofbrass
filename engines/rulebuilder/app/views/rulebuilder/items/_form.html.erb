@@ -8,7 +8,7 @@
     <div class="medium-8 columns">
       <%= f.input :name %>
       <%= f.association :parent, collection: f.object.class.where(core_rules: f.object.core_rules).select(:name, :id).order_name, label_method: :name, value_method: :id, :include_blank => true if admin_signed_in? %>
-      <%= f.input :core_rules, collection: CoreRules.options(admin_signed_in?), :include_blank => true %>
+      <%= f.input :core_rules, collection: CoreRules.all(admin_signed_in?), label_method: :name, value_method: :slug, :include_blank => true %>
       <div class="row">
         <div class="medium-9 columns">
           <%= f.input :publisher %>

@@ -28,7 +28,7 @@
       <div class="small-12 columns">
         <div id="rule_form">
           <%= simple_form_for [@route_namespace, @rule].compact do |f| %>
-            <h3 class="color-c5"><%= "#{@rule.core_rules}" %> <%= @rule.rule_type.blank? ? "Rule" : "#{@rule.rule_type}" %></h3>
+            <h3 class="color-c5"><%= CoreRules.display_name(@rule.core_rules) %> <%= @rule.rule_type.blank? ? "Rule" : "#{@rule.rule_type}" %></h3>
             <fieldset>
 
               <%= render "rulebuilder/rules/form/new", :f => f %>

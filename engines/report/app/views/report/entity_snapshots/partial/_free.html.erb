@@ -19,7 +19,7 @@
         <tbody>
           <% @free_counts.each do |item| %>
             <tr>
-              <td><strong><%= item.core_rules %></strong></td>
+              <td><strong><%= CoreRules.display_name(item.core_rules) %></strong></td>
               <td class="text-center"><%= item.characters %></td>
               <td class="text-center"><%= item.creatures %></td>
               <td class="text-center"><%= item.npcs %></td>

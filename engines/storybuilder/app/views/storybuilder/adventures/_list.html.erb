@@ -2,7 +2,7 @@
   <%= render :partial =>'layouts/index_row',
     :locals => {
     :main => adventure.name,
-    :sub => adventure.core_rules,
+    :sub => CoreRules.display_name(adventure.core_rules),
     :description => adventure.short_description,
     :show_link => polymorphic_path(adventure),
     :edit_link => edit_polymorphic_path(adventure),

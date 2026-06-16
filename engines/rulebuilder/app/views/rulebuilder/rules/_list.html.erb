@@ -1,7 +1,7 @@
 <% core_rules_list = @rules.to_a.map(&:core_rules).uniq.sort() %>
 <% core_rules_list.each do |core_rules| %>
 
-  <h2><%= core_rules %></h2>
+  <h2><%= CoreRules.display_name(core_rules) || core_rules %></h2>
   <div class="row show-div">
     <div class="medium-12 columns">
       <% rule_types = CoreRules::Rule.rule_types(core_rules)%>

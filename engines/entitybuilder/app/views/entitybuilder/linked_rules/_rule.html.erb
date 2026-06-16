@@ -11,7 +11,7 @@
     <%= link_to (image_tag @linked_rule.rule.gallery_image.file.url(:medium), :alt => @linked_rule.rule.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@linked_rule.rule.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
   <% end %>
 
-  <% if @linked_rule.rule.prerequisites? && ('5th Edition Generic'.include?@linked_rule.rule.core_rules) %><p class="italic"><strong>Prerequisites:</strong> <%= @linked_rule.rule.prerequisites %></p><% end %>
+  <% if @linked_rule.rule.prerequisites? && %w[dnd5e generic].include?(@linked_rule.rule.core_rules) %><p class="italic"><strong>Prerequisites:</strong> <%= @linked_rule.rule.prerequisites %></p><% end %>
   <%= sanitize @linked_rule.rule.full_description %>
   <%= render :partial => 'rulebuilder/rules/rule_details', :locals => { :rule => @linked_rule.rule } %>
 
