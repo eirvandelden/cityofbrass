@@ -1,0 +1,13 @@
+nl:
+  campaignmanager:
+    navigation:
+      active_adventure: "Actief avontuur"
+    campaigns:
+      features:
+        adventures: "Avonturen"
+      form:
+        adventures_label: "Avonturen in deze campagne"
+        adventures_hint: "Vink de avonturen aan die onderdeel zijn van deze campagne. Ze verschijnen op het campagneoverzicht."
+        active_adventure_label: "Actief avontuur"
+        active_adventure_hint: "Het avontuur dat nu gespeeld wordt. Het wordt uitgelicht op het overzicht en gelinkt in het campagnemenu."
+        no_active_adventure: "Geen"

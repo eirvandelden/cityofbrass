@@ -53,3 +53,15 @@ en:
         stock_images: "Stock Images"
         stock_images_admin: "Stock Images (Admin)"
         map_images: "Map Images"
+  campaignmanager:
+    navigation:
+      active_adventure: "Active Adventure"
+    campaigns:
+      features:
+        adventures: "Adventures"
+      form:
+        adventures_label: "Adventures in this campaign"
+        adventures_hint: "Check the adventures that are part of this campaign. They appear on the campaign overview."
+        active_adventure_label: "Active adventure"
+        active_adventure_hint: "The adventure currently being run. It is highlighted on the overview and linked in the campaign menu."
+        no_active_adventure: "None"

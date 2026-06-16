@@ -14,17 +14,17 @@
             collection: current_user.resident.adventure_list(@campaign.core_rules).values.flatten,
             label_method: :name,
             value_method: :id,
-            label: 'Adventures in this campaign',
-            hint: 'Check the adventures that are part of this campaign. They appear on the campaign overview.' %>
+            label: t("campaignmanager.campaigns.form.adventures_label"),
+            hint: t("campaignmanager.campaigns.form.adventures_hint") %>
         <% if @campaign.adventures.any? %>
           <%= f.input :active_adventure_id,
               as: :select,
               collection: @campaign.adventures,
               label_method: :name,
               value_method: :id,
-              include_blank: 'None',
-              label: 'Active adventure',
-              hint: 'The adventure currently being run. It is highlighted on the overview and linked in the campaign menu.' %>
+              include_blank: t("campaignmanager.campaigns.form.no_active_adventure"),
+              label: t("campaignmanager.campaigns.form.active_adventure_label"),
+              hint: t("campaignmanager.campaigns.form.active_adventure_hint") %>
         <% end %>
       <% end %>
     </div>

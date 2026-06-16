@@ -9,7 +9,8 @@
   <li><%= link_to 'Notables', "#{campaignmanager.polymorphic_path(@campaign)}/notables/list" %></li>
 <% end %>
 <% if @campaign.active_adventure.present? && visible_record?(@campaign.active_adventure) %>
-  <li><%= link_to 'Active Adventure', "#{storybuilder.polymorphic_path(@campaign.active_adventure)}/campaign/#{@campaign.id}" %></li>
+  <% active_adventure_path = "#{storybuilder.polymorphic_path(@campaign.active_adventure)}/campaign/#{@campaign.id}" %>
+  <li><%= link_to t("campaignmanager.navigation.active_adventure"), active_adventure_path %></li>
 <% end %>
 <li><%= link_to 'House Rules', campaignmanager.polymorphic_path([@campaign, :house_rules]) %></li>
 <li><%= link_to 'Adventure Logs', campaignmanager.polymorphic_path([@campaign, :adventure_logs]) %></li>
