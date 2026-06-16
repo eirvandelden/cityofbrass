@@ -7,7 +7,7 @@ resident_one:
   slug: long-trail
   page_label: ima label
   privacy: Friends
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
 
@@ -18,6 +18,6 @@ resident_two:
   slug: see-the-world
   page_label:
   privacy: Public
-  core_rules: PFRPG
+  core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
