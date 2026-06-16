@@ -1,7 +1,7 @@
 class CreateResidents < ActiveRecord::Migration[4.2]
   def change
-    create_table :residents, id: :uuid do |t|
-      t.uuid   :user_id, :null => false
+    create_table :residents, id: :string do |t|
+      t.string   :user_id, :null => false
       t.string :name, 	 :null => false
       t.string :slug, 	 :null => false
       t.string :short_description
