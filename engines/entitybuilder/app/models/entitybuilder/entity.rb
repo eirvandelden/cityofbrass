@@ -134,7 +134,7 @@ module Entitybuilder
     end
 
     def index_title
-      title_builder = self.core_rules.titleize
+      title_builder = CoreRules.display_name(self.core_rules) || self.core_rules.titleize
       title_builder += " - #{title}" if title.present?
       title_builder[0, 50]
     end
