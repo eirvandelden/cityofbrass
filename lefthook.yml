@@ -8,4 +8,4 @@ pre-commit:
 pre-push:
   commands:
     pre_push_checks:
-      run: bin/pre_push_checks
+      run: rv run bin/pre_push_checks
