@@ -11,7 +11,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_difference("Entitybuilder::StockCreature.count", 2) do
       assert_difference("Rulebuilder::StockItem.count", 1) do
         assert_difference("Rulebuilder::StockSpell.count", 1) do
-          assert_difference("Rulebuilder::StockRule.count", 4) do
+          assert_difference("Rulebuilder::StockRule.count", 5) do
             Importer::ProcessImportJob.perform_now(import.id)
           end
         end
@@ -19,11 +19,12 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     end
 
     assert_equal "succeeded", import.reload.status
-    assert_equal 8, import.import_results.created.count
+    assert_equal 9, import.import_results.created.count
     assert_equal "Residents", Entitybuilder::StockCreature.find_by!(name: "Goblin").privacy
     assert_equal "Residents", Entitybuilder::StockCreature.find_by!(name: "Goblin").sheet_privacy
     assert_equal "Backgrounds", Rulebuilder::StockRule.find_by!(name: "Sailor").rule_type
     assert_equal "Class", Rulebuilder::StockRule.find_by!(name: "Fighter").rule_type
+    assert_equal "Subclass", Rulebuilder::StockRule.find_by!(name: "Champion").rule_type
   end
 
   test "resident compendium import creates resident records" do
@@ -32,7 +33,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_difference("Entitybuilder::ResidentCreature.count", 2) do
       assert_difference("Rulebuilder::ResidentItem.count", 1) do
         assert_difference("Rulebuilder::ResidentSpell.count", 1) do
-          assert_difference("Rulebuilder::ResidentRule.count", 4) do
+          assert_difference("Rulebuilder::ResidentRule.count", 5) do
             Importer::ProcessImportJob.perform_now(import.id)
           end
         end
@@ -44,6 +45,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal "Private", Entitybuilder::ResidentCreature.find_by!(name: "Goblin").privacy
     assert_nil Rulebuilder::ResidentItem.find_by!(name: "Longsword").category
     assert_equal "Species", Rulebuilder::ResidentRule.find_by!(name: "Elf").rule_type
+    assert_equal "Subclass", Rulebuilder::ResidentRule.find_by!(name: "Champion").rule_type
   end
 
   test "resident campaign import creates campaign records and skips nothing" do
@@ -266,7 +268,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     Importer::ProcessImportJob.perform_now(import.id)
 
     assert_equal "succeeded", import.reload.status
-    assert_equal 8, import.import_results.skipped.count
+    assert_equal 9, import.import_results.skipped.count
     assert_equal [ "already exists" ], import.import_results.skipped.distinct.pluck(:reason)
   end
 

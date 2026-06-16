@@ -7,6 +7,15 @@ class ImporterGameMaster5XmlDocumentTest < ActiveSupport::TestCase
     assert_monster_record document.compendium_records.find { |record| record[:name] == "Goblin" }
   end
 
+  test "compendium records include subclasses" do
+    document = Importer::Sources::GameMaster5Xml::Document.new(importer_fixture_file("sample_compendium.xml"))
+    subclass = document.compendium_records.find { |record| record[:name] == "Champion" }
+
+    assert subclass
+    assert_equal "subclass", subclass[:type]
+    assert_equal "Fighter", subclass[:baseclass]
+  end
+
   test "encounter record extracts combatants" do
     xml = <<~XML
       <campaign>

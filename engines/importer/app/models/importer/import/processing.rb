@@ -100,7 +100,7 @@ module Importer
         when "monster" then import_monster(import_file, record)
         when "item", "container" then import_item(import_file, record)
         when "spell" then import_spell(import_file, record)
-        when "race", "background", "feat", "class" then import_rule(import_file, record)
+        when "race", "background", "feat", "class", "subclass" then import_rule(import_file, record)
         end
       end
 
@@ -746,6 +746,8 @@ module Importer
 
       def rule_full_description(record)
         parts = []
+        parts << "Base class: #{record[:baseclass]}" if record[:baseclass].present?
+        parts << "Subclasses: #{record[:subclass_names].join(', ')}" if record[:subclass_names].present?
         parts += record[:traits].map { |t| "**#{t[:name]}**\n#{t[:text]}" } if record[:traits].is_a?(Array)
         text = record[:text]
         parts += Array(text) if text.present?
