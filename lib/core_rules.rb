@@ -22,7 +22,7 @@ module CoreRules
   end
 
   def self.find(slug)
-    all.detect { |r| r.slug == slug }
+    all(true).detect { |r| r.slug == slug }
   end
 
   def self.display_name(slug)
