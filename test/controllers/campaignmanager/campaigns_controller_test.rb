@@ -80,6 +80,27 @@ module Campaignmanager
       assert_no_match district.name, @response.body
     end
 
+    test "should show active adventure link to anonymous visitor when adventure is public" do
+      @campaign2.update!(privacy: 'Public')
+      storybuilder_adventures(:resident_two).update!(privacy: 'Public')
+
+      get :show, params: { id: @campaign2 }
+
+      assert_response :success
+      assert_match 'Active Adventure', @response.body
+      assert_match storybuilder_adventures(:resident_two).name, @response.body
+    end
+
+    test "should hide active adventure from anonymous visitor when adventure is private" do
+      @campaign2.update!(privacy: 'Public')
+
+      get :show, params: { id: @campaign2 }
+
+      assert_response :success
+      assert_no_match 'Active Adventure', @response.body
+      assert_no_match storybuilder_adventures(:resident_two).name, @response.body
+    end
+
     test "should hide private world when public campaign is shown to another resident" do
       district = worldbuilder_districts(:district_three)
       district.update!(privacy: 'Private')
