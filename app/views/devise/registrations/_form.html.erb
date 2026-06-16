@@ -6,6 +6,9 @@
         <%= f.input :password, placeholder: "leave blank if you don't want to change it" %>
         <%= f.input :password_confirmation, placeholder: "confirm your new password" %>
         <%= f.input :current_password, required: true %>
+        <%= f.input :locale,
+            collection: [['English', 'en'], ['Nederlands', 'nl'], ['Italiano', 'it']],
+            include_blank: false %>
       </fieldset>
 
       <%= render "layouts/form/save" %>

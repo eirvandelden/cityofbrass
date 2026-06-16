@@ -1,58 +1,5 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
+---
 en:
-  hello: "Hello world"
-  errors:
-    messages:
-      invalid_privacy: "is not valid."
-  layouts:
-    license:
-      attribution:
-        aria_label: "RPG system attribution"
-    navigation:
-      manage_stock:
-        game_master: "Game Master"
-        rule_builder: "Rule Builder"
-        creatures: "Creatures"
-        npcs: "NPCs"
-        rules: "Rules"
-        spells: "Spells"
-        items: "Items"
-        images: "Images"
-    topbar:
-      manage_stock:
-        title: "Manage Stock"
-    offcanvas:
-      manage_stock:
-        title: "Manage Stock"
-        back: "Back"
-  gallery:
-    images:
-      image_modal:
-        title: "Images"
-        my_images: "My Images"
-        stock_images: "Stock Images"
-        stock_images_admin: "Stock Images (Admin)"
-        map_images: "Map Images"
   campaignmanager:
     navigation:
       active_adventure: "Active Adventure"
@@ -65,3 +12,36 @@ en:
         active_adventure_label: "Active adventure"
         active_adventure_hint: "The adventure currently being run. It is highlighted on the overview and linked in the campaign menu."
         no_active_adventure: "None"
+  errors:
+    messages:
+      invalid_privacy: is not valid.
+  gallery:
+    images:
+      image_modal:
+        map_images: Map Images
+        my_images: My Images
+        stock_images: Stock Images
+        stock_images_admin: Stock Images (Admin)
+        title: Images
+  hello: Hello world
+  layouts:
+    license:
+      attribution:
+        aria_label: RPG system attribution
+    navigation:
+      manage_stock:
+        creatures: Creatures
+        game_master: Game Master
+        images: Images
+        items: Items
+        npcs: NPCs
+        rule_builder: Rule Builder
+        rules: Rules
+        spells: Spells
+    offcanvas:
+      manage_stock:
+        back: Back
+        title: Manage Stock
+    topbar:
+      manage_stock:
+        title: Manage Stock

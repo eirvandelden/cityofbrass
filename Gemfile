@@ -37,6 +37,8 @@ gem "redcarpet"
 gem "redis"
 gem "sidekiq"
 gem "simple_form"
+gem "rails-i18n"
+gem "devise-i18n"
 gem "stripe"
 # gem 'sinatra' # used for sidekiq ui
 gem "bundle-audit"
@@ -69,6 +71,10 @@ gem "rulebuilder", path: "engines/rulebuilder"
 gem "storybuilder", path: "engines/storybuilder"
 gem "support", path: "engines/support"
 gem "worldbuilder", path: "engines/worldbuilder"
+
+group :development do
+  gem "i18n-tasks"
+end
 
 group :development, :test do
   gem "better_errors"

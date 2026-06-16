@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require "bundler/setup"
+require "logger" # Required explicitly for Ruby 3.3+ (moved from stdlib to bundled gem)
+load Gem.bin_path("i18n-tasks", "i18n-tasks")

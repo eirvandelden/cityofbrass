@@ -1,0 +1,60 @@
+base_locale: en
+locales: [en, nl, it]
+
+search:
+  paths:
+    - app/
+    - engines/
+  only:
+    - "*.rb"
+    - "*.erb"
+    - "*.haml"
+  relative_roots:
+    - app/controllers
+    - app/helpers
+    - app/mailers
+    - app/presenters
+    - app/views
+    - engines/activeplay/app/controllers
+    - engines/activeplay/app/helpers
+    - engines/activeplay/app/views
+    - engines/billing/app/controllers
+    - engines/billing/app/helpers
+    - engines/billing/app/views
+    - engines/campaignmanager/app/controllers
+    - engines/campaignmanager/app/helpers
+    - engines/campaignmanager/app/views
+    - engines/entitybuilder/app/controllers
+    - engines/entitybuilder/app/helpers
+    - engines/entitybuilder/app/views
+    - engines/gallery/app/controllers
+    - engines/gallery/app/helpers
+    - engines/gallery/app/views
+    - engines/report/app/controllers
+    - engines/report/app/helpers
+    - engines/report/app/views
+    - engines/rulebuilder/app/controllers
+    - engines/rulebuilder/app/helpers
+    - engines/rulebuilder/app/views
+    - engines/storybuilder/app/controllers
+    - engines/storybuilder/app/helpers
+    - engines/storybuilder/app/views
+    - engines/support/app/controllers
+    - engines/support/app/helpers
+    - engines/support/app/views
+    - engines/worldbuilder/app/controllers
+    - engines/worldbuilder/app/helpers
+    - engines/worldbuilder/app/views
+
+ignore_missing:
+  # Suppress rails-i18n / devise-i18n keys loaded by gems (not in local yml files)
+  - '{devise,date,time,number,errors,activerecord,helpers,support}.*'
+  # Kaminari pagination keys are provided by the kaminari gem's own locale files
+  - 'views.pagination.*'
+
+ignore_unused:
+  - '{devise,date,time,number,errors,activerecord,helpers,support}.*'
+  # Kaminari pagination keys are provided by the kaminari gem's own locale files
+  - 'views.pagination.*'
+  # Placeholder key from the default Rails locale template
+  - 'hello'

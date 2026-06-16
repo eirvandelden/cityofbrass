@@ -26,6 +26,7 @@ class User < ApplicationRecord
   after_validation :set_status, on: :create
 
   validates :status, presence: true
+  validates :locale, presence: true, inclusion: { in: %w[en nl it] }
 
   def honeypot_absence
     errors.add :check_field, "You should not fill in the invisible field" unless check_field.blank?
