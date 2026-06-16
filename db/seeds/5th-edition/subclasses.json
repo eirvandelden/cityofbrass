@@ -2,7 +2,7 @@
   {
     "name": "Path of the Berserker",
     "rule_type": "Subclass",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -15,7 +15,7 @@
   {
     "name": "College of Lore",
     "rule_type": "Subclass",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -28,7 +28,7 @@
   {
     "name": "Life Domain",
     "rule_type": "Subclass",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -41,7 +41,7 @@
   {
     "name": "Circle of the Land",
     "rule_type": "Subclass",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -54,7 +54,7 @@
   {
     "name": "Champion",
     "rule_type": "Subclass",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -67,7 +67,7 @@
   {
     "name": "Warrior of the Open Hand",
     "rule_type": "Subclass",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -80,7 +80,7 @@
   {
     "name": "Oath of Devotion",
     "rule_type": "Subclass",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -93,7 +93,7 @@
   {
     "name": "Hunter",
     "rule_type": "Subclass",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -106,7 +106,7 @@
   {
     "name": "Thief",
     "rule_type": "Subclass",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -119,7 +119,7 @@
   {
     "name": "Draconic Sorcery",
     "rule_type": "Subclass",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -132,7 +132,7 @@
   {
     "name": "Fiend Patron",
     "rule_type": "Subclass",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -145,7 +145,7 @@
   {
     "name": "Evoker",
     "rule_type": "Subclass",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",

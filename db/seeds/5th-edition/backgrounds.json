@@ -2,7 +2,7 @@
   {
     "name": "Acolyte",
     "rule_type": "Backgrounds",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -15,7 +15,7 @@
   {
     "name": "Criminal",
     "rule_type": "Backgrounds",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -28,7 +28,7 @@
   {
     "name": "Sage",
     "rule_type": "Backgrounds",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -41,7 +41,7 @@
   {
     "name": "Soldier",
     "rule_type": "Backgrounds",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",

@@ -1,7 +1,7 @@
 [
   {
     "name": "Aboleth",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Aberration, Lawful Evil",
@@ -152,7 +152,7 @@
   },
   {
     "name": "Air Elemental",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Elemental, Neutral",
@@ -289,7 +289,7 @@
   },
   {
     "name": "Animated Armor",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Construct, Unaligned",
@@ -428,7 +428,7 @@
   },
   {
     "name": "Animated Flying Sword",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Construct, Unaligned",
@@ -572,7 +572,7 @@
   },
   {
     "name": "Animated Rug of Smothering",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Construct, Unaligned",
@@ -711,7 +711,7 @@
   },
   {
     "name": "Ankheg",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Monstrosity, Unaligned",
@@ -840,7 +840,7 @@
   },
   {
     "name": "Assassin",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -1009,7 +1009,7 @@
   },
   {
     "name": "Awakened Shrub",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Plant, Neutral",
@@ -1149,7 +1149,7 @@
   },
   {
     "name": "Awakened Tree",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Plant, Neutral",
@@ -1292,7 +1292,7 @@
   },
   {
     "name": "Axe Beak",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Monstrosity, Unaligned",
@@ -1427,7 +1427,7 @@
   },
   {
     "name": "Azer Sentinel",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Elemental, Lawful Neutral",
@@ -1555,7 +1555,7 @@
   },
   {
     "name": "Balor",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Fiend (Demon), Chaotic Evil",
@@ -1709,7 +1709,7 @@
   },
   {
     "name": "Bandit",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -1858,7 +1858,7 @@
   },
   {
     "name": "Bandit Captain",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -2018,7 +2018,7 @@
   },
   {
     "name": "Barbed Devil",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fiend (Devil), Lawful Evil",
@@ -2202,7 +2202,7 @@
   },
   {
     "name": "Basilisk",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Monstrosity, Unaligned",
@@ -2337,7 +2337,7 @@
   },
   {
     "name": "Bearded Devil",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fiend (Devil), Lawful Evil",
@@ -2490,7 +2490,7 @@
   },
   {
     "name": "Behir",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Monstrosity, Neutral Evil",
@@ -2655,7 +2655,7 @@
   },
   {
     "name": "Black Dragon Wyrmling",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Dragon (Chromatic), Chaotic Evil",
@@ -2815,7 +2815,7 @@
   },
   {
     "name": "Young Black Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Dragon (Chromatic), Chaotic Evil",
@@ -2975,7 +2975,7 @@
   },
   {
     "name": "Adult Black Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Dragon (Chromatic), Chaotic Evil",
@@ -3135,7 +3135,7 @@
   },
   {
     "name": "Ancient Black Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Gargantuan Dragon (Chromatic), Chaotic Evil",
@@ -3295,7 +3295,7 @@
   },
   {
     "name": "Black Pudding",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Ooze, Unaligned",
@@ -3439,7 +3439,7 @@
   },
   {
     "name": "Blink Dog",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fey, Lawful Good",
@@ -3585,7 +3585,7 @@
   },
   {
     "name": "Blue Dragon Wyrmling",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Dragon (Chromatic), Lawful Evil",
@@ -3745,7 +3745,7 @@
   },
   {
     "name": "Young Blue Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Dragon (Chromatic), Lawful Evil",
@@ -3905,7 +3905,7 @@
   },
   {
     "name": "Adult Blue Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Dragon (Chromatic), Lawful Evil",
@@ -4065,7 +4065,7 @@
   },
   {
     "name": "Ancient Blue Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Gargantuan Dragon (Chromatic), Lawful Evil",
@@ -4225,7 +4225,7 @@
   },
   {
     "name": "Bone Devil",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Fiend (Devil), Lawful Evil",
@@ -4394,7 +4394,7 @@
   },
   {
     "name": "Brass Dragon Wyrmling",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Dragon (Metallic), Chaotic Good",
@@ -4554,7 +4554,7 @@
   },
   {
     "name": "Young Brass Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Dragon (Metallic), Chaotic Good",
@@ -4719,7 +4719,7 @@
   },
   {
     "name": "Adult Brass Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Dragon (Metallic), Chaotic Good",
@@ -4889,7 +4889,7 @@
   },
   {
     "name": "Ancient Brass Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Gargantuan Dragon (Metallic), Chaotic Good",
@@ -5059,7 +5059,7 @@
   },
   {
     "name": "Bronze Dragon Wyrmling",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Dragon (Metallic), Lawful Good",
@@ -5219,7 +5219,7 @@
   },
   {
     "name": "Young Bronze Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Dragon (Metallic), Lawful Good",
@@ -5384,7 +5384,7 @@
   },
   {
     "name": "Adult Bronze Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Dragon (Metallic), Lawful Good",
@@ -5549,7 +5549,7 @@
   },
   {
     "name": "Ancient Bronze Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Gargantuan Dragon (Metallic), Lawful Good",
@@ -5714,7 +5714,7 @@
   },
   {
     "name": "Bugbear Stalker",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fey (Goblinoid), Chaotic Evil",
@@ -5853,7 +5853,7 @@
   },
   {
     "name": "Bugbear Warrior",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fey (Goblinoid), Chaotic Evil",
@@ -6003,7 +6003,7 @@
   },
   {
     "name": "Bulette",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Monstrosity, Unaligned",
@@ -6149,7 +6149,7 @@
   },
   {
     "name": "Centaur Trooper",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Fey, Neutral Good",
@@ -6299,7 +6299,7 @@
   },
   {
     "name": "Chain Devil",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fiend (Devil), Lawful Evil",
@@ -6442,7 +6442,7 @@
   },
   {
     "name": "Chimera",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Monstrosity, Chaotic Evil",
@@ -6608,7 +6608,7 @@
   },
   {
     "name": "Chuul",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Aberration, Chaotic Evil",
@@ -6758,7 +6758,7 @@
   },
   {
     "name": "Clay Golem",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Construct, Unaligned",
@@ -6901,7 +6901,7 @@
   },
   {
     "name": "Cloaker",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Aberration, Chaotic Neutral",
@@ -7061,7 +7061,7 @@
   },
   {
     "name": "Cloud Giant",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Giant, Neutral",
@@ -7222,7 +7222,7 @@
   },
   {
     "name": "Cockatrice",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Monstrosity, Unaligned",
@@ -7366,7 +7366,7 @@
   },
   {
     "name": "Commoner",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -7505,7 +7505,7 @@
   },
   {
     "name": "Copper Dragon Wyrmling",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Dragon (Metallic), Chaotic Good",
@@ -7665,7 +7665,7 @@
   },
   {
     "name": "Young Copper Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Dragon (Metallic), Chaotic Good",
@@ -7830,7 +7830,7 @@
   },
   {
     "name": "Adult Copper Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Dragon (Metallic), Chaotic Good",
@@ -7995,7 +7995,7 @@
   },
   {
     "name": "Ancient Copper Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Gargantuan Dragon (Metallic), Chaotic Good",
@@ -8160,7 +8160,7 @@
   },
   {
     "name": "Couatl",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Celestial, Lawful Good",
@@ -8308,7 +8308,7 @@
   },
   {
     "name": "Swarm of Crawling Claws",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Swarm of Tiny Undead, Neutral Evil",
@@ -8456,7 +8456,7 @@
   },
   {
     "name": "Cultist",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -8606,7 +8606,7 @@
   },
   {
     "name": "Cultist Fanatic",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -8750,7 +8750,7 @@
   },
   {
     "name": "Darkmantle",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Aberration, Unaligned",
@@ -8896,7 +8896,7 @@
   },
   {
     "name": "Death Dog",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Monstrosity, Neutral Evil",
@@ -9046,7 +9046,7 @@
   },
   {
     "name": "Deva",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Celestial (Angel), Lawful Good",
@@ -9205,7 +9205,7 @@
   },
   {
     "name": "Djinni",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Elemental (Genie), Neutral",
@@ -9338,7 +9338,7 @@
   },
   {
     "name": "Doppelganger",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Monstrosity, Neutral",
@@ -9477,7 +9477,7 @@
   },
   {
     "name": "Dragon Turtle",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Gargantuan Dragon, Neutral",
@@ -9631,7 +9631,7 @@
   },
   {
     "name": "Dretch",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Fiend (Demon), Chaotic Evil",
@@ -9774,7 +9774,7 @@
   },
   {
     "name": "Drider",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Monstrosity, Chaotic Evil",
@@ -9935,7 +9935,7 @@
   },
   {
     "name": "Druid",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid (Druid), Neutral",
@@ -10100,7 +10100,7 @@
   },
   {
     "name": "Dryad",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fey, Neutral",
@@ -10256,7 +10256,7 @@
   },
   {
     "name": "Earth Elemental",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Elemental, Neutral",
@@ -10414,7 +10414,7 @@
   },
   {
     "name": "Efreeti",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Elemental (Genie), Neutral",
@@ -10558,7 +10558,7 @@
   },
   {
     "name": "Erinyes",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fiend (Devil), Lawful Evil",
@@ -10706,7 +10706,7 @@
   },
   {
     "name": "Ettercap",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Monstrosity, Neutral Evil",
@@ -10872,7 +10872,7 @@
   },
   {
     "name": "Ettin",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Giant, Chaotic Evil",
@@ -11031,7 +11031,7 @@
   },
   {
     "name": "Fire Elemental",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Elemental, Neutral",
@@ -11174,7 +11174,7 @@
   },
   {
     "name": "Fire Giant",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Giant, Lawful Evil",
@@ -11324,7 +11324,7 @@
   },
   {
     "name": "Flesh Golem",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Construct, Neutral",
@@ -11463,7 +11463,7 @@
   },
   {
     "name": "Frost Giant",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Giant, Neutral Evil",
@@ -11613,7 +11613,7 @@
   },
   {
     "name": "Shrieker Fungus",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Plant, Unaligned",
@@ -11741,7 +11741,7 @@
   },
   {
     "name": "Violet Fungus",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Plant, Unaligned",
@@ -11880,7 +11880,7 @@
   },
   {
     "name": "Gargoyle",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Elemental, Chaotic Evil",
@@ -12030,7 +12030,7 @@
   },
   {
     "name": "Gelatinous Cube",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Ooze, Unaligned",
@@ -12169,7 +12169,7 @@
   },
   {
     "name": "Ghast",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Undead, Chaotic Evil",
@@ -12322,7 +12322,7 @@
   },
   {
     "name": "Ghost",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Undead, Neutral",
@@ -12459,7 +12459,7 @@
   },
   {
     "name": "Ghoul",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Undead, Chaotic Evil",
@@ -12608,7 +12608,7 @@
   },
   {
     "name": "Gibbering Mouther",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Aberration, Chaotic Neutral",
@@ -12749,7 +12749,7 @@
   },
   {
     "name": "Glabrezu",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Fiend (Demon), Chaotic Evil",
@@ -12903,7 +12903,7 @@
   },
   {
     "name": "Gladiator",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -13042,7 +13042,7 @@
   },
   {
     "name": "Gnoll Warrior",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fiend, Chaotic Evil",
@@ -13177,7 +13177,7 @@
   },
   {
     "name": "Goblin Minion",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Fey (Goblinoid), Chaotic Neutral",
@@ -13311,7 +13311,7 @@
   },
   {
     "name": "Goblin Warrior",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Fey (Goblinoid), Chaotic Neutral",
@@ -13456,7 +13456,7 @@
   },
   {
     "name": "Goblin Boss",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Fey (Goblinoid), Chaotic Neutral",
@@ -13601,7 +13601,7 @@
   },
   {
     "name": "Gold Dragon Wyrmling",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Dragon (Metallic), Lawful Good",
@@ -13761,7 +13761,7 @@
   },
   {
     "name": "Young Gold Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Dragon (Metallic), Lawful Good",
@@ -13931,7 +13931,7 @@
   },
   {
     "name": "Adult Gold Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Dragon (Metallic), Lawful Good",
@@ -14101,7 +14101,7 @@
   },
   {
     "name": "Ancient Gold Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Gargantuan Dragon (Metallic), Lawful Good",
@@ -14260,7 +14260,7 @@
   },
   {
     "name": "Gorgon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Construct, Unaligned",
@@ -14405,7 +14405,7 @@
   },
   {
     "name": "Gray Ooze",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Ooze, Unaligned",
@@ -14559,7 +14559,7 @@
   },
   {
     "name": "Green Dragon Wyrmling",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Dragon (Chromatic), Lawful Evil",
@@ -14719,7 +14719,7 @@
   },
   {
     "name": "Young Green Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Dragon (Chromatic), Lawful Evil",
@@ -14884,7 +14884,7 @@
   },
   {
     "name": "Adult Green Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Dragon (Chromatic), Lawful Evil",
@@ -15054,7 +15054,7 @@
   },
   {
     "name": "Ancient Green Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Gargantuan Dragon (Chromatic), Lawful Evil",
@@ -15224,7 +15224,7 @@
   },
   {
     "name": "Green Hag",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fey, Neutral Evil",
@@ -15385,7 +15385,7 @@
   },
   {
     "name": "Grick",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Aberration, Unaligned",
@@ -15541,7 +15541,7 @@
   },
   {
     "name": "Griffon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Monstrosity, Unaligned",
@@ -15684,7 +15684,7 @@
   },
   {
     "name": "Grimlock",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Aberration, Neutral Evil",
@@ -15840,7 +15840,7 @@
   },
   {
     "name": "Guardian Naga",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Celestial, Lawful Good",
@@ -16005,7 +16005,7 @@
   },
   {
     "name": "Guard",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -16139,7 +16139,7 @@
   },
   {
     "name": "Guard Captain",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -16289,7 +16289,7 @@
   },
   {
     "name": "Half-Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Dragon, Neutral",
@@ -16444,7 +16444,7 @@
   },
   {
     "name": "Harpy",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Monstrosity, Chaotic Evil",
@@ -16584,7 +16584,7 @@
   },
   {
     "name": "Hell Hound",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fiend, Lawful Evil",
@@ -16729,7 +16729,7 @@
   },
   {
     "name": "Hezrou",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Fiend (Demon), Chaotic Evil",
@@ -16872,7 +16872,7 @@
   },
   {
     "name": "Hill Giant",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Giant, Chaotic Evil",
@@ -17023,7 +17023,7 @@
   },
   {
     "name": "Hippogriff",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Monstrosity, Unaligned",
@@ -17169,7 +17169,7 @@
   },
   {
     "name": "Hobgoblin Warrior",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fey (Goblinoid), Lawful Evil",
@@ -17308,7 +17308,7 @@
   },
   {
     "name": "Hobgoblin Captain",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fey (Goblinoid), Lawful Evil",
@@ -17457,7 +17457,7 @@
   },
   {
     "name": "Homunculus",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Construct, Neutral",
@@ -17600,7 +17600,7 @@
   },
   {
     "name": "Horned Devil",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Fiend (Devil), Lawful Evil",
@@ -17758,7 +17758,7 @@
   },
   {
     "name": "Hydra",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Monstrosity, Unaligned",
@@ -17908,7 +17908,7 @@
   },
   {
     "name": "Ice Devil",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Fiend (Devil), Lawful Evil",
@@ -18063,7 +18063,7 @@
   },
   {
     "name": "Imp",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Fiend (Devil), Lawful Evil",
@@ -18227,7 +18227,7 @@
   },
   {
     "name": "Incubus",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fiend, Neutral Evil",
@@ -18386,7 +18386,7 @@
   },
   {
     "name": "Invisible Stalker",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Elemental, Neutral",
@@ -18575,7 +18575,7 @@
   },
   {
     "name": "Kraken",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Gargantuan Monstrosity (Titan), Chaotic Evil",
@@ -18730,7 +18730,7 @@
   },
   {
     "name": "Lamia",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Fiend, Chaotic Evil",
@@ -18881,7 +18881,7 @@
   },
   {
     "name": "Lemure",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fiend (Devil), Lawful Evil",
@@ -19024,7 +19024,7 @@
   },
   {
     "name": "Lich",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Undead (Wizard), Neutral Evil",
@@ -19192,7 +19192,7 @@
   },
   {
     "name": "Mage",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid (Wizard), Neutral",
@@ -19336,7 +19336,7 @@
   },
   {
     "name": "Archmage",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid (Wizard), Neutral",
@@ -19484,7 +19484,7 @@
   },
   {
     "name": "Magmin",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Elemental, Chaotic Neutral",
@@ -19623,7 +19623,7 @@
   },
   {
     "name": "Manticore",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Monstrosity, Lawful Evil",
@@ -19763,7 +19763,7 @@
   },
   {
     "name": "Marilith",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Fiend (Demon), Chaotic Evil",
@@ -19917,7 +19917,7 @@
   },
   {
     "name": "Medusa",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Monstrosity, Lawful Evil",
@@ -20088,7 +20088,7 @@
   },
   {
     "name": "Dust Mephit",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Elemental, Neutral Evil",
@@ -20247,7 +20247,7 @@
   },
   {
     "name": "Ice Mephit",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Elemental, Neutral Evil",
@@ -20402,7 +20402,7 @@
   },
   {
     "name": "Magma Mephit",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Elemental, Neutral Evil",
@@ -20556,7 +20556,7 @@
   },
   {
     "name": "Steam Mephit",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Elemental, Neutral Evil",
@@ -20706,7 +20706,7 @@
   },
   {
     "name": "Merfolk Skirmisher",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Elemental, Neutral",
@@ -20835,7 +20835,7 @@
   },
   {
     "name": "Merrow",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Monstrosity, Chaotic Evil",
@@ -20985,7 +20985,7 @@
   },
   {
     "name": "Mimic",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Monstrosity, Neutral",
@@ -21130,7 +21130,7 @@
   },
   {
     "name": "Minotaur of Baphomet",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Monstrosity, Chaotic Evil",
@@ -21276,7 +21276,7 @@
   },
   {
     "name": "Mummy",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Undead, Lawful Evil",
@@ -21419,7 +21419,7 @@
   },
   {
     "name": "Mummy Lord",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Undead (Cleric), Lawful Evil",
@@ -21588,7 +21588,7 @@
   },
   {
     "name": "Nalfeshnee",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Fiend (Demon), Chaotic Evil",
@@ -21736,7 +21736,7 @@
   },
   {
     "name": "Night Hag",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fiend, Neutral Evil",
@@ -21900,7 +21900,7 @@
   },
   {
     "name": "Nightmare",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Fiend, Neutral Evil",
@@ -22044,7 +22044,7 @@
   },
   {
     "name": "Noble",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -22199,7 +22199,7 @@
   },
   {
     "name": "Ochre Jelly",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Ooze, Unaligned",
@@ -22347,7 +22347,7 @@
   },
   {
     "name": "Ogre",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Giant, Chaotic Evil",
@@ -22486,7 +22486,7 @@
   },
   {
     "name": "Oni",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Fiend, Lawful Evil",
@@ -22646,7 +22646,7 @@
   },
   {
     "name": "Otyugh",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Aberration, Neutral",
@@ -22791,7 +22791,7 @@
   },
   {
     "name": "Owlbear",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Monstrosity, Unaligned",
@@ -22943,7 +22943,7 @@
   },
   {
     "name": "Phase Spider",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Monstrosity, Unaligned",
@@ -23089,7 +23089,7 @@
   },
   {
     "name": "Pirate",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -23217,7 +23217,7 @@
   },
   {
     "name": "Pirate Captain",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -23377,7 +23377,7 @@
   },
   {
     "name": "Pit Fiend",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Fiend (Devil), Lawful Evil",
@@ -23556,7 +23556,7 @@
   },
   {
     "name": "Planetar",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Celestial (Angel), Lawful Good",
@@ -23699,7 +23699,7 @@
   },
   {
     "name": "Priest Acolyte",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid (Cleric), Neutral",
@@ -23849,7 +23849,7 @@
   },
   {
     "name": "Priest",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid (Cleric), Neutral",
@@ -24004,7 +24004,7 @@
   },
   {
     "name": "Pseudodragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Dragon, Neutral Good",
@@ -24155,7 +24155,7 @@
   },
   {
     "name": "Purple Worm",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Gargantuan Monstrosity, Unaligned",
@@ -24305,7 +24305,7 @@
   },
   {
     "name": "Quasit",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Fiend (Demon), Chaotic Evil",
@@ -24454,7 +24454,7 @@
   },
   {
     "name": "Rakshasa",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fiend, Lawful Evil",
@@ -24613,7 +24613,7 @@
   },
   {
     "name": "Red Dragon Wyrmling",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Dragon (Chromatic), Chaotic Evil",
@@ -24773,7 +24773,7 @@
   },
   {
     "name": "Young Red Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Dragon (Chromatic), Chaotic Evil",
@@ -24933,7 +24933,7 @@
   },
   {
     "name": "Adult Red Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Dragon (Chromatic), Chaotic Evil",
@@ -25093,7 +25093,7 @@
   },
   {
     "name": "Ancient Red Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Gargantuan Dragon (Chromatic), Chaotic Evil",
@@ -25253,7 +25253,7 @@
   },
   {
     "name": "Remorhaz",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Monstrosity, Unaligned",
@@ -25397,7 +25397,7 @@
   },
   {
     "name": "Roc",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Gargantuan Monstrosity, Unaligned",
@@ -25553,7 +25553,7 @@
   },
   {
     "name": "Roper",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Aberration, Neutral Evil",
@@ -25711,7 +25711,7 @@
   },
   {
     "name": "Rust Monster",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Monstrosity, Unaligned",
@@ -25846,7 +25846,7 @@
   },
   {
     "name": "Sahuagin Warrior",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fiend, Lawful Evil",
@@ -25996,7 +25996,7 @@
   },
   {
     "name": "Salamander",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Elemental, Neutral Evil",
@@ -26133,7 +26133,7 @@
   },
   {
     "name": "Satyr",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fey, Chaotic Neutral",
@@ -26284,7 +26284,7 @@
   },
   {
     "name": "Scout",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -26444,7 +26444,7 @@
   },
   {
     "name": "Sea Hag",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fey, Chaotic Evil",
@@ -26584,7 +26584,7 @@
   },
   {
     "name": "Shadow",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Undead, Chaotic Evil",
@@ -26737,7 +26737,7 @@
   },
   {
     "name": "Shambling Mound",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Plant, Unaligned",
@@ -26880,7 +26880,7 @@
   },
   {
     "name": "Shield Guardian",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Construct, Unaligned",
@@ -27019,7 +27019,7 @@
   },
   {
     "name": "Silver Dragon Wyrmling",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Dragon (Metallic), Lawful Good",
@@ -27174,7 +27174,7 @@
   },
   {
     "name": "Young Silver Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Dragon (Metallic), Lawful Good",
@@ -27334,7 +27334,7 @@
   },
   {
     "name": "Adult Silver Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Dragon (Metallic), Lawful Good",
@@ -27494,7 +27494,7 @@
   },
   {
     "name": "Ancient Silver Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Gargantuan Dragon (Metallic), Lawful Good",
@@ -27654,7 +27654,7 @@
   },
   {
     "name": "Skeleton",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Undead, Lawful Evil",
@@ -27811,7 +27811,7 @@
   },
   {
     "name": "Warhorse Skeleton",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Undead, Lawful Evil",
@@ -27954,7 +27954,7 @@
   },
   {
     "name": "Minotaur Skeleton",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Undead, Lawful Evil",
@@ -28107,7 +28107,7 @@
   },
   {
     "name": "Solar",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Celestial (Angel), Lawful Good",
@@ -28246,7 +28246,7 @@
   },
   {
     "name": "Specter",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Undead, Chaotic Evil",
@@ -28394,7 +28394,7 @@
   },
   {
     "name": "Sphinx of Wonder",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Celestial, Lawful Good",
@@ -28554,7 +28554,7 @@
   },
   {
     "name": "Sphinx of Lore",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Celestial, Lawful Neutral",
@@ -28723,7 +28723,7 @@
   },
   {
     "name": "Sphinx of Valor",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Celestial, Lawful Neutral",
@@ -28887,7 +28887,7 @@
   },
   {
     "name": "Spirit Naga",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Fiend, Chaotic Evil",
@@ -29036,7 +29036,7 @@
   },
   {
     "name": "Sprite",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Fey, Neutral Good",
@@ -29196,7 +29196,7 @@
   },
   {
     "name": "Spy",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -29381,7 +29381,7 @@
   },
   {
     "name": "Stirge",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Monstrosity, Unaligned",
@@ -29521,7 +29521,7 @@
   },
   {
     "name": "Stone Giant",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Giant, Neutral",
@@ -29682,7 +29682,7 @@
   },
   {
     "name": "Stone Golem",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Construct, Unaligned",
@@ -29831,7 +29831,7 @@
   },
   {
     "name": "Storm Giant",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Giant, Chaotic Good",
@@ -29994,7 +29994,7 @@
   },
   {
     "name": "Succubus",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Fiend, Neutral Evil",
@@ -30164,7 +30164,7 @@
   },
   {
     "name": "Tarrasque",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Gargantuan Monstrosity (Titan), Unaligned",
@@ -30343,7 +30343,7 @@
   },
   {
     "name": "Tough",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -30492,7 +30492,7 @@
   },
   {
     "name": "Tough Boss",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -30641,7 +30641,7 @@
   },
   {
     "name": "Treant",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Plant, Chaotic Good",
@@ -30784,7 +30784,7 @@
   },
   {
     "name": "Troll",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Giant, Chaotic Evil",
@@ -30925,7 +30925,7 @@
   },
   {
     "name": "Troll Limb",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Giant, Chaotic Evil",
@@ -31060,7 +31060,7 @@
   },
   {
     "name": "Unicorn",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Celestial, Lawful Good",
@@ -31209,7 +31209,7 @@
   },
   {
     "name": "Vampire Familiar",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral Evil",
@@ -31366,7 +31366,7 @@
   },
   {
     "name": "Vampire Spawn",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Undead, Neutral Evil",
@@ -31513,7 +31513,7 @@
   },
   {
     "name": "Vampire",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Undead, Lawful Evil",
@@ -31668,7 +31668,7 @@
   },
   {
     "name": "Vrock",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Fiend (Demon), Chaotic Evil",
@@ -31816,7 +31816,7 @@
   },
   {
     "name": "Warrior Veteran",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Humanoid, Neutral",
@@ -31976,7 +31976,7 @@
   },
   {
     "name": "Water Elemental",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Elemental, Neutral",
@@ -32124,7 +32124,7 @@
   },
   {
     "name": "Werebear",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Monstrosity (Lycanthrope), Neutral Good",
@@ -32279,7 +32279,7 @@
   },
   {
     "name": "Wereboar",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Monstrosity (Lycanthrope), Neutral Evil",
@@ -32434,7 +32434,7 @@
   },
   {
     "name": "Wererat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Monstrosity (Lycanthrope), Lawful Evil",
@@ -32599,7 +32599,7 @@
   },
   {
     "name": "Weretiger",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Monstrosity (Lycanthrope), Neutral",
@@ -32769,7 +32769,7 @@
   },
   {
     "name": "Werewolf",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Monstrosity (Lycanthrope), Chaotic Evil",
@@ -32939,7 +32939,7 @@
   },
   {
     "name": "White Dragon Wyrmling",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Dragon (Chromatic), Chaotic Evil",
@@ -33104,7 +33104,7 @@
   },
   {
     "name": "Young White Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Dragon (Chromatic), Chaotic Evil",
@@ -33269,7 +33269,7 @@
   },
   {
     "name": "Adult White Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Dragon (Chromatic), Chaotic Evil",
@@ -33434,7 +33434,7 @@
   },
   {
     "name": "Ancient White Dragon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Gargantuan Dragon (Chromatic), Chaotic Evil",
@@ -33619,7 +33619,7 @@
   },
   {
     "name": "Winter Wolf",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Monstrosity, Neutral Evil",
@@ -33766,7 +33766,7 @@
   },
   {
     "name": "Worg",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Fey, Neutral Evil",
@@ -33907,7 +33907,7 @@
   },
   {
     "name": "Wraith",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium or Small Undead, Neutral Evil",
@@ -34055,7 +34055,7 @@
   },
   {
     "name": "Wyvern",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Dragon, Unaligned",
@@ -34211,7 +34211,7 @@
   },
   {
     "name": "Xorn",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Elemental, Neutral",
@@ -34376,7 +34376,7 @@
   },
   {
     "name": "Zombie",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Undead, Neutral Evil",

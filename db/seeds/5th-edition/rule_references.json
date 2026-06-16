@@ -2,7 +2,7 @@
   {
     "name": "Advantage and Disadvantage",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -15,7 +15,7 @@
   {
     "name": "Cover",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -28,7 +28,7 @@
   {
     "name": "Concentration",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -41,7 +41,7 @@
   {
     "name": "Critical Hit",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -54,7 +54,7 @@
   {
     "name": "Darkness",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -67,7 +67,7 @@
   {
     "name": "Darkvision",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -80,7 +80,7 @@
   {
     "name": "Difficult Terrain",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -93,7 +93,7 @@
   {
     "name": "Falling",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -106,7 +106,7 @@
   {
     "name": "Hiding",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -119,7 +119,7 @@
   {
     "name": "Long Rest",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -132,7 +132,7 @@
   {
     "name": "Short Rest",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -145,7 +145,7 @@
   {
     "name": "Damage Types",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -158,7 +158,7 @@
   {
     "name": "Resistance",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -171,7 +171,7 @@
   {
     "name": "Opportunity Attacks",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -184,7 +184,7 @@
   {
     "name": "Death Saving Throw",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -197,7 +197,7 @@
   {
     "name": "Grappling",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -210,7 +210,7 @@
   {
     "name": "Unarmed Strike",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -223,7 +223,7 @@
   {
     "name": "Heroic Inspiration",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -236,7 +236,7 @@
   {
     "name": "Passive Perception",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -249,7 +249,7 @@
   {
     "name": "Suffocation",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -262,7 +262,7 @@
   {
     "name": "Truesight",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -275,7 +275,7 @@
   {
     "name": "Telepathy",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -288,7 +288,7 @@
   {
     "name": "Tremorsense",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -301,7 +301,7 @@
   {
     "name": "Teleportation",
     "rule_type": "Rule Reference",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",

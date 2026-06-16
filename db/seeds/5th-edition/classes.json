@@ -2,7 +2,7 @@
   {
     "name": "Barbarian",
     "rule_type": "Class",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -15,7 +15,7 @@
   {
     "name": "Bard",
     "rule_type": "Class",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -28,7 +28,7 @@
   {
     "name": "Cleric",
     "rule_type": "Class",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -41,7 +41,7 @@
   {
     "name": "Druid",
     "rule_type": "Class",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -54,7 +54,7 @@
   {
     "name": "Fighter",
     "rule_type": "Class",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -67,7 +67,7 @@
   {
     "name": "Monk",
     "rule_type": "Class",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -80,7 +80,7 @@
   {
     "name": "Paladin",
     "rule_type": "Class",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -93,7 +93,7 @@
   {
     "name": "Ranger",
     "rule_type": "Class",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -106,7 +106,7 @@
   {
     "name": "Rogue",
     "rule_type": "Class",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -119,7 +119,7 @@
   {
     "name": "Sorcerer",
     "rule_type": "Class",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -132,7 +132,7 @@
   {
     "name": "Warlock",
     "rule_type": "Class",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -145,7 +145,7 @@
   {
     "name": "Wizard",
     "rule_type": "Class",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",

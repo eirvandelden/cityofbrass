@@ -2,7 +2,7 @@
   {
     "name": "Alert",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -15,7 +15,7 @@
   {
     "name": "Magic Initiate",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -28,7 +28,7 @@
   {
     "name": "Savage Attacker",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -41,7 +41,7 @@
   {
     "name": "Skilled",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -54,7 +54,7 @@
   {
     "name": "Ability Score Improvement",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -67,7 +67,7 @@
   {
     "name": "Grappler",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -80,7 +80,7 @@
   {
     "name": "Archery",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -93,7 +93,7 @@
   {
     "name": "Defense",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -106,7 +106,7 @@
   {
     "name": "Great Weapon Fighting",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -119,7 +119,7 @@
   {
     "name": "Two-Weapon Fighting",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -132,7 +132,7 @@
   {
     "name": "Boon of Combat Prowess",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -145,7 +145,7 @@
   {
     "name": "Boon of Dimensional Travel",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -158,7 +158,7 @@
   {
     "name": "Boon of Fate",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -171,7 +171,7 @@
   {
     "name": "Boon of Irresistible Offense",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -184,7 +184,7 @@
   {
     "name": "Boon of Spell Recall",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -197,7 +197,7 @@
   {
     "name": "Boon of the Night Spirit",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -210,7 +210,7 @@
   {
     "name": "Boon of Truesight",
     "rule_type": "Feat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
