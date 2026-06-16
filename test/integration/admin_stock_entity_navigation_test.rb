@@ -58,7 +58,7 @@ class AdminStockEntityNavigationTest < ActionDispatch::IntegrationTest
   end
 
   test "admin can add stock notables for non-stock entity core rules" do
-    @character.update!(core_rules: "Generic")
+    @character.update!(core_rules: "generic")
     sign_in @user
     sign_in @admin
 
@@ -69,7 +69,7 @@ class AdminStockEntityNavigationTest < ActionDispatch::IntegrationTest
   end
 
   test "admin can add stock notables for non-stock adventure core rules" do
-    @adventure.update!(core_rules: "Generic")
+    @adventure.update!(core_rules: "generic")
     sign_in @user
     sign_in @admin
 

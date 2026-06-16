@@ -42,6 +42,7 @@ module Entitybuilder
       original = CoreRules.rulebooks
       CoreRules.rulebooks = original + [ {
         "name" => "TestGroupingSystem",
+        "slug" => "testGroupingSystem",
         "active" => "true",
         "entitybuilder" => {
           "core_skills" => [
@@ -56,7 +57,7 @@ module Entitybuilder
 
       entity = entitybuilder_entities(:resident_character_one)
       entity.skills.destroy_all
-      entity.update!(core_rules: "TestGroupingSystem")
+      entity.update!(core_rules: "testGroupingSystem")
       CoreRules::Entity.add_core_skills(entity)
 
       grouped   = entity.skills.find_by(name: "Test Crafting Skill")

@@ -1,7 +1,7 @@
 [
   {
     "name": "Animated Broom",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -100,7 +100,7 @@
   },
   {
     "name": "Air Scamp",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -199,7 +199,7 @@
   },
   {
     "name": "Aapoph Serpentfolk",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -310,7 +310,7 @@
   },
   {
     "name": "Army Ant Swarm",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -402,7 +402,7 @@
   },
   {
     "name": "Aesra",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -507,7 +507,7 @@
   },
   {
     "name": "Brontosaurus",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -612,7 +612,7 @@
   },
   {
     "name": "Aeolaeka",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -711,7 +711,7 @@
   },
   {
     "name": "Benthic Worm",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -822,7 +822,7 @@
   },
   {
     "name": "Adamantine Dragon (Ancient, Spellcaster)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -939,7 +939,7 @@
   },
   {
     "name": "Diabolic Dragon (Ancient, Spellcaster)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",

@@ -24,7 +24,7 @@ class ConvertProprietaryRecordsToStockTest < ActiveSupport::TestCase
         "entitybuilder_entities",
         type: type,
         name: "Legacy creature",
-        core_rules: "PFRPG",
+        core_rules: "pf1e",
         privacy: "Residents",
         sheet_privacy: "Residents",
         created_at: Time.current,
@@ -36,7 +36,7 @@ class ConvertProprietaryRecordsToStockTest < ActiveSupport::TestCase
       insert_row(
         "rulebuilder_rules",
         type: type,
-        core_rules: "PFRPG",
+        core_rules: "pf1e",
         rule_type: "Feat",
         name: "Legacy rule",
         created_at: Time.current,

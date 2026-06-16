@@ -2,7 +2,7 @@
   {
     "name": "Athamaru",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -23,7 +23,7 @@
   {
     "name": "Automaton",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -42,7 +42,7 @@
   {
     "name": "Awakened Animal",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -61,7 +61,7 @@
   {
     "name": "Catfolk",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -80,7 +80,7 @@
   {
     "name": "Centaur",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -101,7 +101,7 @@
   {
     "name": "Dragonet",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -118,7 +118,7 @@
   {
     "name": "Dwarf",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -137,7 +137,7 @@
   {
     "name": "Elf",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -156,7 +156,7 @@
   {
     "name": "Gnome",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -175,7 +175,7 @@
   {
     "name": "Goblin",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -194,7 +194,7 @@
   {
     "name": "Halfling",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -213,7 +213,7 @@
   {
     "name": "Hobgoblin",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -232,7 +232,7 @@
   {
     "name": "Human",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -251,7 +251,7 @@
   {
     "name": "Jotunborn",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -272,7 +272,7 @@
   {
     "name": "Kholo",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -291,7 +291,7 @@
   {
     "name": "Kobold",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -310,7 +310,7 @@
   {
     "name": "Leshy",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -329,7 +329,7 @@
   {
     "name": "Lizardfolk",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -348,7 +348,7 @@
   {
     "name": "Merfolk",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -369,7 +369,7 @@
   {
     "name": "Minotaur",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -390,7 +390,7 @@
   {
     "name": "Orc",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -409,7 +409,7 @@
   {
     "name": "Ratfolk",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -428,7 +428,7 @@
   {
     "name": "Samsaran",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -447,7 +447,7 @@
   {
     "name": "Sarangay",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -466,7 +466,7 @@
   {
     "name": "Surki",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -485,7 +485,7 @@
   {
     "name": "Tanuki",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -504,7 +504,7 @@
   {
     "name": "Tengu",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -523,7 +523,7 @@
   {
     "name": "Tripkee",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -542,7 +542,7 @@
   {
     "name": "Wayang",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -563,7 +563,7 @@
   {
     "name": "Yaksha",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -582,7 +582,7 @@
   {
     "name": "Yaoguai",
     "rule_type": "Ancestry",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",

@@ -2,7 +2,7 @@
   {
     "name": "Bleeding",
     "rule_type": "Condition",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -15,7 +15,7 @@
   {
     "name": "Dazed",
     "rule_type": "Condition",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -28,7 +28,7 @@
   {
     "name": "Frightened",
     "rule_type": "Condition",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -41,7 +41,7 @@
   {
     "name": "Grabbed",
     "rule_type": "Condition",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -54,7 +54,7 @@
   {
     "name": "Prone",
     "rule_type": "Condition",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -67,7 +67,7 @@
   {
     "name": "Restrained",
     "rule_type": "Condition",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -80,7 +80,7 @@
   {
     "name": "Slowed",
     "rule_type": "Condition",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -93,7 +93,7 @@
   {
     "name": "Taunted",
     "rule_type": "Condition",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -106,7 +106,7 @@
   {
     "name": "Weakened",
     "rule_type": "Condition",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",

@@ -7,20 +7,20 @@ class DrawSteelSystemTest < ActiveSupport::TestCase
   end
 
   test "Draw Steel declares the six expected rule types" do
-    types = CoreRules::Rule.rule_types("Draw Steel")
+    types = CoreRules::Rule.rule_types("drawSteel")
     assert_equal %w[Ancestry Class Kit Career Complication Condition].sort,
                  types.sort
   end
 
   test "Draw Steel has 57 core skills across 5 groups" do
-    skills = CoreRules::Entity.core_skills("Draw Steel")
+    skills = CoreRules::Entity.core_skills("drawSteel")
     assert_equal 57, skills.size
     groups = skills.map { |s| s["group"] }.uniq.sort
     assert_equal %w[Crafting Exploration Interpersonal Intrigue Lore], groups
   end
 
   test "Draw Steel separates inline attribution from FAQ lookup key" do
-    license = CoreRules.license("Draw Steel")
+    license = CoreRules.license("drawSteel")
 
     assert license["core_faq"].blank?
     assert_match(/Draw Steel Creator License/, license["attribution"])
@@ -28,13 +28,13 @@ class DrawSteelSystemTest < ActiveSupport::TestCase
   end
 
   test "Draw Steel character has 5 ability scores: the characteristics" do
-    abilities = CoreRules::Entity.defaults_values("Draw Steel", "character", "ability_scores") || []
+    abilities = CoreRules::Entity.defaults_values("drawSteel", "character", "ability_scores") || []
     assert_equal %w[Might Agility Reason Intuition Presence],
                  abilities.map { |a| a["name"] }
   end
 
   test "Draw Steel character has Stamina-related trackables" do
-    trackables = CoreRules::Entity.defaults_values("Draw Steel", "character", "trackables") || []
+    trackables = CoreRules::Entity.defaults_values("drawSteel", "character", "trackables") || []
     names = trackables.map { |t| t["name"] }
     assert_includes names, "Stamina"
     assert_includes names, "Recoveries"
@@ -46,7 +46,7 @@ class DrawSteelSystemTest < ActiveSupport::TestCase
   end
 
   test "Draw Steel character has identity descriptors" do
-    descs = CoreRules::Entity.defaults_values("Draw Steel", "character", "descriptors") || []
+    descs = CoreRules::Entity.defaults_values("drawSteel", "character", "descriptors") || []
     names = descs.map { |d| d["name"] }
     %w[Ancestry Class Subclass Career Complication Languages].each do |n|
       assert_includes names, n, "expected descriptor: #{n}"
@@ -57,14 +57,14 @@ class DrawSteelSystemTest < ActiveSupport::TestCase
   end
 
   test "Draw Steel character has no defenses or saving_throws blocks (or empty)" do
-    defenses = CoreRules::Entity.defaults_values("Draw Steel", "character", "defenses") || []
-    saves    = CoreRules::Entity.defaults_values("Draw Steel", "character", "saving_throws") || []
+    defenses = CoreRules::Entity.defaults_values("drawSteel", "character", "defenses") || []
+    saves    = CoreRules::Entity.defaults_values("drawSteel", "character", "saving_throws") || []
     assert_equal 0, defenses.size
     assert_equal 0, saves.size
   end
 
   test "Draw Steel core_skills cover all 5 groups with expected counts" do
-    skills = CoreRules::Entity.core_skills("Draw Steel")
+    skills = CoreRules::Entity.core_skills("drawSteel")
     by_group = skills.group_by { |s| s["group"] }
     assert_equal 10, by_group["Crafting"]&.size,      "Crafting count"
     assert_equal 10, by_group["Exploration"]&.size,   "Exploration count"
@@ -74,12 +74,12 @@ class DrawSteelSystemTest < ActiveSupport::TestCase
   end
 
   test "Draw Steel creature has 5 characteristics too" do
-    abilities = CoreRules::Entity.defaults_values("Draw Steel", "creature", "ability_scores")
+    abilities = CoreRules::Entity.defaults_values("drawSteel", "creature", "ability_scores")
     assert_equal 5, abilities&.size
   end
 
   test "Draw Steel menu links to sheet sections that match has_many on Entity" do
-    menu = CoreRules::Entity.menu("Draw Steel")
+    menu = CoreRules::Entity.menu("drawSteel")
     valid_links = %w[
       descriptors ability_scores base_values movements trackables
       class_levels caster_levels skills attacks defenses saving_throws

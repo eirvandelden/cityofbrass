@@ -1,7 +1,7 @@
 [
   {
     "name": "Accursed Staff (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -17,7 +17,7 @@
   },
   {
     "name": "Accursed Staff (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -33,7 +33,7 @@
   },
   {
     "name": "Accursed Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -49,7 +49,7 @@
   },
   {
     "name": "Acid Flask (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -67,7 +67,7 @@
   },
   {
     "name": "Acid Flask (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -85,7 +85,7 @@
   },
   {
     "name": "Acid Flask (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -103,7 +103,7 @@
   },
   {
     "name": "Acid Flask (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -121,7 +121,7 @@
   },
   {
     "name": "Adze",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -137,7 +137,7 @@
   },
   {
     "name": "Aerekostes",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -154,7 +154,7 @@
   },
   {
     "name": "Aether Marbles (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -171,7 +171,7 @@
   },
   {
     "name": "Aether Marbles (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -188,7 +188,7 @@
   },
   {
     "name": "Aether Marbles (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -205,7 +205,7 @@
   },
   {
     "name": "Air Repeater",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -220,7 +220,7 @@
   },
   {
     "name": "Alchemical Gauntlet",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -236,7 +236,7 @@
   },
   {
     "name": "Alchemist's Fire (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -254,7 +254,7 @@
   },
   {
     "name": "Alchemist's Fire (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -272,7 +272,7 @@
   },
   {
     "name": "Alchemist's Fire (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -290,7 +290,7 @@
   },
   {
     "name": "Alchemist's Fire (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -308,7 +308,7 @@
   },
   {
     "name": "Aldori Dueling Sword",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -323,7 +323,7 @@
   },
   {
     "name": "Alghollthu Whip",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -341,7 +341,7 @@
   },
   {
     "name": "Alicorn Lance",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -358,7 +358,7 @@
   },
   {
     "name": "Alicorn Trigger",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -374,7 +374,7 @@
   },
   {
     "name": "Amphisbaena Handwraps",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -389,7 +389,7 @@
   },
   {
     "name": "Animal Staff (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -405,7 +405,7 @@
   },
   {
     "name": "Animal Staff (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -421,7 +421,7 @@
   },
   {
     "name": "Animal Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -437,7 +437,7 @@
   },
   {
     "name": "Animate Dreamer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -456,7 +456,7 @@
   },
   {
     "name": "Ankhrav Duster",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -473,7 +473,7 @@
   },
   {
     "name": "Apotheosis Knife",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -492,7 +492,7 @@
   },
   {
     "name": "Arbalest",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -506,7 +506,7 @@
   },
   {
     "name": "Arboreal Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -524,7 +524,7 @@
   },
   {
     "name": "Arboreal's Revenge",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -541,7 +541,7 @@
   },
   {
     "name": "Arquebus",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -557,7 +557,7 @@
   },
   {
     "name": "Atlatl",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -571,7 +571,7 @@
   },
   {
     "name": "Atmospheric Staff (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -588,7 +588,7 @@
   },
   {
     "name": "Atmospheric Staff (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -605,7 +605,7 @@
   },
   {
     "name": "Atmospheric Staff (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -622,7 +622,7 @@
   },
   {
     "name": "Atmospheric Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -639,7 +639,7 @@
   },
   {
     "name": "Atrophy Bomb (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -657,7 +657,7 @@
   },
   {
     "name": "Atrophy Bomb (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -675,7 +675,7 @@
   },
   {
     "name": "Atrophy Bomb (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -693,7 +693,7 @@
   },
   {
     "name": "Atrophy Bomb (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -711,7 +711,7 @@
   },
   {
     "name": "Axe Musket",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -727,7 +727,7 @@
   },
   {
     "name": "Backpack Ballista",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -739,7 +739,7 @@
   },
   {
     "name": "Backpack Catapult",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -753,7 +753,7 @@
   },
   {
     "name": "Barricade Buster",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -771,7 +771,7 @@
   },
   {
     "name": "Bastard Sword",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -785,7 +785,7 @@
   },
   {
     "name": "Batsbreath Cane",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -800,7 +800,7 @@
   },
   {
     "name": "Battle Axe",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -814,7 +814,7 @@
   },
   {
     "name": "Battle Lute",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -829,7 +829,7 @@
   },
   {
     "name": "Battle Saddle",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -845,7 +845,7 @@
   },
   {
     "name": "Bayonet",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -861,7 +861,7 @@
   },
   {
     "name": "Beast Staff (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -877,7 +877,7 @@
   },
   {
     "name": "Beast Staff (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -893,7 +893,7 @@
   },
   {
     "name": "Beast Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -909,7 +909,7 @@
   },
   {
     "name": "Bec de Corbin",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -926,7 +926,7 @@
   },
   {
     "name": "Belimarius's Invidious Halberd",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -941,7 +941,7 @@
   },
   {
     "name": "Belkzen Deadsmasher (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -956,7 +956,7 @@
   },
   {
     "name": "Belkzen Deadsmasher",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -971,7 +971,7 @@
   },
   {
     "name": "Bellicose Dagger",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -990,7 +990,7 @@
   },
   {
     "name": "Big Boom Gun",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1007,7 +1007,7 @@
   },
   {
     "name": "Bioluminescence Bomb",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1024,7 +1024,7 @@
   },
   {
     "name": "Black Powder Knuckle Dusters",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1041,7 +1041,7 @@
   },
   {
     "name": "Black Scorpion Stingmace",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1057,7 +1057,7 @@
   },
   {
     "name": "Blackaxe",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1075,7 +1075,7 @@
   },
   {
     "name": "Bladed Gauntlet",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1092,7 +1092,7 @@
   },
   {
     "name": "Bladed Scarf",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1110,7 +1110,7 @@
   },
   {
     "name": "Bladesweeper",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1127,7 +1127,7 @@
   },
   {
     "name": "Blasting Stone (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1145,7 +1145,7 @@
   },
   {
     "name": "Blasting Stone (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1163,7 +1163,7 @@
   },
   {
     "name": "Blasting Stone (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1181,7 +1181,7 @@
   },
   {
     "name": "Blasting Stone (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1199,7 +1199,7 @@
   },
   {
     "name": "Blessed Reformer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1215,7 +1215,7 @@
   },
   {
     "name": "Blight Bomb (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1233,7 +1233,7 @@
   },
   {
     "name": "Blight Bomb (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1251,7 +1251,7 @@
   },
   {
     "name": "Blight Bomb (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1269,7 +1269,7 @@
   },
   {
     "name": "Blight Bomb (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1287,7 +1287,7 @@
   },
   {
     "name": "Blightburn Bomb (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1306,7 +1306,7 @@
   },
   {
     "name": "Blightburn Bomb",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1325,7 +1325,7 @@
   },
   {
     "name": "Blood-Drinker Blade (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1342,7 +1342,7 @@
   },
   {
     "name": "Blood-Drinker Blade",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1359,7 +1359,7 @@
   },
   {
     "name": "Blood-Drinker",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1376,7 +1376,7 @@
   },
   {
     "name": "Bloodgorger Scythe",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1392,7 +1392,7 @@
   },
   {
     "name": "Bloodletting Kukri",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1409,7 +1409,7 @@
   },
   {
     "name": "Bloody Fang",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1427,7 +1427,7 @@
   },
   {
     "name": "Blowgun",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1442,7 +1442,7 @@
   },
   {
     "name": "Blunderbuss",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1457,7 +1457,7 @@
   },
   {
     "name": "Bo Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1474,7 +1474,7 @@
   },
   {
     "name": "Boastful Hunter",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1491,7 +1491,7 @@
   },
   {
     "name": "Bola",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1507,7 +1507,7 @@
   },
   {
     "name": "Boomerang",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1522,7 +1522,7 @@
   },
   {
     "name": "Boreal Staff (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1539,7 +1539,7 @@
   },
   {
     "name": "Boreal Staff (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1556,7 +1556,7 @@
   },
   {
     "name": "Boreal Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1573,7 +1573,7 @@
   },
   {
     "name": "Bottled Lightning (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1591,7 +1591,7 @@
   },
   {
     "name": "Bottled Lightning (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1609,7 +1609,7 @@
   },
   {
     "name": "Bottled Lightning (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1627,7 +1627,7 @@
   },
   {
     "name": "Bottled Lightning (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1645,7 +1645,7 @@
   },
   {
     "name": "Boughshatter",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1662,7 +1662,7 @@
   },
   {
     "name": "Boulder Seed (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1679,7 +1679,7 @@
   },
   {
     "name": "Boulder Seed",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1696,7 +1696,7 @@
   },
   {
     "name": "Bounty's Light",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1714,7 +1714,7 @@
   },
   {
     "name": "Bow of Sun Slaying",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1732,7 +1732,7 @@
   },
   {
     "name": "Bow Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1748,7 +1748,7 @@
   },
   {
     "name": "Branch of the Great Sugi",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1767,7 +1767,7 @@
   },
   {
     "name": "Breaching Pike",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1783,7 +1783,7 @@
   },
   {
     "name": "Breath Blaster (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1798,7 +1798,7 @@
   },
   {
     "name": "Breath Blaster (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1813,7 +1813,7 @@
   },
   {
     "name": "Breath Blaster",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1828,7 +1828,7 @@
   },
   {
     "name": "Butterfly Sword",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1847,7 +1847,7 @@
   },
   {
     "name": "Calamity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1862,7 +1862,7 @@
   },
   {
     "name": "Cane Pistol",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1879,7 +1879,7 @@
   },
   {
     "name": "Capturing Spetum",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1896,7 +1896,7 @@
   },
   {
     "name": "Caress of the Great Serpent",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1912,7 +1912,7 @@
   },
   {
     "name": "Carver-cutter (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1928,7 +1928,7 @@
   },
   {
     "name": "Carver-cutter (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1944,7 +1944,7 @@
   },
   {
     "name": "Carver-cutter (True)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1960,7 +1960,7 @@
   },
   {
     "name": "Carver-cutter",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1976,7 +1976,7 @@
   },
   {
     "name": "Castrovel's Beacon",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1993,7 +1993,7 @@
   },
   {
     "name": "Caterwaul Sling",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2008,7 +2008,7 @@
   },
   {
     "name": "Catoblepas Maul",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2024,7 +2024,7 @@
   },
   {
     "name": "Cavalry Commander's Lance",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2041,7 +2041,7 @@
   },
   {
     "name": "Cayden's Tankard",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2058,7 +2058,7 @@
   },
   {
     "name": "Celestial Peachwood Sword",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2077,7 +2077,7 @@
   },
   {
     "name": "Celestial Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2094,7 +2094,7 @@
   },
   {
     "name": "Chain of Command",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2111,7 +2111,7 @@
   },
   {
     "name": "Chain Sword",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2127,7 +2127,7 @@
   },
   {
     "name": "Chainbreaker (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2142,7 +2142,7 @@
   },
   {
     "name": "Chainbreaker",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2157,7 +2157,7 @@
   },
   {
     "name": "Chakri",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2172,7 +2172,7 @@
   },
   {
     "name": "Chalice of Justice",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2188,7 +2188,7 @@
   },
   {
     "name": "Chaplain's Cudgel",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2203,7 +2203,7 @@
   },
   {
     "name": "Chimera Flail",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2220,7 +2220,7 @@
   },
   {
     "name": "Chronomancer Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2236,7 +2236,7 @@
   },
   {
     "name": "Clan Dagger",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2253,7 +2253,7 @@
   },
   {
     "name": "Clan Pistol",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2269,7 +2269,7 @@
   },
   {
     "name": "Claw Blade",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2288,7 +2288,7 @@
   },
   {
     "name": "Clear Cutter's Axe",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2305,7 +2305,7 @@
   },
   {
     "name": "Club",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2319,7 +2319,7 @@
   },
   {
     "name": "Coat Pistol",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2335,7 +2335,7 @@
   },
   {
     "name": "Coldstar Pistols",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2353,7 +2353,7 @@
   },
   {
     "name": "Combat Fishing Pole",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2370,7 +2370,7 @@
   },
   {
     "name": "Combat Lure",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2387,7 +2387,7 @@
   },
   {
     "name": "Composer Staff (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2403,7 +2403,7 @@
   },
   {
     "name": "Composer Staff (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2419,7 +2419,7 @@
   },
   {
     "name": "Composer Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2435,7 +2435,7 @@
   },
   {
     "name": "Composite Longbow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2451,7 +2451,7 @@
   },
   {
     "name": "Composite Shortbow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2466,7 +2466,7 @@
   },
   {
     "name": "Constricting Meteor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2484,7 +2484,7 @@
   },
   {
     "name": "Corset Knife",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2501,7 +2501,7 @@
   },
   {
     "name": "Crescent Cross",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2517,7 +2517,7 @@
   },
   {
     "name": "Crimson Bluff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2535,7 +2535,7 @@
   },
   {
     "name": "Crimson Thorn",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2551,7 +2551,7 @@
   },
   {
     "name": "Crossbow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2563,7 +2563,7 @@
   },
   {
     "name": "Cruuk",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2579,7 +2579,7 @@
   },
   {
     "name": "Crystal Shards (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2597,7 +2597,7 @@
   },
   {
     "name": "Crystal Shards (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2615,7 +2615,7 @@
   },
   {
     "name": "Crystal Shards (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2633,7 +2633,7 @@
   },
   {
     "name": "Cythbikian Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2650,7 +2650,7 @@
   },
   {
     "name": "Dagger Pistol",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2666,7 +2666,7 @@
   },
   {
     "name": "Dagger",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2683,7 +2683,7 @@
   },
   {
     "name": "Daikyu",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2698,7 +2698,7 @@
   },
   {
     "name": "Dancer's Spear",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2716,7 +2716,7 @@
   },
   {
     "name": "Dart Umbrella",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2732,7 +2732,7 @@
   },
   {
     "name": "Dart",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2747,7 +2747,7 @@
   },
   {
     "name": "Dawnsilver Tree",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2764,7 +2764,7 @@
   },
   {
     "name": "Dazzling Shortbow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2779,7 +2779,7 @@
   },
   {
     "name": "Deathseeker",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2796,7 +2796,7 @@
   },
   {
     "name": "Defoliation Bomb (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2814,7 +2814,7 @@
   },
   {
     "name": "Defoliation Bomb (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2832,7 +2832,7 @@
   },
   {
     "name": "Defoliation Bomb (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2850,7 +2850,7 @@
   },
   {
     "name": "Defoliation Bomb (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2868,7 +2868,7 @@
   },
   {
     "name": "Dezullon Fountain",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2885,7 +2885,7 @@
   },
   {
     "name": "Dog-Bone Knife",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2902,7 +2902,7 @@
   },
   {
     "name": "Dogslicer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2919,7 +2919,7 @@
   },
   {
     "name": "Doomsweeper",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2934,7 +2934,7 @@
   },
   {
     "name": "Double-Barreled Musket",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2950,7 +2950,7 @@
   },
   {
     "name": "Double-Barreled Pistol",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2966,7 +2966,7 @@
   },
   {
     "name": "Draddeth's Edge",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2982,7 +2982,7 @@
   },
   {
     "name": "Dragon Handwraps",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3002,7 +3002,7 @@
   },
   {
     "name": "Dragon Mouth Pistol",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3017,7 +3017,7 @@
   },
   {
     "name": "Dragonfire Halfbow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3034,7 +3034,7 @@
   },
   {
     "name": "Dragonprism Staff (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3050,7 +3050,7 @@
   },
   {
     "name": "Dragonprism Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3066,7 +3066,7 @@
   },
   {
     "name": "Dragon's Tongue (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3078,7 +3078,7 @@
   },
   {
     "name": "Dragon's Tongue (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3090,7 +3090,7 @@
   },
   {
     "name": "Dragon's Tongue",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3102,7 +3102,7 @@
   },
   {
     "name": "Dragonscale Bo Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3119,7 +3119,7 @@
   },
   {
     "name": "Dragontooth Leiomano",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3134,7 +3134,7 @@
   },
   {
     "name": "Drake Rifle (Acid)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3148,7 +3148,7 @@
   },
   {
     "name": "Drake Rifle (Cold)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3162,7 +3162,7 @@
   },
   {
     "name": "Drake Rifle (Electricity)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3176,7 +3176,7 @@
   },
   {
     "name": "Drake Rifle (Fire)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3190,7 +3190,7 @@
   },
   {
     "name": "Drake Rifle (Poison)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3204,7 +3204,7 @@
   },
   {
     "name": "Dread Ampoule (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3225,7 +3225,7 @@
   },
   {
     "name": "Dread Ampoule (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3246,7 +3246,7 @@
   },
   {
     "name": "Dread Ampoule (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3267,7 +3267,7 @@
   },
   {
     "name": "Dread Ampoule (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3288,7 +3288,7 @@
   },
   {
     "name": "Dreamcrusher",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3303,7 +3303,7 @@
   },
   {
     "name": "Duchy Defender",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3320,7 +3320,7 @@
   },
   {
     "name": "Dueling Pistol",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3336,7 +3336,7 @@
   },
   {
     "name": "Durian Bomb (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3355,7 +3355,7 @@
   },
   {
     "name": "Durian Bomb (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3374,7 +3374,7 @@
   },
   {
     "name": "Durian Bomb (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3393,7 +3393,7 @@
   },
   {
     "name": "Durian Bomb (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3412,7 +3412,7 @@
   },
   {
     "name": "Dwarven Dorn-Dergar",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3428,7 +3428,7 @@
   },
   {
     "name": "Dwarven Scattergun",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3445,7 +3445,7 @@
   },
   {
     "name": "Dwarven War Axe",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3461,7 +3461,7 @@
   },
   {
     "name": "Earthbreaker",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3478,7 +3478,7 @@
   },
   {
     "name": "Elven Curve Blade",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3494,7 +3494,7 @@
   },
   {
     "name": "Explosive Dogslicer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3512,7 +3512,7 @@
   },
   {
     "name": "Falcata",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3526,7 +3526,7 @@
   },
   {
     "name": "Falchion",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3541,7 +3541,7 @@
   },
   {
     "name": "Fangwire",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3560,7 +3560,7 @@
   },
   {
     "name": "Fauchard",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3577,7 +3577,7 @@
   },
   {
     "name": "Faultline Hammer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3595,7 +3595,7 @@
   },
   {
     "name": "Feng Huo Lun",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3615,7 +3615,7 @@
   },
   {
     "name": "Fiendbreaker (Heroic)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3637,7 +3637,7 @@
   },
   {
     "name": "Fiendbreaker",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3654,7 +3654,7 @@
   },
   {
     "name": "Fiend's Hunger",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3672,7 +3672,7 @@
   },
   {
     "name": "Fighter's Fork",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3687,7 +3687,7 @@
   },
   {
     "name": "Fighting Fan",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3705,7 +3705,7 @@
   },
   {
     "name": "Fighting Oar",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3720,7 +3720,7 @@
   },
   {
     "name": "Filcher's Fork",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3739,7 +3739,7 @@
   },
   {
     "name": "Final Stand",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3758,7 +3758,7 @@
   },
   {
     "name": "Fire Lance",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3772,7 +3772,7 @@
   },
   {
     "name": "Flail",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3788,7 +3788,7 @@
   },
   {
     "name": "Flashblade (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3805,7 +3805,7 @@
   },
   {
     "name": "Flashblade (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3822,7 +3822,7 @@
   },
   {
     "name": "Flashblade",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3839,7 +3839,7 @@
   },
   {
     "name": "Fleshrender",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3856,7 +3856,7 @@
   },
   {
     "name": "Flingflenser",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3873,7 +3873,7 @@
   },
   {
     "name": "Flintlock Musket",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3888,7 +3888,7 @@
   },
   {
     "name": "Flintlock Pistol",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3903,7 +3903,7 @@
   },
   {
     "name": "Fluid Form Staff (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3919,7 +3919,7 @@
   },
   {
     "name": "Fluid Form Staff (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3935,7 +3935,7 @@
   },
   {
     "name": "Fluid Form Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3951,7 +3951,7 @@
   },
   {
     "name": "Flying Talon",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3971,7 +3971,7 @@
   },
   {
     "name": "Flyssa",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3987,7 +3987,7 @@
   },
   {
     "name": "Forked Bipod",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4003,7 +4003,7 @@
   },
   {
     "name": "Four-Tiger Blade",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4018,7 +4018,7 @@
   },
   {
     "name": "Four-Ways Dogslicer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4039,7 +4039,7 @@
   },
   {
     "name": "Freedom's Flame",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4057,7 +4057,7 @@
   },
   {
     "name": "Frost Fair Yanyuedao",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4075,7 +4075,7 @@
   },
   {
     "name": "Frost Vial (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4093,7 +4093,7 @@
   },
   {
     "name": "Frost Vial (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4111,7 +4111,7 @@
   },
   {
     "name": "Frost Vial (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4129,7 +4129,7 @@
   },
   {
     "name": "Frost Vial (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4147,7 +4147,7 @@
   },
   {
     "name": "Frying Pan",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4162,7 +4162,7 @@
   },
   {
     "name": "Fulmination Fang",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4179,7 +4179,7 @@
   },
   {
     "name": "Gaff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4194,7 +4194,7 @@
   },
   {
     "name": "Gakgung",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4210,7 +4210,7 @@
   },
   {
     "name": "Gambler's Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4226,7 +4226,7 @@
   },
   {
     "name": "Gauntlet Bow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4242,7 +4242,7 @@
   },
   {
     "name": "Gauntlet",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4257,7 +4257,7 @@
   },
   {
     "name": "General's Word",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4272,7 +4272,7 @@
   },
   {
     "name": "Ghost Charge (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4290,7 +4290,7 @@
   },
   {
     "name": "Ghost Charge (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4308,7 +4308,7 @@
   },
   {
     "name": "Ghost Charge (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4326,7 +4326,7 @@
   },
   {
     "name": "Ghost Charge (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4344,7 +4344,7 @@
   },
   {
     "name": "Ghosthand's Comet",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4363,7 +4363,7 @@
   },
   {
     "name": "Ghoul Stiletto",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4380,7 +4380,7 @@
   },
   {
     "name": "Giant Squid Lash",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4399,7 +4399,7 @@
   },
   {
     "name": "Glacier Hammer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4413,7 +4413,7 @@
   },
   {
     "name": "Gladius",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4428,7 +4428,7 @@
   },
   {
     "name": "Glaive",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4444,7 +4444,7 @@
   },
   {
     "name": "Gloom Blade",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4461,7 +4461,7 @@
   },
   {
     "name": "Glue Bomb (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4477,7 +4477,7 @@
   },
   {
     "name": "Glue Bomb (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4493,7 +4493,7 @@
   },
   {
     "name": "Glue Bomb (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4509,7 +4509,7 @@
   },
   {
     "name": "Glue Bomb (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4525,7 +4525,7 @@
   },
   {
     "name": "Gnome Amalgam Musket",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4542,7 +4542,7 @@
   },
   {
     "name": "Gnome Flickmace",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4558,7 +4558,7 @@
   },
   {
     "name": "Gnome Hooked Hammer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4575,7 +4575,7 @@
   },
   {
     "name": "Gravedigger's Call",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4593,7 +4593,7 @@
   },
   {
     "name": "Greataxe",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4607,7 +4607,7 @@
   },
   {
     "name": "Greatclub",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4622,7 +4622,7 @@
   },
   {
     "name": "Greatpick",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4636,7 +4636,7 @@
   },
   {
     "name": "Greatsword",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4650,7 +4650,7 @@
   },
   {
     "name": "Grounding Spike",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4668,7 +4668,7 @@
   },
   {
     "name": "Growth Gun",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4683,7 +4683,7 @@
   },
   {
     "name": "Guardian Staff (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4699,7 +4699,7 @@
   },
   {
     "name": "Guardian Staff (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4715,7 +4715,7 @@
   },
   {
     "name": "Guardian Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4731,7 +4731,7 @@
   },
   {
     "name": "Guisarme",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4746,7 +4746,7 @@
   },
   {
     "name": "Gun Sword",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4762,7 +4762,7 @@
   },
   {
     "name": "Gut-Ripper",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4779,7 +4779,7 @@
   },
   {
     "name": "Halberd",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4794,7 +4794,7 @@
   },
   {
     "name": "Halfling Sling Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4809,7 +4809,7 @@
   },
   {
     "name": "Hammer Gun",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4825,7 +4825,7 @@
   },
   {
     "name": "Hand Adze",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4843,7 +4843,7 @@
   },
   {
     "name": "Hand Cannon",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4857,7 +4857,7 @@
   },
   {
     "name": "Hand Crossbow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4869,7 +4869,7 @@
   },
   {
     "name": "Handwraps of Mighty Blows",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4884,7 +4884,7 @@
   },
   {
     "name": "Harmona Gun",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4898,7 +4898,7 @@
   },
   {
     "name": "Harpoon",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4913,7 +4913,7 @@
   },
   {
     "name": "Hatchet",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4929,7 +4929,7 @@
   },
   {
     "name": "Heavenly Rolling Flames",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4950,7 +4950,7 @@
   },
   {
     "name": "Heavy Crossbow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4962,7 +4962,7 @@
   },
   {
     "name": "Hell Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4979,7 +4979,7 @@
   },
   {
     "name": "Hell's Judgment",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4996,7 +4996,7 @@
   },
   {
     "name": "Holy Water",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5014,7 +5014,7 @@
   },
   {
     "name": "Hook Sword",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5032,7 +5032,7 @@
   },
   {
     "name": "Horsechopper",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5049,7 +5049,7 @@
   },
   {
     "name": "Horselord's Longbow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5065,7 +5065,7 @@
   },
   {
     "name": "Howler Pistol",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5080,7 +5080,7 @@
   },
   {
     "name": "Hunter's Anthem",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5095,7 +5095,7 @@
   },
   {
     "name": "Hunter's Bow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5110,7 +5110,7 @@
   },
   {
     "name": "Hydra Head Club",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5125,7 +5125,7 @@
   },
   {
     "name": "Hydra Spear",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5140,7 +5140,7 @@
   },
   {
     "name": "Hydrocannon",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5155,7 +5155,7 @@
   },
   {
     "name": "Hyldarf's Fang",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5169,7 +5169,7 @@
   },
   {
     "name": "Icicle",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5184,7 +5184,7 @@
   },
   {
     "name": "Infiltrator's Accessory",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5202,7 +5202,7 @@
   },
   {
     "name": "Inflammation Flask (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5221,7 +5221,7 @@
   },
   {
     "name": "Inflammation Flask (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5240,7 +5240,7 @@
   },
   {
     "name": "Inflammation Flask (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5259,7 +5259,7 @@
   },
   {
     "name": "Inflammation Flask (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5278,7 +5278,7 @@
   },
   {
     "name": "Injection Spear",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5293,7 +5293,7 @@
   },
   {
     "name": "Iris of the Sky",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5308,7 +5308,7 @@
   },
   {
     "name": "Javelin",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5322,7 +5322,7 @@
   },
   {
     "name": "Jezail",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5337,7 +5337,7 @@
   },
   {
     "name": "Jian of Life's Duality",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5352,7 +5352,7 @@
   },
   {
     "name": "Jistkan Colossus Crusher",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5367,7 +5367,7 @@
   },
   {
     "name": "Jistkan War Crossbow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5382,7 +5382,7 @@
   },
   {
     "name": "Jiu Huan Dao",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5396,7 +5396,7 @@
   },
   {
     "name": "Jorngarl's Harm",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5410,7 +5410,7 @@
   },
   {
     "name": "Kaldemash's Lament",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5426,7 +5426,7 @@
   },
   {
     "name": "Kama",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5442,7 +5442,7 @@
   },
   {
     "name": "Karambit",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5459,7 +5459,7 @@
   },
   {
     "name": "Katana",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5475,7 +5475,7 @@
   },
   {
     "name": "Katar",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5491,7 +5491,7 @@
   },
   {
     "name": "Kestros",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5506,7 +5506,7 @@
   },
   {
     "name": "Khakkhara",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5522,7 +5522,7 @@
   },
   {
     "name": "Khopesh",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5536,7 +5536,7 @@
   },
   {
     "name": "Kinetic Club",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5553,7 +5553,7 @@
   },
   {
     "name": "Kithrender",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5568,7 +5568,7 @@
   },
   {
     "name": "Knuckle Duster",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5584,7 +5584,7 @@
   },
   {
     "name": "Kukri",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5600,7 +5600,7 @@
   },
   {
     "name": "Kusarigama",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5618,7 +5618,7 @@
   },
   {
     "name": "Lamentation of the Faithless",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5636,7 +5636,7 @@
   },
   {
     "name": "Lance of Sun's Radiance",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5654,7 +5654,7 @@
   },
   {
     "name": "Lance",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5670,7 +5670,7 @@
   },
   {
     "name": "Lancer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5685,7 +5685,7 @@
   },
   {
     "name": "Last Hope",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5700,7 +5700,7 @@
   },
   {
     "name": "Leiomano",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5715,7 +5715,7 @@
   },
   {
     "name": "Leydroth Spellbreaker",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5731,7 +5731,7 @@
   },
   {
     "name": "Liar's Gun",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5749,7 +5749,7 @@
   },
   {
     "name": "Librarian Staff (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5766,7 +5766,7 @@
   },
   {
     "name": "Librarian Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5783,7 +5783,7 @@
   },
   {
     "name": "Lifebloom",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5802,7 +5802,7 @@
   },
   {
     "name": "Light Hammer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5817,7 +5817,7 @@
   },
   {
     "name": "Light Mace",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5833,7 +5833,7 @@
   },
   {
     "name": "Light Pick",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5848,7 +5848,7 @@
   },
   {
     "name": "Lion Scythe",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5864,7 +5864,7 @@
   },
   {
     "name": "Lionfish Spear (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5880,7 +5880,7 @@
   },
   {
     "name": "Lionfish Spear",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5896,7 +5896,7 @@
   },
   {
     "name": "Lion's Call",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5912,7 +5912,7 @@
   },
   {
     "name": "Liuyedao",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5930,7 +5930,7 @@
   },
   {
     "name": "Lodestone Bomb (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5948,7 +5948,7 @@
   },
   {
     "name": "Lodestone Bomb",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5966,7 +5966,7 @@
   },
   {
     "name": "Long Air Repeater",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5981,7 +5981,7 @@
   },
   {
     "name": "Long Hammer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5999,7 +5999,7 @@
   },
   {
     "name": "Longbow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6014,7 +6014,7 @@
   },
   {
     "name": "Longspear",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6028,7 +6028,7 @@
   },
   {
     "name": "Longsword",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6042,7 +6042,7 @@
   },
   {
     "name": "Lumber Lord's Axe",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6057,7 +6057,7 @@
   },
   {
     "name": "Lyrakien Staff (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6073,7 +6073,7 @@
   },
   {
     "name": "Lyrakien Staff (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6089,7 +6089,7 @@
   },
   {
     "name": "Lyrakien Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6105,7 +6105,7 @@
   },
   {
     "name": "Mace Multipistol",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6122,7 +6122,7 @@
   },
   {
     "name": "Mace",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6136,7 +6136,7 @@
   },
   {
     "name": "Machete",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6151,7 +6151,7 @@
   },
   {
     "name": "Macuahuitl",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6167,7 +6167,7 @@
   },
   {
     "name": "Mageslayer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6183,7 +6183,7 @@
   },
   {
     "name": "Magnetic Bola",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6199,7 +6199,7 @@
   },
   {
     "name": "Main-Gauche",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6217,7 +6217,7 @@
   },
   {
     "name": "Mambele",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6233,7 +6233,7 @@
   },
   {
     "name": "Maul-spade",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6249,7 +6249,7 @@
   },
   {
     "name": "Maul",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6263,7 +6263,7 @@
   },
   {
     "name": "Mentalist's Staff (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6279,7 +6279,7 @@
   },
   {
     "name": "Mentalist's Staff (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6295,7 +6295,7 @@
   },
   {
     "name": "Mentalist's Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6311,7 +6311,7 @@
   },
   {
     "name": "Meteor Hammer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6328,7 +6328,7 @@
   },
   {
     "name": "Mikazuki",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6344,7 +6344,7 @@
   },
   {
     "name": "Mindlance",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6363,7 +6363,7 @@
   },
   {
     "name": "Morning Glow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6379,7 +6379,7 @@
   },
   {
     "name": "Morningstar",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6393,7 +6393,7 @@
   },
   {
     "name": "Mountebank's Passage",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6408,7 +6408,7 @@
   },
   {
     "name": "Musket Staff of Force",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6426,7 +6426,7 @@
   },
   {
     "name": "Musket Staff of Void",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6444,7 +6444,7 @@
   },
   {
     "name": "Naginata",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6460,7 +6460,7 @@
   },
   {
     "name": "Nail Bomb (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6477,7 +6477,7 @@
   },
   {
     "name": "Nail Bomb (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6494,7 +6494,7 @@
   },
   {
     "name": "Nail Bomb (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6511,7 +6511,7 @@
   },
   {
     "name": "Nail Bomb (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6528,7 +6528,7 @@
   },
   {
     "name": "Nightmare's Lament",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6545,7 +6545,7 @@
   },
   {
     "name": "Nodachi",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6561,7 +6561,7 @@
   },
   {
     "name": "Nunchaku",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6578,7 +6578,7 @@
   },
   {
     "name": "Obsidian Edge (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6596,7 +6596,7 @@
   },
   {
     "name": "Obsidian Edge (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6614,7 +6614,7 @@
   },
   {
     "name": "Obsidian Edge (True)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6632,7 +6632,7 @@
   },
   {
     "name": "Obsidian Edge",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6650,7 +6650,7 @@
   },
   {
     "name": "Ogre Hook",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6665,7 +6665,7 @@
   },
   {
     "name": "Orc Knuckle Dagger",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6681,7 +6681,7 @@
   },
   {
     "name": "Orc Necksplitter",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6697,7 +6697,7 @@
   },
   {
     "name": "Orc Skewermaul",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6714,7 +6714,7 @@
   },
   {
     "name": "Pact-Bound Pistol",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6734,7 +6734,7 @@
   },
   {
     "name": "Palstave",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6748,7 +6748,7 @@
   },
   {
     "name": "Panabas",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6764,7 +6764,7 @@
   },
   {
     "name": "Pantograph Gauntlet",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6781,7 +6781,7 @@
   },
   {
     "name": "Pepperbox",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6797,7 +6797,7 @@
   },
   {
     "name": "Petrification Cannon",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6814,7 +6814,7 @@
   },
   {
     "name": "Phalanx Piercer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6832,7 +6832,7 @@
   },
   {
     "name": "Pick",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6846,7 +6846,7 @@
   },
   {
     "name": "Piercing Wind",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6862,7 +6862,7 @@
   },
   {
     "name": "Pirate Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6878,7 +6878,7 @@
   },
   {
     "name": "Pistol of Wonder",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6894,7 +6894,7 @@
   },
   {
     "name": "Pistol Wand",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6911,7 +6911,7 @@
   },
   {
     "name": "Piston Gauntlets",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6929,7 +6929,7 @@
   },
   {
     "name": "Poisonous Dagger",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6948,7 +6948,7 @@
   },
   {
     "name": "Polarizing Mace",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6964,7 +6964,7 @@
   },
   {
     "name": "Polytool",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6979,7 +6979,7 @@
   },
   {
     "name": "Preordained Spear",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -6996,7 +6996,7 @@
   },
   {
     "name": "Protector's Final Gift",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7013,7 +7013,7 @@
   },
   {
     "name": "Purgatory Emissary's Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7030,7 +7030,7 @@
   },
   {
     "name": "Radiant Victory",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7047,7 +7047,7 @@
   },
   {
     "name": "Ranseur",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7062,7 +7062,7 @@
   },
   {
     "name": "Rapier Pistol",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7079,7 +7079,7 @@
   },
   {
     "name": "Rapier",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7095,7 +7095,7 @@
   },
   {
     "name": "Reaper's Crescent",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7112,7 +7112,7 @@
   },
   {
     "name": "Reaper's Grasp",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7128,7 +7128,7 @@
   },
   {
     "name": "Reaper's Sigh",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7146,7 +7146,7 @@
   },
   {
     "name": "Reaper's Toll",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7162,7 +7162,7 @@
   },
   {
     "name": "Reinforced Stock",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7178,7 +7178,7 @@
   },
   {
     "name": "Repeating Hand Crossbow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7192,7 +7192,7 @@
   },
   {
     "name": "Restorative Handwraps",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7206,7 +7206,7 @@
   },
   {
     "name": "Retribution Axe",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7221,7 +7221,7 @@
   },
   {
     "name": "Retribution",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7240,7 +7240,7 @@
   },
   {
     "name": "Returning Starknife",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7257,7 +7257,7 @@
   },
   {
     "name": "Revenant Blade",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7276,7 +7276,7 @@
   },
   {
     "name": "Righteous Fury",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7292,7 +7292,7 @@
   },
   {
     "name": "Rime Foil",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7308,7 +7308,7 @@
   },
   {
     "name": "Rope Dart",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7327,7 +7327,7 @@
   },
   {
     "name": "Rotary Bow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7341,7 +7341,7 @@
   },
   {
     "name": "Rowan Rifle",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7358,7 +7358,7 @@
   },
   {
     "name": "Rustbringer (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7376,7 +7376,7 @@
   },
   {
     "name": "Rustbringer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7394,7 +7394,7 @@
   },
   {
     "name": "Sai",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7412,7 +7412,7 @@
   },
   {
     "name": "Sansetsukon",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7429,7 +7429,7 @@
   },
   {
     "name": "Sap",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7444,7 +7444,7 @@
   },
   {
     "name": "Sawtooth Saber",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7460,7 +7460,7 @@
   },
   {
     "name": "Scalding Gauntlets (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7478,7 +7478,7 @@
   },
   {
     "name": "Scalding Gauntlets (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7496,7 +7496,7 @@
   },
   {
     "name": "Scalding Gauntlets (True)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7514,7 +7514,7 @@
   },
   {
     "name": "Scalding Gauntlets",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7532,7 +7532,7 @@
   },
   {
     "name": "Scimitar",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7547,7 +7547,7 @@
   },
   {
     "name": "Scizore of the Crab",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7563,7 +7563,7 @@
   },
   {
     "name": "Scizore",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7578,7 +7578,7 @@
   },
   {
     "name": "Scourge",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7596,7 +7596,7 @@
   },
   {
     "name": "Screaming Pinion",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7611,7 +7611,7 @@
   },
   {
     "name": "Screech Shooter (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7626,7 +7626,7 @@
   },
   {
     "name": "Screech Shooter (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7641,7 +7641,7 @@
   },
   {
     "name": "Screech Shooter",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7656,7 +7656,7 @@
   },
   {
     "name": "Scythe",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7671,7 +7671,7 @@
   },
   {
     "name": "Searing Blade (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7687,7 +7687,7 @@
   },
   {
     "name": "Searing Blade",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7703,7 +7703,7 @@
   },
   {
     "name": "Sensei's Parasol",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7721,7 +7721,7 @@
   },
   {
     "name": "Serithtial",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7738,7 +7738,7 @@
   },
   {
     "name": "Serpent Dagger",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7757,7 +7757,7 @@
   },
   {
     "name": "Shadefield Knife",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7775,7 +7775,7 @@
   },
   {
     "name": "Shadowpiercer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7793,7 +7793,7 @@
   },
   {
     "name": "Shard of Self-Destruction",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7808,7 +7808,7 @@
   },
   {
     "name": "Shattered Plan",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7823,7 +7823,7 @@
   },
   {
     "name": "Shatterstone (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7841,7 +7841,7 @@
   },
   {
     "name": "Shatterstone",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7859,7 +7859,7 @@
   },
   {
     "name": "Shears",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7875,7 +7875,7 @@
   },
   {
     "name": "Shield Boss",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7889,7 +7889,7 @@
   },
   {
     "name": "Shield Bow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7904,7 +7904,7 @@
   },
   {
     "name": "Shield Spikes",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7918,7 +7918,7 @@
   },
   {
     "name": "Shortbow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7932,7 +7932,7 @@
   },
   {
     "name": "Shortsword",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7948,7 +7948,7 @@
   },
   {
     "name": "Shuan Ji",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7965,7 +7965,7 @@
   },
   {
     "name": "Shuln Fang Katar",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7982,7 +7982,7 @@
   },
   {
     "name": "Shuriken",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -7998,7 +7998,7 @@
   },
   {
     "name": "Sickle",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8014,7 +8014,7 @@
   },
   {
     "name": "Silverscrap Bomb (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8031,7 +8031,7 @@
   },
   {
     "name": "Silverscrap Bomb (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8048,7 +8048,7 @@
   },
   {
     "name": "Silverscrap Bomb (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8065,7 +8065,7 @@
   },
   {
     "name": "Silversoul Bomb (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8083,7 +8083,7 @@
   },
   {
     "name": "Silversoul Bomb (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8101,7 +8101,7 @@
   },
   {
     "name": "Silversoul Bomb",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8119,7 +8119,7 @@
   },
   {
     "name": "Sinew-Song",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8136,7 +8136,7 @@
   },
   {
     "name": "Singing Sword",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8152,7 +8152,7 @@
   },
   {
     "name": "Skunk Bomb (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8171,7 +8171,7 @@
   },
   {
     "name": "Skunk Bomb (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8190,7 +8190,7 @@
   },
   {
     "name": "Skunk Bomb (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8209,7 +8209,7 @@
   },
   {
     "name": "Skunk Bomb (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8228,7 +8228,7 @@
   },
   {
     "name": "Sky Hammer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8243,7 +8243,7 @@
   },
   {
     "name": "Slide Pistol",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8259,7 +8259,7 @@
   },
   {
     "name": "Sling",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8273,7 +8273,7 @@
   },
   {
     "name": "Smoking Sword",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8289,7 +8289,7 @@
   },
   {
     "name": "Snowcaster's Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8306,7 +8306,7 @@
   },
   {
     "name": "Socialite Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8322,7 +8322,7 @@
   },
   {
     "name": "Solar Shellflower",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8337,7 +8337,7 @@
   },
   {
     "name": "Sorshen's Sinuous Guisarme",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8356,7 +8356,7 @@
   },
   {
     "name": "Soulcutter (Heroic)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8377,7 +8377,7 @@
   },
   {
     "name": "Soulcutter",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8394,7 +8394,7 @@
   },
   {
     "name": "Spark Dancer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8412,7 +8412,7 @@
   },
   {
     "name": "Spear",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8427,7 +8427,7 @@
   },
   {
     "name": "Spectral Dagger",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8444,7 +8444,7 @@
   },
   {
     "name": "Spellguard Blade",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8463,7 +8463,7 @@
   },
   {
     "name": "Spellsap Grenade (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8479,7 +8479,7 @@
   },
   {
     "name": "Spellsap Grenade",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8495,7 +8495,7 @@
   },
   {
     "name": "Spellstriker Staff (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8511,7 +8511,7 @@
   },
   {
     "name": "Spellstriker Staff (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8527,7 +8527,7 @@
   },
   {
     "name": "Spellstriker Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8543,7 +8543,7 @@
   },
   {
     "name": "Spider Gun (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8557,7 +8557,7 @@
   },
   {
     "name": "Spider Gun (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8571,7 +8571,7 @@
   },
   {
     "name": "Spider Gun",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8585,7 +8585,7 @@
   },
   {
     "name": "Spider Satchel (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8603,7 +8603,7 @@
   },
   {
     "name": "Spider Satchel (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8621,7 +8621,7 @@
   },
   {
     "name": "Spider Satchel (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8639,7 +8639,7 @@
   },
   {
     "name": "Spider Satchel (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8657,7 +8657,7 @@
   },
   {
     "name": "Spike Launcher",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8673,7 +8673,7 @@
   },
   {
     "name": "Spiked Chain",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8689,7 +8689,7 @@
   },
   {
     "name": "Spiked Gauntlet",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8704,7 +8704,7 @@
   },
   {
     "name": "Spirit Fan",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8722,7 +8722,7 @@
   },
   {
     "name": "Spirit Thresher",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8738,7 +8738,7 @@
   },
   {
     "name": "Spiritsight Crossbow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8753,7 +8753,7 @@
   },
   {
     "name": "Splintering Spear (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8770,7 +8770,7 @@
   },
   {
     "name": "Splintering Spear (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8787,7 +8787,7 @@
   },
   {
     "name": "Splintering Spear",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8804,7 +8804,7 @@
   },
   {
     "name": "Splithead Bow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8820,7 +8820,7 @@
   },
   {
     "name": "Spoon Gun",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8837,7 +8837,7 @@
   },
   {
     "name": "Spraysling",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8853,7 +8853,7 @@
   },
   {
     "name": "Spy Staff (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8870,7 +8870,7 @@
   },
   {
     "name": "Spy Staff (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8887,7 +8887,7 @@
   },
   {
     "name": "Spy Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8904,7 +8904,7 @@
   },
   {
     "name": "Staff of Air (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8920,7 +8920,7 @@
   },
   {
     "name": "Staff of Air (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8936,7 +8936,7 @@
   },
   {
     "name": "Staff of Air",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8952,7 +8952,7 @@
   },
   {
     "name": "Staff of Arcane Might (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8968,7 +8968,7 @@
   },
   {
     "name": "Staff of Arcane Might (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -8984,7 +8984,7 @@
   },
   {
     "name": "Staff of Arcane Might",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9000,7 +9000,7 @@
   },
   {
     "name": "Staff of Control (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9016,7 +9016,7 @@
   },
   {
     "name": "Staff of Control (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9032,7 +9032,7 @@
   },
   {
     "name": "Staff of Control",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9048,7 +9048,7 @@
   },
   {
     "name": "Staff of Earth (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9064,7 +9064,7 @@
   },
   {
     "name": "Staff of Earth (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9080,7 +9080,7 @@
   },
   {
     "name": "Staff of Earth",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9096,7 +9096,7 @@
   },
   {
     "name": "Staff of Elemental Power (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9112,7 +9112,7 @@
   },
   {
     "name": "Staff of Elemental Power (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9128,7 +9128,7 @@
   },
   {
     "name": "Staff of Elemental Power",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9144,7 +9144,7 @@
   },
   {
     "name": "Staff of Fire (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9160,7 +9160,7 @@
   },
   {
     "name": "Staff of Fire (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9176,7 +9176,7 @@
   },
   {
     "name": "Staff of Fire",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9192,7 +9192,7 @@
   },
   {
     "name": "Staff of Healing (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9208,7 +9208,7 @@
   },
   {
     "name": "Staff of Healing (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9224,7 +9224,7 @@
   },
   {
     "name": "Staff of Healing (True)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9240,7 +9240,7 @@
   },
   {
     "name": "Staff of Healing",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9256,7 +9256,7 @@
   },
   {
     "name": "Staff of Illumination",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9272,7 +9272,7 @@
   },
   {
     "name": "Staff of Impossible Visions (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9288,7 +9288,7 @@
   },
   {
     "name": "Staff of Impossible Visions (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9304,7 +9304,7 @@
   },
   {
     "name": "Staff of Impossible Visions (True)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9320,7 +9320,7 @@
   },
   {
     "name": "Staff of Impossible Visions",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9336,7 +9336,7 @@
   },
   {
     "name": "Staff of Metal (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9353,7 +9353,7 @@
   },
   {
     "name": "Staff of Metal (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9370,7 +9370,7 @@
   },
   {
     "name": "Staff of Metal",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9387,7 +9387,7 @@
   },
   {
     "name": "Staff of Phantasms (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9403,7 +9403,7 @@
   },
   {
     "name": "Staff of Phantasms (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9419,7 +9419,7 @@
   },
   {
     "name": "Staff of Phantasms",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9435,7 +9435,7 @@
   },
   {
     "name": "Staff of Protection (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9451,7 +9451,7 @@
   },
   {
     "name": "Staff of Protection (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9467,7 +9467,7 @@
   },
   {
     "name": "Staff of Protection",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9483,7 +9483,7 @@
   },
   {
     "name": "Staff of Providence (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9499,7 +9499,7 @@
   },
   {
     "name": "Staff of Providence (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9515,7 +9515,7 @@
   },
   {
     "name": "Staff of Providence (True)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9531,7 +9531,7 @@
   },
   {
     "name": "Staff of Providence",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9547,7 +9547,7 @@
   },
   {
     "name": "Staff of Summoning (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9563,7 +9563,7 @@
   },
   {
     "name": "Staff of Summoning (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9579,7 +9579,7 @@
   },
   {
     "name": "Staff of Summoning",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9595,7 +9595,7 @@
   },
   {
     "name": "Staff of Sun Wukong",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9614,7 +9614,7 @@
   },
   {
     "name": "Staff of the Dead (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9630,7 +9630,7 @@
   },
   {
     "name": "Staff of the Dead (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9646,7 +9646,7 @@
   },
   {
     "name": "Staff of the Dead",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9662,7 +9662,7 @@
   },
   {
     "name": "Staff of the Ruling Beast",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9679,7 +9679,7 @@
   },
   {
     "name": "Staff of the Tempest (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9695,7 +9695,7 @@
   },
   {
     "name": "Staff of the Tempest (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9711,7 +9711,7 @@
   },
   {
     "name": "Staff of the Tempest",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9727,7 +9727,7 @@
   },
   {
     "name": "Staff of the Unblinking Eye (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9743,7 +9743,7 @@
   },
   {
     "name": "Staff of the Unblinking Eye (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9759,7 +9759,7 @@
   },
   {
     "name": "Staff of the Unblinking Eye",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9775,7 +9775,7 @@
   },
   {
     "name": "Staff of Water (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9791,7 +9791,7 @@
   },
   {
     "name": "Staff of Water (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9807,7 +9807,7 @@
   },
   {
     "name": "Staff of Water",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9823,7 +9823,7 @@
   },
   {
     "name": "Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9838,7 +9838,7 @@
   },
   {
     "name": "Stargazer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9855,7 +9855,7 @@
   },
   {
     "name": "Starknife",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9873,7 +9873,7 @@
   },
   {
     "name": "Sticky Algae Bomb (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9891,7 +9891,7 @@
   },
   {
     "name": "Sticky Algae Bomb (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9909,7 +9909,7 @@
   },
   {
     "name": "Sticky Algae Bomb (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9927,7 +9927,7 @@
   },
   {
     "name": "Sticky Algae Bomb (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9945,7 +9945,7 @@
   },
   {
     "name": "Storm Flash (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9963,7 +9963,7 @@
   },
   {
     "name": "Storm Flash",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9981,7 +9981,7 @@
   },
   {
     "name": "Storm Hammer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -9997,7 +9997,7 @@
   },
   {
     "name": "Storm Herald",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10018,7 +10018,7 @@
   },
   {
     "name": "Sukgung",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10032,7 +10032,7 @@
   },
   {
     "name": "Sword Cane",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10048,7 +10048,7 @@
   },
   {
     "name": "Talonstrike Blade (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10063,7 +10063,7 @@
   },
   {
     "name": "Talonstrike Blade",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10078,7 +10078,7 @@
   },
   {
     "name": "Taw Launcher",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10094,7 +10094,7 @@
   },
   {
     "name": "Tekko-Kagi",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10113,7 +10113,7 @@
   },
   {
     "name": "Temperbrand",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10129,7 +10129,7 @@
   },
   {
     "name": "Temple Sword",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10144,7 +10144,7 @@
   },
   {
     "name": "Tenderizer Grenade (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10163,7 +10163,7 @@
   },
   {
     "name": "Tenderizer Grenade (Lesser)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10182,7 +10182,7 @@
   },
   {
     "name": "Tenderizer Grenade (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10201,7 +10201,7 @@
   },
   {
     "name": "Tenderizer Grenade (Moderate)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10220,7 +10220,7 @@
   },
   {
     "name": "Tengu Gale Blade",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10237,7 +10237,7 @@
   },
   {
     "name": "Tentacle Cannon (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10254,7 +10254,7 @@
   },
   {
     "name": "Tentacle Cannon (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10271,7 +10271,7 @@
   },
   {
     "name": "Tentacle Cannon",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10288,7 +10288,7 @@
   },
   {
     "name": "Tetsubo",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10304,7 +10304,7 @@
   },
   {
     "name": "Thorn Brush",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10320,7 +10320,7 @@
   },
   {
     "name": "Three-peaked Tree",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10338,7 +10338,7 @@
   },
   {
     "name": "Three-Section Naginata",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10355,7 +10355,7 @@
   },
   {
     "name": "Thunder Sling",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10371,7 +10371,7 @@
   },
   {
     "name": "Thundercrasher",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10386,7 +10386,7 @@
   },
   {
     "name": "Thundering Fury Dadao",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10402,7 +10402,7 @@
   },
   {
     "name": "Tidal Crossbow",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10417,7 +10417,7 @@
   },
   {
     "name": "Tiger Fork",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10434,7 +10434,7 @@
   },
   {
     "name": "Tiger's Claw",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10452,7 +10452,7 @@
   },
   {
     "name": "Timeflaying Blade",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10468,7 +10468,7 @@
   },
   {
     "name": "Tri-bladed Katar",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10484,7 +10484,7 @@
   },
   {
     "name": "Tricky Pick",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10501,7 +10501,7 @@
   },
   {
     "name": "Trident",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10515,7 +10515,7 @@
   },
   {
     "name": "Trollhound Pick",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10530,7 +10530,7 @@
   },
   {
     "name": "Trueshape Bomb (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10548,7 +10548,7 @@
   },
   {
     "name": "Trueshape Bomb",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10566,7 +10566,7 @@
   },
   {
     "name": "Twining Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10582,7 +10582,7 @@
   },
   {
     "name": "Twisting Gale",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10600,7 +10600,7 @@
   },
   {
     "name": "Ugly Cute's Gift",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10616,7 +10616,7 @@
   },
   {
     "name": "Ulfen Shieldbreaker",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10631,7 +10631,7 @@
   },
   {
     "name": "Umbrella Injector",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10648,7 +10648,7 @@
   },
   {
     "name": "Undead Scourge",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10665,7 +10665,7 @@
   },
   {
     "name": "Unholy Water",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10683,7 +10683,7 @@
   },
   {
     "name": "Urumi",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10698,7 +10698,7 @@
   },
   {
     "name": "Vampire-Fang Morningstar",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10712,7 +10712,7 @@
   },
   {
     "name": "Vashu's Ninth Life",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10729,7 +10729,7 @@
   },
   {
     "name": "Venom Lash",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10747,7 +10747,7 @@
   },
   {
     "name": "Verdant Staff (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10763,7 +10763,7 @@
   },
   {
     "name": "Verdant Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10779,7 +10779,7 @@
   },
   {
     "name": "Versatile Vial",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10798,7 +10798,7 @@
   },
   {
     "name": "Vine Whip",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10816,7 +10816,7 @@
   },
   {
     "name": "Viper Rapier",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10834,7 +10834,7 @@
   },
   {
     "name": "Wakizashi",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10851,7 +10851,7 @@
   },
   {
     "name": "War Flail",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10867,7 +10867,7 @@
   },
   {
     "name": "War Gavel",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10881,7 +10881,7 @@
   },
   {
     "name": "War Javelin",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10896,7 +10896,7 @@
   },
   {
     "name": "War Lance",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10913,7 +10913,7 @@
   },
   {
     "name": "War Razor",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10930,7 +10930,7 @@
   },
   {
     "name": "Warhammer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10944,7 +10944,7 @@
   },
   {
     "name": "Whip Claw",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10961,7 +10961,7 @@
   },
   {
     "name": "Whip-Tongue Sling",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10975,7 +10975,7 @@
   },
   {
     "name": "Whip",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -10993,7 +10993,7 @@
   },
   {
     "name": "Whipstaff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -11011,7 +11011,7 @@
   },
   {
     "name": "Whisperer of Souls",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -11029,7 +11029,7 @@
   },
   {
     "name": "Whispering Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -11047,7 +11047,7 @@
   },
   {
     "name": "Windlass Bola",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -11064,7 +11064,7 @@
   },
   {
     "name": "Wintershot (Heroic)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -11085,7 +11085,7 @@
   },
   {
     "name": "Wintershot",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -11101,7 +11101,7 @@
   },
   {
     "name": "Worldringer (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -11117,7 +11117,7 @@
   },
   {
     "name": "Worldringer",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -11133,7 +11133,7 @@
   },
   {
     "name": "Wrecker",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -11150,7 +11150,7 @@
   },
   {
     "name": "Zealot Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -11166,7 +11166,7 @@
   },
   {
     "name": "Zhuazhi Bang",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -11183,7 +11183,7 @@
   },
   {
     "name": "Zombie Staff (Greater)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -11199,7 +11199,7 @@
   },
   {
     "name": "Zombie Staff (Major)",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -11215,7 +11215,7 @@
   },
   {
     "name": "Zombie Staff",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",

@@ -2,7 +2,7 @@
   {
     "name": "Apep",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -15,7 +15,7 @@
   {
     "name": "Bastet",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -28,7 +28,7 @@
   {
     "name": "Bes",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -41,7 +41,7 @@
   {
     "name": "Hathor",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -54,7 +54,7 @@
   {
     "name": "Khepri",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -67,7 +67,7 @@
   {
     "name": "Neith",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -80,7 +80,7 @@
   {
     "name": "Nephthys",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -93,7 +93,7 @@
   {
     "name": "Ptah",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -106,7 +106,7 @@
   {
     "name": "Sekhmet",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -119,7 +119,7 @@
   {
     "name": "Selket",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -132,7 +132,7 @@
   {
     "name": "Set",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -145,7 +145,7 @@
   {
     "name": "Sobek",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -158,7 +158,7 @@
   {
     "name": "Wadjet",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -171,7 +171,7 @@
   {
     "name": "Anras",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -184,7 +184,7 @@
   {
     "name": "Apollyon",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -197,7 +197,7 @@
   {
     "name": "Charon",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -210,7 +210,7 @@
   {
     "name": "Szuriel",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -223,7 +223,7 @@
   {
     "name": "Trelmarixian",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -236,7 +236,7 @@
   {
     "name": "Baalzebul",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -249,7 +249,7 @@
   {
     "name": "Barbatos",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -262,7 +262,7 @@
   {
     "name": "Belial",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -275,7 +275,7 @@
   {
     "name": "Dispater",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -288,7 +288,7 @@
   {
     "name": "Geryon",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -301,7 +301,7 @@
   {
     "name": "Mammon",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -314,7 +314,7 @@
   {
     "name": "Mephistopheles",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -327,7 +327,7 @@
   {
     "name": "Moloch",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -340,7 +340,7 @@
   {
     "name": "Acavna",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -353,7 +353,7 @@
   {
     "name": "Aesocar",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -366,7 +366,7 @@
   {
     "name": "Amaznen",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -379,7 +379,7 @@
   {
     "name": "Elion",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -392,7 +392,7 @@
   {
     "name": "Jaidi",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -405,7 +405,7 @@
   {
     "name": "Lissala (The Order of Virtue)",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -418,7 +418,7 @@
   {
     "name": "Myr",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -431,7 +431,7 @@
   {
     "name": "Onos",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -444,7 +444,7 @@
   {
     "name": "Scal",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -457,7 +457,7 @@
   {
     "name": "Sicva",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -470,7 +470,7 @@
   {
     "name": "Ulon",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -483,7 +483,7 @@
   {
     "name": "Belech",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -496,7 +496,7 @@
   {
     "name": "Cihua Coatl",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -509,7 +509,7 @@
   {
     "name": "Pahti Coatl",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -522,7 +522,7 @@
   {
     "name": "Tolte Coatl",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -535,7 +535,7 @@
   {
     "name": "Abadar",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -548,7 +548,7 @@
   {
     "name": "Arazni",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -561,7 +561,7 @@
   {
     "name": "Asmodeus",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -574,7 +574,7 @@
   {
     "name": "Calistria",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -587,7 +587,7 @@
   {
     "name": "Cayden Cailean",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -600,7 +600,7 @@
   {
     "name": "Desna",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -613,7 +613,7 @@
   {
     "name": "Erastil",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -626,7 +626,7 @@
   {
     "name": "Gozreh",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -639,7 +639,7 @@
   {
     "name": "Iomedae",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -652,7 +652,7 @@
   {
     "name": "Irori",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -665,7 +665,7 @@
   {
     "name": "Lamashtu",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -678,7 +678,7 @@
   {
     "name": "Nethys",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -691,7 +691,7 @@
   {
     "name": "Norgorber",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -704,7 +704,7 @@
   {
     "name": "Pharasma",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -717,7 +717,7 @@
   {
     "name": "Rovagug",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -730,7 +730,7 @@
   {
     "name": "Sarenrae",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -743,7 +743,7 @@
   {
     "name": "Shelyn",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -756,7 +756,7 @@
   {
     "name": "Torag",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -769,7 +769,7 @@
   {
     "name": "Urgathoa",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -782,7 +782,7 @@
   {
     "name": "Zon-Kuthon",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -795,7 +795,7 @@
   {
     "name": "Cormion",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -808,7 +808,7 @@
   {
     "name": "Blooms of the Spreading Weald",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -821,7 +821,7 @@
   {
     "name": "Breath of the Endless Sky",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -834,7 +834,7 @@
   {
     "name": "Esoteric Order of the Palatine Eye",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -847,7 +847,7 @@
   {
     "name": "Faith in the Fallen",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -860,7 +860,7 @@
   {
     "name": "Good Neighbors",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -873,7 +873,7 @@
   {
     "name": "Green Faith",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -886,7 +886,7 @@
   {
     "name": "Immaculate Growth",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -899,7 +899,7 @@
   {
     "name": "Light of the Everlasting Flame",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -912,7 +912,7 @@
   {
     "name": "Rivethun",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -925,7 +925,7 @@
   {
     "name": "Shadow Cabinet",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -938,7 +938,7 @@
   {
     "name": "Shapes of the Fading Luster",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -951,7 +951,7 @@
   {
     "name": "The Pandemonia",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -964,7 +964,7 @@
   {
     "name": "The Readied Strike",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -977,7 +977,7 @@
   {
     "name": "The Spirit Wall",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -990,7 +990,7 @@
   {
     "name": "The Tides of Chaos",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1003,7 +1003,7 @@
   {
     "name": "Treasures of the Eternal Delve",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1016,7 +1016,7 @@
   {
     "name": "Waves of the Boundless Sea",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1029,7 +1029,7 @@
   {
     "name": "Anogetz",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1042,7 +1042,7 @@
   {
     "name": "Cixyron",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1055,7 +1055,7 @@
   {
     "name": "Corosbel",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1068,7 +1068,7 @@
   {
     "name": "Laivatiniel",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1081,7 +1081,7 @@
   {
     "name": "Pavnuri",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1094,7 +1094,7 @@
   {
     "name": "Tresmalvos",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1107,7 +1107,7 @@
   {
     "name": "Vorasha",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1120,7 +1120,7 @@
   {
     "name": "Xsistaid",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1133,7 +1133,7 @@
   {
     "name": "Zelishkar",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1146,7 +1146,7 @@
   {
     "name": "Abraxas",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1159,7 +1159,7 @@
   {
     "name": "Angazhan",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1172,7 +1172,7 @@
   {
     "name": "Areshkagal",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1185,7 +1185,7 @@
   {
     "name": "Baphomet",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1198,7 +1198,7 @@
   {
     "name": "Cyth-V'sug",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1211,7 +1211,7 @@
   {
     "name": "Dagon",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1224,7 +1224,7 @@
   {
     "name": "Gogunta",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1237,7 +1237,7 @@
   {
     "name": "Haagenti",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1250,7 +1250,7 @@
   {
     "name": "Jezelda",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1263,7 +1263,7 @@
   {
     "name": "Kabriri",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1276,7 +1276,7 @@
   {
     "name": "Nurgal",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1289,7 +1289,7 @@
   {
     "name": "Pazuzu",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1302,7 +1302,7 @@
   {
     "name": "Shax",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1315,7 +1315,7 @@
   {
     "name": "Shivaska",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1328,7 +1328,7 @@
   {
     "name": "Sifkesh",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1341,7 +1341,7 @@
   {
     "name": "Sithhud",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1354,7 +1354,7 @@
   {
     "name": "Vulot",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1367,7 +1367,7 @@
   {
     "name": "Xoveron",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1380,7 +1380,7 @@
   {
     "name": "Yhidothrus",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1393,7 +1393,7 @@
   {
     "name": "Zevgavizeb",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1406,7 +1406,7 @@
   {
     "name": "Zura",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1419,7 +1419,7 @@
   {
     "name": "Deshto",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1432,7 +1432,7 @@
   {
     "name": "Brixori",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1445,7 +1445,7 @@
   {
     "name": "Gaasham",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1458,7 +1458,7 @@
   {
     "name": "Garhaazh",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1471,7 +1471,7 @@
   {
     "name": "Otilaz",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1484,7 +1484,7 @@
   {
     "name": "Sarshallatu",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1497,7 +1497,7 @@
   {
     "name": "Turvu",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1510,7 +1510,7 @@
   {
     "name": "Yluma",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1523,7 +1523,7 @@
   {
     "name": "Angradd",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1536,7 +1536,7 @@
   {
     "name": "Bolka",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1549,7 +1549,7 @@
   {
     "name": "Dranngvit",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1562,7 +1562,7 @@
   {
     "name": "Droskar",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1575,7 +1575,7 @@
   {
     "name": "Folgrit",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1588,7 +1588,7 @@
   {
     "name": "Kols",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1601,7 +1601,7 @@
   {
     "name": "Magrim",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1614,7 +1614,7 @@
   {
     "name": "Trudd",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1627,7 +1627,7 @@
   {
     "name": "Count Ranalc",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1640,7 +1640,7 @@
   {
     "name": "Imbrex",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1653,7 +1653,7 @@
   {
     "name": "Magdh",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1666,7 +1666,7 @@
   {
     "name": "Ng",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1679,7 +1679,7 @@
   {
     "name": "Ragadahn",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1692,7 +1692,7 @@
   {
     "name": "Shyka",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1705,7 +1705,7 @@
   {
     "name": "The Green Mother",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1718,7 +1718,7 @@
   {
     "name": "The Lantern King",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1731,7 +1731,7 @@
   {
     "name": "The Lost Prince",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1744,7 +1744,7 @@
   {
     "name": "Atreia",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1757,7 +1757,7 @@
   {
     "name": "Ayrzul",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1770,7 +1770,7 @@
   {
     "name": "Ferrumnestra",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1783,7 +1783,7 @@
   {
     "name": "Hshurha",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1796,7 +1796,7 @@
   {
     "name": "Kelizandri",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1809,7 +1809,7 @@
   {
     "name": "Laudinmio",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1822,7 +1822,7 @@
   {
     "name": "Lysianassa",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1835,7 +1835,7 @@
   {
     "name": "Ranginori",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1848,7 +1848,7 @@
   {
     "name": "Sairazul",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1861,7 +1861,7 @@
   {
     "name": "Shumunue",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1874,7 +1874,7 @@
   {
     "name": "Verilorn",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1887,7 +1887,7 @@
   {
     "name": "Ymeri",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1900,7 +1900,7 @@
   {
     "name": "Findeladlara",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1913,7 +1913,7 @@
   {
     "name": "Ketephys",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1926,7 +1926,7 @@
   {
     "name": "Yuelral",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1939,7 +1939,7 @@
   {
     "name": "Andoletta",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1952,7 +1952,7 @@
   {
     "name": "Arqueros",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1965,7 +1965,7 @@
   {
     "name": "Arshea",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1978,7 +1978,7 @@
   {
     "name": "Ashava",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1991,7 +1991,7 @@
   {
     "name": "Bharnarol",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2004,7 +2004,7 @@
   {
     "name": "Black Butterfly",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2017,7 +2017,7 @@
   {
     "name": "Dalenydra",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2030,7 +2030,7 @@
   {
     "name": "Dammerich",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2043,7 +2043,7 @@
   {
     "name": "Eritrice",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2056,7 +2056,7 @@
   {
     "name": "Falayna",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2069,7 +2069,7 @@
   {
     "name": "Halcamora",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2082,7 +2082,7 @@
   {
     "name": "Irez",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2095,7 +2095,7 @@
   {
     "name": "Jaidz",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2108,7 +2108,7 @@
   {
     "name": "Kelinahat",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2121,7 +2121,7 @@
   {
     "name": "Keltheald",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2134,7 +2134,7 @@
   {
     "name": "Korada",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2147,7 +2147,7 @@
   {
     "name": "Lalaci",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2160,7 +2160,7 @@
   {
     "name": "Lorris",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2173,7 +2173,7 @@
   {
     "name": "Lymnieris",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2186,7 +2186,7 @@
   {
     "name": "Marishi",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2199,7 +2199,7 @@
   {
     "name": "Neshen",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2212,7 +2212,7 @@
   {
     "name": "Olheon",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2225,7 +2225,7 @@
   {
     "name": "Picoperi",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2238,7 +2238,7 @@
   {
     "name": "Pulura",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2251,7 +2251,7 @@
   {
     "name": "Ragathiel",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2264,7 +2264,7 @@
   {
     "name": "Reymenda",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2277,7 +2277,7 @@
   {
     "name": "Rowdrosh",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2290,7 +2290,7 @@
   {
     "name": "Seramaydiel",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2303,7 +2303,7 @@
   {
     "name": "Shei",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2316,7 +2316,7 @@
   {
     "name": "Soralyon",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2329,7 +2329,7 @@
   {
     "name": "Tanagaar",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2342,7 +2342,7 @@
   {
     "name": "Thisamet",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2355,7 +2355,7 @@
   {
     "name": "Uskyeria",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2368,7 +2368,7 @@
   {
     "name": "Valani",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2381,7 +2381,7 @@
   {
     "name": "Vildeis",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2394,7 +2394,7 @@
   {
     "name": "Winlas",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2407,7 +2407,7 @@
   {
     "name": "Ylimancha",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2420,7 +2420,7 @@
   {
     "name": "Zohls",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2433,7 +2433,7 @@
   {
     "name": "Aegirran",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2446,7 +2446,7 @@
   {
     "name": "Bergelmir",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2459,7 +2459,7 @@
   {
     "name": "Fandarra",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2472,7 +2472,7 @@
   {
     "name": "Haggakal",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2485,7 +2485,7 @@
   {
     "name": "Minderhal",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2498,7 +2498,7 @@
   {
     "name": "Skode",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2511,7 +2511,7 @@
   {
     "name": "Skrymir",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2524,7 +2524,7 @@
   {
     "name": "Thremyr",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2537,7 +2537,7 @@
   {
     "name": "Tjasse",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2550,7 +2550,7 @@
   {
     "name": "Urazra",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2563,7 +2563,7 @@
   {
     "name": "Yrmidar",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2576,7 +2576,7 @@
   {
     "name": "Zursvaater",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2589,7 +2589,7 @@
   {
     "name": "Cong",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2602,7 +2602,7 @@
   {
     "name": "Hadregash",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2615,7 +2615,7 @@
   {
     "name": "Lurlup",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2628,7 +2628,7 @@
   {
     "name": "Teki Stronggut",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2641,7 +2641,7 @@
   {
     "name": "Venkelvore",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2654,7 +2654,7 @@
   {
     "name": "Zarongel",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2667,7 +2667,7 @@
   {
     "name": "Zogmugot",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2680,7 +2680,7 @@
   {
     "name": "Zugero",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2693,7 +2693,7 @@
   {
     "name": "Aminara",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2706,7 +2706,7 @@
   {
     "name": "Granduncle Taproot",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2719,7 +2719,7 @@
   {
     "name": "Green Man",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2732,7 +2732,7 @@
   {
     "name": "Kzininn",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2745,7 +2745,7 @@
   {
     "name": "Telvrys",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2758,7 +2758,7 @@
   {
     "name": "Zibik",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2771,7 +2771,7 @@
   {
     "name": "Aerekostes",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2784,7 +2784,7 @@
   {
     "name": "Chinostes",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2797,7 +2797,7 @@
   {
     "name": "Drokalion",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2810,7 +2810,7 @@
   {
     "name": "Iapholi",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2823,7 +2823,7 @@
   {
     "name": "Ongalte",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2836,7 +2836,7 @@
   {
     "name": "Pharimia",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2849,7 +2849,7 @@
   {
     "name": "Upion and Warrik",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2862,7 +2862,7 @@
   {
     "name": "Ytildos",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2875,7 +2875,7 @@
   {
     "name": "Zeaki",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2888,7 +2888,7 @@
   {
     "name": "Alazhra",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2901,7 +2901,7 @@
   {
     "name": "Anubis",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2914,7 +2914,7 @@
   {
     "name": "Aroden",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2927,7 +2927,7 @@
   {
     "name": "Cernunnos",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2940,7 +2940,7 @@
   {
     "name": "Cormigus",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2953,7 +2953,7 @@
   {
     "name": "Gorum",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2966,7 +2966,7 @@
   {
     "name": "Grundinnar",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2979,7 +2979,7 @@
   {
     "name": "Gyronna",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2992,7 +2992,7 @@
   {
     "name": "Horus",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3005,7 +3005,7 @@
   {
     "name": "Isis",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3018,7 +3018,7 @@
   {
     "name": "Lorthact",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3031,7 +3031,7 @@
   {
     "name": "Ma'at",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3044,7 +3044,7 @@
   {
     "name": "Mestama",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3057,7 +3057,7 @@
   {
     "name": "Osiris",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3070,7 +3070,7 @@
   {
     "name": "Ra",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3083,7 +3083,7 @@
   {
     "name": "Smiad",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3096,7 +3096,7 @@
   {
     "name": "Sturovenen",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3109,7 +3109,7 @@
   {
     "name": "Thoth",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3122,7 +3122,7 @@
   {
     "name": "Ydersius",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3135,7 +3135,7 @@
   {
     "name": "Bifrons",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3148,7 +3148,7 @@
   {
     "name": "Furcas",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3161,7 +3161,7 @@
   {
     "name": "Haborym",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3174,7 +3174,7 @@
   {
     "name": "Malthus",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3187,7 +3187,7 @@
   {
     "name": "Nergal",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3200,7 +3200,7 @@
   {
     "name": "Titivilus",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3213,7 +3213,7 @@
   {
     "name": "Ussharassim",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3226,7 +3226,7 @@
   {
     "name": "Vapula",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3239,7 +3239,7 @@
   {
     "name": "Atropos",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3252,7 +3252,7 @@
   {
     "name": "Barzahk",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3265,7 +3265,7 @@
   {
     "name": "Ceyannan",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3278,7 +3278,7 @@
   {
     "name": "Dammar",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3291,7 +3291,7 @@
   {
     "name": "Dramindyr",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3304,7 +3304,7 @@
   {
     "name": "Il'Surrish",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3317,7 +3317,7 @@
   {
     "name": "Imot",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3330,7 +3330,7 @@
   {
     "name": "Inna",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3343,7 +3343,7 @@
   {
     "name": "Liisglan",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3356,7 +3356,7 @@
   {
     "name": "Monad",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3369,7 +3369,7 @@
   {
     "name": "Mother Vulture",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3382,7 +3382,7 @@
   {
     "name": "Mrtyu",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3395,7 +3395,7 @@
   {
     "name": "Narakaas",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3408,7 +3408,7 @@
   {
     "name": "Narriseminek",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3421,7 +3421,7 @@
   {
     "name": "Phlegyas",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3434,7 +3434,7 @@
   {
     "name": "Saloc",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3447,7 +3447,7 @@
   {
     "name": "Ssila'meshnik",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3460,7 +3460,7 @@
   {
     "name": "Telastmar",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3473,7 +3473,7 @@
   {
     "name": "Teshallas",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3486,7 +3486,7 @@
   {
     "name": "The Pale Horse",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3499,7 +3499,7 @@
   {
     "name": "Vale",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3512,7 +3512,7 @@
   {
     "name": "Vavaalrav",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3525,7 +3525,7 @@
   {
     "name": "Vonymos",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3538,7 +3538,7 @@
   {
     "name": "Ydajisk",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3551,7 +3551,7 @@
   {
     "name": "Adanye",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3564,7 +3564,7 @@
   {
     "name": "Balumbdar",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3577,7 +3577,7 @@
   {
     "name": "Chohar",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3590,7 +3590,7 @@
   {
     "name": "Kalekot",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3603,7 +3603,7 @@
   {
     "name": "Kitumu",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3616,7 +3616,7 @@
   {
     "name": "Lubaiko",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3629,7 +3629,7 @@
   {
     "name": "Luhar",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3642,7 +3642,7 @@
   {
     "name": "Mazludeh",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3655,7 +3655,7 @@
   {
     "name": "Tlehar",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3668,7 +3668,7 @@
   {
     "name": "Uvuko",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3681,7 +3681,7 @@
   {
     "name": "Walkena",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3694,7 +3694,7 @@
   {
     "name": "Oathos",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3707,7 +3707,7 @@
   {
     "name": "Grask Uldeth",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3720,7 +3720,7 @@
   {
     "name": "Jukha",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3733,7 +3733,7 @@
   {
     "name": "Mahja Firehair",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3746,7 +3746,7 @@
   {
     "name": "Nulgreth",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3759,7 +3759,7 @@
   {
     "name": "Rull",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3772,7 +3772,7 @@
   {
     "name": "Uirch",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3785,7 +3785,7 @@
   {
     "name": "Varg",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3798,7 +3798,7 @@
   {
     "name": "Wulgren",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3811,7 +3811,7 @@
   {
     "name": "Aakriti",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3824,7 +3824,7 @@
   {
     "name": "Achaekek",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3837,7 +3837,7 @@
   {
     "name": "Ah Pook",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3850,7 +3850,7 @@
   {
     "name": "Ahriman",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3863,7 +3863,7 @@
   {
     "name": "Aleth",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3876,7 +3876,7 @@
   {
     "name": "Alseta",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3889,7 +3889,7 @@
   {
     "name": "Apsu",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3902,7 +3902,7 @@
   {
     "name": "Atrogine",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3915,7 +3915,7 @@
   {
     "name": "Besmara",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3928,7 +3928,7 @@
   {
     "name": "Brigh",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3941,7 +3941,7 @@
   {
     "name": "Camazotz",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3954,7 +3954,7 @@
   {
     "name": "Casandalee",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3967,7 +3967,7 @@
   {
     "name": "Chaldira",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3980,7 +3980,7 @@
   {
     "name": "Dahak",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3993,7 +3993,7 @@
   {
     "name": "Dajermube",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4006,7 +4006,7 @@
   {
     "name": "Embaral",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4019,7 +4019,7 @@
   {
     "name": "Emmeton Galardaria",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4032,7 +4032,7 @@
   {
     "name": "Erecura",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4045,7 +4045,7 @@
   {
     "name": "Etaris",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4058,7 +4058,7 @@
   {
     "name": "Gendowyn",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4071,7 +4071,7 @@
   {
     "name": "Genzaeri",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4084,7 +4084,7 @@
   {
     "name": "Ghlaunder",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4097,7 +4097,7 @@
   {
     "name": "Grandmother Spider",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4110,7 +4110,7 @@
   {
     "name": "Groetus",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4123,7 +4123,7 @@
   {
     "name": "Gruhastha",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4136,7 +4136,7 @@
   {
     "name": "Hanspur",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4149,7 +4149,7 @@
   {
     "name": "Hei Feng",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4162,7 +4162,7 @@
   {
     "name": "Immonhiel",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4175,7 +4175,7 @@
   {
     "name": "Izuyaku",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4188,7 +4188,7 @@
   {
     "name": "Kaldemash",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4201,7 +4201,7 @@
   {
     "name": "Kazutal",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4214,7 +4214,7 @@
   {
     "name": "Kurgess",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4227,7 +4227,7 @@
   {
     "name": "Lissala",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4240,7 +4240,7 @@
   {
     "name": "Milani",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4253,7 +4253,7 @@
   {
     "name": "Naderi",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4266,7 +4266,7 @@
   {
     "name": "Nin",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4279,7 +4279,7 @@
   {
     "name": "Nivi Rhombodazzle",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4292,7 +4292,7 @@
   {
     "name": "Nocticula",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4305,7 +4305,7 @@
   {
     "name": "Norns",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4318,7 +4318,7 @@
   {
     "name": "Obari",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4331,7 +4331,7 @@
   {
     "name": "Rokoga Gin",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4344,7 +4344,7 @@
   {
     "name": "Shizuru",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4357,7 +4357,7 @@
   {
     "name": "Sivanah",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4370,7 +4370,7 @@
   {
     "name": "Thamir",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4383,7 +4383,7 @@
   {
     "name": "The Devourer",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4396,7 +4396,7 @@
   {
     "name": "Treerazer",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4409,7 +4409,7 @@
   {
     "name": "Tsukiyo",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4422,7 +4422,7 @@
   {
     "name": "Vudravati",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4435,7 +4435,7 @@
   {
     "name": "Yelayne",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4448,7 +4448,7 @@
   {
     "name": "Zjar-Tovan",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4461,7 +4461,7 @@
   {
     "name": "Zyphus",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4474,7 +4474,7 @@
   {
     "name": "Azathoth",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4487,7 +4487,7 @@
   {
     "name": "Bokrug",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4500,7 +4500,7 @@
   {
     "name": "Cthulhu",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4513,7 +4513,7 @@
   {
     "name": "Hastur",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4526,7 +4526,7 @@
   {
     "name": "Mhar",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4539,7 +4539,7 @@
   {
     "name": "Nhimbaloth",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4552,7 +4552,7 @@
   {
     "name": "Nyarlathotep (Haunter in the Dark)",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4565,7 +4565,7 @@
   {
     "name": "Nyarlathotep (The Crawling Chaos)",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4578,7 +4578,7 @@
   {
     "name": "Nyarlathotep (The Faceless Sphinx)",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4591,7 +4591,7 @@
   {
     "name": "Nyarlathotep (The Veiled Voice)",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4604,7 +4604,7 @@
   {
     "name": "Orgesh",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4617,7 +4617,7 @@
   {
     "name": "Rhan-Tegoth",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4630,7 +4630,7 @@
   {
     "name": "Xhamen-Dor",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4643,7 +4643,7 @@
   {
     "name": "Yig",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4656,7 +4656,7 @@
   {
     "name": "Yog-Sothoth",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4669,7 +4669,7 @@
   {
     "name": "Children of the Night",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4682,7 +4682,7 @@
   {
     "name": "Cosmic Caravan",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4695,7 +4695,7 @@
   {
     "name": "Essence Dancers",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4708,7 +4708,7 @@
   {
     "name": "Fortune's Fate",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4721,7 +4721,7 @@
   {
     "name": "Guardians of the Sacred Self",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4734,7 +4734,7 @@
   {
     "name": "Radiant Prism",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4747,7 +4747,7 @@
   {
     "name": "Sovyrian Conclave",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4760,7 +4760,7 @@
   {
     "name": "Stone's Blood",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4773,7 +4773,7 @@
   {
     "name": "Talons of the Godclaw",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4786,7 +4786,7 @@
   {
     "name": "The Anointing of Kings",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4799,7 +4799,7 @@
   {
     "name": "The Curtain Call",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4812,7 +4812,7 @@
   {
     "name": "Weight of the World",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4825,7 +4825,7 @@
   {
     "name": "Wheels of Innovation",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4838,7 +4838,7 @@
   {
     "name": "Atheists and Free Agents",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4851,7 +4851,7 @@
   {
     "name": "Laws of Mortality",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4864,7 +4864,7 @@
   {
     "name": "Prophecies of Kalistrade",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4877,7 +4877,7 @@
   {
     "name": "Whispering Way",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4890,7 +4890,7 @@
   {
     "name": "Aonaurious",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4903,7 +4903,7 @@
   {
     "name": "Chavazvug",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4916,7 +4916,7 @@
   {
     "name": "Isph-Aun-Vuln",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4929,7 +4929,7 @@
   {
     "name": "Nyuo-Ogh",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4942,7 +4942,7 @@
   {
     "name": "Oaur-Ooung",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4955,7 +4955,7 @@
   {
     "name": "Thuskchoon",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4968,7 +4968,7 @@
   {
     "name": "Yamasoth",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4981,7 +4981,7 @@
   {
     "name": "Ardad Lili",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -4994,7 +4994,7 @@
   {
     "name": "Doloras",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5007,7 +5007,7 @@
   {
     "name": "Eiseth",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5020,7 +5020,7 @@
   {
     "name": "Mahathallah",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5033,7 +5033,7 @@
   {
     "name": "Razmir",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5046,7 +5046,7 @@
   {
     "name": "Ananshea",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5059,7 +5059,7 @@
   {
     "name": "Chamiaholom",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5072,7 +5072,7 @@
   {
     "name": "Charg",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5085,7 +5085,7 @@
   {
     "name": "Dachzerul",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5098,7 +5098,7 @@
   {
     "name": "Hataam",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5111,7 +5111,7 @@
   {
     "name": "Iggeret",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5124,7 +5124,7 @@
   {
     "name": "Nameless",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5137,7 +5137,7 @@
   {
     "name": "Ozranvial",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5150,7 +5150,7 @@
   {
     "name": "Shawnari",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5163,7 +5163,7 @@
   {
     "name": "Velgaas",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5176,7 +5176,7 @@
   {
     "name": "Vermilion Mother",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5189,7 +5189,7 @@
   {
     "name": "Xiquiripat",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5202,7 +5202,7 @@
   {
     "name": "Zipacna",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5215,7 +5215,7 @@
   {
     "name": "Alglenweis",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5228,7 +5228,7 @@
   {
     "name": "Dolok Darkfur",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5241,7 +5241,7 @@
   {
     "name": "Kagia",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5254,7 +5254,7 @@
   {
     "name": "Ristrentho",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5267,7 +5267,7 @@
   {
     "name": "Stag Mother of the Forest of Stones",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5280,7 +5280,7 @@
   {
     "name": "Enkaar",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5293,7 +5293,7 @@
   {
     "name": "Eyes That Watch",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5306,7 +5306,7 @@
   {
     "name": "Grasping Iovett",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5319,7 +5319,7 @@
   {
     "name": "Husk",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5332,7 +5332,7 @@
   {
     "name": "Lady Razor",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5345,7 +5345,7 @@
   {
     "name": "Reshmit of the Heavy Voice",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5358,7 +5358,7 @@
   {
     "name": "Thalaphyrr",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5371,7 +5371,7 @@
   {
     "name": "Baekho",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5384,7 +5384,7 @@
   {
     "name": "Daikitsu",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5397,7 +5397,7 @@
   {
     "name": "Fumeiyoshi",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5410,7 +5410,7 @@
   {
     "name": "General Susumu",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5423,7 +5423,7 @@
   {
     "name": "Jin Li",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5436,7 +5436,7 @@
   {
     "name": "Kofusachi",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5449,7 +5449,7 @@
   {
     "name": "Lady Jingxi",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5462,7 +5462,7 @@
   {
     "name": "Lady Nanbyo",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5475,7 +5475,7 @@
   {
     "name": "Lao Shu Po",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5488,7 +5488,7 @@
   {
     "name": "Mugura and Nrithu",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5501,7 +5501,7 @@
   {
     "name": "Nalinivati",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5514,7 +5514,7 @@
   {
     "name": "Phi Deva",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5527,7 +5527,7 @@
   {
     "name": "Qi Zhong",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5540,7 +5540,7 @@
   {
     "name": "Srikalis, Sritaming, and Sribaril",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5553,7 +5553,7 @@
   {
     "name": "Sun Wukong",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5566,7 +5566,7 @@
   {
     "name": "The Lady of the North Star",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5579,7 +5579,7 @@
   {
     "name": "Yaezhing",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5592,7 +5592,7 @@
   {
     "name": "Yamatsumi",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5605,7 +5605,7 @@
   {
     "name": "Umarik",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5618,7 +5618,7 @@
   {
     "name": "Arundhat",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5631,7 +5631,7 @@
   {
     "name": "Ashukharma",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5644,7 +5644,7 @@
   {
     "name": "Chamidu",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5657,7 +5657,7 @@
   {
     "name": "Dhalavei",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5670,7 +5670,7 @@
   {
     "name": "Diomazul",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5683,7 +5683,7 @@
   {
     "name": "Lahkgya",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5696,7 +5696,7 @@
   {
     "name": "Likha",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5709,7 +5709,7 @@
   {
     "name": "Matravash",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5722,7 +5722,7 @@
   {
     "name": "Ragdya",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5735,7 +5735,7 @@
   {
     "name": "Raumya",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5748,7 +5748,7 @@
   {
     "name": "Ravithra",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5761,7 +5761,7 @@
   {
     "name": "Suyuddha",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -5774,7 +5774,7 @@
   {
     "name": "Vineshvakhi",
     "rule_type": "Deity",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",

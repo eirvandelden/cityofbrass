@@ -7,11 +7,11 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
   end
 
   test "classes seed task creates valid StockRules with normalized source fields" do
-    Rulebuilder::StockRule.where(core_rules: "5th Edition", rule_type: "Class").destroy_all
+    Rulebuilder::StockRule.where(core_rules: "dnd5e", rule_type: "Class").destroy_all
 
     run_task("db:seed:5e:classes")
 
-    rules = Rulebuilder::StockRule.where(core_rules: "5th Edition", rule_type: "Class")
+    rules = Rulebuilder::StockRule.where(core_rules: "dnd5e", rule_type: "Class")
     assert_equal 12, rules.count
     assert rules.all?(&:valid?), "expected seeded class records to be valid"
 
@@ -22,36 +22,36 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
   end
 
   test "spells seed task is idempotent" do
-    Rulebuilder::StockSpell.where(core_rules: "5th Edition").destroy_all
+    Rulebuilder::StockSpell.where(core_rules: "dnd5e").destroy_all
 
     run_task("db:seed:5e:spells")
-    first_count = Rulebuilder::StockSpell.where(core_rules: "5th Edition").count
+    first_count = Rulebuilder::StockSpell.where(core_rules: "dnd5e").count
 
     run_task("db:seed:5e:spells")
-    second_count = Rulebuilder::StockSpell.where(core_rules: "5th Edition").count
+    second_count = Rulebuilder::StockSpell.where(core_rules: "dnd5e").count
 
     assert_equal first_count, second_count
   end
 
   test "seed tasks store rendered HTML descriptions" do
-    Rulebuilder::StockRule.where(core_rules: "5th Edition", rule_type: "Species").destroy_all
-    Rulebuilder::StockRule.where(core_rules: "5th Edition", rule_type: "Backgrounds").destroy_all
-    Rulebuilder::StockSpell.where(core_rules: "5th Edition").destroy_all
-    Rulebuilder::StockItem.where(core_rules: "5th Edition").destroy_all
+    Rulebuilder::StockRule.where(core_rules: "dnd5e", rule_type: "Species").destroy_all
+    Rulebuilder::StockRule.where(core_rules: "dnd5e", rule_type: "Backgrounds").destroy_all
+    Rulebuilder::StockSpell.where(core_rules: "dnd5e").destroy_all
+    Rulebuilder::StockItem.where(core_rules: "dnd5e").destroy_all
 
     run_task("db:seed:5e:species")
     run_task("db:seed:5e:backgrounds")
     run_task("db:seed:5e:spells")
     run_task("db:seed:5e:items")
 
-    species = Rulebuilder::StockRule.find_by!(core_rules: "5th Edition", rule_type: "Species", name: "Elf")
+    species = Rulebuilder::StockRule.find_by!(core_rules: "dnd5e", rule_type: "Species", name: "Elf")
     background = Rulebuilder::StockRule.find_by!(
-      core_rules: "5th Edition",
+      core_rules: "dnd5e",
       rule_type: "Backgrounds",
       name: "Acolyte"
     )
-    spell = Rulebuilder::StockSpell.find_by!(core_rules: "5th Edition", name: "Acid Splash")
-    item = Rulebuilder::StockItem.find_by!(core_rules: "5th Edition", name: "Club")
+    spell = Rulebuilder::StockSpell.find_by!(core_rules: "dnd5e", name: "Acid Splash")
+    item = Rulebuilder::StockItem.find_by!(core_rules: "dnd5e", name: "Club")
 
     [ species, background, spell, item ].each do |record|
       assert_match(/<h\d/, record.full_description)
@@ -62,13 +62,13 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
   end
 
   test "creature and animal seed tasks create valid StockCreatures and stay idempotent" do
-    Entitybuilder::StockCreature.where(core_rules: "5th Edition").destroy_all
+    Entitybuilder::StockCreature.where(core_rules: "dnd5e").destroy_all
 
     run_task("db:seed:5e:creatures")
     run_task("db:seed:5e:animals")
 
-    monster = Entitybuilder::StockCreature.find_by!(core_rules: "5th Edition", name: "Adult Black Dragon")
-    animal = Entitybuilder::StockCreature.find_by!(core_rules: "5th Edition", name: "Ape")
+    monster = Entitybuilder::StockCreature.find_by!(core_rules: "dnd5e", name: "Adult Black Dragon")
+    animal = Entitybuilder::StockCreature.find_by!(core_rules: "dnd5e", name: "Ape")
 
     [ monster, animal ].each do |creature|
       assert_seeded_creature_basics(creature)
@@ -85,40 +85,40 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
     run_task("db:seed:5e:animals")
 
     second_snapshot = snapshot_creature(
-      Entitybuilder::StockCreature.find_by!(core_rules: "5th Edition", name: "Adult Black Dragon")
+      Entitybuilder::StockCreature.find_by!(core_rules: "dnd5e", name: "Adult Black Dragon")
     )
 
     assert_equal first_snapshot, second_snapshot
   end
 
   test "creature seed task normalizes ranged attacks to the app range bucket" do
-    Entitybuilder::StockCreature.where(core_rules: "5th Edition").destroy_all
+    Entitybuilder::StockCreature.where(core_rules: "dnd5e").destroy_all
 
     run_task("db:seed:5e:creatures")
 
-    assassin = Entitybuilder::StockCreature.find_by!(core_rules: "5th Edition", name: "Assassin")
+    assassin = Entitybuilder::StockCreature.find_by!(core_rules: "dnd5e", name: "Assassin")
 
     assert assassin.attacks.exists?(attack_type: "Range")
     assert_not assassin.attacks.exists?(attack_type: "Ranged")
   end
 
   test "creature descriptions stop at the current stat block" do
-    Entitybuilder::StockCreature.where(core_rules: "5th Edition").destroy_all
+    Entitybuilder::StockCreature.where(core_rules: "dnd5e").destroy_all
 
     run_task("db:seed:5e:creatures")
 
-    aboleth = Entitybuilder::StockCreature.find_by!(core_rules: "5th Edition", name: "Aboleth")
-    air_elemental = Entitybuilder::StockCreature.find_by!(core_rules: "5th Edition", name: "Air Elemental")
+    aboleth = Entitybuilder::StockCreature.find_by!(core_rules: "dnd5e", name: "Aboleth")
+    air_elemental = Entitybuilder::StockCreature.find_by!(core_rules: "dnd5e", name: "Air Elemental")
 
     assert_no_match(/Air Elemental/, aboleth.full_description)
     assert_no_match(/Animated Objects/, air_elemental.full_description)
   end
 
   test "all seed categories provide spot-check records" do
-    Rulebuilder::StockRule.where(core_rules: "5th Edition").destroy_all
-    Rulebuilder::StockSpell.where(core_rules: "5th Edition").destroy_all
-    Rulebuilder::StockItem.where(core_rules: "5th Edition").destroy_all
-    Entitybuilder::StockCreature.where(core_rules: "5th Edition").destroy_all
+    Rulebuilder::StockRule.where(core_rules: "dnd5e").destroy_all
+    Rulebuilder::StockSpell.where(core_rules: "dnd5e").destroy_all
+    Rulebuilder::StockItem.where(core_rules: "dnd5e").destroy_all
+    Entitybuilder::StockCreature.where(core_rules: "dnd5e").destroy_all
 
     %w[
       db:seed:5e:classes
@@ -132,15 +132,15 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
       db:seed:5e:animals
     ].each { |task_name| run_task(task_name) }
 
-    assert Rulebuilder::StockRule.exists?(core_rules: "5th Edition", rule_type: "Class", name: "Barbarian")
-    assert Rulebuilder::StockRule.exists?(core_rules: "5th Edition", rule_type: "Backgrounds", name: "Acolyte")
-    assert Rulebuilder::StockRule.exists?(core_rules: "5th Edition", rule_type: "Species", name: "Elf")
-    assert Rulebuilder::StockRule.exists?(core_rules: "5th Edition", rule_type: "Feat", name: "Alert")
-    assert Rulebuilder::StockRule.exists?(core_rules: "5th Edition", rule_type: "Condition", name: "Blinded")
-    assert Rulebuilder::StockSpell.exists?(core_rules: "5th Edition", name: "Acid Splash")
-    assert Rulebuilder::StockItem.exists?(core_rules: "5th Edition", name: "Club")
-    assert Entitybuilder::StockCreature.exists?(core_rules: "5th Edition", name: "Adult Black Dragon")
-    assert Entitybuilder::StockCreature.exists?(core_rules: "5th Edition", name: "Ape")
+    assert Rulebuilder::StockRule.exists?(core_rules: "dnd5e", rule_type: "Class", name: "Barbarian")
+    assert Rulebuilder::StockRule.exists?(core_rules: "dnd5e", rule_type: "Backgrounds", name: "Acolyte")
+    assert Rulebuilder::StockRule.exists?(core_rules: "dnd5e", rule_type: "Species", name: "Elf")
+    assert Rulebuilder::StockRule.exists?(core_rules: "dnd5e", rule_type: "Feat", name: "Alert")
+    assert Rulebuilder::StockRule.exists?(core_rules: "dnd5e", rule_type: "Condition", name: "Blinded")
+    assert Rulebuilder::StockSpell.exists?(core_rules: "dnd5e", name: "Acid Splash")
+    assert Rulebuilder::StockItem.exists?(core_rules: "dnd5e", name: "Club")
+    assert Entitybuilder::StockCreature.exists?(core_rules: "dnd5e", name: "Adult Black Dragon")
+    assert Entitybuilder::StockCreature.exists?(core_rules: "dnd5e", name: "Ape")
   end
 
   test "5e seed namespace exposes aggregate task under db:seed" do

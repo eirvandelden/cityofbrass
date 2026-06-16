@@ -2,7 +2,7 @@
   {
     "name": "Alchemist",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -15,7 +15,7 @@
   {
     "name": "Animist",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -28,7 +28,7 @@
   {
     "name": "Barbarian",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -41,7 +41,7 @@
   {
     "name": "Bard",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -54,7 +54,7 @@
   {
     "name": "Champion",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -67,7 +67,7 @@
   {
     "name": "Cleric",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -80,7 +80,7 @@
   {
     "name": "Commander",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -93,7 +93,7 @@
   {
     "name": "Druid",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -106,7 +106,7 @@
   {
     "name": "Exemplar",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -119,7 +119,7 @@
   {
     "name": "Fighter",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -132,7 +132,7 @@
   {
     "name": "Guardian",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -145,7 +145,7 @@
   {
     "name": "Gunslinger",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -158,7 +158,7 @@
   {
     "name": "Inventor",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -171,7 +171,7 @@
   {
     "name": "Investigator",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -184,7 +184,7 @@
   {
     "name": "Kineticist",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -197,7 +197,7 @@
   {
     "name": "Monk",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -210,7 +210,7 @@
   {
     "name": "Oracle",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -223,7 +223,7 @@
   {
     "name": "Psychic",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -236,7 +236,7 @@
   {
     "name": "Ranger",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -249,7 +249,7 @@
   {
     "name": "Rogue",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -262,7 +262,7 @@
   {
     "name": "Sorcerer",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -275,7 +275,7 @@
   {
     "name": "Swashbuckler",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -288,7 +288,7 @@
   {
     "name": "Thaumaturge",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -301,7 +301,7 @@
   {
     "name": "Witch",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -314,7 +314,7 @@
   {
     "name": "Wizard",
     "rule_type": "Class",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",

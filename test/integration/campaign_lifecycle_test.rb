@@ -94,7 +94,7 @@ class CampaignLifecycleTest < ActionDispatch::IntegrationTest
       {
         name: name,
         privacy: privacy,
-        core_rules: "PFRPG",
+        core_rules: "pf1e",
         short_description: "A campaign for integration testing.",
         full_description: "<p>A campaign for integration testing.</p>"
       }

@@ -7,14 +7,14 @@ class FifthEditionSystemTest < ActiveSupport::TestCase
   end
 
   test "5th Edition declares the expected 2024 rule types" do
-    types = CoreRules::Rule.rule_types("5th Edition")
+    types = CoreRules::Rule.rule_types("dnd5e")
 
     assert_equal %w[Ability Backgrounds Class Condition Feat Rule\ Reference Species Subclass].sort,
                  types.sort
   end
 
   test "5th Edition separates inline attribution from FAQ lookup key" do
-    license = CoreRules.license("5th Edition")
+    license = CoreRules.license("dnd5e")
 
     assert license["core_faq"].blank?
     assert_equal "Creative Commons Attribution 4.0 International", license["label"]
@@ -23,7 +23,7 @@ class FifthEditionSystemTest < ActiveSupport::TestCase
   end
 
   test "5th Edition character defaults use Species" do
-    descriptors = CoreRules::Entity.defaults_values("5th Edition", "character", "descriptors") || []
+    descriptors = CoreRules::Entity.defaults_values("dnd5e", "character", "descriptors") || []
     names = descriptors.map { |descriptor| descriptor["name"] }
 
     assert_includes names, "Species"

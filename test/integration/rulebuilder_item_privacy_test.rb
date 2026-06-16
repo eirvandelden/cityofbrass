@@ -131,7 +131,7 @@ class RulebuilderItemPrivacyTest < ActionDispatch::IntegrationTest
 
     def create_item(item_class, privacy:, name:, parent: nil)
       attributes = {
-        core_rules: "PFRPG",
+        core_rules: "pf1e",
         full_description: "#{name} full description",
         name: name,
         parent: parent,

@@ -10,9 +10,9 @@ class DiceTest < ActiveSupport::TestCase
   test "uses rulebook default dice for Draw Steel rolls" do
     roller = Roller.new
 
-    dice = roller.game_dice("Draw Steel")
+    dice = roller.game_dice("drawSteel")
 
     assert_equal "2d10", dice
-    assert_equal "3", roller.display_dice_or_modifier("Draw Steel", 3, dice)
+    assert_equal "3", roller.display_dice_or_modifier("drawSteel", 3, dice)
   end
 end

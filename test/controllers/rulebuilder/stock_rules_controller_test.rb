@@ -82,7 +82,7 @@ module Rulebuilder
 
       %w[Backgrounds Class Condition Rule\ Reference Species Subclass].each do |rule_type|
         rule = Rulebuilder::StockRule.create!(
-          core_rules: "5th Edition",
+          core_rules: "dnd5e",
           rule_type: rule_type,
           is_shared: true,
           name: "Test #{rule_type}",
@@ -101,7 +101,7 @@ module Rulebuilder
 
       %w[Condition Species].each do |rule_type|
         rule = Rulebuilder::StockRule.create!(
-          core_rules: "5th Edition",
+          core_rules: "dnd5e",
           rule_type: rule_type,
           is_shared: true,
           name: "Trait #{rule_type}",

@@ -36,7 +36,7 @@ module Rulebuilder
 
       test "should filter index by core rules" do
         Rulebuilder::StockRule.create!(
-          core_rules: "Fate Core",
+          core_rules: "fateCore",
           rule_type: "Stunt",
           is_shared: true,
           name: "Different ruleset"
@@ -44,10 +44,10 @@ module Rulebuilder
 
         sign_in @user
         sign_in @admin
-        get :index, params: { core_rules: "PFRPG" }
+        get :index, params: { core_rules: "pf1e" }
 
         assert_response :success
-        assert_equal [ "PFRPG" ], assigns(:rules).map(&:core_rules).uniq
+        assert_equal [ "pf1e" ], assigns(:rules).map(&:core_rules).uniq
       end
 
       test "should not get new" do

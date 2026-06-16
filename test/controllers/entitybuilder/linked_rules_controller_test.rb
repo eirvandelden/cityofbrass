@@ -50,12 +50,12 @@ module Entitybuilder
 
     test "admin should get stock rule options for non-stock core rules" do
       rule = Rulebuilder::StockRule.create!(
-        core_rules: "Generic",
+        core_rules: "generic",
         rule_type: "Rule",
         is_shared: true,
         name: "Generic stock rule"
       )
-      @character.update!(core_rules: "Generic")
+      @character.update!(core_rules: "generic")
 
       sign_in @user
       sign_in admins(:dan)

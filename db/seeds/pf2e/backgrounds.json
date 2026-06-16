@@ -2,7 +2,7 @@
   {
     "name": "Academic Scion",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -15,7 +15,7 @@
   {
     "name": "Acolyte",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -28,7 +28,7 @@
   {
     "name": "Acrobat",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -41,7 +41,7 @@
   {
     "name": "Acupuncturist",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -54,7 +54,7 @@
   {
     "name": "Always Chosen Last",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -71,7 +71,7 @@
   {
     "name": "Amateur Director",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -88,7 +88,7 @@
   {
     "name": "Art Tutor",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -105,7 +105,7 @@
   {
     "name": "Bully or Baiter?",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -122,7 +122,7 @@
   {
     "name": "Sideshow Scion",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -139,7 +139,7 @@
   {
     "name": "Supportive Sponsor",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -156,7 +156,7 @@
   {
     "name": "Town Troublemaker",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -173,7 +173,7 @@
   {
     "name": "Wandering Libertine",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -190,7 +190,7 @@
   {
     "name": "Archdevil Apostate",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -203,7 +203,7 @@
   {
     "name": "Breachill Survivor",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -216,7 +216,7 @@
   {
     "name": "Chelaxian Exile",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -229,7 +229,7 @@
   {
     "name": "Foreign Aid",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -242,7 +242,7 @@
   {
     "name": "Goblinblood Survivor",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -255,7 +255,7 @@
   {
     "name": "Isgeri Reclaimer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -268,7 +268,7 @@
   {
     "name": "Beast Seeker",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -281,7 +281,7 @@
   {
     "name": "Child of the Polis",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -294,7 +294,7 @@
   {
     "name": "Glory Hound",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -307,7 +307,7 @@
   {
     "name": "Kartaji Epicurean",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -320,7 +320,7 @@
   {
     "name": "Obari Wanderer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -333,7 +333,7 @@
   {
     "name": "Student of Apotheosis",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -346,7 +346,7 @@
   {
     "name": "Distant Traveler",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -359,7 +359,7 @@
   {
     "name": "Escaped from Time",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -372,7 +372,7 @@
   {
     "name": "Heroic Ancestry",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -385,7 +385,7 @@
   {
     "name": "Local Savior",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -398,7 +398,7 @@
   {
     "name": "Runelord Researcher",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -411,7 +411,7 @@
   {
     "name": "Runelord Survivor",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -424,7 +424,7 @@
   {
     "name": "Child of the Colony",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -437,7 +437,7 @@
   {
     "name": "Company Agent",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -450,7 +450,7 @@
   {
     "name": "Hunted by the Night",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -463,7 +463,7 @@
   {
     "name": "Knack for Contraptions",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -476,7 +476,7 @@
   {
     "name": "Stargazer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -489,7 +489,7 @@
   {
     "name": "Student of the Ancients",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -502,7 +502,7 @@
   {
     "name": "Blight Survivor",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -515,7 +515,7 @@
   {
     "name": "Demon Hunted",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -528,7 +528,7 @@
   {
     "name": "Fiendbreaking Pilgrim",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -541,7 +541,7 @@
   {
     "name": "Portal Scholar",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -554,7 +554,7 @@
   {
     "name": "Story Collector",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -567,7 +567,7 @@
   {
     "name": "Student of Archery",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -580,7 +580,7 @@
   {
     "name": "Badlands Scout",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -593,7 +593,7 @@
   {
     "name": "Belkzen Anthropologist",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -606,7 +606,7 @@
   {
     "name": "Empty Hand Loyalist",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -619,7 +619,7 @@
   {
     "name": "Foreign Diplomat",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -632,7 +632,7 @@
   {
     "name": "Self-Made",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -645,7 +645,7 @@
   {
     "name": "Trade Representative",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -658,7 +658,7 @@
   {
     "name": "Fey Friend",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -671,7 +671,7 @@
   {
     "name": "Green Faith Pilgrim",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -684,7 +684,7 @@
   {
     "name": "Moot Guard",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -697,7 +697,7 @@
   {
     "name": "Tree Friend",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -710,7 +710,7 @@
   {
     "name": "Verduran City Folk",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -723,7 +723,7 @@
   {
     "name": "Wood Warden",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -736,7 +736,7 @@
   {
     "name": "Aeronaut",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -749,7 +749,7 @@
   {
     "name": "Alkenstar Outlaw",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -762,7 +762,7 @@
   {
     "name": "Alkenstar Sojourner",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -775,7 +775,7 @@
   {
     "name": "Alloysmith",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -788,7 +788,7 @@
   {
     "name": "Amnesiac",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -801,7 +801,7 @@
   {
     "name": "Animal Whisperer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -814,7 +814,7 @@
   {
     "name": "Anti-Tech Activist",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -827,7 +827,7 @@
   {
     "name": "Arcane Revolutionary",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -840,7 +840,7 @@
   {
     "name": "Artisan",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -853,7 +853,7 @@
   {
     "name": "Artist",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -866,7 +866,7 @@
   {
     "name": "Astrologer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -879,7 +879,7 @@
   {
     "name": "Bachuan Revolutionary",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -892,7 +892,7 @@
   {
     "name": "Back-Alley Doctor",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -905,7 +905,7 @@
   {
     "name": "Bandit",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -918,7 +918,7 @@
   {
     "name": "Banished Celestial",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -931,7 +931,7 @@
   {
     "name": "Barber",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -944,7 +944,7 @@
   {
     "name": "Barkeep",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -957,7 +957,7 @@
   {
     "name": "Barrister",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -970,7 +970,7 @@
   {
     "name": "Battle Mechanic",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -983,7 +983,7 @@
   {
     "name": "Battlefield Scrounger",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -996,7 +996,7 @@
   {
     "name": "Blessed",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1009,7 +1009,7 @@
   {
     "name": "Bookkeeper",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1022,7 +1022,7 @@
   {
     "name": "Bounty Hunter",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1035,7 +1035,7 @@
   {
     "name": "Cannoneer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1048,7 +1048,7 @@
   {
     "name": "Charlatan",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1061,7 +1061,7 @@
   {
     "name": "Circuit Judge",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1074,7 +1074,7 @@
   {
     "name": "Clockfighter",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1087,7 +1087,7 @@
   {
     "name": "Clockwork Researcher",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1100,7 +1100,7 @@
   {
     "name": "Codebreaker",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1113,7 +1113,7 @@
   {
     "name": "Combat Carpenter",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1126,7 +1126,7 @@
   {
     "name": "Combat Chaplain",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1139,7 +1139,7 @@
   {
     "name": "Concordance Researcher",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1152,7 +1152,7 @@
   {
     "name": "Concordance Scout",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1165,7 +1165,7 @@
   {
     "name": "Conscript",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1178,7 +1178,7 @@
   {
     "name": "Convocation Scout",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1191,7 +1191,7 @@
   {
     "name": "Cook",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1204,7 +1204,7 @@
   {
     "name": "Courier",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1217,7 +1217,7 @@
   {
     "name": "Criminal",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1230,7 +1230,7 @@
   {
     "name": "Crystal Healer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1243,7 +1243,7 @@
   {
     "name": "Cultist",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1256,7 +1256,7 @@
   {
     "name": "Cursed",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1269,7 +1269,7 @@
   {
     "name": "Deep-Sea Diver",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1282,7 +1282,7 @@
   {
     "name": "Dendrologist",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1295,7 +1295,7 @@
   {
     "name": "Deputy",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1308,7 +1308,7 @@
   {
     "name": "Detective",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1321,7 +1321,7 @@
   {
     "name": "Discarded Duplicate",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1334,7 +1334,7 @@
   {
     "name": "Disciple of the Gear",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1347,7 +1347,7 @@
   {
     "name": "Driver",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1360,7 +1360,7 @@
   {
     "name": "Eagle Hunter",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1373,7 +1373,7 @@
   {
     "name": "Elementally Infused",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1386,7 +1386,7 @@
   {
     "name": "Emissary",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1399,7 +1399,7 @@
   {
     "name": "Empty Whispers",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1412,7 +1412,7 @@
   {
     "name": "Entertainer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1425,7 +1425,7 @@
   {
     "name": "Farmhand",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1438,7 +1438,7 @@
   {
     "name": "Farmsteader",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1451,7 +1451,7 @@
   {
     "name": "Fated Rival",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1464,7 +1464,7 @@
   {
     "name": "Favored",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1477,7 +1477,7 @@
   {
     "name": "Feral Child",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1490,7 +1490,7 @@
   {
     "name": "Feybound",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1503,7 +1503,7 @@
   {
     "name": "Field Medic",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1516,7 +1516,7 @@
   {
     "name": "Fire Warden",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1529,7 +1529,7 @@
   {
     "name": "Fireworks Performer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1542,7 +1542,7 @@
   {
     "name": "Fortune Teller",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1555,7 +1555,7 @@
   {
     "name": "Gambler",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1568,7 +1568,7 @@
   {
     "name": "Ghostwriter",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1581,7 +1581,7 @@
   {
     "name": "Gladiator",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1594,7 +1594,7 @@
   {
     "name": "Goldhand Arms Dealer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1607,7 +1607,7 @@
   {
     "name": "Gossip",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1620,7 +1620,7 @@
   {
     "name": "Guard",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1633,7 +1633,7 @@
   {
     "name": "Gunsmith",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1646,7 +1646,7 @@
   {
     "name": "Haunted",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1659,7 +1659,7 @@
   {
     "name": "Herbalist",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1672,7 +1672,7 @@
   {
     "name": "Hermit",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1685,7 +1685,7 @@
   {
     "name": "Hired Killer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1698,7 +1698,7 @@
   {
     "name": "Hounded Thief",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1711,7 +1711,7 @@
   {
     "name": "Hunter",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1724,7 +1724,7 @@
   {
     "name": "Insurgent",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1737,7 +1737,7 @@
   {
     "name": "Jeweler",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1750,7 +1750,7 @@
   {
     "name": "Junk Collector",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1763,7 +1763,7 @@
   {
     "name": "Junker",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1776,7 +1776,7 @@
   {
     "name": "Kaiju Stalker",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1789,7 +1789,7 @@
   {
     "name": "Laborer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1802,7 +1802,7 @@
   {
     "name": "Legacy of the Hammer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1815,7 +1815,7 @@
   {
     "name": "Library Dweller",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1828,7 +1828,7 @@
   {
     "name": "Martial Disciple",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1841,7 +1841,7 @@
   {
     "name": "Martial Musician",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1854,7 +1854,7 @@
   {
     "name": "Mechanic",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1867,7 +1867,7 @@
   {
     "name": "Mechanical Symbiosis",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1880,7 +1880,7 @@
   {
     "name": "Medicinal Clocksmith",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1893,7 +1893,7 @@
   {
     "name": "Merchant",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1906,7 +1906,7 @@
   {
     "name": "Miner",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1919,7 +1919,7 @@
   {
     "name": "Noble",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1932,7 +1932,7 @@
   {
     "name": "Nomad",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1945,7 +1945,7 @@
   {
     "name": "Ocean Diver",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1958,7 +1958,7 @@
   {
     "name": "Otherworldly Mission",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1971,7 +1971,7 @@
   {
     "name": "Outrider",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1984,7 +1984,7 @@
   {
     "name": "Party Scholar",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1997,7 +1997,7 @@
   {
     "name": "Pilgrim",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2010,7 +2010,7 @@
   {
     "name": "Plague Doctor",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2023,7 +2023,7 @@
   {
     "name": "Planar Migrant",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2036,7 +2036,7 @@
   {
     "name": "Press-Ganged (G&G)",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2049,7 +2049,7 @@
   {
     "name": "Printer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2062,7 +2062,7 @@
   {
     "name": "Prisoner",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2075,7 +2075,7 @@
   {
     "name": "Professional Letter Writer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2088,7 +2088,7 @@
   {
     "name": "Quartermaster",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2101,7 +2101,7 @@
   {
     "name": "Raised by Belief",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2114,7 +2114,7 @@
   {
     "name": "Reborn Soul",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2127,7 +2127,7 @@
   {
     "name": "Refugee (PC2)",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2140,7 +2140,7 @@
   {
     "name": "Remittance Agent",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2153,7 +2153,7 @@
   {
     "name": "Report Runner",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2166,7 +2166,7 @@
   {
     "name": "Respected Mentor",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2179,7 +2179,7 @@
   {
     "name": "Returned",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2192,7 +2192,7 @@
   {
     "name": "Revenant",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2205,7 +2205,7 @@
   {
     "name": "Root Worker",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2218,7 +2218,7 @@
   {
     "name": "Royalty",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2231,7 +2231,7 @@
   {
     "name": "Runaway Noble",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2244,7 +2244,7 @@
   {
     "name": "Saboteur",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2257,7 +2257,7 @@
   {
     "name": "Sailor",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2270,7 +2270,7 @@
   {
     "name": "Saloon Entertainer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2283,7 +2283,7 @@
   {
     "name": "Saved by Clockwork",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2296,7 +2296,7 @@
   {
     "name": "Scavenger",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2309,7 +2309,7 @@
   {
     "name": "Scholar",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2322,7 +2322,7 @@
   {
     "name": "School Medic",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2335,7 +2335,7 @@
   {
     "name": "Scout",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2348,7 +2348,7 @@
   {
     "name": "Servant",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2361,7 +2361,7 @@
   {
     "name": "Sheriff",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2374,7 +2374,7 @@
   {
     "name": "Silk Farmer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2387,7 +2387,7 @@
   {
     "name": "Sky Rider",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2400,7 +2400,7 @@
   {
     "name": "Spotter",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2413,7 +2413,7 @@
   {
     "name": "Squire",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2426,7 +2426,7 @@
   {
     "name": "Star Athlete",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2439,7 +2439,7 @@
   {
     "name": "Street Urchin",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2452,7 +2452,7 @@
   {
     "name": "Streetfood Vendor",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2465,7 +2465,7 @@
   {
     "name": "Tall Tale",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2478,7 +2478,7 @@
   {
     "name": "Tax Collector",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2491,7 +2491,7 @@
   {
     "name": "Teacher",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2504,7 +2504,7 @@
   {
     "name": "Tech-Reliant",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2517,7 +2517,7 @@
   {
     "name": "Tiffin Box Deliverer",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2530,7 +2530,7 @@
   {
     "name": "Tinker",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2543,7 +2543,7 @@
   {
     "name": "Toymaker",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2556,7 +2556,7 @@
   {
     "name": "Traveling Gourmand",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2569,7 +2569,7 @@
   {
     "name": "Undertaker",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2582,7 +2582,7 @@
   {
     "name": "Veteran",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2595,7 +2595,7 @@
   {
     "name": "Wandering Preacher",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2608,7 +2608,7 @@
   {
     "name": "War Orphan",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2621,7 +2621,7 @@
   {
     "name": "Ward",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2634,7 +2634,7 @@
   {
     "name": "Warded by Kami",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2647,7 +2647,7 @@
   {
     "name": "Warrior",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2660,7 +2660,7 @@
   {
     "name": "Waste Walker",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2673,7 +2673,7 @@
   {
     "name": "Weaver",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2686,7 +2686,7 @@
   {
     "name": "Wished Alive",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2699,7 +2699,7 @@
   {
     "name": "Working Student",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2712,7 +2712,7 @@
   {
     "name": "Zodiac Bound",
     "rule_type": "Background",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",

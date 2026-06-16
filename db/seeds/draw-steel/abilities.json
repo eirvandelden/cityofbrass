@@ -1,7 +1,7 @@
 [
   {
     "name": "Arrest (5 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -18,7 +18,7 @@
   },
   {
     "name": "Back Blasphemer!",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -35,7 +35,7 @@
   },
   {
     "name": "Behold a Shield of Faith! (3 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -52,7 +52,7 @@
   },
   {
     "name": "Behold the Face of Justice! (5 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -69,7 +69,7 @@
   },
   {
     "name": "Censored (5 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -86,7 +86,7 @@
   },
   {
     "name": "Driving Assault (3 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -103,7 +103,7 @@
   },
   {
     "name": "Every Step... Death!",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -120,7 +120,7 @@
   },
   {
     "name": "Faithful Friend",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -137,7 +137,7 @@
   },
   {
     "name": "Grave Speech",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -154,7 +154,7 @@
   },
   {
     "name": "Halt Miscreant!",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -171,7 +171,7 @@
   },
   {
     "name": "Hands of the Maker",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -188,7 +188,7 @@
   },
   {
     "name": "Judgment",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -205,7 +205,7 @@
   },
   {
     "name": "My Life for Yours",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -222,7 +222,7 @@
   },
   {
     "name": "Purifying Fire (5 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -239,7 +239,7 @@
   },
   {
     "name": "Repent! (3 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -256,7 +256,7 @@
   },
   {
     "name": "The Gods Punish and Defend (3 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -273,7 +273,7 @@
   },
   {
     "name": "Your Allies Cannot Save You!",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -290,7 +290,7 @@
   },
   {
     "name": "Blessing of the Faithful (5 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -307,7 +307,7 @@
   },
   {
     "name": "It Is Justice You Fear (5 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -324,7 +324,7 @@
   },
   {
     "name": "Prescient Grace (5 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -341,7 +341,7 @@
   },
   {
     "name": "Revelator (5 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -358,7 +358,7 @@
   },
   {
     "name": "Sentenced (5 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -375,7 +375,7 @@
   },
   {
     "name": "With My Blessing (5 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -392,7 +392,7 @@
   },
   {
     "name": "Edict of Disruptive Isolation (7 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -409,7 +409,7 @@
   },
   {
     "name": "Edict of Perfect Order (7 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -426,7 +426,7 @@
   },
   {
     "name": "Edict of Purifying Pacifism (7 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -443,7 +443,7 @@
   },
   {
     "name": "Edict of Stillness (7 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -460,7 +460,7 @@
   },
   {
     "name": "Blessing of Secrets",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -477,7 +477,7 @@
   },
   {
     "name": "Gods Grant Thee Strength (9 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -494,7 +494,7 @@
   },
   {
     "name": "Orison of Victory (9 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -511,7 +511,7 @@
   },
   {
     "name": "Righteous Judgment (9 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -528,7 +528,7 @@
   },
   {
     "name": "Shield of the Righteous (9 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -545,7 +545,7 @@
   },
   {
     "name": "Begone! (9 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -562,7 +562,7 @@
   },
   {
     "name": "Burden of Evil (9 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -579,7 +579,7 @@
   },
   {
     "name": "Congregation (9 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -596,7 +596,7 @@
   },
   {
     "name": "Edict of Peace (9 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -613,7 +613,7 @@
   },
   {
     "name": "Intercede (9 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -630,7 +630,7 @@
   },
   {
     "name": "Pain of Your Own Making (9 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -647,7 +647,7 @@
   },
   {
     "name": "Guided to Your Side",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -664,7 +664,7 @@
   },
   {
     "name": "Trinity of Trickery (9 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -681,7 +681,7 @@
   },
   {
     "name": "Excommunication (11 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -698,7 +698,7 @@
   },
   {
     "name": "Hand of the Gods (11 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -715,7 +715,7 @@
   },
   {
     "name": "Pillar of Holy Fire (11 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -732,7 +732,7 @@
   },
   {
     "name": "Your Allies Turn on You! (11 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -749,7 +749,7 @@
   },
   {
     "name": "Apostate (11 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -766,7 +766,7 @@
   },
   {
     "name": "Banish (11 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -783,7 +783,7 @@
   },
   {
     "name": "Blessing and a Curse (11 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -800,7 +800,7 @@
   },
   {
     "name": "Edict of Unyielding Resolve (11 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -817,7 +817,7 @@
   },
   {
     "name": "Fulfill Your Destiny (11 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -834,7 +834,7 @@
   },
   {
     "name": "Terror Manifest (11 Wrath)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -851,7 +851,7 @@
   },
   {
     "name": "Charge",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -868,7 +868,7 @@
   },
   {
     "name": "Defend",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -885,7 +885,7 @@
   },
   {
     "name": "Free Strike",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -902,7 +902,7 @@
   },
   {
     "name": "Heal",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -919,7 +919,7 @@
   },
   {
     "name": "Aid Attack",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -936,7 +936,7 @@
   },
   {
     "name": "Catch Breath",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -953,7 +953,7 @@
   },
   {
     "name": "Escape Grab",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -970,7 +970,7 @@
   },
   {
     "name": "Grab",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -987,7 +987,7 @@
   },
   {
     "name": "Hide",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1004,7 +1004,7 @@
   },
   {
     "name": "Knockback",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1021,7 +1021,7 @@
   },
   {
     "name": "Make or Assist a Test",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1038,7 +1038,7 @@
   },
   {
     "name": "Search for Hidden Creatures",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1055,7 +1055,7 @@
   },
   {
     "name": "Stand Up",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1072,7 +1072,7 @@
   },
   {
     "name": "Use Consumable",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1089,7 +1089,7 @@
   },
   {
     "name": "Advance",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1106,7 +1106,7 @@
   },
   {
     "name": "Disengage",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1123,7 +1123,7 @@
   },
   {
     "name": "Ride",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1140,7 +1140,7 @@
   },
   {
     "name": "Blessed Light",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1157,7 +1157,7 @@
   },
   {
     "name": "Call the Thunder Down (3 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1174,7 +1174,7 @@
   },
   {
     "name": "Corruption's Curse (5 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1191,7 +1191,7 @@
   },
   {
     "name": "Curse of Terror (5 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1208,7 +1208,7 @@
   },
   {
     "name": "Drain",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1225,7 +1225,7 @@
   },
   {
     "name": "Faith Is Our Armor (5 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1242,7 +1242,7 @@
   },
   {
     "name": "Faithful Friend",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1259,7 +1259,7 @@
   },
   {
     "name": "Font of Wrath (3 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1276,7 +1276,7 @@
   },
   {
     "name": "Grave Speech",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1293,7 +1293,7 @@
   },
   {
     "name": "Hands of the Maker",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1310,7 +1310,7 @@
   },
   {
     "name": "Healing Grace",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1327,7 +1327,7 @@
   },
   {
     "name": "Holy Lash",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1344,7 +1344,7 @@
   },
   {
     "name": "Judgment's Hammer (3 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1361,7 +1361,7 @@
   },
   {
     "name": "Lightfall",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1378,7 +1378,7 @@
   },
   {
     "name": "Ray of Wrath",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1395,7 +1395,7 @@
   },
   {
     "name": "Sacrificial Offer",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1412,7 +1412,7 @@
   },
   {
     "name": "Sermon of Grace (5 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1429,7 +1429,7 @@
   },
   {
     "name": "Staggering Curse",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1446,7 +1446,7 @@
   },
   {
     "name": "Violence Will Not Aid Thee (3 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1463,7 +1463,7 @@
   },
   {
     "name": "Warrior's Prayer",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1480,7 +1480,7 @@
   },
   {
     "name": "Wither",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1497,7 +1497,7 @@
   },
   {
     "name": "Word of Guidance",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1514,7 +1514,7 @@
   },
   {
     "name": "Word of Judgment",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1531,7 +1531,7 @@
   },
   {
     "name": "Blessing of Fate and Destiny (5 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1548,7 +1548,7 @@
   },
   {
     "name": "Blessing of Insight (5 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1565,7 +1565,7 @@
   },
   {
     "name": "Divine Comedy (5 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1582,7 +1582,7 @@
   },
   {
     "name": "Morning Light (5 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1599,7 +1599,7 @@
   },
   {
     "name": "Nature Judges Thee (5 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1616,7 +1616,7 @@
   },
   {
     "name": "Our Hearts Your Strength (5 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1633,7 +1633,7 @@
   },
   {
     "name": "Reap (5 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1650,7 +1650,7 @@
   },
   {
     "name": "Sacred Bond (5 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1667,7 +1667,7 @@
   },
   {
     "name": "Saint's Tempest (5 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1684,7 +1684,7 @@
   },
   {
     "name": "Statue of Power (5 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1701,7 +1701,7 @@
   },
   {
     "name": "The Gods Command You Obey (5 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1718,7 +1718,7 @@
   },
   {
     "name": "Wellspring of Grace (5 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1735,7 +1735,7 @@
   },
   {
     "name": "Fear of the Gods (7 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1752,7 +1752,7 @@
   },
   {
     "name": "Saint's Raiment (7 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1769,7 +1769,7 @@
   },
   {
     "name": "Soul Siphon (7 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1786,7 +1786,7 @@
   },
   {
     "name": "Words of Wrath and Grace (7 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1803,7 +1803,7 @@
   },
   {
     "name": "Beacon of Grace (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1820,7 +1820,7 @@
   },
   {
     "name": "Blessing of Secrets",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1837,7 +1837,7 @@
   },
   {
     "name": "Penance (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1854,7 +1854,7 @@
   },
   {
     "name": "Sanctuary (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1871,7 +1871,7 @@
   },
   {
     "name": "Vessel of Retribution (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1888,7 +1888,7 @@
   },
   {
     "name": "Beacon of Grace (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1905,7 +1905,7 @@
   },
   {
     "name": "Penance (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1922,7 +1922,7 @@
   },
   {
     "name": "Sanctuary (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1939,7 +1939,7 @@
   },
   {
     "name": "Vessel of Retribution (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1956,7 +1956,7 @@
   },
   {
     "name": "Aura of Souls (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1973,7 +1973,7 @@
   },
   {
     "name": "Blade of the Heavens (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -1990,7 +1990,7 @@
   },
   {
     "name": "Blessing of the Midday Sun (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2007,7 +2007,7 @@
   },
   {
     "name": "Cuirass of the Gods (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2024,7 +2024,7 @@
   },
   {
     "name": "Gods' Machine (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2041,7 +2041,7 @@
   },
   {
     "name": "Invocation of Mystery (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2058,7 +2058,7 @@
   },
   {
     "name": "Invocation of Undoing (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2075,7 +2075,7 @@
   },
   {
     "name": "Lauded by God (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2092,7 +2092,7 @@
   },
   {
     "name": "Lightning Lord (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2109,7 +2109,7 @@
   },
   {
     "name": "Revitalizing Grace (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2126,7 +2126,7 @@
   },
   {
     "name": "Spirit Stampede (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2143,7 +2143,7 @@
   },
   {
     "name": "Your Story Ends Here (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2160,7 +2160,7 @@
   },
   {
     "name": "Arise! (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2177,7 +2177,7 @@
   },
   {
     "name": "Blessing of Steel (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2194,7 +2194,7 @@
   },
   {
     "name": "Blessing of the Blade (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2211,7 +2211,7 @@
   },
   {
     "name": "Drag the Unworthy (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2228,7 +2228,7 @@
   },
   {
     "name": "Guided to Your Side",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2245,7 +2245,7 @@
   },
   {
     "name": "Trinity of Trickery (9 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2262,7 +2262,7 @@
   },
   {
     "name": "Arise! (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2279,7 +2279,7 @@
   },
   {
     "name": "Blessing of Steel (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2296,7 +2296,7 @@
   },
   {
     "name": "Blessing of the Blade (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2313,7 +2313,7 @@
   },
   {
     "name": "Drag the Unworthy (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2330,7 +2330,7 @@
   },
   {
     "name": "Alacrity of the Heart (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2347,7 +2347,7 @@
   },
   {
     "name": "Bend Fate (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2364,7 +2364,7 @@
   },
   {
     "name": "Blessing of the Fortress (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2381,7 +2381,7 @@
   },
   {
     "name": "Divine Dragon (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2398,7 +2398,7 @@
   },
   {
     "name": "Godstorm (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2415,7 +2415,7 @@
   },
   {
     "name": "Night Falls (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2432,7 +2432,7 @@
   },
   {
     "name": "Radiance of Grace (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2449,7 +2449,7 @@
   },
   {
     "name": "Righteous Phalanx (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2466,7 +2466,7 @@
   },
   {
     "name": "Solar Flare (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2483,7 +2483,7 @@
   },
   {
     "name": "Thorn Cage (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2500,7 +2500,7 @@
   },
   {
     "name": "Word of Final Redemption (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2517,7 +2517,7 @@
   },
   {
     "name": "Word of Weakening (11 Piety)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2534,7 +2534,7 @@
   },
   {
     "name": "Afflict a Bountiful Decay",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2551,7 +2551,7 @@
   },
   {
     "name": "Behold the Mystery (3 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2568,7 +2568,7 @@
   },
   {
     "name": "Bifurcated Incineration",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2585,7 +2585,7 @@
   },
   {
     "name": "Breath of Dawn Remembered",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2602,7 +2602,7 @@
   },
   {
     "name": "Conflagration (5 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2619,7 +2619,7 @@
   },
   {
     "name": "Explosive Assistance",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2636,7 +2636,7 @@
   },
   {
     "name": "Grasp of Beyond",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2653,7 +2653,7 @@
   },
   {
     "name": "Hurl Element",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2670,7 +2670,7 @@
   },
   {
     "name": "Instantaneous Excavation (5 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2687,7 +2687,7 @@
   },
   {
     "name": "Invigorating Growth (3 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2704,7 +2704,7 @@
   },
   {
     "name": "Meteoric Introduction",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2721,7 +2721,7 @@
   },
   {
     "name": "Motivate Earth",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2738,7 +2738,7 @@
   },
   {
     "name": "No More Than a Breeze (5 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2755,7 +2755,7 @@
   },
   {
     "name": "Practical Magic",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2772,7 +2772,7 @@
   },
   {
     "name": "Ray of Agonizing Self-Reflection",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2789,7 +2789,7 @@
   },
   {
     "name": "Return to Formlessness",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2806,7 +2806,7 @@
   },
   {
     "name": "Ripples in the Earth (3 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2823,7 +2823,7 @@
   },
   {
     "name": "Shared Void Sense",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2840,7 +2840,7 @@
   },
   {
     "name": "Skin Like Castle Walls",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2857,7 +2857,7 @@
   },
   {
     "name": "Subtle Relocation",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2874,7 +2874,7 @@
   },
   {
     "name": "Test of Rain (5 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2891,7 +2891,7 @@
   },
   {
     "name": "The Flesh, a Crucible (3 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2908,7 +2908,7 @@
   },
   {
     "name": "The Green Within, the Green Without",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2925,7 +2925,7 @@
   },
   {
     "name": "Unquiet Ground",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2942,7 +2942,7 @@
   },
   {
     "name": "Viscous Fire",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2959,7 +2959,7 @@
   },
   {
     "name": "O Flower Aid, O Earth Defend (5 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2976,7 +2976,7 @@
   },
   {
     "name": "Subvert the Green Within (5 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -2993,7 +2993,7 @@
   },
   {
     "name": "There Is No Space Between",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3010,7 +3010,7 @@
   },
   {
     "name": "Translated Through Flame (5 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3027,7 +3027,7 @@
   },
   {
     "name": "Volcano's Embrace (5 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3044,7 +3044,7 @@
   },
   {
     "name": "Earth Accepts Me",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3061,7 +3061,7 @@
   },
   {
     "name": "Erase (7 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3078,7 +3078,7 @@
   },
   {
     "name": "Maw of Earth (7 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3095,7 +3095,7 @@
   },
   {
     "name": "Remember Growth and Sun and Rain",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3112,7 +3112,7 @@
   },
   {
     "name": "Swarm of Spirits (7 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3129,7 +3129,7 @@
   },
   {
     "name": "Wall of Fire (7 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3146,7 +3146,7 @@
   },
   {
     "name": "Heart of the Wode (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3163,7 +3163,7 @@
   },
   {
     "name": "Muse of Fire (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3180,7 +3180,7 @@
   },
   {
     "name": "Return to Oblivion (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3197,7 +3197,7 @@
   },
   {
     "name": "Summon Source of Earth",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3214,7 +3214,7 @@
   },
   {
     "name": "World Torn Asunder (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3231,7 +3231,7 @@
   },
   {
     "name": "Combustion Deferred (9 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3248,7 +3248,7 @@
   },
   {
     "name": "Heart of the Wode (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3265,7 +3265,7 @@
   },
   {
     "name": "Luminous Champion Aloft (9 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3282,7 +3282,7 @@
   },
   {
     "name": "Magma Titan (9 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3299,7 +3299,7 @@
   },
   {
     "name": "Meteor (9 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3316,7 +3316,7 @@
   },
   {
     "name": "Muse of Fire (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3333,7 +3333,7 @@
   },
   {
     "name": "Return to Oblivion (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3350,7 +3350,7 @@
   },
   {
     "name": "Storm of Sands (9 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3367,7 +3367,7 @@
   },
   {
     "name": "Subverted Perception of Space (9 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3384,7 +3384,7 @@
   },
   {
     "name": "Summon Source of Earth",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3401,7 +3401,7 @@
   },
   {
     "name": "The Wode Remembers and Returns (9 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3418,7 +3418,7 @@
   },
   {
     "name": "Web of All That's Come Before (9 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3435,7 +3435,7 @@
   },
   {
     "name": "World Torn Asunder (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3452,7 +3452,7 @@
   },
   {
     "name": "Luminous Champion Aloft (9 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3469,7 +3469,7 @@
   },
   {
     "name": "Magma Titan (9 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3486,7 +3486,7 @@
   },
   {
     "name": "Meteor (9 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3503,7 +3503,7 @@
   },
   {
     "name": "The Wode Remembers and Returns (9 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3520,7 +3520,7 @@
   },
   {
     "name": "Earth Rejects You (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3537,7 +3537,7 @@
   },
   {
     "name": "Heart of the Wode (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3554,7 +3554,7 @@
   },
   {
     "name": "Muse of Fire (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3571,7 +3571,7 @@
   },
   {
     "name": "Prism (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3588,7 +3588,7 @@
   },
   {
     "name": "Return to Oblivion (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3605,7 +3605,7 @@
   },
   {
     "name": "Summon Source of Earth",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3622,7 +3622,7 @@
   },
   {
     "name": "The Green Defends Its Servants (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3639,7 +3639,7 @@
   },
   {
     "name": "Unquenchable Fire (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3656,7 +3656,7 @@
   },
   {
     "name": "World Torn Asunder (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3673,7 +3673,7 @@
   },
   {
     "name": "Earth Rejects You (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3690,7 +3690,7 @@
   },
   {
     "name": "Prism (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3707,7 +3707,7 @@
   },
   {
     "name": "The Green Defends Its Servants (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3724,7 +3724,7 @@
   },
   {
     "name": "Unquenchable Fire (11 Essence)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3741,7 +3741,7 @@
   },
   {
     "name": "Back! (3 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3758,7 +3758,7 @@
   },
   {
     "name": "Blood for Blood! (5 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3775,7 +3775,7 @@
   },
   {
     "name": "Brutal Slam",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3792,7 +3792,7 @@
   },
   {
     "name": "Furious Change",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3809,7 +3809,7 @@
   },
   {
     "name": "Hit and Run",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3826,7 +3826,7 @@
   },
   {
     "name": "Impaled!",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3843,7 +3843,7 @@
   },
   {
     "name": "Lines of Force",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3860,7 +3860,7 @@
   },
   {
     "name": "Make Peace With Your God! (5 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3877,7 +3877,7 @@
   },
   {
     "name": "Out of the Way! (3 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3894,7 +3894,7 @@
   },
   {
     "name": "Thunder Roar (5 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3911,7 +3911,7 @@
   },
   {
     "name": "Tide of Death (3 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3928,7 +3928,7 @@
   },
   {
     "name": "To the Death!",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3945,7 +3945,7 @@
   },
   {
     "name": "To the Uttermost End (5 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3962,7 +3962,7 @@
   },
   {
     "name": "Unearthly Reflexes",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3979,7 +3979,7 @@
   },
   {
     "name": "Your Entrails Are Your Extrails! (3 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -3996,7 +3996,7 @@
   },
   {
     "name": "Apex Predator (5 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4013,7 +4013,7 @@
   },
   {
     "name": "Death... Death! (5 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4030,7 +4030,7 @@
   },
   {
     "name": "Phalanx-Breaker (5 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4047,7 +4047,7 @@
   },
   {
     "name": "Special Delivery (5 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4064,7 +4064,7 @@
   },
   {
     "name": "Visceral Roar (5 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4081,7 +4081,7 @@
   },
   {
     "name": "Wrecking Ball (5 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4098,7 +4098,7 @@
   },
   {
     "name": "Demon Unleashed (7 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4115,7 +4115,7 @@
   },
   {
     "name": "Face the Storm! (7 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4132,7 +4132,7 @@
   },
   {
     "name": "Steelbreaker (7 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4149,7 +4149,7 @@
   },
   {
     "name": "You Are Already Dead (7 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4166,7 +4166,7 @@
   },
   {
     "name": "Debilitating Strike (9 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4183,7 +4183,7 @@
   },
   {
     "name": "My Turn! (9 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4200,7 +4200,7 @@
   },
   {
     "name": "Rebounding Storm (9 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4217,7 +4217,7 @@
   },
   {
     "name": "To Stone! (9 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4234,7 +4234,7 @@
   },
   {
     "name": "Avalanche Impact (9 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4251,7 +4251,7 @@
   },
   {
     "name": "Death Strike (9 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4268,7 +4268,7 @@
   },
   {
     "name": "Force of Storms (9 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4285,7 +4285,7 @@
   },
   {
     "name": "Pounce (9 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4302,7 +4302,7 @@
   },
   {
     "name": "Riders on the Storm (9 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4319,7 +4319,7 @@
   },
   {
     "name": "Seek and Destroy (9 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4336,7 +4336,7 @@
   },
   {
     "name": "Elemental Ferocity (11 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4353,7 +4353,7 @@
   },
   {
     "name": "Overkill (11 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4370,7 +4370,7 @@
   },
   {
     "name": "Primordial Rage (11 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4387,7 +4387,7 @@
   },
   {
     "name": "Relentless Death (11 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4404,7 +4404,7 @@
   },
   {
     "name": "Death Comes for You All! (11 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4421,7 +4421,7 @@
   },
   {
     "name": "Death Rattle (11 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4438,7 +4438,7 @@
   },
   {
     "name": "Deluge (11 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4455,7 +4455,7 @@
   },
   {
     "name": "Primordial Bane (11 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4472,7 +4472,7 @@
   },
   {
     "name": "Primordial Vortex (11 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4489,7 +4489,7 @@
   },
   {
     "name": "Shower of Blood (11 Ferocity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4506,7 +4506,7 @@
   },
   {
     "name": "Exploding Arrow",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4523,7 +4523,7 @@
   },
   {
     "name": "Unmooring",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4540,7 +4540,7 @@
   },
   {
     "name": "Fade",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4557,7 +4557,7 @@
   },
   {
     "name": "Double Strike",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4574,7 +4574,7 @@
   },
   {
     "name": "Forward Thrust, Backward Smash",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4591,7 +4591,7 @@
   },
   {
     "name": "Battle Grace",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4608,7 +4608,7 @@
   },
   {
     "name": "Pain for Pain",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4625,7 +4625,7 @@
   },
   {
     "name": "Devastating Rush",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4642,7 +4642,7 @@
   },
   {
     "name": "Let's Dance",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4659,7 +4659,7 @@
   },
   {
     "name": "Raider's Awe",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4676,7 +4676,7 @@
   },
   {
     "name": "Hamstring Shot",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4693,7 +4693,7 @@
   },
   {
     "name": "Two Shot",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4710,7 +4710,7 @@
   },
   {
     "name": "Net and Stab",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4727,7 +4727,7 @@
   },
   {
     "name": "Protective Attack",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4744,7 +4744,7 @@
   },
   {
     "name": "Patient Shot",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4761,7 +4761,7 @@
   },
   {
     "name": "Leaping Lightning",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4778,7 +4778,7 @@
   },
   {
     "name": "Where I Want You",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4795,7 +4795,7 @@
   },
   {
     "name": "Fancy Footwork",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4812,7 +4812,7 @@
   },
   {
     "name": "Shield Bash",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4829,7 +4829,7 @@
   },
   {
     "name": "Weakening Brand",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4846,7 +4846,7 @@
   },
   {
     "name": "Extension of My Arm",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4863,7 +4863,7 @@
   },
   {
     "name": "A Squad Unto Myself (5 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4880,7 +4880,7 @@
   },
   {
     "name": "Arcane Disruptor (5 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4897,7 +4897,7 @@
   },
   {
     "name": "Chronal Spike (3 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4914,7 +4914,7 @@
   },
   {
     "name": "Dance of Blows",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4931,7 +4931,7 @@
   },
   {
     "name": "Faster Than the Eye",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4948,7 +4948,7 @@
   },
   {
     "name": "Impart Force (5 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4965,7 +4965,7 @@
   },
   {
     "name": "Inertial Shield",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4982,7 +4982,7 @@
   },
   {
     "name": "Inertial Step",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -4999,7 +4999,7 @@
   },
   {
     "name": "Joint Lock",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5016,7 +5016,7 @@
   },
   {
     "name": "Kinetic Strike",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5033,7 +5033,7 @@
   },
   {
     "name": "Magnetic Strike",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5050,7 +5050,7 @@
   },
   {
     "name": "Null Field",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5067,7 +5067,7 @@
   },
   {
     "name": "Phase Inversion Strike",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5084,7 +5084,7 @@
   },
   {
     "name": "Phase Strike (5 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5101,7 +5101,7 @@
   },
   {
     "name": "Pressure Points",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5118,7 +5118,7 @@
   },
   {
     "name": "Psychic Pulse (3 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5135,7 +5135,7 @@
   },
   {
     "name": "Relentless Nemesis (3 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5152,7 +5152,7 @@
   },
   {
     "name": "Stunning Blow (3 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5169,7 +5169,7 @@
   },
   {
     "name": "Blur (5 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5186,7 +5186,7 @@
   },
   {
     "name": "Entropic Field (5 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5203,7 +5203,7 @@
   },
   {
     "name": "Force Redirected (5 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5220,7 +5220,7 @@
   },
   {
     "name": "Gravitic Strike (5 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5237,7 +5237,7 @@
   },
   {
     "name": "Heat Sink (5 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5254,7 +5254,7 @@
   },
   {
     "name": "Kinetic Shield (5 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5271,7 +5271,7 @@
   },
   {
     "name": "Absorption Field (7 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5288,7 +5288,7 @@
   },
   {
     "name": "Molecular Rearrangement Field (7 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5305,7 +5305,7 @@
   },
   {
     "name": "Stabilizing Field (7 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5322,7 +5322,7 @@
   },
   {
     "name": "Synapse Field (7 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5339,7 +5339,7 @@
   },
   {
     "name": "Anticipating Strike (9 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5356,7 +5356,7 @@
   },
   {
     "name": "Iron Grip (9 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5373,7 +5373,7 @@
   },
   {
     "name": "Phase Leap (9 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5390,7 +5390,7 @@
   },
   {
     "name": "Synaptic Reset (9 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5407,7 +5407,7 @@
   },
   {
     "name": "Gravitic Charge (9 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5424,7 +5424,7 @@
   },
   {
     "name": "Ice Pillars (9 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5441,7 +5441,7 @@
   },
   {
     "name": "Interphase (9 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5458,7 +5458,7 @@
   },
   {
     "name": "Iron Body (9 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5475,7 +5475,7 @@
   },
   {
     "name": "Phase Step (9 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5492,7 +5492,7 @@
   },
   {
     "name": "Wall of Ice (9 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5509,7 +5509,7 @@
   },
   {
     "name": "Arcane Purge (11 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5526,7 +5526,7 @@
   },
   {
     "name": "Phase Hurl (11 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5543,7 +5543,7 @@
   },
   {
     "name": "Scalar Assault (11 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5560,7 +5560,7 @@
   },
   {
     "name": "Synaptic Anchor (11 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5577,7 +5577,7 @@
   },
   {
     "name": "Absolute Zero (11 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5594,7 +5594,7 @@
   },
   {
     "name": "Arrestor Cycle (11 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5611,7 +5611,7 @@
   },
   {
     "name": "Heat Drain (11 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5628,7 +5628,7 @@
   },
   {
     "name": "Inertial Absorption (11 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5645,7 +5645,7 @@
   },
   {
     "name": "Realitas (11 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5662,7 +5662,7 @@
   },
   {
     "name": "Time Loop (11 Discipline)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5679,7 +5679,7 @@
   },
   {
     "name": "Black Ash Teleport",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5696,7 +5696,7 @@
   },
   {
     "name": "Clever Trick (1 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5713,7 +5713,7 @@
   },
   {
     "name": "Coat the Blade",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5730,7 +5730,7 @@
   },
   {
     "name": "Coup de Grace (5 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5747,7 +5747,7 @@
   },
   {
     "name": "Defensive Roll",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5764,7 +5764,7 @@
   },
   {
     "name": "Disorienting Strike (3 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5781,7 +5781,7 @@
   },
   {
     "name": "Eviscerate (3 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5798,7 +5798,7 @@
   },
   {
     "name": "Gasping in Pain",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5815,7 +5815,7 @@
   },
   {
     "name": "Get In Get Out (3 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5832,7 +5832,7 @@
   },
   {
     "name": "Hesitation Is Weakness (1 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5849,7 +5849,7 @@
   },
   {
     "name": "I Work Better Alone",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5866,7 +5866,7 @@
   },
   {
     "name": "I'm No Threat",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5883,7 +5883,7 @@
   },
   {
     "name": "In All This Confusion",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5900,7 +5900,7 @@
   },
   {
     "name": "One Hundred Throats (5 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5917,7 +5917,7 @@
   },
   {
     "name": "Setup (5 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5934,7 +5934,7 @@
   },
   {
     "name": "Shadowstrike (5 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5951,7 +5951,7 @@
   },
   {
     "name": "Teamwork Has Its Place",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5968,7 +5968,7 @@
   },
   {
     "name": "Two Throats at Once (3 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -5985,7 +5985,7 @@
   },
   {
     "name": "You Were Watching the Wrong One",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6002,7 +6002,7 @@
   },
   {
     "name": "In a Puff of Ash (5 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6019,7 +6019,7 @@
   },
   {
     "name": "Machinations of Sound (5 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6036,7 +6036,7 @@
   },
   {
     "name": "So Gullible (5 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6053,7 +6053,7 @@
   },
   {
     "name": "Sticky Bomb (5 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6070,7 +6070,7 @@
   },
   {
     "name": "Stink Bomb (5 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6087,7 +6087,7 @@
   },
   {
     "name": "Too Slow (5 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6104,7 +6104,7 @@
   },
   {
     "name": "Careful Observation",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6121,7 +6121,7 @@
   },
   {
     "name": "Dancer (7 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6138,7 +6138,7 @@
   },
   {
     "name": "Misdirecting Strike (7 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6155,7 +6155,7 @@
   },
   {
     "name": "Pinning Shot (7 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6172,7 +6172,7 @@
   },
   {
     "name": "Staggering Blow (7 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6189,7 +6189,7 @@
   },
   {
     "name": "Night Watch",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6206,7 +6206,7 @@
   },
   {
     "name": "Blackout (9 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6223,7 +6223,7 @@
   },
   {
     "name": "Into the Shadows (9 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6240,7 +6240,7 @@
   },
   {
     "name": "Shadowfall (9 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6257,7 +6257,7 @@
   },
   {
     "name": "You Talk Too Much (9 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6274,7 +6274,7 @@
   },
   {
     "name": "Black Ash Eruption (9 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6291,7 +6291,7 @@
   },
   {
     "name": "Cinderstorm (9 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6308,7 +6308,7 @@
   },
   {
     "name": "Look! (9 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6325,7 +6325,7 @@
   },
   {
     "name": "One Vial Makes You Better (9 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6342,7 +6342,7 @@
   },
   {
     "name": "One Vial Makes You Faster (9 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6359,7 +6359,7 @@
   },
   {
     "name": "Puppet Strings (9 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6376,7 +6376,7 @@
   },
   {
     "name": "Assassinate (11 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6393,7 +6393,7 @@
   },
   {
     "name": "Shadowgrasp (11 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6410,7 +6410,7 @@
   },
   {
     "name": "Speed of Shadows (11 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6427,7 +6427,7 @@
   },
   {
     "name": "They Always Line Up (11 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6444,7 +6444,7 @@
   },
   {
     "name": "Time Bomb",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6461,7 +6461,7 @@
   },
   {
     "name": "Cacophony of Cinders (11 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6478,7 +6478,7 @@
   },
   {
     "name": "Chain Reaction (11 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6495,7 +6495,7 @@
   },
   {
     "name": "Demon Door (11 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6512,7 +6512,7 @@
   },
   {
     "name": "I Am You (11 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6529,7 +6529,7 @@
   },
   {
     "name": "It Was Me All Along (11 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6546,7 +6546,7 @@
   },
   {
     "name": "To the Stars (11 Insight)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6563,7 +6563,7 @@
   },
   {
     "name": "Advanced Tactics",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6580,7 +6580,7 @@
   },
   {
     "name": "Battle Cry (3 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6597,7 +6597,7 @@
   },
   {
     "name": "Concussive Strike (3 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6614,7 +6614,7 @@
   },
   {
     "name": "Hammer and Anvil (5 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6631,7 +6631,7 @@
   },
   {
     "name": "Inspiring Strike (3 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6648,7 +6648,7 @@
   },
   {
     "name": "Mark",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6665,7 +6665,7 @@
   },
   {
     "name": "Mind Game (5 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6682,7 +6682,7 @@
   },
   {
     "name": "Now! (5 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6699,7 +6699,7 @@
   },
   {
     "name": "Overwatch",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6716,7 +6716,7 @@
   },
   {
     "name": "Parry",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6733,7 +6733,7 @@
   },
   {
     "name": "Squad! Forward! (3 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6750,7 +6750,7 @@
   },
   {
     "name": "\"Strike Now!\"",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6767,7 +6767,7 @@
   },
   {
     "name": "This Is What We Planned For (5 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6784,7 +6784,7 @@
   },
   {
     "name": "Fog of War (5 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6801,7 +6801,7 @@
   },
   {
     "name": "I've Got Your Back (5 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6818,7 +6818,7 @@
   },
   {
     "name": "No Dying on My Watch (5 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6835,7 +6835,7 @@
   },
   {
     "name": "Squad! On Me! (5 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6852,7 +6852,7 @@
   },
   {
     "name": "Targets of Opportunity (5 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6869,7 +6869,7 @@
   },
   {
     "name": "Try Me Instead (5 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6886,7 +6886,7 @@
   },
   {
     "name": "Frontal Assault (7 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6903,7 +6903,7 @@
   },
   {
     "name": "Hit 'Em Hard! (7 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6920,7 +6920,7 @@
   },
   {
     "name": "Rout (7 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6937,7 +6937,7 @@
   },
   {
     "name": "Stay Strong and Focus! (7 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6954,7 +6954,7 @@
   },
   {
     "name": "Squad! Gear Check! (9 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6971,7 +6971,7 @@
   },
   {
     "name": "Squad! Remember Your Training! (9 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -6988,7 +6988,7 @@
   },
   {
     "name": "Win This Day! (9 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7005,7 +7005,7 @@
   },
   {
     "name": "You've Still Got Something Left (9 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7022,7 +7022,7 @@
   },
   {
     "name": "Battle Plan (9 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7039,7 +7039,7 @@
   },
   {
     "name": "Coordinated Execution (9 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7056,7 +7056,7 @@
   },
   {
     "name": "Hustle! (9 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7073,7 +7073,7 @@
   },
   {
     "name": "Instant Retaliation (9 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7090,7 +7090,7 @@
   },
   {
     "name": "Panic in Their Lines (9 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7107,7 +7107,7 @@
   },
   {
     "name": "To Me Squad! (9 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7124,7 +7124,7 @@
   },
   {
     "name": "Finish Them! (11 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7141,7 +7141,7 @@
   },
   {
     "name": "Floodgates Open (11 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7158,7 +7158,7 @@
   },
   {
     "name": "Go Now and Speed Well (11 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7175,7 +7175,7 @@
   },
   {
     "name": "I'll Open and You'll Close (11 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7192,7 +7192,7 @@
   },
   {
     "name": "Blot Out the Sun! (11 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7209,7 +7209,7 @@
   },
   {
     "name": "Counterstrategy (11 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7226,7 +7226,7 @@
   },
   {
     "name": "No Escape (11 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7243,7 +7243,7 @@
   },
   {
     "name": "Squad! Hit and Run! (11 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7260,7 +7260,7 @@
   },
   {
     "name": "That One Is Mine! (11 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7277,7 +7277,7 @@
   },
   {
     "name": "Their Lack of Focus Is Their Undoing (11 Focus)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7294,7 +7294,7 @@
   },
   {
     "name": "Accelerate",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7311,7 +7311,7 @@
   },
   {
     "name": "Again",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7328,7 +7328,7 @@
   },
   {
     "name": "Awe (3 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7345,7 +7345,7 @@
   },
   {
     "name": "Choke (3 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7362,7 +7362,7 @@
   },
   {
     "name": "Entropic Bolt",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7379,7 +7379,7 @@
   },
   {
     "name": "Feedback Loop",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7396,7 +7396,7 @@
   },
   {
     "name": "Flashback (5 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7413,7 +7413,7 @@
   },
   {
     "name": "Hoarfrost",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7430,7 +7430,7 @@
   },
   {
     "name": "Incinerate",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7447,7 +7447,7 @@
   },
   {
     "name": "Inertia Soak (5 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7464,7 +7464,7 @@
   },
   {
     "name": "Iron (5 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7481,7 +7481,7 @@
   },
   {
     "name": "Kinetic Grip",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7498,7 +7498,7 @@
   },
   {
     "name": "Kinetic Pulse",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7515,7 +7515,7 @@
   },
   {
     "name": "Materialize",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7532,7 +7532,7 @@
   },
   {
     "name": "Mind Spike",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7549,7 +7549,7 @@
   },
   {
     "name": "Minor Telekinesis",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7566,7 +7566,7 @@
   },
   {
     "name": "Optic Blast",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7583,7 +7583,7 @@
   },
   {
     "name": "Perfect Clarity (5 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7600,7 +7600,7 @@
   },
   {
     "name": "Precognition (3 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7617,7 +7617,7 @@
   },
   {
     "name": "Remote Assistance",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7634,7 +7634,7 @@
   },
   {
     "name": "Repel",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7651,7 +7651,7 @@
   },
   {
     "name": "Smolder (3 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7668,7 +7668,7 @@
   },
   {
     "name": "Spirit Sword",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7685,7 +7685,7 @@
   },
   {
     "name": "Applied Chronometrics (5 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7702,7 +7702,7 @@
   },
   {
     "name": "Gravitic Burst (5 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7719,7 +7719,7 @@
   },
   {
     "name": "Levity and Gravity (5 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7736,7 +7736,7 @@
   },
   {
     "name": "Overwhelm (5 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7753,7 +7753,7 @@
   },
   {
     "name": "Slow (5 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7770,7 +7770,7 @@
   },
   {
     "name": "Synaptic Override (5 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7787,7 +7787,7 @@
   },
   {
     "name": "Fling Through Time (7 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7804,7 +7804,7 @@
   },
   {
     "name": "Force Orbs (7 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7821,7 +7821,7 @@
   },
   {
     "name": "Reflector Field (7 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7838,7 +7838,7 @@
   },
   {
     "name": "Soul Burn (7 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7855,7 +7855,7 @@
   },
   {
     "name": "Exothermic Shield (9 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7872,7 +7872,7 @@
   },
   {
     "name": "Hypersonic (9 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7889,7 +7889,7 @@
   },
   {
     "name": "Mind Snare (9 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7906,7 +7906,7 @@
   },
   {
     "name": "Soulbound (9 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7923,7 +7923,7 @@
   },
   {
     "name": "Fate (9 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7940,7 +7940,7 @@
   },
   {
     "name": "Gravitic Well (9 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7957,7 +7957,7 @@
   },
   {
     "name": "Greater Kinetic Grip (9 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7974,7 +7974,7 @@
   },
   {
     "name": "Stasis Field (9 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -7991,7 +7991,7 @@
   },
   {
     "name": "Synaptic Conditioning (9 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8008,7 +8008,7 @@
   },
   {
     "name": "Synaptic Dissipation (9 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8025,7 +8025,7 @@
   },
   {
     "name": "Doubt (11 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8042,7 +8042,7 @@
   },
   {
     "name": "Levitation Field",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8059,7 +8059,7 @@
   },
   {
     "name": "Mindwipe (11 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8076,7 +8076,7 @@
   },
   {
     "name": "Rejuvenate (11 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8093,7 +8093,7 @@
   },
   {
     "name": "Stasis Shield (3 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8110,7 +8110,7 @@
   },
   {
     "name": "Steel (11 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8127,7 +8127,7 @@
   },
   {
     "name": "Acceleration Field (11 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8144,7 +8144,7 @@
   },
   {
     "name": "Borrow From the Future (11 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8161,7 +8161,7 @@
   },
   {
     "name": "Fulcrum (11 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8178,7 +8178,7 @@
   },
   {
     "name": "Gravitic Nova (11 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8195,7 +8195,7 @@
   },
   {
     "name": "Resonant Mind Spike (11 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8212,7 +8212,7 @@
   },
   {
     "name": "Synaptic Terror (11 Clarity)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8229,7 +8229,7 @@
   },
   {
     "name": "Acrobatics",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8246,7 +8246,7 @@
   },
   {
     "name": "Artful Flourish",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8263,7 +8263,7 @@
   },
   {
     "name": "\"Ballad of the Beast\"",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8280,7 +8280,7 @@
   },
   {
     "name": "Blocking",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8297,7 +8297,7 @@
   },
   {
     "name": "Choreography",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8314,7 +8314,7 @@
   },
   {
     "name": "Cutting Sarcasm",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8331,7 +8331,7 @@
   },
   {
     "name": "Dramatic Monologue",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8348,7 +8348,7 @@
   },
   {
     "name": "Dramatic Reversal (5 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8365,7 +8365,7 @@
   },
   {
     "name": "Fake Your Death (5 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8382,7 +8382,7 @@
   },
   {
     "name": "Flip the Script (5 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8399,7 +8399,7 @@
   },
   {
     "name": "Harmonize (3 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8416,7 +8416,7 @@
   },
   {
     "name": "Harsh Critic (3 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8433,7 +8433,7 @@
   },
   {
     "name": "Hypnotic Overtones (3 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8450,7 +8450,7 @@
   },
   {
     "name": "Instigator",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8467,7 +8467,7 @@
   },
   {
     "name": "Method Acting (5 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8484,7 +8484,7 @@
   },
   {
     "name": "Power Chord",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8501,7 +8501,7 @@
   },
   {
     "name": "Quick Rewrite (3 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8518,7 +8518,7 @@
   },
   {
     "name": "Revitalizing Limerick",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8535,7 +8535,7 @@
   },
   {
     "name": "Riposte",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8552,7 +8552,7 @@
   },
   {
     "name": "Star Power (1 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8569,7 +8569,7 @@
   },
   {
     "name": "\"Thunder Mother\"",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8586,7 +8586,7 @@
   },
   {
     "name": "Turnabout Is Fair Play",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8603,7 +8603,7 @@
   },
   {
     "name": "Upstage (3 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8620,7 +8620,7 @@
   },
   {
     "name": "Witty Banter",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8637,7 +8637,7 @@
   },
   {
     "name": "Classic Chandelier Stunt (5 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8654,7 +8654,7 @@
   },
   {
     "name": "En Garde! (5 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8671,7 +8671,7 @@
   },
   {
     "name": "Encore (5 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8688,7 +8688,7 @@
   },
   {
     "name": "Guest Star (5 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8705,7 +8705,7 @@
   },
   {
     "name": "Tough Crowd (5 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8722,7 +8722,7 @@
   },
   {
     "name": "Twist at the End (5 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8739,7 +8739,7 @@
   },
   {
     "name": "Extensive Rewrites (7 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8756,7 +8756,7 @@
   },
   {
     "name": "\"Fire Up the Night\"",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8773,7 +8773,7 @@
   },
   {
     "name": "Infernal Gavotte (7 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8790,7 +8790,7 @@
   },
   {
     "name": "\"Never-Ending Hero\"",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8807,7 +8807,7 @@
   },
   {
     "name": "Star Solo (7 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8824,7 +8824,7 @@
   },
   {
     "name": "We Meet at Last (7 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8841,7 +8841,7 @@
   },
   {
     "name": "Action Hero (9 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8858,7 +8858,7 @@
   },
   {
     "name": "Continuity Error (9 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8875,7 +8875,7 @@
   },
   {
     "name": "Love Song (9 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8892,7 +8892,7 @@
   },
   {
     "name": "Patter Song (9 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8909,7 +8909,7 @@
   },
   {
     "name": "Take Two!",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8926,7 +8926,7 @@
   },
   {
     "name": "We Can't Be Upstaged!",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8943,7 +8943,7 @@
   },
   {
     "name": "Blood on the Stage (9 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8960,7 +8960,7 @@
   },
   {
     "name": "Feedback (9 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8977,7 +8977,7 @@
   },
   {
     "name": "Fight Choreography (9 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -8994,7 +8994,7 @@
   },
   {
     "name": "Here's How Your Story Ends (9 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -9011,7 +9011,7 @@
   },
   {
     "name": "Legendary Drum Fill (9 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -9028,7 +9028,7 @@
   },
   {
     "name": "Spotlight",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -9045,7 +9045,7 @@
   },
   {
     "name": "You're All My Understudies (9 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -9062,7 +9062,7 @@
   },
   {
     "name": "Dramatic Reveal (11 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -9079,7 +9079,7 @@
   },
   {
     "name": "Moonlight Sonata",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -9096,7 +9096,7 @@
   },
   {
     "name": "Power Ballad (11 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -9113,7 +9113,7 @@
   },
   {
     "name": "Radical Fantasia",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -9130,7 +9130,7 @@
   },
   {
     "name": "Saved in the Edit (11 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -9147,7 +9147,7 @@
   },
   {
     "name": "The Show Must Go On (11 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -9164,7 +9164,7 @@
   },
   {
     "name": "Epic (11 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -9181,7 +9181,7 @@
   },
   {
     "name": "Expert Fencer (11 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -9198,7 +9198,7 @@
   },
   {
     "name": "Jam Session (11 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -9215,7 +9215,7 @@
   },
   {
     "name": "Melt Their Faces (11 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -9232,7 +9232,7 @@
   },
   {
     "name": "Renegotiated Contract (11 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",
@@ -9249,7 +9249,7 @@
   },
   {
     "name": "Rising Tension (11 Drama)",
-    "core_rules": "Draw Steel",
+    "core_rules": "drawSteel",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "MCDM Productions",

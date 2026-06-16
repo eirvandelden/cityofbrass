@@ -2,7 +2,7 @@
   {
     "name": "Acrobatic Performer",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -22,7 +22,7 @@
   {
     "name": "Acupuncturist",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -42,7 +42,7 @@
   {
     "name": "Additional Lore",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -61,7 +61,7 @@
   {
     "name": "Alchemical Crafting",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -81,7 +81,7 @@
   {
     "name": "Arcane Sense",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -101,7 +101,7 @@
   {
     "name": "Armor Assist",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -121,7 +121,7 @@
   {
     "name": "Assurance",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -143,7 +143,7 @@
   {
     "name": "Bargain Hunter",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -163,7 +163,7 @@
   {
     "name": "Battle Medicine",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -187,7 +187,7 @@
   {
     "name": "Bon Mot",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -217,7 +217,7 @@
   {
     "name": "Cat Fall",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -237,7 +237,7 @@
   {
     "name": "Charming Liar",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -257,7 +257,7 @@
   {
     "name": "Combat Climber",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -277,7 +277,7 @@
   {
     "name": "Concealing Legerdemain",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -297,7 +297,7 @@
   {
     "name": "Courtly Graces",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -317,7 +317,7 @@
   {
     "name": "Crafter's Appraisal",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -337,7 +337,7 @@
   {
     "name": "Crystal Healing",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -361,7 +361,7 @@
   {
     "name": "Deceptive Worship",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -381,7 +381,7 @@
   {
     "name": "Dirty Trick",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -405,7 +405,7 @@
   {
     "name": "Dubious Knowledge",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -425,7 +425,7 @@
   {
     "name": "Experienced Professional",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -445,7 +445,7 @@
   {
     "name": "Experienced Smuggler",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -465,7 +465,7 @@
   {
     "name": "Experienced Tracker",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -485,7 +485,7 @@
   {
     "name": "Express Rider",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -507,7 +507,7 @@
   {
     "name": "Fascinating Performance",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -527,7 +527,7 @@
   {
     "name": "Forager",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -547,7 +547,7 @@
   {
     "name": "Forensic Acumen",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -567,7 +567,7 @@
   {
     "name": "Glean Contents",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -587,7 +587,7 @@
   {
     "name": "Group Coercion",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -607,7 +607,7 @@
   {
     "name": "Group Impression",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -627,7 +627,7 @@
   {
     "name": "Hefty Hauler",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -647,7 +647,7 @@
   {
     "name": "Hobnobber",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -667,7 +667,7 @@
   {
     "name": "Impressive Performance",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -687,7 +687,7 @@
   {
     "name": "Improvise Tool",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -707,7 +707,7 @@
   {
     "name": "Inoculation",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -729,7 +729,7 @@
   {
     "name": "Intimidating Glare",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -749,7 +749,7 @@
   {
     "name": "Lengthy Diversion",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -769,7 +769,7 @@
   {
     "name": "Lie to Me",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -789,7 +789,7 @@
   {
     "name": "Multilingual",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -809,7 +809,7 @@
   {
     "name": "Myth Hunter",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -823,7 +823,7 @@
   {
     "name": "Natural Medicine",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -843,7 +843,7 @@
   {
     "name": "No Cause for Alarm",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -873,7 +873,7 @@
   {
     "name": "Oddity Identification",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -893,7 +893,7 @@
   {
     "name": "Pickpocket",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -913,7 +913,7 @@
   {
     "name": "Pilgrim's Token",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -933,7 +933,7 @@
   {
     "name": "Prepare Elemental Medicine",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -955,7 +955,7 @@
   {
     "name": "Quick Coercion",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -975,7 +975,7 @@
   {
     "name": "Quick Identification",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -995,7 +995,7 @@
   {
     "name": "Quick Jump",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1015,7 +1015,7 @@
   {
     "name": "Quick Repair",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1035,7 +1035,7 @@
   {
     "name": "Quick Squeeze",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1055,7 +1055,7 @@
   {
     "name": "Read Lips",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1075,7 +1075,7 @@
   {
     "name": "Read Psychometric Resonance",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1105,7 +1105,7 @@
   {
     "name": "Recognize Spell",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1127,7 +1127,7 @@
   {
     "name": "Risky Surgery",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1147,7 +1147,7 @@
   {
     "name": "Root Magic",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1167,7 +1167,7 @@
   {
     "name": "Schooled in Secrets",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1187,7 +1187,7 @@
   {
     "name": "Seasoned",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1207,7 +1207,7 @@
   {
     "name": "Sign Language",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1227,7 +1227,7 @@
   {
     "name": "Skill Training",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1247,7 +1247,7 @@
   {
     "name": "Snare Crafting",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1267,7 +1267,7 @@
   {
     "name": "Specialty Crafting",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1287,7 +1287,7 @@
   {
     "name": "Steady Balance",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1307,7 +1307,7 @@
   {
     "name": "Stifle Flames",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1327,7 +1327,7 @@
   {
     "name": "Streetwise",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1347,7 +1347,7 @@
   {
     "name": "Student of the Canon",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1367,7 +1367,7 @@
   {
     "name": "Subtle Theft",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1387,7 +1387,7 @@
   {
     "name": "Survey Wildlife",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1407,7 +1407,7 @@
   {
     "name": "Terrain Expertise",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1427,7 +1427,7 @@
   {
     "name": "Terrain Stalker",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1447,7 +1447,7 @@
   {
     "name": "Titan Wrestler",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1467,7 +1467,7 @@
   {
     "name": "Train Animal",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1491,7 +1491,7 @@
   {
     "name": "Trick Magic Item",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1513,7 +1513,7 @@
   {
     "name": "Underwater Marauder",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1533,7 +1533,7 @@
   {
     "name": "Virtuosic Performer",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1553,7 +1553,7 @@
   {
     "name": "Comforting Presence",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1579,7 +1579,7 @@
   {
     "name": "Cloud Jump",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1599,7 +1599,7 @@
   {
     "name": "Craft Anything",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1619,7 +1619,7 @@
   {
     "name": "Divine Guidance",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1639,7 +1639,7 @@
   {
     "name": "Legendary Codebreaker",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1659,7 +1659,7 @@
   {
     "name": "Legendary Guide",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1679,7 +1679,7 @@
   {
     "name": "Legendary Linguist",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1699,7 +1699,7 @@
   {
     "name": "Legendary Medic",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1719,7 +1719,7 @@
   {
     "name": "Legendary Negotiation",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1739,7 +1739,7 @@
   {
     "name": "Legendary Performer",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1759,7 +1759,7 @@
   {
     "name": "Legendary Professional",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1779,7 +1779,7 @@
   {
     "name": "Legendary Sneak",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1799,7 +1799,7 @@
   {
     "name": "Legendary Survivalist",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1819,7 +1819,7 @@
   {
     "name": "Legendary Tattoo Artist",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1839,7 +1839,7 @@
   {
     "name": "Legendary Thief",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1859,7 +1859,7 @@
   {
     "name": "Scare to Death",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1885,7 +1885,7 @@
   {
     "name": "Unified Theory",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1905,7 +1905,7 @@
   {
     "name": "Armored Stealth",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1925,7 +1925,7 @@
   {
     "name": "Assured Identification",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1945,7 +1945,7 @@
   {
     "name": "Aura Sight",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1971,7 +1971,7 @@
   {
     "name": "Automatic Knowledge",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -1991,7 +1991,7 @@
   {
     "name": "Automatic Writing",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2017,7 +2017,7 @@
   {
     "name": "Backup Disguise",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2037,7 +2037,7 @@
   {
     "name": "Battle Planner",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2057,7 +2057,7 @@
   {
     "name": "Bonded Animal",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2079,7 +2079,7 @@
   {
     "name": "Chromotherapy",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2103,7 +2103,7 @@
   {
     "name": "Communal Crafting",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2123,7 +2123,7 @@
   {
     "name": "Confabulator",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2143,7 +2143,7 @@
   {
     "name": "Continual Recovery",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2163,7 +2163,7 @@
   {
     "name": "Discreet Inquiry",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2183,7 +2183,7 @@
   {
     "name": "Distracting Performance",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2203,7 +2203,7 @@
   {
     "name": "Energy Fortification",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2217,7 +2217,7 @@
   {
     "name": "Exhort the Faithful",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2237,7 +2237,7 @@
   {
     "name": "Eyes of the City",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2257,7 +2257,7 @@
   {
     "name": "Glad-Hand",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2277,7 +2277,7 @@
   {
     "name": "Godless Healing",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2291,7 +2291,7 @@
   {
     "name": "Intimidating Prowess",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2311,7 +2311,7 @@
   {
     "name": "Inventor",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2333,7 +2333,7 @@
   {
     "name": "Lasting Coercion",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2353,7 +2353,7 @@
   {
     "name": "Lead Climber",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2373,7 +2373,7 @@
   {
     "name": "Leverage Connections",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2393,7 +2393,7 @@
   {
     "name": "Magical Crafting",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2413,7 +2413,7 @@
   {
     "name": "Magical Shorthand",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2433,7 +2433,7 @@
   {
     "name": "Mortal Healing",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2453,7 +2453,7 @@
   {
     "name": "Nimble Crawl",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2473,7 +2473,7 @@
   {
     "name": "Pei Zing Adept",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2487,7 +2487,7 @@
   {
     "name": "Performer's Treatment",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2507,7 +2507,7 @@
   {
     "name": "Powerful Leap",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2527,7 +2527,7 @@
   {
     "name": "Quick Disguise",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2547,7 +2547,7 @@
   {
     "name": "Quiet Allies",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2567,7 +2567,7 @@
   {
     "name": "Rapid Mantel",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2587,7 +2587,7 @@
   {
     "name": "Robust Recovery",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2607,7 +2607,7 @@
   {
     "name": "Rolling Landing",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2627,7 +2627,7 @@
   {
     "name": "Sanctify Water",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2647,7 +2647,7 @@
   {
     "name": "Shadow Mark",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2667,7 +2667,7 @@
   {
     "name": "Slippery Prey",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2687,7 +2687,7 @@
   {
     "name": "Sow Rumor",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2709,7 +2709,7 @@
   {
     "name": "Tattoo Artist",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2729,7 +2729,7 @@
   {
     "name": "Terrifying Resistance",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2749,7 +2749,7 @@
   {
     "name": "Tumbling Teamwork",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2769,7 +2769,7 @@
   {
     "name": "Underground Network",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2789,7 +2789,7 @@
   {
     "name": "Unmistakable Lore",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2809,7 +2809,7 @@
   {
     "name": "Unusual Treatment",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2829,7 +2829,7 @@
   {
     "name": "Vasodilation",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2843,7 +2843,7 @@
   {
     "name": "Ward Medic",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2863,7 +2863,7 @@
   {
     "name": "Wary Disarmament",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2883,7 +2883,7 @@
   {
     "name": "Aurochs-Headed",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2901,7 +2901,7 @@
   {
     "name": "Folk Dowsing",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2921,7 +2921,7 @@
   {
     "name": "Graft Technician",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2941,7 +2941,7 @@
   {
     "name": "Advanced First Aid",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2965,7 +2965,7 @@
   {
     "name": "Aerobatics Mastery",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -2985,7 +2985,7 @@
   {
     "name": "Battle Cry",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3005,7 +3005,7 @@
   {
     "name": "Biographical Eye",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3027,7 +3027,7 @@
   {
     "name": "Bizarre Magic",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3047,7 +3047,7 @@
   {
     "name": "Break Curse",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3071,7 +3071,7 @@
   {
     "name": "Consult the Spirits",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3093,7 +3093,7 @@
   {
     "name": "Disturbing Knowledge",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3119,7 +3119,7 @@
   {
     "name": "Doublespeak",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3139,7 +3139,7 @@
   {
     "name": "Environmental Guide",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3159,7 +3159,7 @@
   {
     "name": "Evangelize",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3185,7 +3185,7 @@
   {
     "name": "Foil Senses",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3205,7 +3205,7 @@
   {
     "name": "Go with the Flow",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3227,7 +3227,7 @@
   {
     "name": "Impeccable Crafting",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3247,7 +3247,7 @@
   {
     "name": "Inflame Crowd",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3267,7 +3267,7 @@
   {
     "name": "Influence Nature",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3289,7 +3289,7 @@
   {
     "name": "Kip Up",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3309,7 +3309,7 @@
   {
     "name": "Monster Crafting",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3327,7 +3327,7 @@
   {
     "name": "Morphic Manipulation",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3353,7 +3353,7 @@
   {
     "name": "Paragon Battle Medicine",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3373,7 +3373,7 @@
   {
     "name": "Planar Survival",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3393,7 +3393,7 @@
   {
     "name": "Quick Climb",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3413,7 +3413,7 @@
   {
     "name": "Quick Recognition",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3433,7 +3433,7 @@
   {
     "name": "Quick Setup",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3453,7 +3453,7 @@
   {
     "name": "Quick Swim",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3473,7 +3473,7 @@
   {
     "name": "Quick Unlock",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3493,7 +3493,7 @@
   {
     "name": "Rapid Affixture",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3513,7 +3513,7 @@
   {
     "name": "Shameless Request",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3533,7 +3533,7 @@
   {
     "name": "Signature Crafting",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3553,7 +3553,7 @@
   {
     "name": "Skeptic's Defense",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3573,7 +3573,7 @@
   {
     "name": "Slippery Secrets",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3593,7 +3593,7 @@
   {
     "name": "Swift Sneak",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3613,7 +3613,7 @@
   {
     "name": "Talent Envy",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3633,7 +3633,7 @@
   {
     "name": "Temperature Adjustment",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3647,7 +3647,7 @@
   {
     "name": "Terrified Retreat",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3667,7 +3667,7 @@
   {
     "name": "Tumbling Theft",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3687,7 +3687,7 @@
   {
     "name": "Vanish Into the Land",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3707,7 +3707,7 @@
   {
     "name": "Wall Jump",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3727,7 +3727,7 @@
   {
     "name": "Water Sprint",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
@@ -3747,7 +3747,7 @@
   {
     "name": "Calm and Centered",
     "rule_type": "Skill Feat",
-    "core_rules": "Pathfinder 2e",
+    "core_rules": "pf2e",
     "is_shared": true,
     "is_3pp": false,
     "publisher": "Paizo Inc.",
