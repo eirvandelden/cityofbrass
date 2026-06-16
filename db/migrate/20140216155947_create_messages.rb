@@ -1,8 +1,8 @@
 class CreateMessages < ActiveRecord::Migration[4.2]
   def change
-    create_table :messages, id: :uuid do |t|
-      t.uuid :sender_id, :null => false
-      t.uuid :recipient_id
+    create_table :messages, id: :string do |t|
+      t.string :sender_id, :null => false
+      t.string :recipient_id
       t.boolean :sender_deleted, :recipient_deleted, :default => false
       t.string :subject, :null => false
       t.text :body

@@ -1,8 +1,8 @@
 class CreateAffiliations < ActiveRecord::Migration[4.2]
   def change
-    create_table :affiliations, id: :uuid do |t|
-      t.uuid :resident_id,  :null => false
-      t.uuid :affiliate_id, :null => false
+    create_table :affiliations, id: :string do |t|
+      t.string :resident_id,  :null => false
+      t.string :affiliate_id, :null => false
       t.string :status,     :null => false
 
       t.timestamps
