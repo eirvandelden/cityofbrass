@@ -9,10 +9,15 @@
     <%= link_to campaign.district.name, worldbuilder.district_path(campaign.district.slug) %>
   </li>
 <% end %>
-<% if campaign.active_adventure.present? and campaign.can_edit?(current_user, admin_signed_in?) %>
+<% visible_adventures = visible_records(campaign.adventures) %>
+<% if visible_adventures.any? %>
+  <% active_adventure_id = campaign.active_adventure&.id %>
   <li>
-    <strong>Adventure: </strong>
-    <%= link_to campaign.active_adventure.name, "#{tcob_path(campaign.active_adventure)}" %>
+    <strong>Adventures: </strong>
+    <%= safe_join(visible_adventures.map { |adventure|
+          link = link_to(adventure.name, tcob_path(adventure))
+          adventure.id == active_adventure_id ? content_tag(:strong, link) : link
+        }, ", ") %>
   </li>
 <% end %>
 <% campaign.features.each do |feature| %>

@@ -46,7 +46,7 @@ module Campaignmanager
              dependent: :destroy
 
     has_many :adventures,
-             -> { select('storybuilder_adventures.id, storybuilder_adventures.name, storybuilder_adventures.slug, storybuilder_adventures.type') },
+             -> { select('storybuilder_adventures.id, storybuilder_adventures.resident_id, storybuilder_adventures.name, storybuilder_adventures.slug, storybuilder_adventures.type, storybuilder_adventures.privacy') },
              through: :campaign_adventure_joins,
              class_name: "Storybuilder::Adventure"
 
