@@ -15,10 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: ruby/setup-ruby@v1
+      - uses: spinel-coop/setup-rv@main
         with:
-          ruby-version: .ruby-version
-          bundler-cache: true
+          ruby-version: current
+          install-gems: true
 
       - run: bundle exec rubocop --parallel --format github
 
@@ -35,10 +35,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: ruby/setup-ruby@v1
+      - uses: spinel-coop/setup-rv@main
         with:
-          ruby-version: .ruby-version
-          bundler-cache: true
+          ruby-version: current
+          install-gems: true
 
       - name: Set up database
         env:
