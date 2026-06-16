@@ -14,7 +14,7 @@ module Importer
 
         def compendium_records
           monster_records + item_records + container_records +
-            spell_records + rule_records + class_records
+            spell_records + rule_records + class_records + subclass_records
         end
 
         def campaign_record
@@ -93,6 +93,10 @@ module Importer
 
         def class_records
           nodes(root, "./baseclass").map { |baseclass| class_record(baseclass) }
+        end
+
+        def subclass_records
+          nodes(root, "./subclass").map { |subclass| subclass_record(subclass) }
         end
 
         # ---------------------------------------------------------------------------
@@ -214,6 +218,17 @@ module Importer
             num_skills: text_at(baseclass, "numSkills"),
             text: text_at(baseclass, "text"),
             subclass_names: subclass_names_for(baseclass),
+            source: source
+          }
+        end
+
+        def subclass_record(subclass)
+          {
+            type: "subclass",
+            name: text_at(subclass, "name"),
+            baseclass: subclass["baseclass"],
+            traits: named_text_nodes(subclass, "./trait"),
+            text: nodes(subclass, "./text").map(&:text),
             source: source
           }
         end
