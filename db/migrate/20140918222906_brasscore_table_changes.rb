@@ -1,4 +1,4 @@
-class BrasscoreTableChanges < ActiveRecord::Migration
+class BrasscoreTableChanges < ActiveRecord::Migration[4.2]
   def change
     drop_table :component_features
     drop_table :component_menu_item_joins

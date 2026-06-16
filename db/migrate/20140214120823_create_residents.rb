@@ -1,4 +1,4 @@
-class CreateResidents < ActiveRecord::Migration
+class CreateResidents < ActiveRecord::Migration[4.2]
   def change
     create_table :residents, id: :uuid do |t|
       t.uuid   :user_id, :null => false
