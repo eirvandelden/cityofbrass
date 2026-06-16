@@ -1,17 +1,19 @@
 ---
 nl:
   campaignmanager:
-    navigation:
-      active_adventure: "Actief avontuur"
     campaigns:
       features:
-        adventures: "Avonturen"
+        adventures: Avonturen
       form:
-        adventures_label: "Avonturen in deze campagne"
-        adventures_hint: "Vink de avonturen aan die onderdeel zijn van deze campagne. Ze verschijnen op het campagneoverzicht."
-        active_adventure_label: "Actief avontuur"
-        active_adventure_hint: "Het avontuur dat nu gespeeld wordt. Het wordt uitgelicht op het overzicht en gelinkt in het campagnemenu."
-        no_active_adventure: "Geen"
+        active_adventure_hint: Het avontuur dat nu gespeeld wordt. Het wordt uitgelicht
+          op het overzicht en gelinkt in het campagnemenu.
+        active_adventure_label: Actief avontuur
+        adventures_hint: Vink de avonturen aan die onderdeel zijn van deze campagne.
+          Ze verschijnen op het campagneoverzicht.
+        adventures_label: Avonturen in deze campagne
+        no_active_adventure: Geen
+    navigation:
+      active_adventure: Actief avontuur
   errors:
     messages:
       invalid_privacy: is niet geldig.
@@ -45,3 +47,7 @@ nl:
     topbar:
       manage_stock:
         title: Voorraad Beheren
+  locales:
+    en: Engels
+    it: Italiaans
+    nl: Nederlands

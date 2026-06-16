@@ -1,17 +1,19 @@
 ---
 en:
   campaignmanager:
-    navigation:
-      active_adventure: "Active Adventure"
     campaigns:
       features:
-        adventures: "Adventures"
+        adventures: Adventures
       form:
-        adventures_label: "Adventures in this campaign"
-        adventures_hint: "Check the adventures that are part of this campaign. They appear on the campaign overview."
-        active_adventure_label: "Active adventure"
-        active_adventure_hint: "The adventure currently being run. It is highlighted on the overview and linked in the campaign menu."
-        no_active_adventure: "None"
+        active_adventure_hint: The adventure currently being run. It is highlighted
+          on the overview and linked in the campaign menu.
+        active_adventure_label: Active adventure
+        adventures_hint: Check the adventures that are part of this campaign. They
+          appear on the campaign overview.
+        adventures_label: Adventures in this campaign
+        no_active_adventure: None
+    navigation:
+      active_adventure: Active Adventure
   errors:
     messages:
       invalid_privacy: is not valid.
@@ -45,3 +47,7 @@ en:
     topbar:
       manage_stock:
         title: Manage Stock
+  locales:
+    en: English
+    it: Italian
+    nl: Dutch

@@ -1,17 +1,19 @@
 ---
 it:
   campaignmanager:
-    navigation:
-      active_adventure: "Avventura attiva"
     campaigns:
       features:
-        adventures: "Avventure"
+        adventures: Avventure
       form:
-        adventures_label: "Avventure in questa campagna"
-        adventures_hint: "Seleziona le avventure che fanno parte di questa campagna. Appaiono nella panoramica della campagna."
-        active_adventure_label: "Avventura attiva"
-        active_adventure_hint: "L'avventura attualmente in corso. Viene evidenziata nella panoramica e collegata nel menu della campagna."
-        no_active_adventure: "Nessuna"
+        active_adventure_hint: L'avventura attualmente in corso. Viene evidenziata
+          nella panoramica e collegata nel menu della campagna.
+        active_adventure_label: Avventura attiva
+        adventures_hint: Seleziona le avventure che fanno parte di questa campagna.
+          Appaiono nella panoramica della campagna.
+        adventures_label: Avventure in questa campagna
+        no_active_adventure: Nessuna
+    navigation:
+      active_adventure: Avventura attiva
   errors:
     messages:
       invalid_privacy: non è valido.
@@ -45,3 +47,7 @@ it:
     topbar:
       manage_stock:
         title: Gestione Inventario
+  locales:
+    en: Inglese
+    it: Italiano
+    nl: Olandese
