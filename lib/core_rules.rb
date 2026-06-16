@@ -29,10 +29,6 @@ module CoreRules
     find(slug)&.name
   end
 
-  def self.options(show_all)
-    all(show_all).map { |r| [ r.name, r.slug ] }
-  end
-
   def self.d20_system?(slug)
     rulebooks.any? { |v| v["slug"] == slug && v["d20_system"] == "true" }
   end
