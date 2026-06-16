@@ -1,7 +1,7 @@
 [
   {
     "name": "Allosaurus",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast (Dinosaur), Unaligned",
@@ -152,7 +152,7 @@
   },
   {
     "name": "Ankylosaurus",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Beast (Dinosaur), Unaligned",
@@ -287,7 +287,7 @@
   },
   {
     "name": "Ape",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -448,7 +448,7 @@
   },
   {
     "name": "Archelon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Beast (Dinosaur), Unaligned",
@@ -594,7 +594,7 @@
   },
   {
     "name": "Baboon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Beast, Unaligned",
@@ -731,7 +731,7 @@
   },
   {
     "name": "Badger",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Beast, Unaligned",
@@ -880,7 +880,7 @@
   },
   {
     "name": "Bat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Beast, Unaligned",
@@ -1019,7 +1019,7 @@
   },
   {
     "name": "Black Bear",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -1170,7 +1170,7 @@
   },
   {
     "name": "Blood Hawk",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Beast, Unaligned",
@@ -1316,7 +1316,7 @@
   },
   {
     "name": "Boar",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -1448,7 +1448,7 @@
   },
   {
     "name": "Brown Bear",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -1601,7 +1601,7 @@
   },
   {
     "name": "Camel",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -1736,7 +1736,7 @@
   },
   {
     "name": "Cat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Beast, Unaligned",
@@ -1884,7 +1884,7 @@
   },
   {
     "name": "Constrictor Snake",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -2035,7 +2035,7 @@
   },
   {
     "name": "Crab",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Beast, Unaligned",
@@ -2178,7 +2178,7 @@
   },
   {
     "name": "Crocodile",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -2324,7 +2324,7 @@
   },
   {
     "name": "Deer",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -2465,7 +2465,7 @@
   },
   {
     "name": "Dire Wolf",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -2608,7 +2608,7 @@
   },
   {
     "name": "Draft Horse",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -2743,7 +2743,7 @@
   },
   {
     "name": "Eagle",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Beast, Unaligned",
@@ -2889,7 +2889,7 @@
   },
   {
     "name": "Elephant",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Beast, Unaligned",
@@ -3024,7 +3024,7 @@
   },
   {
     "name": "Elk",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -3165,7 +3165,7 @@
   },
   {
     "name": "Flying Snake",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Monstrosity, Unaligned",
@@ -3310,7 +3310,7 @@
   },
   {
     "name": "Frog",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Beast, Unaligned",
@@ -3460,7 +3460,7 @@
   },
   {
     "name": "Giant Ape",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Beast, Unaligned",
@@ -3616,7 +3616,7 @@
   },
   {
     "name": "Giant Badger",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -3766,7 +3766,7 @@
   },
   {
     "name": "Giant Bat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -3906,7 +3906,7 @@
   },
   {
     "name": "Giant Boar",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -4041,7 +4041,7 @@
   },
   {
     "name": "Giant Centipede",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Beast, Unaligned",
@@ -4181,7 +4181,7 @@
   },
   {
     "name": "Giant Constrictor Snake",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Beast, Unaligned",
@@ -4327,7 +4327,7 @@
   },
   {
     "name": "Giant Crab",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -4470,7 +4470,7 @@
   },
   {
     "name": "Giant Crocodile",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Beast, Unaligned",
@@ -4626,7 +4626,7 @@
   },
   {
     "name": "Giant Eagle",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Celestial, Neutral Good",
@@ -4776,7 +4776,7 @@
   },
   {
     "name": "Giant Elk",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Celestial, Neutral Good",
@@ -4921,7 +4921,7 @@
   },
   {
     "name": "Giant Fire Beetle",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Beast, Unaligned",
@@ -5064,7 +5064,7 @@
   },
   {
     "name": "Giant Frog",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -5212,7 +5212,7 @@
   },
   {
     "name": "Giant Goat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -5355,7 +5355,7 @@
   },
   {
     "name": "Giant Hyena",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -5496,7 +5496,7 @@
   },
   {
     "name": "Giant Lizard",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -5636,7 +5636,7 @@
   },
   {
     "name": "Giant Octopus",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -5787,7 +5787,7 @@
   },
   {
     "name": "Giant Owl",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Celestial, Neutral",
@@ -5942,7 +5942,7 @@
   },
   {
     "name": "Giant Rat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Beast, Unaligned",
@@ -6088,7 +6088,7 @@
   },
   {
     "name": "Giant Scorpion",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -6230,7 +6230,7 @@
   },
   {
     "name": "Giant Seahorse",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -6370,7 +6370,7 @@
   },
   {
     "name": "Giant Shark",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Beast, Unaligned",
@@ -6505,7 +6505,7 @@
   },
   {
     "name": "Giant Spider",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -6656,7 +6656,7 @@
   },
   {
     "name": "Giant Toad",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -6796,7 +6796,7 @@
   },
   {
     "name": "Giant Venomous Snake",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -6942,7 +6942,7 @@
   },
   {
     "name": "Giant Vulture",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Monstrosity, Neutral Evil",
@@ -7092,7 +7092,7 @@
   },
   {
     "name": "Giant Wasp",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -7232,7 +7232,7 @@
   },
   {
     "name": "Giant Weasel",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -7388,7 +7388,7 @@
   },
   {
     "name": "Giant Wolf Spider",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -7539,7 +7539,7 @@
   },
   {
     "name": "Goat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -7685,7 +7685,7 @@
   },
   {
     "name": "Hawk",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Beast, Unaligned",
@@ -7828,7 +7828,7 @@
   },
   {
     "name": "Hippopotamus",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -7974,7 +7974,7 @@
   },
   {
     "name": "Hunter Shark",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -8109,7 +8109,7 @@
   },
   {
     "name": "Hyena",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -8250,7 +8250,7 @@
   },
   {
     "name": "Jackal",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Beast, Unaligned",
@@ -8393,7 +8393,7 @@
   },
   {
     "name": "Killer Whale",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Beast, Unaligned",
@@ -8554,7 +8554,7 @@
   },
   {
     "name": "Lizard",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Beast, Unaligned",
@@ -8693,7 +8693,7 @@
   },
   {
     "name": "Mammoth",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Huge Beast, Unaligned",
@@ -8828,7 +8828,7 @@
   },
   {
     "name": "Mastiff",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -8966,7 +8966,7 @@
   },
   {
     "name": "Mule",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -9101,7 +9101,7 @@
   },
   {
     "name": "Octopus",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Small Beast, Unaligned",
@@ -9251,7 +9251,7 @@
   },
   {
     "name": "Owl",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Beast, Unaligned",
@@ -9399,7 +9399,7 @@
   },
   {
     "name": "Panther",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -9550,7 +9550,7 @@
   },
   {
     "name": "Piranha",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Beast, Unaligned",
@@ -9679,7 +9679,7 @@
   },
   {
     "name": "Plesiosaurus",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast (Dinosaur), Unaligned",
@@ -9830,7 +9830,7 @@
   },
   {
     "name": "Polar Bear",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Large Beast, Unaligned",
@@ -9985,7 +9985,7 @@
   },
   {
     "name": "Pony",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast, Unaligned",
@@ -10120,7 +10120,7 @@
   },
   {
     "name": "Pteranodon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Medium Beast (Dinosaur), Unaligned",
@@ -10266,7 +10266,7 @@
   },
   {
     "name": "Rat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Beast, Unaligned",
@@ -10411,7 +10411,7 @@
   },
   {
     "name": "Raven",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "publisher": "Wizards of the Coast LLC",
     "source": "SRD 5.2.1",
     "short_description": "Tiny Beast, Unaligned",

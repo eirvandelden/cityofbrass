@@ -1,7 +1,7 @@
 [
   {
     "name": "Club",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -11,7 +11,7 @@
   },
   {
     "name": "Dagger",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -21,7 +21,7 @@
   },
   {
     "name": "Greatclub",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -31,7 +31,7 @@
   },
   {
     "name": "Handaxe",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -41,7 +41,7 @@
   },
   {
     "name": "Javelin",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -51,7 +51,7 @@
   },
   {
     "name": "Light Hammer",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -61,7 +61,7 @@
   },
   {
     "name": "Mace",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -71,7 +71,7 @@
   },
   {
     "name": "Quarterstaff",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -81,7 +81,7 @@
   },
   {
     "name": "Sickle",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -91,7 +91,7 @@
   },
   {
     "name": "Spear",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -101,7 +101,7 @@
   },
   {
     "name": "Dart",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -111,7 +111,7 @@
   },
   {
     "name": "Light Crossbow",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -121,7 +121,7 @@
   },
   {
     "name": "Shortbow",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -131,7 +131,7 @@
   },
   {
     "name": "Sling",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -141,7 +141,7 @@
   },
   {
     "name": "Battleaxe",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -151,7 +151,7 @@
   },
   {
     "name": "Flail",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -161,7 +161,7 @@
   },
   {
     "name": "Glaive",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -171,7 +171,7 @@
   },
   {
     "name": "Greataxe",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -181,7 +181,7 @@
   },
   {
     "name": "Greatsword",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -191,7 +191,7 @@
   },
   {
     "name": "Halberd",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -201,7 +201,7 @@
   },
   {
     "name": "Lance",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -211,7 +211,7 @@
   },
   {
     "name": "Longsword",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -221,7 +221,7 @@
   },
   {
     "name": "Maul",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -231,7 +231,7 @@
   },
   {
     "name": "Morningstar",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -241,7 +241,7 @@
   },
   {
     "name": "Pike",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -251,7 +251,7 @@
   },
   {
     "name": "Rapier",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -261,7 +261,7 @@
   },
   {
     "name": "Scimitar",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -271,7 +271,7 @@
   },
   {
     "name": "Shortsword",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -281,7 +281,7 @@
   },
   {
     "name": "Trident",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -291,7 +291,7 @@
   },
   {
     "name": "Warhammer",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -301,7 +301,7 @@
   },
   {
     "name": "War Pick",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -311,7 +311,7 @@
   },
   {
     "name": "Whip",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -321,7 +321,7 @@
   },
   {
     "name": "Blowgun",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -331,7 +331,7 @@
   },
   {
     "name": "Hand Crossbow",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -341,7 +341,7 @@
   },
   {
     "name": "Heavy Crossbow",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -351,7 +351,7 @@
   },
   {
     "name": "Longbow",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -361,7 +361,7 @@
   },
   {
     "name": "Musket",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -371,7 +371,7 @@
   },
   {
     "name": "Pistol",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -381,7 +381,7 @@
   },
   {
     "name": "Padded Armor",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -391,7 +391,7 @@
   },
   {
     "name": "Leather Armor",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -401,7 +401,7 @@
   },
   {
     "name": "Studded Leather Armor",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -411,7 +411,7 @@
   },
   {
     "name": "Hide Armor",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -421,7 +421,7 @@
   },
   {
     "name": "Chain Shirt",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -431,7 +431,7 @@
   },
   {
     "name": "Scale Mail",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -441,7 +441,7 @@
   },
   {
     "name": "Breastplate",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -451,7 +451,7 @@
   },
   {
     "name": "Half Plate Armor",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -461,7 +461,7 @@
   },
   {
     "name": "Ring Mail",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -471,7 +471,7 @@
   },
   {
     "name": "Chain Mail",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -481,7 +481,7 @@
   },
   {
     "name": "Splint Armor",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -491,7 +491,7 @@
   },
   {
     "name": "Plate Armor",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -501,7 +501,7 @@
   },
   {
     "name": "Shield",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -511,7 +511,7 @@
   },
   {
     "name": "Alchemist's Supplies",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -521,7 +521,7 @@
   },
   {
     "name": "Brewer's Supplies",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -531,7 +531,7 @@
   },
   {
     "name": "Calligrapher's Supplies",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -541,7 +541,7 @@
   },
   {
     "name": "Carpenter's Tools",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -551,7 +551,7 @@
   },
   {
     "name": "Cartographer's Tools",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -561,7 +561,7 @@
   },
   {
     "name": "Cobbler's Tools",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -571,7 +571,7 @@
   },
   {
     "name": "Cook's Utensils",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -581,7 +581,7 @@
   },
   {
     "name": "Glassblower's Tools",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -591,7 +591,7 @@
   },
   {
     "name": "Jeweler's Tools",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -601,7 +601,7 @@
   },
   {
     "name": "Leatherworker's Tools",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -611,7 +611,7 @@
   },
   {
     "name": "Mason's Tools",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -621,7 +621,7 @@
   },
   {
     "name": "Painter's Supplies",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -631,7 +631,7 @@
   },
   {
     "name": "Potter's Tools",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -641,7 +641,7 @@
   },
   {
     "name": "Smith's Tools",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -651,7 +651,7 @@
   },
   {
     "name": "Tinker's Tools",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -661,7 +661,7 @@
   },
   {
     "name": "Weaver's Tools",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -671,7 +671,7 @@
   },
   {
     "name": "Woodcarver's Tools",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -681,7 +681,7 @@
   },
   {
     "name": "Disguise Kit",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -691,7 +691,7 @@
   },
   {
     "name": "Forgery Kit",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -701,7 +701,7 @@
   },
   {
     "name": "Gaming Set",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -711,7 +711,7 @@
   },
   {
     "name": "Herbalism Kit",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -721,7 +721,7 @@
   },
   {
     "name": "Musical Instrument",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -731,7 +731,7 @@
   },
   {
     "name": "Navigator's Tools",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -741,7 +741,7 @@
   },
   {
     "name": "Poisoner's Kit",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -751,7 +751,7 @@
   },
   {
     "name": "Thieves' Tools",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Tool",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -761,7 +761,7 @@
   },
   {
     "name": "Acid",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -771,7 +771,7 @@
   },
   {
     "name": "Alchemist's Fire",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -781,7 +781,7 @@
   },
   {
     "name": "Antitoxin",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -791,7 +791,7 @@
   },
   {
     "name": "Arcane Focus",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -801,7 +801,7 @@
   },
   {
     "name": "Backpack",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -811,7 +811,7 @@
   },
   {
     "name": "Ball Bearings",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -821,7 +821,7 @@
   },
   {
     "name": "Barrel",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -831,7 +831,7 @@
   },
   {
     "name": "Basket",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -841,7 +841,7 @@
   },
   {
     "name": "Bedroll",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -851,7 +851,7 @@
   },
   {
     "name": "Bell",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -861,7 +861,7 @@
   },
   {
     "name": "Blanket",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -871,7 +871,7 @@
   },
   {
     "name": "Block and Tackle",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -881,7 +881,7 @@
   },
   {
     "name": "Book",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -891,7 +891,7 @@
   },
   {
     "name": "Bottle, Glass",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -901,7 +901,7 @@
   },
   {
     "name": "Bucket",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -911,7 +911,7 @@
   },
   {
     "name": "Burglar's Pack",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -921,7 +921,7 @@
   },
   {
     "name": "Caltrops",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -931,7 +931,7 @@
   },
   {
     "name": "Candle",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -941,7 +941,7 @@
   },
   {
     "name": "Case, Crossbow Bolt",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -951,7 +951,7 @@
   },
   {
     "name": "Case, Map or Scroll",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -961,7 +961,7 @@
   },
   {
     "name": "Chain",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -971,7 +971,7 @@
   },
   {
     "name": "Chest",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -981,7 +981,7 @@
   },
   {
     "name": "Climber's Kit",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -991,7 +991,7 @@
   },
   {
     "name": "Clothes, Fine",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1001,7 +1001,7 @@
   },
   {
     "name": "Clothes, Traveler's",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1011,7 +1011,7 @@
   },
   {
     "name": "Component Pouch",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1021,7 +1021,7 @@
   },
   {
     "name": "Costume",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1031,7 +1031,7 @@
   },
   {
     "name": "Crowbar",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1041,7 +1041,7 @@
   },
   {
     "name": "Diplomat's Pack",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1051,7 +1051,7 @@
   },
   {
     "name": "Druidic Focus",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1061,7 +1061,7 @@
   },
   {
     "name": "Dungeoneer's Pack",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1071,7 +1071,7 @@
   },
   {
     "name": "Entertainer's Pack",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1081,7 +1081,7 @@
   },
   {
     "name": "Explorer's Pack",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1091,7 +1091,7 @@
   },
   {
     "name": "Flask",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1101,7 +1101,7 @@
   },
   {
     "name": "Grappling Hook",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1111,7 +1111,7 @@
   },
   {
     "name": "Healer's Kit",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1121,7 +1121,7 @@
   },
   {
     "name": "Holy Symbol",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1131,7 +1131,7 @@
   },
   {
     "name": "Holy Water",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1141,7 +1141,7 @@
   },
   {
     "name": "Hunting Trap",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1151,7 +1151,7 @@
   },
   {
     "name": "Ink",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1161,7 +1161,7 @@
   },
   {
     "name": "Ink Pen",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1171,7 +1171,7 @@
   },
   {
     "name": "Jug",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1181,7 +1181,7 @@
   },
   {
     "name": "Ladder",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1191,7 +1191,7 @@
   },
   {
     "name": "Lamp",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1201,7 +1201,7 @@
   },
   {
     "name": "Lantern, Bullseye",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1211,7 +1211,7 @@
   },
   {
     "name": "Lantern, Hooded",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1221,7 +1221,7 @@
   },
   {
     "name": "Lock",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1231,7 +1231,7 @@
   },
   {
     "name": "Magnifying Glass",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1241,7 +1241,7 @@
   },
   {
     "name": "Manacles",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1251,7 +1251,7 @@
   },
   {
     "name": "Map",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1261,7 +1261,7 @@
   },
   {
     "name": "Mirror",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1271,7 +1271,7 @@
   },
   {
     "name": "Net",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1281,7 +1281,7 @@
   },
   {
     "name": "Oil",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1291,7 +1291,7 @@
   },
   {
     "name": "Paper",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1301,7 +1301,7 @@
   },
   {
     "name": "Parchment",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1311,7 +1311,7 @@
   },
   {
     "name": "Perfume",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1321,7 +1321,7 @@
   },
   {
     "name": "Poison, Basic",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1331,7 +1331,7 @@
   },
   {
     "name": "Pole",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1341,7 +1341,7 @@
   },
   {
     "name": "Pot, Iron",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1351,7 +1351,7 @@
   },
   {
     "name": "Pouch",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1361,7 +1361,7 @@
   },
   {
     "name": "Priest's Pack",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1371,7 +1371,7 @@
   },
   {
     "name": "Quiver",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1381,7 +1381,7 @@
   },
   {
     "name": "Ram, Portable",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1391,7 +1391,7 @@
   },
   {
     "name": "Rations",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1401,7 +1401,7 @@
   },
   {
     "name": "Robe",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1411,7 +1411,7 @@
   },
   {
     "name": "Rope",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1421,7 +1421,7 @@
   },
   {
     "name": "Sack",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1431,7 +1431,7 @@
   },
   {
     "name": "Scholar's Pack",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1441,7 +1441,7 @@
   },
   {
     "name": "Shovel",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1451,7 +1451,7 @@
   },
   {
     "name": "Signal Whistle",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1461,7 +1461,7 @@
   },
   {
     "name": "Spikes, Iron",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1471,7 +1471,7 @@
   },
   {
     "name": "Spyglass",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1481,7 +1481,7 @@
   },
   {
     "name": "String",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1491,7 +1491,7 @@
   },
   {
     "name": "Tent",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1501,7 +1501,7 @@
   },
   {
     "name": "Tinderbox",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1511,7 +1511,7 @@
   },
   {
     "name": "Torch",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1521,7 +1521,7 @@
   },
   {
     "name": "Vial",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1531,7 +1531,7 @@
   },
   {
     "name": "Waterskin",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1541,7 +1541,7 @@
   },
   {
     "name": "Arrows",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1551,7 +1551,7 @@
   },
   {
     "name": "Bolts",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1561,7 +1561,7 @@
   },
   {
     "name": "Bullets, Firearm",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1571,7 +1571,7 @@
   },
   {
     "name": "Bullets, Sling",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1581,7 +1581,7 @@
   },
   {
     "name": "Needles",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1591,7 +1591,7 @@
   },
   {
     "name": "Spell Scroll",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Adventuring Gear",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1601,7 +1601,7 @@
   },
   {
     "name": "Camel",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Mount",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1611,7 +1611,7 @@
   },
   {
     "name": "Elephant",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Mount",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1621,7 +1621,7 @@
   },
   {
     "name": "Horse, Draft",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Mount",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1631,7 +1631,7 @@
   },
   {
     "name": "Horse, Riding",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Mount",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1641,7 +1641,7 @@
   },
   {
     "name": "Mastiff",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Mount",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1651,7 +1651,7 @@
   },
   {
     "name": "Mule",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Mount",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1661,7 +1661,7 @@
   },
   {
     "name": "Pony",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Mount",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1671,7 +1671,7 @@
   },
   {
     "name": "Warhorse",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Mount",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1681,7 +1681,7 @@
   },
   {
     "name": "Carriage",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Vehicle",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1691,7 +1691,7 @@
   },
   {
     "name": "Cart",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Vehicle",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1701,7 +1701,7 @@
   },
   {
     "name": "Chariot",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Vehicle",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1711,7 +1711,7 @@
   },
   {
     "name": "Sled",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Vehicle",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1721,7 +1721,7 @@
   },
   {
     "name": "Wagon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Vehicle",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1731,7 +1731,7 @@
   },
   {
     "name": "Airship",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Vehicle",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1741,7 +1741,7 @@
   },
   {
     "name": "Galley",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Vehicle",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1751,7 +1751,7 @@
   },
   {
     "name": "Keelboat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Vehicle",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1761,7 +1761,7 @@
   },
   {
     "name": "Longship",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Vehicle",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1771,7 +1771,7 @@
   },
   {
     "name": "Rowboat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Vehicle",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1781,7 +1781,7 @@
   },
   {
     "name": "Sailing Ship",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Vehicle",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1791,7 +1791,7 @@
   },
   {
     "name": "Warship",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Vehicle",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1801,7 +1801,7 @@
   },
   {
     "name": "Adamantine Armor",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1811,7 +1811,7 @@
   },
   {
     "name": "Ammunition, +1",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1821,7 +1821,7 @@
   },
   {
     "name": "Ammunition, +2",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1831,7 +1831,7 @@
   },
   {
     "name": "Ammunition, +3",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1841,7 +1841,7 @@
   },
   {
     "name": "Ammunition of Slaying",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1851,7 +1851,7 @@
   },
   {
     "name": "Amulet of Health",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1861,7 +1861,7 @@
   },
   {
     "name": "Amulet of Proof against Detection and Location",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1871,7 +1871,7 @@
   },
   {
     "name": "Amulet of the Planes",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1881,7 +1881,7 @@
   },
   {
     "name": "Animated Shield",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1891,7 +1891,7 @@
   },
   {
     "name": "Apparatus of the Crab",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1901,7 +1901,7 @@
   },
   {
     "name": "Armor, +1",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1911,7 +1911,7 @@
   },
   {
     "name": "Armor, +2",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1921,7 +1921,7 @@
   },
   {
     "name": "Armor, +3",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1931,7 +1931,7 @@
   },
   {
     "name": "Armor of Invulnerability",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1941,7 +1941,7 @@
   },
   {
     "name": "Armor of Resistance",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1951,7 +1951,7 @@
   },
   {
     "name": "Armor of Vulnerability",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1961,7 +1961,7 @@
   },
   {
     "name": "Arrow-Catching Shield",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1971,7 +1971,7 @@
   },
   {
     "name": "Bag of Beans",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1981,7 +1981,7 @@
   },
   {
     "name": "Bag of Devouring",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -1991,7 +1991,7 @@
   },
   {
     "name": "Bag of Holding",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2001,7 +2001,7 @@
   },
   {
     "name": "Bag of Tricks",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2011,7 +2011,7 @@
   },
   {
     "name": "Bead of Force",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2021,7 +2021,7 @@
   },
   {
     "name": "Bead of Nourishment",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2031,7 +2031,7 @@
   },
   {
     "name": "Belt of Dwarvenkind",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2041,7 +2041,7 @@
   },
   {
     "name": "Belt of Giant Strength",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2051,7 +2051,7 @@
   },
   {
     "name": "Berserker Axe",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2061,7 +2061,7 @@
   },
   {
     "name": "Boots of Elvenkind",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2071,7 +2071,7 @@
   },
   {
     "name": "Boots of Levitation",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2081,7 +2081,7 @@
   },
   {
     "name": "Boots of Speed",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2091,7 +2091,7 @@
   },
   {
     "name": "Boots of Striding and Springing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2101,7 +2101,7 @@
   },
   {
     "name": "Boots of the Winterlands",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2111,7 +2111,7 @@
   },
   {
     "name": "Bowl of Commanding Water Elementals",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2121,7 +2121,7 @@
   },
   {
     "name": "Bracers of Archery",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2131,7 +2131,7 @@
   },
   {
     "name": "Bracers of Defense",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2141,7 +2141,7 @@
   },
   {
     "name": "Brazier of Commanding Fire Elementals",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2151,7 +2151,7 @@
   },
   {
     "name": "Brooch of Shielding",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2161,7 +2161,7 @@
   },
   {
     "name": "Broom of Flying",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2171,7 +2171,7 @@
   },
   {
     "name": "Candle of Invocation",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2181,7 +2181,7 @@
   },
   {
     "name": "Cape of the Mountebank",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2191,7 +2191,7 @@
   },
   {
     "name": "Carpet of Flying",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2201,7 +2201,7 @@
   },
   {
     "name": "Censer of Controlling Air Elementals",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2211,7 +2211,7 @@
   },
   {
     "name": "Chime of Opening",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2221,7 +2221,7 @@
   },
   {
     "name": "Circlet of Blasting",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2231,7 +2231,7 @@
   },
   {
     "name": "Cloak of Arachnida",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2241,7 +2241,7 @@
   },
   {
     "name": "Cloak of Displacement",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2251,7 +2251,7 @@
   },
   {
     "name": "Cloak of Elvenkind",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2261,7 +2261,7 @@
   },
   {
     "name": "Cloak of Invisibility",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2271,7 +2271,7 @@
   },
   {
     "name": "Cloak of Protection",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2281,7 +2281,7 @@
   },
   {
     "name": "Cloak of the Bat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2291,7 +2291,7 @@
   },
   {
     "name": "Cloak of the Manta Ray",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2301,7 +2301,7 @@
   },
   {
     "name": "Crystal Ball",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2311,7 +2311,7 @@
   },
   {
     "name": "Crystal Ball of Mind Reading",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2321,7 +2321,7 @@
   },
   {
     "name": "Crystal Ball of Telepathy",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2331,7 +2331,7 @@
   },
   {
     "name": "Crystal Ball of True Seeing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2341,7 +2341,7 @@
   },
   {
     "name": "Cube of Force",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2351,7 +2351,7 @@
   },
   {
     "name": "Cubic Gate",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2361,7 +2361,7 @@
   },
   {
     "name": "Dagger of Venom",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2371,7 +2371,7 @@
   },
   {
     "name": "Dancing Sword",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2381,7 +2381,7 @@
   },
   {
     "name": "Decanter of Endless Water",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2391,7 +2391,7 @@
   },
   {
     "name": "Deck of Illusions",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2401,7 +2401,7 @@
   },
   {
     "name": "Defender",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2411,7 +2411,7 @@
   },
   {
     "name": "Demon Armor",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2421,7 +2421,7 @@
   },
   {
     "name": "Dimensional Shackles",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2431,7 +2431,7 @@
   },
   {
     "name": "Dragon Orb",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2441,7 +2441,7 @@
   },
   {
     "name": "Dragon Scale Mail",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2451,7 +2451,7 @@
   },
   {
     "name": "Dragon Slayer",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2461,7 +2461,7 @@
   },
   {
     "name": "Dust of Disappearance",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2471,7 +2471,7 @@
   },
   {
     "name": "Dust of Dryness",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2481,7 +2481,7 @@
   },
   {
     "name": "Dust of Sneezing and Choking",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2491,7 +2491,7 @@
   },
   {
     "name": "Dwarven Plate",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2501,7 +2501,7 @@
   },
   {
     "name": "Dwarven Thrower",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2511,7 +2511,7 @@
   },
   {
     "name": "Efficient Quiver",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2521,7 +2521,7 @@
   },
   {
     "name": "Efreeti Bottle",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2531,7 +2531,7 @@
   },
   {
     "name": "Elemental Gem",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2541,7 +2541,7 @@
   },
   {
     "name": "Elixir of Health",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2551,7 +2551,7 @@
   },
   {
     "name": "Elven Chain",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2561,7 +2561,7 @@
   },
   {
     "name": "Energy Bow",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2571,7 +2571,7 @@
   },
   {
     "name": "Eversmoking Bottle",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2581,7 +2581,7 @@
   },
   {
     "name": "Eyes of Charming",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2591,7 +2591,7 @@
   },
   {
     "name": "Eyes of Minute Seeing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2601,7 +2601,7 @@
   },
   {
     "name": "Eyes of the Eagle",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2611,7 +2611,7 @@
   },
   {
     "name": "Feather Token",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2621,7 +2621,7 @@
   },
   {
     "name": "Figurine of Wondrous Power",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2631,7 +2631,7 @@
   },
   {
     "name": "Flame Tongue",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2641,7 +2641,7 @@
   },
   {
     "name": "Folding Boat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2651,7 +2651,7 @@
   },
   {
     "name": "Frost Brand",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2661,7 +2661,7 @@
   },
   {
     "name": "Gauntlets of Ogre Power",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2671,7 +2671,7 @@
   },
   {
     "name": "Gem of Brightness",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2681,7 +2681,7 @@
   },
   {
     "name": "Gem of Seeing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2691,7 +2691,7 @@
   },
   {
     "name": "Giant Slayer",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2701,7 +2701,7 @@
   },
   {
     "name": "Glamoured Studded Leather",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2711,7 +2711,7 @@
   },
   {
     "name": "Gloves of Missile Snaring",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2721,7 +2721,7 @@
   },
   {
     "name": "Gloves of Swimming and Climbing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2731,7 +2731,7 @@
   },
   {
     "name": "Gloves of Thievery",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2741,7 +2741,7 @@
   },
   {
     "name": "Goggles of Night",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2751,7 +2751,7 @@
   },
   {
     "name": "Hammer of Thunderbolts",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2761,7 +2761,7 @@
   },
   {
     "name": "Handy Haversack",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2771,7 +2771,7 @@
   },
   {
     "name": "Hat of Disguise",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2781,7 +2781,7 @@
   },
   {
     "name": "Hat of Many Spells",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2791,7 +2791,7 @@
   },
   {
     "name": "Headband of Intellect",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2801,7 +2801,7 @@
   },
   {
     "name": "Helm of Brilliance",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2811,7 +2811,7 @@
   },
   {
     "name": "Helm of Comprehending Languages",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2821,7 +2821,7 @@
   },
   {
     "name": "Helm of Telepathy",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2831,7 +2831,7 @@
   },
   {
     "name": "Helm of Teleportation",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2841,7 +2841,7 @@
   },
   {
     "name": "Holy Avenger",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2851,7 +2851,7 @@
   },
   {
     "name": "Horn of Blasting",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2861,7 +2861,7 @@
   },
   {
     "name": "Horn of Valhalla",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2871,7 +2871,7 @@
   },
   {
     "name": "Horseshoes of a Zephyr",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2881,7 +2881,7 @@
   },
   {
     "name": "Horseshoes of Speed",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2891,7 +2891,7 @@
   },
   {
     "name": "Immovable Rod",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Rod",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2901,7 +2901,7 @@
   },
   {
     "name": "Instant Fortress",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2911,7 +2911,7 @@
   },
   {
     "name": "Ioun Stone",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2921,7 +2921,7 @@
   },
   {
     "name": "Iron Bands",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2931,7 +2931,7 @@
   },
   {
     "name": "Iron Flask",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2941,7 +2941,7 @@
   },
   {
     "name": "Javelin of Lightning",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2951,7 +2951,7 @@
   },
   {
     "name": "Lantern of Revealing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2961,7 +2961,7 @@
   },
   {
     "name": "Luck Blade",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2971,7 +2971,7 @@
   },
   {
     "name": "Mace of Disruption",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2981,7 +2981,7 @@
   },
   {
     "name": "Mace of Smiting",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -2991,7 +2991,7 @@
   },
   {
     "name": "Mace of Terror",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3001,7 +3001,7 @@
   },
   {
     "name": "Mantle of Spell Resistance",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3011,7 +3011,7 @@
   },
   {
     "name": "Manual of Bodily Health",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3021,7 +3021,7 @@
   },
   {
     "name": "Manual of Gainful Exercise",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3031,7 +3031,7 @@
   },
   {
     "name": "Manual of Golems",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3041,7 +3041,7 @@
   },
   {
     "name": "Manual of Quickness of Action",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3051,7 +3051,7 @@
   },
   {
     "name": "Marvelous Pigments",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3061,7 +3061,7 @@
   },
   {
     "name": "Medallion of Thoughts",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3071,7 +3071,7 @@
   },
   {
     "name": "Mirror of Life Trapping",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3081,7 +3081,7 @@
   },
   {
     "name": "Mithral Armor",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3091,7 +3091,7 @@
   },
   {
     "name": "Mysterious Deck",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3101,7 +3101,7 @@
   },
   {
     "name": "Necklace of Adaptation",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3111,7 +3111,7 @@
   },
   {
     "name": "Necklace of Fireballs",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3121,7 +3121,7 @@
   },
   {
     "name": "Necklace of Prayer Beads",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3131,7 +3131,7 @@
   },
   {
     "name": "Nine Lives Stealer",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3141,7 +3141,7 @@
   },
   {
     "name": "Oathbow",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3151,7 +3151,7 @@
   },
   {
     "name": "Oil of Etherealness",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3161,7 +3161,7 @@
   },
   {
     "name": "Oil of Sharpness",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3171,7 +3171,7 @@
   },
   {
     "name": "Oil of Slipperiness",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3181,7 +3181,7 @@
   },
   {
     "name": "Pearl of Power",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3191,7 +3191,7 @@
   },
   {
     "name": "Periapt of Health",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3201,7 +3201,7 @@
   },
   {
     "name": "Periapt of Proof against Poison",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3211,7 +3211,7 @@
   },
   {
     "name": "Periapt of Wound Closure",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3221,7 +3221,7 @@
   },
   {
     "name": "Philter of Love",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3231,7 +3231,7 @@
   },
   {
     "name": "Pipes of Haunting",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3241,7 +3241,7 @@
   },
   {
     "name": "Pipes of the Sewers",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3251,7 +3251,7 @@
   },
   {
     "name": "Plate Armor of Etherealness",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3261,7 +3261,7 @@
   },
   {
     "name": "Portable Hole",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3271,7 +3271,7 @@
   },
   {
     "name": "Potion of Animal Friendship",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3281,7 +3281,7 @@
   },
   {
     "name": "Potion of Clairvoyance",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3291,7 +3291,7 @@
   },
   {
     "name": "Potion of Climbing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3301,7 +3301,7 @@
   },
   {
     "name": "Potion of Diminution",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3311,7 +3311,7 @@
   },
   {
     "name": "Potion of Flying",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3321,7 +3321,7 @@
   },
   {
     "name": "Potion of Gaseous Form",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3331,7 +3331,7 @@
   },
   {
     "name": "Potion of Giant Strength",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3341,7 +3341,7 @@
   },
   {
     "name": "Potion of Growth",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3351,7 +3351,7 @@
   },
   {
     "name": "Potion of Healing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3361,7 +3361,7 @@
   },
   {
     "name": "Potion of Greater Healing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3371,7 +3371,7 @@
   },
   {
     "name": "Potion of Superior Healing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3381,7 +3381,7 @@
   },
   {
     "name": "Potion of Supreme Healing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3391,7 +3391,7 @@
   },
   {
     "name": "Potion of Heroism",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3401,7 +3401,7 @@
   },
   {
     "name": "Potion of Invisibility",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3411,7 +3411,7 @@
   },
   {
     "name": "Potion of Invulnerability",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3421,7 +3421,7 @@
   },
   {
     "name": "Potion of Longevity",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3431,7 +3431,7 @@
   },
   {
     "name": "Potion of Mind Reading",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3441,7 +3441,7 @@
   },
   {
     "name": "Potion of Poison",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3451,7 +3451,7 @@
   },
   {
     "name": "Potion of Resistance",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3461,7 +3461,7 @@
   },
   {
     "name": "Potion of Speed",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3471,7 +3471,7 @@
   },
   {
     "name": "Potion of Vitality",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3481,7 +3481,7 @@
   },
   {
     "name": "Potion of Water Breathing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Potion",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3491,7 +3491,7 @@
   },
   {
     "name": "Quarterstaff of the Acrobat",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3501,7 +3501,7 @@
   },
   {
     "name": "Ring of Animal Influence",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3511,7 +3511,7 @@
   },
   {
     "name": "Ring of Djinni Summoning",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3521,7 +3521,7 @@
   },
   {
     "name": "Ring of Elemental Command",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3531,7 +3531,7 @@
   },
   {
     "name": "Ring of Evasion",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3541,7 +3541,7 @@
   },
   {
     "name": "Ring of Feather Falling",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3551,7 +3551,7 @@
   },
   {
     "name": "Ring of Free Action",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3561,7 +3561,7 @@
   },
   {
     "name": "Ring of Invisibility",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3571,7 +3571,7 @@
   },
   {
     "name": "Ring of Jumping",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3581,7 +3581,7 @@
   },
   {
     "name": "Ring of Mind Shielding",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3591,7 +3591,7 @@
   },
   {
     "name": "Ring of Protection",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3601,7 +3601,7 @@
   },
   {
     "name": "Ring of Regeneration",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3611,7 +3611,7 @@
   },
   {
     "name": "Ring of Resistance",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3621,7 +3621,7 @@
   },
   {
     "name": "Ring of Shooting Stars",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3631,7 +3631,7 @@
   },
   {
     "name": "Ring of Spell Storing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3641,7 +3641,7 @@
   },
   {
     "name": "Ring of Spell Turning",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3651,7 +3651,7 @@
   },
   {
     "name": "Ring of Swimming",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3661,7 +3661,7 @@
   },
   {
     "name": "Ring of Telekinesis",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3671,7 +3671,7 @@
   },
   {
     "name": "Ring of the Ram",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3681,7 +3681,7 @@
   },
   {
     "name": "Ring of Three Wishes",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3691,7 +3691,7 @@
   },
   {
     "name": "Ring of Warmth",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3701,7 +3701,7 @@
   },
   {
     "name": "Ring of Water Walking",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3711,7 +3711,7 @@
   },
   {
     "name": "Ring of X-ray Vision",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Ring",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3721,7 +3721,7 @@
   },
   {
     "name": "Robe of Eyes",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3731,7 +3731,7 @@
   },
   {
     "name": "Robe of Scintillating Colors",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3741,7 +3741,7 @@
   },
   {
     "name": "Robe of Stars",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3751,7 +3751,7 @@
   },
   {
     "name": "Robe of the Archmagi",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3761,7 +3761,7 @@
   },
   {
     "name": "Robe of Useful Items",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3771,7 +3771,7 @@
   },
   {
     "name": "Rod of Absorption",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Rod",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3781,7 +3781,7 @@
   },
   {
     "name": "Rod of Alertness",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Rod",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3791,7 +3791,7 @@
   },
   {
     "name": "Rod of Lordly Might",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Rod",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3801,7 +3801,7 @@
   },
   {
     "name": "Rod of Resurrection",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Rod",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3811,7 +3811,7 @@
   },
   {
     "name": "Rod of Rulership",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Rod",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3821,7 +3821,7 @@
   },
   {
     "name": "Rod of Security",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Rod",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3831,7 +3831,7 @@
   },
   {
     "name": "Rope of Climbing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3841,7 +3841,7 @@
   },
   {
     "name": "Rope of Entanglement",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3851,7 +3851,7 @@
   },
   {
     "name": "Scarab of Protection",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3861,7 +3861,7 @@
   },
   {
     "name": "Scimitar of Speed",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3871,7 +3871,7 @@
   },
   {
     "name": "Sending Stones",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3881,7 +3881,7 @@
   },
   {
     "name": "Sentinel Shield",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3891,7 +3891,7 @@
   },
   {
     "name": "Shield, +1",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3901,7 +3901,7 @@
   },
   {
     "name": "Shield, +2",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3911,7 +3911,7 @@
   },
   {
     "name": "Shield, +3",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3921,7 +3921,7 @@
   },
   {
     "name": "Shield of Missile Attraction",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3931,7 +3931,7 @@
   },
   {
     "name": "Shield of the Cavalier",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3941,7 +3941,7 @@
   },
   {
     "name": "Slippers of Spider Climbing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3951,7 +3951,7 @@
   },
   {
     "name": "Sovereign Glue",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3961,7 +3961,7 @@
   },
   {
     "name": "Spellguard Shield",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Armor",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3971,7 +3971,7 @@
   },
   {
     "name": "Sphere of Annihilation",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3981,7 +3981,7 @@
   },
   {
     "name": "Staff of Charming",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Staff",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -3991,7 +3991,7 @@
   },
   {
     "name": "Staff of Fire",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Staff",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4001,7 +4001,7 @@
   },
   {
     "name": "Staff of Frost",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Staff",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4011,7 +4011,7 @@
   },
   {
     "name": "Staff of Healing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Staff",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4021,7 +4021,7 @@
   },
   {
     "name": "Staff of Power",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Staff",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4031,7 +4031,7 @@
   },
   {
     "name": "Staff of Striking",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Staff",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4041,7 +4041,7 @@
   },
   {
     "name": "Staff of Swarming Insects",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Staff",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4051,7 +4051,7 @@
   },
   {
     "name": "Staff of the Magi",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Staff",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4061,7 +4061,7 @@
   },
   {
     "name": "Staff of the Python",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Staff",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4071,7 +4071,7 @@
   },
   {
     "name": "Staff of the Woodlands",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Staff",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4081,7 +4081,7 @@
   },
   {
     "name": "Staff of Thunder and Lightning",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Staff",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4091,7 +4091,7 @@
   },
   {
     "name": "Staff of Withering",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Staff",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4101,7 +4101,7 @@
   },
   {
     "name": "Stone of Controlling Earth Elementals",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4111,7 +4111,7 @@
   },
   {
     "name": "Stone of Good Luck",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4121,7 +4121,7 @@
   },
   {
     "name": "Sun Blade",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4131,7 +4131,7 @@
   },
   {
     "name": "Sword of Life Stealing",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4141,7 +4141,7 @@
   },
   {
     "name": "Sword of Sharpness",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4151,7 +4151,7 @@
   },
   {
     "name": "Sword of Wounding",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4161,7 +4161,7 @@
   },
   {
     "name": "Talisman of Pure Good",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4171,7 +4171,7 @@
   },
   {
     "name": "Talisman of the Sphere",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4181,7 +4181,7 @@
   },
   {
     "name": "Talisman of Ultimate Evil",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4191,7 +4191,7 @@
   },
   {
     "name": "Thunderous Greatclub",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4201,7 +4201,7 @@
   },
   {
     "name": "Tome of Clear Thought",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4211,7 +4211,7 @@
   },
   {
     "name": "Tome of Leadership and Influence",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4221,7 +4221,7 @@
   },
   {
     "name": "Tome of Understanding",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4231,7 +4231,7 @@
   },
   {
     "name": "Trident of Fish Command",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4241,7 +4241,7 @@
   },
   {
     "name": "Universal Solvent",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4251,7 +4251,7 @@
   },
   {
     "name": "Vicious Weapon",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4261,7 +4261,7 @@
   },
   {
     "name": "Vorpal Sword",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4271,7 +4271,7 @@
   },
   {
     "name": "Wand of Binding",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wand",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4281,7 +4281,7 @@
   },
   {
     "name": "Wand of Enemy Detection",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wand",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4291,7 +4291,7 @@
   },
   {
     "name": "Wand of Fear",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wand",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4301,7 +4301,7 @@
   },
   {
     "name": "Wand of Fireballs",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wand",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4311,7 +4311,7 @@
   },
   {
     "name": "Wand of Lightning Bolts",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wand",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4321,7 +4321,7 @@
   },
   {
     "name": "Wand of Magic Detection",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wand",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4331,7 +4331,7 @@
   },
   {
     "name": "Wand of Magic Missiles",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wand",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4341,7 +4341,7 @@
   },
   {
     "name": "Wand of Paralysis",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wand",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4351,7 +4351,7 @@
   },
   {
     "name": "Wand of Polymorph",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wand",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4361,7 +4361,7 @@
   },
   {
     "name": "Wand of Secrets",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wand",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4371,7 +4371,7 @@
   },
   {
     "name": "Wand of the War Mage, +1",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wand",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4381,7 +4381,7 @@
   },
   {
     "name": "Wand of the War Mage, +2",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wand",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4391,7 +4391,7 @@
   },
   {
     "name": "Wand of the War Mage, +3",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wand",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4401,7 +4401,7 @@
   },
   {
     "name": "Wand of Web",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wand",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4411,7 +4411,7 @@
   },
   {
     "name": "Wand of Wonder",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wand",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4421,7 +4421,7 @@
   },
   {
     "name": "Weapon, +1",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4431,7 +4431,7 @@
   },
   {
     "name": "Weapon, +2",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4441,7 +4441,7 @@
   },
   {
     "name": "Weapon, +3",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4451,7 +4451,7 @@
   },
   {
     "name": "Weapon of Warning",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Magic Weapon",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4461,7 +4461,7 @@
   },
   {
     "name": "Well of Many Worlds",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4471,7 +4471,7 @@
   },
   {
     "name": "Wind Fan",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4481,7 +4481,7 @@
   },
   {
     "name": "Winged Boots",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
@@ -4491,7 +4491,7 @@
   },
   {
     "name": "Wings of Flying",
-    "core_rules": "5th Edition",
+    "core_rules": "dnd5e",
     "category": "Wondrous Item",
     "is_3pp": false,
     "publisher": "Wizards of the Coast LLC",
