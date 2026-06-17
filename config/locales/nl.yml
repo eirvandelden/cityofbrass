@@ -26,6 +26,99 @@ nl:
         stock_images_admin: Stockafbeeldingen (Beheerder)
         title: Afbeeldingen
   hello: Hallo wereld
+  importer:
+    admin:
+      imports:
+        index:
+          add_new: Nieuwe toevoegen
+          title: Voorraadimports
+        show:
+          title: Voorraadimportstatus
+      previews:
+        new:
+          submit: Voorraadimport bekijken
+          title: Voorraadimports
+        show:
+          confirm: Voorraadimport bevestigen
+          title: Voorraadimportvoorbeeld
+    counts:
+      adventures: Avonturen
+      backgrounds: Achtergronden
+      classes: Klassen
+      combatants: Strijders
+      encounters: Ontmoetingen
+      feats: Prestaties
+      items: Voorwerpen
+      monsters: Monsters
+      notes: Notities
+      npcs: NPC's
+      pcs: Spelerpersonages
+      races: Soorten
+      spells: Spreuken
+      subclasses: Subklassen
+    imports:
+      index:
+        created_at: Aangemaakt
+        files: Bestanden
+        history: Importgeschiedenis
+        results: Resultaten
+        status: Status
+        title: Imports
+      show:
+        back: Terug naar imports
+        counts: Aantallen
+        entity: Entiteit
+        file: Bestand
+        files: Bestanden
+        kind: Type
+        outcome: Uitkomst
+        reason: Reden
+        results: Resultaten
+        status: Status
+        title: Importstatus
+    kinds:
+      campaign: Campagne
+      characters: Personages
+      compendium: Compendium
+      pc: Spelerpersonage
+      unsupported: Niet ondersteund
+    outcomes:
+      created: Aangemaakt
+      failed: Mislukt
+      skipped: Overgeslagen
+    previews:
+      new:
+        submit: Import bekijken
+        title: Bestanden importeren
+      show:
+        confirm: Import bevestigen
+        counts: Aantallen
+        file: Bestand
+        kind: Type
+        title: Importvoorbeeld
+    provenance_notes:
+      description_html: '<p>Geimporteerd uit een Game Master 5 XML-bestand op %{created_at}.</p>
+        <p>Bronbestand: %{source_file}</p> <p>Aangemaakte %{entity_type}: %{entity_name}</p>
+        <p><a href="%{import_path}">%{import_label}</a></p>
+
+        '
+      import_label: importdetails
+      name: 'Geimporteerde %{entity_type}: %{entity_name}'
+    reasons:
+      already_exists: Bestaat al
+      no_stock_character_target: Geen doel voor voorraadpersonage
+      unsupported_file_kind: Niet-ondersteund bestandstype
+    statuses:
+      expired: Verlopen
+      failed: Mislukt
+      parsed: Geparseerd
+      parsing: Parseren
+      partial: Gedeeltelijk
+      pending: In afwachting
+      queued: In wachtrij
+      ready: Klaar
+      running: Bezig
+      succeeded: Geslaagd
   layouts:
     license:
       attribution:
@@ -51,3 +144,55 @@ nl:
     en: Engels
     it: Italiaans
     nl: Nederlands
+  navigation:
+    links:
+      adventure_builder: Avonturenbouwer
+      adventures: Avonturen
+      billing_events: Facturatiegebeurtenissen
+      campaigns: Campagnes
+      characters: Personages
+      compose: Opstellen
+      core_faqs: Kern-FAQ's
+      create_resident: Resident aanmaken
+      creatures: Wezens
+      dashboard: Dashboard
+      faq_images: FAQ-afbeeldingen
+      faqs: FAQ's
+      friends: Vrienden
+      home: Home
+      images: Afbeeldingen
+      import: Import
+      inbox: Inbox
+      items: Voorwerpen
+      login: Inloggen
+      logout: Uitloggen
+      maps: Kaarten
+      npcs: NPC's
+      resident: Resident
+      residents: Residents
+      rules: Regels
+      sent: Verzonden
+      settings: Instellingen
+      sign_up: Registreren
+      spells: Spreuken
+      stock_imports: Voorraadimports
+      subscription: Abonnement
+      terms_of_service: Servicevoorwaarden
+      user_admin: Gebruikersbeheer
+      world_builder: Wereldbouwer
+      worlds: Werelden
+    sections:
+      account: Account
+      customers: Klanten
+      game_master: Spelleider
+      group: Groep
+      images: Afbeeldingen
+      imports: Imports
+      messages: Berichten
+      player: Speler
+      reports: Rapporten
+      resident: Resident
+      rule_builder: Regelenbouwer
+      search: Zoeken
+      session: Sessie
+      support: Ondersteuning

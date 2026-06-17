@@ -273,11 +273,11 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
   end
 
   test "import ignores same-name records from a different ruleset" do
-    Entitybuilder::StockCreature.create!(name: "Goblin", core_rules: "Pathfinder", privacy: "Residents",
+    Entitybuilder::StockCreature.create!(name: "Goblin", core_rules: "pf1e", privacy: "Residents",
                                          sheet_privacy: "Residents")
     import = import_for("sample_compendium.xml", mode: Importer::Preview::ADMIN_STOCK)
 
-    assert_difference("Entitybuilder::StockCreature.where(name: 'Goblin', core_rules: '5th Edition').count", 1) do
+    assert_difference("Entitybuilder::StockCreature.where(name: 'Goblin', core_rules: 'dnd5e').count", 1) do
       Importer::ProcessImportJob.perform_now(import.id)
     end
 
