@@ -1,11 +1,12 @@
 module Importer
   class ImportResult < ApplicationRecord
-    OUTCOMES = %w[created skipped failed].freeze
+    OUTCOMES = %w[created replaced skipped failed].freeze
 
     belongs_to :import_file
     belongs_to :record, polymorphic: true, optional: true
 
     scope :created, -> { where(outcome: "created") }
+    scope :replaced, -> { where(outcome: "replaced") }
     scope :skipped, -> { where(outcome: "skipped") }
     scope :failed, -> { where(outcome: "failed") }
 

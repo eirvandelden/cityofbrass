@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign version="5">
+  <name>Page Only Campaign</name>
+  <note>
+    <name>0. Introduction</name>
+    <text>This is adventure content, not a private GM note.</text>
+  </note>
+  <encounter>
+    <name>Upper Floor 1. Keep Out!</name>
+    <text>Read aloud: the room is unsafe.</text>
+  </encounter>
+</campaign>

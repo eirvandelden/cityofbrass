@@ -71,9 +71,11 @@ it:
         file: File
         files: File
         kind: Tipo
+        object: Oggetto
         outcome: Esito
         reason: Motivo
         results: Risultati
+        source_file: File sorgente
         status: Stato
         title: Stato importazione
     kinds:
@@ -85,6 +87,7 @@ it:
     outcomes:
       created: Creato
       failed: Non riuscito
+      replaced: Sostituito
       skipped: Saltato
     previews:
       new:
@@ -108,6 +111,16 @@ it:
       already_exists: Esiste gia
       no_stock_character_target: Nessuna destinazione per il personaggio stock
       unsupported_file_kind: Tipo di file non supportato
+    result_objects:
+      adventure: Avventura
+      campaign: Campagna
+      encounter: Incontro
+      item: Oggetto
+      monster: Mostro
+      note: Nota
+      npc: PNG
+      pc: Personaggio giocante
+      spell: Incantesimo
     statuses:
       expired: Scaduto
       failed: Non riuscito

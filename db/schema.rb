@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2026_06_16_053635) do
+ActiveRecord::Schema.define(version: 2026_06_17_131000) do
 
   create_table "activeplay_notables", id: :string, force: :cascade do |t|
     t.string "name"
@@ -165,7 +165,7 @@ ActiveRecord::Schema.define(version: 2026_06_16_053635) do
     t.string "page_label", limit: 255
     t.string "privacy", limit: 255
     t.string "short_description"
-    t.text "full_description"
+    t.text "full_description", limit: 16777215
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date "page_date"

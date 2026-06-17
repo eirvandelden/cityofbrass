@@ -80,9 +80,11 @@ en:
         file: File
         files: Files
         kind: Kind
+        object: Object
         outcome: Outcome
         reason: Reason
         results: Results
+        source_file: Source file
         status: Status
         title: Import Status
     kinds:
@@ -94,6 +96,7 @@ en:
     outcomes:
       created: Created
       failed: Failed
+      replaced: Replaced
       skipped: Skipped
     previews:
       new:
@@ -117,6 +120,16 @@ en:
       already_exists: Already exists
       no_stock_character_target: No stock character target
       unsupported_file_kind: Unsupported file kind
+    result_objects:
+      adventure: Adventure
+      campaign: Campaign
+      encounter: Encounter
+      item: Item
+      monster: Monster
+      note: Note
+      npc: NPC
+      pc: Player character
+      spell: Spell
     statuses:
       expired: Expired
       failed: Failed

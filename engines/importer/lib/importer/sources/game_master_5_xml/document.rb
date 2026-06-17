@@ -24,6 +24,7 @@ module Importer
           {
             name: text_at(node, "name"),
             adventures: nodes(node, "./adventure").map { |adventure| adventure_record(adventure) },
+            encounters: nodes(node, "./encounter").map { |encounter| encounter_record(encounter) },
             monsters: campaign_monster_records(node),
             items: campaign_item_records(node),
             notes: nodes(node, "./note").map { |note| note_record(note) },
@@ -278,7 +279,7 @@ module Importer
         def npc_record(node)
           {
             type: "npc",
-            name: text_at(node, "name"),
+            name: text_at(node, "label").presence || text_at(node, "name"),
             size: text_at(node, "size"),
             hp: text_at(node, "hp"),
             ac: text_at(node, "ac"),

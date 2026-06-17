@@ -14,7 +14,7 @@ module Importer
       end
 
       def show
-        @import = Import.admin_stock.includes(import_results: :record).find(params[:id])
+        @import = Import.admin_stock.includes(import_results: [ :record, :import_file ]).find(params[:id])
       end
     end
   end

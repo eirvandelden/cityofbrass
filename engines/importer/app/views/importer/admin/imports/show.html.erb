@@ -31,6 +31,8 @@
       <table>
         <thead>
           <tr>
+            <th><%= t("importer.imports.show.source_file") %></th>
+            <th><%= t("importer.imports.show.object") %></th>
             <th><%= t("importer.imports.show.entity") %></th>
             <th><%= t("importer.imports.show.outcome") %></th>
             <th><%= t("importer.imports.show.reason") %></th>
@@ -39,6 +41,8 @@
         <tbody>
           <% @import.import_results.each do |result| %>
             <tr>
+              <td><%= importer_result_source_file(result) %></td>
+              <td><%= importer_result_object(result) %></td>
               <td><%= render "importer/imports/result_entity", result: result %></td>
               <td><%= importer_outcome_label(result.outcome) %></td>
               <td><%= importer_reason_label(result.reason) %></td>
