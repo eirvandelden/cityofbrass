@@ -25,11 +25,12 @@ module Importer
             name: text_at(node, "name"),
             adventures: nodes(node, "./adventure").map { |adventure| adventure_record(adventure) },
             encounters: nodes(node, "./encounter").map { |encounter| encounter_record(encounter) },
+            page_records: page_records(node),
             monsters: campaign_monster_records(node),
             items: campaign_item_records(node),
             notes: nodes(node, "./note").map { |note| note_record(note) },
             pcs: nodes(node, ".//pc").map { |pc| pc_campaign_record(pc) },
-            npcs: nodes(node, ".//npc").map { |npc| npc_record(npc) }
+            npcs: nodes(node, "./npc").map { |npc| npc_record(npc) }
           }
         end
 
@@ -255,8 +256,15 @@ module Importer
             type: "adventure",
             name: name_or_title(adventure),
             description: text_at(adventure, "text"),
-            encounters: nodes(adventure, "./encounter").map { |enc| encounter_record(enc) }
+            encounters: page_records(adventure),
+            npcs: nodes(adventure, ".//npc").map { |npc| npc_record(npc) }
           }
+        end
+
+        def page_records(node)
+          nodes(node, "./encounter | ./note").map do |page|
+            page.name == "note" ? note_record(page) : encounter_record(page)
+          end
         end
 
         def encounter_record(node)
@@ -269,10 +277,12 @@ module Importer
         end
 
         def note_record(node)
+          text_blocks = nodes(node, "./text").map(&:text)
           {
             type: "note",
             name: name_or_title(node),
-            description: nodes(node, "./text").map(&:text).join("\n")
+            description: text_blocks.join("\n"),
+            text: text_blocks
           }
         end
 

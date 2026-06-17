@@ -26,6 +26,7 @@ module Campaignmanager
     has_many :features, -> { order(:sort_order) }, as: :featureable, dependent: :destroy
     has_many :sections, -> { order(:sort_order) }, as: :sectionable, dependent: :destroy
     has_many :notables, -> { order(:sort_order) }, as: :notableable, dependent: :destroy
+    has_many :menu_items, -> { order(:sort_order) }, as: :menu_itemable, class_name: "Storybuilder::MenuItem", dependent: :destroy
     has_many :entities, -> { select('entitybuilder_entities.id, entitybuilder_entities.type, entitybuilder_entities.resident_id, entitybuilder_entities.privacy, entitybuilder_entities.sheet_privacy, entitybuilder_entities.name, entitybuilder_entities.core_rules, entitybuilder_entities.short_description') }, through: :notables, source: :entity, class_name: "Entitybuilder::Entity"
 
     has_many :players,
@@ -91,6 +92,7 @@ module Campaignmanager
     accepts_nested_attributes_for :features, allow_destroy: true
     accepts_nested_attributes_for :sections, allow_destroy: true
     accepts_nested_attributes_for :notables, allow_destroy: true
+    accepts_nested_attributes_for :menu_items, allow_destroy: true
     accepts_nested_attributes_for :gallery_image_join, allow_destroy: true
 
     validates :resident_id, presence: true

@@ -115,10 +115,11 @@ module Importer
         with_campaign_import_tracking(root) do
           import_campaign_monsters(import_file, campaign)
           import_campaign_items(import_file, campaign)
-          campaign_adventures(import_file, campaign).each { |adventure| import_adventure(import_file, adventure, root) }
-          campaign_gm_notes(campaign).each { |note| import_note(import_file, note, root) }
+          adventures = explicit_campaign_adventures(campaign).map { |adventure| import_adventure(import_file, adventure, root) }
+          loose_pages = import_loose_campaign_pages(import_file, campaign, root)
+          rebuild_campaign_menu(root, adventures, loose_pages)
           campaign[:pcs].each { |pc| import_pc(import_file, pc) }
-          campaign[:npcs].each { |npc| import_npc(import_file, npc) }
+          campaign[:npcs].each { |npc| link_campaign_notable(root, import_npc(import_file, npc)) }
         end
       end
 
@@ -128,8 +129,9 @@ module Importer
           import_campaign_items(import_file, campaign)
           adventures = campaign_adventures(import_file, campaign).map { |adventure| import_stock_adventure(import_file, adventure) }
           root = adventures.first || stock_adventure(import_file, { name: campaign_name(import_file, campaign) })
+          stock_note_pages = campaign_stock_notes(campaign).map { |note| import_stock_note(import_file, note, root) }
 
-          campaign_stock_notes(campaign).each { |note| import_stock_note(import_file, note, root) }
+          rebuild_adventure_menu(root, root.pages.order(:created_at)) if stock_note_pages.any?
           campaign[:pcs].each { |pc| import_pc(import_file, pc) }
           campaign[:npcs].each { |npc| import_npc(import_file, npc) }
         end
@@ -143,19 +145,36 @@ module Importer
         campaign.fetch(:items, []).each { |record| import_item(import_file, record) }
       end
 
+      def explicit_campaign_adventures(campaign)
+        campaign.fetch(:adventures, [])
+      end
+
+      def loose_campaign_page_records(campaign)
+        campaign.fetch(:page_records, campaign.fetch(:encounters, []) + campaign.fetch(:notes, []))
+      end
+
+      def import_loose_campaign_pages(import_file, campaign, root)
+        page_records = loose_campaign_page_records(campaign)
+        return [] if page_records.blank?
+
+        adventure = resident_adventure(import_file, { type: "adventure", name: campaign_name(import_file, campaign) }, root)
+        pages = page_records.map { |record| import_page_record(import_file, record, adventure) }
+        rebuild_adventure_menu(adventure, pages)
+        link_campaign_page_notables(root, pages)
+        pages
+      end
+
       def campaign_adventures(import_file, campaign)
         return campaign[:adventures] if campaign[:adventures].present?
 
-        page_records = campaign.fetch(:encounters, []) + campaign.fetch(:notes, [])
+        page_records = campaign.fetch(:page_records, campaign.fetch(:encounters, []) + campaign.fetch(:notes, []))
         return [] if page_records.blank?
 
         [ { type: "adventure", name: campaign_name(import_file, campaign), encounters: page_records } ]
       end
 
       def campaign_gm_notes(campaign)
-        return [] if campaign[:adventures].blank? && (campaign.fetch(:encounters, []) + campaign.fetch(:notes, [])).present?
-
-        campaign[:notes]
+        []
       end
 
       def campaign_stock_notes(campaign)
@@ -200,13 +219,112 @@ module Importer
 
       def import_stock_adventure(import_file, adventure)
         record = stock_adventure(import_file, adventure)
-        adventure[:encounters].each { |encounter| import_encounter(import_file, encounter, record) }
+        pages = adventure[:encounters].map { |encounter| import_page_record(import_file, encounter, record) }
+        rebuild_adventure_menu(record, pages)
         record
       end
 
       def import_adventure(import_file, adventure, root)
         record = resident_adventure(import_file, adventure, root)
-        adventure[:encounters].each { |encounter| import_encounter(import_file, encounter, record) }
+        adventure.fetch(:npcs, []).each { |npc| link_entities_to_storybuilder_notableable(record, [ import_npc(import_file, npc) ]) }
+        pages = adventure[:encounters].map { |encounter| import_page_record(import_file, encounter, record) }
+        rebuild_adventure_menu(record, pages)
+        link_adventure_page_notables(record, pages)
+        record
+      end
+
+      def import_page_record(import_file, record, adventure)
+        return import_stock_note(import_file, record, adventure) if record[:type] == "note"
+
+        import_encounter(import_file, record, adventure)
+      end
+
+      def rebuild_campaign_menu(campaign, adventures, pages)
+        records = adventures.compact + pages.compact
+        return if records.blank?
+
+        remove_menu_items(campaign, records)
+        sort_order = next_menu_sort_order(campaign)
+        records.each_with_index { |record, index| create_campaign_menu_item(campaign, record, sort_order + index) }
+      end
+
+      def rebuild_adventure_menu(adventure, pages)
+        pages = pages.compact.uniq
+        return if pages.blank?
+
+        remove_menu_items(adventure, pages)
+        sort_order = next_menu_sort_order(adventure)
+        pages.each_with_index { |page, index| create_page_menu_item(adventure, page, sort_order + index) }
+      end
+
+      def remove_menu_items(menu_owner, records)
+        records.each do |record|
+          menu_item_joins_for(menu_owner, record).find_each do |join|
+            menu_item = join.menu_item
+            join.destroy!
+            menu_item.destroy!
+          end
+        end
+      end
+
+      def menu_item_joins_for(menu_owner, record)
+        Storybuilder::MenuItemJoin.joins(:menu_item).where(
+          menu_item_joinable: record,
+          storybuilder_menu_items: {
+            menu_itemable_id: menu_owner.id,
+            menu_itemable_type: menu_owner_polymorphic_types(menu_owner)
+          }
+        )
+      end
+
+      def menu_owner_polymorphic_types(menu_owner)
+        [ menu_owner.class.name, menu_owner.class.base_class.name ].uniq
+      end
+
+      def next_menu_sort_order(menu_owner)
+        menu_owner.menu_items.maximum(:sort_order).to_i + 1
+      end
+
+      def create_campaign_menu_item(campaign, record, sort_order)
+        menu_item = campaign.menu_items.create!(
+          sort_order: sort_order,
+          item_label: record.name.to_s.truncate(25),
+          item_link: campaign_menu_link(campaign, record)
+        )
+        Storybuilder::MenuItemJoin.create!(menu_item: menu_item, menu_item_joinable: record)
+      end
+
+      def create_page_menu_item(adventure, page, sort_order)
+        menu_item = adventure.menu_items.create!(
+          sort_order: sort_order,
+          item_label: page.name.to_s.truncate(25),
+          item_link: "/pages/#{page.slug}"
+        )
+        Storybuilder::MenuItemJoin.create!(menu_item: menu_item, menu_item_joinable: page)
+      end
+
+      def campaign_menu_link(campaign, record)
+        path = storybuilder_path(record)
+        record.is_a?(Storybuilder::Adventure) ? "#{path}/campaign/#{campaign.id}" : path
+      end
+
+      def storybuilder_path(record)
+        adventure = storybuilder_adventure_for(record)
+        "/sb/#{storybuilder_scope(adventure)}/adventures/#{adventure.slug}#{storybuilder_page_path(record)}"
+      end
+
+      def storybuilder_adventure_for(record)
+        return record if record.is_a?(Storybuilder::Adventure)
+
+        Storybuilder::Adventure.find(record.adventure_id)
+      end
+
+      def storybuilder_scope(adventure)
+        adventure.is_a?(Storybuilder::StockAdventure) ? "stock" : "resident"
+      end
+
+      def storybuilder_page_path(record)
+        record.is_a?(Storybuilder::Page) ? "/pages/#{record.slug}" : ""
       end
 
       def resident_adventure(import_file, adventure, campaign)
@@ -255,6 +373,7 @@ module Importer
         )
         link_encounter_combatants(record, encounter[:combatants])
         result(import_file, encounter, "created", record)
+        record
       end
 
       def link_encounter_combatants(page, combatants)
@@ -300,6 +419,7 @@ module Importer
           full_description: note[:description].presence
         )
         result(import_file, note, "created", record)
+        record
       end
 
       def import_stock_note(import_file, note, adventure)
@@ -307,7 +427,8 @@ module Importer
         existing = existing_page(adventure, name)
         if existing
           return replace_or_skip(import_file, note.merge(name: name), existing) do |record|
-            record.update!(privacy: "Residents", tags: [ "note" ], full_description: note[:description].presence)
+            record.update!(privacy: "Residents", tags: [ "note" ], full_description: nil)
+            rebuild_note_sections(record, note)
           end
         end
 
@@ -316,9 +437,18 @@ module Importer
           name: name,
           privacy: "Residents",
           tags: [ "note" ],
-          full_description: note[:description].presence
+          full_description: nil
         )
+        rebuild_note_sections(record, note)
         result(import_file, note, "created", record)
+        record
+      end
+
+      def rebuild_note_sections(page, note)
+        page.sections.destroy_all
+        Array(note[:text]).reject(&:blank?).each_with_index do |text, index|
+          page.sections.create!(section_type: "text", section_style: "paragraph", content: text, sort_order: index)
+        end
       end
 
       def import_pc(import_file, pc)
@@ -480,6 +610,7 @@ module Importer
         end
 
         result(import_file, npc, "created", entity)
+        entity
       end
 
       def replace_npc(entity, npc)
@@ -509,45 +640,60 @@ module Importer
         if existing
           name_index_add("monster", record[:name], existing)
           return replace_or_skip(import_file, record.merge(name: name), existing) do |creature|
-            replace_creature(creature, record)
+            replace_creature(import_file, creature, record)
             name_index_add("monster", record[:name], creature)
           end
         end
 
-        traits_text = record[:traits].map { |t| "**#{t[:name]}**\n#{t[:text]}" }.join("\n\n")
         creature = klass.create!(
           name: name,
           core_rules: CORE_RULES,
           source: record[:source],
           short_description: record[:cr].presence,
-          full_description: traits_text.presence,
           **privacy_attributes_for(klass).merge(resident_content? ? { resident: resident } : {})
         )
         enforce_entity_privacy!(creature)
-        build_creature_associations(creature, record)
+        build_creature_associations(import_file, creature, record)
         name_index_add("monster", record[:name], creature)
         result(import_file, record, "created", creature)
       end
 
-      def replace_creature(creature, record)
+      def replace_creature(import_file, creature, record)
         clear_entity_import_details(creature)
-        traits_text = record[:traits].map { |trait| "**#{trait[:name]}**\n#{trait[:text]}" }.join("\n\n")
         creature.update!(
           source: record[:source],
           short_description: record[:cr].presence,
-          full_description: traits_text.presence,
+          full_description: nil,
           **privacy_attributes_for(creature.class)
         )
-        build_creature_associations(creature, record)
+        build_creature_associations(import_file, creature, record)
       end
 
-      def build_creature_associations(creature, record)
+      def build_creature_associations(import_file, creature, record)
         build_ability_scores(creature, record)
         build_basic_stats(creature, record)
         build_creature_descriptors(creature, record)
         build_creature_attacks(creature, record[:actions], "melee")
         build_creature_attacks(creature, record[:reactions], "melee")
         build_creature_attacks(creature, record[:legendary], "melee")
+        build_creature_trait_rules(import_file, creature, record)
+      end
+
+      def build_creature_trait_rules(import_file, creature, record)
+        record[:traits].each_with_index do |trait, index|
+          import_rule(import_file, trait_rule_record(record, trait))
+          rule = name_index_find("ability", trait[:name])
+          creature.linked_rules.create!(rule: rule, sort_order: index) if rule.present?
+        end
+      end
+
+      def trait_rule_record(record, trait)
+        {
+          type: "ability",
+          name: trait[:name],
+          source: record[:source],
+          text: [ trait[:text] ].compact
+        }
       end
 
       def build_ability_scores(entity, record)
@@ -794,7 +940,6 @@ module Importer
 
         with_import_provenance_campaign(provenance_campaign) do
           yield
-          link_created_entities_to_campaign_adventures
         end
       ensure
         @campaign_import_adventures = previous_adventures
@@ -866,18 +1011,32 @@ module Importer
         # skip duplicate or invalid note links
       end
 
-      def link_created_entities_to_campaign_adventures
-        return if @campaign_import_adventures.blank? || @campaign_import_entities.blank?
+      def link_adventure_page_notables(adventure, pages)
+        pages.each { |page| link_entities_to_storybuilder_notableable(adventure, page_imported_entities(page)) }
+      end
 
-        @campaign_import_adventures.each do |adventure|
-          link_entities_to_storybuilder_notableable(adventure, @campaign_import_entities)
-        end
+      def link_campaign_page_notables(campaign, pages)
+        pages.each { |page| page_imported_entities(page).each { |entity| link_campaign_notable(campaign, entity) } }
+      end
+
+      def page_imported_entities(page)
+        page.notables.includes(:entity).filter_map(&:entity)
+      end
+
+      def link_campaign_notable(campaign, entity)
+        return unless entity.is_a?(Entitybuilder::Entity)
+        return if campaign.notables.exists?(entity: entity)
+
+        Campaignmanager::Notable.create!(notableable: campaign, entity: entity, name: entity.name.truncate(64))
+      rescue ActiveRecord::RecordInvalid
+        # skip duplicate or invalid notable links
       end
 
       def link_entities_to_storybuilder_notableable(notableable, entities)
         existing_entity_ids = notableable.notables.pluck(:entity_id).to_set
 
         entities.each do |entity|
+          next unless entity.is_a?(Entitybuilder::Entity)
           next if existing_entity_ids.include?(entity.id)
 
           Storybuilder::Notable.create!(notableable: notableable, entity: entity, name: entity.name.truncate(64))
@@ -978,6 +1137,7 @@ module Importer
         entity.attacks.destroy_all
         entity.defenses.destroy_all
         entity.saving_throws.destroy_all
+        entity.linked_rules.destroy_all
       end
 
       def name_index_add(kind, name, record)
