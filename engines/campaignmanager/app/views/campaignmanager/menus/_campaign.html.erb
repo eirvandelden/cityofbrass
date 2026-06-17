@@ -25,6 +25,11 @@
     </h3>
   </dd>
 <% end %>
+<% visible_storybuilder_menu_items(@campaign.menu_items).each do |menu_item| %>
+  <dd class="<%= 'active' if current_page?(menu_item.item_link) %>">
+    <h3><%= link_to menu_item.item_label, menu_item.item_link, :style => 'display:block;' %></h3>
+  </dd>
+<% end %>
   <dd class="<%= 'active' if page == "HouseRule" if local_assigns.has_key? :page %>">
     <h3><%= link_to 'House Rules', campaignmanager.polymorphic_path([@campaign, :house_rules]), :style => 'display:block;' %></h3>
   </dd>

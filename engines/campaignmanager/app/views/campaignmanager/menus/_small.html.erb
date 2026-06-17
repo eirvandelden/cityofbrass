@@ -12,6 +12,9 @@
   <% active_adventure_path = "#{storybuilder.polymorphic_path(@campaign.active_adventure)}/campaign/#{@campaign.id}" %>
   <li><%= link_to t("campaignmanager.navigation.active_adventure"), active_adventure_path %></li>
 <% end %>
+<% visible_storybuilder_menu_items(@campaign.menu_items).each do |menu_item| %>
+  <li><%= link_to menu_item.item_label, menu_item.item_link %></li>
+<% end %>
 <li><%= link_to 'House Rules', campaignmanager.polymorphic_path([@campaign, :house_rules]) %></li>
 <li><%= link_to 'Adventure Logs', campaignmanager.polymorphic_path([@campaign, :adventure_logs]) %></li>
 

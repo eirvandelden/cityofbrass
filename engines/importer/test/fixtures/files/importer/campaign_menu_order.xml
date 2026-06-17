@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+  <campaign>
+    <name>Menu Campaign</name>
+    <adventure>
+      <name>First Adventure</name>
+      <encounter>
+        <name>First Room</name>
+      </encounter>
+    </adventure>
+    <adventure>
+      <name>Second Adventure</name>
+      <encounter>
+        <name>Second Room</name>
+      </encounter>
+    </adventure>
+    <note>
+      <name>Loose Note</name>
+      <text>Loose note opening.</text>
+      <text>Loose note follow-up.</text>
+    </note>
+    <encounter>
+      <name>Loose Encounter</name>
+      <text>Loose encounter text.</text>
+    </encounter>
+  </campaign>
+</data>
