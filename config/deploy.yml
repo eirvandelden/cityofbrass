@@ -57,6 +57,7 @@ aliases:
   console: app exec --interactive --reuse "bin/rails console"
   dbconsole: app exec --interactive --reuse "bin/rails dbconsole"
   migrate: app exec --reuse "bin/rails db:migrate"
+  logs: app logs -f
 
 volumes:
   - "/home/app_storage/cityofbrass/storage:/rails/storage"
