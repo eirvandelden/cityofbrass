@@ -54,20 +54,23 @@ class ImporterImportFlowTest < ActionDispatch::IntegrationTest
 
   test "resident import results link to created records" do
     sign_in users(:dan)
-    post "/imports/previews", params: { files: [ uploaded_file("sample_compendium.xml") ] }
-    preview = Importer::Preview.order(:created_at).last
-
-    perform_enqueued_jobs do
-      post "/imports", params: { preview_id: preview.id }
+    import = Importer::Import.create!(resident: residents(:razune), mode: Importer::Preview::RESIDENT_CONTENT,
+                                      source: Importer::Preview::GAME_MASTER_5_XML,
+                                      status: Importer::Import::QUEUED)
+    File.open(importer_fixture_file("sample_compendium.xml")) do |file|
+      import.import_files.create!(kind: "compendium", parse_status: "pending", file: file)
     end
-
-    import = Importer::Import.order(:created_at).last
+    Importer::ProcessImportJob.perform_now(import.id)
     goblin = Entitybuilder::ResidentCreature.find_by!(name: "Goblin")
     longsword = Rulebuilder::ResidentItem.find_by!(name: "Longsword")
 
     get "/imports/#{import.id}"
 
     assert_response :success
+    assert_select "th", text: I18n.t("importer.imports.show.source_file")
+    assert_select "th", text: I18n.t("importer.imports.show.object")
+    assert_select "td", text: "sample_compendium.xml"
+    assert_select "td", text: Entitybuilder::ResidentCreature.model_name.human
     assert_select "a[href='#{ApplicationController.helpers.tcob_path(goblin)}']", text: "Goblin"
     assert_select "a[href='/rb/resident/items/#{longsword.id}']", text: "Longsword"
     assert_select "td", text: "Created"

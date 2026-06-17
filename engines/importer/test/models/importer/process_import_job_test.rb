@@ -76,15 +76,66 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
                                                                     mode: Importer::Preview::RESIDENT_CONTENT)
 
     assert_difference("Campaignmanager::Campaign.count", 1) do
-      assert_difference("Campaignmanager::GameMasterNote.count", 3) do
-        Importer::ProcessImportJob.perform_now(import.id)
+      assert_difference("Storybuilder::ResidentAdventure.count", 1) do
+        assert_difference("Storybuilder::Page.count", 1) do
+          Importer::ProcessImportJob.perform_now(import.id)
+        end
       end
     end
 
     assert_equal "succeeded", import.reload.status
     assert Campaignmanager::Campaign.exists?(name: "blank campaign titles")
-    assert Campaignmanager::GameMasterNote.exists?(name: "Session 1: Bridge Trouble")
+    assert Storybuilder::Page.exists?(name: "Session 1: Bridge Trouble")
     assert_equal "parsed", import.import_files.first.parse_status
+  end
+
+  test "resident campaign import uses npc label when npc name is blank" do
+    import = import_for_kind_with_file("label_only_npc_campaign.xml", kind: "campaign",
+                                                                    mode: Importer::Preview::RESIDENT_CONTENT)
+
+    assert_difference("Entitybuilder::ResidentNpc.count", 1) do
+      Importer::ProcessImportJob.perform_now(import.id)
+    end
+
+    assert_equal "succeeded", import.reload.status
+    assert import.import_results.failed.none?
+    assert Entitybuilder::ResidentNpc.exists?(name: "Delora Zann (owner stable)", resident: residents(:razune))
+  end
+
+  test "resident campaign import truncates long note titles to local page name limit" do
+    import = import_for_kind_with_file("long_note_title_campaign.xml", kind: "campaign",
+                                                                    mode: Importer::Preview::RESIDENT_CONTENT)
+
+    assert_difference("Storybuilder::Page.count", 1) do
+      Importer::ProcessImportJob.perform_now(import.id)
+    end
+
+    assert_equal "succeeded", import.reload.status
+    assert import.import_results.failed.none?
+    assert Storybuilder::Page.exists?(
+      name: 'Session 5: Next up in theaters: "The Girl and her Eyeball Famili'
+    )
+  end
+
+  test "resident campaign import turns campaign-level notes and encounters into adventure pages" do
+    import = import_for_kind_with_file("campaign_level_pages.xml", kind: "campaign",
+                                                                   mode: Importer::Preview::RESIDENT_CONTENT)
+
+    assert_difference("Campaignmanager::Campaign.count", 1) do
+      assert_difference("Storybuilder::ResidentAdventure.count", 1) do
+        assert_difference("Storybuilder::Page.count", 2) do
+          Importer::ProcessImportJob.perform_now(import.id)
+        end
+      end
+    end
+
+    campaign = Campaignmanager::Campaign.find_by!(name: "Page Only Campaign")
+    adventure = campaign.adventures.find_by!(name: "Page Only Campaign")
+
+    assert_equal "succeeded", import.reload.status
+    assert adventure.pages.exists?(name: "0. Introduction")
+    assert adventure.pages.exists?(name: "Upper Floor 1. Keep Out!")
+    assert_not campaign.game_master_notes.exists?(name: "0. Introduction")
   end
 
   test "resident campaign import creates encounter pages and embedded content" do
@@ -221,7 +272,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal 1, campaign.campaign_adventure_joins.where(active: true).count
   end
 
-  test "resident campaign reimport skips existing records" do
+  test "resident campaign reimport replaces imported records" do
     Importer::ProcessImportJob.perform_now(import_for("sample_campaign.xml", mode: Importer::Preview::RESIDENT_CONTENT).id)
     import = import_for("sample_campaign.xml", mode: Importer::Preview::RESIDENT_CONTENT)
 
@@ -240,11 +291,11 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     end
 
     assert_equal "succeeded", import.reload.status
-    assert_equal [ "already exists" ], import.import_results.skipped.distinct.pluck(:reason)
-    assert_equal %w[adventure campaign encounter note npc pc], import.import_results.skipped.order(:entity_type).pluck(:entity_type)
+    assert import.import_results.skipped.none?
+    assert_equal %w[adventure campaign encounter note npc pc], import.import_results.replaced.order(:entity_type).pluck(:entity_type)
   end
 
-  test "admin stock campaign reimport skips existing records" do
+  test "admin stock campaign reimport replaces imported records" do
     Importer::ProcessImportJob.perform_now(import_for("sample_campaign.xml", mode: Importer::Preview::ADMIN_STOCK).id)
     import = import_for("sample_campaign.xml", mode: Importer::Preview::ADMIN_STOCK)
 
@@ -257,19 +308,20 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     end
 
     assert_equal "partial", import.reload.status
-    assert_equal [ "already exists", "no stock character target" ], import.import_results.order(:reason).distinct.pluck(:reason)
-    assert_equal %w[adventure encounter note npc], import.import_results.where(reason: "already exists").order(:entity_type).pluck(:entity_type)
+    assert import.import_results.where(reason: "already exists").none?
+    assert_equal [ "no stock character target" ], import.import_results.where.not(reason: nil).distinct.pluck(:reason)
+    assert_equal %w[adventure encounter note npc], import.import_results.replaced.order(:entity_type).pluck(:entity_type)
   end
 
-  test "reimport succeeds with already exists skips" do
+  test "reimport succeeds with replacements for previously imported records" do
     Importer::ProcessImportJob.perform_now(import_for("sample_compendium.xml", mode: Importer::Preview::ADMIN_STOCK).id)
     import = import_for("sample_compendium.xml", mode: Importer::Preview::ADMIN_STOCK)
 
     Importer::ProcessImportJob.perform_now(import.id)
 
     assert_equal "succeeded", import.reload.status
-    assert_equal 9, import.import_results.skipped.count
-    assert_equal [ "already exists" ], import.import_results.skipped.distinct.pluck(:reason)
+    assert_equal 9, import.import_results.replaced.count
+    assert import.import_results.skipped.none?
   end
 
   test "import ignores same-name records from a different ruleset" do
@@ -479,7 +531,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal "Leader of the town guard.", npc.full_description
   end
 
-  test "standalone pc file reimport skips existing character" do
+  test "standalone pc file reimport replaces existing imported character" do
     Importer::ProcessImportJob.perform_now(
       import_for_kind_with_file("sample_pc.xml", kind: "pc", mode: Importer::Preview::RESIDENT_CONTENT).id
     )
@@ -490,7 +542,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     end
 
     assert_equal "succeeded", reimport.reload.status
-    assert_equal [ "already exists" ], reimport.import_results.skipped.distinct.pluck(:reason)
+    assert_equal [ "replaced" ], reimport.import_results.distinct.pluck(:outcome)
   end
 
   test "pc file and campaign with same label merge into one character with both stats and backstory" do

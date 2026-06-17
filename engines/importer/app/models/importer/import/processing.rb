@@ -4,6 +4,7 @@ module Importer
       extend ActiveSupport::Concern
 
       CORE_RULES = "dnd5e"
+      LOCAL_NAME_LIMIT = 64
 
       def process!
         update!(status: "running", started_at: Time.current)
@@ -114,8 +115,8 @@ module Importer
         with_campaign_import_tracking(root) do
           import_campaign_monsters(import_file, campaign)
           import_campaign_items(import_file, campaign)
-          campaign[:adventures].each { |adventure| import_adventure(import_file, adventure, root) }
-          campaign[:notes].each { |note| import_note(import_file, note, root) }
+          campaign_adventures(import_file, campaign).each { |adventure| import_adventure(import_file, adventure, root) }
+          campaign_gm_notes(campaign).each { |note| import_note(import_file, note, root) }
           campaign[:pcs].each { |pc| import_pc(import_file, pc) }
           campaign[:npcs].each { |npc| import_npc(import_file, npc) }
         end
@@ -125,10 +126,10 @@ module Importer
         with_campaign_import_tracking(nil) do
           import_campaign_monsters(import_file, campaign)
           import_campaign_items(import_file, campaign)
-          adventures = campaign[:adventures].map { |adventure| import_stock_adventure(import_file, adventure) }
+          adventures = campaign_adventures(import_file, campaign).map { |adventure| import_stock_adventure(import_file, adventure) }
           root = adventures.first || stock_adventure(import_file, { name: campaign_name(import_file, campaign) })
 
-          campaign[:notes].each { |note| import_stock_note(import_file, note, root) }
+          campaign_stock_notes(campaign).each { |note| import_stock_note(import_file, note, root) }
           campaign[:pcs].each { |pc| import_pc(import_file, pc) }
           campaign[:npcs].each { |npc| import_npc(import_file, npc) }
         end
@@ -142,12 +143,34 @@ module Importer
         campaign.fetch(:items, []).each { |record| import_item(import_file, record) }
       end
 
+      def campaign_adventures(import_file, campaign)
+        return campaign[:adventures] if campaign[:adventures].present?
+
+        page_records = campaign.fetch(:encounters, []) + campaign.fetch(:notes, [])
+        return [] if page_records.blank?
+
+        [ { type: "adventure", name: campaign_name(import_file, campaign), encounters: page_records } ]
+      end
+
+      def campaign_gm_notes(campaign)
+        return [] if campaign[:adventures].blank? && (campaign.fetch(:encounters, []) + campaign.fetch(:notes, [])).present?
+
+        campaign[:notes]
+      end
+
+      def campaign_stock_notes(campaign)
+        return [] if campaign[:adventures].blank? && (campaign.fetch(:encounters, []) + campaign.fetch(:notes, [])).present?
+
+        campaign[:notes]
+      end
+
       def resident_campaign(import_file, campaign)
         name = campaign_name(import_file, campaign)
         existing = existing_record(Campaignmanager::Campaign, name)
         if existing
-          result(import_file, { type: "campaign", name: name }, "skipped", existing, "already exists")
-          return existing
+          return replace_or_skip(import_file, { type: "campaign", name: name }, existing, campaign: existing) do |record|
+            record.update!(privacy: "Private", core_rules: CORE_RULES)
+          end
         end
 
         record = Campaignmanager::Campaign.create!(resident: resident, name: name, privacy: "Private", core_rules: CORE_RULES)
@@ -158,17 +181,19 @@ module Importer
       end
 
       def campaign_name(import_file, campaign)
-        campaign[:name].presence || File.basename(import_file.file_file_name.to_s, ".*").tr("_-", " ")
+        local_name(campaign[:name].presence || File.basename(import_file.file_file_name.to_s, ".*").tr("_-", " "))
       end
 
       def stock_adventure(import_file, adventure)
-        existing = existing_record(Storybuilder::StockAdventure, adventure[:name])
+        name = local_name(adventure[:name])
+        existing = existing_record(Storybuilder::StockAdventure, name)
         if existing
-          result(import_file, adventure.merge(type: "adventure"), "skipped", existing, "already exists")
-          return existing
+          return replace_or_skip(import_file, adventure.merge(type: "adventure", name: name), existing) do |record|
+            record.update!(privacy: "Residents", core_rules: CORE_RULES)
+          end
         end
 
-        record = Storybuilder::StockAdventure.create!(name: adventure[:name], privacy: "Residents", core_rules: CORE_RULES)
+        record = Storybuilder::StockAdventure.create!(name: name, privacy: "Residents", core_rules: CORE_RULES)
         result(import_file, adventure.merge(type: "adventure"), "created", record)
         record
       end
@@ -185,14 +210,16 @@ module Importer
       end
 
       def resident_adventure(import_file, adventure, campaign)
-        existing = existing_record(Storybuilder::ResidentAdventure, adventure[:name])
+        name = local_name(adventure[:name])
+        existing = existing_record(Storybuilder::ResidentAdventure, name)
         if existing
           link_adventure_to_campaign(campaign, existing)
-          result(import_file, adventure, "skipped", existing, "already exists")
-          return existing
+          return replace_or_skip(import_file, adventure.merge(name: name), existing, campaign: campaign) do |record|
+            record.update!(privacy: "Private", core_rules: CORE_RULES)
+          end
         end
 
-        record = Storybuilder::ResidentAdventure.create!(resident: resident, name: adventure[:name], privacy: "Private",
+        record = Storybuilder::ResidentAdventure.create!(resident: resident, name: name, privacy: "Private",
                                                          core_rules: CORE_RULES)
         link_adventure_to_campaign(campaign, record)
         result(import_file, adventure, "created", record)
@@ -210,12 +237,19 @@ module Importer
       end
 
       def import_encounter(import_file, encounter, adventure)
-        existing = existing_page(adventure, encounter[:name])
-        return result(import_file, encounter, "skipped", existing, "already exists") if existing
+        name = local_name(encounter[:name])
+        existing = existing_page(adventure, name)
+        if existing
+          return replace_or_skip(import_file, encounter.merge(name: name), existing, campaign: @import_provenance_campaign) do |record|
+            record.update!(privacy: privacy, full_description: encounter[:description].presence)
+            record.notables.destroy_all
+            link_encounter_combatants(record, encounter[:combatants])
+          end
+        end
 
         record = Storybuilder::Page.create!(
           adventure: adventure,
-          name: encounter[:name],
+          name: name,
           privacy: privacy,
           full_description: encounter[:description].presence
         )
@@ -251,12 +285,17 @@ module Importer
       def import_note(import_file, note, root)
         return import_stock_note(import_file, note, root) if admin_stock?
 
-        existing = existing_note(root, note[:name])
-        return result(import_file, note, "skipped", existing, "already exists") if existing
+        name = local_name(note[:name])
+        existing = existing_note(root, name)
+        if existing
+          return replace_or_skip(import_file, note.merge(name: name), existing, campaign: root) do |record|
+            record.update!(privacy: "Private", full_description: note[:description].presence)
+          end
+        end
 
         record = Campaignmanager::GameMasterNote.create!(
           campaign: root,
-          name: note[:name],
+          name: name,
           privacy: "Private",
           full_description: note[:description].presence
         )
@@ -264,12 +303,17 @@ module Importer
       end
 
       def import_stock_note(import_file, note, adventure)
-        existing = existing_page(adventure, note[:name])
-        return result(import_file, note, "skipped", existing, "already exists") if existing
+        name = local_name(note[:name])
+        existing = existing_page(adventure, name)
+        if existing
+          return replace_or_skip(import_file, note.merge(name: name), existing) do |record|
+            record.update!(privacy: "Residents", tags: [ "note" ], full_description: note[:description].presence)
+          end
+        end
 
         record = Storybuilder::Page.create!(
           adventure: adventure,
-          name: note[:name],
+          name: name,
           privacy: "Residents",
           tags: [ "note" ],
           full_description: note[:description].presence
@@ -280,15 +324,18 @@ module Importer
       def import_pc(import_file, pc)
         return result(import_file, pc, "skipped", nil, "no stock character target") if admin_stock?
 
-        existing = existing_record(Entitybuilder::ResidentCharacter, pc[:name])
+        name = local_name(pc[:name])
+        existing = existing_record(Entitybuilder::ResidentCharacter, name)
         if existing
-          existing.update!(full_description: pc[:description]) if pc[:description].present? && existing.full_description.blank?
-          return result(import_file, pc, "skipped", existing, "already exists")
+          return replace_or_skip(import_file, pc.merge(name: name), existing) do |record|
+            record.update!(full_description: pc[:description].presence)
+            name_index_add("pc", pc[:label].presence || pc[:name], record)
+          end
         end
 
         record = Entitybuilder::ResidentCharacter.create!(
           resident: resident,
-          name: pc[:name],
+          name: name,
           core_rules: CORE_RULES,
           full_description: pc[:description].presence
         )
@@ -303,16 +350,19 @@ module Importer
         label = pc[:label].presence || pc[:name]
         return if label.blank?
 
-        existing = name_index_find("pc", label) || existing_record(Entitybuilder::ResidentCharacter, label)
+        name = local_name(label)
+        existing = name_index_find("pc", label) || existing_record(Entitybuilder::ResidentCharacter, name)
 
         if existing
-          merge_character_stats(existing, pc)
-          return result(import_file, pc, "skipped", existing, "already exists")
+          return replace_or_skip(import_file, pc.merge(name: name), existing) do |record|
+            replace_character(record, pc)
+            name_index_add("pc", label, record)
+          end
         end
 
         character = Entitybuilder::ResidentCharacter.create!(
           resident: resident,
-          name: label.truncate(255),
+          name: name,
           core_rules: CORE_RULES,
           full_description: pc[:description].presence
         )
@@ -338,6 +388,13 @@ module Importer
 
       def character_has_stats?(character)
         character.ability_scores.exists?
+      end
+
+      def replace_character(character, pc)
+        clear_entity_import_details(character)
+        character.update!(full_description: pc[:description].presence)
+        build_character_associations(character, pc)
+        enforce_entity_privacy!(character)
       end
 
       def build_character_associations(character, pc)
@@ -387,11 +444,16 @@ module Importer
 
       def import_npc(import_file, npc)
         klass = admin_stock? ? Entitybuilder::StockNpc : Entitybuilder::ResidentNpc
-        existing = existing_record(klass, npc[:name])
-        return result(import_file, npc, "skipped", existing, "already exists") if existing
+        name = local_name(npc[:name])
+        existing = existing_record(klass, name)
+        if existing
+          return replace_or_skip(import_file, npc.merge(name: name), existing) do |record|
+            replace_npc(record, npc)
+          end
+        end
 
         entity = klass.create!(
-          name: npc[:name],
+          name: name,
           core_rules: CORE_RULES,
           source: npc[:source],
           full_description: npc[:description].presence,
@@ -420,17 +482,41 @@ module Importer
         result(import_file, npc, "created", entity)
       end
 
+      def replace_npc(entity, npc)
+        clear_entity_import_details(entity)
+        entity.update!(
+          source: npc[:source],
+          full_description: npc[:description].presence,
+          **privacy_attributes_for(entity.class)
+        )
+        build_npc_associations(entity, npc)
+      end
+
+      def build_npc_associations(entity, npc)
+        [ [ "Size", npc[:size] ], [ "Type", npc[:npc_type] ], [ "Alignment", npc[:alignment] ] ].each do |name, val|
+          entity.descriptors.create!(name: name, description: val.to_s.truncate(255)) if val.present?
+        rescue ActiveRecord::RecordInvalid
+          # skip if duplicate or validation error
+        end
+
+        build_basic_stats(entity, npc)
+      end
+
       def import_monster(import_file, record)
         klass = admin_stock? ? Entitybuilder::StockCreature : Entitybuilder::ResidentCreature
-        existing = existing_record(klass, record[:name])
+        name = local_name(record[:name])
+        existing = existing_record(klass, name)
         if existing
           name_index_add("monster", record[:name], existing)
-          return result(import_file, record, "skipped", existing, "already exists")
+          return replace_or_skip(import_file, record.merge(name: name), existing) do |creature|
+            replace_creature(creature, record)
+            name_index_add("monster", record[:name], creature)
+          end
         end
 
         traits_text = record[:traits].map { |t| "**#{t[:name]}**\n#{t[:text]}" }.join("\n\n")
         creature = klass.create!(
-          name: record[:name],
+          name: name,
           core_rules: CORE_RULES,
           source: record[:source],
           short_description: record[:cr].presence,
@@ -441,6 +527,18 @@ module Importer
         build_creature_associations(creature, record)
         name_index_add("monster", record[:name], creature)
         result(import_file, record, "created", creature)
+      end
+
+      def replace_creature(creature, record)
+        clear_entity_import_details(creature)
+        traits_text = record[:traits].map { |trait| "**#{trait[:name]}**\n#{trait[:text]}" }.join("\n\n")
+        creature.update!(
+          source: record[:source],
+          short_description: record[:cr].presence,
+          full_description: traits_text.presence,
+          **privacy_attributes_for(creature.class)
+        )
+        build_creature_associations(creature, record)
       end
 
       def build_creature_associations(creature, record)
@@ -515,13 +613,18 @@ module Importer
 
       def import_item(import_file, record)
         klass = admin_stock? ? Rulebuilder::StockItem : Rulebuilder::ResidentItem
-        existing = existing_record(klass, record[:name])
-        return result(import_file, record, "skipped", existing, "already exists") if existing
+        name = local_name(record[:name])
+        existing = existing_record(klass, name)
+        if existing
+          return replace_or_skip(import_file, record.merge(name: name), existing) do |item|
+            replace_item(item, record)
+          end
+        end
 
         full_desc = record[:text].join("\n").presence
         category = item_category(record[:item_type])
         item = klass.create!(
-          name: record[:name],
+          name: name,
           core_rules: CORE_RULES,
           source: record[:source],
           full_description: full_desc,
@@ -532,14 +635,30 @@ module Importer
         result(import_file, record, "created", item)
       end
 
+      def replace_item(item, record)
+        category = item_category(record[:item_type])
+        item.update!(
+          source: record[:source],
+          full_description: record[:text].join("\n").presence,
+          category: (record[:type] == "container" ? "container" : category).presence,
+          **privacy_attributes_for(item.class)
+        )
+        name_index_add(record[:type], record[:name], item)
+      end
+
       def import_spell(import_file, record)
         klass = admin_stock? ? Rulebuilder::StockSpell : Rulebuilder::ResidentSpell
-        existing = existing_record(klass, record[:name])
-        return result(import_file, record, "skipped", existing, "already exists") if existing
+        name = local_name(record[:name])
+        existing = existing_record(klass, name)
+        if existing
+          return replace_or_skip(import_file, record.merge(name: name), existing) do |spell|
+            replace_spell(spell, record)
+          end
+        end
 
         full_desc = record[:text].join("\n").presence
         spell = klass.create!(
-          name: record[:name],
+          name: name,
           core_rules: CORE_RULES,
           source: record[:source],
           full_description: full_desc,
@@ -549,14 +668,28 @@ module Importer
         result(import_file, record, "created", spell)
       end
 
+      def replace_spell(spell, record)
+        spell.update!(
+          source: record[:source],
+          full_description: record[:text].join("\n").presence,
+          **privacy_attributes_for(spell.class)
+        )
+        name_index_add("spell", record[:name], spell)
+      end
+
       def import_rule(import_file, record)
         klass = admin_stock? ? Rulebuilder::StockRule : Rulebuilder::ResidentRule
-        existing = existing_record(klass, record[:name])
-        return result(import_file, record, "skipped", existing, "already exists") if existing
+        name = local_name(record[:name])
+        existing = existing_record(klass, name)
+        if existing
+          return replace_or_skip(import_file, record.merge(name: name), existing) do |rule|
+            replace_rule(rule, record)
+          end
+        end
 
         full_desc = rule_full_description(record)
         rule = klass.create!(
-          name: record[:name],
+          name: name,
           core_rules: CORE_RULES,
           source: record[:source],
           full_description: full_desc,
@@ -566,6 +699,17 @@ module Importer
         )
         name_index_add(record[:type], record[:name], rule)
         result(import_file, record, "created", rule)
+      end
+
+      def replace_rule(rule, record)
+        rule.update!(
+          source: record[:source],
+          full_description: rule_full_description(record),
+          rule_type: shared_rule_type(record[:type]),
+          is_shared: true,
+          **privacy_attributes_for(rule.class)
+        )
+        name_index_add(record[:type], record[:name], rule)
       end
 
       def shared_rule_type(type)
@@ -603,6 +747,35 @@ module Importer
 
       def existing_note(campaign, name)
         campaign.game_master_notes.where("lower(name) = ?", name.downcase).first
+      end
+
+      def replace_or_skip(import_file, record, existing, campaign: @import_provenance_campaign)
+        unless imported_record?(existing, record, campaign)
+          result(import_file, record, "skipped", existing, "already exists")
+          return existing
+        end
+
+        yield existing
+        result(import_file, record, "replaced", existing)
+        existing
+      end
+
+      def imported_record?(record, import_record, campaign)
+        import_result_for_record?(record) || import_provenance_note_for_record?(import_record, campaign)
+      end
+
+      def import_result_for_record?(record)
+        ImportResult.where(record: record, outcome: %w[created replaced]).exists?
+      end
+
+      def import_provenance_note_for_record?(record, campaign)
+        return false unless campaign.respond_to?(:game_master_notes)
+
+        campaign.game_master_notes.any? do |note|
+          note.full_description.to_s.include?("Game Master 5 XML") &&
+            note.full_description.to_s.include?(record[:type].to_s) &&
+            note.full_description.to_s.include?(record[:name].to_s)
+        end
       end
 
       def result(import_file, record, outcome, created_record = nil, reason = nil)
@@ -795,6 +968,18 @@ module Importer
         result
       end
 
+      def clear_entity_import_details(entity)
+        entity.descriptors.destroy_all
+        entity.ability_scores.destroy_all
+        entity.movements.destroy_all
+        entity.class_levels.destroy_all
+        entity.skills.destroy_all
+        entity.trackables.destroy_all
+        entity.attacks.destroy_all
+        entity.defenses.destroy_all
+        entity.saving_throws.destroy_all
+      end
+
       def name_index_add(kind, name, record)
         @name_index ||= {}
         @name_index[[ kind, name.downcase ]] = record
@@ -802,6 +987,10 @@ module Importer
 
       def name_index_find(kind, name)
         (@name_index || {})[[ kind, name.downcase ]]
+      end
+
+      def local_name(name)
+        name.to_s.strip.truncate(LOCAL_NAME_LIMIT, omission: "")
       end
     end
   end

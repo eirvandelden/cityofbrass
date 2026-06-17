@@ -71,9 +71,11 @@ nl:
         file: Bestand
         files: Bestanden
         kind: Type
+        object: Object
         outcome: Uitkomst
         reason: Reden
         results: Resultaten
+        source_file: Bronbestand
         status: Status
         title: Importstatus
     kinds:
@@ -85,6 +87,7 @@ nl:
     outcomes:
       created: Aangemaakt
       failed: Mislukt
+      replaced: Vervangen
       skipped: Overgeslagen
     previews:
       new:
@@ -108,6 +111,16 @@ nl:
       already_exists: Bestaat al
       no_stock_character_target: Geen doel voor voorraadpersonage
       unsupported_file_kind: Niet-ondersteund bestandstype
+    result_objects:
+      adventure: Avontuur
+      campaign: Campagne
+      encounter: Ontmoeting
+      item: Voorwerp
+      monster: Monster
+      note: Notitie
+      npc: NPC
+      pc: Spelerpersonage
+      spell: Spreuk
     statuses:
       expired: Verlopen
       failed: Mislukt

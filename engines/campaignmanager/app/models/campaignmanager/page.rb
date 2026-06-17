@@ -47,7 +47,7 @@ module Campaignmanager
     validates :privacy, presence: true
     validate  :valid_privacy
     validates :short_description, length: { maximum: 255 }
-    validates :full_description, length: { maximum: 12000 }
+    validates :full_description, length: { maximum: 12000 }, unless: :game_master_note?
     validates_confirmation_of :name
 
     before_validation :make_slug
@@ -79,6 +79,10 @@ module Campaignmanager
         if privacy.present? && Campaignmanager::Campaign::PRIVACY_OPTIONS.exclude?(privacy)
           errors.add(:privacy, "is not valid.")
         end
+      end
+
+      def game_master_note?
+        is_a?(Campaignmanager::GameMasterNote)
       end
 
   end

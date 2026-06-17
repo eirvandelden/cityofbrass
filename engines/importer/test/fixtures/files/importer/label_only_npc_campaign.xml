@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign version="5">
+  <name>Label NPC Campaign</name>
+  <npc>
+    <label>Delora Zann (owner stable)</label>
+    <hp>4/4 (1d8)</hp>
+  </npc>
+</campaign>

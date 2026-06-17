@@ -15,7 +15,7 @@ module Importer
     end
 
     def show
-      @import = current_user.resident.importer_imports.includes(import_results: :record).find(params[:id])
+      @import = current_user.resident.importer_imports.includes(import_results: [ :record, :import_file ]).find(params[:id])
     end
   end
 end

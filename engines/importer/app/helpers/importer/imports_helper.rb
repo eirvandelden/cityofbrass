@@ -7,6 +7,16 @@ module Importer
       link_to result.entity_name, record_path
     end
 
+    def importer_result_source_file(result)
+      result.import_file.file_file_name
+    end
+
+    def importer_result_object(result)
+      return result.record.model_name.human if result.record.present?
+
+      t("importer.result_objects.#{result.entity_type}", default: result.entity_type.to_s.humanize)
+    end
+
     def importer_status_label(status)
       t("importer.statuses.#{status}")
     end
