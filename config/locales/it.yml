@@ -26,6 +26,99 @@ it:
         stock_images_admin: Immagini Stock (Admin)
         title: Immagini
   hello: Ciao mondo
+  importer:
+    admin:
+      imports:
+        index:
+          add_new: Aggiungi nuova
+          title: Importazioni stock
+        show:
+          title: Stato importazione stock
+      previews:
+        new:
+          submit: Anteprima importazione stock
+          title: Importazioni stock
+        show:
+          confirm: Conferma importazione stock
+          title: Anteprima importazione stock
+    counts:
+      adventures: Avventure
+      backgrounds: Background
+      classes: Classi
+      combatants: Combattenti
+      encounters: Incontri
+      feats: Talenti
+      items: Oggetti
+      monsters: Mostri
+      notes: Note
+      npcs: PNG
+      pcs: Personaggi giocanti
+      races: Specie
+      spells: Incantesimi
+      subclasses: Sottoclassi
+    imports:
+      index:
+        created_at: Creato
+        files: File
+        history: Cronologia importazioni
+        results: Risultati
+        status: Stato
+        title: Importazioni
+      show:
+        back: Torna alle importazioni
+        counts: Conteggi
+        entity: Entita
+        file: File
+        files: File
+        kind: Tipo
+        outcome: Esito
+        reason: Motivo
+        results: Risultati
+        status: Stato
+        title: Stato importazione
+    kinds:
+      campaign: Campagna
+      characters: Personaggi
+      compendium: Compendio
+      pc: Personaggio giocante
+      unsupported: Non supportato
+    outcomes:
+      created: Creato
+      failed: Non riuscito
+      skipped: Saltato
+    previews:
+      new:
+        submit: Anteprima importazione
+        title: Importa file
+      show:
+        confirm: Conferma importazione
+        counts: Conteggi
+        file: File
+        kind: Tipo
+        title: Anteprima importazione
+    provenance_notes:
+      description_html: '<p>Importato da un file XML Game Master 5 il %{created_at}.</p>
+        <p>File sorgente: %{source_file}</p> <p>%{entity_type} creato: %{entity_name}</p>
+        <p><a href="%{import_path}">%{import_label}</a></p>
+
+        '
+      import_label: dettagli importazione
+      name: "%{entity_type} importato: %{entity_name}"
+    reasons:
+      already_exists: Esiste gia
+      no_stock_character_target: Nessuna destinazione per il personaggio stock
+      unsupported_file_kind: Tipo di file non supportato
+    statuses:
+      expired: Scaduto
+      failed: Non riuscito
+      parsed: Analizzato
+      parsing: Analisi in corso
+      partial: Parziale
+      pending: In sospeso
+      queued: In coda
+      ready: Pronto
+      running: In corso
+      succeeded: Riuscito
   layouts:
     license:
       attribution:
@@ -51,3 +144,55 @@ it:
     en: Inglese
     it: Italiano
     nl: Olandese
+  navigation:
+    links:
+      adventure_builder: Costruttore di Avventure
+      adventures: Avventure
+      billing_events: Eventi di fatturazione
+      campaigns: Campagne
+      characters: Personaggi
+      compose: Scrivi
+      core_faqs: FAQ principali
+      create_resident: Crea Resident
+      creatures: Creature
+      dashboard: Dashboard
+      faq_images: Immagini FAQ
+      faqs: FAQ
+      friends: Amici
+      home: Home
+      images: Immagini
+      import: Importa
+      inbox: Posta in arrivo
+      items: Oggetti
+      login: Accedi
+      logout: Esci
+      maps: Mappe
+      npcs: PNG
+      resident: Resident
+      residents: Resident
+      rules: Regole
+      sent: Inviati
+      settings: Impostazioni
+      sign_up: Registrati
+      spells: Incantesimi
+      stock_imports: Importazioni stock
+      subscription: Abbonamento
+      terms_of_service: Termini di servizio
+      user_admin: Amministrazione utenti
+      world_builder: Costruttore di Mondi
+      worlds: Mondi
+    sections:
+      account: Account
+      customers: Clienti
+      game_master: Game Master
+      group: Gruppo
+      images: Immagini
+      imports: Importazioni
+      messages: Messaggi
+      player: Giocatore
+      reports: Report
+      resident: Resident
+      rule_builder: Costruttore di Regole
+      search: Ricerca
+      session: Sessione
+      support: Supporto

@@ -1,5 +1,14 @@
 ---
 en:
+  activerecord:
+    errors:
+      models:
+        importer/preview:
+          attributes:
+            base:
+              file_too_large: must be smaller than %{max_size}
+              invalid_file: must be an XML file
+              missing_files: must include at least one file
   campaignmanager:
     campaigns:
       features:
@@ -17,93 +26,30 @@ en:
   errors:
     messages:
       invalid_privacy: is not valid.
-  activerecord:
-    errors:
-      models:
-        importer/preview:
-          attributes:
-            base:
-              file_too_large: must be smaller than %{max_size}
-              invalid_file: must be an XML file
-              missing_files: must include at least one file
-  navigation:
-    sections:
-      account: Account
-      customers: Customers
-      game_master: Game Master
-      group: Group
-      images: Images
-      imports: Imports
-      messages: Messages
-      player: Player
-      reports: Reports
-      resident: Resident
-      rule_builder: Rule Builder
-      search: Search
-      session: Session
-      support: Support
-    links:
-      adventure_builder: Adventure Builder
-      adventures: Adventures
-      billing_events: Billing Events
-      campaigns: Campaigns
-      characters: Characters
-      compose: Compose
-      core_faqs: Core FAQs
-      create_resident: Create Resident
-      creatures: Creatures
-      dashboard: Dashboard
-      faqs: FAQs
-      faq_images: FAQ Images
-      friends: Friends
-      home: Home
-      images: Images
-      import: Import
-      inbox: Inbox
-      items: Items
-      login: Login
-      logout: Logout
-      maps: Maps
-      npcs: NPCs
-      resident: Resident
-      residents: Residents
-      rules: Rules
-      sent: Sent
-      settings: Settings
-      sign_up: Sign up
-      spells: Spells
-      stock_imports: Stock Imports
-      subscription: Subscription
-      terms_of_service: Terms of Service
-      user_admin: User Admin
-      world_builder: World Builder
-      worlds: Worlds
+  gallery:
+    images:
+      image_modal:
+        map_images: Map Images
+        my_images: My Images
+        stock_images: Stock Images
+        stock_images_admin: Stock Images (Admin)
+        title: Images
+  hello: Hello world
   importer:
-    statuses:
-      expired: Expired
-      failed: Failed
-      parsed: Parsed
-      parsing: Parsing
-      partial: Partial
-      pending: Pending
-      queued: Queued
-      ready: Ready
-      running: Running
-      succeeded: Succeeded
-    kinds:
-      campaign: Campaign
-      characters: Characters
-      compendium: Compendium
-      pc: Player character
-      unsupported: Unsupported
-    outcomes:
-      created: Created
-      failed: Failed
-      skipped: Skipped
-    reasons:
-      already_exists: Already exists
-      no_stock_character_target: No stock character target
-      unsupported_file_kind: Unsupported file kind
+    admin:
+      imports:
+        index:
+          add_new: Add New
+          title: Stock Imports
+        show:
+          title: Stock Import Status
+      previews:
+        new:
+          submit: Preview Stock Import
+          title: Stock Imports
+        show:
+          confirm: Confirm Stock Import
+          title: Stock Import Preview
     counts:
       adventures: Adventures
       backgrounds: Backgrounds
@@ -119,71 +65,69 @@ en:
       races: Species
       spells: Spells
       subclasses: Subclasses
-    provenance_notes:
-      name: "Imported %{entity_type}: %{entity_name}"
-      import_label: "import details"
-      description_html: >
-        <p>Imported from a Game Master 5 XML file on %{created_at}.</p>
-        <p>Source file: %{source_file}</p>
-        <p>Created %{entity_type}: %{entity_name}</p>
-        <p><a href="%{import_path}">%{import_label}</a></p>
-    previews:
-      new:
-        title: Import Files
-        submit: Preview Import
-      show:
-        title: Import Preview
-        confirm: Confirm Import
-        file: File
-        kind: Kind
-        counts: Counts
     imports:
       index:
-        title: Imports
-        description: Upload Game Master 5 XML files to preview campaigns, characters, creatures, rules, spells, and items before adding them to your resident content.
-        new_preview: New import
-        history: Import History
         created_at: Created
-        status: Status
         files: Files
+        history: Import History
         results: Results
+        status: Status
+        title: Imports
       show:
-        title: Import Status
         back: Back to imports
-        status: Status
-        files: Files
-        file: File
-        kind: Kind
         counts: Counts
-        results: Results
         entity: Entity
+        file: File
+        files: Files
+        kind: Kind
         outcome: Outcome
         reason: Reason
-    admin:
-      previews:
-        new:
-          title: Stock Imports
-          submit: Preview Stock Import
-        show:
-          title: Stock Import Preview
-          confirm: Confirm Stock Import
-      imports:
-        index:
-          title: Stock Imports
-          description: Upload Game Master 5 XML files to preview shared stock content before adding creatures, adventures, rules, spells, and items.
-          new_preview: New stock import
-          add_new: Add New
-        show:
-          title: Stock Import Status
-  gallery:
-    images:
-      image_modal:
-        map_images: Map Images
-        my_images: My Images
-        stock_images: Stock Images
-        stock_images_admin: Stock Images (Admin)
-        title: Images
-  hello: Hello world
+        results: Results
+        status: Status
+        title: Import Status
+    kinds:
+      campaign: Campaign
+      characters: Characters
+      compendium: Compendium
+      pc: Player character
+      unsupported: Unsupported
+    outcomes:
+      created: Created
+      failed: Failed
+      skipped: Skipped
+    previews:
+      new:
+        submit: Preview Import
+        title: Import Files
+      show:
+        confirm: Confirm Import
+        counts: Counts
+        file: File
+        kind: Kind
+        title: Import Preview
+    provenance_notes:
+      description_html: '<p>Imported from a Game Master 5 XML file on %{created_at}.</p>
+        <p>Source file: %{source_file}</p> <p>Created %{entity_type}: %{entity_name}</p>
+        <p><a href="%{import_path}">%{import_label}</a></p>
+
+        '
+      import_label: import details
+      name: 'Imported %{entity_type}: %{entity_name}'
+    reasons:
+      already_exists: Already exists
+      no_stock_character_target: No stock character target
+      unsupported_file_kind: Unsupported file kind
+    statuses:
+      expired: Expired
+      failed: Failed
+      parsed: Parsed
+      parsing: Parsing
+      partial: Partial
+      pending: Pending
+      queued: Queued
+      ready: Ready
+      running: Running
+      succeeded: Succeeded
   layouts:
     license:
       attribution:
@@ -209,3 +153,55 @@ en:
     en: English
     it: Italian
     nl: Dutch
+  navigation:
+    links:
+      adventure_builder: Adventure Builder
+      adventures: Adventures
+      billing_events: Billing Events
+      campaigns: Campaigns
+      characters: Characters
+      compose: Compose
+      core_faqs: Core FAQs
+      create_resident: Create Resident
+      creatures: Creatures
+      dashboard: Dashboard
+      faq_images: FAQ Images
+      faqs: FAQs
+      friends: Friends
+      home: Home
+      images: Images
+      import: Import
+      inbox: Inbox
+      items: Items
+      login: Login
+      logout: Logout
+      maps: Maps
+      npcs: NPCs
+      resident: Resident
+      residents: Residents
+      rules: Rules
+      sent: Sent
+      settings: Settings
+      sign_up: Sign up
+      spells: Spells
+      stock_imports: Stock Imports
+      subscription: Subscription
+      terms_of_service: Terms of Service
+      user_admin: User Admin
+      world_builder: World Builder
+      worlds: Worlds
+    sections:
+      account: Account
+      customers: Customers
+      game_master: Game Master
+      group: Group
+      images: Images
+      imports: Imports
+      messages: Messages
+      player: Player
+      reports: Reports
+      resident: Resident
+      rule_builder: Rule Builder
+      search: Search
+      session: Session
+      support: Support

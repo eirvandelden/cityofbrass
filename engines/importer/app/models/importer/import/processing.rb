@@ -3,7 +3,7 @@ module Importer
     module Processing
       extend ActiveSupport::Concern
 
-      CORE_RULES = "5th Edition"
+      CORE_RULES = "dnd5e"
 
       def process!
         update!(status: "running", started_at: Time.current)
