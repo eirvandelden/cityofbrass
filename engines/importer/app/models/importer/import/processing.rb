@@ -298,7 +298,7 @@ module Importer
         menu_item = adventure.menu_items.create!(
           sort_order: sort_order,
           item_label: page.name.to_s.truncate(25),
-          item_link: "/pages/#{page.slug}"
+          item_link: "/pages/#{page.id}"
         )
         Storybuilder::MenuItemJoin.create!(menu_item: menu_item, menu_item_joinable: page)
       end
@@ -324,7 +324,7 @@ module Importer
       end
 
       def storybuilder_page_path(record)
-        record.is_a?(Storybuilder::Page) ? "/pages/#{record.slug}" : ""
+        record.is_a?(Storybuilder::Page) ? "/pages/#{record.id}" : ""
       end
 
       def resident_adventure(import_file, adventure, campaign)

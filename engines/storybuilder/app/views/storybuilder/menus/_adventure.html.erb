@@ -1,9 +1,7 @@
 <dl class="left-menu show-for-medium-up">
-  <% if @adventure.menu_item_join.nil? %>
   <dd class="<%= 'active' if current_page?(storybuilder.polymorphic_path(@adventure)) %>">
   	<h3><%= link_to 'Home', storybuilder.polymorphic_path(@adventure), :style => 'display:block;' %></h3>
   </dd>
-  <% end %>
 <% visible_storybuilder_menu_items(@adventure.menu_items).each do |menu_item| %>
    <dd class='<%= active_menu_item(menu_item,page,"#{storybuilder.polymorphic_path(@adventure)}#{menu_item.item_link}") || active_menu_item(menu_item,page,"#{menu_item.item_link}/adventure/#{@adventure.id}") %>'>
     <% if menu_item.item_link.start_with?("http") %>

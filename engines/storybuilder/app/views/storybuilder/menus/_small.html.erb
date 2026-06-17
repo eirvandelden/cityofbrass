@@ -1,8 +1,6 @@
-<% if @adventure.menu_item_join.nil? %>
   <li>
     <%= link_to 'Home', storybuilder.polymorphic_path(@adventure) %>
   </li>
-<% end %>
 <% visible_storybuilder_menu_items(@adventure.menu_items).each do |menu_item| %>
   <li>
     <% if menu_item.item_link.start_with?("http") %>
