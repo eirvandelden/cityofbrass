@@ -282,7 +282,7 @@ module Importer
           {
             type: "encounter",
             name: name_or_title(node),
-            description: nodes(node, "./text | ./note/text").map(&:text).join("\n"),
+            description: nodes(node, "./text | .//note/text").map(&:text).join("\n"),
             combatants: nodes(node, "./combatant").map { |c| { name: combatant_name(c) } }.reject { |c| c[:name].blank? }
           }
         end

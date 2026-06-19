@@ -58,6 +58,29 @@ class ImporterGameMaster5XmlDocumentTest < ActiveSupport::TestCase
     end
   end
 
+  test "encounter record extracts description from deeply nested note text" do
+    xml = <<~XML
+      <campaign>
+        <name>Test</name>
+        <adventure>
+          <name>Vale</name>
+          <encounter>
+            <name>Ghost Lord</name>
+            <note>
+              <name>Outer Note</name>
+              <note><name>Inner Note</name><text>The ghost lord text.</text></note>
+            </note>
+          </encounter>
+        </adventure>
+      </campaign>
+    XML
+
+    document_for(xml) do |doc|
+      encounter = doc.campaign_record[:adventures].first[:encounters].first
+      assert_equal "The ghost lord text.", encounter[:description]
+    end
+  end
+
   test "action nodes extract attack notation from structured attack sub-elements" do
     xml = <<~XML
       <campaign>
