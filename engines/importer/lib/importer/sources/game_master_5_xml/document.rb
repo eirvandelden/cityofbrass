@@ -271,7 +271,7 @@ module Importer
           {
             type: "encounter",
             name: name_or_title(node),
-            description: nodes(node, "./text").map(&:text).join("\n"),
+            description: nodes(node, "./text | ./note/text").map(&:text).join("\n"),
             combatants: nodes(node, "./combatant").map { |c| { name: combatant_name(c) } }.reject { |c| c[:name].blank? }
           }
         end
@@ -353,7 +353,22 @@ module Importer
 
         def action_nodes(parent, xpath)
           nodes(parent, xpath).map do |child|
-            { name: text_at(child, "name"), text: text_at(child, "text"), attack: text_at(child, "attack") }
+            { name: text_at(child, "name"), text: text_at(child, "text"), attack: action_attack(child) }
+          end
+        end
+
+        def action_attack(action_node)
+          attack = action_node.at_xpath("./attack")
+          return "" if attack.nil?
+
+          atk = text_at(attack, "atk")
+          dmg = text_at(attack, "dmg")
+
+          if atk.present? || dmg.present?
+            name = text_at(attack, "name")
+            "#{name}|+#{atk}|#{dmg}"
+          else
+            attack.text.strip
           end
         end
 
