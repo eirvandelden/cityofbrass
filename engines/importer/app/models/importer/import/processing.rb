@@ -115,12 +115,45 @@ module Importer
         with_campaign_import_tracking(root) do
           import_campaign_monsters(import_file, campaign)
           import_campaign_items(import_file, campaign)
-          adventures = explicit_campaign_adventures(campaign).map { |adventure| import_adventure(import_file, adventure, root) }
-          loose_adventure = import_loose_campaign_pages(import_file, campaign, root)
-          rebuild_campaign_menu(root, adventures + [ loose_adventure ].compact, [])
+          menu_records = import_ordered_campaign_content(import_file, campaign, root)
+          rebuild_campaign_menu(root, menu_records, [])
           campaign[:pcs].each { |pc| import_pc(import_file, pc) }
           campaign[:npcs].each { |npc| link_campaign_notable(root, import_npc(import_file, npc)) }
         end
+      end
+
+      def import_ordered_campaign_content(import_file, campaign, root)
+        items = campaign.fetch(:content_items, nil)
+        return fallback_campaign_content(import_file, campaign, root) if items.nil?
+
+        menu_records = []
+        pending_pages = []
+
+        items.each do |item|
+          if item[:type] == "adventure"
+            unless pending_pages.empty?
+              loose_adv = import_loose_campaign_pages(import_file, campaign.merge(page_records: pending_pages, encounters: [], notes: []), root)
+              menu_records << loose_adv if loose_adv
+              pending_pages = []
+            end
+            menu_records << import_adventure(import_file, item, root)
+          else
+            pending_pages << item
+          end
+        end
+
+        unless pending_pages.empty?
+          loose_adv = import_loose_campaign_pages(import_file, campaign.merge(page_records: pending_pages, encounters: [], notes: []), root)
+          menu_records << loose_adv if loose_adv
+        end
+
+        menu_records.compact
+      end
+
+      def fallback_campaign_content(import_file, campaign, root)
+        adventures = explicit_campaign_adventures(campaign).map { |adventure| import_adventure(import_file, adventure, root) }
+        loose_adventure = import_loose_campaign_pages(import_file, campaign, root)
+        (adventures + [ loose_adventure ]).compact
       end
 
       def import_stock_campaign(import_file, campaign)
@@ -310,7 +343,7 @@ module Importer
 
       def storybuilder_path(record)
         adventure = storybuilder_adventure_for(record)
-        "/sb/#{storybuilder_scope(adventure)}/adventures/#{adventure.slug}#{storybuilder_page_path(record)}"
+        "/sb/#{storybuilder_scope(adventure)}/adventures/#{adventure.id}#{storybuilder_page_path(record)}"
       end
 
       def storybuilder_adventure_for(record)

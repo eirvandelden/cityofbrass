@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+  <campaign>
+    <name>Intermezzo Campaign</name>
+    <adventure>
+      <name>First Adventure</name>
+      <encounter>
+        <name>First Room</name>
+      </encounter>
+    </adventure>
+    <note>
+      <name>Intermezzo</name>
+      <text>Intermezzo content between adventures.</text>
+    </note>
+    <adventure>
+      <name>Second Adventure</name>
+      <encounter>
+        <name>Second Room</name>
+      </encounter>
+    </adventure>
+  </campaign>
+</data>
