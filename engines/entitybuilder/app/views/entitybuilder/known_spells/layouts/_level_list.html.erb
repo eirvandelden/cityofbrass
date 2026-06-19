@@ -4,10 +4,11 @@
   <% known_spells.each do |known_spell| %>
     <% unless known_spell.used == true %>
       <%= link_to "<i class='fa fa-minus-circle'></i>".html_safe, "#{entitybuilder.polymorphic_path(entity)}/known_spells/#{known_spell.id}/use_spell", title: "Use Spell", class: "cogs125 delete", method: :patch, :remote => true if can_edit %>
-      <%= link_to_if clickable, known_spell.spell.name, "#{entitybuilder.polymorphic_path(entity)}/known_spells/#{known_spell.id}", "data-reveal-id" => "known_spell_modal", :remote => true %><%= " (#{known_spell.detail})" if known_spell.detail.present? %><%= ", " unless known_spell == known_spells.last %>
+      <%= link_to_if clickable, known_spell.spell.name, "#{entitybuilder.polymorphic_path(entity)}/known_spells/#{known_spell.id}", "data-reveal-id" => "known_spell_modal", :remote => true %><%= " (#{known_spell.detail})" if known_spell.detail.present? %>
     <% else %>
       <%= link_to "<i class='fa fa-plus-circle'></i>".html_safe, "#{entitybuilder.polymorphic_path(entity)}/known_spells/#{known_spell.id}/use_spell", title: "Reset Spell", class: "cogs125 add", method: :patch, :remote => true if can_edit %>
-      <%= link_to_if clickable, known_spell.spell.name, "#{entitybuilder.polymorphic_path(entity)}/known_spells/#{known_spell.id}", "data-reveal-id" => "known_spell_modal", :remote => true, :class => "iconlink" %><%= " (#{known_spell.detail})" if known_spell.detail.present? %><%= ", " unless known_spell == known_spells.last %>
+      <%= link_to_if clickable, known_spell.spell.name, "#{entitybuilder.polymorphic_path(entity)}/known_spells/#{known_spell.id}", "data-reveal-id" => "known_spell_modal", :remote => true, :class => "iconlink" %><%= " (#{known_spell.detail})" if known_spell.detail.present? %>
     <% end %>
+    <% if known_spell.spell.short_description.present? %><div class="indent"><small><%= known_spell.spell.short_description %></small></div><% end %>
   <% end %>
 </div>
