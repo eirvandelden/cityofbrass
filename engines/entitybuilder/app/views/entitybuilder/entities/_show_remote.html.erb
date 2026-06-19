@@ -6,6 +6,7 @@
           :icon => @entity.icon,
           :main => @entity.name,
           :sub => @entity.title,
+          :new_tab_link => route_path(@entity),
           :view_link_remote => route_path(@entity),
           :profile_link_remote => ("#{route_path(@entity)}/profile" if @entity.can_sheet?(current_user, admin_signed_in?, @type))
         }

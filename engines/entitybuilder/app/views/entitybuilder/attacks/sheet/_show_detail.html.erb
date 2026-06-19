@@ -1,1 +1,7 @@
-<%= attack_display_profile(@parent_object.core_rules, attack, @parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values).html_safe %><%= ", " unless attack == last %>
+<% attack_html = attack_display_profile(@parent_object.core_rules, attack, @parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) %>
+<%= attack_html.html_safe %>
+<% if attack.description.present? %>
+  <%= link_to "<i class='fa fa-expand'></i>".html_safe, "#", class: "cogs125", onclick: "$('#attack_desc_#{attack.id}').toggle(); return false;" %>
+  <div id="attack_desc_<%= attack.id %>" style="display:none;" class="indent"><small><%= attack.description %></small></div>
+<% end %>
+<%= ", " unless attack == last %>
