@@ -16,6 +16,69 @@ class ImporterGameMaster5XmlDocumentTest < ActiveSupport::TestCase
     assert_equal "Fighter", subclass[:baseclass]
   end
 
+  test "encounter record extracts description from nested note text" do
+    xml = <<~XML
+      <campaign>
+        <name>Test</name>
+        <adventure>
+          <name>Vale</name>
+          <encounter>
+            <name>Council Meeting</name>
+            <note><name>Description</name><text>Lord Jarmaath: ruling lord</text></note>
+          </encounter>
+        </adventure>
+      </campaign>
+    XML
+
+    document_for(xml) do |doc|
+      encounter = doc.campaign_record[:adventures].first[:encounters].first
+      assert_equal "Council Meeting", encounter[:name]
+      assert_equal "Lord Jarmaath: ruling lord", encounter[:description]
+    end
+  end
+
+  test "encounter record extracts description from both direct text and note text" do
+    xml = <<~XML
+      <campaign>
+        <name>Test</name>
+        <adventure>
+          <name>Vale</name>
+          <encounter>
+            <name>Hybrid</name>
+            <text>Direct text</text>
+            <note><name>Description</name><text>Note text</text></note>
+          </encounter>
+        </adventure>
+      </campaign>
+    XML
+
+    document_for(xml) do |doc|
+      encounter = doc.campaign_record[:adventures].first[:encounters].first
+      assert_equal "Direct text\nNote text", encounter[:description]
+    end
+  end
+
+  test "action nodes extract attack notation from structured attack sub-elements" do
+    xml = <<~XML
+      <campaign>
+        <name>Test</name>
+        <monster>
+          <name>Ettin</name>
+          <action>
+            <name>Battleaxe</name>
+            <text>Melee Weapon Attack: +7 to hit.</text>
+            <attack><name>Battleaxe</name><atk>7</atk><dmg>2d8+5</dmg></attack>
+          </action>
+        </monster>
+      </campaign>
+    XML
+
+    document_for(xml) do |doc|
+      monster = doc.compendium_records.find { |r| r[:name] == "Ettin" }
+      assert_equal "Battleaxe|+7|2d8+5", monster[:actions].first[:attack]
+    end
+  end
+
   test "encounter record extracts combatants" do
     xml = <<~XML
       <campaign>
