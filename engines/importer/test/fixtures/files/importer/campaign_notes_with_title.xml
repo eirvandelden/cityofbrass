@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign version="5">
+  <note>
+    <title>0. Introduction</title>
+    <text>
+        This is the first paragraph of the note.
+    </text>
+    <text>
+    This is the second paragraph.
+    </text>
+    <text></text>
+  </note>
+  <encounter>
+    <name>Area 1. The Entrance</name>
+    <text>Read aloud: You see a door.</text>
+  </encounter>
+</campaign>
