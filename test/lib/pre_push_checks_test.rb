@@ -35,7 +35,7 @@ class PrePushChecksTest < ActiveSupport::TestCase
 
     assert_equal [
       ["bundle", "exec", "rubocop", "--force-exclusion", *files],
-      ["bin/rails", "test", *files.slice(2, 2)]
+      ["bundle", "exec", "rails", "test", *files.slice(2, 2)]
     ], PrePushChecks.commands(files)
   end
 
