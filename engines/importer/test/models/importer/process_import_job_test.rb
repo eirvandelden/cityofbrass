@@ -140,7 +140,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal [ "This is adventure content, not a private GM note.", "This is a second text block." ],
                  Storybuilder::Page.find_by!(name: "0. Introduction").sections.order(:sort_order).pluck(:content)
     assert_equal [ "0. Introduction", "Upper Floor 1. Keep Out!" ], adventure.menu_items.order(:sort_order).pluck(:item_label)
-    assert_equal [ "0. Introduction", "Upper Floor 1. Keep Out!" ], campaign.menu_items.order(:sort_order).pluck(:item_label)
+    assert_equal [ "Page Only Campaign" ], campaign.menu_items.order(:sort_order).pluck(:item_label)
   end
 
   test "resident campaign import fills campaign menu with adventures and loose pages in xml order" do
@@ -158,7 +158,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     loose_note = Storybuilder::Page.find_by!(name: "Loose Note")
 
     assert_equal "succeeded", import.reload.status
-    assert_equal [ "First Adventure", "Second Adventure", "Loose Note", "Loose Encounter" ],
+    assert_equal [ "First Adventure", "Second Adventure", "Menu Campaign" ],
                  campaign.menu_items.order(:sort_order).pluck(:item_label)
     assert_equal [ "Loose note opening.", "Loose note follow-up." ],
                  loose_note.sections.order(:sort_order).pluck(:content)

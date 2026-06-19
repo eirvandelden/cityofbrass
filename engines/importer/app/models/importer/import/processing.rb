@@ -116,8 +116,8 @@ module Importer
           import_campaign_monsters(import_file, campaign)
           import_campaign_items(import_file, campaign)
           adventures = explicit_campaign_adventures(campaign).map { |adventure| import_adventure(import_file, adventure, root) }
-          loose_pages = import_loose_campaign_pages(import_file, campaign, root)
-          rebuild_campaign_menu(root, adventures, loose_pages)
+          loose_adventure = import_loose_campaign_pages(import_file, campaign, root)
+          rebuild_campaign_menu(root, adventures + [ loose_adventure ].compact, [])
           campaign[:pcs].each { |pc| import_pc(import_file, pc) }
           campaign[:npcs].each { |npc| link_campaign_notable(root, import_npc(import_file, npc)) }
         end
@@ -155,13 +155,13 @@ module Importer
 
       def import_loose_campaign_pages(import_file, campaign, root)
         page_records = loose_campaign_page_records(campaign)
-        return [] if page_records.blank?
+        return nil if page_records.blank?
 
         adventure = resident_adventure(import_file, { type: "adventure", name: campaign_name(import_file, campaign) }, root)
         pages = page_records.map { |record| import_page_record(import_file, record, adventure) }
         rebuild_adventure_menu(adventure, pages)
         link_campaign_page_notables(root, pages)
-        pages
+        adventure
       end
 
       def campaign_adventures(import_file, campaign)
