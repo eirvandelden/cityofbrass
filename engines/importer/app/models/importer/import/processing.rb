@@ -446,7 +446,7 @@ module Importer
 
       def rebuild_note_sections(page, note)
         page.sections.destroy_all
-        Array(note[:text]).reject(&:blank?).each_with_index do |text, index|
+        Array(note[:text]).map(&:strip).reject(&:blank?).each_with_index do |text, index|
           page.sections.create!(section_type: "text", section_style: "paragraph", content: text, sort_order: index)
         end
       end

@@ -272,6 +272,36 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal "no stock character target", import.import_results.find_by!(entity_type: "pc").reason
   end
 
+  test "admin stock campaign import creates note page sections from text blocks" do
+    import = import_for_kind_with_file("campaign_level_pages.xml", kind: "campaign",
+                                                                   mode: Importer::Preview::ADMIN_STOCK)
+
+    assert_difference("Storybuilder::StockAdventure.count", 1) do
+      assert_difference("Storybuilder::Page.count", 2) do
+        Importer::ProcessImportJob.perform_now(import.id)
+      end
+    end
+
+    assert_equal "succeeded", import.reload.status
+    assert_equal [ "This is adventure content, not a private GM note.", "This is a second text block." ],
+                 Storybuilder::Page.find_by!(name: "0. Introduction").sections.order(:sort_order).pluck(:content)
+  end
+
+  test "campaign note with title element creates sections from text blocks" do
+    import = import_for_kind_with_file("campaign_notes_with_title.xml", kind: "campaign",
+                                                                        mode: Importer::Preview::ADMIN_STOCK)
+
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    assert_equal "succeeded", import.reload.status
+    page = Storybuilder::Page.find_by!(name: "0. Introduction")
+    assert_nil page.full_description
+    assert_equal 2, page.sections.count
+    assert_equal [ "This is the first paragraph of the note.",
+                   "This is the second paragraph." ],
+                 page.sections.order(:sort_order).pluck(:content)
+  end
+
   test "admin stock campaign import creates one stock adventure per imported adventure" do
     import = import_for("sample_multi_adventure_campaign.xml", mode: Importer::Preview::ADMIN_STOCK)
 
