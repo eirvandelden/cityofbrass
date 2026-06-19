@@ -60,6 +60,6 @@ module PrePushChecks
 
   def run_command(command, io:)
     io.puts command.join(" ")
-    system(*command)
+    system({ "DISABLE_SPRING" => "1" }, *command)
   end
 end
