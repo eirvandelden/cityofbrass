@@ -32,7 +32,7 @@ module PrePushChecks
     end
 
     if changed_test_files.any?
-      planned_commands << ["bin/rails", "test", *changed_test_files]
+      planned_commands << ["bundle", "exec", "rails", "test", *changed_test_files]
     end
 
     planned_commands
@@ -50,7 +50,7 @@ module PrePushChecks
     end
 
     if changed_test_files.any?
-      return false unless run_command(["bin/rails", "test", *changed_test_files], io: io)
+      return false unless run_command(["bundle", "exec", "rails", "test", *changed_test_files], io: io)
     else
       io.puts "No changed test files to run."
     end
