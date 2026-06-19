@@ -102,6 +102,71 @@ class ImporterGameMaster5XmlDocumentTest < ActiveSupport::TestCase
     end
   end
 
+  test "action nodes extract attack notation from direct atk and dmg elements" do
+    xml = <<~XML
+      <campaign>
+        <name>Test</name>
+        <monster>
+          <name>Ghoul</name>
+          <action>
+            <name>Claw</name>
+            <text>Melee Weapon Attack: +4 to hit.</text>
+            <atk>4</atk>
+            <dmg>2d4+2</dmg>
+          </action>
+        </monster>
+      </campaign>
+    XML
+
+    document_for(xml) do |doc|
+      monster = doc.compendium_records.find { |r| r[:name] == "Ghoul" }
+      assert_equal "Claw|+4|2d4+2", monster[:actions].first[:attack]
+    end
+  end
+
+  test "action nodes extract attack notation from direct dmg only element" do
+    xml = <<~XML
+      <campaign>
+        <name>Test</name>
+        <monster>
+          <name>Trap</name>
+          <action>
+            <name>Spike</name>
+            <text>Deals damage on trigger.</text>
+            <dmg>1d8</dmg>
+          </action>
+        </monster>
+      </campaign>
+    XML
+
+    document_for(xml) do |doc|
+      monster = doc.compendium_records.find { |r| r[:name] == "Trap" }
+      assert_equal "Spike|+|1d8", monster[:actions].first[:attack]
+    end
+  end
+
+  test "reaction nodes extract attack notation" do
+    xml = <<~XML
+      <campaign>
+        <name>Test</name>
+        <monster>
+          <name>Guard</name>
+          <reaction>
+            <name>Parry</name>
+            <text>Melee attack.</text>
+            <atk>3</atk>
+            <dmg>1d6+1</dmg>
+          </reaction>
+        </monster>
+      </campaign>
+    XML
+
+    document_for(xml) do |doc|
+      monster = doc.compendium_records.find { |r| r[:name] == "Guard" }
+      assert_equal "Parry|+3|1d6+1", monster[:reactions].first[:attack]
+    end
+  end
+
   test "encounter record extracts combatants" do
     xml = <<~XML
       <campaign>
