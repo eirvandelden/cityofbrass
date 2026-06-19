@@ -164,6 +164,24 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
                  loose_note.sections.order(:sort_order).pluck(:content)
   end
 
+  test "resident campaign import preserves intermezzo order between adventures" do
+    import = import_for("campaign_menu_intermezzo.xml", mode: Importer::Preview::RESIDENT_CONTENT)
+
+    assert_difference("Campaignmanager::Campaign.count", 1) do
+      assert_difference("Storybuilder::ResidentAdventure.count", 3) do
+        assert_difference("Storybuilder::Page.count", 3) do
+          Importer::ProcessImportJob.perform_now(import.id)
+        end
+      end
+    end
+
+    campaign = Campaignmanager::Campaign.find_by!(name: "Intermezzo Campaign")
+
+    assert_equal "succeeded", import.reload.status
+    assert_equal [ "First Adventure", "Intermezzo Campaign", "Second Adventure" ],
+                 campaign.menu_items.order(:sort_order).pluck(:item_label)
+  end
+
   test "resident campaign import creates encounter pages and embedded content" do
     import = import_for("sample_campaign_with_embedded_content.xml", mode: Importer::Preview::RESIDENT_CONTENT)
 

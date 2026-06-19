@@ -26,6 +26,7 @@ module Importer
             adventures: nodes(node, "./adventure").map { |adventure| adventure_record(adventure) },
             encounters: nodes(node, "./encounter").map { |encounter| encounter_record(encounter) },
             page_records: page_records(node),
+            content_items: campaign_content_items(node),
             monsters: campaign_monster_records(node),
             items: campaign_item_records(node),
             notes: nodes(node, "./note").map { |note| note_record(note) },
@@ -259,6 +260,16 @@ module Importer
             encounters: page_records(adventure),
             npcs: nodes(adventure, ".//npc").map { |npc| npc_record(npc) }
           }
+        end
+
+        def campaign_content_items(node)
+          nodes(node, "./adventure | ./encounter | ./note").map do |child|
+            case child.name
+            when "adventure" then adventure_record(child)
+            when "note" then note_record(child)
+            else encounter_record(child)
+            end
+          end
         end
 
         def page_records(node)

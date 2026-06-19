@@ -1,0 +1,66 @@
+<% provide(:title, "#{@parent_object.name} | Menu Items") %>
+
+<% content_for :breadcrumb do %>
+  <%=  breadcrumb [
+    { "Campaigns" => campaigns_path },
+    { @parent_object.name => campaign_path(@parent_object) },
+    { "Menu Items" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial =>'menus/manage',
+      :locals => {
+        :active => 'menu_items',
+        :view_link => campaign_path(@parent_object),
+        :details_link => edit_campaign_path(@parent_object),
+        :options_link => campaign_options_path(@parent_object),
+        :features_link => campaign_features_path(@parent_object),
+        :sections_link => campaign_sections_path(@parent_object),
+        :notables_link => campaign_notables_path(@parent_object),
+        :menu_items_link => campaign_menu_items_path(@parent_object),
+        :players_link => campaign_players_path(@parent_object)
+      } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial =>'layouts/header',
+      :locals => {
+        :main => @parent_object.name,
+        :sub => 'Menu Items',
+        :add_remote_link => new_campaign_menu_item_path(@parent_object),
+        :can_auth => @parent_object.can_edit?(current_user, admin_signed_in?)
+      }
+    %>
+    <hr class="faded">
+    <div class="row">
+      <div class="medium-5 columns" id="brass_form">
+        <%= render 'form_list' %>
+      </div>
+      <div class="medium-7 columns">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="menuWizardModal" class="reveal-modal tiny" data-reveal style="display: none">
+  <h2><i class="fa fa-magic"></i> Link Wizard</h2>
+  <br>
+  <div class="row">
+    <div class="medium-12 medium-centered columns text-center">
+      <input type="hidden" name="wizard_for" id="wizard_for">
+      <select name="selectEngineSB" id="selectEngineSB">
+        <option value="WB">World Builder</option>
+        <option value="SB">Adventure Builder</option>
+      </select>
+      <select name="selectParent" id="selectParent"></select>
+      <select name="selectRecord" id="selectRecord"></select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-12 medium-centered columns text-center">
+      <%= button_tag 'Select', type: 'button', name: 'menu-select', :id => 'menu-select', class: 'button' %>
+    </div>
+  </div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
