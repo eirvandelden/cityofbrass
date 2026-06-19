@@ -132,8 +132,8 @@ module Importer
             cr: text_at(node, "cr"),
             traits: named_text_nodes(node, "./trait"),
             actions: action_nodes(node, "./action"),
-            reactions: named_text_nodes(node, "./reaction"),
-            legendary: named_text_nodes(node, "./legendary"),
+            reactions: action_nodes(node, "./reaction"),
+            legendary: action_nodes(node, "./legendary"),
             spells: text_at(node, "spells"),
             source: source
           }
@@ -370,7 +370,15 @@ module Importer
 
         def action_attack(action_node)
           attack = action_node.at_xpath("./attack")
-          return "" if attack.nil?
+
+          if attack.nil?
+            atk = text_at(action_node, "atk")
+            dmg = text_at(action_node, "dmg")
+            return "" unless atk.present? || dmg.present?
+
+            name = text_at(action_node, "name")
+            return "#{name}|+#{atk}|#{dmg}"
+          end
 
           atk = text_at(attack, "atk")
           dmg = text_at(attack, "dmg")
