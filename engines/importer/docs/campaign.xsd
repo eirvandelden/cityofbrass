@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  campaign.xsd
+  Community-derived schema for the <campaign> document type produced by
+  GameMaster5 (simple export format). No official schema exists for this
+  format; this file is inferred from direct examination of real XML files.
+
+  Key naming convention (verified from real files):
+    <note>      uses <title> for its heading
+    <encounter> uses <name>  for its heading
+
+  See also: data.xsd for the full runtime campaign state format.
+-->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="campaign" type="campaignType"/>
+
+    <!--
+      noteType
+      A free-form text section. Heading is <title>.
+      Notes may be nested arbitrarily inside encounters to organize content
+      into labelled sections ("Read Aloud", "DM Notes", etc.). To collect
+      all text from an encounter, traverse the full subtree.
+    -->
+    <xs:complexType name="noteType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="title" minOccurs="0"/>
+            <xs:element type="xs:string" name="text" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="note" type="noteType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!--
+      combatantType
+      In simple campaign files, a combatant is a reference to a monster by name.
+      In <data> files, the <monster> child is an inline stat block; see data.xsd.
+    -->
+    <xs:complexType name="combatantType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="monster"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!--
+      encounterType
+      A scene. Heading is <name>.
+      Text may appear as direct <text> children or inside <note> elements at
+      any nesting depth. Use XPath .//note/text to collect all text.
+    -->
+    <xs:complexType name="encounterType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="name" minOccurs="0"/>
+            <xs:element type="xs:string" name="text" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="note" type="noteType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="combatant" type="combatantType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!--
+      npcRefType
+      A reference to an NPC within a campaign or adventure.
+    -->
+    <xs:complexType name="npcRefType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="name" minOccurs="0"/>
+            <xs:element type="xs:string" name="label" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!--
+      pcRefType
+      A reference to a player character within a campaign. Contains only a label.
+    -->
+    <xs:complexType name="pcRefType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="label" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!--
+      adventureType
+      A named sub-section of a campaign. May contain notes, encounters, and
+      nested adventures. The ordering of child elements is significant and
+      reflects the intended reading order.
+    -->
+    <xs:complexType name="adventureType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="xs:string" name="text" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="note" type="noteType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="encounter" type="encounterType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="adventure" type="adventureType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="npc" type="npcRefType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!--
+      campaignType
+      Root type. Children may be freely interleaved; ordering is significant
+      and reflects the intended reading order of the campaign content.
+    -->
+    <xs:complexType name="campaignType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="name"/>
+            <xs:element name="note" type="noteType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="encounter" type="encounterType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="adventure" type="adventureType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="pc" type="pcRefType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="npc" type="npcRefType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:choice>
+        <xs:attribute type="xs:byte" name="version" use="optional"/>
+    </xs:complexType>
+
+</xs:schema>

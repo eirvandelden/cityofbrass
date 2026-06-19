@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  data.xsd
+  Community-derived schema for the <data> document type produced by
+  GameMaster5 (full campaign state export). No official schema exists for
+  this format; this file is inferred from direct examination of real XML files.
+
+  <data> is a superset of <campaign>. It wraps a <campaign> element and adds:
+    - Runtime state (current HP, spell slots, initiative)
+    - Abbreviated PC and NPC stat blocks with current values
+    - Inline monster stat blocks inside <combatant> elements
+    - Encounter state tracking (<state>, <round>)
+
+  For the simple campaign format (notes, adventures, encounters by name
+  reference), see campaign.xsd. For monster stat block details, see
+  compendium.xsd (monsterType).
+
+  Note/encounter naming convention (same as campaign.xsd):
+    <note>      uses <title> for its heading
+    <encounter> uses <name>  for its heading
+-->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="data" type="dataType"/>
+
+    <!-- Shared simple types -->
+
+    <xs:simpleType name="integerList">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9 ]*(, ?[0-9 ]*)*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="attackStringType">
+        <!-- Pipe-separated: Name|HitBonus|DamageDice -->
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(.*[|]([ ]|[+-]?[0-9]*)[|]([0-9]*(d[0-9]+)*([+-][0-9]+)*)*)*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Attack element: three syntactic forms observed in the wild -->
+
+    <!--
+      attackElementType
+      Form 2 / Form 3: structured sub-elements inside <attack>.
+      Form 1 (pipe string) is covered by attackStringType on the element's text content.
+      Because both forms must be supported, we use xs:anyType here and note the
+      constraint in documentation.
+    -->
+
+    <!-- Note type (heading = <title>) -->
+
+    <xs:complexType name="noteType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="title" minOccurs="0"/>
+            <xs:element type="xs:string" name="text" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="note" type="noteType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- Action type: used for action, reaction, legendary inside inline monsters -->
+
+    <xs:complexType name="inlineAttackType" mixed="true">
+        <!-- Accepts both pipe-string content and <name>/<atk>/<dmg> children -->
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="name" minOccurs="0"/>
+            <xs:element type="xs:string" name="atk" minOccurs="0"/>
+            <xs:element type="xs:string" name="dmg" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="inlineActionType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="name" minOccurs="0"/>
+            <xs:element type="xs:string" name="text" maxOccurs="unbounded" minOccurs="0"/>
+            <!-- <attack> may be a pipe-string or contain <atk>/<dmg> children -->
+            <xs:element name="attack" type="inlineAttackType" maxOccurs="unbounded" minOccurs="0"/>
+            <!-- Direct atk/dmg without <attack> wrapper, also observed -->
+            <xs:element type="xs:string" name="atk" minOccurs="0"/>
+            <xs:element type="xs:string" name="dmg" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!--
+      inlineMonsterType
+      An abbreviated monster stat block embedded inside a <combatant> in a
+      <data> file. Carries the same fields as compendium monsterType but also
+      includes runtime state (hpCurrent, enemy flag, src reference).
+      Full stat block definition: see compendium.xsd monsterType.
+    -->
+    <xs:complexType name="inlineMonsterType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <!-- Identity -->
+            <xs:element type="xs:string" name="name" minOccurs="0"/>
+            <xs:element type="xs:string" name="label" minOccurs="0"/>
+            <xs:element type="xs:string" name="src" minOccurs="0"/>
+            <!-- Runtime state -->
+            <xs:element type="xs:integer" name="enemy" minOccurs="0"/><!-- 1=enemy, 0=friendly -->
+            <xs:element type="xs:integer" name="hpMax" minOccurs="0"/>
+            <xs:element type="xs:integer" name="hpCurrent" minOccurs="0"/>
+            <!-- Stat block fields (subset; full list in compendium.xsd) -->
+            <xs:element type="xs:string" name="ac" minOccurs="0"/>
+            <xs:element type="xs:string" name="speed" minOccurs="0"/>
+            <xs:element type="xs:integer" name="str" minOccurs="0"/>
+            <xs:element type="xs:integer" name="dex" minOccurs="0"/>
+            <xs:element type="xs:integer" name="con" minOccurs="0"/>
+            <xs:element type="xs:integer" name="int" minOccurs="0"/>
+            <xs:element type="xs:integer" name="wis" minOccurs="0"/>
+            <xs:element type="xs:integer" name="cha" minOccurs="0"/>
+            <xs:element type="xs:string" name="abilities" minOccurs="0"/>
+            <!-- Ability groups -->
+            <xs:element name="action" type="inlineActionType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="reaction" type="inlineActionType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="legendary" type="inlineActionType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="trait" type="inlineActionType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- combatantType in <data>: wraps a full inline monster -->
+
+    <xs:complexType name="dataCombatantType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element name="monster" type="inlineMonsterType" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- encounterType in <data>: adds state tracking fields -->
+
+    <xs:complexType name="dataEncounterType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="name" minOccurs="0"/>
+            <xs:element type="xs:string" name="text" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="note" type="noteType" maxOccurs="unbounded" minOccurs="0"/>
+            <!-- Runtime encounter state -->
+            <xs:element type="xs:integer" name="state" minOccurs="0"/><!-- 0=not started 1=in progress 2=complete -->
+            <xs:element type="xs:integer" name="round" minOccurs="0"/>
+            <xs:element name="combatant" type="dataCombatantType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- adventureType in <data> -->
+
+    <xs:complexType name="dataAdventureType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="xs:string" name="text" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="note" type="noteType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="encounter" type="dataEncounterType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="adventure" type="dataAdventureType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- Abbreviated PC stat block with runtime state -->
+
+    <xs:complexType name="dataPcType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:integer" name="uid" minOccurs="0"/>
+            <xs:element type="xs:string" name="label" minOccurs="0"/>
+            <xs:element type="xs:string" name="name" minOccurs="0"/>
+            <xs:element type="xs:integer" name="hpMax" minOccurs="0"/>
+            <xs:element type="xs:integer" name="hpCurrent" minOccurs="0"/>
+            <!-- Ability scores: comma-separated STR,DEX,CON,INT,WIS,CHA -->
+            <xs:element type="xs:string" name="abilities" minOccurs="0"/>
+            <xs:element type="xs:integer" name="str" minOccurs="0"/>
+            <xs:element type="xs:integer" name="dex" minOccurs="0"/>
+            <xs:element type="xs:integer" name="con" minOccurs="0"/>
+            <xs:element type="xs:integer" name="int" minOccurs="0"/>
+            <xs:element type="xs:integer" name="wis" minOccurs="0"/>
+            <xs:element type="xs:integer" name="cha" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- Abbreviated NPC stat block with runtime state -->
+
+    <xs:complexType name="dataNpcType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:integer" name="uid" minOccurs="0"/>
+            <xs:element type="xs:string" name="label" minOccurs="0"/>
+            <xs:element type="xs:string" name="name" minOccurs="0"/>
+            <xs:element type="xs:integer" name="hpCurrent" minOccurs="0"/>
+            <xs:element type="xs:integer" name="enemy" minOccurs="0"/><!-- 1=enemy, 0=friendly -->
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- Campaign element inside <data> -->
+
+    <xs:complexType name="dataCampaignType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="xs:integer" name="version" minOccurs="0"/>
+            <xs:element type="xs:integer" name="uid" minOccurs="0"/>
+            <xs:element name="pc" type="dataPcType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="npc" type="dataNpcType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="note" type="noteType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="encounter" type="dataEncounterType" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="adventure" type="dataAdventureType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- Root type -->
+
+    <xs:complexType name="dataType">
+        <xs:sequence>
+            <xs:element name="campaign" type="dataCampaignType"/>
+        </xs:sequence>
+        <xs:attribute type="xs:byte" name="version" use="optional"/>
+    </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  pc.xsd
+  Community-derived schema for player character documents.
+  No official schema exists; this file is inferred from real XML files.
+
+  Two root element types are defined:
+    <pc>         — a single player character file
+    <characters> — a party file containing one or more <character> blocks
+
+  Both share the same <character> inner type.
+
+  Attack notation inside PC actions follows the same three forms as monsters;
+  see compendium.xsd (attackType / inlineAttackType in data.xsd) for details.
+-->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="pc" type="pcDocumentType"/>
+    <xs:element name="characters" type="charactersType"/>
+
+    <!-- Slot string: comma-separated integers, cantrips through 9th level -->
+
+    <xs:simpleType name="slotString">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9 ]*(, ?[0-9 ]*)*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--
+      attackType for PC actions
+      Accepts both pipe-separated string content and <atk>/<dmg> sub-elements.
+      Mixed content required because both forms appear.
+    -->
+    <xs:complexType name="pcAttackType" mixed="true">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="name" minOccurs="0"/>
+            <xs:element type="xs:string" name="atk" minOccurs="0"/>
+            <xs:element type="xs:string" name="dmg" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- Action on a PC (same structure as monster action) -->
+
+    <xs:complexType name="pcActionType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="name" minOccurs="0"/>
+            <xs:element type="xs:string" name="text" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="attack" type="pcAttackType" maxOccurs="unbounded" minOccurs="0"/>
+            <!-- Direct atk/dmg without <attack> wrapper, also observed -->
+            <xs:element type="xs:string" name="atk" minOccurs="0"/>
+            <xs:element type="xs:string" name="dmg" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- Race block inside a character -->
+
+    <xs:complexType name="pcRaceType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="name" minOccurs="0"/>
+            <xs:element type="xs:string" name="age" minOccurs="0"/>
+            <xs:element type="xs:string" name="height" minOccurs="0"/>
+            <xs:element type="xs:string" name="weight" minOccurs="0"/>
+            <xs:element type="xs:string" name="eyes" minOccurs="0"/>
+            <xs:element type="xs:string" name="skin" minOccurs="0"/>
+            <xs:element type="xs:string" name="hair" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- Class block inside a character -->
+
+    <xs:complexType name="pcClassType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:element type="xs:string" name="name" minOccurs="0"/>
+            <xs:element type="xs:integer" name="level" minOccurs="0"/>
+            <!-- Hit Dice: stored as string "1d10" in PC files (vs integer in compendium) -->
+            <xs:element type="xs:string" name="hd" minOccurs="0"/>
+            <xs:element type="xs:integer" name="hdCurrent" minOccurs="0"/><!-- remaining hit dice -->
+            <xs:element type="slotString" name="slots" minOccurs="0"/><!-- maximum slots -->
+            <xs:element type="slotString" name="slotsCurrent" minOccurs="0"/><!-- current remaining slots -->
+            <xs:element type="xs:string" name="wealth" minOccurs="0"/>
+            <xs:element type="xs:string" name="proficiency" minOccurs="0"/>
+            <xs:element type="xs:string" name="armor" minOccurs="0"/>
+            <xs:element type="xs:string" name="weapons" minOccurs="0"/>
+            <xs:element type="xs:string" name="tools" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!--
+      characterType
+      The core player character block. Ability scores appear as either six
+      separate elements (str/dex/con/int/wis/cha) or a single comma-separated
+      <abilities> element; both forms are observed.
+    -->
+    <xs:complexType name="characterType">
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <!-- Identity -->
+            <xs:element type="xs:string" name="name" minOccurs="0"/>
+            <xs:element type="xs:integer" name="uid" minOccurs="0"/>
+            <xs:element type="xs:integer" name="version" minOccurs="0"/>
+            <!-- Ancestry and class -->
+            <xs:element name="race" type="pcRaceType" minOccurs="0"/>
+            <xs:element name="class" type="pcClassType" maxOccurs="unbounded" minOccurs="0"/>
+            <!-- Ability scores: six separate elements -->
+            <xs:element type="xs:integer" name="str" minOccurs="0"/>
+            <xs:element type="xs:integer" name="dex" minOccurs="0"/>
+            <xs:element type="xs:integer" name="con" minOccurs="0"/>
+            <xs:element type="xs:integer" name="int" minOccurs="0"/>
+            <xs:element type="xs:integer" name="wis" minOccurs="0"/>
+            <xs:element type="xs:integer" name="cha" minOccurs="0"/>
+            <!-- OR: single comma-separated element "STR,DEX,CON,INT,WIS,CHA" -->
+            <xs:element type="xs:string" name="abilities" minOccurs="0"/>
+            <!-- Derived stats -->
+            <xs:element type="xs:integer" name="ac" minOccurs="0"/>
+            <xs:element type="xs:string" name="armor" minOccurs="0"/><!-- equipped armor name -->
+            <xs:element type="xs:string" name="speed" minOccurs="0"/>
+            <xs:element type="xs:integer" name="hpMax" minOccurs="0"/>
+            <xs:element type="xs:integer" name="hpCurrent" minOccurs="0"/>
+            <xs:element type="xs:integer" name="passive" minOccurs="0"/><!-- passive Perception -->
+            <!-- Spellcasting -->
+            <xs:element type="xs:string" name="spellAbility" minOccurs="0"/>
+            <xs:element type="xs:string" name="spells" minOccurs="0"/><!-- comma-separated spell names -->
+            <!-- Attacks and actions -->
+            <xs:element name="action" type="pcActionType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- <pc> root: wraps a single <character> -->
+
+    <xs:complexType name="pcDocumentType">
+        <xs:sequence>
+            <xs:element name="character" type="characterType"/>
+        </xs:sequence>
+        <xs:attribute type="xs:byte" name="version" use="optional"/>
+    </xs:complexType>
+
+    <!-- <characters> root: party file with one or more <character> blocks -->
+
+    <xs:complexType name="charactersType">
+        <xs:sequence>
+            <xs:element name="character" type="characterType" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute type="xs:byte" name="version" use="optional"/>
+    </xs:complexType>
+
+</xs:schema>
