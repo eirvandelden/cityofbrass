@@ -366,12 +366,13 @@ module Importer
         if existing
           link_adventure_to_campaign(campaign, existing)
           return replace_or_skip(import_file, adventure.merge(name: name), existing, campaign: campaign) do |record|
-            record.update!(privacy: "Private", core_rules: CORE_RULES)
+            record.update!(privacy: "Private", core_rules: CORE_RULES, full_description: adventure[:description].presence)
           end
         end
 
         record = Storybuilder::ResidentAdventure.create!(resident: resident, name: name, privacy: "Private",
-                                                         core_rules: CORE_RULES)
+                                                         core_rules: CORE_RULES,
+                                                         full_description: adventure[:description].presence)
         link_adventure_to_campaign(campaign, record)
         result(import_file, adventure, "created", record)
         record
@@ -566,12 +567,14 @@ module Importer
         build_character_name_info(character, pc)
         build_saves_and_skills(character, pc)
         build_creature_attacks(character, pc[:actions], "melee")
+        build_creature_spellcasting(character, pc)
       end
 
       def build_character_name_info(character, pc)
         [
           [ "Size", decode_size(pc[:size]) ],
-          [ "Passive Perception", pc[:passive]&.to_s ]
+          [ "Passive Perception", pc[:passive]&.to_s ],
+          [ "Race", pc[:race_name] ]
         ].each do |name, value|
           next if value.blank?
 
