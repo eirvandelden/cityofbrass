@@ -710,10 +710,49 @@ module Importer
         build_ability_scores(creature, record)
         build_basic_stats(creature, record)
         build_creature_descriptors(creature, record)
+        build_creature_spellcasting(creature, record)
         build_creature_attacks(creature, record[:actions], "melee")
         build_creature_attacks(creature, record[:reactions], "melee")
         build_creature_attacks(creature, record[:legendary], "melee")
         build_creature_trait_rules(import_file, creature, record)
+      end
+
+      def build_creature_spellcasting(creature, record)
+        if record[:spell_ability].present?
+          begin
+            creature.descriptors.create!(name: "Spellcasting Ability", description: record[:spell_ability].truncate(255))
+          rescue ActiveRecord::RecordInvalid
+            # skip if duplicate
+          end
+        end
+
+        if record[:slots].present?
+          record[:slots].split(",").each_with_index do |count, index|
+            next if count.to_i.zero?
+
+            level_name = index.zero? ? "Cantrips" : "Spell Slots (#{ActiveSupport::Inflector.ordinalize(index)})"
+            begin
+              creature.trackables.create!(name: level_name, maximum: count.to_i, current: count.to_i)
+            rescue ActiveRecord::RecordInvalid
+              # skip if duplicate
+            end
+          end
+        end
+
+        return if record[:spells].blank?
+
+        record[:spells].split(",").map(&:strip).each do |spell_name|
+          next if spell_name.blank?
+
+          spell = name_index_find("spell", spell_name)
+          next if spell.nil?
+
+          begin
+            creature.known_spells.create!(spell: spell)
+          rescue ActiveRecord::RecordInvalid
+            # skip if duplicate or invalid
+          end
+        end
       end
 
       def build_creature_trait_rules(import_file, creature, record)

@@ -136,7 +136,9 @@ module Importer
             actions: action_nodes(node, "./action"),
             reactions: action_nodes(node, "./reaction"),
             legendary: action_nodes(node, "./legendary"),
+            spell_ability: text_at(node, "spellAbility"),
             spells: text_at(node, "spells"),
+            slots: text_at(node, "slots"),
             source: source
           }
         end
