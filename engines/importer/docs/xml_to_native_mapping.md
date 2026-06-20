@@ -241,10 +241,10 @@ The adventure is linked to the campaign via `CampaignAdventureJoin`.
 | XML field     | Native field        | Notes | Status |
 |---------------|---------------------|-------|--------|
 | `<name>`      | `name`              | | ✅ |
-| `<text>`      | `full_description`  | Overview text | ⚠️ |
+| `<text>`      | `full_description`  | Overview text | ✅ |
 | (privacy)     | `privacy`           | Always `"Private"` | ✅ |
 | (core_rules)  | `core_rules`        | Always `"dnd5e"` | ✅ |
-| `<npc>`       | Notable             | NPCs linked to campaign, not adventure | ⚠️ |
+| `<npc>`       | Notable             | NPCs linked to the adventure via `Storybuilder::Notable` | ✅ |
 
 ---
 
@@ -289,12 +289,12 @@ within a campaign.
 | `<class><name>`    | ClassLevel `name`       | | ✅ |
 | `<class><level>`   | ClassLevel `level`      | | ✅ |
 | `<action>`         | Attack                  | Same mapping as monster action (§1.8) | ✅ |
-| `<hpMax>`          | Trackable `maximum`     | `name="Hit Points"` | ⚠️ |
-| `<ac>`             | Defense `base`          | `name="Armor Class"` | ⚠️ |
-| `<spells>`         | KnownSpell              | Lookup by name | ⚠️ |
-| `<race><name>`     | Descriptor              | `name="Race"` | ⚠️ |
-| `<class><hd>`      | ClassLevel `hit_dice`   | | ⚠️ |
-| `<slots>`          | CasterLevel             | | ⚠️ |
+| `<hpMax>`          | Trackable `maximum`     | `name="Hit Points"` — also tries `<hp>` | ✅ |
+| `<ac>`             | Defense `base`          | `name="Armor Class"` | ✅ |
+| `<spells>`         | KnownSpell              | Lookup by name; unknown spells skipped | ✅ |
+| `<race><name>`     | Descriptor              | `name="Race"`, extracted from `<race><name>` | ✅ |
+| `<class><hd>`      | ClassLevel `hit_dice`   | Not extracted — class elements not individually parsed | ⚠️ |
+| `<slots>`          | Trackable               | One Trackable per non-zero slot level | ✅ |
 | `<passive>`        | —                       | Not stored | ❌ |
 | `<armor>`          | —                       | Equipped armor name not stored | ❌ |
 
