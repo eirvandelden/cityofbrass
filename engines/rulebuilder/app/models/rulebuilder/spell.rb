@@ -36,7 +36,6 @@ module Rulebuilder
     validates :target, length: { maximum: 255 }
     validates :range, length: { maximum: 255 }
     validates :area, length: { maximum: 255 }
-    validates :components, length: { maximum: 255 }
     validates :effect, length: { maximum: 255 }
     validates :duration, length: { maximum: 255 }
     validates :saving_throw, length: { maximum: 255 }

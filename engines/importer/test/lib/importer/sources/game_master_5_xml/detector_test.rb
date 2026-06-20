@@ -29,6 +29,42 @@ class ImporterGameMaster5XmlDetectorTest < ActiveSupport::TestCase
     assert_equal "pc", detector.kind
   end
 
+  test "detects characters XML and counts pcs and npcs" do
+    detector = Importer::Sources::GameMaster5Xml::Detector.new(
+      xml("<characters version='5'><pc><name>A</name></pc><npc><name>B</name></npc></characters>")
+    )
+
+    assert_equal "characters", detector.kind
+    assert_equal 1, detector.entity_counts["pcs"]
+    assert_equal 1, detector.entity_counts["npcs"]
+  end
+
+  test "detects campaign XML at the document root" do
+    detector = Importer::Sources::GameMaster5Xml::Detector.new(xml("<campaign><name>Red Hand</name></campaign>"))
+
+    assert_equal "campaign", detector.kind
+  end
+
+  test "marks data XML without a campaign as unsupported" do
+    detector = Importer::Sources::GameMaster5Xml::Detector.new(xml("<data><settings /></data>"))
+
+    assert_equal "unsupported", detector.kind
+  end
+
+  test "marks aggregator and note roots as unsupported" do
+    %w[collection source notes].each do |root|
+      detector = Importer::Sources::GameMaster5Xml::Detector.new(xml("<#{root}><name>X</name></#{root}>"))
+      assert_equal "unsupported", detector.kind, "expected <#{root}> to be unsupported"
+    end
+  end
+
+  test "marks malformed XML as unsupported" do
+    detector = Importer::Sources::GameMaster5Xml::Detector.new(xml("<compendium><monster></compendium>"))
+
+    assert_equal "unsupported", detector.kind
+    assert_equal({}, detector.entity_counts)
+  end
+
   test "marks unsupported XML roots" do
     detector = Importer::Sources::GameMaster5Xml::Detector.new(xml("<template><monster /></template>"))
 
