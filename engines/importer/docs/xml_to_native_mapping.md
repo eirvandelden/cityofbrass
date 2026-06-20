@@ -31,7 +31,7 @@ belong to the same entity via `entity_id`.
 | `<cr>`          | Descriptor         | `name="Challenge Rating"`, `description` | Stored as string | ✅ |
 | `<source>`      | Entity             | `source`                                 | | ✅ |
 | `<description>` | Entity             | `full_description`                       | | ⚠️ |
-| `<environment>` | Descriptor         | `name="Environment"`, `description`      | | ❌ |
+| `<environment>` | Descriptor         | `name="Environment"`, `description`      | Extracted and stored | ✅ |
 
 ### 1.2 Defences
 
@@ -77,7 +77,7 @@ are supported.
 |--------------|--------------|-----------------------------------------|-------|--------|
 | `<save>`     | SavingThrow  | `name`, `bonus`, `proficient=true`      | Parsed from `"Dex +5, Con +15"` | ✅ |
 | `<skill>`    | Skill        | `name`, `bonus`                         | Parsed from `"Perception +14"` | ✅ |
-| `<passive>`  | Skill        | Skill `name="Perception"`, `misc_modifier` | Used to derive passive Perception | ⚠️ |
+| `<passive>`  | Descriptor   | `name="Passive Perception"`, `description` | Stored as descriptor on character | ✅ |
 | `<senses>`   | Descriptor   | `name="Senses"`, `description`          | | ✅ |
 | `<languages>`| Descriptor   | `name="Languages"`, `description`       | | ✅ |
 
@@ -133,19 +133,19 @@ depends on whether attack notation is present.
 |--------------|---------------------|-------|--------|
 | `<name>`     | `name`              | Truncated to 64 chars | ✅ |
 | `<type>`     | `category`          | Code decoded via mapping below | ✅ |
-| `<text>`     | `full_description`  | All `<text>` elements joined | ✅ |
+| `<text>`     | `full_description`  | Stats block prepended, then text | ✅ |
 | `<source>`   | `source`            | | ✅ |
-| `<magic>`    | —                   | Not stored; no native field | ❌ |
-| `<weight>`   | —                   | Not stored | ❌ |
-| `<dmg1>`     | —                   | Not stored (no weapon stat model on items) | ❌ |
-| `<dmg2>`     | —                   | Not stored | ❌ |
-| `<dmgType>`  | —                   | Not stored | ❌ |
-| `<property>` | —                   | Not stored | ❌ |
-| `<range>`    | —                   | Not stored | ❌ |
-| `<ac>`       | —                   | Not stored | ❌ |
-| `<strength>` | —                   | Not stored | ❌ |
-| `<stealth>`  | —                   | Not stored | ❌ |
-| `<modifier>` | —                   | Not stored | ❌ |
+| `<weight>`   | `weight`            | Stored as decimal | ✅ |
+| `<magic>`    | `full_description`  | Included in stats block | ✅ |
+| `<dmg1>`     | `full_description`  | Included in stats block | ✅ |
+| `<dmg2>`     | `full_description`  | Included in stats block | ✅ |
+| `<dmgType>`  | `full_description`  | Included in stats block | ✅ |
+| `<property>` | `full_description`  | Included in stats block | ✅ |
+| `<range>`    | `full_description`  | Included in stats block | ✅ |
+| `<ac>`       | `full_description`  | Included in stats block | ✅ |
+| `<strength>` | `full_description`  | Included in stats block | ✅ |
+| `<stealth>`  | `full_description`  | Included in stats block | ✅ |
+| `<modifier>` | —                   | No modifier association on items; not stored | ❌ |
 
 ### 2.1 Item type code → category
 
@@ -176,14 +176,14 @@ depends on whether attack notation is present.
 | XML field       | Native field        | Notes | Status |
 |-----------------|---------------------|-------|--------|
 | `<name>`        | `name`              | Truncated to 64 chars | ✅ |
-| `<level>` + `<classes>` | `levels`   | Combined: `["Wizard 3", "Sorcerer 3"]` | ⚠️ |
+| `<level>` + `<classes>` | `levels`   | Combined into JSON array: `["Wizard 3", "Sorcerer 3"]` | ✅ |
 | `<school>`      | `school`            | Code decoded: EV→Evocation, N→Necromancy, etc. | ✅ |
 | `<time>`        | `casting_time`      | | ✅ |
 | `<range>`       | `range`             | | ✅ |
-| `<components>`  | `components`        | | ✅ |
+| `<components>`  | `components`        | V/S/M assembled with materials | ✅ |
 | `<duration>`    | `duration`          | | ✅ |
 | `<text>`        | `full_description`  | All `<text>` elements joined | ✅ |
-| `<ritual>`      | —                   | Not stored | ❌ |
+| `<ritual>`      | `tags`              | `"ritual"` tag added when `YES` | ✅ |
 | `<roll>`        | —                   | Not stored | ❌ |
 | `<source>`      | `source`            | | ✅ |
 
@@ -211,7 +211,8 @@ by `rule_type`.
 | `<text>` / trait `<text>` | `full_description` | All text concatenated | ✅ |
 | `<source>`         | `source`            | | ✅ |
 | `<modifier>`       | —                   | Not stored | ❌ |
-| `<ability>`        | —                   | Race ability bonuses not stored | ❌ |
+| `<ability>`        | `full_description`  | Race ability bonuses prepended to description | ✅ |
+| `<proficiency>`    | `full_description`  | Race/background proficiencies prepended to description | ✅ |
 | `<autolevel>`      | —                   | Class level features not individually stored | ⚠️ |
 
 ### 4.2 Class — autolevel detail
@@ -312,27 +313,19 @@ only the name is used to create a minimal NPC record.
 
 ---
 
-## 11. Gaps summary
+## 11. Remaining gaps
 
-Fields present in the XML format that have no current mapping to a native
-City of Brass field:
+Fields present in the XML format with no complete native mapping. All other
+gaps from the original list have been resolved.
 
-| XML element / field     | Reason no mapping exists |
-|-------------------------|--------------------------|
-| `<item><dmg1>` / `<dmg2>` / `<dmgType>` | Item model has no weapon stat fields |
-| `<item><property>`      | Item model has no property field |
-| `<item><weight>`        | Item model has no weight field |
-| `<item><ac>`            | Item model has no AC field |
-| `<item><modifier>`      | Item modifiers not stored |
-| `<item><magic>`         | No magic flag on Item |
-| `<spell><ritual>`       | Spell model has no ritual flag |
-| `<spell><roll>`         | Dice expressions not stored on spells |
-| `<class><autolevel>`    | Level features not stored individually |
-| `<class><slots>`        | Class progression not stored |
-| `<class><counter>`      | Resource counters not stored |
-| `<monster><environment>`| No environment field on Entity |
-| `<monster><spells>`     | Spell lookup fragile; misses unknown spells |
-| `<monster><slots>`      | Caster level tracking incomplete |
-| `<npc>` stat block (inline `<data>`) | Only name imported from inline NPCs |
-| `<pc><passive>`         | Not stored on ResidentCharacter |
-| `<pc><armor>`           | Equipped armor name not stored |
+| XML element / field       | Reason |
+|---------------------------|--------|
+| `<item><modifier>`        | No modifier association on items; would require a join table |
+| `<spell><roll>`           | Dice roll expressions not stored; no native field |
+| `<class><autolevel>`      | Level features serialised to text only; not stored as discrete records |
+| `<class><slots>`          | Class slot progression not stored |
+| `<class><counter>`        | Resource counters not stored |
+| `<monster><spells>`       | Spell lookup by name; fragile if spell not yet in system |
+| `<monster><slots>`        | Caster level slot tracking incomplete |
+| `<npc>` inline stat block | Only name/size/type/alignment/AC/HP imported from inline `<data>` NPCs |
+| `<pc><armor>`             | Equipped armor name not stored; no inventory lookup |

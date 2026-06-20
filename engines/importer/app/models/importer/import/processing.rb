@@ -569,12 +569,15 @@ module Importer
       end
 
       def build_character_name_info(character, pc)
-        if pc[:size].present?
-          begin
-            character.descriptors.create!(name: "Size", description: pc[:size].truncate(255))
-          rescue ActiveRecord::RecordInvalid
-            # skip if duplicate or validation error
-          end
+        [
+          [ "Size", decode_size(pc[:size]) ],
+          [ "Passive Perception", pc[:passive]&.to_s ]
+        ].each do |name, value|
+          next if value.blank?
+
+          character.descriptors.create!(name: name, description: value.truncate(255))
+        rescue ActiveRecord::RecordInvalid
+          # skip if duplicate or validation error
         end
 
         parsed_name = Sources::GameMaster5Xml::PcNameParser.parse(pc[:name])
@@ -754,14 +757,17 @@ module Importer
 
       def build_creature_descriptors(creature, record)
         [
-          [ "Size", record[:size] ],
+          [ "Size", decode_size(record[:size]) ],
           [ "Type", record[:creature_type] ],
+          [ "Alignment", record[:alignment] ],
+          [ "Challenge Rating", record[:cr] ],
           [ "Senses", record[:senses] ],
           [ "Languages", record[:languages] ],
           [ "Immunities", record[:immune] ],
           [ "Resistances", record[:resist] ],
           [ "Vulnerabilities", record[:vulnerable] ],
-          [ "Condition Immunities", record[:condition] ]
+          [ "Condition Immunities", record[:condition] ],
+          [ "Environment", record[:environment] ]
         ].each do |name, value|
           next if value.blank?
 
@@ -800,13 +806,13 @@ module Importer
           end
         end
 
-        full_desc = record[:text].join("\n").presence
         category = item_category(record[:item_type])
         item = klass.create!(
           name: name,
           core_rules: CORE_RULES,
           source: record[:source],
-          full_description: full_desc,
+          full_description: item_full_description(record),
+          weight: record[:weight].presence&.to_d,
           category: (record[:type] == "container" ? "container" : category).presence,
           **privacy_attributes_for(klass).merge(resident_content? ? { resident: resident } : {})
         )
@@ -818,7 +824,8 @@ module Importer
         category = item_category(record[:item_type])
         item.update!(
           source: record[:source],
-          full_description: record[:text].join("\n").presence,
+          full_description: item_full_description(record),
+          weight: record[:weight].presence&.to_d,
           category: (record[:type] == "container" ? "container" : category).presence,
           **privacy_attributes_for(item.class)
         )
@@ -835,12 +842,18 @@ module Importer
           end
         end
 
-        full_desc = record[:text].join("\n").presence
         spell = klass.create!(
           name: name,
           core_rules: CORE_RULES,
           source: record[:source],
-          full_description: full_desc,
+          full_description: record[:text].join("\n").presence,
+          school: decode_spell_school(record[:school]),
+          casting_time: record[:time].presence,
+          components: spell_components_string(record),
+          range: record[:range].presence,
+          duration: record[:duration].presence,
+          levels: spell_levels_list(record),
+          tags: record[:ritual] ? [ "ritual" ] : [],
           **privacy_attributes_for(klass).merge(resident_content? ? { resident: resident } : {})
         )
         name_index_add("spell", record[:name], spell)
@@ -851,6 +864,13 @@ module Importer
         spell.update!(
           source: record[:source],
           full_description: record[:text].join("\n").presence,
+          school: decode_spell_school(record[:school]),
+          casting_time: record[:time].presence,
+          components: spell_components_string(record),
+          range: record[:range].presence,
+          duration: record[:duration].presence,
+          levels: spell_levels_list(record),
+          tags: record[:ritual] ? [ "ritual" ] : [],
           **privacy_attributes_for(spell.class)
         )
         name_index_add("spell", record[:name], spell)
@@ -1113,6 +1133,10 @@ module Importer
         parts = []
         parts << "Base class: #{record[:baseclass]}" if record[:baseclass].present?
         parts << "Subclasses: #{record[:subclass_names].join(', ')}" if record[:subclass_names].present?
+        abilities = Array(record[:abilities]).reject(&:blank?)
+        parts << "Ability score increases: #{abilities.join(', ')}" if abilities.any?
+        proficiencies = Array(record[:proficiencies]).reject(&:blank?)
+        parts << "Proficiencies: #{proficiencies.join(', ')}" if proficiencies.any?
         parts += record[:traits].map { |t| "**#{t[:name]}**\n#{t[:text]}" } if record[:traits].is_a?(Array)
         text = record[:text]
         parts += Array(text) if text.present?
@@ -1121,13 +1145,63 @@ module Importer
 
       def item_category(type_code)
         case type_code.to_s.upcase
-        when "M" then "weapon"
-        when "A" then "armor"
-        when "S" then "shield"
-        when "W", "WD", "RD", "SC" then "wondrous"
+        when "LA", "MA", "HA", "S" then "armor"
+        when "M", "R" then "weapon"
+        when "A" then "gear"
+        when "W", "WD", "RD", "ST", "RG", "SC" then "wondrous"
         when "P" then "potion"
-        when "G" then "gear"
+        when "G", "$" then "gear"
         end
+      end
+
+      def item_full_description(record)
+        stats = item_stats_block(record)
+        text = record[:text].join("\n").presence
+        [ stats, text ].compact.join("\n\n").presence
+      end
+
+      def item_stats_block(record)
+        parts = []
+        if record[:dmg1].present?
+          dmg = record[:dmg2].present? ? "#{record[:dmg1]} / #{record[:dmg2]}" : record[:dmg1]
+          parts << "**Damage:** #{dmg} #{record[:dmg_type]}".strip
+        end
+        parts << "**AC:** #{record[:ac]}" if record[:ac].present?
+        parts << "**Range:** #{record[:range]}" if record[:range].present?
+        parts << "**Properties:** #{record[:property]}" if record[:property].present?
+        parts << "**Strength required:** #{record[:strength]}" if record[:strength].present?
+        parts << "**Stealth:** Disadvantage" if record[:stealth].to_s.match?(/yes|1/i)
+        parts << "**Magic:** Yes" if record[:magic].to_s.match?(/^[1-9]|yes/i)
+        parts.join(" · ").presence
+      end
+
+      def decode_size(code)
+        { "T" => "Tiny", "S" => "Small", "M" => "Medium",
+          "L" => "Large", "H" => "Huge", "G" => "Gargantuan" }[code.to_s.upcase] || code.presence
+      end
+
+      def decode_spell_school(code)
+        { "A" => "Abjuration", "C" => "Conjuration", "D" => "Divination",
+          "EN" => "Enchantment", "EV" => "Evocation", "I" => "Illusion",
+          "N" => "Necromancy", "T" => "Transmutation" }[code.to_s.upcase]
+      end
+
+      def spell_components_string(record)
+        parts = []
+        parts << "V" if record[:components_v]
+        parts << "S" if record[:components_s]
+        if record[:components_m]
+          parts << (record[:materials].present? ? "M (#{record[:materials]})" : "M")
+        end
+        parts.join(", ").presence
+      end
+
+      def spell_levels_list(record)
+        level = record[:level].to_s.strip
+        classes = record[:classes].to_s.split(",").map(&:strip).reject(&:blank?)
+        return [] if classes.empty?
+
+        classes.map { |c| level.present? ? "#{c} #{level}" : c }
       end
 
       def parse_leading_number(str)
