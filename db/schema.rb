@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2026_06_17_131000) do
+ActiveRecord::Schema.define(version: 2026_06_20_000001) do
 
   create_table "activeplay_notables", id: :string, force: :cascade do |t|
     t.string "name"
@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   end
 
   create_table "admins", force: :cascade do |t|
-    t.string "email", limit: 255, default: "", null: false
-    t.string "encrypted_password", limit: 255, default: "", null: false
-    t.string "reset_password_token", limit: 255
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.integer "failed_attempts", default: 0, null: false
-    t.string "unlock_token", limit: 255
+    t.string "unlock_token"
     t.datetime "locked_at"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   create_table "affiliations", id: :string, force: :cascade do |t|
     t.string "resident_id", null: false
     t.string "affiliate_id", null: false
-    t.string "status", limit: 255, null: false
+    t.string "status", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["affiliate_id", "resident_id"], name: "index_affiliations_on_affiliate_id_and_resident_id"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   end
 
   create_table "beta_invites", id: :string, force: :cascade do |t|
-    t.string "email", limit: 255
+    t.string "email"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["email"], name: "index_beta_invites_on_email", unique: true
@@ -116,10 +116,10 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
 
   create_table "campaignmanager_campaigns", id: :string, force: :cascade do |t|
     t.string "resident_id", null: false
-    t.string "name", limit: 255, null: false
-    t.string "slug", limit: 255, null: false
-    t.string "page_label", limit: 255
-    t.string "privacy", limit: 255, null: false
+    t.string "name", null: false
+    t.string "slug", null: false
+    t.string "page_label"
+    t.string "privacy", null: false
     t.string "short_description"
     t.text "full_description"
     t.datetime "created_at"
@@ -134,11 +134,11 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
     t.string "featureable_id"
     t.string "featureable_type"
     t.integer "sort_order"
-    t.string "feature_label", limit: 255
+    t.string "feature_label"
     t.text "feature_text"
-    t.string "feature_type", limit: 255
-    t.string "record_type", limit: 255
-    t.string "search_tags", limit: 255
+    t.string "feature_type"
+    t.string "record_type"
+    t.string "search_tags"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["featureable_id", "featureable_type"], name: "index_campaignmanager_features_id_and_type"
@@ -157,15 +157,15 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   end
 
   create_table "campaignmanager_pages", id: :string, force: :cascade do |t|
-    t.string "type", limit: 255, null: false
+    t.string "type", null: false
     t.string "campaign_id"
     t.string "parent_id"
-    t.string "name", limit: 255
-    t.string "slug", limit: 255
-    t.string "page_label", limit: 255
-    t.string "privacy", limit: 255
+    t.string "name"
+    t.string "slug"
+    t.string "page_label"
+    t.string "privacy"
     t.string "short_description"
-    t.text "full_description", limit: 16777215
+    t.text "full_description", limit: 16777216
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date "page_date"
@@ -185,12 +185,12 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
     t.string "sectionable_id"
     t.string "sectionable_type"
     t.integer "sort_order"
-    t.string "header", limit: 255
+    t.string "header"
     t.text "content"
-    t.string "section_type", limit: 255
-    t.string "section_style", limit: 255
-    t.string "record_type", limit: 255
-    t.string "search_tags", limit: 255
+    t.string "section_type"
+    t.string "section_style"
+    t.string "record_type"
+    t.string "search_tags"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["sectionable_id", "sectionable_type"], name: "index_campaignmanager_sections_id_and_type"
@@ -199,12 +199,12 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   create_table "entitybuilder_ability_scores", id: :string, force: :cascade do |t|
     t.string "entity_id"
     t.integer "sort_order"
-    t.string "name", limit: 255, null: false
+    t.string "name", null: false
     t.text "description"
     t.integer "base"
     t.integer "score"
     t.integer "modifier"
-    t.string "dice", limit: 255
+    t.string "dice"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["entity_id"], name: "index_entitybuilder_ability_scores_on_entity_id"
@@ -213,42 +213,42 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   create_table "entitybuilder_attacks", id: :string, force: :cascade do |t|
     t.string "entity_id"
     t.integer "sort_order"
-    t.string "name", limit: 255, null: false
+    t.string "name", null: false
     t.text "description"
-    t.string "attack_type", limit: 255
-    t.string "attack_range", limit: 255
-    t.string "attack_ability_score", limit: 255
-    t.string "attack_dice", limit: 255
+    t.string "attack_type"
+    t.string "attack_range"
+    t.string "attack_ability_score"
+    t.string "attack_dice"
     t.integer "attack_bonus"
     t.integer "attack_misc_modifier"
-    t.string "damage_ability_score", limit: 255
-    t.string "damage_dice", limit: 255
+    t.string "damage_ability_score"
+    t.string "damage_dice"
     t.integer "damage_bonus"
     t.integer "damage_misc_modifier"
-    t.string "critical_range", limit: 255
+    t.string "critical_range"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean "proficient"
-    t.string "damage_type", limit: 255
+    t.string "damage_type"
     t.string "critical_damage_ability_score"
-    t.string "critical_damage_dice", limit: 255
+    t.string "critical_damage_dice"
     t.integer "critical_damage_bonus"
     t.integer "critical_damage_misc_modifier"
-    t.string "special_damage_ability_score", limit: 255
-    t.string "special_damage_dice", limit: 255
+    t.string "special_damage_ability_score"
+    t.string "special_damage_dice"
     t.integer "special_damage_bonus"
     t.integer "special_damage_misc_modifier"
-    t.string "special_damage_name", limit: 255
+    t.string "special_damage_name"
     t.index ["entity_id"], name: "index_entitybuilder_attacks_on_entity_id"
   end
 
   create_table "entitybuilder_base_values", id: :string, force: :cascade do |t|
     t.string "entity_id"
     t.integer "sort_order"
-    t.string "name", limit: 255, null: false
+    t.string "name", null: false
     t.text "description"
     t.integer "value"
-    t.string "dice", limit: 255
+    t.string "dice"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["entity_id"], name: "index_entitybuilder_base_values_on_entity_id"
@@ -265,7 +265,7 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   create_table "entitybuilder_caster_levels", id: :string, force: :cascade do |t|
     t.string "entity_id"
     t.integer "sort_order"
-    t.string "caster_class", limit: 255
+    t.string "caster_class"
     t.integer "level"
     t.integer "per_day"
     t.integer "bonus_per_day"
@@ -281,10 +281,10 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   create_table "entitybuilder_class_levels", id: :string, force: :cascade do |t|
     t.string "entity_id"
     t.integer "sort_order"
-    t.string "name", limit: 255, null: false
+    t.string "name", null: false
     t.text "description"
     t.integer "level"
-    t.string "hit_dice", limit: 255
+    t.string "hit_dice"
     t.integer "hit_points"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -294,10 +294,10 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   create_table "entitybuilder_currencies", id: :string, force: :cascade do |t|
     t.string "entity_id"
     t.integer "sort_order"
-    t.string "name", limit: 255
+    t.string "name"
     t.text "description"
     t.decimal "weight"
-    t.bigint "quantity"
+    t.integer "quantity"
     t.boolean "carried"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -307,13 +307,13 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   create_table "entitybuilder_defenses", id: :string, force: :cascade do |t|
     t.string "entity_id"
     t.integer "sort_order"
-    t.string "name", limit: 255, null: false
+    t.string "name", null: false
     t.text "description"
     t.integer "base"
     t.integer "bonus"
     t.string "ability_score"
     t.integer "misc_modifier"
-    t.string "dice", limit: 255
+    t.string "dice"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["entity_id"], name: "index_entitybuilder_defenses_on_entity_id"
@@ -322,7 +322,7 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   create_table "entitybuilder_descriptors", id: :string, force: :cascade do |t|
     t.string "entity_id"
     t.integer "sort_order"
-    t.string "name", limit: 255, null: false
+    t.string "name", null: false
     t.string "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -420,10 +420,10 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
     t.string "modifierable_type"
     t.string "entity_id"
     t.integer "sort_order"
-    t.string "category", limit: 255
-    t.string "item", limit: 255
+    t.string "category"
+    t.string "item"
     t.integer "value"
-    t.string "dice", limit: 255
+    t.string "dice"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string "original_mod_type"
@@ -434,15 +434,15 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   create_table "entitybuilder_movements", id: :string, force: :cascade do |t|
     t.string "entity_id"
     t.integer "sort_order"
-    t.string "name", limit: 255, null: false
+    t.string "name", null: false
     t.integer "base"
-    t.string "description", limit: 255
+    t.string "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "bonus"
     t.string "ability_score"
     t.integer "misc_modifier"
-    t.string "dice", limit: 255
+    t.string "dice"
     t.index ["entity_id"], name: "index_entitybuilder_movements_on_entity_id"
   end
 
@@ -461,13 +461,13 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   create_table "entitybuilder_saving_throws", id: :string, force: :cascade do |t|
     t.string "entity_id"
     t.integer "sort_order"
-    t.string "name", limit: 255
+    t.string "name"
     t.text "description"
     t.integer "base"
     t.integer "bonus"
     t.string "ability_score"
     t.integer "misc_modifier"
-    t.string "dice", limit: 255
+    t.string "dice"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean "proficient"
@@ -477,14 +477,14 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   create_table "entitybuilder_skills", id: :string, force: :cascade do |t|
     t.string "entity_id"
     t.integer "sort_order"
-    t.string "name", limit: 255, null: false
+    t.string "name", null: false
     t.text "description"
     t.integer "bonus"
     t.boolean "class_skill"
     t.string "ability_score"
     t.integer "ranks"
     t.integer "misc_modifier"
-    t.string "dice", limit: 255
+    t.string "dice"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean "proficient"
@@ -496,7 +496,7 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   create_table "entitybuilder_trackables", id: :string, force: :cascade do |t|
     t.string "entity_id"
     t.integer "sort_order"
-    t.string "name", limit: 255, null: false
+    t.string "name", null: false
     t.text "description"
     t.integer "minimum"
     t.integer "maximum"
@@ -529,12 +529,12 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   end
 
   create_table "gallery_images", id: :string, force: :cascade do |t|
-    t.string "type", limit: 255, null: false
+    t.string "type", null: false
     t.string "resident_id"
-    t.string "name", limit: 255
+    t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string "file_file_name", limit: 255
+    t.string "file_file_name"
     t.string "file_content_type"
     t.integer "file_file_size"
     t.datetime "file_updated_at"
@@ -627,7 +627,7 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
     t.string "recipient_id"
     t.boolean "sender_deleted", default: false
     t.boolean "recipient_deleted", default: false
-    t.string "subject", limit: 255, null: false
+    t.string "subject", null: false
     t.text "body"
     t.datetime "read_at"
     t.datetime "created_at"
@@ -638,8 +638,8 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
 
   create_table "residents", id: :string, force: :cascade do |t|
     t.string "user_id", null: false
-    t.string "name", limit: 255, null: false
-    t.string "slug", limit: 255, null: false
+    t.string "name", null: false
+    t.string "slug", null: false
     t.string "short_description"
     t.text "full_description"
     t.datetime "created_at"
@@ -757,7 +757,7 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
     t.text "full_description"
     t.string "school"
     t.string "casting_time"
-    t.string "components"
+    t.text "components"
     t.string "range"
     t.string "effect"
     t.string "target"
@@ -783,10 +783,10 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   create_table "storybuilder_adventures", id: :string, force: :cascade do |t|
     t.string "resident_id"
     t.string "parent_id"
-    t.string "name", limit: 255, null: false
-    t.string "slug", limit: 255, null: false
-    t.string "page_label", limit: 255
-    t.string "privacy", limit: 255, null: false
+    t.string "name", null: false
+    t.string "slug", null: false
+    t.string "page_label"
+    t.string "privacy", null: false
     t.string "short_description"
     t.text "full_description"
     t.datetime "created_at"
@@ -801,11 +801,11 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
     t.string "featureable_id"
     t.string "featureable_type"
     t.integer "sort_order"
-    t.string "feature_label", limit: 255
+    t.string "feature_label"
     t.text "feature_text"
-    t.string "feature_type", limit: 255
-    t.string "record_type", limit: 255
-    t.string "search_tags", limit: 255
+    t.string "feature_type"
+    t.string "record_type"
+    t.string "search_tags"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["featureable_id", "featureable_type"], name: "index_storybuilder_features_id_and_type"
@@ -825,8 +825,8 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
     t.string "menu_itemable_id"
     t.string "menu_itemable_type"
     t.integer "sort_order"
-    t.string "item_label", limit: 255
-    t.string "item_link", limit: 255
+    t.string "item_label"
+    t.string "item_link"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["menu_itemable_id", "menu_itemable_type"], name: "sb_menu_item_id_and_type"
@@ -845,12 +845,12 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   end
 
   create_table "storybuilder_pages", id: :string, force: :cascade do |t|
-    t.string "type", limit: 255
+    t.string "type"
     t.string "parent_id"
-    t.string "name", limit: 255
-    t.string "slug", limit: 255
-    t.string "page_label", limit: 255
-    t.string "privacy", limit: 255
+    t.string "name"
+    t.string "slug"
+    t.string "page_label"
+    t.string "privacy"
     t.string "short_description"
     t.text "full_description"
     t.datetime "created_at"
@@ -868,12 +868,12 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
     t.string "sectionable_id"
     t.string "sectionable_type"
     t.integer "sort_order"
-    t.string "header", limit: 255
+    t.string "header"
     t.text "content"
-    t.string "section_type", limit: 255
-    t.string "section_style", limit: 255
-    t.string "record_type", limit: 255
-    t.string "search_tags", limit: 255
+    t.string "section_type"
+    t.string "section_style"
+    t.string "record_type"
+    t.string "search_tags"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["sectionable_id", "sectionable_type"], name: "index_storybuilder_sections_id_and_type"
@@ -888,8 +888,8 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   end
 
   create_table "support_faqs", id: :string, force: :cascade do |t|
-    t.string "topic", limit: 255
-    t.string "question", limit: 255, null: false
+    t.string "topic"
+    t.string "question", null: false
     t.text "answer"
     t.boolean "active", null: false
     t.datetime "created_at"
@@ -897,26 +897,26 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
   end
 
   create_table "users", id: :string, force: :cascade do |t|
-    t.string "email", limit: 255, default: "", null: false
-    t.string "encrypted_password", limit: 255, default: "", null: false
-    t.string "reset_password_token", limit: 255
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip", limit: 255
-    t.string "last_sign_in_ip", limit: 255
-    t.string "confirmation_token", limit: 255
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email", limit: 255
+    t.string "unconfirmed_email"
     t.integer "failed_attempts", default: 0, null: false
-    t.string "unlock_token", limit: 255
+    t.string "unlock_token"
     t.datetime "locked_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string "status", limit: 255, default: "trial", null: false
+    t.string "status", default: "trial", null: false
     t.string "stripe_customer_token"
     t.string "locale", default: "en", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
@@ -937,14 +937,14 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
 
   create_table "worldbuilder_districts", id: :string, force: :cascade do |t|
     t.string "resident_id"
-    t.string "name", limit: 255, null: false
-    t.string "slug", limit: 255, null: false
+    t.string "name", null: false
+    t.string "slug", null: false
     t.string "short_description"
     t.text "full_description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string "privacy", limit: 255
-    t.string "page_label", limit: 255
+    t.string "privacy"
+    t.string "page_label"
     t.index ["resident_id"], name: "index_worldbuilder_districts_on_resident_id"
     t.index ["slug"], name: "index_worldbuilder_districts_on_slug", unique: true
   end
@@ -953,11 +953,11 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
     t.string "featureable_id"
     t.string "featureable_type"
     t.integer "sort_order"
-    t.string "feature_label", limit: 255
+    t.string "feature_label"
     t.text "feature_text"
-    t.string "feature_type", limit: 255
-    t.string "record_type", limit: 255
-    t.string "search_tags", limit: 255
+    t.string "feature_type"
+    t.string "record_type"
+    t.string "search_tags"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["featureable_id", "featureable_type"], name: "index_worldbuilder_features_id_and_type"
@@ -977,19 +977,20 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
     t.string "menu_itemable_id"
     t.string "menu_itemable_type"
     t.integer "sort_order"
-    t.string "item_label", limit: 255
-    t.string "item_link", limit: 255
+    t.string "item_label"
+    t.string "item_link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["menu_itemable_id", "menu_itemable_type"], name: "wb_menu_items_id_and_type"
   end
 
   create_table "worldbuilder_pages", id: :string, force: :cascade do |t|
-    t.string "type", limit: 255
+    t.string "type"
     t.string "district_id"
     t.string "parent_id"
-    t.string "name", limit: 255
-    t.string "slug", limit: 255
-    t.string "page_label", limit: 255
+    t.string "name"
+    t.string "slug"
+    t.string "page_label"
     t.string "short_description"
     t.text "full_description"
     t.datetime "created_at"
@@ -1005,12 +1006,12 @@ ActiveRecord::Schema.define(version: 2026_06_17_131000) do
     t.string "sectionable_id"
     t.string "sectionable_type"
     t.integer "sort_order"
-    t.string "header", limit: 255
+    t.string "header"
     t.text "content"
-    t.string "section_type", limit: 255
-    t.string "section_style", limit: 255
-    t.string "record_type", limit: 255
-    t.string "search_tags", limit: 255
+    t.string "section_type"
+    t.string "section_style"
+    t.string "record_type"
+    t.string "search_tags"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["sectionable_id", "sectionable_type"], name: "index_worldbuilder_sections_id_and_type"

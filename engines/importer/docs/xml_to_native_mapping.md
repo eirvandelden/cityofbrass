@@ -175,7 +175,7 @@ absent those fields are simply left blank.
 | `<school>`      | `school`            | Code decoded: EV→Evocation, N→Necromancy, etc. | ✅ |
 | `<time>`        | `casting_time`      | | ✅ |
 | `<range>`       | `range`             | | ✅ |
-| `<components>`  | `components`        | V/S/M assembled with materials | ✅ |
+| `<components>`  | `components`        | Stored verbatim from the `<components>` text (e.g. `V, S, M (a pinch of sulfur)`); falls back to assembling from `<v>`/`<s>`/`<m>` sub-elements. Column widened to `text` so long material lists are kept in full | ✅ |
 | `<duration>`    | `duration`          | | ✅ |
 | `<text>`        | `full_description`  | All `<text>` elements joined | ✅ |
 | `<ritual>`      | `tags`              | `"ritual"` tag added when `YES` | ✅ |
@@ -535,6 +535,10 @@ A single malformed entity used to abort the entire file. The importer now:
   `<hp>` (e.g. `(natural armor)`, `(7d10+21)`) is stored in the Defense/Trackable
   `description` instead of being discarded; `<trait><recharge>` and
   `<trait><attack>` are appended to the trait rule description.
+- **preserves spell components in full:** the `<components>` string is read
+  verbatim (it was previously dropped because only `<v>`/`<s>`/`<m>` sub-elements
+  were parsed), its 255-char validation was removed, and the `components` column
+  was migrated from `string` to `text` so long material lists are not truncated.
 - **dedupes pages by slug** (not just by name) so near-duplicate encounter
   titles that parameterize identically no longer collide;
 - isolates each compendium/character record so one bad record never aborts the

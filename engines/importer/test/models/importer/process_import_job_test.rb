@@ -236,6 +236,220 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_includes item.full_description, long_text
   end
 
+  test "item import decodes type codes into categories and maps containers" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <item><name>Longsword</name><type>M</type></item>
+        <item><name>Plate</name><type>HA</type></item>
+        <item><name>Wand of Wonder</name><type>W</type></item>
+        <item><name>Potion of Healing</name><type>P</type></item>
+        <item><name>Rope</name><type>G</type></item>
+        <container><name>Backpack</name></container>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    assert_equal "weapon", Rulebuilder::ResidentItem.find_by!(name: "Longsword").category
+    assert_equal "armor", Rulebuilder::ResidentItem.find_by!(name: "Plate").category
+    assert_equal "wondrous", Rulebuilder::ResidentItem.find_by!(name: "Wand of Wonder").category
+    assert_equal "potion", Rulebuilder::ResidentItem.find_by!(name: "Potion of Healing").category
+    assert_equal "gear", Rulebuilder::ResidentItem.find_by!(name: "Rope").category
+    assert_equal "container", Rulebuilder::ResidentItem.find_by!(name: "Backpack").category
+  end
+
+  test "spell import decodes school, levels, components, ritual tag, and timing" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <spell>
+          <name>Fireball</name>
+          <level>3</level><school>EV</school><ritual>YES</ritual>
+          <time>1 action</time><range>150 feet</range><duration>Instantaneous</duration>
+          <classes>Wizard, Sorcerer</classes>
+          <components>V, S, M (a tiny ball of bat guano and sulfur)</components>
+        </spell>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    spell = Rulebuilder::ResidentSpell.find_by!(name: "Fireball")
+    assert_equal "Evocation", spell.school
+    assert_equal [ "Wizard 3", "Sorcerer 3" ], spell.levels
+    assert_equal "V, S, M (a tiny ball of bat guano and sulfur)", spell.components
+    assert_equal "1 action", spell.casting_time
+    assert_equal "150 feet", spell.range
+    assert_equal "Instantaneous", spell.duration
+    assert_includes spell.tags, "ritual"
+  end
+
+  test "spell import stores over-long components without failing" do
+    materials = "a diamond worth at least 1,000 gp and a vessel worth at least 2,000 gp " + ("x" * 300)
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <spell><name>Clone</name><level>8</level><school>N</school><components>V, S, M (#{materials})</components></spell>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    assert_equal "succeeded", import.reload.status
+    spell = Rulebuilder::ResidentSpell.find_by!(name: "Clone")
+    assert_includes spell.components, materials
+  end
+
+  test "spell import assembles components from v/s/m sub-elements when present" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <spell>
+          <name>Mage Hand</name>
+          <level>0</level>
+          <school>T</school>
+          <components><v/><s/></components>
+        </spell>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    assert_equal "V, S", Rulebuilder::ResidentSpell.find_by!(name: "Mage Hand").components
+  end
+
+  test "race import creates a Species rule with ability and proficiency text" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <race>
+          <name>Wood Elf</name>
+          <ability>Dex 2, Wis 1</ability>
+          <proficiency>Perception</proficiency>
+          <trait><name>Darkvision</name><text>60 ft.</text></trait>
+        </race>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    rule = Rulebuilder::ResidentRule.find_by!(name: "Wood Elf")
+    assert_equal "Species", rule.rule_type
+    assert_includes rule.full_description, "Dex 2, Wis 1"
+    assert_includes rule.full_description, "Perception"
+    assert_includes rule.full_description, "Darkvision"
+  end
+
+  test "background import creates a Backgrounds rule" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <background>
+          <name>Acolyte</name>
+          <proficiency>Insight, Religion</proficiency>
+        </background>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    rule = Rulebuilder::ResidentRule.find_by!(name: "Acolyte")
+    assert_equal "Backgrounds", rule.rule_type
+    assert_includes rule.full_description, "Insight, Religion"
+  end
+
+  test "monster spellcasting imports ability descriptor, slot trackables, and spell list" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <monster>
+          <name>Archmage</name>
+          <spellAbility>Intelligence</spellAbility>
+          <slots>4,3,3,2</slots>
+          <spells>Fire Bolt, Fireball</spells>
+        </monster>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    creature = Entitybuilder::ResidentCreature.find_by!(name: "Archmage")
+    assert_equal "Intelligence", creature.descriptors.find_by!(name: "Spellcasting Ability").description
+    assert_equal 4, creature.trackables.find_by!(name: "Cantrips").maximum
+    assert_equal 3, creature.trackables.find_by!(name: "Spell Slots (1st)").maximum
+    assert_equal 2, creature.trackables.find_by!(name: "Spell Slots (3rd)").maximum
+    assert_equal "Fire Bolt, Fireball", creature.descriptors.find_by!(name: "Spells").description
+  end
+
+  test "pc equipped armor falls back to a descriptor when the item is unknown" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <pc version="5">
+        <label>Armored</label>
+        <name>Human Fighter 1</name>
+        <armor>Plate Armor</armor>
+      </pc>
+    XML
+    import = import_for_xml(xml, kind: "pc")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    character = Entitybuilder::ResidentCharacter.find_by!(name: "Armored")
+    assert_equal "Plate Armor", character.descriptors.find_by!(name: "Equipped Armor").description
+  end
+
+  test "pc equipped armor links to an inventory item when the item was imported" do
+    compendium = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium><item><name>Plate Armor</name><type>HA</type></item></compendium>
+    XML
+    pc = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <pc version="5"><label>Knight</label><name>Human Fighter 1</name><armor>Plate Armor</armor></pc>
+    XML
+    import = import_for_inline_files([ { xml: compendium, kind: "compendium" }, { xml: pc, kind: "pc" } ])
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    character = Entitybuilder::ResidentCharacter.find_by!(name: "Knight")
+    item = Rulebuilder::ResidentItem.find_by!(name: "Plate Armor")
+    inventory = character.inventory_items.find_by!(item: item)
+    assert inventory.equipped
+    assert_not character.descriptors.exists?(name: "Equipped Armor")
+  end
+
+  test "pc import creates hit dice and spell slot trackables" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <pc version="5">
+        <label>Caster</label>
+        <name>Gnome Wizard 3</name>
+        <hp>20 (3d6)</hp>
+        <class><hd>d6</hd><hdCurrent>2</hdCurrent><slots>4,3,2</slots></class>
+      </pc>
+    XML
+    import = import_for_xml(xml, kind: "pc")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    character = Entitybuilder::ResidentCharacter.find_by!(name: "Caster")
+    hit_dice = character.trackables.find_by!(name: "Hit Dice (d6)")
+    assert_equal 3, hit_dice.maximum
+    assert_equal 2, hit_dice.current
+    assert_equal 4, character.trackables.find_by!(name: "Cantrips").maximum
+    assert_equal 3, character.trackables.find_by!(name: "Spell Slots (1st)").maximum
+  end
+
+  test "empty compendium succeeds and imports nothing" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium></compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    assert_equal "succeeded", import.reload.status
+    assert_equal 0, import.import_results.count
+  end
+
   test "admin stock compendium import creates stock records and results" do
     import = import_for("sample_compendium.xml", mode: Importer::Preview::ADMIN_STOCK)
 
@@ -859,6 +1073,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     goblin = Entitybuilder::ResidentCreature.find_by!(name: "Goblin")
     assert goblin.descriptors.exists?(name: "Type")
     assert_equal "humanoid (goblinoid)", goblin.descriptors.find_by!(name: "Type").description
+    assert_equal "Small", goblin.descriptors.find_by!(name: "Size").description
   end
 
   test "spell import creates record with full description from multiple text nodes" do
@@ -902,6 +1117,33 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     unarmed = character.attacks.find_by!(name: "Unarmed Strike")
     assert_equal "melee", unarmed.attack_type
     assert_equal 5, unarmed.attack_bonus
+  end
+
+  test "npc import stores descriptors, defense, trackable, and description" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <characters version="5">
+        <npc>
+          <name>Captain Soranna</name>
+          <size>M</size>
+          <type>humanoid</type>
+          <alignment>lawful good</alignment>
+          <ac>18</ac>
+          <hp>52</hp>
+          <description>Leader of the town guard.</description>
+        </npc>
+      </characters>
+    XML
+    import = import_for_xml(xml, kind: "characters")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    npc = Entitybuilder::ResidentNpc.find_by!(name: "Captain Soranna")
+    assert_equal "Leader of the town guard.", npc.full_description
+    assert_equal "M", npc.descriptors.find_by!(name: "Size").description
+    assert_equal "humanoid", npc.descriptors.find_by!(name: "Type").description
+    assert_equal "lawful good", npc.descriptors.find_by!(name: "Alignment").description
+    assert_equal 18, npc.defenses.find_by!(name: "Armor Class").base
+    assert_equal 52, npc.trackables.find_by!(name: "Hit Points").maximum
   end
 
   test "characters file imports resident npcs counted during preview" do
@@ -1001,13 +1243,19 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
   end
 
   def import_for_xml(xml, kind:, mode: Importer::Preview::RESIDENT_CONTENT)
+    import_for_inline_files([ { xml: xml, kind: kind } ], mode: mode)
+  end
+
+  def import_for_inline_files(specs, mode: Importer::Preview::RESIDENT_CONTENT)
     import = Importer::Import.create!(resident: resident_for(mode), mode: mode, source: Importer::Preview::GAME_MASTER_5_XML,
                                       status: Importer::Import::QUEUED)
-    Tempfile.create([ "inline", ".xml" ]) do |tmp|
-      tmp.write(xml)
-      tmp.flush
-      File.open(tmp.path) do |file|
-        import.import_files.create!(kind: kind, parse_status: "pending", file: file)
+    specs.each do |spec|
+      Tempfile.create([ "inline", ".xml" ]) do |tmp|
+        tmp.write(spec[:xml])
+        tmp.flush
+        File.open(tmp.path) do |file|
+          import.import_files.create!(kind: spec[:kind], parse_status: "pending", file: file)
+        end
       end
     end
     import

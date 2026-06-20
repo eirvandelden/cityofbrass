@@ -1364,6 +1364,11 @@ module Importer
       end
 
       def spell_components_string(record)
+        # The common FightClub format stores the whole string in <components>
+        # (e.g. "V, S, M (a pinch of sulfur)"); use it verbatim when present.
+        return record[:components] if record[:components].present?
+
+        # Fall back to assembling from <v>/<s>/<m> sub-elements.
         parts = []
         parts << "V" if record[:components_v]
         parts << "S" if record[:components_s]
