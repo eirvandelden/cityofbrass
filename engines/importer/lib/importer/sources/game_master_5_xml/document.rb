@@ -387,7 +387,12 @@ module Importer
 
         def named_text_nodes(parent, xpath)
           nodes(parent, xpath).map do |child|
-            { name: text_at(child, "name"), text: text_at(child, "text") }
+            {
+              name: text_at(child, "name"),
+              text: text_at(child, "text"),
+              recharge: text_at(child, "recharge"),
+              attack: action_attack(child)
+            }
           end
         end
 
