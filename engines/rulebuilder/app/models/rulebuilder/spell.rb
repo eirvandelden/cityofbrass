@@ -31,7 +31,6 @@ module Rulebuilder
     validates :name, presence: true, length: { maximum: 64 }
     validates :core_rules, presence: true
     validates :short_description, length: { maximum: 255 }
-    validates :full_description, length: { maximum: 250_000 }
     validates :school, length: { maximum: 255 }
     validates :casting_time, length: { maximum: 255 }
     validates :target, length: { maximum: 255 }

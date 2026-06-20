@@ -5,6 +5,168 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal "imports", Importer::ProcessImportJob.queue_name
   end
 
+  test "compendium import gives blank-name entities unique placeholder names" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <monster><name></name><ac>10</ac></monster>
+        <monster><name></name><ac>11</ac></monster>
+        <monster><name>Survivor</name><ac>12</ac></monster>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    assert_equal "succeeded", import.reload.status
+    assert Entitybuilder::ResidentCreature.exists?(name: "Survivor")
+    no_names = Entitybuilder::ResidentCreature.where("name LIKE ?", "No Name%")
+    assert_equal 2, no_names.count, "each blank-name entity should import as a distinct record, not merge"
+    assert_not import.import_results.where(outcome: "failed").exists?
+  end
+
+  test "monster import splits comma-separated skills and saves in one element" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <monster>
+          <name>Ezmerelda</name>
+          <save>Dex +4, Con +5</save>
+          <skill>Acrobatics +7, Arcana +6, Medicine +3</skill>
+        </monster>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    creature = Entitybuilder::ResidentCreature.find_by!(name: "Ezmerelda")
+    assert_equal 5, creature.saving_throws.find_by!(name: "Con").base
+    assert_equal 7, creature.skills.find_by!(name: "Acrobatics").base if creature.skills.column_names.include?("base")
+    assert_equal 6, creature.skills.find_by!(name: "Arcana").bonus
+    assert_equal 3, creature.skills.find_by!(name: "Medicine").bonus
+  end
+
+  test "item import includes rarity detail and value in description" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <item>
+          <name>Bloodseeker</name>
+          <type>M</type>
+          <detail>rare (requires attunement)</detail>
+          <value>300</value>
+          <text>A cruel blade.</text>
+        </item>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    item = Rulebuilder::ResidentItem.find_by!(name: "Bloodseeker")
+    assert_includes item.full_description, "rare (requires attunement)"
+    assert_includes item.full_description, "300"
+  end
+
+  test "class import includes armor, weapon, and tool proficiencies in description" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <class>
+          <name>Barbarian</name>
+          <hd>12</hd>
+          <armor>light armor, medium armor, shields</armor>
+          <weapons>simple weapons, martial weapons</weapons>
+          <tools>none</tools>
+        </class>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    rule = Rulebuilder::ResidentRule.find_by!(name: "Barbarian")
+    assert_includes rule.full_description, "light armor, medium armor, shields"
+    assert_includes rule.full_description, "simple weapons, martial weapons"
+  end
+
+  test "monster with a blank-name trait still imports the trait under a placeholder name" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <monster>
+          <name>Rahadin</name>
+          <ac>16</ac>
+          <trait><name>Deathly Choir</name><text>Whenever Rahadin deals damage...</text></trait>
+          <trait><name></name><text>Magic Weapon, Nondetection</text></trait>
+        </monster>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    assert_equal "succeeded", import.reload.status
+    creature = Entitybuilder::ResidentCreature.find_by!(name: "Rahadin")
+    names = creature.linked_rules.map(&:name)
+    assert_includes names, "Deathly Choir"
+    assert_equal 2, names.size, "the blank-name trait should still be imported, under a placeholder name"
+    placeholder = names.find { |n| n != "Deathly Choir" }
+    assert_match(/\ANo Name/, placeholder)
+    assert_equal "Magic Weapon, Nondetection",
+                 Rulebuilder::ResidentRule.find_by!(name: placeholder).full_description
+  end
+
+  test "feat import stores prerequisite" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <feat>
+          <name>Grappler</name>
+          <prerequisite>Strength 13 or higher</prerequisite>
+          <text>You've developed the skills necessary to hold your own in close-quarters grappling.</text>
+        </feat>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    feat = Rulebuilder::ResidentRule.find_by!(name: "Grappler")
+    assert_equal "Strength 13 or higher", feat.prerequisites
+  end
+
+  test "campaign import dedupes encounter pages that share a slug" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <campaign>
+        <name>Slug Test Campaign</name>
+        <adventure>
+          <name>Slug Vale</name>
+          <encounter><name>1. Main Gate</name><text>The gate.</text></encounter>
+          <encounter><name>------\n\n1. MAIN GATE</name><text>Same gate, junk prefix.</text></encounter>
+        </adventure>
+      </campaign>
+    XML
+    import = import_for_xml(xml, kind: "campaign")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    assert_equal "succeeded", import.reload.status
+    adventure = Storybuilder::ResidentAdventure.find_by!(name: "Slug Vale")
+    assert_equal 1, adventure.pages.count
+  end
+
+  test "compendium import preserves over-long descriptions without truncating" do
+    long_text = "A" * 13_000
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <item><name>Verbose Tome</name><type>G</type><text>#{long_text}</text></item>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    assert_equal "succeeded", import.reload.status
+    item = Rulebuilder::ResidentItem.find_by!(name: "Verbose Tome")
+    assert_includes item.full_description, long_text
+  end
+
   test "admin stock compendium import creates stock records and results" do
     import = import_for("sample_compendium.xml", mode: Importer::Preview::ADMIN_STOCK)
 
@@ -260,7 +422,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
 
   test "file failure does not leave later files pending" do
     import = import_for_multiple(
-      { file: "blank_item_compendium.xml", kind: "compendium" },
+      { file: "malformed.xml", kind: "compendium" },
       { file: "sample_campaign.xml", kind: "campaign" },
       mode: Importer::Preview::RESIDENT_CONTENT
     )
@@ -271,7 +433,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
 
     assert_equal "partial", import.reload.status
     assert_equal %w[failed parsed], import.import_files.order(:created_at).pluck(:parse_status)
-    assert import.import_results.failed.exists?(entity_type: "compendium", entity_name: "blank_item_compendium.xml")
+    assert import.import_results.failed.exists?(entity_type: "compendium", entity_name: "malformed.xml")
   end
 
   test "admin stock campaign import creates stock adventure records and skips pcs" do
@@ -555,6 +717,58 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal "1/4", goblin.short_description
   end
 
+  test "monster import creates saving throws and skills" do
+    import = import_for("sample_compendium.xml", mode: Importer::Preview::RESIDENT_CONTENT)
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    goblin = Entitybuilder::ResidentCreature.find_by!(name: "Goblin")
+    assert goblin.saving_throws.exists?(name: "Dex")
+    assert_equal 4, goblin.saving_throws.find_by!(name: "Dex").base
+    assert goblin.skills.exists?(name: "Stealth")
+    assert_equal 6, goblin.skills.find_by!(name: "Stealth").bonus
+  end
+
+  test "monster import stores description and per-mode speeds" do
+    import = import_for_kind_with_file("sample_monster_rich.xml", kind: "compendium",
+                                       mode: Importer::Preview::RESIDENT_CONTENT)
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    creature = Entitybuilder::ResidentCreature.find_by!(name: "Arcuballis")
+    assert_equal "A magical beast resembling a griffon crossed with a triceratops.", creature.full_description
+    assert_equal 30, creature.movements.find_by!(name: "Speed").base
+    assert_equal 60, creature.movements.find_by!(name: "Fly Speed").base
+    assert_equal 20, creature.movements.find_by!(name: "Swim Speed").base
+  end
+
+  test "standalone pc import stores languages, senses, and race descriptors" do
+    import = import_for_kind_with_file("sample_pc.xml", kind: "pc", mode: Importer::Preview::RESIDENT_CONTENT)
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    character = Entitybuilder::ResidentCharacter.find_by!(name: "Quinthya")
+    assert_equal "Common, Elvish", character.descriptors.find_by!(name: "Languages").description
+    assert_equal "passive Perception 14", character.descriptors.find_by!(name: "Senses").description
+    assert_equal "Elf (Wood)", character.descriptors.find_by!(name: "Race").description
+  end
+
+  test "gm5 nested character pc import creates character with abilities, class level, and hp" do
+    import = import_for_kind_with_file("sample_pc_gm5.xml", kind: "pc", mode: Importer::Preview::RESIDENT_CONTENT)
+
+    assert_difference("Entitybuilder::ResidentCharacter.count", 1) do
+      Importer::ProcessImportJob.perform_now(import.id)
+    end
+
+    assert_equal "succeeded", import.reload.status
+    character = Entitybuilder::ResidentCharacter.find_by!(name: "Human Rogue")
+    assert_equal 6, character.ability_scores.count
+    assert_equal 10, character.ability_scores.find_by!(name: "Strength").base
+    assert_equal 15, character.ability_scores.find_by!(name: "Dexterity").base
+    assert_equal 24, character.trackables.find_by!(name: "Hit Points").maximum
+    assert_equal "Human", character.descriptors.find_by!(name: "Race").description
+
+    class_level = character.class_levels.find_by!(name: "Rogue")
+    assert_equal 3, class_level.level
+  end
+
   test "monster import creates trait rules linked to the creature" do
     import = import_for("sample_compendium.xml", mode: Importer::Preview::RESIDENT_CONTENT)
     Importer::ProcessImportJob.perform_now(import.id)
@@ -715,6 +929,19 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
 
   def uploaded_file(file_name)
     Rack::Test::UploadedFile.new(importer_fixture_file(file_name), "text/xml")
+  end
+
+  def import_for_xml(xml, kind:, mode: Importer::Preview::RESIDENT_CONTENT)
+    import = Importer::Import.create!(resident: resident_for(mode), mode: mode, source: Importer::Preview::GAME_MASTER_5_XML,
+                                      status: Importer::Import::QUEUED)
+    Tempfile.create([ "inline", ".xml" ]) do |tmp|
+      tmp.write(xml)
+      tmp.flush
+      File.open(tmp.path) do |file|
+        import.import_files.create!(kind: kind, parse_status: "pending", file: file)
+      end
+    end
+    import
   end
 
   def import_for_kind_with_file(file_name, kind:, mode:)

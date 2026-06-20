@@ -73,11 +73,21 @@ module Importer
       end
 
       def import_compendium(import_file, document)
-        document.compendium_records.each { |record| import_compendium_record(import_file, record) }
+        document.compendium_records.each { |record| import_record_safely(import_file, record) { import_compendium_record(import_file, record) } }
       end
 
       def process_character_file(import_file, document)
-        document.character_records.each { |record| import_character_record(import_file, record) }
+        document.character_records.each { |record| import_record_safely(import_file, record) { import_character_record(import_file, record) } }
+      end
+
+      # Runs a single record import in isolation so one malformed entity does not
+      # abort the rest of the file. Blank-named records are still imported (with a
+      # unique "No Name N" placeholder); only genuinely invalid records are logged
+      # as failures.
+      def import_record_safely(import_file, record)
+        yield
+      rescue ActiveRecord::RecordInvalid => error
+        result(import_file, record, "failed", nil, error.message)
       end
 
       def import_character_record(import_file, record)
@@ -237,7 +247,7 @@ module Importer
       end
 
       def stock_adventure(import_file, adventure)
-        name = local_name(adventure[:name])
+        name = unique_local_name(adventure)
         existing = existing_record(Storybuilder::StockAdventure, name)
         if existing
           return replace_or_skip(import_file, adventure.merge(type: "adventure", name: name), existing) do |record|
@@ -267,9 +277,18 @@ module Importer
       end
 
       def import_page_record(import_file, record, adventure)
-        return import_stock_note(import_file, record, adventure) if record[:type] == "note"
+        if record[:name].to_s.strip.blank?
+          return nil
+        end
 
-        import_encounter(import_file, record, adventure)
+        if record[:type] == "note"
+          import_stock_note(import_file, record, adventure)
+        else
+          import_encounter(import_file, record, adventure)
+        end
+      rescue ActiveRecord::RecordInvalid => error
+        result(import_file, record, "failed", nil, error.message)
+        nil
       end
 
       def rebuild_campaign_menu(campaign, adventures, pages)
@@ -361,7 +380,7 @@ module Importer
       end
 
       def resident_adventure(import_file, adventure, campaign)
-        name = local_name(adventure[:name])
+        name = unique_local_name(adventure)
         existing = existing_record(Storybuilder::ResidentAdventure, name)
         if existing
           link_adventure_to_campaign(campaign, existing)
@@ -389,7 +408,7 @@ module Importer
       end
 
       def import_encounter(import_file, encounter, adventure)
-        name = local_name(encounter[:name])
+        name = unique_local_name(encounter)
         existing = existing_page(adventure, name)
         if existing
           return replace_or_skip(import_file, encounter.merge(name: name), existing, campaign: @import_provenance_campaign) do |record|
@@ -443,7 +462,7 @@ module Importer
       def import_note(import_file, note, root)
         return import_stock_note(import_file, note, root) if admin_stock?
 
-        name = local_name(note[:name])
+        name = unique_local_name(note)
         existing = existing_note(root, name)
         if existing
           return replace_or_skip(import_file, note.merge(name: name), existing, campaign: root) do |record|
@@ -462,7 +481,7 @@ module Importer
       end
 
       def import_stock_note(import_file, note, adventure)
-        name = local_name(note[:name])
+        name = unique_local_name(note)
         existing = existing_page(adventure, name)
         if existing
           return replace_or_skip(import_file, note.merge(name: name), existing) do |record|
@@ -493,7 +512,7 @@ module Importer
       def import_pc(import_file, pc)
         return result(import_file, pc, "skipped", nil, "no stock character target") if admin_stock?
 
-        name = local_name(pc[:name])
+        name = unique_local_name(pc)
         existing = existing_record(Entitybuilder::ResidentCharacter, name)
         if existing
           return replace_or_skip(import_file, pc.merge(name: name), existing) do |record|
@@ -517,15 +536,14 @@ module Importer
         return result(import_file, pc, "skipped", nil, "no stock character target") if admin_stock?
 
         label = pc[:label].presence || pc[:name]
-        return if label.blank?
-
-        name = local_name(label)
-        existing = name_index_find("pc", label) || existing_record(Entitybuilder::ResidentCharacter, name)
+        name = label.present? ? local_name(label) : unique_local_name(pc)
+        existing = (label.present? ? name_index_find("pc", label) : nil) ||
+                   existing_record(Entitybuilder::ResidentCharacter, name)
 
         if existing
           return replace_or_skip(import_file, pc.merge(name: name), existing) do |record|
             replace_character(record, pc)
-            name_index_add("pc", label, record)
+            name_index_add("pc", label, record) if label.present?
           end
         end
 
@@ -537,7 +555,7 @@ module Importer
         )
         enforce_entity_privacy!(character)
         build_character_associations(character, pc)
-        name_index_add("pc", label, character)
+        name_index_add("pc", label, character) if label.present?
         result(import_file, pc, "created", character)
       end
 
@@ -596,10 +614,15 @@ module Importer
       end
 
       def build_character_name_info(character, pc)
+        parsed_name = Sources::GameMaster5Xml::PcNameParser.parse(pc[:name])
+        race_value = pc[:race_name].presence || parsed_name&.dig(:race)
+
         [
           [ "Size", decode_size(pc[:size]) ],
           [ "Passive Perception", pc[:passive]&.to_s ],
-          [ "Race", pc[:race_name] ]
+          [ "Race", race_value ],
+          [ "Senses", pc[:senses] ],
+          [ "Languages", pc[:languages] ]
         ].each do |name, value|
           next if value.blank?
 
@@ -608,8 +631,8 @@ module Importer
           # skip if duplicate or validation error
         end
 
-        if pc[:race_name].present?
-          race_rule = name_index_find("race", pc[:race_name])
+        if race_value.present?
+          race_rule = name_index_find("race", race_value)
           if race_rule
             begin
               character.linked_rules.create!(rule: race_rule)
@@ -619,16 +642,17 @@ module Importer
           end
         end
 
-        parsed_name = Sources::GameMaster5Xml::PcNameParser.parse(pc[:name])
-        return unless parsed_name
-
-        begin
-          character.class_levels.create!(name: parsed_name[:class_name], level: parsed_name[:level])
-        rescue ActiveRecord::RecordInvalid
-          # skip if duplicate or validation error
+        class_name = pc[:class_name].presence || parsed_name&.dig(:class_name)
+        class_level = pc[:class_level].presence&.to_i || parsed_name&.dig(:level)
+        if class_name.present?
+          begin
+            character.class_levels.create!(name: class_name, level: class_level || 1)
+          rescue ActiveRecord::RecordInvalid
+            # skip if duplicate or validation error
+          end
         end
 
-        hd_max = parsed_name[:level].to_i
+        hd_max = class_level.to_i
         hd_current = pc[:hd_current].to_s.presence&.to_i || hd_max
         if hd_max > 0 && pc[:hd].present?
           begin
@@ -644,7 +668,7 @@ module Importer
       end
 
       def build_saves_and_skills(character, pc)
-        pc[:saves].each do |save_str|
+        split_stat_entries(pc[:saves]).each do |save_str|
           next unless (m = save_str.match(/\A(.+?)\s+([+\-]\d+)\z/))
 
           character.saving_throws.create!(name: m[1].strip, base: m[2].to_i)
@@ -652,7 +676,7 @@ module Importer
           # skip if duplicate or validation error
         end
 
-        pc[:skills].each do |skill_str|
+        split_stat_entries(pc[:skills]).each do |skill_str|
           next unless (m = skill_str.match(/\A(.+?)\s+([+\-]\d+)\z/))
 
           character.skills.create!(name: m[1].strip, bonus: m[2].to_i)
@@ -661,9 +685,15 @@ module Importer
         end
       end
 
+      # Saves/skills may arrive as separate elements or as one comma-separated
+      # element (e.g. "Acrobatics +7, Arcana +6"). Normalise both into one list.
+      def split_stat_entries(entries)
+        Array(entries).flat_map { |entry| entry.to_s.split(",") }.map(&:strip).reject(&:blank?)
+      end
+
       def import_npc(import_file, npc)
         klass = admin_stock? ? Entitybuilder::StockNpc : Entitybuilder::ResidentNpc
-        name = local_name(npc[:name])
+        name = unique_local_name(npc)
         existing = existing_record(klass, name)
         if existing
           return replace_or_skip(import_file, npc.merge(name: name), existing) do |record|
@@ -724,7 +754,7 @@ module Importer
 
       def import_monster(import_file, record)
         klass = admin_stock? ? Entitybuilder::StockCreature : Entitybuilder::ResidentCreature
-        name = local_name(record[:name])
+        name = unique_local_name(record)
         existing = existing_record(klass, name)
         if existing
           name_index_add("monster", record[:name], existing)
@@ -762,6 +792,7 @@ module Importer
       def build_creature_associations(import_file, creature, record)
         build_ability_scores(creature, record)
         build_basic_stats(creature, record)
+        build_saves_and_skills(creature, record)
         build_creature_descriptors(creature, record)
         build_creature_spellcasting(creature, record)
         build_creature_attacks(creature, record[:actions], "melee")
@@ -792,17 +823,17 @@ module Importer
           end
         end
 
-        return if record[:spells].blank?
+        spells = record[:spells]
+        spell_names = (spells.is_a?(Array) ? spells : spells.to_s.split(",")).map { |s| s.to_s.strip }.reject(&:blank?)
+        return if spell_names.empty?
 
         begin
-          creature.descriptors.create!(name: "Spells", description: record[:spells].truncate(255))
+          creature.descriptors.create!(name: "Spells", description: spell_names.join(", ").truncate(255))
         rescue ActiveRecord::RecordInvalid
           # skip if duplicate
         end
 
-        record[:spells].split(",").map(&:strip).each do |spell_name|
-          next if spell_name.blank?
-
+        spell_names.each do |spell_name|
           spell = name_index_find("spell", spell_name)
           next if spell.nil?
 
@@ -816,8 +847,11 @@ module Importer
 
       def build_creature_trait_rules(import_file, creature, record)
         record[:traits].each_with_index do |trait, index|
-          import_rule(import_file, trait_rule_record(record, trait))
-          rule = name_index_find("ability", trait[:name])
+          rule_record = trait_rule_record(record, trait)
+          import_rule(import_file, rule_record)
+          # import_rule fills in a unique name when the trait name is blank;
+          # look the rule up by the resolved name.
+          rule = name_index_find("ability", rule_record[:name])
           creature.linked_rules.create!(rule: rule, sort_order: index) if rule.present?
         end
       end
@@ -849,8 +883,24 @@ module Importer
         if (hp = parse_leading_number(record[:hp]))
           entity.trackables.create!(name: "Hit Points", maximum: hp, current: hp)
         end
-        if (speed = parse_leading_number(record[:speed]))
-          entity.movements.create!(name: "Speed", base: speed)
+        build_movements(entity, record[:speed])
+      end
+
+      # Parses a free-text speed string such as "30 ft., fly 60 ft., swim 20 ft."
+      # into one Movement per mode (base "Speed", plus Fly/Swim/Climb/Burrow Speed).
+      def build_movements(entity, speed_string)
+        return if speed_string.blank?
+
+        speed_string.split(",").each do |segment|
+          segment = segment.strip
+          number = segment[/\d+/]
+          next if number.nil?
+
+          keyword = segment[/\A(fly|swim|climb|burrow)\b/i]
+          name = keyword ? "#{keyword.downcase.capitalize} Speed" : "Speed"
+          entity.movements.create!(name: name, base: number.to_i)
+        rescue ActiveRecord::RecordInvalid
+          # skip duplicate or invalid movement
         end
       end
 
@@ -898,7 +948,7 @@ module Importer
 
       def import_item(import_file, record)
         klass = admin_stock? ? Rulebuilder::StockItem : Rulebuilder::ResidentItem
-        name = local_name(record[:name])
+        name = unique_local_name(record)
         existing = existing_record(klass, name)
         if existing
           return replace_or_skip(import_file, record.merge(name: name), existing) do |item|
@@ -934,7 +984,7 @@ module Importer
 
       def import_spell(import_file, record)
         klass = admin_stock? ? Rulebuilder::StockSpell : Rulebuilder::ResidentSpell
-        name = local_name(record[:name])
+        name = unique_local_name(record)
         existing = existing_record(klass, name)
         if existing
           return replace_or_skip(import_file, record.merge(name: name), existing) do |spell|
@@ -978,7 +1028,7 @@ module Importer
 
       def import_rule(import_file, record)
         klass = admin_stock? ? Rulebuilder::StockRule : Rulebuilder::ResidentRule
-        name = local_name(record[:name])
+        name = unique_local_name(record)
         existing = existing_record(klass, name)
         if existing
           return replace_or_skip(import_file, record.merge(name: name), existing) do |rule|
@@ -993,6 +1043,7 @@ module Importer
           source: record[:source],
           full_description: full_desc,
           rule_type: shared_rule_type(record[:type]),
+          prerequisites: record[:prerequisite].presence,
           is_shared: true,
           **privacy_attributes_for(klass).merge(resident_content? ? { resident: resident } : {})
         )
@@ -1005,6 +1056,7 @@ module Importer
           source: record[:source],
           full_description: rule_full_description(record),
           rule_type: shared_rule_type(record[:type]),
+          prerequisites: record[:prerequisite].presence,
           is_shared: true,
           **privacy_attributes_for(rule.class)
         )
@@ -1041,7 +1093,7 @@ module Importer
       end
 
       def existing_page(adventure, name)
-        adventure.pages.where("lower(name) = ?", name.downcase).first
+        adventure.pages.where("lower(name) = ? OR slug = ?", name.downcase, name.parameterize).first
       end
 
       def existing_note(campaign, name)
@@ -1237,6 +1289,9 @@ module Importer
         parts << "Ability score increases: #{abilities.join(', ')}" if abilities.any?
         proficiencies = Array(record[:proficiencies]).reject(&:blank?)
         parts << "Proficiencies: #{proficiencies.join(', ')}" if proficiencies.any?
+        parts << "Armor: #{record[:armor]}" if record[:armor].present?
+        parts << "Weapons: #{record[:weapons]}" if record[:weapons].present?
+        parts << "Tools: #{record[:tools]}" if record[:tools].present?
         parts += record[:traits].map { |t| "**#{t[:name]}**\n#{t[:text]}" } if record[:traits].is_a?(Array)
         text = record[:text]
         parts += Array(text) if text.present?
@@ -1262,6 +1317,7 @@ module Importer
 
       def item_stats_block(record)
         parts = []
+        parts << "**Rarity:** #{record[:detail]}" if record[:detail].present?
         if record[:dmg1].present?
           dmg = record[:dmg2].present? ? "#{record[:dmg1]} / #{record[:dmg2]}" : record[:dmg1]
           parts << "**Damage:** #{dmg} #{record[:dmg_type]}".strip
@@ -1271,6 +1327,7 @@ module Importer
         parts << "**Properties:** #{record[:property]}" if record[:property].present?
         parts << "**Strength required:** #{record[:strength]}" if record[:strength].present?
         parts << "**Stealth:** Disadvantage" if record[:stealth].to_s.match?(/yes|1/i)
+        parts << "**Value:** #{record[:value]} gp" if record[:value].present?
         parts << "**Magic:** Yes" if record[:magic].to_s.match?(/^[1-9]|yes/i)
         parts.join(" · ").presence
       end
@@ -1358,6 +1415,19 @@ module Importer
 
       def local_name(name)
         name.to_s.strip.truncate(LOCAL_NAME_LIMIT, omission: "")
+      end
+
+      # Resolves the name to import for a record. Blank names get a unique
+      # "No Name N" placeholder (N increments per import run) so that multiple
+      # nameless entries are imported as distinct records instead of merging into
+      # one. The generated name is written back to record[:name] so dedup,
+      # name-index, and result logging all stay consistent.
+      def unique_local_name(record)
+        name = local_name(record[:name])
+        return name if name.present?
+
+        @no_name_counter = @no_name_counter.to_i + 1
+        record[:name] = "No Name #{@no_name_counter}"
       end
     end
   end

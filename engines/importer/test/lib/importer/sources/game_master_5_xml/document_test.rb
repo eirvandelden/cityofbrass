@@ -16,6 +16,88 @@ class ImporterGameMaster5XmlDocumentTest < ActiveSupport::TestCase
     assert_equal "Fighter", subclass[:baseclass]
   end
 
+  test "compendium records include bare class elements" do
+    xml = <<~XML
+      <compendium>
+        <class>
+          <name>Scout</name>
+          <hd>10</hd>
+          <proficiency>Stealth, Survival</proficiency>
+          <numSkills>3</numSkills>
+        </class>
+      </compendium>
+    XML
+
+    document_for(xml) do |doc|
+      klass = doc.compendium_records.find { |record| record[:type] == "class" }
+      assert klass, "expected a class record from a <class> element"
+      assert_equal "Scout", klass[:name]
+      assert_equal "10", klass[:hd]
+    end
+  end
+
+  test "compendium records include item templates as items" do
+    xml = <<~XML
+      <compendium>
+        <itemtemplate>
+          <name>Silvered %name%</name>
+          <type>M</type>
+          <magic>NO</magic>
+          <text>Silvered ammunition or weapon.</text>
+        </itemtemplate>
+      </compendium>
+    XML
+
+    document_for(xml) do |doc|
+      item = doc.compendium_records.find { |record| record[:name] == "Silvered %name%" }
+      assert item, "expected an item record from an <itemtemplate> element"
+      assert_equal "item", item[:type]
+      assert_equal "M", item[:item_type]
+      assert_equal [ "Silvered ammunition or weapon." ], item[:text]
+    end
+  end
+
+  test "monster record extracts description text" do
+    xml = <<~XML
+      <compendium>
+        <monster>
+          <name>Hug Hug</name>
+          <description>The lone surviving goblin cowers under the mine cart.</description>
+        </monster>
+      </compendium>
+    XML
+
+    document_for(xml) do |doc|
+      monster = doc.compendium_records.find { |record| record[:type] == "monster" }
+      assert_equal "The lone surviving goblin cowers under the mine cart.", monster[:description]
+    end
+  end
+
+  test "character record reads gm5 nested character wrapper" do
+    xml = <<~XML
+      <pc version="5">
+        <character>
+          <name>Human Rogue</name>
+          <abilities>10,15,12,13,8,14,</abilities>
+          <race><name>Human</name></race>
+          <class><name>Rogue</name><level>3</level></class>
+          <hpMax>9</hpMax>
+        </character>
+      </pc>
+    XML
+
+    document_for(xml) do |doc|
+      pc = doc.character_records.find { |record| record[:type] == "pc" }
+      assert pc, "expected a pc record from a <character> wrapper"
+      assert_equal "Human Rogue", pc[:name]
+      assert_equal [ "10", "15", "12", "13", "8", "14" ], pc.values_at(:str, :dex, :con, :int, :wis, :cha)
+      assert_equal "Human", pc[:race_name]
+      assert_equal "Rogue", pc[:class_name]
+      assert_equal "3", pc[:class_level]
+      assert_equal "9", pc[:hp]
+    end
+  end
+
   test "encounter record extracts description from nested note text" do
     xml = <<~XML
       <campaign>

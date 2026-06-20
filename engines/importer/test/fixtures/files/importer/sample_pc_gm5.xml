@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pc version="5">
+  <character>
+    <version>37</version>
+    <uid>2163</uid>
+    <name>Human Rogue</name>
+    <race><name>Human</name></race>
+    <class><name>Rogue</name><level>3</level></class>
+    <abilities>10,15,12,13,8,14,</abilities>
+    <hpMax>24</hpMax>
+    <hpCurrent>24</hpCurrent>
+  </character>
+</pc>

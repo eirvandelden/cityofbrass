@@ -99,8 +99,6 @@ module Entitybuilder
     validates :sheet_privacy, presence: true, length: { maximum: 64 }
     validate  :valid_sheet_privacy
     validates :short_description, length: { maximum: 255 }
-    validates :full_description, length: { maximum: 60000 }
-    validates :notes, length: { maximum: 12000 }
     validates :publisher, length: { maximum: 255 }
     validates :source, length: { maximum: 255 }
     validates_confirmation_of :name

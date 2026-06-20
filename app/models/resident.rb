@@ -105,7 +105,6 @@ class Resident < ApplicationRecord
   validate  :name_not_reserved
   validates :slug, presence: { message: "" }, length: { maximum: 128 }, uniqueness: { message: "has already been taken." }
   validates :short_description, length: { maximum: 255 }
-  validates :full_description, length: { maximum: 12000 }
   validates :badges, length: { maximum: 6000 }
 
 

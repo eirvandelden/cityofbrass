@@ -10,7 +10,6 @@ module Storybuilder
     validates :section_type, presence: true
     validates :section_style, presence: true
     validates :header, length: { maximum: 64 }
-    validates :content, length: { maximum: 12000 }
     validates :search_tags, length: { maximum: 255 }, presence: true, if: -> { 'tag'.include?(section_type) }
     validates :record_type, length: { maximum: 255 }, presence: true, if: -> { 'tag'.include?(section_type) }
 

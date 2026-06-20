@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compendium version="5">
+  <monster>
+    <name>Arcuballis</name>
+    <size>L</size>
+    <type>monstrosity</type>
+    <ac>15</ac>
+    <hp>59 (7d10+21)</hp>
+    <speed>30 ft., fly 60 ft., swim 20 ft.</speed>
+    <str>18</str><dex>14</dex><con>16</con>
+    <int>4</int><wis>12</wis><cha>8</cha>
+    <save>Con +5</save>
+    <skill>Perception +3</skill>
+    <cr>4</cr>
+    <description>A magical beast resembling a griffon crossed with a triceratops.</description>
+  </monster>
+</compendium>
