@@ -293,10 +293,10 @@ within a campaign.
 | `<ac>`             | Defense `base`          | `name="Armor Class"` | ✅ |
 | `<spells>`         | KnownSpell              | Lookup by name; unknown spells skipped | ✅ |
 | `<race><name>`     | Descriptor              | `name="Race"`, extracted from `<race><name>` | ✅ |
-| `<class><hd>`      | ClassLevel `hit_dice`   | Not extracted — class elements not individually parsed | ⚠️ |
+| `<class><hd>` + `<class><hdCurrent>` | Trackable | `name="Hit Dice (1d10)"`, max=level, current=hdCurrent | ✅ |
 | `<slots>`          | Trackable               | One Trackable per non-zero slot level | ✅ |
 | `<passive>`        | —                       | Not stored | ❌ |
-| `<armor>`          | —                       | Equipped armor name not stored | ❌ |
+| `<armor>`          | InventoryItem / Descriptor | Item looked up by name, `equipped: true`; falls back to Descriptor | ✅ |
 
 ---
 
@@ -528,6 +528,6 @@ These fields are extracted in `character_record` but some are not fully stored:
 | §11.5 `<class><counter>` | Medium | Yes — JSON column or new table |
 | ~~§11.6 `<monster><spells>`~~ | — | ✅ Fixed |
 | ~~§11.7 `<monster><slots>`~~ | — | ✅ Fixed |
-| §11.8 NPC inline stat block | Medium | No — document.rb + processing.rb |
-| §11.9 `<pc><armor>` | Low | No — use existing InventoryItem |
-| §11.10 PC `<race>`, `<hd>`, `<slots>` | Low | No — processing.rb only |
+| ~~§11.8 NPC inline stat block~~ | — | ✅ Fixed |
+| ~~§11.9 `<pc><armor>`~~ | — | ✅ Fixed |
+| ~~§11.10 PC `<race>`, `<hd>`, `<slots>`~~ | — | ✅ Fixed |

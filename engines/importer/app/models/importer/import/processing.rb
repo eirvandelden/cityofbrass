@@ -395,7 +395,7 @@ module Importer
           return replace_or_skip(import_file, encounter.merge(name: name), existing, campaign: @import_provenance_campaign) do |record|
             record.update!(privacy: privacy, full_description: encounter[:description].presence)
             record.notables.destroy_all
-            link_encounter_combatants(record, encounter[:combatants])
+            link_encounter_combatants(import_file, record, encounter[:combatants])
           end
         end
 
@@ -405,12 +405,12 @@ module Importer
           privacy: privacy,
           full_description: encounter[:description].presence
         )
-        link_encounter_combatants(record, encounter[:combatants])
+        link_encounter_combatants(import_file, record, encounter[:combatants])
         result(import_file, encounter, "created", record)
         record
       end
 
-      def link_encounter_combatants(page, combatants)
+      def link_encounter_combatants(import_file, page, combatants)
         return if combatants.blank?
 
         creature_class = admin_stock? ? Entitybuilder::StockCreature : Entitybuilder::ResidentCreature
@@ -421,6 +421,11 @@ module Importer
 
           creature = name_index_find("monster", combatant[:name]) ||
                      existing_record(creature_class, combatant[:name])
+
+          if creature.nil? && combatant[:inline_monster].present?
+            creature = import_monster(import_file, combatant[:inline_monster])
+          end
+
           next if creature.nil?
           next if existing_entity_ids.include?(creature.id)
 
@@ -568,6 +573,26 @@ module Importer
         build_saves_and_skills(character, pc)
         build_creature_attacks(character, pc[:actions], "melee")
         build_creature_spellcasting(character, pc)
+        build_character_armor(character, pc)
+      end
+
+      def build_character_armor(character, pc)
+        return if pc[:armor_name].blank?
+
+        item = name_index_find("item", pc[:armor_name])
+        if item
+          begin
+            character.inventory_items.create!(item: item, quantity: 1, equipped: true, carried: true)
+          rescue ActiveRecord::RecordInvalid
+            # skip if duplicate
+          end
+        else
+          begin
+            character.descriptors.create!(name: "Equipped Armor", description: pc[:armor_name].truncate(255))
+          rescue ActiveRecord::RecordInvalid
+            # skip if duplicate
+          end
+        end
       end
 
       def build_character_name_info(character, pc)
@@ -583,6 +608,17 @@ module Importer
           # skip if duplicate or validation error
         end
 
+        if pc[:race_name].present?
+          race_rule = name_index_find("race", pc[:race_name])
+          if race_rule
+            begin
+              character.linked_rules.create!(rule: race_rule)
+            rescue ActiveRecord::RecordInvalid
+              # skip if duplicate
+            end
+          end
+        end
+
         parsed_name = Sources::GameMaster5Xml::PcNameParser.parse(pc[:name])
         return unless parsed_name
 
@@ -590,6 +626,20 @@ module Importer
           character.class_levels.create!(name: parsed_name[:class_name], level: parsed_name[:level])
         rescue ActiveRecord::RecordInvalid
           # skip if duplicate or validation error
+        end
+
+        hd_max = parsed_name[:level].to_i
+        hd_current = pc[:hd_current].to_s.presence&.to_i || hd_max
+        if hd_max > 0 && pc[:hd].present?
+          begin
+            character.trackables.create!(
+              name: "Hit Dice (#{pc[:hd]})",
+              maximum: hd_max,
+              current: hd_current
+            )
+          rescue ActiveRecord::RecordInvalid
+            # skip if duplicate
+          end
         end
       end
 
@@ -743,6 +793,12 @@ module Importer
         end
 
         return if record[:spells].blank?
+
+        begin
+          creature.descriptors.create!(name: "Spells", description: record[:spells].truncate(255))
+        rescue ActiveRecord::RecordInvalid
+          # skip if duplicate
+        end
 
         record[:spells].split(",").map(&:strip).each do |spell_name|
           next if spell_name.blank?

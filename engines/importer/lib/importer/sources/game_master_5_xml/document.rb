@@ -288,7 +288,7 @@ module Importer
             type: "encounter",
             name: name_or_title(node),
             description: nodes(node, "./text | .//note/text").map(&:text).join("\n"),
-            combatants: nodes(node, "./combatant").map { |c| { name: combatant_name(c) } }.reject { |c| c[:name].blank? }
+            combatants: nodes(node, "./combatant").map { |c| combatant_record(c) }.reject { |c| c[:name].blank? }
           }
         end
 
@@ -346,6 +346,9 @@ module Importer
             wis: text_at(node, "wis"),
             cha: text_at(node, "cha"),
             race_name: text_at(node, "race/name"),
+            armor_name: text_at(node, "armor"),
+            hd: text_at(node, "class/hd"),
+            hd_current: text_at(node, "class/hdCurrent"),
             slots: text_at(node, "class/slots"),
             saves: nodes(node, "./save").map(&:text),
             skills: nodes(node, "./skill").map(&:text),
@@ -410,8 +413,16 @@ module Importer
           %i[str dex con int wis cha]
         end
 
-        def combatant_name(node)
-          text_at(node, "monster/name").presence || text_at(node, "monster")
+        def combatant_record(node)
+          monster_node = node.at_xpath("./monster")
+          return { name: nil } if monster_node.nil?
+
+          if monster_node.element_children.any?
+            record = monster_record(monster_node)
+            { name: record[:name], inline_monster: record }
+          else
+            { name: monster_node.text.strip }
+          end
         end
 
         def subclass_names_for(baseclass)
