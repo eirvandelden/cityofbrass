@@ -860,6 +860,7 @@ module Importer
           [ "Type", record[:creature_type] ],
           [ "Alignment", record[:alignment] ],
           [ "Challenge Rating", record[:cr] ],
+          [ "Passive Perception", record[:passive]&.to_s ],
           [ "Senses", record[:senses] ],
           [ "Languages", record[:languages] ],
           [ "Immunities", record[:immune] ],

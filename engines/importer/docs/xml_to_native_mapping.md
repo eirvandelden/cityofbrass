@@ -77,7 +77,7 @@ are supported.
 |--------------|--------------|-----------------------------------------|-------|--------|
 | `<save>`     | SavingThrow  | `name`, `bonus`, `proficient=true`      | Parsed from `"Dex +5, Con +15"` | ✅ |
 | `<skill>`    | Skill        | `name`, `bonus`                         | Parsed from `"Perception +14"` | ✅ |
-| `<passive>`  | Descriptor   | `name="Passive Perception"`, `description` | Stored as descriptor on character | ✅ |
+| `<passive>`  | Descriptor   | `name="Passive Perception"`, `description` | Integer value e.g. `"14"` | ✅ |
 | `<senses>`   | Descriptor   | `name="Senses"`, `description`          | | ✅ |
 | `<languages>`| Descriptor   | `name="Languages"`, `description`       | | ✅ |
 
@@ -295,7 +295,7 @@ within a campaign.
 | `<race><name>`     | Descriptor              | `name="Race"`, extracted from `<race><name>` | ✅ |
 | `<class><hd>` + `<class><hdCurrent>` | Trackable | `name="Hit Dice (1d10)"`, max=level, current=hdCurrent | ✅ |
 | `<slots>`          | Trackable               | One Trackable per non-zero slot level | ✅ |
-| `<passive>`        | —                       | Not stored | ❌ |
+| `<passive>`        | Descriptor              | `name="Passive Perception"` | ✅ |
 | `<armor>`          | InventoryItem / Descriptor | Item looked up by name, `equipped: true`; falls back to Descriptor | ✅ |
 
 ---

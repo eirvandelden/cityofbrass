@@ -124,6 +124,7 @@ module Importer
             cha: ability_at(node, :cha),
             saves: nodes(node, "./save").map(&:text),
             skills: nodes(node, "./skill").map(&:text),
+            passive: text_at(node, "passive"),
             senses: text_at(node, "senses"),
             immune: text_at(node, "immune"),
             resist: text_at(node, "resist"),
