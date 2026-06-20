@@ -30,7 +30,7 @@ belong to the same entity via `entity_id`.
 | `<alignment>`   | Descriptor         | `name="Alignment"`, `description`        | Free text | ✅ |
 | `<cr>`          | Descriptor         | `name="Challenge Rating"`, `description` | Stored as string | ✅ |
 | `<source>`      | Entity             | `source`                                 | | ✅ |
-| `<description>` | Entity             | `full_description`                       | | ⚠️ |
+| `<description>` | Entity             | `full_description`                       | | ✅ |
 | `<environment>` | Descriptor         | `name="Environment"`, `description`      | Extracted and stored | ✅ |
 
 ### 1.2 Defences

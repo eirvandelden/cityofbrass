@@ -686,6 +686,7 @@ module Importer
           core_rules: CORE_RULES,
           source: record[:source],
           short_description: record[:cr].presence,
+          full_description: record[:description].presence,
           **privacy_attributes_for(klass).merge(resident_content? ? { resident: resident } : {})
         )
         enforce_entity_privacy!(creature)
@@ -699,7 +700,7 @@ module Importer
         creature.update!(
           source: record[:source],
           short_description: record[:cr].presence,
-          full_description: nil,
+          full_description: record[:description].presence,
           **privacy_attributes_for(creature.class)
         )
         build_creature_associations(import_file, creature, record)
