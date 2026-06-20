@@ -58,12 +58,12 @@ module Importer
         def compendium_counts(root)
           {
             "monsters" => root.xpath("./monster").size,
-            "items" => root.xpath("./item | ./container").size,
+            "items" => root.xpath("./item | ./container | ./itemtemplate").size,
             "spells" => root.xpath("./spell").size,
             "races" => root.xpath("./race").size,
             "backgrounds" => root.xpath("./background").size,
             "feats" => root.xpath("./feat").size,
-            "classes" => root.xpath("./baseclass").size,
+            "classes" => root.xpath("./baseclass | ./class").size,
             "subclasses" => root.xpath("./subclass").size
           }
         end

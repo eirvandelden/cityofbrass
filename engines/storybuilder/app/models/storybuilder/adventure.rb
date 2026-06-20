@@ -49,7 +49,6 @@ module Storybuilder
     validates :privacy, presence: true
     validate  :valid_privacy
     validates :short_description, length: { maximum: 255 }
-    validates :full_description, length: { maximum: 12000 }
     validates_confirmation_of :name
 
     before_validation :make_slug

@@ -8,10 +8,10 @@ module Entitybuilder
       assert entity.valid?
     end
 
-    test "entity with 60,001-character full_description is invalid" do
+    test "entity full_description is not length-limited" do
       entity = entitybuilder_entities(:resident_character_one)
-      entity.full_description = "x" * 60_001
-      assert entity.invalid?
+      entity.full_description = "x" * 250_000
+      assert entity.valid?
     end
   end
 end

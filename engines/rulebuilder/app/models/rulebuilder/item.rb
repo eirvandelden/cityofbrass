@@ -34,7 +34,6 @@ module Rulebuilder
     validates :name, presence: true, length: { maximum: 64 }
     validates :core_rules, presence: true
     validates :short_description, length: { maximum: 255 }
-    validates :full_description, length: { maximum: 12000 }
     validates :category, length: { maximum: 64 }
     validates :publisher, length: { maximum: 255 }
     validates :source, length: { maximum: 255 }

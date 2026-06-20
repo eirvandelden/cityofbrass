@@ -13,7 +13,7 @@ module Importer
         end
 
         def compendium_records
-          monster_records + item_records + container_records +
+          monster_records + item_records + container_records + item_template_records +
             spell_records + rule_records + class_records + subclass_records
         end
 
@@ -45,10 +45,16 @@ module Importer
         attr_reader :document
 
         def character_pc_nodes
-          return [ root ] if root.name == "pc"
-          return nodes(root, "./pc") if root.name == "characters"
+          return [ character_node(root) ] if root.name == "pc"
+          return nodes(root, "./pc").map { |pc| character_node(pc) } if root.name == "characters"
 
           []
+        end
+
+        # GM5-native PC files wrap the stat block in a <character> element;
+        # FightClub flat <pc> files do not.
+        def character_node(pc)
+          pc.at_xpath("./character") || pc
         end
 
         def character_npc_nodes
@@ -74,6 +80,10 @@ module Importer
           nodes(root, "./container").map { |node| item_record("container", node) }
         end
 
+        def item_template_records
+          nodes(root, "./itemtemplate").map { |node| item_record("item", node) }
+        end
+
         def spell_records
           nodes(root, "./spell").map { |node| spell_record(node) }
         end
@@ -95,7 +105,7 @@ module Importer
         end
 
         def class_records
-          nodes(root, "./baseclass").map { |baseclass| class_record(baseclass) }
+          nodes(root, "./baseclass | ./class").map { |baseclass| class_record(baseclass) }
         end
 
         def subclass_records
@@ -110,6 +120,7 @@ module Importer
           {
             type: "monster",
             name: text_at(node, "name"),
+            description: text_at(node, "description"),
             size: text_at(node, "size"),
             creature_type: text_at(node, "type"),
             alignment: text_at(node, "alignment"),
@@ -149,6 +160,8 @@ module Importer
             type: type,
             name: text_at(node, "name"),
             item_type: text_at(node, "type"),
+            detail: text_at(node, "detail"),
+            value: text_at(node, "value"),
             weight: text_at(node, "weight"),
             dmg1: text_at(node, "dmg1"),
             dmg2: text_at(node, "dmg2"),
@@ -224,6 +237,9 @@ module Importer
             name: text_at(baseclass, "name"),
             hd: text_at(baseclass, "hd"),
             proficiencies: nodes(baseclass, "./proficiency").map(&:text),
+            armor: text_at(baseclass, "armor"),
+            weapons: text_at(baseclass, "weapons"),
+            tools: text_at(baseclass, "tools"),
             num_skills: text_at(baseclass, "numSkills"),
             text: text_at(baseclass, "text"),
             subclass_names: subclass_names_for(baseclass),
@@ -340,13 +356,15 @@ module Importer
             ac: text_at(node, "ac"),
             hp: text_at(node, "hp").presence || text_at(node, "hpMax"),
             speed: text_at(node, "speed"),
-            str: text_at(node, "str"),
-            dex: text_at(node, "dex"),
-            con: text_at(node, "con"),
-            int: text_at(node, "int"),
-            wis: text_at(node, "wis"),
-            cha: text_at(node, "cha"),
+            str: ability_at(node, :str),
+            dex: ability_at(node, :dex),
+            con: ability_at(node, :con),
+            int: ability_at(node, :int),
+            wis: ability_at(node, :wis),
+            cha: ability_at(node, :cha),
             race_name: text_at(node, "race/name"),
+            class_name: text_at(node, "class/name"),
+            class_level: text_at(node, "class/level"),
             armor_name: text_at(node, "armor"),
             hd: text_at(node, "class/hd"),
             hd_current: text_at(node, "class/hdCurrent"),

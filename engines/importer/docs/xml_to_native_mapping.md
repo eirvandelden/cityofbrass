@@ -75,8 +75,8 @@ are supported.
 
 | XML field    | Native model | Native field(s)                         | Notes | Status |
 |--------------|--------------|-----------------------------------------|-------|--------|
-| `<save>`     | SavingThrow  | `name`, `bonus`, `proficient=true`      | Parsed from `"Dex +5, Con +15"` | ✅ |
-| `<skill>`    | Skill        | `name`, `bonus`                         | Parsed from `"Perception +14"` | ✅ |
+| `<save>`     | SavingThrow  | `name`, `base`                          | Parsed from `"Dex +5"`; a single comma-separated element (`"Dex +5, Con +15"`) is split into one record per entry | ✅ |
+| `<skill>`    | Skill        | `name`, `bonus`                         | Parsed from `"Perception +14"`; comma-separated single element split per entry | ✅ |
 | `<passive>`  | Descriptor   | `name="Passive Perception"`, `description` | Integer value e.g. `"14"` | ✅ |
 | `<senses>`   | Descriptor   | `name="Senses"`, `description`          | | ✅ |
 | `<languages>`| Descriptor   | `name="Languages"`, `description`       | | ✅ |
@@ -145,6 +145,9 @@ depends on whether attack notation is present.
 | `<ac>`       | `full_description`  | Included in stats block | ✅ |
 | `<strength>` | `full_description`  | Included in stats block | ✅ |
 | `<stealth>`  | `full_description`  | Included in stats block | ✅ |
+| `<detail>`   | `full_description`  | Rarity/attunement, included in stats block as **Rarity** | ✅ |
+| `<value>`    | `full_description`  | Cost, included in stats block as **Value** | ✅ |
+| `<itemtemplate>` | (parsed as item) | Template items (e.g. `Silvered %name%`) imported as regular items | ✅ |
 | `<modifier>` | —                   | No modifier association on items; not stored | ❌ |
 
 ### 2.1 Item type code → category
@@ -278,25 +281,35 @@ Each `<note>` within an adventure (or at campaign level) maps to one
 
 ## 9. PC → Entitybuilder::ResidentCharacter
 
-Player characters from `<pc>` / `<characters>` files or embedded `<pc>` elements
-within a campaign.
+Player characters come in two shapes:
+
+1. **FightClub flat `<pc>`** — fields directly on the `<pc>` node (also used for
+   `<pc>` children of a `<characters>` file and embedded `<pc>` in a campaign).
+2. **GM5-native `<pc><character>`** — the stat block is wrapped in a
+   `<character>` element, with abilities as a CSV and class/race nested. The
+   parser unwraps `<character>` transparently, so both shapes map identically.
 
 | XML field          | Native field / model    | Notes | Status |
 |--------------------|-------------------------|-------|--------|
 | `<name>` / `<label>` | Entity `name`         | label used as fallback | ✅ |
 | `<str>` … `<cha>`  | AbilityScore records    | | ✅ |
-| `<abilities>`      | AbilityScore records    | Comma-separated alternative | ✅ |
-| `<class><name>`    | ClassLevel `name`       | | ✅ |
+| `<abilities>`      | AbilityScore records    | Comma-separated alternative (`"10,15,12,…"`); used by GM5 `<character>` files | ✅ |
+| `<class><name>`    | ClassLevel `name`       | Falls back to the class parsed from the `<name>` string | ✅ |
 | `<class><level>`   | ClassLevel `level`      | | ✅ |
 | `<action>`         | Attack                  | Same mapping as monster action (§1.8) | ✅ |
 | `<hpMax>`          | Trackable `maximum`     | `name="Hit Points"` — also tries `<hp>` | ✅ |
 | `<ac>`             | Defense `base`          | `name="Armor Class"` | ✅ |
 | `<spells>`         | KnownSpell              | Lookup by name; unknown spells skipped | ✅ |
-| `<race><name>`     | Descriptor              | `name="Race"`, extracted from `<race><name>` | ✅ |
+| `<race><name>`     | Descriptor              | `name="Race"`; falls back to the race parsed from the `<name>` string (e.g. `"Elf (Wood)"`) | ✅ |
+| `<senses>`         | Descriptor              | `name="Senses"` | ✅ |
+| `<languages>`      | Descriptor              | `name="Languages"` | ✅ |
+| `<save>` / `<skill>` | SavingThrow / Skill   | Parsed `"Name +N"`; comma-separated single element split per entry | ✅ |
 | `<class><hd>` + `<class><hdCurrent>` | Trackable | `name="Hit Dice (1d10)"`, max=level, current=hdCurrent | ✅ |
 | `<slots>`          | Trackable               | One Trackable per non-zero slot level | ✅ |
 | `<passive>`        | Descriptor              | `name="Passive Perception"` | ✅ |
 | `<armor>`          | InventoryItem / Descriptor | Item looked up by name, `equipped: true`; falls back to Descriptor | ✅ |
+| GM5 `<race><feat>` / `<class>` feature text | — | Nested racial/class feature & feat text not imported | ❌ |
+| GM5 inventory `<item>` list | — | Item lists inside a `<character>` are not added to inventory | ❌ |
 
 ---
 
@@ -531,3 +544,69 @@ These fields are extracted in `character_record` but some are not fully stored:
 | ~~§11.8 NPC inline stat block~~ | — | ✅ Fixed |
 | ~~§11.9 `<pc><armor>`~~ | — | ✅ Fixed |
 | ~~§11.10 PC `<race>`, `<hd>`, `<slots>`~~ | — | ✅ Fixed |
+
+---
+
+## 12. Corpus verification (June 2026)
+
+The importer was verified against **3,352 real-world XML files** from the
+`DnDAppFiles`, `DnD-CampaignsAndAdventures`, and `FightClub5eXML` corpora. Every
+supported file imports without crashes. The pass surfaced and fixed the
+following beyond the §11 gaps:
+
+### 12.1 Newly supported formats
+
+| Format | What it is | Fix |
+|--------|------------|-----|
+| `<compendium><class>` | Modern FightClub/SRD-5.5e classes use a bare `<class>` element (older files used `<baseclass>`) | Parser now reads both `./baseclass` and `./class` (~429 files were importing zero records) |
+| `<pc><character>` | GM5-native player-character export — stats wrapped in a `<character>` element, abilities as a CSV (`10,15,12,…`), class/race nested | Parser unwraps `<character>`; imports name, ability scores (CSV fallback), class+level, race, HP (~241 files were importing zero records) |
+| `<compendium><itemtemplate>` | Template items such as `Silvered %name%` | Imported as regular items (~48 files were importing zero records) |
+
+### 12.2 Newly fixed field drops
+
+| Field | Was | Now |
+|-------|-----|-----|
+| `<monster><description>` | Never extracted → `full_description` always nil | Extracted and stored |
+| `<monster><save>` / `<skill>` | Never built for creatures (only for PCs) | Built as SavingThrow / Skill records |
+| `<monster><speed>` (fly/swim/climb/burrow) | Only the base speed was stored | One Movement per mode |
+| `<pc><languages>` / `<senses>` | Extracted but never stored | Stored as Descriptors |
+| `<pc>` race from name string | `"Elf (Wood) Monk 2"` race lost when no `<race>` element | Race descriptor created from the parsed name |
+| `<feat><prerequisite>` | Extracted but never stored | Stored in `prerequisites` |
+| `<class><armor>/<weapons>/<tools>` | Dropped | Appended to `full_description` |
+| comma-separated `<save>`/`<skill>` | Mis-parsed into one garbled record | Split into one record per entry |
+
+### 12.3 Import robustness (no data loss)
+
+A single malformed entity used to abort the entire file. The importer now:
+
+- **imports blank-name entities** (monsters, items, spells, rules, traits, PCs)
+  under a unique `No Name N` placeholder — each nameless entry becomes its own
+  record rather than being skipped or merged into one;
+- **never truncates content.** The `length: { maximum: ... }` validations on all
+  content fields (`full_description`, `content`, `notes`) were removed across the
+  engines, so imported text is stored in full. The columns are already `text`
+  (effectively unlimited), so no migration was required.
+- **dedupes pages by slug** (not just by name) so near-duplicate encounter
+  titles that parameterize identically no longer collide;
+- isolates each compendium/character record so one bad record never aborts the
+  rest of the file.
+
+### 12.4 Files that intentionally import nothing
+
+| Root element | Count | Reason |
+|--------------|------:|--------|
+| `<source>` | ~420 | Manifest files: metadata + a `<collection>` of `<doc href>` references to other compendium files (no inline content) |
+| `<collection>` | ~84 | XInclude aggregators referencing other files |
+| `<notes>` | ~27 | Character/reference note documents — not a supported import format |
+| empty `<compendium/>` | ~9 | Deprecated stubs with no child entities |
+
+### 12.5 Remaining known gaps (unchanged scope)
+
+- GM5 `<character>` nested racial/class **feature & feat text** is not imported
+  (only name, abilities, class+level, race, HP). Equipped/inventory `<item>`
+  lists inside GM5 characters are not added to inventory.
+- Campaign-embedded `<pc>` records import name + backstory only; full stat
+  blocks come from the standalone PC file via merge-by-label.
+- Class `<autolevel>` features / slot progression / counters (§11.3–11.5),
+  `<item><modifier>` (§11.1) and `<spell><roll>` (§11.2) remain as documented —
+  each needs a schema change.
