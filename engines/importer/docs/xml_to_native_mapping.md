@@ -85,9 +85,9 @@ are supported.
 
 | XML field       | Native model | Native field(s)                     | Notes | Status |
 |-----------------|--------------|-------------------------------------|-------|--------|
-| `<spellAbility>`| CasterLevel  | `ability_score`                     | | ⚠️ |
-| `<spells>`      | KnownSpell   | `spell_id` (lookup by name)         | Comma-separated; lookup may fail if spell not in system | ⚠️ |
-| `<slots>`       | CasterLevel  | `per_day` per level                 | SlotString parsed per level | ⚠️ |
+| `<spellAbility>`| Descriptor   | `name="Spellcasting Ability"`, `description` | | ✅ |
+| `<spells>`      | KnownSpell   | `spell_id` (lookup by name)         | Spells not yet in the system are silently skipped | ✅ |
+| `<slots>`       | Trackable    | `name="Spell Slots (Nth)"`, `maximum`, `current` | One Trackable per non-zero slot level | ✅ |
 
 ### 1.7 Traits
 
@@ -526,8 +526,8 @@ These fields are extracted in `character_record` but some are not fully stored:
 | §11.3 `<class>` features as records | High | Yes — new `class_features` table |
 | §11.4 `<class><slots>` progression | Medium | Yes — JSON column or new table |
 | §11.5 `<class><counter>` | Medium | Yes — JSON column or new table |
-| §11.6 `<monster><spells>` | Low | No — processing.rb only |
-| §11.7 `<monster><slots>` | Low | No — use existing Trackable |
+| ~~§11.6 `<monster><spells>`~~ | — | ✅ Fixed |
+| ~~§11.7 `<monster><slots>`~~ | — | ✅ Fixed |
 | §11.8 NPC inline stat block | Medium | No — document.rb + processing.rb |
 | §11.9 `<pc><armor>` | Low | No — use existing InventoryItem |
 | §11.10 PC `<race>`, `<hd>`, `<slots>` | Low | No — processing.rb only |
