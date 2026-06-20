@@ -28,7 +28,7 @@ belong to the same entity via `entity_id`.
 | `<size>`        | Descriptor         | `name="Size"`, `description`             | Code decoded: T→Tiny, S→Small, M→Medium, L→Large, H→Huge, G→Gargantuan | ✅ |
 | `<type>`        | Descriptor         | `name="Type"`, `description`             | Free text | ✅ |
 | `<alignment>`   | Descriptor         | `name="Alignment"`, `description`        | Free text | ✅ |
-| `<cr>`          | Descriptor         | `name="Challenge Rating"`, `description` | Stored as string | ✅ |
+| `<cr>`          | Descriptor + Entity | Descriptor `name="Challenge Rating"`; also Entity `short_description` | Stored as string | ✅ |
 | `<source>`      | Entity             | `source`                                 | | ✅ |
 | `<description>` | Entity             | `full_description`                       | | ✅ |
 | `<environment>` | Descriptor         | `name="Environment"`, `description`      | Extracted and stored | ✅ |
@@ -37,12 +37,12 @@ belong to the same entity via `entity_id`.
 
 | XML field          | Native model | Native field(s)                   | Notes | Status |
 |--------------------|--------------|-----------------------------------|-------|--------|
-| `<ac>`             | Defense      | `name="Armor Class"`, `base`      | Integer part; source in parentheses stored in `description` | ✅ |
-| `<hp>`             | Trackable    | `name="Hit Points"`, `maximum`    | Integer part; formula in parentheses stored in `description` | ✅ |
-| `<resist>`         | Descriptor   | `name="Resistance"`, `description`| | ✅ |
-| `<immune>`         | Descriptor   | `name="Immunity"`, `description`  | | ✅ |
-| `<vulnerable>`     | Descriptor   | `name="Vulnerability"`, `description`| | ✅ |
-| `<conditionImmune>`| Descriptor   | `name="Condition Immunity"`, `description`| | ✅ |
+| `<ac>`             | Defense      | `name="Armor Class"`, `base`      | Leading integer only; text in parentheses (e.g. `(natural armor)`) is **not** stored | ⚠️ |
+| `<hp>`             | Trackable    | `name="Hit Points"`, `maximum`, `current` | Leading integer only (also `current`); dice formula in parentheses (e.g. `(2d6)`) is **not** stored. Falls back to `<hpMax>` | ⚠️ |
+| `<resist>`         | Descriptor   | `name="Resistances"`, `description`| | ✅ |
+| `<immune>`         | Descriptor   | `name="Immunities"`, `description`  | | ✅ |
+| `<vulnerable>`     | Descriptor   | `name="Vulnerabilities"`, `description`| | ✅ |
+| `<conditionImmune>`| Descriptor   | `name="Condition Immunities"`, `description`| | ✅ |
 
 ### 1.3 Speed
 
@@ -86,8 +86,8 @@ are supported.
 | XML field       | Native model | Native field(s)                     | Notes | Status |
 |-----------------|--------------|-------------------------------------|-------|--------|
 | `<spellAbility>`| Descriptor   | `name="Spellcasting Ability"`, `description` | | ✅ |
-| `<spells>`      | KnownSpell   | `spell_id` (lookup by name)         | Spells not yet in the system are silently skipped | ✅ |
-| `<slots>`       | Trackable    | `name="Spell Slots (Nth)"`, `maximum`, `current` | One Trackable per non-zero slot level | ✅ |
+| `<spells>`      | KnownSpell + Descriptor | `spell_id` (lookup by name); also a `name="Spells"` Descriptor holding the raw list | Spells not yet in the system are skipped for KnownSpell but still appear in the descriptor | ✅ |
+| `<slots>`       | Trackable    | `name="Cantrips"` (level 0) / `"Spell Slots (Nth)"`, `maximum`, `current` | One Trackable per non-zero slot level | ✅ |
 
 ### 1.7 Traits
 
@@ -97,33 +97,25 @@ Each `<trait>` maps to a `Rulebuilder::ResidentRule` (or `StockRule`) with
 
 | XML field        | Native model   | Native field(s)              | Notes | Status |
 |------------------|----------------|------------------------------|-------|--------|
-| `<trait><name>`  | Rule           | `name`                       | | ✅ |
-| `<trait><text>`  | Rule           | `full_description`           | All `<text>` elements joined | ✅ |
-| `<trait><recharge>`| Rule         | `full_description` (appended)| Cosmetic; not parsed as a mechanic | ⚠️ |
-| `<trait><attack>`| Attack         | see §1.8                     | Optional | ✅ |
+| `<trait><name>`  | Rule           | `name`                       | Blank names get a unique `No Name N` placeholder | ✅ |
+| `<trait><text>`  | Rule           | `full_description`           | First `<text>` element | ✅ |
+| `<trait><recharge>`| —            | —                            | Not extracted or stored | ❌ |
+| `<trait><attack>`| —             | —                            | Not extracted for traits — only `<action>`/`<reaction>`/`<legendary>` parse attack notation | ❌ |
 
 ### 1.8 Actions, reactions, legendary actions
 
 All three element types (`<action>`, `<reaction>`, `<legendary>`) share the same
-mapping. Whether a `<name>` + `<text>` entry produces an Attack, a Rule, or both
-depends on whether attack notation is present.
-
-#### With attack notation
+mapping: **every entry with a name becomes an `Attack`** (there is no Rule
+fallback). Attack notation, when present, populates the numeric fields; when
+absent those fields are simply left blank.
 
 | XML field          | Native model | Native field(s)          | Notes | Status |
 |--------------------|--------------|--------------------------|-------|--------|
-| `<name>`           | Attack       | `name`                   | Truncated to 64 chars | ✅ |
+| `<name>`           | Attack       | `name`                   | Truncated to 64 chars; blank names get a `No Name N` placeholder | ✅ |
 | `<text>`           | Attack       | `description`            | Truncated to 6,000 chars | ✅ |
-| attack `HitBonus`  | Attack       | `attack_bonus`           | Integer parsed from notation | ✅ |
-| attack `DamageDice`| Attack       | `damage_dice`, `damage_bonus` | Regex parsed from notation | ✅ |
-| `<text>` content   | Attack       | `attack_type`            | "melee"/"ranged" inferred from text | ✅ |
-
-#### Without attack notation
-
-| XML field  | Native model | Native field(s)   | Notes | Status |
-|------------|--------------|-------------------|-------|--------|
-| `<name>`   | Rule         | `name`            | `rule_type = "Ability"` | ✅ |
-| `<text>`   | Rule         | `full_description`| | ✅ |
+| attack `HitBonus`  | Attack       | `attack_bonus`           | Integer parsed from notation when present | ✅ |
+| attack `DamageDice`| Attack       | `damage_dice`, `damage_bonus` | Regex parsed from notation when present | ✅ |
+| `<text>` content   | Attack       | `attack_type`            | "melee"/"ranged" inferred from text, default "melee" | ✅ |
 
 ---
 
@@ -154,16 +146,16 @@ depends on whether attack notation is present.
 
 | XML `<type>` | Item `category`   |
 |--------------|-------------------|
-| `LA`         | `"light armor"`   |
-| `MA`         | `"medium armor"`  |
-| `HA`         | `"heavy armor"`   |
-| `S`          | `"weapon"`        |
+| `LA`         | `"armor"`         |
+| `MA`         | `"armor"`         |
+| `HA`         | `"armor"`         |
+| `S`          | `"armor"`         |
 | `M`          | `"weapon"`        |
 | `R`          | `"weapon"`        |
 | `A`          | `"gear"`          |
 | `P`          | `"potion"`        |
 | `RD`         | `"wondrous"`      |
-| `SC`         | `"scroll"`        |
+| `SC`         | `"wondrous"`      |
 | `ST`         | `"wondrous"`      |
 | `W`          | `"wondrous"`      |
 | `WD`         | `"wondrous"`      |
@@ -194,35 +186,37 @@ depends on whether attack notation is present.
 
 ## 4. Rules (Feat, Race, Class, Background, Subclass)
 
-All four XML types map to `Rulebuilder::ResidentRule` (or `StockRule`), distinguished
+All five XML types map to `Rulebuilder::ResidentRule` (or `StockRule`), distinguished
 by `rule_type`.
 
 | XML element    | Rule `rule_type`  | Status |
 |----------------|-------------------|--------|
 | `<feat>`       | `"Feat"`          | ✅ |
 | `<race>`       | `"Species"`       | ✅ |
-| `<class>`      | `"Class"`         | ✅ |
-| `<background>` | `"Background"`    | ✅ |
+| `<baseclass>` / `<class>` | `"Class"` | Both element spellings are parsed | ✅ |
+| `<background>` | `"Backgrounds"`   | ✅ |
 | `<subclass>`   | `"Subclass"`      | ✅ |
 
 ### 4.1 Shared field mapping (all rule types)
 
 | XML field          | Native field        | Notes | Status |
 |--------------------|---------------------|-------|--------|
-| `<name>`           | `name`              | Truncated to 64 chars | ✅ |
+| `<name>`           | `name`              | Truncated to 64 chars; blank names get a `No Name N` placeholder | ✅ |
 | `<prerequisite>`   | `prerequisites`     | Feats only | ✅ |
 | `<text>` / trait `<text>` | `full_description` | All text concatenated | ✅ |
 | `<source>`         | `source`            | | ✅ |
 | `<modifier>`       | —                   | Not stored | ❌ |
 | `<ability>`        | `full_description`  | Race ability bonuses prepended to description | ✅ |
 | `<proficiency>`    | `full_description`  | Race/background proficiencies prepended to description | ✅ |
-| `<autolevel>`      | —                   | Class level features not individually stored | ⚠️ |
+| `<armor>` / `<weapons>` / `<tools>` | `full_description` | Class proficiencies appended to description | ✅ |
+| `<hd>` / `<numSkills>` | —               | Class hit die and skill count not stored | ❌ |
+| `<autolevel>`      | —                   | Not extracted or stored (see §4.2) | ❌ |
 
 ### 4.2 Class — autolevel detail
 
-`<autolevel>` blocks are serialised into the rule's `full_description` (formatted
-as text). Individual `<feature>` entries are not stored as distinct records.
-`<slots>`, `<counter>`, and `scoreImprovement` are not stored.
+`<autolevel>` blocks are **not** parsed at all — only the class's top-level
+`<text>`, `<proficiency>`, `<armor>`, `<weapons>`, and `<tools>` are read. Level
+features, `<slots>`, `<counter>`, and `scoreImprovement` are not stored.
 
 ---
 
@@ -315,14 +309,23 @@ Player characters come in two shapes:
 
 ## 10. NPC → Entitybuilder::ResidentNpc
 
-NPCs declared at campaign or adventure level.
+NPCs declared at campaign or adventure level (`<npc>` elements).
 
-| XML field  | Native field  | Notes | Status |
-|------------|---------------|-------|--------|
-| `<name>` / `<label>` | Entity `name` | label used as fallback | ✅ |
+| XML field            | Native field / model | Notes | Status |
+|----------------------|----------------------|-------|--------|
+| `<name>` / `<label>` | Entity `name`        | label used as fallback; blank gets a `No Name N` placeholder | ✅ |
+| `<description>`      | Entity `full_description` | | ✅ |
+| `<source>`           | Entity `source`      | | ✅ |
+| `<size>`             | Descriptor `name="Size"` | Raw code, **not** decoded to a word | ⚠️ |
+| `<type>`             | Descriptor `name="Type"` | | ✅ |
+| `<alignment>`        | Descriptor `name="Alignment"` | | ✅ |
+| `<ac>`               | Defense `name="Armor Class"`, `base` | Leading integer | ✅ |
+| `<hp>`               | Trackable `name="Hit Points"`, `maximum`, `current` | Leading integer | ✅ |
+| `<cr>`               | —                    | Not stored for NPCs | ❌ |
 
-NPC stat blocks (when inline in `<data>` files) are not currently imported —
-only the name is used to create a minimal NPC record.
+NPC `<action>`, `<trait>`, and ability scores are not imported. Full inline
+monster stat blocks inside `<combatant>` elements of `<data>` campaign files are
+imported separately as **creatures** (see §11.8), not as NPCs.
 
 ---
 
@@ -428,105 +431,45 @@ instance-level, not class-definition-level.
 
 ---
 
-### 11.6 `<monster><spells>` — spellcasting creature spell lists
+### 11.6 `<monster><spells>` — spellcasting creature spell lists ✅ Implemented
 
-**What it is:** `<spells>Fire Bolt, Mage Hand, Fireball</spells>` — a
-comma-separated list of spells the creature knows. Also `<spellAbility>` and
-`<slots>` for the full spellcasting block.
-
-**Current state:** `monster_record` extracts the `spells` string but
-`build_creature_associations` never uses it — no `KnownSpell` records are
-created and no `CasterLevel` is set. The data is silently dropped.
-
-**To import fully:**
-1. In `build_creature_associations`, split `record[:spells]` by comma, look up
-   each spell by name in the index (`name_index_find("spell", name)`), and
-   create `KnownSpell` records on the creature. Spells not in the system are
-   skipped (already the behaviour for other lookups).
-2. Parse `spellAbility` into a `CasterLevel` record with `ability_score`.
-3. Parse `slots` SlotString into `CasterLevel.per_day` per level, or into
-   `Trackable` records (one per slot level, `name="Spell Slots (1st)"` etc.).
-
-**This is the most actionable gap** — the data is already extracted; only
-processing.rb changes are needed (no schema change).
-
-**Alternatives:**
-- Store the raw spell list as a Descriptor (`name="Spells"`, `description=…`)
-  so it at least appears on the creature sheet, without the spell lookup.
-- Store `spellAbility` as a Descriptor and `slots` as a Descriptor
-  (`name="Spell Slots"`, `description="2,3,2,0,…"`).
+`<spells>` is imported: a `name="Spells"` Descriptor holds the raw list and each
+spell already in the system is linked via `KnownSpell`. `<spellAbility>` becomes
+a `name="Spellcasting Ability"` Descriptor. See §1.6.
 
 ---
 
-### 11.7 `<monster><slots>` — spell slot counts on creatures
+### 11.7 `<monster><slots>` — spell slot counts on creatures ✅ Implemented
 
-See §11.6. Slots are part of the same spellcasting block. Tracked separately
-here because the `CasterLevel` model has `per_day` per level but nothing in the
-importer populates it.
-
-**Minimal fix (no schema change):** Create one `Trackable` per slot level from
-the SlotString — e.g. `name="Spell Slots (1st)", maximum=2, current=2`.
-This makes slots visible and trackable in encounter play without a schema change.
+One `Trackable` per non-zero slot level (`name="Cantrips"` for level 0,
+`"Spell Slots (Nth)"` otherwise). See §1.6.
 
 ---
 
-### 11.8 `<npc>` inline stat block from `<data>` files — full action import
+### 11.8 `<combatant>` inline monster stat block from `<data>` files ✅ Implemented
 
-**What it is:** In `<data>` campaign state files, `<combatant>` elements contain
-inline `<monster>` blocks with full stat blocks including `<action>` elements.
-These are the live battlefield state of enemies.
-
-**Current state:** `import_npc` imports name, size, type, alignment, AC, HP as
-descriptors/stats. Actions, traits, ability scores, and attacks from inline
-`<data>` monsters are never read.
-
-**To import fully:** The inline monster inside a `<combatant>` needs to be
-parsed through `import_monster` rather than `import_npc`. The document parser
-would need to extract the full monster stat block from within `<combatant>`
-nodes in the `<data>` format (rather than just the name-reference combatant
-from simple `<campaign>` files). A `data_combatant_record` parser method
-would be needed, routing through `monster_record`.
-
-**Effort:** Medium — ~30–50 lines across `document.rb` and `processing.rb`.
-No schema changes required.
-
-**Alternatives:**
-- Continue importing only the combat stats (AC/HP) and use the name to look
-  up the full stat block if the creature was imported separately from a
-  compendium. This already works when the campaign and compendium are imported
-  together.
+Inline `<monster>` blocks inside `<combatant>` elements are parsed through
+`monster_record` / `import_monster`, so they import as full creatures (ability
+scores, attacks, traits, descriptors, etc.) and are linked to the encounter page
+via `Storybuilder::Notable`. (`<npc>` *elements* still import basic stats only —
+see §10.)
 
 ---
 
-### 11.9 `<pc><armor>` — equipped armor name
+### 11.9 `<pc><armor>` — equipped armor name ✅ Implemented
 
-**What it is:** `<armor>Leather Armor</armor>` — the name of the armor the
-character is currently wearing.
-
-**To import fully:** Look up the item by name in the name index, find or create
-an `InventoryItem` record linking the character entity to the item with
-`equipped: true`. Requires the item to already exist in the system (either
-imported from the same session or pre-existing).
-
-**Effort:** Small — ~5 lines in `build_character_associations`. The
-`InventoryItem` model and `equipped` column already exist.
-
-**Alternative:** Store as a Descriptor (`name="Equipped Armor"`,
-`description="Leather Armor"`) so the information is preserved without requiring
-an item lookup. This is a one-liner.
+The armor name is looked up in the name index; if the item exists it becomes an
+equipped `InventoryItem`, otherwise it is stored as a `name="Equipped Armor"`
+Descriptor.
 
 ---
 
-### 11.10 PC partial mappings — `<hpMax>`, `<ac>`, `<race>`, `<class><hd>`, `<slots>`
+### 11.10 PC `<race>`, `<hd>`, `<slots>` ✅ Implemented
 
-These fields are extracted in `character_record` but some are not fully stored:
-
-| Field           | Current state | To fix |
-|-----------------|---------------|--------|
-| `<hpMax>` / `<ac>` | Stored via `build_basic_stats` | ✅ already done |
-| `<race><name>`  | Not extracted from `<race>` element | Add `pc[:race_name]` extraction in `character_record`; store as Descriptor `name="Race"` in `build_character_name_info` — one-liner |
-| `<class><hd>`   | Not stored on ClassLevel record | `ClassLevel.hit_dice` column exists; add `hit_dice: pc_class[:hd]` when creating the ClassLevel — one-liner |
-| `<slots>`       | Not stored | Same approach as §11.7: create Trackable records per slot level — ~10 lines, no schema change |
+`<race><name>` (or the race parsed from the `<name>` string) →
+`name="Race"` Descriptor; `<class><hd>` → `name="Hit Dice (…)"` Trackable;
+`<slots>` → one `Trackable` per non-zero slot level; `<hpMax>` / `<ac>` via
+`build_basic_stats`.
 
 ---
 
@@ -541,7 +484,7 @@ These fields are extracted in `character_record` but some are not fully stored:
 | §11.5 `<class><counter>` | Medium | Yes — JSON column or new table |
 | ~~§11.6 `<monster><spells>`~~ | — | ✅ Fixed |
 | ~~§11.7 `<monster><slots>`~~ | — | ✅ Fixed |
-| ~~§11.8 NPC inline stat block~~ | — | ✅ Fixed |
+| ~~§11.8 `<combatant>` inline monster stat block~~ | — | ✅ Fixed |
 | ~~§11.9 `<pc><armor>`~~ | — | ✅ Fixed |
 | ~~§11.10 PC `<race>`, `<hd>`, `<slots>`~~ | — | ✅ Fixed |
 
