@@ -716,16 +716,18 @@ module Importer
           # skip if duplicate or validation error
         end
 
-        if (ac = parse_leading_number(npc[:ac]))
+        ac, ac_note = split_number_and_note(npc[:ac])
+        if ac
           begin
-            entity.defenses.create!(name: "Armor Class", base: ac)
+            entity.defenses.create!(name: "Armor Class", base: ac, description: ac_note)
           rescue ActiveRecord::RecordInvalid
             # skip if duplicate or validation error
           end
         end
 
-        if (hp = parse_leading_number(npc[:hp]))
-          entity.trackables.create!(name: "Hit Points", maximum: hp, current: hp) rescue nil
+        hp, hp_note = split_number_and_note(npc[:hp])
+        if hp
+          entity.trackables.create!(name: "Hit Points", maximum: hp, current: hp, description: hp_note) rescue nil
         end
 
         result(import_file, npc, "created", entity)
@@ -857,11 +859,15 @@ module Importer
       end
 
       def trait_rule_record(record, trait)
+        text = [ trait[:text] ]
+        text << "Recharge: #{trait[:recharge]}" if trait[:recharge].present?
+        text << "Attack: #{trait[:attack]}" if trait[:attack].present?
+
         {
           type: "ability",
           name: trait[:name],
           source: record[:source],
-          text: [ trait[:text] ].compact
+          text: text.compact.reject(&:blank?)
         }
       end
 
@@ -877,13 +883,27 @@ module Importer
       end
 
       def build_basic_stats(entity, record)
-        if (ac = parse_leading_number(record[:ac]))
-          entity.defenses.create!(name: "Armor Class", base: ac)
-        end
-        if (hp = parse_leading_number(record[:hp]))
-          entity.trackables.create!(name: "Hit Points", maximum: hp, current: hp)
-        end
+        ac, ac_note = split_number_and_note(record[:ac])
+        entity.defenses.create!(name: "Armor Class", base: ac, description: ac_note) if ac
+
+        hp, hp_note = split_number_and_note(record[:hp])
+        entity.trackables.create!(name: "Hit Points", maximum: hp, current: hp, description: hp_note) if hp
+
         build_movements(entity, record[:speed])
+      end
+
+      # Splits a value like "15 (natural armor)" or "59 (7d10+21)" into its
+      # leading integer and the remaining note (parentheses stripped), so the
+      # AC source / HP formula is preserved instead of being dropped.
+      def split_number_and_note(str)
+        return [ nil, nil ] if str.blank?
+
+        match = str.to_s.strip.match(/\A(\d+)\s*(.*)\z/)
+        return [ nil, nil ] unless match
+
+        note = match[2].strip
+        note = note[1..-2].to_s.strip if note.start_with?("(") && note.end_with?(")")
+        [ match[1].to_i, note.presence ]
       end
 
       # Parses a free-text speed string such as "30 ft., fly 60 ft., swim 20 ft."
@@ -938,7 +958,7 @@ module Importer
           creature.attacks.create!(
             name: action[:name].truncate(64),
             attack_type: attack_type,
-            description: action[:text].presence&.truncate(6000),
+            description: action[:text].presence,
             **parse_attack_notation(parsed)
           )
         rescue ActiveRecord::RecordInvalid

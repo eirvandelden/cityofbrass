@@ -37,8 +37,8 @@ belong to the same entity via `entity_id`.
 
 | XML field          | Native model | Native field(s)                   | Notes | Status |
 |--------------------|--------------|-----------------------------------|-------|--------|
-| `<ac>`             | Defense      | `name="Armor Class"`, `base`      | Leading integer only; text in parentheses (e.g. `(natural armor)`) is **not** stored | ⚠️ |
-| `<hp>`             | Trackable    | `name="Hit Points"`, `maximum`, `current` | Leading integer only (also `current`); dice formula in parentheses (e.g. `(2d6)`) is **not** stored. Falls back to `<hpMax>` | ⚠️ |
+| `<ac>`             | Defense      | `name="Armor Class"`, `base`, `description` | Leading integer → `base`; text in parentheses (e.g. `natural armor`) → `description` | ✅ |
+| `<hp>`             | Trackable    | `name="Hit Points"`, `maximum`, `current`, `description` | Leading integer → `maximum`/`current`; dice formula in parentheses (e.g. `7d10+21`) → `description`. Falls back to `<hpMax>` | ✅ |
 | `<resist>`         | Descriptor   | `name="Resistances"`, `description`| | ✅ |
 | `<immune>`         | Descriptor   | `name="Immunities"`, `description`  | | ✅ |
 | `<vulnerable>`     | Descriptor   | `name="Vulnerabilities"`, `description`| | ✅ |
@@ -99,8 +99,8 @@ Each `<trait>` maps to a `Rulebuilder::ResidentRule` (or `StockRule`) with
 |------------------|----------------|------------------------------|-------|--------|
 | `<trait><name>`  | Rule           | `name`                       | Blank names get a unique `No Name N` placeholder | ✅ |
 | `<trait><text>`  | Rule           | `full_description`           | First `<text>` element | ✅ |
-| `<trait><recharge>`| —            | —                            | Not extracted or stored | ❌ |
-| `<trait><attack>`| —             | —                            | Not extracted for traits — only `<action>`/`<reaction>`/`<legendary>` parse attack notation | ❌ |
+| `<trait><recharge>`| Rule         | `full_description` (appended)| Appended as a `Recharge: …` line | ✅ |
+| `<trait><attack>`| Rule           | `full_description` (appended)| Appended as an `Attack: name\|+atk\|dmg` line | ✅ |
 
 ### 1.8 Actions, reactions, legendary actions
 
@@ -112,7 +112,7 @@ absent those fields are simply left blank.
 | XML field          | Native model | Native field(s)          | Notes | Status |
 |--------------------|--------------|--------------------------|-------|--------|
 | `<name>`           | Attack       | `name`                   | Truncated to 64 chars; blank names get a `No Name N` placeholder | ✅ |
-| `<text>`           | Attack       | `description`            | Truncated to 6,000 chars | ✅ |
+| `<text>`           | Attack       | `description`            | Stored in full (not truncated) | ✅ |
 | attack `HitBonus`  | Attack       | `attack_bonus`           | Integer parsed from notation when present | ✅ |
 | attack `DamageDice`| Attack       | `damage_dice`, `damage_bonus` | Regex parsed from notation when present | ✅ |
 | `<text>` content   | Attack       | `attack_type`            | "melee"/"ranged" inferred from text, default "melee" | ✅ |
@@ -319,8 +319,8 @@ NPCs declared at campaign or adventure level (`<npc>` elements).
 | `<size>`             | Descriptor `name="Size"` | Raw code, **not** decoded to a word | ⚠️ |
 | `<type>`             | Descriptor `name="Type"` | | ✅ |
 | `<alignment>`        | Descriptor `name="Alignment"` | | ✅ |
-| `<ac>`               | Defense `name="Armor Class"`, `base` | Leading integer | ✅ |
-| `<hp>`               | Trackable `name="Hit Points"`, `maximum`, `current` | Leading integer | ✅ |
+| `<ac>`               | Defense `name="Armor Class"`, `base`, `description` | Leading integer; parenthetical note → `description` | ✅ |
+| `<hp>`               | Trackable `name="Hit Points"`, `maximum`, `current`, `description` | Leading integer; formula note → `description` | ✅ |
 | `<cr>`               | —                    | Not stored for NPCs | ❌ |
 
 NPC `<action>`, `<trait>`, and ability scores are not imported. Full inline
@@ -525,10 +525,16 @@ A single malformed entity used to abort the entire file. The importer now:
 - **imports blank-name entities** (monsters, items, spells, rules, traits, PCs)
   under a unique `No Name N` placeholder — each nameless entry becomes its own
   record rather than being skipped or merged into one;
-- **never truncates content.** The `length: { maximum: ... }` validations on all
-  content fields (`full_description`, `content`, `notes`) were removed across the
-  engines, so imported text is stored in full. The columns are already `text`
+- **never truncates content.** The `length: { maximum: ... }` validations on every
+  content field (`full_description`, `content`, `notes`, and the `description` on
+  `Defense` / `Trackable` / `Attack`) were removed across the engines, and the
+  importer's own hard truncations (attack descriptions to 6,000 chars) were
+  dropped, so imported text is stored in full. The columns are already `text`
   (effectively unlimited), so no migration was required.
+- **preserves AC source / HP formula:** the text in parentheses on `<ac>` and
+  `<hp>` (e.g. `(natural armor)`, `(7d10+21)`) is stored in the Defense/Trackable
+  `description` instead of being discarded; `<trait><recharge>` and
+  `<trait><attack>` are appended to the trait rule description.
 - **dedupes pages by slug** (not just by name) so near-duplicate encounter
   titles that parameterize identically no longer collide;
 - isolates each compendium/character record so one bad record never aborts the

@@ -8,7 +8,6 @@ module Entitybuilder
 
     validates :name, uniqueness: { scope: :entity_id }, presence: true, length: { maximum: 64 }
     validates :attack_type, presence: true
-    validates :description, length: { maximum: 6000 }
 
     validates :attack_range, length: { maximum: 20 }
     validates :attack_ability_score, length: { maximum: 255 }

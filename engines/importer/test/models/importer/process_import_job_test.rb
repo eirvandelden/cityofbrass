@@ -24,6 +24,75 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_not import.import_results.where(outcome: "failed").exists?
   end
 
+  test "monster import preserves AC source and HP formula in parentheses" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <monster>
+          <name>Plated Beast</name>
+          <ac>15 (natural armor)</ac>
+          <hp>59 (7d10+21)</hp>
+        </monster>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    creature = Entitybuilder::ResidentCreature.find_by!(name: "Plated Beast")
+    ac = creature.defenses.find_by!(name: "Armor Class")
+    assert_equal 15, ac.base
+    assert_equal "natural armor", ac.description
+    hp = creature.trackables.find_by!(name: "Hit Points")
+    assert_equal 59, hp.maximum
+    assert_equal "7d10+21", hp.description
+  end
+
+  test "monster trait recharge and attack are preserved in the rule description" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <monster>
+          <name>Charger</name>
+          <trait>
+            <name>Rampage</name>
+            <text>The beast charges.</text>
+            <recharge>5-6</recharge>
+            <attack>Gore|+7|2d6+4</attack>
+          </trait>
+        </monster>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    rule = Rulebuilder::ResidentRule.find_by!(name: "Rampage")
+    assert_includes rule.full_description, "The beast charges."
+    assert_includes rule.full_description, "5-6"
+    assert_includes rule.full_description, "Gore|+7|2d6+4"
+  end
+
+  test "monster import does not truncate long attack descriptions" do
+    long_text = "Melee Weapon Attack. " + ("X" * 6_500)
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <monster>
+          <name>Verbose Brute</name>
+          <action>
+            <name>Slam</name>
+            <text>#{long_text}</text>
+            <attack>Slam|+5|2d8+3</attack>
+          </action>
+        </monster>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    attack = Entitybuilder::ResidentCreature.find_by!(name: "Verbose Brute").attacks.find_by!(name: "Slam")
+    assert_includes attack.description, long_text
+  end
+
   test "monster import splits comma-separated skills and saves in one element" do
     xml = <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
