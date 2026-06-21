@@ -165,7 +165,7 @@ ActiveRecord::Schema.define(version: 2026_06_20_000001) do
     t.string "page_label"
     t.string "privacy"
     t.string "short_description"
-    t.text "full_description", limit: 16777216
+    t.text "full_description", limit: 16777215
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date "page_date"
