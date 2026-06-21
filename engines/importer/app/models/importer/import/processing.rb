@@ -1,5 +1,7 @@
 module Importer
   class Import
+    # Turns parsed Game Master 5 records into native City of Brass records
+    # (creatures, items, spells, rules, campaigns, characters, and NPCs).
     module Processing
       extend ActiveSupport::Concern
 
@@ -616,55 +618,46 @@ module Importer
       def build_character_name_info(character, pc)
         parsed_name = Sources::GameMaster5Xml::PcNameParser.parse(pc[:name])
         race_value = pc[:race_name].presence || parsed_name&.dig(:race)
+        class_name = pc[:class_name].presence || parsed_name&.dig(:class_name)
+        class_level = pc[:class_level].presence&.to_i || parsed_name&.dig(:level)
 
-        [
+        build_descriptors(character, [
           [ "Size", decode_size(pc[:size]) ],
           [ "Passive Perception", pc[:passive]&.to_s ],
           [ "Race", race_value ],
           [ "Senses", pc[:senses] ],
           [ "Languages", pc[:languages] ]
-        ].each do |name, value|
-          next if value.blank?
+        ])
+        link_race_rule(character, race_value)
+        build_class_level(character, class_name, class_level)
+        build_hit_dice(character, pc, class_level)
+      end
 
-          character.descriptors.create!(name: name, description: value.truncate(255))
-        rescue ActiveRecord::RecordInvalid
-          # skip if duplicate or validation error
-        end
+      def link_race_rule(character, race_value)
+        return if race_value.blank?
 
-        if race_value.present?
-          race_rule = name_index_find("race", race_value)
-          if race_rule
-            begin
-              character.linked_rules.create!(rule: race_rule)
-            rescue ActiveRecord::RecordInvalid
-              # skip if duplicate
-            end
-          end
-        end
+        race_rule = name_index_find("race", race_value)
+        character.linked_rules.create!(rule: race_rule) if race_rule
+      rescue ActiveRecord::RecordInvalid
+        # skip duplicate linked rule
+      end
 
-        class_name = pc[:class_name].presence || parsed_name&.dig(:class_name)
-        class_level = pc[:class_level].presence&.to_i || parsed_name&.dig(:level)
-        if class_name.present?
-          begin
-            character.class_levels.create!(name: class_name, level: class_level || 1)
-          rescue ActiveRecord::RecordInvalid
-            # skip if duplicate or validation error
-          end
-        end
+      def build_class_level(character, class_name, class_level)
+        return if class_name.blank?
 
+        character.class_levels.create!(name: class_name, level: class_level || 1)
+      rescue ActiveRecord::RecordInvalid
+        # skip duplicate or invalid class level
+      end
+
+      def build_hit_dice(character, pc, class_level)
         hd_max = class_level.to_i
+        return unless hd_max.positive? && pc[:hd].present?
+
         hd_current = pc[:hd_current].to_s.presence&.to_i || hd_max
-        if hd_max > 0 && pc[:hd].present?
-          begin
-            character.trackables.create!(
-              name: "Hit Dice (#{pc[:hd]})",
-              maximum: hd_max,
-              current: hd_current
-            )
-          rescue ActiveRecord::RecordInvalid
-            # skip if duplicate
-          end
-        end
+        character.trackables.create!(name: "Hit Dice (#{pc[:hd]})", maximum: hd_max, current: hd_current)
+      rescue ActiveRecord::RecordInvalid
+        # skip duplicate hit dice trackable
       end
 
       def build_saves_and_skills(character, pc)
@@ -709,27 +702,7 @@ module Importer
           **privacy_attributes_for(klass).merge(resident_content? ? { resident: resident } : {})
         )
         enforce_entity_privacy!(entity)
-
-        [ [ "Size", npc[:size] ], [ "Type", npc[:npc_type] ], [ "Alignment", npc[:alignment] ] ].each do |name, val|
-          entity.descriptors.create!(name: name, description: val.to_s.truncate(255)) if val.present?
-        rescue ActiveRecord::RecordInvalid
-          # skip if duplicate or validation error
-        end
-
-        ac, ac_note = split_number_and_note(npc[:ac])
-        if ac
-          begin
-            entity.defenses.create!(name: "Armor Class", base: ac, description: ac_note)
-          rescue ActiveRecord::RecordInvalid
-            # skip if duplicate or validation error
-          end
-        end
-
-        hp, hp_note = split_number_and_note(npc[:hp])
-        if hp
-          entity.trackables.create!(name: "Hit Points", maximum: hp, current: hp, description: hp_note) rescue nil
-        end
-
+        build_npc_associations(entity, npc)
         result(import_file, npc, "created", entity)
         entity
       end
@@ -745,12 +718,11 @@ module Importer
       end
 
       def build_npc_associations(entity, npc)
-        [ [ "Size", npc[:size] ], [ "Type", npc[:npc_type] ], [ "Alignment", npc[:alignment] ] ].each do |name, val|
-          entity.descriptors.create!(name: name, description: val.to_s.truncate(255)) if val.present?
-        rescue ActiveRecord::RecordInvalid
-          # skip if duplicate or validation error
-        end
-
+        build_descriptors(entity, [
+          [ "Size", npc[:size] ],
+          [ "Type", npc[:npc_type] ],
+          [ "Alignment", npc[:alignment] ]
+        ])
         build_basic_stats(entity, npc)
       end
 
@@ -804,46 +776,37 @@ module Importer
       end
 
       def build_creature_spellcasting(creature, record)
-        if record[:spell_ability].present?
-          begin
-            creature.descriptors.create!(name: "Spellcasting Ability", description: record[:spell_ability].truncate(255))
-          rescue ActiveRecord::RecordInvalid
-            # skip if duplicate
-          end
+        build_descriptors(creature, [ [ "Spellcasting Ability", record[:spell_ability] ] ])
+        build_spell_slots(creature, record[:slots])
+        build_known_spells(creature, record[:spells])
+      end
+
+      def build_spell_slots(creature, slots)
+        return if slots.blank?
+
+        slots.split(",").each_with_index do |count, index|
+          next if count.to_i.zero?
+
+          creature.trackables.create!(name: spell_slot_name(index), maximum: count.to_i, current: count.to_i)
+        rescue ActiveRecord::RecordInvalid
+          # skip duplicate slot trackable
         end
+      end
 
-        if record[:slots].present?
-          record[:slots].split(",").each_with_index do |count, index|
-            next if count.to_i.zero?
+      def spell_slot_name(index)
+        index.zero? ? "Cantrips" : "Spell Slots (#{ActiveSupport::Inflector.ordinalize(index)})"
+      end
 
-            level_name = index.zero? ? "Cantrips" : "Spell Slots (#{ActiveSupport::Inflector.ordinalize(index)})"
-            begin
-              creature.trackables.create!(name: level_name, maximum: count.to_i, current: count.to_i)
-            rescue ActiveRecord::RecordInvalid
-              # skip if duplicate
-            end
-          end
-        end
-
-        spells = record[:spells]
-        spell_names = (spells.is_a?(Array) ? spells : spells.to_s.split(",")).map { |s| s.to_s.strip }.reject(&:blank?)
+      def build_known_spells(creature, spells)
+        spell_names = (spells.is_a?(Array) ? spells : spells.to_s.split(",")).map { |name| name.to_s.strip }.reject(&:blank?)
         return if spell_names.empty?
 
-        begin
-          creature.descriptors.create!(name: "Spells", description: spell_names.join(", ").truncate(255))
-        rescue ActiveRecord::RecordInvalid
-          # skip if duplicate
-        end
-
+        build_descriptors(creature, [ [ "Spells", spell_names.join(", ") ] ])
         spell_names.each do |spell_name|
           spell = name_index_find("spell", spell_name)
-          next if spell.nil?
-
-          begin
-            creature.known_spells.create!(spell: spell)
-          rescue ActiveRecord::RecordInvalid
-            # skip if duplicate or invalid
-          end
+          creature.known_spells.create!(spell: spell) if spell
+        rescue ActiveRecord::RecordInvalid
+          # skip duplicate or invalid known spell
         end
       end
 
@@ -925,7 +888,7 @@ module Importer
       end
 
       def build_creature_descriptors(creature, record)
-        [
+        build_descriptors(creature, [
           [ "Size", decode_size(record[:size]) ],
           [ "Type", record[:creature_type] ],
           [ "Alignment", record[:alignment] ],
@@ -938,12 +901,18 @@ module Importer
           [ "Vulnerabilities", record[:vulnerable] ],
           [ "Condition Immunities", record[:condition] ],
           [ "Environment", record[:environment] ]
-        ].each do |name, value|
+        ])
+      end
+
+      # Creates a Descriptor for each non-blank [name, value] pair, skipping
+      # duplicates. Shared by creature/character/npc descriptor building.
+      def build_descriptors(entity, pairs)
+        pairs.each do |name, value|
           next if value.blank?
 
-          creature.descriptors.create!(name: name, description: value.truncate(255))
+          entity.descriptors.create!(name: name, description: value.to_s.truncate(255))
         rescue ActiveRecord::RecordInvalid
-          # skip if duplicate
+          # skip duplicate or invalid descriptor
         end
       end
 

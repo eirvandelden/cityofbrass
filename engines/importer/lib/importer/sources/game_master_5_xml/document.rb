@@ -5,6 +5,8 @@ require_relative "attack_notation_parser"
 module Importer
   module Sources
     class GameMaster5Xml
+      # Parses a Game Master 5 / FightClub5 XML file into plain record hashes
+      # (one per compendium entity, campaign, or character) for the importer.
       class Document
         def initialize(path)
           File.open(path) do |file|
