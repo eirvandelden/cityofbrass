@@ -115,7 +115,7 @@ absent those fields are simply left blank.
 | `<text>`           | Attack       | `description`            | Stored in full (not truncated) | ✅ |
 | attack `HitBonus`  | Attack       | `attack_bonus`           | Integer parsed from notation when present | ✅ |
 | attack `DamageDice`| Attack       | `damage_dice`, `damage_bonus` | Regex parsed from notation when present | ✅ |
-| `<text>` content   | Attack       | `attack_type`            | "melee"/"ranged" inferred from text, default "melee" | ✅ |
+| `<text>` content   | Attack       | `attack_type`            | Inferred from text: melee/touch → `"Melee"`, ranged → `"Range"`, spells & all others → `"Special"`. Values match the entity profile's attack groups so every attack is shown | ✅ |
 
 ---
 
