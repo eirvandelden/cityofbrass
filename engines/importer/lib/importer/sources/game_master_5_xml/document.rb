@@ -370,10 +370,16 @@ module Importer
             race_name: text_at(node, "race/name"),
             class_name: text_at(node, "class/name"),
             class_level: text_at(node, "class/level"),
+            classes: nodes(node, "./class").map { |c|
+              {
+                name: text_at(c, "name"),
+                level: text_at(c, "level"),
+                hd: text_at(c, "hd"),
+                hd_current: text_at(c, "hdCurrent"),
+                slots: text_at(c, "slots")
+              }
+            },
             armor_name: text_at(node, "armor"),
-            hd: text_at(node, "class/hd"),
-            hd_current: text_at(node, "class/hdCurrent"),
-            slots: text_at(node, "class/slots"),
             saves: nodes(node, "./save").map(&:text),
             skills: nodes(node, "./skill").map(&:text),
             passive: text_at(node, "passive"),
