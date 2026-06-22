@@ -291,8 +291,18 @@ ActiveRecord::Schema.define(version: 2026_06_20_000001) do
     t.index ["entity_id"], name: "index_entitybuilder_class_levels_on_entity_id"
   end
 
-# Could not dump table "entitybuilder_currencies" because of following StandardError
-#   Unknown type '' for column 'weight'
+  create_table "entitybuilder_currencies", id: :text, default: "uuid()", force: :cascade do |t|
+    t.text "entity_id"
+    t.integer "sort_order"
+    t.text "name"
+    t.text "description"
+    t.decimal "weight"
+    t.integer "quantity", limit: 8
+    t.boolean "carried"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["entity_id"], name: "index_entitybuilder_currencies_on_entity_id"
+  end
 
   create_table "entitybuilder_defenses", id: :text, default: "uuid()", force: :cascade do |t|
     t.text "entity_id"
@@ -686,8 +696,29 @@ ActiveRecord::Schema.define(version: 2026_06_20_000001) do
     t.index ["type"], name: "index_rulebuilder_feats_on_type"
   end
 
-# Could not dump table "rulebuilder_items" because of following StandardError
-#   Unknown type 'REAL' for column 'weight'
+  create_table "rulebuilder_items", id: :text, default: "uuid()", force: :cascade do |t|
+    t.text "type", null: false
+    t.text "resident_id"
+    t.text "core_rules"
+    t.text "name"
+    t.text "short_description"
+    t.text "full_description"
+    t.text "category"
+    t.decimal "weight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "parent_id"
+    t.text "publisher"
+    t.text "source"
+    t.boolean "is_3pp", default: false
+    t.text "tags"
+    t.text "privacy", default: "Private", null: false
+    t.index ["parent_id"], name: "index_rulebuilder_items_on_parent_id"
+    t.index ["privacy"], name: "index_rulebuilder_items_on_privacy"
+    t.index ["resident_id"], name: "index_rulebuilder_items_on_resident_id"
+    t.index ["tags"], name: "index_rulebuilder_items_on_tags"
+    t.index ["type"], name: "index_rulebuilder_items_on_type"
+  end
 
   create_table "rulebuilder_rules", id: :text, default: "uuid()", force: :cascade do |t|
     t.text "type", null: false
