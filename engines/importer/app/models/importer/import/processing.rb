@@ -414,7 +414,8 @@ module Importer
         existing = existing_page(adventure, name)
         if existing
           return replace_or_skip(import_file, encounter.merge(name: name), existing, campaign: @import_provenance_campaign) do |record|
-            record.update!(privacy: privacy, full_description: encounter[:description].presence)
+            record.update!(privacy: privacy, full_description: nil)
+            rebuild_text_sections(record, encounter[:text])
             record.notables.destroy_all
             link_encounter_combatants(import_file, record, encounter[:combatants])
           end
@@ -424,8 +425,9 @@ module Importer
           adventure: adventure,
           name: name,
           privacy: privacy,
-          full_description: encounter[:description].presence
+          full_description: nil
         )
+        rebuild_text_sections(record, encounter[:text])
         link_encounter_combatants(import_file, record, encounter[:combatants])
         result(import_file, encounter, "created", record)
         record
@@ -488,7 +490,7 @@ module Importer
         if existing
           return replace_or_skip(import_file, note.merge(name: name), existing) do |record|
             record.update!(privacy: "Residents", tags: [ "note" ], full_description: nil)
-            rebuild_note_sections(record, note)
+            rebuild_text_sections(record, note[:text])
           end
         end
 
@@ -499,14 +501,17 @@ module Importer
           tags: [ "note" ],
           full_description: nil
         )
-        rebuild_note_sections(record, note)
+        rebuild_text_sections(record, note[:text])
         result(import_file, note, "created", record)
         record
       end
 
-      def rebuild_note_sections(page, note)
+      # Replaces a page's sections with one "text"/"paragraph" Section per
+      # non-blank text block, preserving order. Used for encounters and notes so
+      # every imported page is a title plus one or more text sections.
+      def rebuild_text_sections(page, text_blocks)
         page.sections.destroy_all
-        Array(note[:text]).map(&:strip).reject(&:blank?).each_with_index do |text, index|
+        Array(text_blocks).map(&:strip).reject(&:blank?).each_with_index do |text, index|
           page.sections.create!(section_type: "text", section_style: "paragraph", content: text, sort_order: index)
         end
       end

@@ -304,10 +304,12 @@ module Importer
         end
 
         def encounter_record(node)
+          text_blocks = nodes(node, "./text | .//note/text").map(&:text)
           {
             type: "encounter",
             name: name_or_title(node),
-            description: nodes(node, "./text | .//note/text").map(&:text).join("\n"),
+            description: text_blocks.join("\n"),
+            text: text_blocks,
             combatants: nodes(node, "./combatant").map { |c| combatant_record(c) }.reject { |c| c[:name].blank? }
           }
         end
