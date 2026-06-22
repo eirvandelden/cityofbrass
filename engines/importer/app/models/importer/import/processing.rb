@@ -623,8 +623,6 @@ module Importer
       def build_character_name_info(character, pc)
         parsed_name = Sources::GameMaster5Xml::PcNameParser.parse(pc[:name])
         race_value = pc[:race_name].presence || parsed_name&.dig(:race)
-        class_name = pc[:class_name].presence || parsed_name&.dig(:class_name)
-        class_level = pc[:class_level].presence&.to_i || parsed_name&.dig(:level)
 
         build_descriptors(character, [
           [ "Size", decode_size(pc[:size]) ],
@@ -634,8 +632,36 @@ module Importer
           [ "Languages", pc[:languages] ]
         ])
         link_race_rule(character, race_value)
-        build_class_level(character, class_name, class_level)
-        build_hit_dice(character, pc, class_level)
+
+        classes = build_character_classes(pc, parsed_name)
+        classes.each { |cls| build_class_level(character, cls[:name], cls[:level]&.to_i) }
+        build_hit_dice(character, classes.first || {}, classes.sum { |c| c[:level].to_i })
+        build_creature_spellcasting(character, slot_string_for_classes(classes))
+      end
+
+      def build_character_classes(pc, parsed_name)
+        raw = Array(pc[:classes]).reject { |c| c.values.all?(&:blank?) }
+        return parsed_name_as_classes(parsed_name) if raw.empty?
+
+        # Single class with no name/level — fill from PcNameParser if available
+        if raw.length == 1 && raw.first[:name].blank? && raw.first[:level].blank? && parsed_name
+          return [ raw.first.merge(name: parsed_name[:class_name], level: parsed_name[:level]) ]
+        end
+
+        raw
+      end
+
+      def parsed_name_as_classes(parsed_name)
+        return [] if parsed_name.nil?
+
+        [ { name: parsed_name[:class_name], level: parsed_name[:level], hd: nil, hd_current: nil, slots: nil } ]
+      end
+
+      def slot_string_for_classes(classes)
+        # Use the first class that has slots; this covers the common single-class case.
+        # Multiclass slot merging is a complex 5e rule not worth computing here.
+        cls = classes.find { |c| c[:slots].present? } || {}
+        { spells: nil, slots: cls[:slots], spell_ability: nil }
       end
 
       def link_race_rule(character, race_value)
@@ -655,12 +681,12 @@ module Importer
         # skip duplicate or invalid class level
       end
 
-      def build_hit_dice(character, pc, class_level)
-        hd_max = class_level.to_i
-        return unless hd_max.positive? && pc[:hd].present?
+      def build_hit_dice(character, cls, total_level)
+        hd_max = total_level.to_i
+        return unless hd_max.positive? && cls[:hd].present?
 
-        hd_current = pc[:hd_current].to_s.presence&.to_i || hd_max
-        character.trackables.create!(name: "Hit Dice (#{pc[:hd]})", maximum: hd_max, current: hd_current)
+        hd_current = cls[:hd_current].to_s.presence&.to_i || hd_max
+        character.trackables.create!(name: "Hit Dice (#{cls[:hd]})", maximum: hd_max, current: hd_current)
       rescue ActiveRecord::RecordInvalid
         # skip duplicate hit dice trackable
       end
