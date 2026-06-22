@@ -90,13 +90,9 @@ module Storybuilder
     # DELETE /adventures/1
     # DELETE /adventures/1.json
     def destroy
+      @adventure.destroy
       respond_to do |format|
-        if @adventure.update(adventure_params)
-          @adventure.destroy
-          format.html { redirect_to polymorphic_path(@type.tableize) }
-        else
-          format.html { render action: 'options' }
-        end
+        format.html { redirect_to polymorphic_path(@type.tableize) }
       end
     end
 
@@ -136,7 +132,6 @@ module Storybuilder
           :core_rules,
           :short_description,
           :full_description,
-          :name_confirmation,
           menu_item_join_attributes: [:id, :menu_item_id, :_destroy],
           gallery_image_join_attributes: [:id, :image_id, :_destroy]
         )

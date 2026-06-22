@@ -87,13 +87,9 @@ module Rulebuilder
 
     # DELETE /spells/1
     def destroy
+      @spell.destroy
       respond_to do |format|
-        if @spell.update(spell_params)
-          @spell.destroy
-          format.html { redirect_to polymorphic_path(@type.tableize) }
-        else
-          format.html { render action: 'options' }
-        end
+        format.html { redirect_to polymorphic_path(@type.tableize) }
       end
     end
 

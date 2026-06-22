@@ -147,13 +147,9 @@ module Entitybuilder
     # DELETE /entities/1
     # DELETE /entities/1.json
     def destroy
+      @entity.destroy
       respond_to do |format|
-        if @entity.update(entity_params)
-          @entity.destroy
-          format.html { redirect_to polymorphic_path(@type.tableize) }
-        else
-          format.html { render action: 'options' }
-        end
+        format.html { redirect_to polymorphic_path(@type.tableize) }
       end
     end
 

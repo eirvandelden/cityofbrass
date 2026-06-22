@@ -47,7 +47,6 @@ module Campaignmanager
     validates :privacy, presence: true
     validate  :valid_privacy
     validates :short_description, length: { maximum: 255 }
-    validates_confirmation_of :name
 
     before_validation :make_slug
     before_validation :nil_if_blank

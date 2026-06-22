@@ -92,7 +92,7 @@ module Worldbuilder
     test "should not destroy district" do
       sign_in @courtney
       assert_no_difference('District.count') do
-        delete :destroy, params: { id: @district, district: { name: @district.name, name_confirmation: @district.name } }
+        delete :destroy, params: { id: @district }
       end
       assert_response 403
     end
@@ -100,7 +100,7 @@ module Worldbuilder
     test "should destroy district" do
       sign_in @dan
       assert_difference('District.count', -1) do
-        delete :destroy, params: { id: @district, district: { name: @district.name, name_confirmation: @district.name } }
+        delete :destroy, params: { id: @district }
       end
       assert_redirected_to "/residents/#{@district.resident.slug}/districts"
     end

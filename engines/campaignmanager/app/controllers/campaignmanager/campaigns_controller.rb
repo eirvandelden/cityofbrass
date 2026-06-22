@@ -109,13 +109,9 @@ module Campaignmanager
     # DELETE /campaigns/1
     # DELETE /campaigns/1.json
     def destroy
+      @campaign.destroy
       respond_to do |format|
-        if @campaign.update(campaign_params)
-          @campaign.destroy
-          format.html { redirect_to main_app.resident_campaigns_path(@campaign.resident.slug) }
-        else
-          format.html { render action: 'options' }
-        end
+        format.html { redirect_to main_app.resident_campaigns_path(@campaign.resident.slug) }
       end
     end
 
@@ -206,7 +202,6 @@ module Campaignmanager
           :district_id,
           :short_description,
           :full_description,
-          :name_confirmation,
           adventure_ids: [],
           gallery_image_join_attributes: [:id, :image_id, :_destroy]
         )
