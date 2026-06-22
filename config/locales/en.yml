@@ -144,7 +144,8 @@ en:
   layouts:
     form:
       options:
-        confirm_delete: "Are you sure you want to delete \"%{name}\"? This cannot be reverted."
+        confirm_delete: Are you sure you want to delete "%{name}"? This cannot be
+          reverted.
     license:
       attribution:
         aria_label: RPG system attribution
