@@ -3,6 +3,7 @@ class ApplicationRecord < ActiveRecord::Base
 
   UUID_PATTERN = /\A[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\z/i
 
+  after_initialize :assign_uuid_if_missing, if: :new_record?
   before_create :assign_uuid_if_missing
 
   private
