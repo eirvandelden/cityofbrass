@@ -220,6 +220,29 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal 1, adventure.pages.count
   end
 
+  test "encounter import creates a text section per text block instead of full description" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <campaign>
+        <name>Section Camp</name>
+        <adventure>
+          <name>Vale</name>
+          <encounter>
+            <name>Ambush</name>
+            <text>First block.</text>
+            <text>Second block.</text>
+          </encounter>
+        </adventure>
+      </campaign>
+    XML
+    import = import_for_xml(xml, kind: "campaign")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    page = Storybuilder::Page.find_by!(name: "Ambush")
+    assert_nil page.full_description
+    assert_equal [ "First block.", "Second block." ], page.sections.order(:sort_order).pluck(:content)
+  end
+
   test "compendium import preserves over-long descriptions without truncating" do
     long_text = "A" * 13_000
     xml = <<~XML

@@ -248,12 +248,14 @@ The adventure is linked to the campaign via `CampaignAdventureJoin`.
 ## 7. Encounter → Storybuilder::Page
 
 Each `<encounter>` within an adventure (or at campaign level) maps to one
-`Storybuilder::Page` belonging to the parent adventure.
+`Storybuilder::Page` belonging to the parent adventure. Like notes (§8), an
+encounter page is a title plus one or more text **Sections** — the text is not
+stored in `full_description`.
 
 | XML field              | Native field        | Notes | Status |
 |------------------------|---------------------|-------|--------|
 | `<name>`               | Page `name`         | | ✅ |
-| `<text>` (all depths)  | Page `full_description` | Direct `<text>` + `.//note/text` joined | ✅ |
+| `<text>` (all depths)  | Section `content`   | One Section per non-blank `<text>` / `.//note/text` block, in order; `section_type="text"`, `section_style="paragraph"`. `full_description` is left nil | ✅ |
 | `<combatant><monster>` | Notable             | Creature looked up by name, linked via `Storybuilder::Notable` | ✅ |
 | (privacy)              | Page `privacy`      | Always `"Private"` | ✅ |
 
