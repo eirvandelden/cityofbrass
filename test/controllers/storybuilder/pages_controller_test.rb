@@ -169,7 +169,7 @@ module Storybuilder
     test "should destroy page" do
       sign_in @user
       assert_difference('Page.count', -1) do
-        delete :destroy, params: { id: @page.id, page: { name: @page.name, name_confirmation: @page.name }, resident_adventure_id: @parent_object }
+        delete :destroy, params: { id: @page.id, resident_adventure_id: @parent_object }
       end
       assert_redirected_to resident_adventure_pages_path
     end

@@ -97,13 +97,9 @@ module Campaignmanager
     # DELETE /pages/1
     # DELETE /pages/1.json
     def destroy
+      @page.destroy
       respond_to do |format|
-        if @page.update(page_params)
-          @page.destroy
-          format.html { redirect_to sti_pages_path }
-        else
-          format.html { render action: 'options' }
-        end
+        format.html { redirect_to sti_pages_path }
       end
     end
 
@@ -173,7 +169,6 @@ module Campaignmanager
           :privacy,
           :short_description,
           :full_description,
-          :name_confirmation,
           gallery_image_join_attributes: [:id, :image_id, :_destroy]
         )
       end

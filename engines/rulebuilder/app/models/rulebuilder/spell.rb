@@ -42,8 +42,6 @@ module Rulebuilder
     validates :spell_resistance, length: { maximum: 255 }
     validates :publisher, length: { maximum: 255 }
     validates :source, length: { maximum: 255 }
-    validates_confirmation_of :name
-
     before_save :mark_for_removal
 
     def tag_list

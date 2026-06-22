@@ -101,8 +101,6 @@ module Entitybuilder
     validates :short_description, length: { maximum: 255 }
     validates :publisher, length: { maximum: 255 }
     validates :source, length: { maximum: 255 }
-    validates_confirmation_of :name
-
     before_validation :set_privacy
     before_validation :nil_if_blank
     before_save :mark_for_removal

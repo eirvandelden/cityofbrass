@@ -37,7 +37,6 @@ module Rulebuilder
     validates :category, length: { maximum: 64 }
     validates :publisher, length: { maximum: 255 }
     validates :source, length: { maximum: 255 }
-    validates_confirmation_of :name
     validates :privacy, presence: true
     validate  :valid_privacy
 

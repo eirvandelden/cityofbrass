@@ -87,13 +87,9 @@ module Rulebuilder
 
     # DELETE /items/1
     def destroy
+      @item.destroy
       respond_to do |format|
-        if @item.update(item_params)
-          @item.destroy
-          format.html { redirect_to polymorphic_path(@type.tableize) }
-        else
-          format.html { render action: 'options' }
-        end
+        format.html { redirect_to polymorphic_path(@type.tableize) }
       end
     end
 

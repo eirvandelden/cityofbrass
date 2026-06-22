@@ -133,6 +133,9 @@ it:
       running: In corso
       succeeded: Riuscito
   layouts:
+    form:
+      options:
+        confirm_delete: "Sei sicuro di voler eliminare \"%{name}\"? Questa operazione non può essere annullata."
     license:
       attribution:
         aria_label: Attribuzione sistema RPG

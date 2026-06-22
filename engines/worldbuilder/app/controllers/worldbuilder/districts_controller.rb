@@ -77,13 +77,9 @@ module Worldbuilder
 
     # DELETE /districts/1
     def destroy
+      @district.destroy
       respond_to do |format|
-        if @district.update(district_params)
-          @district.destroy
-          format.html { redirect_to main_app.resident_districts_path(@district.resident.slug) }
-        else
-          format.html { render action: 'options' }
-        end
+        format.html { redirect_to main_app.resident_districts_path(@district.resident.slug) }
       end
     end
 
@@ -139,7 +135,6 @@ module Worldbuilder
         :privacy,
         :short_description,
         :full_description,
-        :name_confirmation,
         menu_item_join_attributes: [:id, :menu_item_id, :_destroy],
         gallery_image_join_attributes: [:id, :image_id, :_destroy]
       )

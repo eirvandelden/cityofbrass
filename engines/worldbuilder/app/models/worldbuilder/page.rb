@@ -52,7 +52,6 @@ module Worldbuilder
     validates :slug, uniqueness: { scope: [ :district_id ] }, presence: true, length: { maximum: 128 }
     validates :page_label, length: { maximum: 255 }
     validates :short_description, length: { maximum: 255 }
-    validates_confirmation_of :name
 
     before_validation :make_slug
     before_validation :nil_if_blank

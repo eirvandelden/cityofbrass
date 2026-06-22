@@ -133,6 +133,9 @@ nl:
       running: Bezig
       succeeded: Geslaagd
   layouts:
+    form:
+      options:
+        confirm_delete: "Weet je zeker dat je \"%{name}\" wilt verwijderen? Dit kan niet ongedaan worden gemaakt."
     license:
       attribution:
         aria_label: RPG systeem toeschrijving

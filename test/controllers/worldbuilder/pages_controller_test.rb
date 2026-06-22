@@ -114,7 +114,7 @@ module Worldbuilder
     test "should destroy page" do
       sign_in @user
       assert_difference('Page.count', -1) do
-        delete :destroy, params: { id: @page.id, page: { name: @page.name, name_confirmation: @page.name }, district_id: @parent_object.slug }
+        delete :destroy, params: { id: @page.id, district_id: @parent_object.slug }
       end
       assert_redirected_to district_pages_path
     end
