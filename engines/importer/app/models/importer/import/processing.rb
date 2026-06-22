@@ -577,7 +577,7 @@ module Importer
         end
         build_character_name_info(character, pc)
         build_saves_and_skills(character, pc)
-        build_creature_attacks(character, pc[:actions], "melee")
+        build_creature_attacks(character, pc[:actions])
       end
 
       def character_has_stats?(character)
@@ -596,7 +596,7 @@ module Importer
         build_basic_stats(character, pc)
         build_character_name_info(character, pc)
         build_saves_and_skills(character, pc)
-        build_creature_attacks(character, pc[:actions], "melee")
+        build_creature_attacks(character, pc[:actions])
         build_creature_spellcasting(character, pc)
         build_character_armor(character, pc)
       end
@@ -800,9 +800,9 @@ module Importer
         build_saves_and_skills(creature, record)
         build_creature_descriptors(creature, record)
         build_creature_spellcasting(creature, record)
-        build_creature_attacks(creature, record[:actions], "melee")
-        build_creature_attacks(creature, record[:reactions], "melee")
-        build_creature_attacks(creature, record[:legendary], "melee")
+        build_creature_attacks(creature, record[:actions])
+        build_creature_attacks(creature, record[:reactions])
+        build_creature_attacks(creature, record[:legendary])
         build_creature_trait_rules(import_file, creature, record)
       end
 
@@ -947,13 +947,13 @@ module Importer
         end
       end
 
-      def build_creature_attacks(creature, actions, default_type)
+      def build_creature_attacks(creature, actions)
         return if actions.blank?
 
         actions.each do |action|
           next if action[:name].blank?
 
-          attack_type = derive_attack_type(action[:text], default_type)
+          attack_type = derive_attack_type(action[:text])
           parsed = Sources::GameMaster5Xml::AttackNotationParser.parse(action[:attack])
           creature.attacks.create!(
             name: action[:name].truncate(64),
@@ -1393,11 +1393,15 @@ module Importer
         match ? match[1].to_i : nil
       end
 
-      def derive_attack_type(text, default)
-        return "melee" if text.to_s.downcase.include?("melee")
-        return "ranged" if text.to_s.downcase.include?("ranged")
+      # Categorises an attack into the three types the entity profile groups by:
+      # melee/touch attacks → "Melee", ranged → "Range", spells and everything
+      # else → "Special". The capitalised values match Entity attack grouping.
+      def derive_attack_type(text)
+        lower = text.to_s.downcase
+        return "Melee" if lower.include?("melee") || lower.include?("touch")
+        return "Range" if lower.include?("ranged")
 
-        default
+        "Special"
       end
 
       def parse_attack_notation(parsed)

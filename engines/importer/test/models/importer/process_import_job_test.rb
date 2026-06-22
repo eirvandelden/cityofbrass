@@ -994,6 +994,29 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     end
   end
 
+  test "attacks are categorized as Melee, Range, or Special so the profile can group them" do
+    xml = <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <compendium>
+        <monster>
+          <name>Categorizer</name>
+          <action><name>Bite</name><text>Melee Weapon Attack: +5 to hit.</text></action>
+          <action><name>Longbow</name><text>Ranged Weapon Attack: +7 to hit.</text></action>
+          <action><name>Withering Touch</name><text>The creature you touch takes 10 necrotic damage.</text></action>
+          <action><name>Frightful Presence</name><text>Each creature must succeed on a Wisdom saving throw.</text></action>
+        </monster>
+      </compendium>
+    XML
+    import = import_for_xml(xml, kind: "compendium")
+    Importer::ProcessImportJob.perform_now(import.id)
+
+    creature = Entitybuilder::ResidentCreature.find_by!(name: "Categorizer")
+    assert_equal "Melee", creature.attacks.find_by!(name: "Bite").attack_type
+    assert_equal "Range", creature.attacks.find_by!(name: "Longbow").attack_type
+    assert_equal "Melee", creature.attacks.find_by!(name: "Withering Touch").attack_type
+    assert_equal "Special", creature.attacks.find_by!(name: "Frightful Presence").attack_type
+  end
+
   test "monster import creates ability scores, defense, trackable, movement, and attacks" do
     import = import_for("sample_compendium.xml", mode: Importer::Preview::RESIDENT_CONTENT)
     Importer::ProcessImportJob.perform_now(import.id)
@@ -1014,11 +1037,11 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
 
     assert_equal 2, goblin.attacks.count
     scimitar = goblin.attacks.find_by!(name: "Scimitar")
-    assert_equal "melee", scimitar.attack_type
+    assert_equal "Melee", scimitar.attack_type
     assert_equal 4, scimitar.attack_bonus
     assert_equal "1d6", scimitar.damage_dice
     assert_equal 2, scimitar.damage_bonus
-    assert_equal "ranged", goblin.attacks.find_by!(name: "Shortbow").attack_type
+    assert_equal "Range", goblin.attacks.find_by!(name: "Shortbow").attack_type
 
     assert_equal "1/4", goblin.short_description
   end
@@ -1138,7 +1161,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
 
     assert character.attacks.exists?(name: "Unarmed Strike")
     unarmed = character.attacks.find_by!(name: "Unarmed Strike")
-    assert_equal "melee", unarmed.attack_type
+    assert_equal "Melee", unarmed.attack_type
     assert_equal 5, unarmed.attack_bonus
   end
 
