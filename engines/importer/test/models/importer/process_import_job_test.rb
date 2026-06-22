@@ -962,7 +962,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
       mode: Importer::Preview::ADMIN_STOCK
     )
 
-    assert_difference("Storybuilder::Notable.count", 1) do
+    assert_difference("Storybuilder::Notable.count", 2) do
       Importer::ProcessImportJob.perform_now(import.id)
     end
 
@@ -972,7 +972,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     npc = Entitybuilder::StockNpc.find_by!(name: "Captain Soranna")
 
     assert page.notables.exists?(entity: goblin)
-    assert_not adventure.notables.exists?(entity: npc)
+    assert adventure.notables.exists?(entity: npc)
   end
 
   test "reimport does not create duplicate notables" do
