@@ -32,6 +32,17 @@ class ApplicationRecordTest < ActiveSupport::TestCase
     assert_equal fixed_uuid, campaign.id
   end
 
+  test "assigns distinct UUIDs when building associated records" do
+    creature = Entitybuilder::StockCreature.new(id: SecureRandom.uuid, name: "Test Creature", core_rules: "pf2e")
+    first = creature.ability_scores.build(name: "Strength", base: 1, modifier: 1)
+    second = creature.ability_scores.build(name: "Dexterity", base: 2, modifier: 2)
+
+    assert_match UUID_RE, first.id
+    assert_match UUID_RE, second.id
+    assert_not_equal first.id, second.id
+    assert_equal [ "Strength", "Dexterity" ], creature.ability_scores.map(&:name)
+  end
+
   test "does not assign a UUID on integer-PK models" do
     admin = Admin.new(email: "callback-test-#{SecureRandom.hex}@example.com")
     admin.save!(validate: false)
