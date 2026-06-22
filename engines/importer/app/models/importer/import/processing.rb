@@ -178,7 +178,8 @@ module Importer
 
           rebuild_adventure_menu(root, root.pages.order(:created_at)) if stock_note_pages.any?
           campaign[:pcs].each { |pc| import_pc(import_file, pc) }
-          campaign[:npcs].each { |npc| import_npc(import_file, npc) }
+          npcs = campaign[:npcs].filter_map { |npc| import_npc(import_file, npc) }
+          link_entities_to_storybuilder_notableable(root, npcs)
         end
       end
 
