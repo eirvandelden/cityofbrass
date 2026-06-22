@@ -1,5 +1,5 @@
 <div id="form_div">
-<%= simple_form_for [@parent_object, @section], :url => "#{tcob_path(@parent_object, 'id')}/sections/#{@section.id}", :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+<%= simple_form_for [@parent_object, @section], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
   <fieldset>
     <div class="row inline text-right">
       <div class="small-12 columns">
