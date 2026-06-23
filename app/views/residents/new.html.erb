@@ -14,7 +14,7 @@
   <div class="medium-9 large-10 columns">
     <%= render 'layouts/header', main: 'Resident', sub: 'New' %>
     <hr class="faded">
-    <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+    <%= @core_faq.faq.answer unless @core_faq.nil? %>
     <div class="row">
       <div class="small-12 columns">
         <div id="brass_form">
@@ -26,5 +26,3 @@
     </div>
   </div>
 </div>
-
-<%= render :partial =>'layouts/ckeditor', :locals => { :cke_version => 'standard' } %>

@@ -5,6 +5,8 @@ module Storybuilder
     include KeysToStorybuilder
     include JsonArrayColumns
 
+    has_rich_text :full_description
+
     NULL_ATTRS = %w[ parent_id ]
 
     scope :short, -> {

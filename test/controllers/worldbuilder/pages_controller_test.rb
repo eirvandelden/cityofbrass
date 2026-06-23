@@ -47,7 +47,7 @@ module Worldbuilder
 
     test "should not create page" do
       assert_difference('Page.count', 0) do
-        post :create, params: { page: { name: @page.name, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description, tags: @page.tags }, district_id: @parent_object.slug }
+        post :create, params: { page: { name: @page.name, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description.to_s, tags: @page.tags }, district_id: @parent_object.slug }
       end
       assert_response 302
     end
@@ -55,7 +55,7 @@ module Worldbuilder
     test "should create page" do
       sign_in @user
       assert_difference('Page.count') do
-        post :create, params: { page: { name: "#{@page2.name}2", page_label: @page2.page_label, short_description: @page2.short_description, full_description: @page2.full_description, tags: @page2.tags }, district_id: @parent_object.slug }
+        post :create, params: { page: { name: "#{@page2.name}2", page_label: @page2.page_label, short_description: @page2.short_description, full_description: @page2.full_description.to_s, tags: @page2.tags }, district_id: @parent_object.slug }
       end
       assert_redirected_to edit_district_page_path(assigns(:page), district_id: @parent_object.slug)
     end
@@ -63,7 +63,7 @@ module Worldbuilder
     test "should create page with parent" do
       sign_in @user
       assert_difference('Page.count') do
-        post :create, params: { page: { parent: @page2.parent, name: "#{@page2.name}2", page_label: @page2.page_label, short_description: @page2.short_description, full_description: @page2.full_description, tags: @page2.tags }, district_id: @parent_object.slug }
+        post :create, params: { page: { parent: @page2.parent, name: "#{@page2.name}2", page_label: @page2.page_label, short_description: @page2.short_description, full_description: @page2.full_description.to_s, tags: @page2.tags }, district_id: @parent_object.slug }
       end
       assert_redirected_to edit_district_page_path(assigns(:page), district_id: @parent_object.slug)
     end
@@ -93,13 +93,13 @@ module Worldbuilder
 
     test "should not update page" do
       sign_in @user2
-      patch :update, params: { format: :js, id: @page.id, page: { name: @page.name, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description, tags: @page.tags }, district_id: @parent_object.slug }
+      patch :update, params: { format: :js, id: @page.id, page: { name: @page.name, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description.to_s, tags: @page.tags }, district_id: @parent_object.slug }
       assert_response 403
     end
 
     test "should update page" do
       sign_in @user
-      patch :update, xhr: true, format: :js, params: { id: @page.id, page: { name: @page.name, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description, tags: @page.tags }, district_id: @parent_object.slug }
+      patch :update, xhr: true, format: :js, params: { id: @page.id, page: { name: @page.name, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description.to_s, tags: @page.tags }, district_id: @parent_object.slug }
       assert_response :success
     end
 

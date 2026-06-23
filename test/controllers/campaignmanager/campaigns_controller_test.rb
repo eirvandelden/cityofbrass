@@ -38,7 +38,7 @@ module Campaignmanager
 
     test "should not create campaign" do
       assert_difference('Campaign.count', 0) do
-        post :create, params: { campaign: { resident_id: @campaign.resident_id, name: @campaign.name, privacy: @campaign.privacy, short_description: @campaign.short_description, full_description: @campaign.full_description } }
+        post :create, params: { campaign: { resident_id: @campaign.resident_id, name: @campaign.name, privacy: @campaign.privacy, short_description: @campaign.short_description, full_description: @campaign.full_description.to_s } }
       end
       assert_response 302
     end
@@ -46,7 +46,7 @@ module Campaignmanager
     test "should create campaign" do
       sign_in @user
       assert_difference('Campaign.count') do
-        post :create, params: { campaign: { resident_id: @campaign.resident_id, name: "#{@campaign.name}2", privacy: @campaign.privacy, short_description: @campaign.short_description, full_description: @campaign.full_description } }
+        post :create, params: { campaign: { resident_id: @campaign.resident_id, name: "#{@campaign.name}2", privacy: @campaign.privacy, short_description: @campaign.short_description, full_description: @campaign.full_description.to_s } }
       end
       assert_redirected_to edit_campaign_path(assigns(:campaign))
     end
@@ -54,7 +54,7 @@ module Campaignmanager
     test "should not create second campaign for free user" do
       sign_in @user2
       assert_difference('Campaign.count', 0) do
-        post :create, params: { campaign: { resident_id: @campaign.resident_id, name: "#{@campaign.name}2", privacy: @campaign.privacy, short_description: @campaign.short_description, full_description: @campaign.full_description } }
+        post :create, params: { campaign: { resident_id: @campaign.resident_id, name: "#{@campaign.name}2", privacy: @campaign.privacy, short_description: @campaign.short_description, full_description: @campaign.full_description.to_s } }
       end
       assert_redirected_to "/billing/subscriptions"
     end
@@ -158,13 +158,13 @@ module Campaignmanager
 
     test "should not update campaign" do
       sign_in @user2
-      patch :update, params: { id: @campaign, campaign: { resident_id: @campaign.resident_id, name: @campaign.name, privacy: @campaign.privacy, short_description: @campaign.short_description, full_description: @campaign.full_description } }
+      patch :update, params: { id: @campaign, campaign: { resident_id: @campaign.resident_id, name: @campaign.name, privacy: @campaign.privacy, short_description: @campaign.short_description, full_description: @campaign.full_description.to_s } }
       assert_response 403
     end
 
     test "should update campaign" do
       sign_in @user
-      patch :update, params: { id: @campaign, campaign: { resident_id: @campaign.resident_id, name: @campaign.name, privacy: @campaign.privacy, short_description: @campaign.short_description, full_description: @campaign.full_description } }
+      patch :update, params: { id: @campaign, campaign: { resident_id: @campaign.resident_id, name: @campaign.name, privacy: @campaign.privacy, short_description: @campaign.short_description, full_description: @campaign.full_description.to_s } }
       assert_redirected_to edit_campaign_path(assigns(:campaign))
     end
 

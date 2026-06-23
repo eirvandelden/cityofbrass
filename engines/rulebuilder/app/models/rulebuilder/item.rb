@@ -5,6 +5,8 @@ module Rulebuilder
     include KeysToRulebuilder
     include JsonArrayColumns
 
+    has_rich_text :full_description
+
     PRIVACY_OPTIONS = [ 'Private', 'Friends', 'Residents', 'Public' ]
     PRIVACY_OPTIONS_FREE = PRIVACY_OPTIONS
 

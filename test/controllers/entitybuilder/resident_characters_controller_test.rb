@@ -38,7 +38,7 @@ module Entitybuilder
 
     test "should not create character" do
       assert_difference('Entity.count', 0) do
-        post :create, params: { resident_character: { resident_id: @character.resident_id, name: @character.name, privacy: @character.privacy, sheet_privacy: @character.sheet_privacy, core_rules: @character.core_rules, short_description: @character.short_description, full_description: @character.full_description, notes: @character.notes, type: @character.type } }
+        post :create, params: { resident_character: { resident_id: @character.resident_id, name: @character.name, privacy: @character.privacy, sheet_privacy: @character.sheet_privacy, core_rules: @character.core_rules, short_description: @character.short_description, full_description: @character.full_description.to_s, notes: @character.notes, type: @character.type } }
       end
       assert_response 302
     end
@@ -46,7 +46,7 @@ module Entitybuilder
     test "should create character" do
       sign_in @user
       assert_difference('Entity.count') do
-        post :create, params: { resident_character: { resident_id: @character.resident_id, name: @character.name, privacy: @character.privacy, sheet_privacy: @character.sheet_privacy, core_rules: @character.core_rules, short_description: @character.short_description, full_description: @character.full_description, notes: @character.notes, type: @character.type } }
+        post :create, params: { resident_character: { resident_id: @character.resident_id, name: @character.name, privacy: @character.privacy, sheet_privacy: @character.sheet_privacy, core_rules: @character.core_rules, short_description: @character.short_description, full_description: @character.full_description.to_s, notes: @character.notes, type: @character.type } }
       end
       assert_redirected_to edit_resident_character_path(assigns(:entity))
     end
@@ -54,7 +54,7 @@ module Entitybuilder
     test "should not create third character for free user" do
       sign_in @user2
       assert_difference('Entity.count', 0) do
-        post :create, params: { resident_character: { resident_id: @character2.resident_id, name: @character.name, privacy: @character.privacy, sheet_privacy: @character.sheet_privacy, core_rules: @character.core_rules, short_description: @character.short_description, full_description: @character.full_description, notes: @character.notes, type: @character.type } }
+        post :create, params: { resident_character: { resident_id: @character2.resident_id, name: @character.name, privacy: @character.privacy, sheet_privacy: @character.sheet_privacy, core_rules: @character.core_rules, short_description: @character.short_description, full_description: @character.full_description.to_s, notes: @character.notes, type: @character.type } }
       end
       assert_redirected_to "/billing/subscriptions"
     end
@@ -189,25 +189,25 @@ module Entitybuilder
 
     test "should not update character" do
       sign_in @user2
-      patch :update, params: { id: @character, resident_character: { resident_id: @character.resident_id, name: @character.name, privacy: @character.privacy, sheet_privacy: @character.sheet_privacy, core_rules: @character.core_rules, short_description: @character.short_description, full_description: @character.full_description, notes: @character.notes, type: @character.type } }
+      patch :update, params: { id: @character, resident_character: { resident_id: @character.resident_id, name: @character.name, privacy: @character.privacy, sheet_privacy: @character.sheet_privacy, core_rules: @character.core_rules, short_description: @character.short_description, full_description: @character.full_description.to_s, notes: @character.notes, type: @character.type } }
       assert_response 403
     end
 
     test "should update character" do
       sign_in @user
-      patch :update, params: { id: @character, resident_character: { resident_id: @character.resident_id, name: @character.name, privacy: @character.privacy, sheet_privacy: @character.sheet_privacy, core_rules: @character.core_rules, short_description: @character.short_description, full_description: @character.full_description, notes: @character.notes, type: @character.type } }
+      patch :update, params: { id: @character, resident_character: { resident_id: @character.resident_id, name: @character.name, privacy: @character.privacy, sheet_privacy: @character.sheet_privacy, core_rules: @character.core_rules, short_description: @character.short_description, full_description: @character.full_description.to_s, notes: @character.notes, type: @character.type } }
       assert_redirected_to edit_resident_character_path(assigns(:entity))
     end
 
     test "should not update_notes.js character" do
       sign_in @user2
-      patch :update_notes, format: :js, params: { resident_character_id: @character, resident_character: { resident_id: @character.resident_id, name: @character.name, privacy: @character.privacy, sheet_privacy: @character.sheet_privacy, core_rules: @character.core_rules, short_description: @character.short_description, full_description: @character.full_description, notes: @character.notes, type: @character.type } }
+      patch :update_notes, format: :js, params: { resident_character_id: @character, resident_character: { resident_id: @character.resident_id, name: @character.name, privacy: @character.privacy, sheet_privacy: @character.sheet_privacy, core_rules: @character.core_rules, short_description: @character.short_description, full_description: @character.full_description.to_s, notes: @character.notes, type: @character.type } }
       assert_response 403
     end
 
     test "should update_notes.js character" do
       sign_in @user
-      patch :update_notes, format: :js, params: { resident_character_id: @character, resident_character: { resident_id: @character.resident_id, name: @character.name, privacy: @character.privacy, sheet_privacy: @character.sheet_privacy, core_rules: @character.core_rules, short_description: @character.short_description, full_description: @character.full_description, notes: @character.notes, type: @character.type } }
+      patch :update_notes, format: :js, params: { resident_character_id: @character, resident_character: { resident_id: @character.resident_id, name: @character.name, privacy: @character.privacy, sheet_privacy: @character.sheet_privacy, core_rules: @character.core_rules, short_description: @character.short_description, full_description: @character.full_description.to_s, notes: @character.notes, type: @character.type } }
       assert_response :success
     end
 

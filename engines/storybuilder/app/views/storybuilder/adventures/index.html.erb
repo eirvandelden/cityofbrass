@@ -22,7 +22,7 @@
         }
       %>
       <hr class="faded">
-      <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+      <%= @core_faq.faq.answer unless @core_faq.nil? %>
     </div>
   <% else %>
     <div class="medium-4 columns text-center">
@@ -46,7 +46,7 @@
       %>
       <hr class="faded">
 
-      <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+      <%= @core_faq.faq.answer unless @core_faq.nil? %>
 
       <div class="row">
         <div class="medium-12 columns" id="index_list">

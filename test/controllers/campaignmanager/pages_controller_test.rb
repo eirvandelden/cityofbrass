@@ -40,7 +40,7 @@ module Campaignmanager
 
     test "should not create page" do
       assert_difference('Page.count', 0) do
-        post :create, params: { adventure_log: { name: @page.name, privacy: @page.privacy, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description }, campaign_id: @parent_object, type: @page.type.demodulize }
+        post :create, params: { adventure_log: { name: @page.name, privacy: @page.privacy, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description.to_s }, campaign_id: @parent_object, type: @page.type.demodulize }
       end
       assert_response 302
     end
@@ -48,7 +48,7 @@ module Campaignmanager
     test "should create page" do
       sign_in @user
       assert_difference('Page.count') do
-        post :create, params: { adventure_log: { name: "#{@page2.name}2", privacy: @page2.privacy, page_label: @page2.page_label, short_description: @page2.short_description, full_description: @page2.full_description }, campaign_id: @parent_object, type: @page.type.demodulize }
+        post :create, params: { adventure_log: { name: "#{@page2.name}2", privacy: @page2.privacy, page_label: @page2.page_label, short_description: @page2.short_description, full_description: @page2.full_description.to_s }, campaign_id: @parent_object, type: @page.type.demodulize }
       end
       assert_redirected_to edit_campaign_adventure_log_path(assigns(:page), campaign_id: @parent_object, type: @page.type.demodulize)
     end
@@ -56,7 +56,7 @@ module Campaignmanager
     test "should create page with parent" do
       sign_in @user
       assert_difference('Page.count') do
-        post :create, params: { adventure_log: { parent: @page2.parent, name: "#{@page2.name}2", privacy: @page2.privacy, page_label: @page2.page_label, short_description: @page2.short_description, full_description: @page2.full_description }, campaign_id: @parent_object, type: @page.type.demodulize }
+        post :create, params: { adventure_log: { parent: @page2.parent, name: "#{@page2.name}2", privacy: @page2.privacy, page_label: @page2.page_label, short_description: @page2.short_description, full_description: @page2.full_description.to_s }, campaign_id: @parent_object, type: @page.type.demodulize }
       end
       assert_redirected_to edit_campaign_adventure_log_path(assigns(:page), campaign_id: @parent_object, type: @page.type.demodulize)
     end
@@ -85,7 +85,7 @@ module Campaignmanager
 
       assert_response :success
       assert_no_match private_page.name, @response.body
-      assert_no_match private_page.full_description, @response.body
+      assert_no_match private_page.full_description.to_s, @response.body
     end
 
     test "should hide private notable entity when public page is shown logged out" do
@@ -120,13 +120,13 @@ module Campaignmanager
 
     test "should not update page" do
       sign_in @user2
-      patch :update, format: :js, params: { id: @page.id, adventure_log: { name: @page.name, privacy: @page.privacy, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description }, campaign_id: @parent_object, type: @page.type.demodulize }
+      patch :update, format: :js, params: { id: @page.id, adventure_log: { name: @page.name, privacy: @page.privacy, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description.to_s }, campaign_id: @parent_object, type: @page.type.demodulize }
       assert_response 403
     end
 
     test "should update page" do
       sign_in @user
-      patch :update, xhr: true, format: :js, params: { id: @page.id, adventure_log: { name: @page.name, privacy: @page.privacy, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description }, campaign_id: @parent_object, type: @page.type.demodulize }
+      patch :update, xhr: true, format: :js, params: { id: @page.id, adventure_log: { name: @page.name, privacy: @page.privacy, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description.to_s }, campaign_id: @parent_object, type: @page.type.demodulize }
       assert_response :success
     end
 

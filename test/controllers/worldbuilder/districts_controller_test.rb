@@ -79,13 +79,13 @@ module Worldbuilder
 
     test "should update district.html" do
       sign_in @dan
-      patch :update, params: { id: @district, district: { full_description: @district.full_description, name: @district.name, short_description: @district.short_description, slug: @district.slug, privacy: @district.privacy } }
+      patch :update, params: { id: @district, district: { full_description: @district.full_description.to_s, name: @district.name, short_description: @district.short_description, slug: @district.slug, privacy: @district.privacy } }
       assert_redirected_to "/wb/#{assigns(:district).id}/edit"
     end
 
     test "should update district.js" do
       sign_in @dan
-      patch :update, xhr: true, format: :js, params: { id: @district, district: { full_description: @district.full_description, name: @district.name, short_description: @district.short_description, slug: @district.slug, privacy: @district.privacy } }
+      patch :update, xhr: true, format: :js, params: { id: @district, district: { full_description: @district.full_description.to_s, name: @district.name, short_description: @district.short_description, slug: @district.slug, privacy: @district.privacy } }
       assert_response :success
     end
 

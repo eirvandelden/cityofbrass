@@ -70,7 +70,7 @@ class CampaignLifecycleTest < ActionDispatch::IntegrationTest
           privacy: @player_character.privacy,
           sheet_privacy: @player_character.sheet_privacy,
           short_description: @player_character.short_description,
-          full_description: @player_character.full_description,
+          full_description: @player_character.full_description.to_s,
           campaign_join_attributes: { campaign_id: campaign.id }
         }
       }

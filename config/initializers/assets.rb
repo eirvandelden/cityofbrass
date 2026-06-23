@@ -3,8 +3,8 @@
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '5.5.3.2'
 
-# Add additional assets to the asset load path
-# Rails.application.config.assets.paths << Emoji.images_path
+# Add node_modules so Sprockets can find trix and @rails/actiontext
+Rails.application.config.assets.paths << Rails.root.join("node_modules")
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.

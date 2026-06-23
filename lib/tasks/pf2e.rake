@@ -107,7 +107,7 @@ namespace :db do
             "is_3pp", "publisher", "source", "category",
             "short_description", "full_description", "tags"
           ))
-          item.full_description = CoreRules::Seeder.render_markdown(item.full_description)
+          item.full_description = CoreRules::Seeder.render_markdown(item.full_description.to_s)
           item.save!
         end
         puts "seeded #{records.size} #{records.first&.dig("category") || "(none)"} records from #{file}"
@@ -124,7 +124,7 @@ namespace :db do
           creature.assign_attributes(attrs.slice(
             "short_description", "full_description", "publisher", "source", "is_3pp"
           ))
-          creature.full_description = CoreRules::Seeder.render_markdown(creature.full_description)
+          creature.full_description = CoreRules::Seeder.render_markdown(creature.full_description.to_s)
           creature.save!
 
           creature.ability_scores.delete_all

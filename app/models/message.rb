@@ -1,4 +1,6 @@
 class Message < ApplicationRecord
+  has_rich_text :body
+
   scope :read, -> { where read_at: nil }
   scope :short, -> { select("id, sender_id, recipient_id, sender_deleted, recipient_deleted, subject, read_at, created_at") }
 
@@ -18,10 +20,8 @@ class Message < ApplicationRecord
   validates :sender_id, presence: true
   validates :recipient_id, presence: true
   validates :subject, presence: true, length: { maximum: 255 }
-  validates :body,    length: { maximum: 4000 }
-
   def self.search(search)
-    where("subject like ? OR body like ?", "%#{search}%", "%#{search}%")
+    where("subject like ?", "%#{search}%")
   end
 
   # marks a message as deleted by either the sender or the recepient, which ever the user that was passed is.

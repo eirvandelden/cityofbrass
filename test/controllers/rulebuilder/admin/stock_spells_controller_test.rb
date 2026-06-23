@@ -50,7 +50,7 @@ module Rulebuilder
         sign_in @user
         sign_in @admin
         assert_difference("Spell.count") do
-          post :create, params: { stock_spell: { area: @spell.area, casting_time: @spell.casting_time, components: @spell.components, core_rules: @spell.core_rules, duration: @spell.duration, effect: @spell.effect, full_description: @spell.full_description, levels: @spell.levels, name: @spell.name, range: @spell.range, saving_throw: @spell.saving_throw, spell_resistance: @spell.spell_resistance, school: @spell.school, short_description: @spell.short_description, target: @spell.target, type: @spell.type, publisher: @spell.publisher, is_3pp: @spell.is_3pp, source: @spell.source, tags: @spell.tags } }
+          post :create, params: { stock_spell: { area: @spell.area, casting_time: @spell.casting_time, components: @spell.components, core_rules: @spell.core_rules, duration: @spell.duration, effect: @spell.effect, full_description: @spell.full_description.to_s, levels: @spell.levels, name: @spell.name, range: @spell.range, saving_throw: @spell.saving_throw, spell_resistance: @spell.spell_resistance, school: @spell.school, short_description: @spell.short_description, target: @spell.target, type: @spell.type, publisher: @spell.publisher, is_3pp: @spell.is_3pp, source: @spell.source, tags: @spell.tags } }
         end
         assert_redirected_to edit_admin_stock_spell_path(assigns(:spell))
       end
@@ -97,27 +97,27 @@ module Rulebuilder
 
       test "should not update spell" do
         sign_in @user
-        patch :update, params: { id: @spell, stock_spell: { area: @spell.area, casting_time: @spell.casting_time, components: @spell.components, core_rules: @spell.core_rules, duration: @spell.duration, effect: @spell.effect, full_description: @spell.full_description, levels: @spell.levels, name: @spell.name, range: @spell.range, saving_throw: @spell.saving_throw, spell_resistance: @spell.spell_resistance, school: @spell.school, short_description: @spell.short_description, target: @spell.target, type: @spell.type, publisher: @spell.publisher, is_3pp: @spell.is_3pp, source: @spell.source, tags: @spell.tags } }
+        patch :update, params: { id: @spell, stock_spell: { area: @spell.area, casting_time: @spell.casting_time, components: @spell.components, core_rules: @spell.core_rules, duration: @spell.duration, effect: @spell.effect, full_description: @spell.full_description.to_s, levels: @spell.levels, name: @spell.name, range: @spell.range, saving_throw: @spell.saving_throw, spell_resistance: @spell.spell_resistance, school: @spell.school, short_description: @spell.short_description, target: @spell.target, type: @spell.type, publisher: @spell.publisher, is_3pp: @spell.is_3pp, source: @spell.source, tags: @spell.tags } }
         assert_response 403
       end
 
       test "should update spell" do
         sign_in @user
         sign_in @admin
-        patch :update, params: { id: @spell, stock_spell: { area: @spell.area, casting_time: @spell.casting_time, components: @spell.components, core_rules: @spell.core_rules, duration: @spell.duration, effect: @spell.effect, full_description: @spell.full_description, levels: @spell.levels, name: @spell.name, range: @spell.range, saving_throw: @spell.saving_throw, spell_resistance: @spell.spell_resistance, school: @spell.school, short_description: @spell.short_description, target: @spell.target, type: @spell.type, publisher: @spell.publisher, is_3pp: @spell.is_3pp, source: @spell.source, tags: @spell.tags } }
+        patch :update, params: { id: @spell, stock_spell: { area: @spell.area, casting_time: @spell.casting_time, components: @spell.components, core_rules: @spell.core_rules, duration: @spell.duration, effect: @spell.effect, full_description: @spell.full_description.to_s, levels: @spell.levels, name: @spell.name, range: @spell.range, saving_throw: @spell.saving_throw, spell_resistance: @spell.spell_resistance, school: @spell.school, short_description: @spell.short_description, target: @spell.target, type: @spell.type, publisher: @spell.publisher, is_3pp: @spell.is_3pp, source: @spell.source, tags: @spell.tags } }
         assert_redirected_to edit_admin_stock_spell_path(assigns(:spell))
       end
 
       test "should not update.js spell" do
         sign_in @user
-        patch :update, params: { format: :js, id: @spell, stock_spell: { area: @spell.area, casting_time: @spell.casting_time, components: @spell.components, core_rules: @spell.core_rules, duration: @spell.duration, effect: @spell.effect, full_description: @spell.full_description, levels: @spell.levels, name: @spell.name, range: @spell.range, saving_throw: @spell.saving_throw, spell_resistance: @spell.spell_resistance, school: @spell.school, short_description: @spell.short_description, target: @spell.target, type: @spell.type, publisher: @spell.publisher, is_3pp: @spell.is_3pp, source: @spell.source, tags: @spell.tags } }
+        patch :update, params: { format: :js, id: @spell, stock_spell: { area: @spell.area, casting_time: @spell.casting_time, components: @spell.components, core_rules: @spell.core_rules, duration: @spell.duration, effect: @spell.effect, full_description: @spell.full_description.to_s, levels: @spell.levels, name: @spell.name, range: @spell.range, saving_throw: @spell.saving_throw, spell_resistance: @spell.spell_resistance, school: @spell.school, short_description: @spell.short_description, target: @spell.target, type: @spell.type, publisher: @spell.publisher, is_3pp: @spell.is_3pp, source: @spell.source, tags: @spell.tags } }
         assert_response 403
       end
 
       test "should update.js spell" do
         sign_in @user
         sign_in @admin
-        patch :update, format: :js, params: { id: @spell, stock_spell: { area: @spell.area, casting_time: @spell.casting_time, components: @spell.components, core_rules: @spell.core_rules, duration: @spell.duration, effect: @spell.effect, full_description: @spell.full_description, levels: @spell.levels, name: @spell.name, range: @spell.range, saving_throw: @spell.saving_throw, spell_resistance: @spell.spell_resistance, school: @spell.school, short_description: @spell.short_description, target: @spell.target, type: @spell.type, publisher: @spell.publisher, is_3pp: @spell.is_3pp, source: @spell.source, tags: @spell.tags } }
+        patch :update, format: :js, params: { id: @spell, stock_spell: { area: @spell.area, casting_time: @spell.casting_time, components: @spell.components, core_rules: @spell.core_rules, duration: @spell.duration, effect: @spell.effect, full_description: @spell.full_description.to_s, levels: @spell.levels, name: @spell.name, range: @spell.range, saving_throw: @spell.saving_throw, spell_resistance: @spell.spell_resistance, school: @spell.school, short_description: @spell.short_description, target: @spell.target, type: @spell.type, publisher: @spell.publisher, is_3pp: @spell.is_3pp, source: @spell.source, tags: @spell.tags } }
         assert_response :success
       end
 

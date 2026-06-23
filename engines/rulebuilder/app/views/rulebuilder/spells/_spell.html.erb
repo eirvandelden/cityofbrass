@@ -13,12 +13,12 @@
   <% end %>
 
   <%= render :partial => 'rulebuilder/spells/spell_details', :locals => { :spell => @spell } %>
-  <%= sanitize @spell.full_description %>
+  <%= @spell.full_description %>
 
   <% if @spell.parent.present? %>
     <h2><%= @spell.parent.name %></h2>
     <hr class="faded">
-    <%= sanitize @spell.parent.full_description %>
+    <%= @spell.parent.full_description %>
   <% end %>
 
   <% if @spell.publisher.present? or @spell.source.present? %>

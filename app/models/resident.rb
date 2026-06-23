@@ -1,6 +1,8 @@
 class Resident < ApplicationRecord
   include ReservedNames
 
+  has_rich_text :full_description
+
   scope :order_name, -> { order(:slug) }
   scope :short, -> { select("name, slug, short_description, residents.created_at") }
 

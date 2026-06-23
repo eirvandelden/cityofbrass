@@ -68,7 +68,7 @@ module Rulebuilder
         sign_in @user
         sign_in @admin
         assert_difference("Rule.count") do
-          post :create, params: { stock_rule: { rule_type: @rule.rule_type, is_shared: @rule.is_shared, benefit: @rule.benefit, core_rules: @rule.core_rules, full_description: @rule.full_description, name: @rule.name, normal: @rule.normal, prerequisites: @rule.prerequisites, short_description: @rule.short_description, special: @rule.special, type: @rule.type, publisher: @rule.publisher, is_3pp: @rule.is_3pp, source: @rule.source, tags: @rule.tags } }
+          post :create, params: { stock_rule: { rule_type: @rule.rule_type, is_shared: @rule.is_shared, benefit: @rule.benefit, core_rules: @rule.core_rules, full_description: @rule.full_description.to_s, name: @rule.name, normal: @rule.normal, prerequisites: @rule.prerequisites, short_description: @rule.short_description, special: @rule.special, type: @rule.type, publisher: @rule.publisher, is_3pp: @rule.is_3pp, source: @rule.source, tags: @rule.tags } }
         end
         assert_redirected_to edit_admin_stock_rule_path(assigns(:rule))
       end
@@ -116,27 +116,27 @@ module Rulebuilder
 
       test "should not update rule" do
         sign_in @user
-        patch :update, params: { id: @rule, stock_rule: { rule_type: @rule.rule_type, is_shared: @rule.is_shared, benefit: @rule.benefit, core_rules: @rule.core_rules, full_description: @rule.full_description, name: @rule.name, normal: @rule.normal, prerequisites: @rule.prerequisites, short_description: @rule.short_description, special: @rule.special, type: @rule.type, publisher: @rule.publisher, is_3pp: @rule.is_3pp, source: @rule.source, tags: @rule.tags } }
+        patch :update, params: { id: @rule, stock_rule: { rule_type: @rule.rule_type, is_shared: @rule.is_shared, benefit: @rule.benefit, core_rules: @rule.core_rules, full_description: @rule.full_description.to_s, name: @rule.name, normal: @rule.normal, prerequisites: @rule.prerequisites, short_description: @rule.short_description, special: @rule.special, type: @rule.type, publisher: @rule.publisher, is_3pp: @rule.is_3pp, source: @rule.source, tags: @rule.tags } }
         assert_response 403
       end
 
       test "should update rule" do
         sign_in @user
         sign_in @admin
-        patch :update, params: { id: @rule, stock_rule: { rule_type: @rule.rule_type, is_shared: @rule.is_shared, benefit: @rule.benefit, core_rules: @rule.core_rules, full_description: @rule.full_description, name: @rule.name, normal: @rule.normal, prerequisites: @rule.prerequisites, short_description: @rule.short_description, special: @rule.special, type: @rule.type, publisher: @rule.publisher, is_3pp: @rule.is_3pp, source: @rule.source, tags: @rule.tags } }
+        patch :update, params: { id: @rule, stock_rule: { rule_type: @rule.rule_type, is_shared: @rule.is_shared, benefit: @rule.benefit, core_rules: @rule.core_rules, full_description: @rule.full_description.to_s, name: @rule.name, normal: @rule.normal, prerequisites: @rule.prerequisites, short_description: @rule.short_description, special: @rule.special, type: @rule.type, publisher: @rule.publisher, is_3pp: @rule.is_3pp, source: @rule.source, tags: @rule.tags } }
         assert_redirected_to edit_admin_stock_rule_path(assigns(:rule))
       end
 
       test "should not update.js rule" do
         sign_in @user
-        patch :update, format: :js, params: { id: @rule, stock_rule: { rule_type: @rule.rule_type, is_shared: @rule.is_shared, benefit: @rule.benefit, core_rules: @rule.core_rules, full_description: @rule.full_description, name: @rule.name, normal: @rule.normal, prerequisites: @rule.prerequisites, short_description: @rule.short_description, special: @rule.special, type: @rule.type, publisher: @rule.publisher, is_3pp: @rule.is_3pp, source: @rule.source, tags: @rule.tags } }
+        patch :update, format: :js, params: { id: @rule, stock_rule: { rule_type: @rule.rule_type, is_shared: @rule.is_shared, benefit: @rule.benefit, core_rules: @rule.core_rules, full_description: @rule.full_description.to_s, name: @rule.name, normal: @rule.normal, prerequisites: @rule.prerequisites, short_description: @rule.short_description, special: @rule.special, type: @rule.type, publisher: @rule.publisher, is_3pp: @rule.is_3pp, source: @rule.source, tags: @rule.tags } }
         assert_response 403
       end
 
       test "should update.js rule" do
         sign_in @user
         sign_in @admin
-        patch :update, format: :js, params: { id: @rule, stock_rule: { rule_type: @rule.rule_type, is_shared: @rule.is_shared, benefit: @rule.benefit, core_rules: @rule.core_rules, full_description: @rule.full_description, name: @rule.name, normal: @rule.normal, prerequisites: @rule.prerequisites, short_description: @rule.short_description, special: @rule.special, type: @rule.type, publisher: @rule.publisher, is_3pp: @rule.is_3pp, source: @rule.source, tags: @rule.tags } }
+        patch :update, format: :js, params: { id: @rule, stock_rule: { rule_type: @rule.rule_type, is_shared: @rule.is_shared, benefit: @rule.benefit, core_rules: @rule.core_rules, full_description: @rule.full_description.to_s, name: @rule.name, normal: @rule.normal, prerequisites: @rule.prerequisites, short_description: @rule.short_description, special: @rule.special, type: @rule.type, publisher: @rule.publisher, is_3pp: @rule.is_3pp, source: @rule.source, tags: @rule.tags } }
         assert_response :success
       end
 

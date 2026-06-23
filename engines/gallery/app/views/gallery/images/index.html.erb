@@ -23,7 +23,7 @@
     %>
     <hr class="faded">
 
-    <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+    <%= @core_faq.faq.answer unless @core_faq.nil? %>
 
     <% @images.each_slice(4) do |slice| %>
     <div class="row" data-equalizer>

@@ -10,7 +10,7 @@
 <% end %>
 
 <div class="show-div-flat">
-  <%= sanitize @parent_object.introduction %>
+  <%= @parent_object.introduction %>
   <% if @parent_object.introduction.blank? %><p><%= @parent_object.short_description %></p><% end %>
 </div>
 
@@ -114,7 +114,7 @@
     <hr class="faded">
     <div class="row show-div">
       <div class="medium-12 columns">
-        <%= sanitize @parent_object.full_description %>
+        <%= @parent_object.full_description %>
       </div>
     </div>
     <% end %>

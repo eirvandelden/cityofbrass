@@ -47,7 +47,7 @@ module Storybuilder
 
     test "should not create adventure" do
       assert_difference('Adventure.count', 0) do
-        post :create, params: { stock_adventure: { name: @adventure.name, privacy: @adventure.privacy, short_description: @adventure.short_description, full_description: @adventure.full_description, type: @adventure.type } }
+        post :create, params: { stock_adventure: { name: @adventure.name, privacy: @adventure.privacy, short_description: @adventure.short_description, full_description: @adventure.full_description.to_s, type: @adventure.type } }
       end
       assert_response 302
     end
@@ -56,7 +56,7 @@ module Storybuilder
       sign_in @user
       sign_in @admin
       assert_difference('Adventure.count') do
-        post :create, params: { stock_adventure: { name: "#{@adventure2.name}2", privacy: @adventure2.privacy, short_description: @adventure2.short_description, full_description: @adventure2.full_description, type: @adventure2.type } }
+        post :create, params: { stock_adventure: { name: "#{@adventure2.name}2", privacy: @adventure2.privacy, short_description: @adventure2.short_description, full_description: @adventure2.full_description.to_s, type: @adventure2.type } }
       end
       assert_redirected_to edit_stock_adventure_path(assigns(:adventure))
     end
@@ -65,7 +65,7 @@ module Storybuilder
       sign_in @user
       sign_in @admin
       assert_difference('Adventure.count') do
-        post :create, params: { stock_adventure: { name: "#{@adventure2.name}2", privacy: @adventure2.privacy, parent_id: @adventure.id, short_description: @adventure2.short_description, full_description: @adventure2.full_description, type: @adventure2.type } }
+        post :create, params: { stock_adventure: { name: "#{@adventure2.name}2", privacy: @adventure2.privacy, parent_id: @adventure.id, short_description: @adventure2.short_description, full_description: @adventure2.full_description.to_s, type: @adventure2.type } }
       end
       assert_redirected_to edit_stock_adventure_path(assigns(:adventure))
     end
@@ -121,14 +121,14 @@ module Storybuilder
 
     test "should not update adventure" do
       sign_in @user
-      patch :update, params: { id: @adventure, stock_adventure: { name: @adventure.name, privacy: @adventure.privacy, short_description: @adventure.short_description, full_description: @adventure.full_description, type: @adventure.type } }
+      patch :update, params: { id: @adventure, stock_adventure: { name: @adventure.name, privacy: @adventure.privacy, short_description: @adventure.short_description, full_description: @adventure.full_description.to_s, type: @adventure.type } }
       assert_response 403
     end
 
     test "should update adventure" do
       sign_in @user
       sign_in @admin
-      patch :update, params: { id: @adventure, stock_adventure: { name: @adventure.name, privacy: @adventure.privacy, short_description: @adventure.short_description, full_description: @adventure.full_description, type: @adventure.type } }
+      patch :update, params: { id: @adventure, stock_adventure: { name: @adventure.name, privacy: @adventure.privacy, short_description: @adventure.short_description, full_description: @adventure.full_description.to_s, type: @adventure.type } }
       assert_redirected_to edit_stock_adventure_path(assigns(:adventure))
     end
 

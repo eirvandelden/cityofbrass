@@ -8,8 +8,8 @@
       <div>
         <%= message.subject %> -
         <span class="color-c5">
-          <% body = sanitize message.body, tags: [] %>
-          <%= body.to_s.squish.strip[0,255] %>
+          <% body = message.body.to_plain_text %>
+          <%= body.squish.strip[0,255] %>
         </span>
       </div>
     </div>

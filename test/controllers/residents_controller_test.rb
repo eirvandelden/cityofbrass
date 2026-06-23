@@ -75,7 +75,7 @@ class ResidentsControllerTest < ActionController::TestCase
 
   test "should update resident.js" do
     sign_in @dan
-    patch :update, format: :js, params: { id: @razune, resident: { full_description: @razune.full_description, name: @razune.name, short_description: @razune.short_description, slug: @razune.slug } }
+    patch :update, format: :js, params: { id: @razune, resident: { full_description: @razune.full_description.to_s, name: @razune.name, short_description: @razune.short_description, slug: @razune.slug } }
     assert_response :success
   end
 

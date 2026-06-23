@@ -1,5 +1,7 @@
 module Campaignmanager
   class Section < ApplicationRecord
+    has_rich_text :content
+
     default_scope { order(:sort_order) }
     scope :order_sort_order, -> { order(:sort_order) }
 

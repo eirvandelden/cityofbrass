@@ -47,7 +47,7 @@ class CoreFaqBootstrapTest < ActiveSupport::TestCase
     Support::CoreFaqBootstrap.call
 
     assert_equal "Custom OGL", faq.reload.topic
-    assert_equal "<p>Custom OGL answer</p>", faq.answer
+    assert_match(/<p>Custom OGL answer<\/p>/, faq.answer.to_s)
     assert_not faq.active
     assert_not core_faq.reload.active
   end

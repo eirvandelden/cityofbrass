@@ -45,14 +45,14 @@
 </div>
 <div class="row">
   <div class="medium-12 columns">
-    <%= f.input :full_description, input_html: { class: "editorblank" } %>
+    <%= f.rich_text_area :full_description %>
     <br>
     <% if CoreRules.d20_system?(f.object.core_rules) %>
-      <%= f.input :benefit, input_html: { class: "editorblank" } %>
+      <%= f.rich_text_area :benefit %>
       <br>
-      <%= f.input :normal, input_html: { class: "editorblank" } %>
+      <%= f.rich_text_area :normal %>
       <br>
-      <%= f.input :special, input_html: { class: "editorblank" } %>
+      <%= f.rich_text_area :special %>
       <br>
     <% end %>
   </div>

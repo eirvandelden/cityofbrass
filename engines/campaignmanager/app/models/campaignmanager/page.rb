@@ -2,6 +2,8 @@ module Campaignmanager
   class Page < ApplicationRecord
     include KeysToCampaignmanager
 
+    has_rich_text :full_description
+
     NULL_ATTRS = %w( parent_id )
 
     scope :short, -> { select('campaignmanager_pages.id, campaignmanager_pages.campaign_id, campaignmanager_pages.parent_id, campaignmanager_pages.name, campaignmanager_pages.type, campaignmanager_pages.privacy, campaignmanager_pages.short_description, campaignmanager_pages.page_label') }

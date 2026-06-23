@@ -5,6 +5,8 @@ module Worldbuilder
     include KeysToWorldbuilder
     include JsonArrayColumns
 
+    has_rich_text :full_description
+
     NULL_ATTRS = %w[ parent_id ]
 
     scope :short, -> { select('worldbuilder_pages.id, worldbuilder_pages.district_id, worldbuilder_pages.parent_id, worldbuilder_pages.name, worldbuilder_pages.slug, worldbuilder_pages.short_description, worldbuilder_pages.page_label') }

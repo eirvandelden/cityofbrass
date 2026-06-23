@@ -12,13 +12,13 @@
   <% end %>
 
   <% if @linked_rule.rule.prerequisites? && %w[dnd5e generic].include?(@linked_rule.rule.core_rules) %><p class="italic"><strong>Prerequisites:</strong> <%= @linked_rule.rule.prerequisites %></p><% end %>
-  <%= sanitize @linked_rule.rule.full_description %>
+  <%= @linked_rule.rule.full_description %>
   <%= render :partial => 'rulebuilder/rules/rule_details', :locals => { :rule => @linked_rule.rule } %>
 
   <% if @linked_rule.rule.parent.present? %>
     <h2><%= @linked_rule.rule.parent.name %></h2>
     <hr class="faded">
-    <%= sanitize @linked_rule.rule.parent.full_description %>
+    <%= @linked_rule.rule.parent.full_description %>
   <% end %>
 
   <% if @linked_rule.rule.publisher.present? or @linked_rule.rule.source.present? %>
