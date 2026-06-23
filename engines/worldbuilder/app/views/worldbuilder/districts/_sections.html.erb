@@ -1,4 +1,4 @@
-<%= sanitize @district.full_description %>
+<%= @district.full_description %>
 
 <% @district.sections.each do |section| %>
   <%= render :partial =>'layouts/sections/looper',

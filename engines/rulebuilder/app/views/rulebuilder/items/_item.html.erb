@@ -13,12 +13,12 @@
   <% end %>
 
   <%= render :partial => 'rulebuilder/items/item_details', :locals => { :item => @item } %>
-  <%= sanitize @item.full_description %>
+  <%= @item.full_description %>
 
   <% if @item.parent.present? && visible_record?(@item.parent) %>
     <h2><%= @item.parent.name %></h2>
     <hr class="faded">
-    <%= sanitize @item.parent.full_description %>
+    <%= @item.parent.full_description %>
   <% end %>
 
   <% if @item.publisher.present? or @item.source.present? %>

@@ -18,7 +18,7 @@ class DrawSteelSeedTest < ActiveSupport::TestCase
     rules.each do |r|
       assert_equal "MCDM Productions", r.publisher
       assert_match(/Draw Steel:/, r.source.to_s)
-      assert r.full_description.include?("Draw Steel Creator License"),
+      assert r.full_description.to_s.include?("Draw Steel Creator License"),
         "expected attribution in #{r.name}"
       assert r.is_shared, "expected is_shared=true on #{r.name}"
     end
@@ -60,7 +60,7 @@ class DrawSteelSeedTest < ActiveSupport::TestCase
 
     sample = spells.first
     assert_equal "MCDM Productions", sample.publisher
-    assert sample.full_description.include?("Draw Steel Creator License")
+    assert sample.full_description.to_s.include?("Draw Steel Creator License")
   end
 
   test "abilities seed task keeps same-name abilities from different schools" do
@@ -91,10 +91,10 @@ class DrawSteelSeedTest < ActiveSupport::TestCase
     rule = Rulebuilder::StockRule.find_by!(core_rules: "drawSteel", rule_type: "Ancestry")
     spell = Rulebuilder::StockSpell.find_by!(core_rules: "drawSteel")
 
-    assert_match(/<h\d/, rule.full_description)
-    assert_match(/<h\d/, spell.full_description)
-    assert_no_match(/^##/, rule.full_description)
-    assert_no_match(/^######/, spell.full_description)
+    assert_match(/<h\d/, rule.full_description.to_s)
+    assert_match(/<h\d/, spell.full_description.to_s)
+    assert_no_match(/^##/, rule.full_description.to_s)
+    assert_no_match(/^######/, spell.full_description.to_s)
   end
 
   test "draw steel seed namespace exposes aggregate task under db:seed" do

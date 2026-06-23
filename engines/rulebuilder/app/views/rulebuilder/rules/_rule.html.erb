@@ -15,13 +15,13 @@
   <% end %>
 
   <% if @rule.prerequisites? && %w[dnd5e generic].include?(@rule.core_rules) %><p class="italic"><strong>Prerequisites:</strong> <%= @rule.prerequisites %></p><% end %>
-  <%= sanitize @rule.full_description %>
+  <%= @rule.full_description %>
   <%= render :partial => 'rulebuilder/rules/rule_details', :locals => { :rule => @rule } %>
 
   <% if @rule.parent.present? %>
     <h2><%= @rule.parent.name %></h2>
     <hr class="faded">
-    <%= sanitize @rule.parent.full_description %>
+    <%= @rule.parent.full_description %>
   <% end %>
 
   <% if @rule.publisher.present? or @rule.source.present? %>

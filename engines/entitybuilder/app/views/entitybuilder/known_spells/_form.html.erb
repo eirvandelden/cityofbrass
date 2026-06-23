@@ -56,7 +56,7 @@
         <% if @known_spell.spell.parent.present? %>
           <h2><%= @known_spell.spell.parent.name %></h2>
           <hr class="faded">
-          <%= sanitize @known_spell.spell.parent.full_description %>
+          <%= @known_spell.spell.parent.full_description %>
         <% end %>
       </div>
     </div>

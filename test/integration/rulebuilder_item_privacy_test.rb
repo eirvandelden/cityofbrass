@@ -168,7 +168,7 @@ class RulebuilderItemPrivacyTest < ActionDispatch::IntegrationTest
     def assert_item_hidden(item, inventory_item = nil)
       assert_no_match item.name, response.body
       assert_no_match item.short_description, response.body
-      assert_no_match item.full_description, response.body
+      assert_no_match item.full_description.to_s, response.body
       assert_no_match inventory_item.detail, response.body if inventory_item
     end
 

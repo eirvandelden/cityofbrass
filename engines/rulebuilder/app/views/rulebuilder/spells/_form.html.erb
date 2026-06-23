@@ -56,7 +56,7 @@
     <div class="medium-12 columns">
       <%= f.input :tag_list, label: 'Tag list (separated by commas)' %>
       <%= f.input :short_description %>
-      <%= f.input :full_description, input_html: { class: "editorblank" } %>
+      <%= f.rich_text_area :full_description %>
     </div>
   </div>
 

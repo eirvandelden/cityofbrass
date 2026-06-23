@@ -1,5 +1,7 @@
 module Worldbuilder
   class Section < ApplicationRecord
+    has_rich_text :content
+
     OPTIONS = [ 'text', 'child', 'tag' ]
 
     scope :order_sort_order, -> { order(:sort_order) }

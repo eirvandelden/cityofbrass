@@ -3,6 +3,8 @@ module Campaignmanager
     include ReservedNames
     include KeysToCampaignmanager
 
+    has_rich_text :full_description
+
     PRIVACY_OPTIONS = [ 'Private', 'Friends', 'Residents', 'Public' ]
     PRIVACY_OPTIONS_FREE = PRIVACY_OPTIONS
     NULL_ATTRS = %w[ district_id ]

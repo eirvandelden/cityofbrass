@@ -40,7 +40,7 @@ module Entitybuilder
 
     test "should not create npc login" do
       assert_difference('Entity.count', 0) do
-        post :create, params: { stock_npc: { name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
+        post :create, params: { stock_npc: { name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description.to_s, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
       end
       assert_response 302
     end
@@ -48,7 +48,7 @@ module Entitybuilder
     test "should not create npc" do
       sign_in @user
       assert_difference('Entity.count', 0) do
-        post :create, params: { stock_npc: { name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
+        post :create, params: { stock_npc: { name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description.to_s, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
       end
       assert_response 403
     end
@@ -57,7 +57,7 @@ module Entitybuilder
       sign_in @user
       sign_in @admin
       assert_difference('Entity.count') do
-        post :create, params: { stock_npc: { name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
+        post :create, params: { stock_npc: { name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description.to_s, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
       end
       assert_redirected_to edit_stock_npc_path(assigns(:entity))
     end
@@ -101,14 +101,14 @@ module Entitybuilder
 
     test "should not update npc" do
       sign_in @user
-      patch :update, params: { id: @npc, stock_npc: { name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
+      patch :update, params: { id: @npc, stock_npc: { name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description.to_s, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
       assert_response 403
     end
 
     test "should update npc" do
       sign_in @user
       sign_in @admin
-      patch :update, params: { id: @npc, stock_npc: { name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
+      patch :update, params: { id: @npc, stock_npc: { name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description.to_s, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
       assert_redirected_to edit_stock_npc_path(assigns(:entity))
     end
 

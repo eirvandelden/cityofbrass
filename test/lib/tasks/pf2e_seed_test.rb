@@ -17,7 +17,7 @@ class Pf2eSeedTest < ActiveSupport::TestCase
 
     rules.each do |r|
       assert_equal "Paizo Inc.", r.publisher
-      assert r.full_description.include?("ORC"), "expected ORC attribution in #{r.name}"
+      assert r.full_description.to_s.include?("ORC"), "expected ORC attribution in #{r.name}"
       assert r.is_shared, "expected is_shared=true on #{r.name}"
     end
   end
@@ -58,7 +58,7 @@ class Pf2eSeedTest < ActiveSupport::TestCase
     Rake::Task["db:seed:pf2e:ancestries"].invoke
 
     rule = Rulebuilder::StockRule.find_by!(core_rules: "pf2e", rule_type: "Ancestry")
-    assert_no_match(/^##\s/, rule.full_description)
+    assert_no_match(/^##\s/, rule.full_description.to_s)
   end
 
   test "conditions seed task creates exactly 43 condition records" do

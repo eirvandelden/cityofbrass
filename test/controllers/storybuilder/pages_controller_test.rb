@@ -46,7 +46,7 @@ module Storybuilder
 
     test "should not create page" do
       assert_difference('Page.count', 0) do
-        post :create, params: { encounter: { name: @page.name, privacy: @page.privacy, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description, tags: @page.tags }, resident_adventure_id: @parent_object }
+        post :create, params: { encounter: { name: @page.name, privacy: @page.privacy, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description.to_s, tags: @page.tags }, resident_adventure_id: @parent_object }
       end
       assert_response 302
     end
@@ -54,7 +54,7 @@ module Storybuilder
     test "should create page" do
       sign_in @user
       assert_difference('Page.count') do
-        post :create, params: { page: { name: "#{@page2.name}2", privacy: @page2.privacy, page_label: @page2.page_label, short_description: @page2.short_description, full_description: @page2.full_description, tags: @page2.tags }, resident_adventure_id: @parent_object }
+        post :create, params: { page: { name: "#{@page2.name}2", privacy: @page2.privacy, page_label: @page2.page_label, short_description: @page2.short_description, full_description: @page2.full_description.to_s, tags: @page2.tags }, resident_adventure_id: @parent_object }
       end
       assert_redirected_to edit_resident_adventure_page_path(assigns(:page), resident_adventure_id: @parent_object)
     end
@@ -62,7 +62,7 @@ module Storybuilder
     test "should create page with parent" do
       sign_in @user
       assert_difference('Page.count') do
-        post :create, params: { page: { parent: @page2.parent, name: "#{@page2.name}2", privacy: @page2.privacy, page_label: @page2.page_label, short_description: @page2.short_description, full_description: @page2.full_description, tags: @page2.tags }, resident_adventure_id: @parent_object }
+        post :create, params: { page: { parent: @page2.parent, name: "#{@page2.name}2", privacy: @page2.privacy, page_label: @page2.page_label, short_description: @page2.short_description, full_description: @page2.full_description.to_s, tags: @page2.tags }, resident_adventure_id: @parent_object }
       end
       assert_redirected_to edit_resident_adventure_page_path(assigns(:page), resident_adventure_id: @parent_object)
     end
@@ -125,7 +125,7 @@ module Storybuilder
 
       assert_response :success
       assert_no_match private_page.name, @response.body
-      assert_no_match private_page.full_description, @response.body
+      assert_no_match private_page.full_description.to_s, @response.body
     end
 
     test "should show page" do
@@ -148,13 +148,13 @@ module Storybuilder
 
     test "should not update page" do
       sign_in @user2
-      patch :update, format: :js, params: { id: @page.id, page: { name: @page.name, privacy: @page.privacy, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description, tags: @page.tags }, resident_adventure_id: @parent_object }
+      patch :update, format: :js, params: { id: @page.id, page: { name: @page.name, privacy: @page.privacy, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description.to_s, tags: @page.tags }, resident_adventure_id: @parent_object }
       assert_response 403
     end
 
     test "should update page" do
       sign_in @user
-      patch :update, xhr: true, format: :js, params: { id: @page.id, page: { name: @page.name, privacy: @page.privacy, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description, tags: @page.tags }, resident_adventure_id: @parent_object }
+      patch :update, xhr: true, format: :js, params: { id: @page.id, page: { name: @page.name, privacy: @page.privacy, page_label: @page.page_label, short_description: @page.short_description, full_description: @page.full_description.to_s, tags: @page.tags }, resident_adventure_id: @parent_object }
       assert_response :success
     end
 

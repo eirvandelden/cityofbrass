@@ -37,7 +37,7 @@ module Entitybuilder
 
     test "should not create creature" do
       assert_difference('Entity.count', 0) do
-        post :create, params: { resident_creature: { resident_id: @creature.resident_id, name: @creature.name, privacy: @creature.privacy, sheet_privacy: @creature.sheet_privacy, core_rules: @creature.core_rules, short_description: @creature.short_description, full_description: @creature.full_description, notes: @creature.notes, type: @creature.type, publisher: @creature.publisher, is_3pp: @creature.is_3pp, source: @creature.source, tags: @creature.tags } }
+        post :create, params: { resident_creature: { resident_id: @creature.resident_id, name: @creature.name, privacy: @creature.privacy, sheet_privacy: @creature.sheet_privacy, core_rules: @creature.core_rules, short_description: @creature.short_description, full_description: @creature.full_description.to_s, notes: @creature.notes, type: @creature.type, publisher: @creature.publisher, is_3pp: @creature.is_3pp, source: @creature.source, tags: @creature.tags } }
       end
       assert_response 302
     end
@@ -45,7 +45,7 @@ module Entitybuilder
     test "should create creature" do
       sign_in @user
       assert_difference('Entity.count') do
-        post :create, params: { resident_creature: { resident_id: @creature.resident_id, name: @creature.name, privacy: @creature.privacy, sheet_privacy: @creature.sheet_privacy, core_rules: @creature.core_rules, short_description: @creature.short_description, full_description: @creature.full_description, notes: @creature.notes, type: @creature.type, publisher: @creature.publisher, is_3pp: @creature.is_3pp, source: @creature.source, tags: @creature.tags } }
+        post :create, params: { resident_creature: { resident_id: @creature.resident_id, name: @creature.name, privacy: @creature.privacy, sheet_privacy: @creature.sheet_privacy, core_rules: @creature.core_rules, short_description: @creature.short_description, full_description: @creature.full_description.to_s, notes: @creature.notes, type: @creature.type, publisher: @creature.publisher, is_3pp: @creature.is_3pp, source: @creature.source, tags: @creature.tags } }
       end
       assert_redirected_to edit_resident_creature_path(assigns(:entity))
     end
@@ -53,7 +53,7 @@ module Entitybuilder
     test "should not create third creature for free user" do
       sign_in @user2
       assert_difference('Entity.count', 0) do
-        post :create, params: { resident_creature: { resident_id: @creature.resident_id, name: @creature.name, privacy: @creature.privacy, sheet_privacy: @creature.sheet_privacy, core_rules: @creature.core_rules, short_description: @creature.short_description, full_description: @creature.full_description, notes: @creature.notes, type: @creature.type, publisher: @creature.publisher, is_3pp: @creature.is_3pp, source: @creature.source, tags: @creature.tags } }
+        post :create, params: { resident_creature: { resident_id: @creature.resident_id, name: @creature.name, privacy: @creature.privacy, sheet_privacy: @creature.sheet_privacy, core_rules: @creature.core_rules, short_description: @creature.short_description, full_description: @creature.full_description.to_s, notes: @creature.notes, type: @creature.type, publisher: @creature.publisher, is_3pp: @creature.is_3pp, source: @creature.source, tags: @creature.tags } }
       end
       assert_redirected_to "/billing/subscriptions"
     end
@@ -119,25 +119,25 @@ module Entitybuilder
 
     test "should not update creature" do
       sign_in @user2
-      patch :update, params: { id: @creature, resident_creature: { resident_id: @creature.resident_id, name: @creature.name, privacy: @creature.privacy, sheet_privacy: @creature.sheet_privacy, core_rules: @creature.core_rules, short_description: @creature.short_description, full_description: @creature.full_description, notes: @creature.notes, type: @creature.type, publisher: @creature.publisher, is_3pp: @creature.is_3pp, source: @creature.source, tags: @creature.tags } }
+      patch :update, params: { id: @creature, resident_creature: { resident_id: @creature.resident_id, name: @creature.name, privacy: @creature.privacy, sheet_privacy: @creature.sheet_privacy, core_rules: @creature.core_rules, short_description: @creature.short_description, full_description: @creature.full_description.to_s, notes: @creature.notes, type: @creature.type, publisher: @creature.publisher, is_3pp: @creature.is_3pp, source: @creature.source, tags: @creature.tags } }
       assert_response 403
     end
 
     test "should update creature" do
       sign_in @user
-      patch :update, params: { id: @creature, resident_creature: { resident_id: @creature.resident_id, name: @creature.name, privacy: @creature.privacy, sheet_privacy: @creature.sheet_privacy, core_rules: @creature.core_rules, short_description: @creature.short_description, full_description: @creature.full_description, notes: @creature.notes, type: @creature.type, publisher: @creature.publisher, is_3pp: @creature.is_3pp, source: @creature.source, tags: @creature.tags } }
+      patch :update, params: { id: @creature, resident_creature: { resident_id: @creature.resident_id, name: @creature.name, privacy: @creature.privacy, sheet_privacy: @creature.sheet_privacy, core_rules: @creature.core_rules, short_description: @creature.short_description, full_description: @creature.full_description.to_s, notes: @creature.notes, type: @creature.type, publisher: @creature.publisher, is_3pp: @creature.is_3pp, source: @creature.source, tags: @creature.tags } }
       assert_redirected_to edit_resident_creature_path(assigns(:entity))
     end
 
     test "should not update_notes.js creature" do
       sign_in @user2
-      patch :update_notes, format: :js, params: { resident_creature_id: @creature, resident_creature: { resident_id: @creature.resident_id, name: @creature.name, privacy: @creature.privacy, sheet_privacy: @creature.sheet_privacy, core_rules: @creature.core_rules, short_description: @creature.short_description, full_description: @creature.full_description, notes: @creature.notes, type: @creature.type, publisher: @creature.publisher, is_3pp: @creature.is_3pp, source: @creature.source, tags: @creature.tags } }
+      patch :update_notes, format: :js, params: { resident_creature_id: @creature, resident_creature: { resident_id: @creature.resident_id, name: @creature.name, privacy: @creature.privacy, sheet_privacy: @creature.sheet_privacy, core_rules: @creature.core_rules, short_description: @creature.short_description, full_description: @creature.full_description.to_s, notes: @creature.notes, type: @creature.type, publisher: @creature.publisher, is_3pp: @creature.is_3pp, source: @creature.source, tags: @creature.tags } }
       assert_response 403
     end
 
     test "should update_notes.js creature" do
       sign_in @user
-      patch :update_notes, format: :js, params: { resident_creature_id: @creature, resident_creature: { resident_id: @creature.resident_id, name: @creature.name, privacy: @creature.privacy, sheet_privacy: @creature.sheet_privacy, core_rules: @creature.core_rules, short_description: @creature.short_description, full_description: @creature.full_description, notes: @creature.notes, type: @creature.type, publisher: @creature.publisher, is_3pp: @creature.is_3pp, source: @creature.source, tags: @creature.tags } }
+      patch :update_notes, format: :js, params: { resident_creature_id: @creature, resident_creature: { resident_id: @creature.resident_id, name: @creature.name, privacy: @creature.privacy, sheet_privacy: @creature.sheet_privacy, core_rules: @creature.core_rules, short_description: @creature.short_description, full_description: @creature.full_description.to_s, notes: @creature.notes, type: @creature.type, publisher: @creature.publisher, is_3pp: @creature.is_3pp, source: @creature.source, tags: @creature.tags } }
       assert_response :success
     end
 

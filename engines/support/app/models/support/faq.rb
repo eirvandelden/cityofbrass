@@ -1,5 +1,6 @@
 module Support
   class Faq < ApplicationRecord
+    has_rich_text :answer
 
     scope :active, -> { where(active: 'true') }
 
@@ -7,7 +8,6 @@ module Support
 
     validates :topic, length: { maximum: 255 }
     validates :question, presence: true, length: { maximum: 255 }
-    validates :answer, length: { maximum: 24000 }
 
     def new_topic
       #topic

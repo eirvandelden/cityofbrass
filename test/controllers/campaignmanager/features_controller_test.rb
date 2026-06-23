@@ -46,7 +46,7 @@ module Campaignmanager
     #test "should create feature" do
     #  sign_in @user
     #  assert_difference('Campaign.count') do
-    #    post :create, campaign_id: @parent_object, feature: { resident_id: @feature.resident_id, name: "#{@feature.name}2", privacy: @feature.privacy, short_description: @feature.short_description, full_description: @feature.full_description, type: @feature.type }
+    #    post :create, campaign_id: @parent_object, feature: { resident_id: @feature.resident_id, name: "#{@feature.name}2", privacy: @feature.privacy, short_description: @feature.short_description, full_description: @feature.full_description.to_s, type: @feature.type }
     #  end
     #  assert_redirected_to edit_feature_path(assigns(:feature))
     #end
@@ -76,13 +76,13 @@ module Campaignmanager
 
     #test "should not update feature" do
     #  sign_in @user2
-    #  patch :update, id: @feature, campaign_id: @parent_object, feature: { resident_id: @feature.resident_id, name: @feature.name, privacy: @feature.privacy, short_description: @feature.short_description, full_description: @feature.full_description, type: @feature.type }
+    #  patch :update, id: @feature, campaign_id: @parent_object, feature: { resident_id: @feature.resident_id, name: @feature.name, privacy: @feature.privacy, short_description: @feature.short_description, full_description: @feature.full_description.to_s, type: @feature.type }
     #  assert_response 403
     #end
 
     #test "should update feature" do
     #  sign_in @user
-    #  patch :update, id: @feature, campaign_id: @parent_object, feature: { resident_id: @feature.resident_id, name: @feature.name, privacy: @feature.privacy, short_description: @feature.short_description, full_description: @feature.full_description, type: @feature.type }
+    #  patch :update, id: @feature, campaign_id: @parent_object, feature: { resident_id: @feature.resident_id, name: @feature.name, privacy: @feature.privacy, short_description: @feature.short_description, full_description: @feature.full_description.to_s, type: @feature.type }
     #  assert_redirected_to edit_feature_path(assigns(:feature))
     #end
 

@@ -71,7 +71,7 @@
         <%= render "residents/show/districts" if @top_5_districts.present? %>
 
         <% if @resident.can_auth(current_user) && @resident.top_5_campaigns.size == 0 && @resident.top_5_characters.size == 0 && @resident.top_5_adventures.size == 0 && @resident.top_5_districts.size == 0 %>
-          <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+          <%= @core_faq.faq.answer unless @core_faq.nil? %>
         <% end %>
       </div>
       <% if @resident.can_auth(current_user) && @resident.affiliations.size > 0 %>

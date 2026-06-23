@@ -27,7 +27,7 @@
         %>
         <hr class="faded">
 
-        <%= sanitize @core_faq.faq.answer unless @core_faq.nil? %>
+        <%= @core_faq.faq.answer unless @core_faq.nil? %>
 
         <% @districts.each do |district| %>
           <% if district.can_show?(current_user, admin_signed_in?) %>

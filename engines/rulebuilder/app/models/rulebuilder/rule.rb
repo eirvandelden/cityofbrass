@@ -5,6 +5,11 @@ module Rulebuilder
     include KeysToRulebuilder
     include JsonArrayColumns
 
+    has_rich_text :full_description
+    has_rich_text :benefit
+    has_rich_text :normal
+    has_rich_text :special
+
     OPTIONS = [ 'Ability', 'Feat', 'Stunt' ]
 
     scope :order_name, -> { order(:name) }
@@ -39,9 +44,6 @@ module Rulebuilder
     validates :name, presence: true, length: { maximum: 64 }
     validates :short_description, length: { maximum: 255 }
     validates :prerequisites, length: { maximum: 255 }
-    validates :benefit, length: { maximum: 6000 }
-    validates :normal, length: { maximum: 6000 }
-    validates :special, length: { maximum: 6000 }
     validates :publisher, length: { maximum: 255 }
     validates :source, length: { maximum: 255 }
     before_save :mark_for_removal

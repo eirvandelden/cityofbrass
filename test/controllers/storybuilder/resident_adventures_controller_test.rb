@@ -38,7 +38,7 @@ module Storybuilder
 
     test "should not create adventure" do
       assert_difference('Adventure.count', 0) do
-        post :create, params: { resident_adventure: { resident_id: @adventure.resident_id, name: @adventure.name, privacy: @adventure.privacy, short_description: @adventure.short_description, full_description: @adventure.full_description, type: @adventure.type } }
+        post :create, params: { resident_adventure: { resident_id: @adventure.resident_id, name: @adventure.name, privacy: @adventure.privacy, short_description: @adventure.short_description, full_description: @adventure.full_description.to_s, type: @adventure.type } }
       end
       assert_response 302
     end
@@ -46,7 +46,7 @@ module Storybuilder
     test "should create adventure" do
       sign_in @user
       assert_difference('Adventure.count') do
-        post :create, params: { resident_adventure: { resident_id: @adventure2.resident_id, name: "#{@adventure2.name}2", privacy: @adventure2.privacy, short_description: @adventure2.short_description, full_description: @adventure2.full_description, type: @adventure2.type } }
+        post :create, params: { resident_adventure: { resident_id: @adventure2.resident_id, name: "#{@adventure2.name}2", privacy: @adventure2.privacy, short_description: @adventure2.short_description, full_description: @adventure2.full_description.to_s, type: @adventure2.type } }
       end
       assert_redirected_to edit_resident_adventure_path(assigns(:adventure))
     end
@@ -54,7 +54,7 @@ module Storybuilder
     test "should not create second adventure for free user" do
       sign_in @user2
       assert_difference('Adventure.count', 0) do
-        post :create, params: { resident_adventure: { resident_id: @adventure2.resident_id, name: "#{@adventure2.name}2", privacy: @adventure2.privacy, short_description: @adventure2.short_description, full_description: @adventure2.full_description, type: @adventure2.type } }
+        post :create, params: { resident_adventure: { resident_id: @adventure2.resident_id, name: "#{@adventure2.name}2", privacy: @adventure2.privacy, short_description: @adventure2.short_description, full_description: @adventure2.full_description.to_s, type: @adventure2.type } }
       end
       assert_redirected_to "/billing/subscriptions"
     end
@@ -62,7 +62,7 @@ module Storybuilder
     test "should create adventure with parent" do
       sign_in @user
       assert_difference('Adventure.count') do
-        post :create, params: { resident_adventure: { resident_id: @adventure2.resident_id, name: "#{@adventure2.name}2", privacy: @adventure2.privacy, parent_id: @adventure.id, short_description: @adventure2.short_description, full_description: @adventure2.full_description, type: @adventure2.type } }
+        post :create, params: { resident_adventure: { resident_id: @adventure2.resident_id, name: "#{@adventure2.name}2", privacy: @adventure2.privacy, parent_id: @adventure.id, short_description: @adventure2.short_description, full_description: @adventure2.full_description.to_s, type: @adventure2.type } }
       end
       assert_redirected_to edit_resident_adventure_path(assigns(:adventure))
     end
@@ -109,7 +109,7 @@ module Storybuilder
 
       assert_response :success
       assert_no_match @adventure2.name, @response.body
-      assert_no_match @adventure2.full_description, @response.body
+      assert_no_match @adventure2.full_description.to_s, @response.body
     end
 
     test "should hide private notable entity when public adventure is shown logged out" do
@@ -151,13 +151,13 @@ module Storybuilder
 
     test "should not update adventure" do
       sign_in @user2
-      patch :update, params: { id: @adventure, resident_adventure: { resident_id: @adventure.resident_id, name: @adventure.name, privacy: @adventure.privacy, short_description: @adventure.short_description, full_description: @adventure.full_description, type: @adventure.type } }
+      patch :update, params: { id: @adventure, resident_adventure: { resident_id: @adventure.resident_id, name: @adventure.name, privacy: @adventure.privacy, short_description: @adventure.short_description, full_description: @adventure.full_description.to_s, type: @adventure.type } }
       assert_response 403
     end
 
     test "should update adventure" do
       sign_in @user
-      patch :update, params: { id: @adventure, resident_adventure: { resident_id: @adventure.resident_id, name: @adventure.name, privacy: @adventure.privacy, short_description: @adventure.short_description, full_description: @adventure.full_description, type: @adventure.type } }
+      patch :update, params: { id: @adventure, resident_adventure: { resident_id: @adventure.resident_id, name: @adventure.name, privacy: @adventure.privacy, short_description: @adventure.short_description, full_description: @adventure.full_description.to_s, type: @adventure.type } }
       assert_redirected_to edit_resident_adventure_path(assigns(:adventure))
     end
 

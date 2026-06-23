@@ -21,7 +21,7 @@
     %>
     <hr class="faded">
     <h2 style="margin-bottom: .75rem;"><%= @faq.question %></h2>
-    <%= sanitize @faq.answer, tags: %w(iframe strong em b i p code pre tt samp kbd var sub sup dfn cite big small address hr br span h1 h2 h3 h4 h5 h6 ul ol li dl dt dd abbr acronym a img blockquote del ins table tr td th), attributes: %w(href src width height alt cite datetime title class name xml:lang abbr id style frameborder) %>
+    <%= @faq.answer %>
     <p><i class='fa fa-angle-double-left'></i> <%= link_to "Back".html_safe, :back %></p>
   </div>
 </div>

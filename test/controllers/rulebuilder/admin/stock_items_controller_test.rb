@@ -50,7 +50,7 @@ module Rulebuilder
         sign_in @user
         sign_in @admin
         assert_difference("Item.count") do
-          post :create, params: { stock_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description, name: @item.name, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
+          post :create, params: { stock_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description.to_s, name: @item.name, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
         end
         assert_redirected_to edit_admin_stock_item_path(assigns(:item))
       end
@@ -97,27 +97,27 @@ module Rulebuilder
 
       test "should not update item" do
         sign_in @user
-        patch :update, params: { id: @item, stock_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description, name: @item.name, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
+        patch :update, params: { id: @item, stock_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description.to_s, name: @item.name, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
         assert_response 403
       end
 
       test "should update item" do
         sign_in @user
         sign_in @admin
-        patch :update, params: { id: @item, stock_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description, name: @item.name, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
+        patch :update, params: { id: @item, stock_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description.to_s, name: @item.name, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
         assert_redirected_to edit_admin_stock_item_path(assigns(:item))
       end
 
       test "should not update.js item" do
         sign_in @user
-        patch :update, format: :js, params: { id: @item, stock_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description, name: @item.name, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
+        patch :update, format: :js, params: { id: @item, stock_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description.to_s, name: @item.name, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
         assert_response 403
       end
 
       test "should update.js item" do
         sign_in @user
         sign_in @admin
-        patch :update, format: :js, params: { id: @item, stock_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description, name: @item.name, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
+        patch :update, format: :js, params: { id: @item, stock_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description.to_s, name: @item.name, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
         assert_response :success
       end
 

@@ -18,7 +18,7 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
     barbarian = rules.find_by!(name: "Barbarian")
     assert_equal "Wizards of the Coast LLC", barbarian.publisher
     assert_equal "SRD 5.2.1", barbarian.source
-    assert_match(/Creative Commons Attribution 4\.0 International License/, barbarian.full_description)
+    assert_match(/Creative Commons Attribution 4\.0 International License/, barbarian.full_description.to_s)
   end
 
   test "spells seed task is idempotent" do
@@ -54,8 +54,8 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
     item = Rulebuilder::StockItem.find_by!(core_rules: "dnd5e", name: "Club")
 
     [ species, background, spell, item ].each do |record|
-      assert_match(/<h\d/, record.full_description)
-      assert_no_match(/^#/, record.full_description)
+      assert_match(/<h\d/, record.full_description.to_s)
+      assert_no_match(/^#/, record.full_description.to_s)
       assert_equal "Wizards of the Coast LLC", record.publisher
       assert_equal "SRD 5.2.1", record.source
     end
@@ -110,8 +110,8 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
     aboleth = Entitybuilder::StockCreature.find_by!(core_rules: "dnd5e", name: "Aboleth")
     air_elemental = Entitybuilder::StockCreature.find_by!(core_rules: "dnd5e", name: "Air Elemental")
 
-    assert_no_match(/Air Elemental/, aboleth.full_description)
-    assert_no_match(/Animated Objects/, air_elemental.full_description)
+    assert_no_match(/Air Elemental/, aboleth.full_description.to_s)
+    assert_no_match(/Animated Objects/, air_elemental.full_description.to_s)
   end
 
   test "all seed categories provide spot-check records" do
@@ -157,7 +157,7 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
       assert creature.valid?, "expected #{creature.name} to be valid"
       assert_equal "Wizards of the Coast LLC", creature.publisher
       assert_equal "SRD 5.2.1", creature.source
-      assert_match(/<h\d|<p>/, creature.full_description)
+      assert_match(/<h\d|<p>/, creature.full_description.to_s)
       assert creature.ability_scores.any?, "expected ability scores on #{creature.name}"
       assert creature.descriptors.any?, "expected descriptors on #{creature.name}"
       assert creature.defenses.any?, "expected defenses on #{creature.name}"
@@ -175,7 +175,7 @@ class FifthEditionSeedTest < ActiveSupport::TestCase
         skills: creature.skills.pluck(:name, :bonus, :ability_score),
         attacks: creature.attacks.pluck(:name, :attack_type, :attack_range, :attack_bonus, :damage_dice, :damage_bonus),
         short_description: creature.short_description,
-        full_description: creature.full_description
+        full_description: creature.full_description.to_s
       }
     end
 end

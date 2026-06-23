@@ -5,6 +5,8 @@ module Rulebuilder
     include KeysToRulebuilder
     include JsonArrayColumns
 
+    has_rich_text :full_description
+
     scope :order_name, -> { order(:name) }
     scope :short, -> { select('id, type, resident_id, name, core_rules, short_description') }
     scope :basic, -> { select('id, type, resident_id, name, core_rules') }

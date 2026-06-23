@@ -37,7 +37,7 @@ module Rulebuilder
 
     test "should not create item" do
       assert_difference('Item.count', 0) do
-        post :create, params: { resident_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description, name: @item.name, resident_id: @item.resident_id, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
+        post :create, params: { resident_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description.to_s, name: @item.name, resident_id: @item.resident_id, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
       end
       assert_response 302
     end
@@ -45,7 +45,7 @@ module Rulebuilder
     test "should create item" do
       sign_in @user
       assert_difference('Item.count') do
-        post :create, params: { resident_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description, name: @item.name, resident_id: @item.resident_id, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
+        post :create, params: { resident_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description.to_s, name: @item.name, resident_id: @item.resident_id, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
       end
       assert_redirected_to edit_resident_item_path(assigns(:item))
     end
@@ -63,6 +63,7 @@ module Rulebuilder
 
     test "should hide private parent when public child item is shown logged out" do
       parent = @item
+      parent.update!(full_description: "Private parent secret content")
       child = Rulebuilder::ResidentItem.create!(
         parent_id: parent.id,
         resident_id: parent.resident_id,
@@ -75,7 +76,7 @@ module Rulebuilder
       get :show, params: { id: child }
 
       assert_response :success
-      assert_no_match parent.full_description, @response.body
+      assert_no_match "Private parent secret content", @response.body
     end
 
     test "should show item" do
@@ -109,25 +110,25 @@ module Rulebuilder
 
     test "should not update item" do
       sign_in @user2
-      patch :update, params: { id: @item, resident_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description, name: @item.name, resident_id: @item.resident_id, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
+      patch :update, params: { id: @item, resident_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description.to_s, name: @item.name, resident_id: @item.resident_id, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
       assert_response 403
     end
 
     test "should update item" do
       sign_in @user
-      patch :update, params: { id: @item, resident_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description, name: @item.name, resident_id: @item.resident_id, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
+      patch :update, params: { id: @item, resident_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description.to_s, name: @item.name, resident_id: @item.resident_id, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
       assert_redirected_to edit_resident_item_path(assigns(:item))
     end
 
     test "should not update.js item" do
       sign_in @user2
-      patch :update, format: :js, params: { id: @item, resident_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description, name: @item.name, resident_id: @item.resident_id, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
+      patch :update, format: :js, params: { id: @item, resident_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description.to_s, name: @item.name, resident_id: @item.resident_id, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
       assert_response 403
     end
 
     test "should update.js item" do
       sign_in @user
-      patch :update, format: :js, params: { id: @item, resident_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description, name: @item.name, resident_id: @item.resident_id, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
+      patch :update, format: :js, params: { id: @item, resident_item: { category: @item.category, core_rules: @item.core_rules, full_description: @item.full_description.to_s, name: @item.name, resident_id: @item.resident_id, short_description: @item.short_description, weight: @item.weight, type: @item.type, publisher: @item.publisher, is_3pp: @item.is_3pp, source: @item.source, tags: @item.tags } }
       assert_response :success
     end
 

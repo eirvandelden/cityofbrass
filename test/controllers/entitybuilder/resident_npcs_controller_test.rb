@@ -37,7 +37,7 @@ module Entitybuilder
 
     test "should not create npc" do
       assert_difference('Entity.count', 0) do
-        post :create, params: { resident_npc: { resident_id: @npc.resident_id, name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
+        post :create, params: { resident_npc: { resident_id: @npc.resident_id, name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description.to_s, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
       end
       assert_response 302
     end
@@ -45,7 +45,7 @@ module Entitybuilder
     test "should create npc" do
       sign_in @user
       assert_difference('Entity.count') do
-        post :create, params: { resident_npc: { resident_id: @npc.resident_id, name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
+        post :create, params: { resident_npc: { resident_id: @npc.resident_id, name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description.to_s, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
       end
       assert_redirected_to edit_resident_npc_path(assigns(:entity))
     end
@@ -53,7 +53,7 @@ module Entitybuilder
     test "should not create third npc for free user" do
       sign_in @user2
       assert_difference('Entity.count', 0) do
-        post :create, params: { resident_npc: { resident_id: @npc.resident_id, name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
+        post :create, params: { resident_npc: { resident_id: @npc.resident_id, name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description.to_s, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
       end
       assert_redirected_to "/billing/subscriptions"
     end
@@ -120,25 +120,25 @@ module Entitybuilder
 
     test "should not update npc" do
       sign_in @user2
-      patch :update, params: { id: @npc, resident_npc: { resident_id: @npc.resident_id, name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
+      patch :update, params: { id: @npc, resident_npc: { resident_id: @npc.resident_id, name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description.to_s, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
       assert_response 403
     end
 
     test "should update npc" do
       sign_in @user
-      patch :update, params: { id: @npc, resident_npc: { resident_id: @npc.resident_id, name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
+      patch :update, params: { id: @npc, resident_npc: { resident_id: @npc.resident_id, name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description.to_s, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
       assert_redirected_to edit_resident_npc_path(assigns(:entity))
     end
 
     test "should not update_notes.js npc" do
       sign_in @user2
-      patch :update_notes, format: :js, params: { resident_npc_id: @npc, resident_npc: { resident_id: @npc.resident_id, name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
+      patch :update_notes, format: :js, params: { resident_npc_id: @npc, resident_npc: { resident_id: @npc.resident_id, name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description.to_s, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
       assert_response 403
     end
 
     test "should update_notes.js npc" do
       sign_in @user
-      patch :update_notes, format: :js, params: { resident_npc_id: @npc, resident_npc: { resident_id: @npc.resident_id, name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
+      patch :update_notes, format: :js, params: { resident_npc_id: @npc, resident_npc: { resident_id: @npc.resident_id, name: @npc.name, privacy: @npc.privacy, sheet_privacy: @npc.sheet_privacy, core_rules: @npc.core_rules, short_description: @npc.short_description, full_description: @npc.full_description.to_s, notes: @npc.notes, type: @npc.type, publisher: @npc.publisher, is_3pp: @npc.is_3pp, source: @npc.source, tags: @npc.tags } }
       assert_response :success
     end
 

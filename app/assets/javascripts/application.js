@@ -23,7 +23,7 @@
 //= require_tree ./v1
 //= require_tree ./time
 //= require_tree ./roller
-//= require ckeditor/brassify
+//= require trix/dist/trix
 //= require gallery/image-picker
 //= require billing/subscriptions
 //= require entitybuilder/application

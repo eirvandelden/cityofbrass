@@ -2,4 +2,4 @@
   <%= link_to "<i class='fa fa-cog'></i> ".html_safe, edit_url, class: "iconlink edit" if can_auth %><%= section.header if section.header.present? %>
 </h2>
 
-<%= sanitize section.content %>
+<%= section.content %>

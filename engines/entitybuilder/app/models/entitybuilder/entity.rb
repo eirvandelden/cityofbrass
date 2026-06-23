@@ -5,6 +5,10 @@ module Entitybuilder
     include KeysToEntitybuilder
     include JsonArrayColumns
 
+    has_rich_text :full_description
+    has_rich_text :introduction
+    has_rich_text :notes
+
     PRIVACY_OPTIONS = [ 'Private', 'Friends', 'Residents', 'Public' ]
     NULL_ATTRS = %w[ ]
 
