@@ -15,6 +15,8 @@ Rails.application.configure do
     path: ":rails_root/storage/paperclip/:class/:attachment/:id_partition/:style/:filename",
     url: "/paperclip/:class/:attachment/:id_partition/:style/:filename"
   }
+  config.active_storage.service = :local
+  config.active_storage.variant_processor = :vips
 
   logger           = ActiveSupport::Logger.new(STDOUT)
   logger.formatter = config.log_formatter

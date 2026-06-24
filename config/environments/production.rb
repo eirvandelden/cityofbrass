@@ -21,6 +21,8 @@ Rails.application.configure do
     path: ":rails_root/storage/attachments/:class/:attachment/:id_partition/:style/:filename",
     url: "/attachments/:class/:attachment/:id_partition/:style/:filename"
   }
+  config.active_storage.service = :production
+  config.active_storage.variant_processor = :vips
 
   # Code is not reloaded between requests.
   config.cache_classes = true
