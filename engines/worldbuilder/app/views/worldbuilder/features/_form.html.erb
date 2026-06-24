@@ -1,5 +1,8 @@
 <div id="form_div">
-<%= simple_form_for [@parent_object, @feature], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+<%= simple_form_for [@parent_object, @feature],
+                    :url => nested_resource_form_path(@parent_object, @feature, :features),
+                    :remote => true,
+                    :html => {'data-no-transition-cache' => ''} do |f| %>
   <fieldset>
     <div class="row inline text-right">
       <div class="small-12 columns">

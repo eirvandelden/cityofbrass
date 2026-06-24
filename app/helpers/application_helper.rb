@@ -130,6 +130,13 @@ module ApplicationHelper
     return "#{tcob_path(record, 'id')}/edit"
   end
 
+  def nested_resource_form_path(parent, record, collection)
+    collection_path = "#{tcob_path(parent, 'id')}/#{collection}"
+    return collection_path unless record.persisted?
+
+    "#{collection_path}/#{record.id}"
+  end
+
   def tcob_sentence(list)
     begin
       buildlist = []
