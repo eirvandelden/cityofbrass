@@ -38,6 +38,9 @@ RUN bundle lock --add-platform x86_64-linux \
 
 COPY . .
 
+RUN npm install --global yarn \
+ && yarn install --frozen-lockfile
+
 RUN bundle exec bootsnap precompile app/ lib/
 
 RUN SECRET_KEY_BASE=dummy_for_assets_precompile ./bin/rails assets:precompile

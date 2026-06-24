@@ -243,6 +243,9 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.8, >= 1.8.1)
       terminal-table (>= 1.5.1)
+    image_processing (1.14.0)
+      mini_magick (>= 4.9.5, < 6)
+      ruby-vips (>= 2.0.17, < 3)
     io-console (0.8.2)
     jbuilder (2.13.0)
       actionview (>= 5.0.0)
@@ -307,6 +310,8 @@ GEM
     mimemagic (0.3.10)
       nokogiri (~> 1)
       rake
+    mini_magick (5.3.1)
+      logger
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
     minitest (5.27.0)
@@ -463,6 +468,9 @@ GEM
       rubocop-performance (>= 1.24)
       rubocop-rails (>= 2.30)
     ruby-progressbar (1.13.0)
+    ruby-vips (2.3.0)
+      ffi (~> 1.12)
+      logger
     sass (3.4.25)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -571,6 +579,7 @@ DEPENDENCIES
   gallery!
   get_process_mem
   i18n-tasks
+  image_processing (~> 1.2)
   importer!
   jbuilder
   jquery-rails
