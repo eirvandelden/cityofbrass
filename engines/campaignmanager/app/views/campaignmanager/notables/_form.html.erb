@@ -1,5 +1,8 @@
 <div id="form_div">
-<%= simple_form_for [@parent_object, @notable], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+<%= simple_form_for [@parent_object, @notable],
+                    :url => nested_resource_form_path(@parent_object, @notable, :notables),
+                    :remote => true,
+                    :html => {'data-no-transition-cache' => ''} do |f| %>
   <fieldset>
     <div class="row inline text-right">
       <div class="small-12 columns">
@@ -11,7 +14,11 @@
     <div class="row">
       <div class="small-12 columns">
         <% if f.object.new_record? %>
-          <%= f.association :entity, label: 'Entity', collection: @entities, label_method: :name, value_method: :id, :include_blank => true %>
+          <%= f.association :entity, label: 'Entity',
+                                     collection: @entities,
+                                     label_method: :name,
+                                     value_method: :id,
+                                     :include_blank => true %>
         <% else %>
           <%= text_field_tag 'Entity', f.object.entity.name, disabled: true %>
         <% end %>
