@@ -66,9 +66,9 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     Importer::ProcessImportJob.perform_now(import.id)
 
     rule = Rulebuilder::ResidentRule.find_by!(name: "Rampage")
-    assert_includes rule.full_description, "The beast charges."
-    assert_includes rule.full_description, "5-6"
-    assert_includes rule.full_description, "Gore|+7|2d6+4"
+    assert_includes rule.full_description.to_plain_text, "The beast charges."
+    assert_includes rule.full_description.to_plain_text, "5-6"
+    assert_includes rule.full_description.to_plain_text, "Gore|+7|2d6+4"
   end
 
   test "monster import does not truncate long attack descriptions" do
@@ -131,8 +131,8 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     Importer::ProcessImportJob.perform_now(import.id)
 
     item = Rulebuilder::ResidentItem.find_by!(name: "Bloodseeker")
-    assert_includes item.full_description, "rare (requires attunement)"
-    assert_includes item.full_description, "300"
+    assert_includes item.full_description.to_plain_text, "rare (requires attunement)"
+    assert_includes item.full_description.to_plain_text, "300"
   end
 
   test "class import includes armor, weapon, and tool proficiencies in description" do
@@ -152,8 +152,8 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     Importer::ProcessImportJob.perform_now(import.id)
 
     rule = Rulebuilder::ResidentRule.find_by!(name: "Barbarian")
-    assert_includes rule.full_description, "light armor, medium armor, shields"
-    assert_includes rule.full_description, "simple weapons, martial weapons"
+    assert_includes rule.full_description.to_plain_text, "light armor, medium armor, shields"
+    assert_includes rule.full_description.to_plain_text, "simple weapons, martial weapons"
   end
 
   test "monster with a blank-name trait still imports the trait under a placeholder name" do
@@ -179,7 +179,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     placeholder = names.find { |n| n != "Deathly Choir" }
     assert_match(/\ANo Name/, placeholder)
     assert_equal "Magic Weapon, Nondetection",
-                 Rulebuilder::ResidentRule.find_by!(name: placeholder).full_description
+                 Rulebuilder::ResidentRule.find_by!(name: placeholder).full_description.to_plain_text
   end
 
   test "feat import stores prerequisite" do
@@ -240,7 +240,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
 
     page = Storybuilder::Page.find_by!(name: "Ambush")
     assert_nil page.full_description
-    assert_equal [ "First block.", "Second block." ], page.sections.order(:sort_order).pluck(:content)
+    assert_equal [ "First block.", "Second block." ], page.sections.order(:sort_order).map { |s| s.content.to_plain_text }
   end
 
   test "compendium import preserves over-long descriptions without truncating" do
@@ -256,7 +256,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
 
     assert_equal "succeeded", import.reload.status
     item = Rulebuilder::ResidentItem.find_by!(name: "Verbose Tome")
-    assert_includes item.full_description, long_text
+    assert_includes item.full_description.to_plain_text, long_text
   end
 
   test "item import decodes type codes into categories and maps containers" do
@@ -359,9 +359,9 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
 
     rule = Rulebuilder::ResidentRule.find_by!(name: "Wood Elf")
     assert_equal "Species", rule.rule_type
-    assert_includes rule.full_description, "Dex 2, Wis 1"
-    assert_includes rule.full_description, "Perception"
-    assert_includes rule.full_description, "Darkvision"
+    assert_includes rule.full_description.to_plain_text, "Dex 2, Wis 1"
+    assert_includes rule.full_description.to_plain_text, "Perception"
+    assert_includes rule.full_description.to_plain_text, "Darkvision"
   end
 
   test "background import creates a Backgrounds rule" do
@@ -379,7 +379,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
 
     rule = Rulebuilder::ResidentRule.find_by!(name: "Acolyte")
     assert_equal "Backgrounds", rule.rule_type
-    assert_includes rule.full_description, "Insight, Religion"
+    assert_includes rule.full_description.to_plain_text, "Insight, Religion"
   end
 
   test "monster spellcasting imports ability descriptor, slot trackables, and spell list" do
@@ -606,7 +606,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert adventure.pages.exists?(name: "Upper Floor 1. Keep Out!")
     assert_not campaign.game_master_notes.exists?(name: "0. Introduction")
     assert_equal [ "This is adventure content, not a private GM note.", "This is a second text block." ],
-                 Storybuilder::Page.find_by!(name: "0. Introduction").sections.order(:sort_order).pluck(:content)
+                 Storybuilder::Page.find_by!(name: "0. Introduction").sections.order(:sort_order).map { |s| s.content.to_plain_text }
     assert_equal [ "0. Introduction", "Upper Floor 1. Keep Out!" ], adventure.menu_items.order(:sort_order).pluck(:item_label)
     assert_equal [ "Page Only Campaign" ], campaign.menu_items.order(:sort_order).pluck(:item_label)
   end
@@ -629,7 +629,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal [ "First Adventure", "Second Adventure", "Menu Campaign" ],
                  campaign.menu_items.order(:sort_order).pluck(:item_label)
     assert_equal [ "Loose note opening.", "Loose note follow-up." ],
-                 loose_note.sections.order(:sort_order).pluck(:content)
+                 loose_note.sections.order(:sort_order).map { |s| s.content.to_plain_text }
   end
 
   test "resident campaign import preserves intermezzo order between adventures" do
@@ -686,13 +686,13 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
 
     assert_equal 7, notes.count
     notes.each do |note|
-      assert_includes note.full_description, "Game Master 5 XML"
-      assert_includes note.full_description, "/imports/#{import.id}"
-      assert_match(/\d{4}-\d{2}-\d{2}/, note.full_description)
+      assert_includes note.full_description.to_plain_text, "Game Master 5 XML"
+      assert_includes note.full_description.body.to_s, "/imports/#{import.id}"
+      assert_match(/\d{4}-\d{2}-\d{2}/, note.full_description.to_plain_text)
     end
 
     npc = Entitybuilder::ResidentNpc.find_by!(name: "Captain Soranna")
-    npc_note = notes.find { |note| note.full_description.include?("Captain Soranna") }
+    npc_note = notes.find { |note| note.full_description.body.to_s.include?("Captain Soranna") }
 
     assert npc_note.notables.exists?(entity: npc)
   end
@@ -770,7 +770,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
 
     assert_equal "succeeded", import.reload.status
     assert_equal [ "This is adventure content, not a private GM note.", "This is a second text block." ],
-                 Storybuilder::Page.find_by!(name: "0. Introduction").sections.order(:sort_order).pluck(:content)
+                 Storybuilder::Page.find_by!(name: "0. Introduction").sections.order(:sort_order).map { |s| s.content.to_plain_text }
   end
 
   test "campaign note with title element creates sections from text blocks" do
@@ -785,7 +785,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal 2, page.sections.count
     assert_equal [ "This is the first paragraph of the note.",
                    "This is the second paragraph." ],
-                 page.sections.order(:sort_order).pluck(:content)
+                 page.sections.order(:sort_order).map { |s| s.content.to_plain_text }
   end
 
   test "admin stock campaign import creates one stock adventure per imported adventure" do
@@ -1063,7 +1063,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     Importer::ProcessImportJob.perform_now(import.id)
 
     creature = Entitybuilder::ResidentCreature.find_by!(name: "Arcuballis")
-    assert_equal "A magical beast resembling a griffon crossed with a triceratops.", creature.full_description
+    assert_equal "A magical beast resembling a griffon crossed with a triceratops.", creature.full_description.to_plain_text
     assert_equal 30, creature.movements.find_by!(name: "Speed").base
     assert_equal 60, creature.movements.find_by!(name: "Fly Speed").base
     assert_equal 20, creature.movements.find_by!(name: "Swim Speed").base
@@ -1108,7 +1108,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     trait = Rulebuilder::ResidentRule.find_by!(name: "Nimble Escape")
     assert_equal "Ability", trait.rule_type
     assert_equal "The goblin can take the Disengage or Hide action as a bonus action on each of its turns.",
-                 trait.full_description
+                 trait.full_description.to_plain_text
     assert_equal [ "Nimble Escape" ], goblin.linked_rules.map(&:name)
   end
 
@@ -1127,7 +1127,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     Importer::ProcessImportJob.perform_now(import.id)
 
     spell = Rulebuilder::ResidentSpell.find_by!(name: "Fire Bolt")
-    assert_equal "A ranged spell attack.\nDeals fire damage.", spell.full_description
+    assert_equal "A ranged spell attack.\nDeals fire damage.", spell.full_description.to_plain_text
   end
 
   test "standalone pc file import creates resident character with ability scores, saves, skills, and attack" do
@@ -1184,7 +1184,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     Importer::ProcessImportJob.perform_now(import.id)
 
     npc = Entitybuilder::ResidentNpc.find_by!(name: "Captain Soranna")
-    assert_equal "Leader of the town guard.", npc.full_description
+    assert_equal "Leader of the town guard.", npc.full_description.to_plain_text
     assert_equal "M", npc.descriptors.find_by!(name: "Size").description
     assert_equal "humanoid", npc.descriptors.find_by!(name: "Type").description
     assert_equal "lawful good", npc.descriptors.find_by!(name: "Alignment").description
@@ -1202,7 +1202,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
     assert_equal "succeeded", import.reload.status
     npc = Entitybuilder::ResidentNpc.find_by!(name: "Captain Soranna")
     assert_equal residents(:razune), npc.resident
-    assert_equal "Leader of the town guard.", npc.full_description
+    assert_equal "Leader of the town guard.", npc.full_description.to_plain_text
   end
 
   test "standalone pc file reimport replaces existing imported character" do
@@ -1232,7 +1232,7 @@ class ImporterProcessImportJobTest < ActiveSupport::TestCase
 
     character = Entitybuilder::ResidentCharacter.find_by!(name: "Quinthya")
     assert_equal 6, character.ability_scores.count
-    assert_equal "A mysterious elven monk from the woods, seeking enlightenment.", character.full_description
+    assert_equal "A mysterious elven monk from the woods, seeking enlightenment.", character.full_description.to_plain_text
   end
 
   test "admin stock mode skips standalone pc files" do

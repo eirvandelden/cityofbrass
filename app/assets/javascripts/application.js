@@ -23,7 +23,9 @@
 //= require_tree ./v1
 //= require_tree ./time
 //= require_tree ./roller
+//= require @rails/activestorage/app/assets/javascripts/activestorage
 //= require trix/dist/trix
+//= require actiontext/attachment_upload
 //= require gallery/image-picker
 //= require billing/subscriptions
 //= require entitybuilder/application

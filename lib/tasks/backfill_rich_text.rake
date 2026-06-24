@@ -1,4 +1,6 @@
-# Backfills ActionText::RichText records from legacy text columns.
+# Repair command for ActionText::RichText records from legacy text columns.
+# The backfill runs automatically during db:migrate via BackfillActionTextRichTexts.
+# Run this task only to repair missing records after a failed migration or data incident.
 # Idempotent: skips records that already have ActionText content.
 # Run: bin/rails rich_text:backfill
 namespace :rich_text do
