@@ -21,7 +21,10 @@ class Message < ApplicationRecord
   validates :recipient_id, presence: true
   validates :subject, presence: true, length: { maximum: 255 }
   def self.search(search)
-    where("subject like ?", "%#{search}%")
+    query = "%#{sanitize_sql_like(search.to_s)}%"
+
+    left_joins(:rich_text_body)
+      .where("messages.subject LIKE :query ESCAPE '\\' OR action_text_rich_texts.body LIKE :query ESCAPE '\\'", query: query)
   end
 
   # marks a message as deleted by either the sender or the recepient, which ever the user that was passed is.
