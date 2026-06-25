@@ -73,6 +73,7 @@ module Campaignmanager
 
       respond_to do |format|
         if @page.save
+          auto_create_menu_item
           format.html { redirect_to sti_edit_page_path(@page), notice: @page.name + ' was successfully created.' }
         else
           format.html { render action: 'new' }
@@ -140,6 +141,16 @@ module Campaignmanager
         if @page.nil? || !@page.can_show?(current_user, admin_signed_in?, @type)
           render template: 'errors/404', layout: 'layouts/application', status: 404
         end
+      end
+
+      def auto_create_menu_item
+        sort_order = @campaign.menu_items.maximum(:sort_order).to_i + 1
+        menu_item = @campaign.menu_items.create!(
+          sort_order: sort_order,
+          item_label: @page.name.to_s.truncate(25),
+          item_link: helpers.city_path(@campaign, @page)
+        )
+        Storybuilder::MenuItemJoin.create!(menu_item: menu_item, menu_item_joinable: @page)
       end
 
       def sti_edit_page_path(page)

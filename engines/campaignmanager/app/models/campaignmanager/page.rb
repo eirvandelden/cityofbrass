@@ -25,6 +25,11 @@ module Campaignmanager
     has_many :notables, -> { order(:sort_order) }, :as => :notableable, :dependent => :destroy
     has_many :entities, -> { select('id, type, name') }, :through => :notables, :source => :entity, :class_name => "Entitybuilder::Entity"
 
+    has_one :menu_item_join,
+            as: :menu_item_joinable,
+            class_name: "Storybuilder::MenuItemJoin",
+            dependent: :destroy
+
     has_one :gallery_image_join,
             :as => :imageable,
             :class_name => "Gallery::ImageJoin",
@@ -51,12 +56,17 @@ module Campaignmanager
     before_validation :make_slug
     before_validation :nil_if_blank
     before_save :mark_for_removal
+    before_destroy :destroy_menu_item
 
     def icon
       'icon-docs'
     end
 
     private
+      def destroy_menu_item
+        menu_item_join&.menu_item&.destroy
+      end
+
       def make_slug
         self.slug = self.name.parameterize
       end

@@ -75,6 +75,7 @@ module Storybuilder
 
       respond_to do |format|
         if @page.save
+          auto_create_menu_item unless @page.menu_item_join.present?
           format.html { redirect_to storybuilder.edit_polymorphic_path([@parent_object, @page]), notice: @page.name + ' was successfully created.' }
         else
           format.html { render action: 'new' }
@@ -140,6 +141,16 @@ module Storybuilder
         unless @page.can_show?(current_user, admin_signed_in?)
           render template: 'errors/403', layout: 'layouts/application', status: 403
         end
+      end
+
+      def auto_create_menu_item
+        sort_order = @parent_object.menu_items.maximum(:sort_order).to_i + 1
+        menu_item = @parent_object.menu_items.create!(
+          sort_order: sort_order,
+          item_label: @page.name.to_s.truncate(25),
+          item_link: storybuilder.polymorphic_path([@parent_object, @page])
+        )
+        Storybuilder::MenuItemJoin.create!(menu_item: menu_item, menu_item_joinable: @page)
       end
 
       # Never trust parameters from the scary internet, only allow the white list through.

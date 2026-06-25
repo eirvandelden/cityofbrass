@@ -25,7 +25,7 @@
     </div>
     <hr class="faded">
     <div id="brass_form">
-      <%= simple_form_for @page, url: polymorphic_path([@parent_object, :pages]) do |f| %>
+      <%= simple_form_for @page, url: nested_resource_form_path(@parent_object, @page, 'pages') do |f| %>
         <%= render :partial => 'form', :locals => { :f => f } %>
       <% end %>
     </div>

@@ -17,14 +17,14 @@
       :locals => {
         :main => @parent_object.name,
         :sub => "Pages #{@sub}",
-        :add_link  => new_polymorphic_path([@adventure, :page]),
+        :add_link  => storybuilder.new_polymorphic_path([@adventure, :page]),
         :can_auth => @parent_object.can_edit?(current_user, admin_signed_in?, @type)
       }
     %>
     <hr class="faded">
     <div class="row">
       <div class="small-10 small-centered columns">
-        <%= render 'layouts/form/search', url: polymorphic_path([@adventure, :pages]) %>
+        <%= render 'layouts/form/search', url: storybuilder.polymorphic_path([@adventure, :pages]) %>
       </div>
     </div>
     <div class="row">
