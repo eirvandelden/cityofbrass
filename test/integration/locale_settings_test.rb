@@ -8,7 +8,7 @@ class LocaleSettingsTest < ActionDispatch::IntegrationTest
     user.update!(locale: "it")
 
     sign_in user
-    get edit_user_registration_path
+    get edit_account_path
 
     assert_response :success
     assert_select "option", text: "Inglese"

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'sso/symposium' => 'sso#symposium'
 
-  resource :account, only: [:edit, :update]
+  resource :account, only: [:edit, :update], controller: :account
 
   scope "/admin" do
     resources :users
