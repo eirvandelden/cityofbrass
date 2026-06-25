@@ -2,10 +2,7 @@
 it:
   account:
     update:
-      updated: "Your settings have been saved."
-  users:
-    create:
-      created: "%{email} has been created."
+      updated: Your settings have been saved.
   campaignmanager:
     campaigns:
       features:
@@ -196,7 +193,6 @@ it:
       rules: Regole
       sent: Inviati
       settings: Impostazioni
-      sign_up: Registrati
       spells: Incantesimi
       stock_imports: Importazioni stock
       subscription: Abbonamento
@@ -219,3 +215,6 @@ it:
       search: Ricerca
       session: Sessione
       support: Supporto
+  users:
+    create:
+      created: "%{email} has been created."

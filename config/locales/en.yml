@@ -2,10 +2,7 @@
 en:
   account:
     update:
-      updated: "Your settings have been saved."
-  users:
-    create:
-      created: "%{email} has been created."
+      updated: Your settings have been saved.
   activerecord:
     errors:
       models:
@@ -205,7 +202,6 @@ en:
       rules: Rules
       sent: Sent
       settings: Settings
-      sign_up: Sign up
       spells: Spells
       stock_imports: Stock Imports
       subscription: Subscription
@@ -228,3 +224,6 @@ en:
       search: Search
       session: Session
       support: Support
+  users:
+    create:
+      created: "%{email} has been created."

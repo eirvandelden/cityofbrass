@@ -2,10 +2,7 @@
 nl:
   account:
     update:
-      updated: "Your settings have been saved."
-  users:
-    create:
-      created: "%{email} has been created."
+      updated: Your settings have been saved.
   campaignmanager:
     campaigns:
       features:
@@ -196,7 +193,6 @@ nl:
       rules: Regels
       sent: Verzonden
       settings: Instellingen
-      sign_up: Registreren
       spells: Spreuken
       stock_imports: Voorraadimports
       subscription: Abonnement
@@ -219,3 +215,6 @@ nl:
       search: Zoeken
       session: Sessie
       support: Ondersteuning
+  users:
+    create:
+      created: "%{email} has been created."
