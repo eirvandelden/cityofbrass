@@ -1,7 +1,7 @@
 <%
 
   home_link = main_app.root_path
-  account_link = main_app.edit_user_registration_path
+  account_link = main_app.edit_account_path
   subscription_link = ((current_user.subscription && !current_user.subscription.new_record?) ? billing.subscription_path(current_user.subscription) : billing.subscriptions_path) unless current_user.has_vip_status?
 
   if current_user.active?
