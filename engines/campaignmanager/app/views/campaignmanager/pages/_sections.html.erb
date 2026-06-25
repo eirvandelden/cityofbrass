@@ -8,6 +8,6 @@
         :all_pages => @campaign.pages.to_a,
         :resident => @resident,
         :can_auth => @page.can_edit?(current_user, admin_signed_in?),
-        :edit_url => nil
+        :edit_url => polymorphic_path([@campaign, @page, :sections], section: section.id)
     } %>
 <% end %>
