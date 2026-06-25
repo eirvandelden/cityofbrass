@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'sso/symposium' => 'sso#symposium'
 
   resource :account, only: [:edit, :update], controller: :account
+  get "/users/edit", to: "account#edit", as: :edit_user_settings
+  match "/users", to: "account#update", as: :user_settings, via: [:patch, :put]
 
   scope "/admin" do
     resources :users
