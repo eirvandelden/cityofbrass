@@ -1,5 +1,11 @@
 ---
 en:
+  account:
+    update:
+      updated: "Your settings have been saved."
+  users:
+    create:
+      created: "%{email} has been created."
   activerecord:
     errors:
       models:
