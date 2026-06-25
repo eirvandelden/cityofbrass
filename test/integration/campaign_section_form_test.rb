@@ -75,6 +75,28 @@ class CampaignSectionFormTest < ActionDispatch::IntegrationTest
                        "/wb/#{district.slug}/pages/#{page.id}/sections"
   end
 
+  test "world page show edit cog links to sections index and opens edit form" do
+    sign_in @game_master
+    district = worldbuilder_districts(:district_one)
+    page = worldbuilder_pages(:page_one)
+    section = page.sections.create!(
+      section_type: "text", section_style: "paragraph",
+      header: "Regression", content: "<p>Regression body</p>", sort_order: 1
+    )
+    expected_edit_url = "/wb/#{district.slug}/pages/#{page.id}/sections?section=#{section.id}"
+
+    get "/wb/#{district.slug}/pages/#{page.slug}"
+    assert_response :success
+    assert_includes response.body, %(href="#{expected_edit_url}"),
+      "expected an edit cog link pointing to #{expected_edit_url}"
+
+    get expected_edit_url
+    assert_response :success
+    assert_includes response.body,
+      %(action="/wb/#{district.slug}/pages/#{page.id}/sections/#{section.id}"),
+      "sections index with ?section= should render that section's edit form"
+  end
+
   # The edit cog next to a section's header on the show page must link to the
   # sections index with `?section=<id>`, and that URL must auto-open the edit
   # form for that section.
