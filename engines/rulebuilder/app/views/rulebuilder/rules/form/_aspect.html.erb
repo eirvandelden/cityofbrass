@@ -38,6 +38,7 @@
 </div>
 <div class="row">
   <div class="medium-12 columns">
+    <%= f.label :full_description %>
     <%= f.rich_text_area :full_description %>
     <br>
     <% if f.object.is_shared == true %>

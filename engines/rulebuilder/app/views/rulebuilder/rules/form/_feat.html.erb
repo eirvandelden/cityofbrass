@@ -45,13 +45,17 @@
 </div>
 <div class="row">
   <div class="medium-12 columns">
+    <%= f.label :full_description %>
     <%= f.rich_text_area :full_description %>
     <br>
     <% if CoreRules.d20_system?(f.object.core_rules) %>
+      <%= f.label :benefit %>
       <%= f.rich_text_area :benefit %>
       <br>
+      <%= f.label :normal %>
       <%= f.rich_text_area :normal %>
       <br>
+      <%= f.label :special %>
       <%= f.rich_text_area :special %>
       <br>
     <% end %>
