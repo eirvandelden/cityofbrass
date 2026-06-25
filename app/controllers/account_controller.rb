@@ -8,7 +8,7 @@ class AccountController < ApplicationController
   def update
     @user = current_user
     if @user.update(account_params)
-      redirect_to edit_account_path, notice: t(".updated")
+      redirect_to edit_user_settings_path, notice: t(".updated")
     else
       render :edit
     end
