@@ -9,8 +9,6 @@ class PageCreationTest < ActionDispatch::IntegrationTest
     @campaign    = campaignmanager_campaigns(:resident_one)
   end
 
-  # Part 1: form action URLs
-
   test "storybuilder new page form posts to pages collection" do
     sign_in @game_master
     get "/sb/resident/adventures/#{@adventure.id}/pages/new"
@@ -32,8 +30,6 @@ class PageCreationTest < ActionDispatch::IntegrationTest
     assert_match %r{\A/cm/campaigns/#{@campaign.id}/adventure_logs/?\z}, action,
                  "new adventure_log form must post to collection, got #{action.inspect}"
   end
-
-  # Part 2: auto-create menu item on create
 
   test "creating a storybuilder page without menu selection auto-creates a menu item" do
     sign_in @game_master
