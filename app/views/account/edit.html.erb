@@ -1,0 +1,34 @@
+<% provide(:title, 'Settings') %>
+
+<% content_for :breadcrumb do %>
+  <%= breadcrumb [{ "Settings" => nil }] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-12 medium-centered columns">
+
+    <%= render :partial => 'layouts/header',
+      :locals => {
+        :icon => 'fa fa-cog',
+        :main => 'Settings',
+      }
+    %>
+    <hr class="faded">
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <%= simple_form_for @user, url: account_path, method: :patch do |f| %>
+          <fieldset>
+            <div class="row">
+              <div class="small-12 columns">
+                <%= f.input :email %>
+                <%= f.input :locale, collection: %w[en nl it] %>
+              </div>
+            </div>
+          </fieldset>
+          <%= render 'layouts/form/save' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
