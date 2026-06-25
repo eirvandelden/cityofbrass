@@ -1,4 +1,457 @@
-# one:
-#   record: name_of_fixture (ClassOfFixture)
-#   name: content
-#   body: <p>In a <i>million</i> stars!</p>
+---
+message_message1_body:
+  record: message1 (Message)
+  name: body
+  body: "<p>this is a message</p>"
+message_message2_body:
+  record: message2 (Message)
+  name: body
+  body: "<p>this is a message</p>"
+resident_razune_full_description:
+  record: razune (Resident)
+  name: full_description
+  body: "<p>Razune is full of evilness</p>"
+resident_tuandn_full_description:
+  record: tuandn (Resident)
+  name: full_description
+  body: "<p>Tuandn is full of coolness</p>"
+rulebuilder_rule_resident_one_full_description:
+  record: resident_one (Rulebuilder::Rule)
+  name: full_description
+  body: MyText
+rulebuilder_rule_resident_one_benefit:
+  record: resident_one (Rulebuilder::Rule)
+  name: benefit
+  body: MyText
+rulebuilder_rule_resident_one_normal:
+  record: resident_one (Rulebuilder::Rule)
+  name: normal
+  body: MyText
+rulebuilder_rule_resident_one_special:
+  record: resident_one (Rulebuilder::Rule)
+  name: special
+  body: MyText
+rulebuilder_rule_resident_two_full_description:
+  record: resident_two (Rulebuilder::Rule)
+  name: full_description
+  body: MyText
+rulebuilder_rule_resident_two_benefit:
+  record: resident_two (Rulebuilder::Rule)
+  name: benefit
+  body: MyText
+rulebuilder_rule_resident_two_normal:
+  record: resident_two (Rulebuilder::Rule)
+  name: normal
+  body: MyText
+rulebuilder_rule_resident_two_special:
+  record: resident_two (Rulebuilder::Rule)
+  name: special
+  body: MyText
+rulebuilder_rule_resident_three_full_description:
+  record: resident_three (Rulebuilder::Rule)
+  name: full_description
+  body: MyText
+rulebuilder_rule_resident_three_benefit:
+  record: resident_three (Rulebuilder::Rule)
+  name: benefit
+  body: MyText
+rulebuilder_rule_resident_three_normal:
+  record: resident_three (Rulebuilder::Rule)
+  name: normal
+  body: MyText
+rulebuilder_rule_resident_three_special:
+  record: resident_three (Rulebuilder::Rule)
+  name: special
+  body: MyText
+rulebuilder_rule_stock_one_full_description:
+  record: stock_one (Rulebuilder::Rule)
+  name: full_description
+  body: MyText
+rulebuilder_rule_stock_one_benefit:
+  record: stock_one (Rulebuilder::Rule)
+  name: benefit
+  body: MyText
+rulebuilder_rule_stock_one_normal:
+  record: stock_one (Rulebuilder::Rule)
+  name: normal
+  body: MyText
+rulebuilder_rule_stock_one_special:
+  record: stock_one (Rulebuilder::Rule)
+  name: special
+  body: MyText
+rulebuilder_rule_stock_two_full_description:
+  record: stock_two (Rulebuilder::Rule)
+  name: full_description
+  body: MyText
+rulebuilder_rule_stock_two_benefit:
+  record: stock_two (Rulebuilder::Rule)
+  name: benefit
+  body: MyText
+rulebuilder_rule_stock_two_normal:
+  record: stock_two (Rulebuilder::Rule)
+  name: normal
+  body: MyText
+rulebuilder_rule_stock_two_special:
+  record: stock_two (Rulebuilder::Rule)
+  name: special
+  body: MyText
+rulebuilder_spell_resident_one_full_description:
+  record: resident_one (Rulebuilder::Spell)
+  name: full_description
+  body: MyText
+rulebuilder_spell_resident_two_full_description:
+  record: resident_two (Rulebuilder::Spell)
+  name: full_description
+  body: MyText
+rulebuilder_spell_stock_one_full_description:
+  record: stock_one (Rulebuilder::Spell)
+  name: full_description
+  body: MyText
+rulebuilder_spell_stock_two_full_description:
+  record: stock_two (Rulebuilder::Spell)
+  name: full_description
+  body: MyText
+rulebuilder_item_resident_one_full_description:
+  record: resident_one (Rulebuilder::Item)
+  name: full_description
+  body: MyText
+rulebuilder_item_resident_two_full_description:
+  record: resident_two (Rulebuilder::Item)
+  name: full_description
+  body: MyText
+rulebuilder_item_stock_one_full_description:
+  record: stock_one (Rulebuilder::Item)
+  name: full_description
+  body: MyText
+rulebuilder_item_stock_two_full_description:
+  record: stock_two (Rulebuilder::Item)
+  name: full_description
+  body: MyText
+storybuilder_section_page_text1_content:
+  record: page_text1 (Storybuilder::Section)
+  name: content
+  body: "<p>Text for text</p>"
+storybuilder_section_page_text2_content:
+  record: page_text2 (Storybuilder::Section)
+  name: content
+  body: "<p>Text for text</p>"
+storybuilder_section_page_text3_content:
+  record: page_text3 (Storybuilder::Section)
+  name: content
+  body: "<p>Text for text</p>"
+storybuilder_section_page_text4_content:
+  record: page_text4 (Storybuilder::Section)
+  name: content
+  body: "<p>Text for text</p>"
+storybuilder_section_adventure_text1_content:
+  record: adventure_text1 (Storybuilder::Section)
+  name: content
+  body: "<p>Text for text</p>"
+storybuilder_section_adventure_text2_content:
+  record: adventure_text2 (Storybuilder::Section)
+  name: content
+  body: "<p>Text for text</p>"
+storybuilder_section_adventure_text3_content:
+  record: adventure_text3 (Storybuilder::Section)
+  name: content
+  body: "<p>Text for text</p>"
+storybuilder_section_adventure_text4_content:
+  record: adventure_text4 (Storybuilder::Section)
+  name: content
+  body: "<p>Text for text</p>"
+storybuilder_adventure_resident_one_full_description:
+  record: resident_one (Storybuilder::Adventure)
+  name: full_description
+  body: "<p>Text for test</p>"
+storybuilder_adventure_resident_two_full_description:
+  record: resident_two (Storybuilder::Adventure)
+  name: full_description
+  body: "<p>Text for test</p>"
+storybuilder_adventure_stock_one_full_description:
+  record: stock_one (Storybuilder::Adventure)
+  name: full_description
+  body: "<p>Text for test</p>"
+storybuilder_adventure_stock_two_full_description:
+  record: stock_two (Storybuilder::Adventure)
+  name: full_description
+  body: "<p>Text for test</p>"
+storybuilder_page_page_one_full_description:
+  record: page_one (Storybuilder::Page)
+  name: full_description
+  body: "<p>Text for test</p>"
+storybuilder_page_page_two_full_description:
+  record: page_two (Storybuilder::Page)
+  name: full_description
+  body: "<p>Text for test</p>"
+storybuilder_page_page_three_full_description:
+  record: page_three (Storybuilder::Page)
+  name: full_description
+  body: "<p>Text for test</p>"
+storybuilder_page_page_four_full_description:
+  record: page_four (Storybuilder::Page)
+  name: full_description
+  body: "<p>Text for test</p>"
+campaignmanager_campaign_resident_one_full_description:
+  record: resident_one (Campaignmanager::Campaign)
+  name: full_description
+  body: "<p>Text for test</p>"
+campaignmanager_campaign_resident_two_full_description:
+  record: resident_two (Campaignmanager::Campaign)
+  name: full_description
+  body: "<p>Text for test</p>"
+campaignmanager_page_adventure_log_one_full_description:
+  record: adventure_log_one (Campaignmanager::Page)
+  name: full_description
+  body: "<p>Text for test</p>"
+campaignmanager_page_adventure_log_two_full_description:
+  record: adventure_log_two (Campaignmanager::Page)
+  name: full_description
+  body: "<p>Text for test</p>"
+campaignmanager_page_house_rule_one_full_description:
+  record: house_rule_one (Campaignmanager::Page)
+  name: full_description
+  body: "<p>Text for test</p>"
+campaignmanager_page_game_master_note_one_full_description:
+  record: game_master_note_one (Campaignmanager::Page)
+  name: full_description
+  body: "<p>Text for test</p>"
+campaignmanager_page_game_master_note_two_full_description:
+  record: game_master_note_two (Campaignmanager::Page)
+  name: full_description
+  body: "<p>Text for test</p>"
+campaignmanager_section_page_text1_content:
+  record: page_text1 (Campaignmanager::Section)
+  name: content
+  body: "<p>Text for text</p>"
+campaignmanager_section_page_text2_content:
+  record: page_text2 (Campaignmanager::Section)
+  name: content
+  body: "<p>Text for text</p>"
+campaignmanager_section_page_text3_content:
+  record: page_text3 (Campaignmanager::Section)
+  name: content
+  body: "<p>Text for text</p>"
+campaignmanager_section_page_text4_content:
+  record: page_text4 (Campaignmanager::Section)
+  name: content
+  body: "<p>Text for text</p>"
+campaignmanager_section_campaign_text1_content:
+  record: campaign_text1 (Campaignmanager::Section)
+  name: content
+  body: "<p>Text for text</p>"
+campaignmanager_section_campaign_text2_content:
+  record: campaign_text2 (Campaignmanager::Section)
+  name: content
+  body: "<p>Text for text</p>"
+campaignmanager_section_campaign_text3_content:
+  record: campaign_text3 (Campaignmanager::Section)
+  name: content
+  body: "<p>Text for text</p>"
+campaignmanager_section_campaign_text4_content:
+  record: campaign_text4 (Campaignmanager::Section)
+  name: content
+  body: "<p>Text for text</p>"
+worldbuilder_district_district_one_full_description:
+  record: district_one (Worldbuilder::District)
+  name: full_description
+  body: "<p>Text for test</p>"
+worldbuilder_district_district_two_full_description:
+  record: district_two (Worldbuilder::District)
+  name: full_description
+  body: "<p>Text for test</p>"
+worldbuilder_district_district_three_full_description:
+  record: district_three (Worldbuilder::District)
+  name: full_description
+  body: "<p>Text for test</p>"
+worldbuilder_page_page_one_full_description:
+  record: page_one (Worldbuilder::Page)
+  name: full_description
+  body: "<p>Text for test</p>"
+worldbuilder_page_page_two_full_description:
+  record: page_two (Worldbuilder::Page)
+  name: full_description
+  body: "<p>Text for test</p>"
+worldbuilder_section_page_text1_content:
+  record: page_text1 (Worldbuilder::Section)
+  name: content
+  body: "<p>Text for text</p>"
+worldbuilder_section_page_text2_content:
+  record: page_text2 (Worldbuilder::Section)
+  name: content
+  body: "<p>Text for text</p>"
+worldbuilder_section_page_text3_content:
+  record: page_text3 (Worldbuilder::Section)
+  name: content
+  body: "<p>Text for text</p>"
+worldbuilder_section_page_text4_content:
+  record: page_text4 (Worldbuilder::Section)
+  name: content
+  body: "<p>Text for text</p>"
+worldbuilder_section_district_text1_content:
+  record: district_text1 (Worldbuilder::Section)
+  name: content
+  body: "<p>Text for text</p>"
+worldbuilder_section_district_text2_content:
+  record: district_text2 (Worldbuilder::Section)
+  name: content
+  body: "<p>Text for text</p>"
+worldbuilder_section_district_text3_content:
+  record: district_text3 (Worldbuilder::Section)
+  name: content
+  body: "<p>Text for text</p>"
+worldbuilder_section_district_text4_content:
+  record: district_text4 (Worldbuilder::Section)
+  name: content
+  body: "<p>Text for text</p>"
+support_faq_one_answer:
+  record: one (Support::Faq)
+  name: answer
+  body: "<p>The developer</p>"
+support_faq_two_answer:
+  record: two (Support::Faq)
+  name: answer
+  body: "<p>Jackie Chan</p>"
+entitybuilder_entity_resident_character_one_full_description:
+  record: resident_character_one (Entitybuilder::Entity)
+  name: full_description
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_character_one_introduction:
+  record: resident_character_one (Entitybuilder::Entity)
+  name: introduction
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_character_one_notes:
+  record: resident_character_one (Entitybuilder::Entity)
+  name: notes
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_character_two_full_description:
+  record: resident_character_two (Entitybuilder::Entity)
+  name: full_description
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_character_two_introduction:
+  record: resident_character_two (Entitybuilder::Entity)
+  name: introduction
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_character_two_notes:
+  record: resident_character_two (Entitybuilder::Entity)
+  name: notes
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_character_three_full_description:
+  record: resident_character_three (Entitybuilder::Entity)
+  name: full_description
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_character_three_introduction:
+  record: resident_character_three (Entitybuilder::Entity)
+  name: introduction
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_character_three_notes:
+  record: resident_character_three (Entitybuilder::Entity)
+  name: notes
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_creature_one_full_description:
+  record: resident_creature_one (Entitybuilder::Entity)
+  name: full_description
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_creature_one_introduction:
+  record: resident_creature_one (Entitybuilder::Entity)
+  name: introduction
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_creature_one_notes:
+  record: resident_creature_one (Entitybuilder::Entity)
+  name: notes
+  body: MyText
+entitybuilder_entity_resident_creature_two_full_description:
+  record: resident_creature_two (Entitybuilder::Entity)
+  name: full_description
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_creature_two_introduction:
+  record: resident_creature_two (Entitybuilder::Entity)
+  name: introduction
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_creature_two_notes:
+  record: resident_creature_two (Entitybuilder::Entity)
+  name: notes
+  body: MyText
+entitybuilder_entity_resident_creature_three_full_description:
+  record: resident_creature_three (Entitybuilder::Entity)
+  name: full_description
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_creature_three_introduction:
+  record: resident_creature_three (Entitybuilder::Entity)
+  name: introduction
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_creature_three_notes:
+  record: resident_creature_three (Entitybuilder::Entity)
+  name: notes
+  body: MyText
+entitybuilder_entity_resident_npc_one_full_description:
+  record: resident_npc_one (Entitybuilder::Entity)
+  name: full_description
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_npc_one_introduction:
+  record: resident_npc_one (Entitybuilder::Entity)
+  name: introduction
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_npc_one_notes:
+  record: resident_npc_one (Entitybuilder::Entity)
+  name: notes
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_npc_two_full_description:
+  record: resident_npc_two (Entitybuilder::Entity)
+  name: full_description
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_npc_two_introduction:
+  record: resident_npc_two (Entitybuilder::Entity)
+  name: introduction
+  body: "<p>Text for test</p>"
+entitybuilder_entity_resident_npc_two_notes:
+  record: resident_npc_two (Entitybuilder::Entity)
+  name: notes
+  body: "<p>Text for test</p>"
+entitybuilder_entity_stock_creature_one_full_description:
+  record: stock_creature_one (Entitybuilder::Entity)
+  name: full_description
+  body: "<p>Text for test</p>"
+entitybuilder_entity_stock_creature_one_introduction:
+  record: stock_creature_one (Entitybuilder::Entity)
+  name: introduction
+  body: "<p>Text for test</p>"
+entitybuilder_entity_stock_creature_one_notes:
+  record: stock_creature_one (Entitybuilder::Entity)
+  name: notes
+  body: MyText
+entitybuilder_entity_stock_creature_two_full_description:
+  record: stock_creature_two (Entitybuilder::Entity)
+  name: full_description
+  body: "<p>Text for test</p>"
+entitybuilder_entity_stock_creature_two_introduction:
+  record: stock_creature_two (Entitybuilder::Entity)
+  name: introduction
+  body: "<p>Text for test</p>"
+entitybuilder_entity_stock_creature_two_notes:
+  record: stock_creature_two (Entitybuilder::Entity)
+  name: notes
+  body: MyText
+entitybuilder_entity_stock_npc_one_full_description:
+  record: stock_npc_one (Entitybuilder::Entity)
+  name: full_description
+  body: "<p>Text for test</p>"
+entitybuilder_entity_stock_npc_one_introduction:
+  record: stock_npc_one (Entitybuilder::Entity)
+  name: introduction
+  body: "<p>Text for test</p>"
+entitybuilder_entity_stock_npc_one_notes:
+  record: stock_npc_one (Entitybuilder::Entity)
+  name: notes
+  body: "<p>Text for test</p>"
+entitybuilder_entity_stock_npc_two_full_description:
+  record: stock_npc_two (Entitybuilder::Entity)
+  name: full_description
+  body: "<p>Text for test</p>"
+entitybuilder_entity_stock_npc_two_introduction:
+  record: stock_npc_two (Entitybuilder::Entity)
+  name: introduction
+  body: "<p>Text for test</p>"
+entitybuilder_entity_stock_npc_two_notes:
+  record: stock_npc_two (Entitybuilder::Entity)
+  name: notes
+  body: "<p>Text for test</p>"
