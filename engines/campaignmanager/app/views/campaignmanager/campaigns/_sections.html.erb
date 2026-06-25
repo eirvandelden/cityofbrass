@@ -8,6 +8,6 @@
         :all_pages => @campaign.pages.to_a,
         :resident => @resident,
         :can_auth => @campaign.can_edit?(current_user, admin_signed_in?),
-        :edit_url => nil
+        :edit_url => campaign_sections_path(@campaign, section: section.id)
     } %>
 <% end %>

@@ -75,6 +75,27 @@ class CampaignSectionFormTest < ActionDispatch::IntegrationTest
                        "/wb/#{district.slug}/pages/#{page.id}/sections"
   end
 
+  # The edit cog next to a section's header on the show page must link to the
+  # sections index with `?section=<id>`, and that URL must auto-open the edit
+  # form for that section.
+  test "campaign show edit cog links to sections index and opens edit form" do
+    sign_in @game_master
+    campaign = campaignmanager_campaigns(:resident_one)
+    section = campaignmanager_sections(:campaign_text1)
+    expected_edit_url = "/cm/campaigns/#{campaign.id}/sections?section=#{section.id}"
+
+    get "/cm/campaigns/#{campaign.id}"
+    assert_response :success
+    assert_includes response.body, %(href="#{expected_edit_url}"),
+      "expected an edit cog link pointing to #{expected_edit_url}"
+
+    get expected_edit_url
+    assert_response :success
+    assert_includes response.body,
+      %(action="/cm/campaigns/#{campaign.id}/sections/#{section.id}"),
+      "sections index with ?section= should render that section's edit form"
+  end
+
   private
 
     def assert_form_action(path, expected_action)
