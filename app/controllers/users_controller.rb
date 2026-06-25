@@ -7,6 +7,19 @@ class UsersController < ApplicationController
     @users = User.search(params[:search]).order_status.order_email.page(params[:page]).per(20)
   end
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(create_user_params)
+    if @user.save
+      redirect_to users_path, notice: t(".created", email: @user.email)
+    else
+      render :new
+    end
+  end
+
   def edit
   end
 
@@ -31,6 +44,10 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:email, :status, :stripe_customer_token)
+    end
+
+    def create_user_params
+      params.require(:user).permit(:email, :password, :password_confirmation, :status, :locale)
     end
 
 end
