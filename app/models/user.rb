@@ -1,7 +1,5 @@
 class User < ApplicationRecord
-  attr_accessor :check_field
-
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable
 
@@ -16,21 +14,14 @@ class User < ApplicationRecord
   has_one :subscription, class_name: "Billing::Subscription"
   has_one :resident
 
-  validate :honeypot_absence, on: :create
-
   validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
   validates :password, presence: true, on: :create
   validates :password_confirmation, presence: true, on: :create
 
-  validates :terms_of_service, acceptance: true, on: :create
   after_validation :set_status, on: :create
 
   validates :status, presence: true
   validates :locale, presence: true, inclusion: { in: %w[en nl it] }
-
-  def honeypot_absence
-    errors.add :check_field, "You should not fill in the invisible field" unless check_field.blank?
-  end
 
   def active?
     return false unless status.present?
