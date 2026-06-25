@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery prepend: true, with: :exception
 
-  before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
   after_action :clear_ajax_flash
 
@@ -39,11 +38,6 @@ class ApplicationController < ActionController::Base
   protected
     def set_locale
       I18n.locale = current_user&.locale || I18n.default_locale
-    end
-
-    def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:check_field, :terms_of_service])
-      devise_parameter_sanitizer.permit(:account_update, keys: [:locale])
     end
 
     def check_quota

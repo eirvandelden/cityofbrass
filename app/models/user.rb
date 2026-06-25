@@ -109,6 +109,6 @@ class User < ApplicationRecord
 
   protected
     def set_status
-      self.status = "free"
+      self.status = "free" unless status.present?
     end
 end
