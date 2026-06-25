@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(create_user_params)
+    @user.skip_confirmation!
     if @user.save
       redirect_to users_path, notice: t(".created", email: @user.email)
     else
