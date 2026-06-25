@@ -41,7 +41,8 @@ class PageCreationTest < ActionDispatch::IntegrationTest
     assert_difference [ "Storybuilder::MenuItem.count", "Storybuilder::MenuItemJoin.count" ], 1 do
       post "/sb/resident/adventures/#{@adventure.id}/pages", params: { page: {
         name: "Auto Menu Page", privacy: "Residents",
-        short_description: "test", full_description: "<p>test</p>"
+        short_description: "test", full_description: "<p>test</p>",
+        menu_item_join_attributes: { menu_item_id: "" }
       } }
     end
 
@@ -51,6 +52,7 @@ class PageCreationTest < ActionDispatch::IntegrationTest
     menu_item = page.menu_item_join.menu_item
     assert_equal @adventure, menu_item.menu_itemable
     assert_equal "Auto Menu Page", menu_item.item_label
+    assert_equal "/pages/#{page.id}", menu_item.item_link
   end
 
   test "creating a storybuilder page with an explicit menu selection does not create an extra menu item" do

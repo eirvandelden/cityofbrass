@@ -75,7 +75,7 @@ module Storybuilder
 
       respond_to do |format|
         if @page.save
-          auto_create_menu_item unless @page.menu_item_join.present?
+          auto_create_menu_item unless @page.menu_item_join&.persisted?
           format.html { redirect_to storybuilder.edit_polymorphic_path([@parent_object, @page]), notice: @page.name + ' was successfully created.' }
         else
           format.html { render action: 'new' }
@@ -148,7 +148,7 @@ module Storybuilder
         menu_item = @parent_object.menu_items.create!(
           sort_order: sort_order,
           item_label: @page.name.to_s.truncate(25),
-          item_link: storybuilder.polymorphic_path([@parent_object, @page])
+          item_link: "/pages/#{@page.id}"
         )
         Storybuilder::MenuItemJoin.create!(menu_item: menu_item, menu_item_joinable: @page)
       end
