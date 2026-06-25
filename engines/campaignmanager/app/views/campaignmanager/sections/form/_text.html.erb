@@ -1,3 +1,4 @@
 <%= f.input :header %>
 <%= f.input :section_style, label: 'Style', collection: cm_section_text_style_options, :include_blank => true %>
+<%= f.label :content %>
 <%= f.rich_text_area :content %>

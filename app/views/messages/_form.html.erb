@@ -4,6 +4,7 @@
     <div class="medium-12 columns">
       <%= f.association :recipient, collection: @resident.affiliates, label_method: :name, value_method: :id, :prompt => 'Please Select' %>
       <%= f.input :subject %>
+      <%= f.label :body %>
       <%= f.rich_text_area :body %>
     </div>
   </div>

@@ -43,10 +43,13 @@
     <div class="small-12 columns">
       <%= f.input :tag_list, label: 'Tag list (separated by commas)' %>
       <%= f.input :short_description %>
+      <%= f.label :full_description, "Full Description ( Summary & Profile )" %>
       <%= f.rich_text_area :full_description %>
       <br>
+      <%= f.label :introduction, "Introduction ( Profile )" %>
       <%= f.rich_text_area :introduction %>
       <br>
+      <%= f.label :notes %>
       <%= f.rich_text_area :notes %>
     </div>
   </div>
