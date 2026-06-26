@@ -12,6 +12,9 @@ class AdminUsersTest < ActionDispatch::IntegrationTest
       assert_response :success
       assert_select "h1.header", text: /Nieuwe gebruiker/
       assert_select "a[href=?]", users_path, text: "Terug naar overzicht"
+      assert_select "option", text: "Engels"
+      assert_select "option", text: "Nederlands"
+      assert_select "option", text: "Italiaans"
     end
   end
 
