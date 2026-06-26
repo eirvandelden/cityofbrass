@@ -1,8 +1,10 @@
 ---
 it:
   account:
+    edit:
+      current_password_hint: Richiesta quando modifichi l'email o la password.
     update:
-      updated: Your settings have been saved.
+      updated: Le tue impostazioni sono state salvate.
   campaignmanager:
     campaigns:
       features:
@@ -217,4 +219,10 @@ it:
       support: Supporto
   users:
     create:
-      created: "%{email} has been created."
+      created: "%{email} è stato creato."
+    index:
+      new_user: Nuovo utente
+      title: Utenti
+    new:
+      return_to_index: Torna all'indice
+      title: Nuovo utente

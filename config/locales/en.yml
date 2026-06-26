@@ -1,6 +1,8 @@
 ---
 en:
   account:
+    edit:
+      current_password_hint: Required when changing your email or password.
     update:
       updated: Your settings have been saved.
   activerecord:
@@ -227,3 +229,9 @@ en:
   users:
     create:
       created: "%{email} has been created."
+    index:
+      new_user: New User
+      title: Users
+    new:
+      return_to_index: Return to Index
+      title: New User

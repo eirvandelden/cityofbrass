@@ -1,8 +1,10 @@
 ---
 nl:
   account:
+    edit:
+      current_password_hint: Vereist wanneer je je e-mailadres of wachtwoord wijzigt.
     update:
-      updated: Your settings have been saved.
+      updated: Je instellingen zijn opgeslagen.
   campaignmanager:
     campaigns:
       features:
@@ -217,4 +219,10 @@ nl:
       support: Ondersteuning
   users:
     create:
-      created: "%{email} has been created."
+      created: "%{email} is aangemaakt."
+    index:
+      new_user: Nieuwe gebruiker
+      title: Gebruikers
+    new:
+      return_to_index: Terug naar overzicht
+      title: Nieuwe gebruiker

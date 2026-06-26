@@ -1,9 +1,9 @@
-<% provide(:title, 'New User') %>
+<% provide(:title, t(".title")) %>
 
 <% content_for :breadcrumb do %>
   <%= breadcrumb [
-    { "Users" => users_path },
-    { "New User" => nil }
+    { t("users.index.title") => users_path },
+    { t(".title") => nil }
   ] %>
 <% end %>
 
@@ -13,12 +13,12 @@
     <%= render :partial => 'layouts/header',
       :locals => {
         :icon => 'fa fa-user-plus',
-        :main => 'New User',
+        :main => t(".title"),
       }
     %>
     <hr class="faded">
 
-    <i class='fa fa-angle-double-left'></i> <%= link_to "Return to Index".html_safe, users_path %><br>
+    <i class='fa fa-angle-double-left'></i> <%= link_to t(".return_to_index"), users_path %><br>
 
     <div class="row">
       <div class="medium-6 columns">
