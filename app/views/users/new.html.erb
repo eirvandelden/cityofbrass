@@ -30,7 +30,7 @@
                 <%= f.input :password %>
                 <%= f.input :password_confirmation %>
                 <%= f.input :status, collection: User::STATUS_OPTIONS %>
-                <%= f.input :locale, collection: %w[en nl it] %>
+                <%= f.input :locale, collection: %w[en nl it].map { |code| [t("locales.#{code}"), code] } %>
               </div>
             </div>
           </fieldset>
