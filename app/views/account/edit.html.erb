@@ -1,17 +1,17 @@
-<% provide(:title, 'Settings') %>
+<% provide(:title, t("navigation.links.settings")) %>
 
 <% content_for :breadcrumb do %>
-  <%= breadcrumb [{ "Settings" => nil }] %>
+  <%= breadcrumb [{ t("navigation.links.settings") => nil }] %>
 <% end %>
 
 <div class="row">
   <div class="medium-12 medium-centered columns">
 
     <%= render :partial => 'layouts/header',
-      :locals => {
-        :icon => 'fa fa-cog',
-        :main => 'Settings',
-      }
+        :locals => {
+          :icon => 'fa fa-cog',
+          :main => t("navigation.links.settings"),
+        }
     %>
     <hr class="faded">
 
@@ -23,6 +23,9 @@
               <div class="small-12 columns">
                 <%= f.input :email %>
                 <%= f.input :locale, collection: %w[en nl it].map { |code| [t("locales.#{code}"), code] } %>
+                <%= f.input :password %>
+                <%= f.input :password_confirmation %>
+                <%= f.input :current_password, hint: t(".current_password_hint") %>
               </div>
             </div>
           </fieldset>

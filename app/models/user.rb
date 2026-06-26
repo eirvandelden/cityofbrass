@@ -28,6 +28,16 @@ class User < ApplicationRecord
     ACTIVE_STATUS.include? status
   end
 
+  def update_account(attributes)
+    attributes = attributes.to_h.with_indifferent_access
+
+    if current_password_required_for?(attributes)
+      update_with_password(attributes)
+    else
+      update(attributes.except(:password, :password_confirmation, :current_password))
+    end
+  end
+
   def is_free?
     status == "free"
   end
@@ -110,5 +120,18 @@ class User < ApplicationRecord
   protected
     def set_status
       self.status = "free" unless status.present?
+    end
+
+  private
+    def current_password_required_for?(attributes)
+      email_changed_for?(attributes) || password_changed_for?(attributes)
+    end
+
+    def email_changed_for?(attributes)
+      attributes[:email].present? && attributes[:email] != email
+    end
+
+    def password_changed_for?(attributes)
+      attributes[:password].present? || attributes[:password_confirmation].present?
     end
 end
