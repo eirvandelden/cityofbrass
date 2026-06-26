@@ -1,6 +1,6 @@
 <li>
   <%= link_to safe_join([tag.i(class: "fa fa-key fa-fw"), t("navigation.links.settings")], " "),
-    edit_user_settings_path %>
+    main_app.edit_user_settings_path %>
 </li>
 <% unless current_user.has_vip_status? %><li><a href="/billing"><i class='fa icon-calendar fa-fw'></i> <%= t("navigation.links.subscription") %></a></li><% end %>
 <li><%= link_to safe_join([tag.i(class: "fa fa-sign-out fa-fw"), t("navigation.links.logout")], " "), "/users/logout", method: :delete %></li>
