@@ -51,6 +51,15 @@ jobs:
           ruby-version: current
           install-gems: true
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install JavaScript dependencies
+        run: |
+          npm install --global yarn
+          yarn install --frozen-lockfile
+
       - name: Install ImageMagick
         run: |
           sudo apt-get update
