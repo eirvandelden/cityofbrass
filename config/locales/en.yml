@@ -26,8 +26,15 @@ en:
           appear on the campaign overview.
         adventures_label: Adventures in this campaign
         no_active_adventure: None
+    menu_items:
+      about:
+        description: Build your campaign menu.
+        label: About
     navigation:
       active_adventure: Active Adventure
+      campaign_details: Campaign Details
+      campaign_menu: Campaign Menu
+      campaign_pages: Campaign Pages
   errors:
     messages:
       invalid_privacy: is not valid.

@@ -17,8 +17,15 @@ nl:
           Ze verschijnen op het campagneoverzicht.
         adventures_label: Avonturen in deze campagne
         no_active_adventure: Geen
+    menu_items:
+      about:
+        description: Bouw het menu van je campagne.
+        label: Over
     navigation:
       active_adventure: Actief avontuur
+      campaign_details: Campagnedetails
+      campaign_menu: Campagnemenu
+      campaign_pages: Campagnepagina's
   errors:
     messages:
       invalid_privacy: is niet geldig.
