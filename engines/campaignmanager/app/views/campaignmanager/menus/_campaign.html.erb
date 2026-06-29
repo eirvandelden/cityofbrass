@@ -57,8 +57,8 @@
   <dd>
     <h4><%= link_to 'Campaign Menu', campaignmanager.campaign_menu_items_path(@campaign), :style => 'display:block;' %></h4>
   </dd>
-  <dd class="<%= 'active' if current_page?(campaignmanager.pages_campaign_path(@campaign)) %>">
-    <h4><%= link_to 'Campaign Pages', campaignmanager.pages_campaign_path(@campaign), :style => 'display:block;' %></h4>
+  <dd class="<%= 'active' if current_page?(campaignmanager.campaign_pages_path(@campaign)) %>">
+    <h4><%= link_to 'Campaign Pages', campaignmanager.campaign_pages_path(@campaign), :style => 'display:block;' %></h4>
   </dd>
 </dl>
 <% end %>

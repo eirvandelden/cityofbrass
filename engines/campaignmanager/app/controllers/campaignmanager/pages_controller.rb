@@ -33,8 +33,8 @@ module Campaignmanager
       end
 
       respond_to do |format|
-        format.html { @pages = @parent_object.send("#{@type.tableize}").short.page(params[:page]) }
-        format.json { @pages = @parent_object.send("#{@type.tableize}").short }
+        format.html { @pages = page_collection.short.page(params[:page]) }
+        format.json { @pages = page_collection.short }
       end
     end
 
@@ -112,6 +112,14 @@ module Campaignmanager
 
       def type
         params[:type] || "Page"
+      end
+
+      def page_collection
+        if @type == "Page"
+          @parent_object.pages.where(type: "Campaignmanager::Page")
+        else
+          @parent_object.send(@type.tableize)
+        end
       end
 
       def type_class
