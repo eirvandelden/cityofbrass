@@ -742,7 +742,7 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.text "short_description"
     t.text "full_description"
     t.text "category"
-    t.decimal "weight"
+    t.float "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "parent_id"
@@ -750,7 +750,7 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.text "source"
     t.boolean "is_3pp", default: false
     t.text "tags", default: "[]"
-    t.string "privacy", default: "Private", null: false
+    t.text "privacy", default: "Private", null: false
     t.index ["parent_id"], name: "index_rulebuilder_items_on_parent_id"
     t.index ["privacy"], name: "index_rulebuilder_items_on_privacy"
     t.index ["resident_id"], name: "index_rulebuilder_items_on_resident_id"
