@@ -30,6 +30,8 @@ Campaignmanager::Engine.routes.draw do
 
   # EVEN OUR PAGES CAN BE A CONCERN
   concern :outline do
+    resources :pages, controller: 'pages', concerns: [:features, :sections, :notables, :options]
+
     resources :adventure_logs, controller: 'pages', type: 'AdventureLog', concerns: [:features, :sections, :notables, :options]
     get 'adventure_logs/new/:parent_id' => 'pages#new', :as => :adventure_log_new_child, type: 'AdventureLog'
 
@@ -40,8 +42,6 @@ Campaignmanager::Engine.routes.draw do
     get 'house_rules/new/:parent_id' => 'pages#new', :as => :house_rule_new_child, type: 'HouseRule'
   end
 
-  resources :campaigns, path: :campaigns, concerns: [:menu_items, :features, :sections, :notables, :options, :outline, :actors] do
-    get 'pages', to: 'campaigns#pages', on: :member
-  end
+  resources :campaigns, path: :campaigns, concerns: [:menu_items, :features, :sections, :notables, :options, :outline, :actors]
 
 end
