@@ -23,9 +23,9 @@ nl:
         label: Over
     navigation:
       active_adventure: Actief avontuur
-      campaign_details: Campagnedetails
-      campaign_menu: Campagnemenu
-      campaign_pages: Campagnepagina's
+      campaign_details: Campaign details
+      campaign_menu: Campaign menu
+      campaign_pages: Campaign pagina's
   errors:
     messages:
       invalid_privacy: is niet geldig.
