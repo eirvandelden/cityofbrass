@@ -5,17 +5,18 @@ module Campaignmanager
 
     include CampaignsHelper
 
-    before_action :authenticate_user!, except: [:show, :characters, :notables]
-    before_action :check_user_status,  except: [:show, :characters, :notables]
+    before_action :authenticate_user!, except: [:show, :characters, :notables, :pages]
+    before_action :check_user_status,  except: [:show, :characters, :notables, :pages]
 
     before_action :set_type
     before_action :set_campaign,          only: [:edit, :update, :options, :destroy]
     before_action :set_campaign_for_show, only: [:show]
     before_action :set_characters,        only: [:characters]
     before_action :set_notables,          only: [:notables]
+    before_action :set_campaign_pages,    only: [:pages]
     before_action :set_campaigns,         only: [:index]
 
-    before_action :can_show,              only: [:show, :characters, :notables]
+    before_action :can_show,              only: [:show, :characters, :notables, :pages]
     before_action :can_edit,              only: [:edit, :update, :options, :destroy]
 
     before_action :check_quota,           only: [:new, :create]
@@ -49,6 +50,15 @@ module Campaignmanager
     # GET /campaigns/1
     # GET /campaigns/1.json
     def notables
+      respond_to do |format|
+        format.html
+      end
+    end
+
+    # GET /campaigns/1/pages
+    # @action GET
+    # @route /cm/campaigns/:id/pages
+    def pages
       respond_to do |format|
         format.html
       end
@@ -177,6 +187,17 @@ module Campaignmanager
         if @campaign.nil?
           render template: 'errors/404', layout: 'layouts/application', status: 404
         end
+      end
+
+      def set_campaign_pages
+        @campaign = Campaign.joins(:user).find_by_id(params_id)
+        if @campaign.nil?
+          render template: 'errors/404', layout: 'layouts/application', status: 404
+          return
+        end
+        @adventure_logs  = @campaign.adventure_logs.short
+        @house_rules     = @campaign.house_rules.short
+        @game_master_notes = @campaign.game_master_notes.short if @campaign.can_edit?(current_user, admin_signed_in?)
       end
 
       def can_show

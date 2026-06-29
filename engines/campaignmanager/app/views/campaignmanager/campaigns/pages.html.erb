@@ -1,0 +1,45 @@
+<% provide(:title, "#{@campaign.name} | Pages") %>
+
+<% content_for :breadcrumb do %>
+  <%= breadcrumb [
+    { "Campaigns" => campaigns_path },
+    { @campaign.name => campaign_path(@campaign) },
+    { "Pages" => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render :partial => 'campaignmanager/menus/campaign' %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render :partial => 'layouts/header',
+      :locals => {
+        :icon => 'fa fa-files-o',
+        :main => 'Campaign Pages',
+        :can_auth => @campaign.can_edit?(current_user, admin_signed_in?)
+      }
+    %>
+    <hr class="faded">
+
+    <%= render 'page_section',
+      icon: cm_icon_for('AdventureLog'),
+      title: 'Adventure Logs',
+      pages: @adventure_logs,
+      add_path: new_campaign_adventure_log_path(@campaign) %>
+
+    <%= render 'page_section',
+      icon: cm_icon_for('HouseRule'),
+      title: 'House Rules',
+      pages: @house_rules,
+      add_path: new_campaign_house_rule_path(@campaign) %>
+
+    <% if @game_master_notes %>
+      <%= render 'page_section',
+        icon: cm_icon_for('GameMasterNote'),
+        title: 'GM Notes',
+        pages: @game_master_notes,
+        add_path: new_campaign_game_master_note_path(@campaign) %>
+    <% end %>
+  </div>
+</div>
