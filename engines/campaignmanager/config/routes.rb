@@ -40,6 +40,8 @@ Campaignmanager::Engine.routes.draw do
     get 'house_rules/new/:parent_id' => 'pages#new', :as => :house_rule_new_child, type: 'HouseRule'
   end
 
-  resources :campaigns, path: :campaigns, concerns: [:menu_items, :features, :sections, :notables, :options, :outline, :actors]
+  resources :campaigns, path: :campaigns, concerns: [:menu_items, :features, :sections, :notables, :options, :outline, :actors] do
+    get 'pages', to: 'campaigns#pages', on: :member
+  end
 
 end
