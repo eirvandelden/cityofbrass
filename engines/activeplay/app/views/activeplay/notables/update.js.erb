@@ -1,7 +1,7 @@
 <% if @notable.errors.count == 0 %>
 
   $('.alert-box').remove();
-  $("body").append ("<%= j(render 'layouts/notices') %>");
+  $("#main").prepend("<%= j(render 'layouts/notices') %>");
   $('#form_div').remove();
   $('#form_placeholder').show();
   $('#notables_form').html("<%= j(render 'form_list') %>");
