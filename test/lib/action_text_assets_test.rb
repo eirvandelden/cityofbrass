@@ -29,4 +29,10 @@ class ActionTextAssetsTest < ActiveSupport::TestCase
     source = Rails.root.join("app/assets/javascripts/actiontext/attachment_upload.js").read
     assert_includes source, "ActiveStorage.DirectUpload"
   end
+
+  test "asset manifest links compiled application stylesheet" do
+    manifest = Rails.root.join("app/assets/config/manifest.js").read
+
+    assert_includes manifest, "//= link application.css"
+  end
 end
