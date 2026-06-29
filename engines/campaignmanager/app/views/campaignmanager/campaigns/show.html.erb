@@ -21,6 +21,9 @@
       }
     %>
     <hr class="faded">
+    <% if @campaign.short_description.present? %>
+      <p><em><%= @campaign.short_description %></em></p>
+    <% end %>
     <div class="row">
       <div class="medium-8 columns">
       <%= render 'features', campaign: @campaign %>

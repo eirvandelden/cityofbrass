@@ -1,7 +1,7 @@
 <% if @core_faq.errors.count == 0 %>
 
   $('.alert-box').remove();
-  $("body").append ("<%= j(render 'layouts/notices') %>");
+  $("#main").prepend("<%= j(render 'layouts/notices') %>");
   $('#form_div').remove();
   $('#form_placeholder').show();
   $('#core_faq_<%= @core_faq.id %>').replaceWith('<%= j render @core_faq %>')

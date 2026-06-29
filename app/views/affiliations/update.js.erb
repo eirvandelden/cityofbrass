@@ -1,5 +1,5 @@
 $('.alert-box').remove();
-$("body").append ("<%= j(render 'layouts/notices') %>");
+$("#main").prepend("<%= j(render 'layouts/notices') %>");
 if ( $( "#affiliates_list" ).length ) {
   $('#affiliates_list').html("<%= j(render 'affiliations/all') %>");
 }
