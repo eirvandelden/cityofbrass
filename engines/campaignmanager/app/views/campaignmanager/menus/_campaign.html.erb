@@ -52,13 +52,13 @@
 
 <dl class="shortcut-menu show-for-medium-up">
   <dd>
-    <h4><%= link_to 'Campaign Details', campaignmanager.edit_campaign_path(@campaign), :style => 'display:block;' %></h4>
+    <h4><%= link_to t("campaignmanager.navigation.campaign_details"), campaignmanager.edit_campaign_path(@campaign), :style => 'display:block;' %></h4>
   </dd>
   <dd>
-    <h4><%= link_to 'Campaign Menu', campaignmanager.campaign_menu_items_path(@campaign), :style => 'display:block;' %></h4>
+    <h4><%= link_to t("campaignmanager.navigation.campaign_menu"), campaignmanager.campaign_menu_items_path(@campaign), :style => 'display:block;' %></h4>
   </dd>
   <dd class="<%= 'active' if current_page?(campaignmanager.campaign_pages_path(@campaign)) %>">
-    <h4><%= link_to 'Campaign Pages', campaignmanager.campaign_pages_path(@campaign), :style => 'display:block;' %></h4>
+    <h4><%= link_to t("campaignmanager.navigation.campaign_pages"), campaignmanager.campaign_pages_path(@campaign), :style => 'display:block;' %></h4>
   </dd>
 </dl>
 <% end %>

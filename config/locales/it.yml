@@ -17,8 +17,15 @@ it:
           Appaiono nella panoramica della campagna.
         adventures_label: Avventure in questa campagna
         no_active_adventure: Nessuna
+    menu_items:
+      about:
+        description: Costruisci il menu della tua campagna.
+        label: Informazioni
     navigation:
       active_adventure: Avventura attiva
+      campaign_details: Dettagli campagna
+      campaign_menu: Menu campagna
+      campaign_pages: Pagine campagna
   errors:
     messages:
       invalid_privacy: non è valido.
