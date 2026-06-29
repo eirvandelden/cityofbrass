@@ -334,7 +334,7 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.integer "sort_order"
     t.text "name"
     t.text "description"
-    t.decimal "weight"
+    t.float "weight"
     t.bigint "quantity"
     t.boolean "carried"
     t.datetime "created_at"
