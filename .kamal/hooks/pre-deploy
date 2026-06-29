@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 echo "Running db:migrate..."
-kamal app exec --reuse "bin/rails db:migrate"
+kamal app exec --primary --roles web "bin/rails db:migrate"
