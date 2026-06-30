@@ -28,5 +28,6 @@
 <script>
   var engine_type = 'SB'
   var sb_url = "/sb/resident/";
-  var wb_url = "/resident/";
+  var wb_url = "/residents/<%= @parent_object.resident.slug %>/";
+  var cm_url = "<%= campaign_path(@parent_object) %>/";
 </script>
