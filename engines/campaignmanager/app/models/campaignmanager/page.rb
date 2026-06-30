@@ -55,6 +55,7 @@ module Campaignmanager
     validate  :valid_privacy
     validates :short_description, length: { maximum: 255 }
 
+    before_validation :set_sti_type
     before_validation :make_slug
     before_validation :nil_if_blank
     before_save :mark_for_removal
@@ -65,6 +66,10 @@ module Campaignmanager
     end
 
     private
+      def set_sti_type
+        self.type ||= self.class.sti_name
+      end
+
       def destroy_menu_item
         menu_item_join&.menu_item&.destroy
       end
