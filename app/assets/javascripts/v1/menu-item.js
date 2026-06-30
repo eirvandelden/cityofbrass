@@ -64,13 +64,16 @@ $(document).on('turbolinks:load', function () {
     var id = $('#selectEngineSB option:selected').val();
     window.parent_url = $('#selectParent option:selected').val();
 
+    // Always clear stale records from a previous engine or parent selection.
+    $('#selectRecord option').remove();
+
     if (id === 'CM') {
       $.ajax({
         url: window.parent_url,
         dataType: 'json',
         success: function (data) {
+          if ($('#selectEngineSB option:selected').val() !== 'CM') return;
           var i;
-          $('#selectRecord option').remove();
           for (i = 0; i < data.length; i++) {
             $('#selectRecord').get(0).options.add(new Option(data[i].name, data[i].path));
           }
@@ -84,8 +87,8 @@ $(document).on('turbolinks:load', function () {
         url: window.parent_url + '/pages.json',
         dataType: 'json',
         success: function (data) {
+          if ($('#selectEngineSB option:selected').val() !== 'WB') return;
           var i;
-          $('#selectRecord option').remove();
           for (i = 0; i < data.length; i++) {
             $('#selectRecord').get(0).options.add(new Option(data[i].name, data[i].path));
           }
