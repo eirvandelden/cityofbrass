@@ -82,6 +82,21 @@ $(document).on('turbolinks:load', function () {
       return;
     }
 
+    if (id === 'SB') {
+      $.ajax({
+        url: window.parent_url + '/pages.json',
+        dataType: 'json',
+        success: function (data) {
+          if ($('#selectEngineSB option:selected').val() !== 'SB') return;
+          var i;
+          for (i = 0; i < data.length; i++) {
+            $('#selectRecord').get(0).options.add(new Option(data[i].name, data[i].path));
+          }
+        }
+      });
+      return;
+    }
+
     if (id === 'WB') {
       $.ajax({
         url: window.parent_url + '/pages.json',
