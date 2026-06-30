@@ -145,6 +145,10 @@ nl:
       running: Bezig
       succeeded: Geslaagd
   layouts:
+    footer:
+      copyright_notice: 2018 Embers Design Studios, LLC (GPLv3). Aangepast door Etienne
+        van Delden de la Haije %{year}.
+      privacy_policy: Privacybeleid
     form:
       options:
         confirm_delete: Weet je zeker dat je "%{name}" wilt verwijderen? Dit kan niet

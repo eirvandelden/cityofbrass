@@ -154,6 +154,10 @@ en:
       running: Running
       succeeded: Succeeded
   layouts:
+    footer:
+      copyright_notice: 2018 Embers Design Studios, LLC (GPLv3). Modified by Etienne
+        van Delden de la Haije %{year}.
+      privacy_policy: Privacy Policy
     form:
       options:
         confirm_delete: Are you sure you want to delete "%{name}"? This cannot be
