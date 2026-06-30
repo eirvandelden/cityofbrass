@@ -26,10 +26,10 @@ module Campaignmanager
       end
 
       if ('Campaignmanager::GameMasterNote'.include?@type) && user_signed_in? && !(current_user.resident == @parent_object.resident)
-        render template: 'errors/404', layout: 'layouts/application', status: 404
+        return render template: 'errors/404', layout: 'layouts/application', status: 404
       end
       unless @campaign.can_show?(current_user, admin_signed_in?, @type)
-        render template: 'errors/403', layout: 'layouts/application', status: 403
+        return render template: 'errors/403', layout: 'layouts/application', status: 403
       end
 
       respond_to do |format|
@@ -166,7 +166,7 @@ module Campaignmanager
       end
 
       def sti_pages_path
-        send "#{@parent_type.underscore}_#{@type.underscore.pluralize}_path"
+        send "#{@parent_type.underscore}_#{@type.underscore.pluralize}_path", @parent_object
       end
 
       def can_show
