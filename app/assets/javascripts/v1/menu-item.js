@@ -37,6 +37,7 @@ $(document).on('turbolinks:load', function () {
     }
 
     var engine_url;
+    var requestedEngine = engine;
     if (engine === 'WB') {
       engine_url = wb_url + 'districts.json';
     } else {
@@ -47,6 +48,8 @@ $(document).on('turbolinks:load', function () {
       url: engine_url,
       dataType: 'json',
       success: function (data) {
+        // If the user switched engines while this request was in flight, discard the result.
+        if ($('#selectEngineSB option:selected').val() !== requestedEngine) return;
         var i;
         $('#selectParent option').remove();
         for (i = 0; i < data.length; i++) {
@@ -59,11 +62,26 @@ $(document).on('turbolinks:load', function () {
 
   $('#selectParent').change(function () {
     var id = $('#selectEngineSB option:selected').val();
-    var parent_url = $('#selectParent option:selected').val();
+    window.parent_url = $('#selectParent option:selected').val();
 
     if (id === 'CM') {
       $.ajax({
-        url: parent_url,
+        url: window.parent_url,
+        dataType: 'json',
+        success: function (data) {
+          var i;
+          $('#selectRecord option').remove();
+          for (i = 0; i < data.length; i++) {
+            $('#selectRecord').get(0).options.add(new Option(data[i].name, data[i].path));
+          }
+        }
+      });
+      return;
+    }
+
+    if (id === 'WB') {
+      $.ajax({
+        url: window.parent_url + '/pages.json',
         dataType: 'json',
         success: function (data) {
           var i;
@@ -85,7 +103,7 @@ $(document).on('turbolinks:load', function () {
 
   $('#selectRecordType').change(function () {
     var rec_type = $('#selectRecordType option:selected').text().toLowerCase().replace(' ', '_');
-    var rec_url = parent_url + '/' + rec_type + '.json';
+    var rec_url = window.parent_url + '/' + rec_type + '.json';
 
     $.ajax({
       url: rec_url,
