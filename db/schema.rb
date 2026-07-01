@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2026_06_22_195600) do
+ActiveRecord::Schema.define(version: 2026_07_01_000001) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -50,37 +50,37 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "activeplay_notables", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "name"
+  create_table "activeplay_notables", id: :string, force: :cascade do |t|
+    t.string "name"
     t.integer "sort_order"
-    t.text "virtual_table_id"
-    t.text "entity_id"
+    t.string "virtual_table_id"
+    t.string "entity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["entity_id"], name: "index_activeplay_notables_on_entity_id"
     t.index ["virtual_table_id"], name: "index_activeplay_notables_on_virtual_table_id"
   end
 
-  create_table "activeplay_virtual_tables", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "campaign_id"
+  create_table "activeplay_virtual_tables", id: :string, force: :cascade do |t|
+    t.string "campaign_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["campaign_id"], name: "index_activeplay_virtual_tables_on_campaign_id", unique: true
   end
 
   create_table "admins", force: :cascade do |t|
-    t.text "email", default: "", null: false
-    t.text "encrypted_password", default: "", null: false
-    t.text "reset_password_token"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.text "current_sign_in_ip"
-    t.text "last_sign_in_ip"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.integer "failed_attempts", default: 0, null: false
-    t.text "unlock_token"
+    t.string "unlock_token"
     t.datetime "locked_at"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -89,10 +89,10 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["unlock_token"], name: "index_admins_on_unlock_token", unique: true
   end
 
-  create_table "affiliations", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "resident_id", null: false
-    t.text "affiliate_id", null: false
-    t.text "status", null: false
+  create_table "affiliations", id: :string, force: :cascade do |t|
+    t.string "resident_id", null: false
+    t.string "affiliate_id", null: false
+    t.string "status", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["affiliate_id", "resident_id"], name: "index_affiliations_on_affiliate_id_and_resident_id"
@@ -100,42 +100,42 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["resident_id"], name: "index_affiliations_on_resident_id"
   end
 
-  create_table "beta_invites", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "email"
+  create_table "beta_invites", id: :string, force: :cascade do |t|
+    t.string "email"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["email"], name: "index_beta_invites_on_email", unique: true
   end
 
-  create_table "billing_events", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "user_id", null: false
+  create_table "billing_events", id: :string, force: :cascade do |t|
+    t.string "user_id", null: false
     t.text "stripe_event_token", null: false
     t.datetime "event_date"
     t.text "event_type"
-    t.text "event_data"
+    t.json "event_data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["stripe_event_token"], name: "index_billing_events_on_stripe_event_token", unique: true
     t.index ["user_id"], name: "index_billing_events_on_user_id"
   end
 
-  create_table "billing_plans", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "name", null: false
-    t.text "stripe_plan_token"
-    t.text "interval"
+  create_table "billing_plans", id: :string, force: :cascade do |t|
+    t.string "name", null: false
+    t.string "stripe_plan_token"
+    t.string "interval"
     t.integer "interval_count"
-    t.text "currency"
+    t.string "currency"
     t.integer "amount"
-    t.text "description"
+    t.string "description"
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "billing_subscriptions", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "user_id", null: false
-    t.text "plan_id"
-    t.text "stripe_subscription_token", null: false
+  create_table "billing_subscriptions", id: :string, force: :cascade do |t|
+    t.string "user_id", null: false
+    t.string "plan_id"
+    t.string "stripe_subscription_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["stripe_subscription_token"], name: "index_billing_subscriptions_on_stripe_subscription_token", unique: true
@@ -152,41 +152,41 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["campaign_id", "adventure_id"], name: "idx_cm_campaign_adventure_joins_unique", unique: true
   end
 
-  create_table "campaignmanager_campaigns", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "resident_id", null: false
-    t.text "name", null: false
-    t.text "slug", null: false
-    t.text "page_label"
-    t.text "privacy", null: false
-    t.text "short_description"
+  create_table "campaignmanager_campaigns", id: :string, force: :cascade do |t|
+    t.string "resident_id", null: false
+    t.string "name", null: false
+    t.string "slug", null: false
+    t.string "page_label"
+    t.string "privacy", null: false
+    t.string "short_description"
     t.text "full_description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text "district_id"
-    t.text "core_rules"
+    t.string "district_id"
+    t.string "core_rules"
     t.index ["district_id"], name: "index_campaignmanager_campaigns_on_district_id"
     t.index ["resident_id"], name: "index_campaignmanager_campaigns_on_resident_id"
   end
 
-  create_table "campaignmanager_features", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "featureable_id"
-    t.text "featureable_type"
+  create_table "campaignmanager_features", id: :string, force: :cascade do |t|
+    t.string "featureable_id"
+    t.string "featureable_type"
     t.integer "sort_order"
-    t.text "feature_label"
+    t.string "feature_label"
     t.text "feature_text"
-    t.text "feature_type"
-    t.text "record_type"
-    t.text "search_tags"
+    t.string "feature_type"
+    t.string "record_type"
+    t.string "search_tags"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["featureable_id", "featureable_type"], name: "index_campaignmanager_features_id_and_type"
   end
 
-  create_table "campaignmanager_notables", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "notableable_id"
-    t.text "notableable_type"
-    t.text "entity_id"
-    t.text "name"
+  create_table "campaignmanager_notables", id: :string, force: :cascade do |t|
+    t.string "notableable_id"
+    t.string "notableable_type"
+    t.string "entity_id"
+    t.string "name"
     t.integer "sort_order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -194,15 +194,15 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["notableable_id", "notableable_type"], name: "cm_notable_id_and_type"
   end
 
-  create_table "campaignmanager_pages", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "type", null: false
-    t.text "campaign_id"
-    t.text "parent_id"
-    t.text "name"
-    t.text "slug"
-    t.text "page_label"
-    t.text "privacy"
-    t.text "short_description"
+  create_table "campaignmanager_pages", id: :string, force: :cascade do |t|
+    t.string "type", null: false
+    t.string "campaign_id"
+    t.string "parent_id"
+    t.string "name"
+    t.string "slug"
+    t.string "page_label"
+    t.string "privacy"
+    t.string "short_description"
     t.text "full_description", limit: 16777215
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -211,104 +211,104 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["parent_id"], name: "index_campaignmanager_pages_on_parent_id"
   end
 
-  create_table "campaignmanager_players", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "campaign_id"
-    t.text "affiliation_id"
+  create_table "campaignmanager_players", id: :string, force: :cascade do |t|
+    t.string "campaign_id"
+    t.string "affiliation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["campaign_id", "affiliation_id"], name: "index_campaignmanager_players_campaign_and_affiliate", unique: true
   end
 
-  create_table "campaignmanager_sections", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "sectionable_id"
-    t.text "sectionable_type"
+  create_table "campaignmanager_sections", id: :string, force: :cascade do |t|
+    t.string "sectionable_id"
+    t.string "sectionable_type"
     t.integer "sort_order"
-    t.text "header"
+    t.string "header"
     t.text "content"
-    t.text "section_type"
-    t.text "section_style"
-    t.text "record_type"
-    t.text "search_tags"
+    t.string "section_type"
+    t.string "section_style"
+    t.string "record_type"
+    t.string "search_tags"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["sectionable_id", "sectionable_type"], name: "index_campaignmanager_sections_id_and_type"
   end
 
-  create_table "entitybuilder_ability_scores", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_ability_scores", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "name", null: false
+    t.string "name", null: false
     t.text "description"
     t.integer "base"
     t.integer "score"
     t.integer "modifier"
-    t.text "dice"
+    t.string "dice"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["entity_id"], name: "index_entitybuilder_ability_scores_on_entity_id"
   end
 
-  create_table "entitybuilder_attacks", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_attacks", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "name", null: false
+    t.string "name", null: false
     t.text "description"
-    t.text "attack_type"
-    t.text "attack_range"
-    t.text "attack_ability_score"
-    t.text "attack_dice"
+    t.string "attack_type"
+    t.string "attack_range"
+    t.string "attack_ability_score"
+    t.string "attack_dice"
     t.integer "attack_bonus"
     t.integer "attack_misc_modifier"
-    t.text "damage_ability_score"
-    t.text "damage_dice"
+    t.string "damage_ability_score"
+    t.string "damage_dice"
     t.integer "damage_bonus"
     t.integer "damage_misc_modifier"
-    t.text "critical_range"
+    t.string "critical_range"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean "proficient"
-    t.text "damage_type"
-    t.text "critical_damage_ability_score"
-    t.text "critical_damage_dice"
+    t.string "damage_type"
+    t.string "critical_damage_ability_score"
+    t.string "critical_damage_dice"
     t.integer "critical_damage_bonus"
     t.integer "critical_damage_misc_modifier"
-    t.text "special_damage_ability_score"
-    t.text "special_damage_dice"
+    t.string "special_damage_ability_score"
+    t.string "special_damage_dice"
     t.integer "special_damage_bonus"
     t.integer "special_damage_misc_modifier"
-    t.text "special_damage_name"
+    t.string "special_damage_name"
     t.index ["entity_id"], name: "index_entitybuilder_attacks_on_entity_id"
   end
 
-  create_table "entitybuilder_base_values", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_base_values", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "name", null: false
+    t.string "name", null: false
     t.text "description"
     t.integer "value"
-    t.text "dice"
+    t.string "dice"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["entity_id"], name: "index_entitybuilder_base_values_on_entity_id"
   end
 
-  create_table "entitybuilder_campaign_joins", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
-    t.text "campaign_id"
+  create_table "entitybuilder_campaign_joins", id: :string, force: :cascade do |t|
+    t.string "entity_id"
+    t.string "campaign_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["entity_id"], name: "index_entitybuilder_campaign_joins_on_entity_id"
   end
 
-  create_table "entitybuilder_caster_levels", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_caster_levels", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "caster_class"
+    t.string "caster_class"
     t.integer "level"
     t.integer "per_day"
     t.integer "bonus_per_day"
     t.integer "base_dc"
-    t.text "ability_score"
+    t.string "ability_score"
     t.integer "save_dc"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -316,179 +316,179 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["entity_id"], name: "index_entitybuilder_caster_levels_on_entity_id"
   end
 
-  create_table "entitybuilder_class_levels", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_class_levels", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "name", null: false
+    t.string "name", null: false
     t.text "description"
     t.integer "level"
-    t.text "hit_dice"
+    t.string "hit_dice"
     t.integer "hit_points"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["entity_id"], name: "index_entitybuilder_class_levels_on_entity_id"
   end
 
-  create_table "entitybuilder_currencies", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_currencies", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "name"
+    t.string "name"
     t.text "description"
     t.float "weight"
-    t.bigint "quantity"
+    t.integer "quantity"
     t.boolean "carried"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["entity_id"], name: "index_entitybuilder_currencies_on_entity_id"
   end
 
-  create_table "entitybuilder_defenses", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_defenses", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "name", null: false
+    t.string "name", null: false
     t.text "description"
     t.integer "base"
     t.integer "bonus"
-    t.text "ability_score"
+    t.string "ability_score"
     t.integer "misc_modifier"
-    t.text "dice"
+    t.string "dice"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["entity_id"], name: "index_entitybuilder_defenses_on_entity_id"
   end
 
-  create_table "entitybuilder_descriptors", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_descriptors", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "name", null: false
-    t.text "description"
+    t.string "name", null: false
+    t.string "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean "is_private", default: false
     t.index ["entity_id"], name: "index_entitybuilder_descriptors_on_entity_id"
   end
 
-  create_table "entitybuilder_entities", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "type", null: false
-    t.text "resident_id"
-    t.text "name"
-    t.text "core_rules"
-    t.text "privacy"
-    t.text "sheet_privacy"
-    t.text "short_description"
+  create_table "entitybuilder_entities", id: :string, force: :cascade do |t|
+    t.string "type", null: false
+    t.string "resident_id"
+    t.string "name"
+    t.string "core_rules"
+    t.string "privacy"
+    t.string "sheet_privacy"
+    t.string "short_description"
     t.text "full_description"
     t.text "introduction"
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "publisher"
-    t.text "source"
+    t.string "publisher"
+    t.string "source"
     t.boolean "is_3pp", default: false
-    t.text "tags", default: "[]"
+    t.text "tags"
     t.index ["resident_id"], name: "index_entitybuilder_entities_on_resident_id"
     t.index ["tags"], name: "index_entitybuilder_entities_on_tags"
     t.index ["type"], name: "index_entitybuilder_entities_on_type"
   end
 
-  create_table "entitybuilder_inventory_items", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_inventory_items", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "item_id"
+    t.string "item_id"
     t.integer "quantity"
     t.boolean "equipped"
     t.boolean "carried"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text "detail"
+    t.string "detail"
     t.index ["entity_id"], name: "index_entitybuilder_inventory_items_on_entity_id"
     t.index ["item_id"], name: "index_entitybuilder_inventory_items_on_item_id"
   end
 
-  create_table "entitybuilder_known_abilities", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_known_abilities", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "ability_id"
+    t.string "ability_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "detail"
+    t.string "detail"
     t.index ["ability_id"], name: "index_entitybuilder_known_abilities_on_ability_id"
     t.index ["entity_id"], name: "index_entitybuilder_known_abilities_on_entity_id"
   end
 
-  create_table "entitybuilder_known_feats", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_known_feats", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "feat_id"
+    t.string "feat_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text "detail"
+    t.string "detail"
     t.index ["entity_id"], name: "index_entitybuilder_known_feats_on_entity_id"
     t.index ["feat_id"], name: "index_entitybuilder_known_feats_on_feat_id"
   end
 
-  create_table "entitybuilder_known_spells", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_known_spells", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "spell_id"
+    t.string "spell_id"
     t.boolean "prepared"
     t.boolean "used"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text "spell_class"
+    t.string "spell_class"
     t.integer "level"
-    t.text "detail"
+    t.string "detail"
     t.boolean "at_will", default: false
     t.index ["entity_id"], name: "index_entitybuilder_known_spells_on_entity_id"
     t.index ["spell_id"], name: "index_entitybuilder_known_spells_on_spell_id"
   end
 
-  create_table "entitybuilder_linked_rules", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
-    t.text "rule_id"
+  create_table "entitybuilder_linked_rules", id: :string, force: :cascade do |t|
+    t.string "entity_id"
+    t.string "rule_id"
     t.integer "sort_order"
-    t.text "detail"
+    t.string "detail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["entity_id"], name: "index_entitybuilder_linked_rules_on_entity_id"
     t.index ["rule_id"], name: "index_entitybuilder_linked_rules_on_rule_id"
   end
 
-  create_table "entitybuilder_modifiers", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "modifierable_id"
-    t.text "modifierable_type"
-    t.text "entity_id"
+  create_table "entitybuilder_modifiers", id: :string, force: :cascade do |t|
+    t.string "modifierable_id"
+    t.string "modifierable_type"
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "category"
-    t.text "item"
+    t.string "category"
+    t.string "item"
     t.integer "value"
-    t.text "dice"
+    t.string "dice"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text "original_mod_type"
+    t.string "original_mod_type"
     t.index ["entity_id"], name: "index_entitybuilder_modifiers_on_entity_id"
     t.index ["modifierable_id", "modifierable_type"], name: "eb_modifier_id_and_type"
   end
 
-  create_table "entitybuilder_movements", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_movements", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "name", null: false
+    t.string "name", null: false
     t.integer "base"
-    t.text "description"
+    t.string "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "bonus"
-    t.text "ability_score"
+    t.string "ability_score"
     t.integer "misc_modifier"
-    t.text "dice"
+    t.string "dice"
     t.index ["entity_id"], name: "index_entitybuilder_movements_on_entity_id"
   end
 
-  create_table "entitybuilder_notables", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "notableable_id"
-    t.text "notableable_type"
-    t.text "entity_id"
-    t.text "name"
+  create_table "entitybuilder_notables", id: :string, force: :cascade do |t|
+    t.string "notableable_id"
+    t.string "notableable_type"
+    t.string "entity_id"
+    t.string "name"
     t.integer "sort_order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -496,33 +496,33 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["notableable_id", "notableable_type"], name: "eb_notable_id_and_type"
   end
 
-  create_table "entitybuilder_saving_throws", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_saving_throws", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "name"
+    t.string "name"
     t.text "description"
     t.integer "base"
     t.integer "bonus"
-    t.text "ability_score"
+    t.string "ability_score"
     t.integer "misc_modifier"
-    t.text "dice"
+    t.string "dice"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean "proficient"
     t.index ["entity_id"], name: "index_entitybuilder_saving_throws_on_entity_id"
   end
 
-  create_table "entitybuilder_skills", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_skills", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "name", null: false
+    t.string "name", null: false
     t.text "description"
     t.integer "bonus"
     t.boolean "class_skill"
-    t.text "ability_score"
+    t.string "ability_score"
     t.integer "ranks"
     t.integer "misc_modifier"
-    t.text "dice"
+    t.string "dice"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean "proficient"
@@ -531,10 +531,10 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["entity_id"], name: "index_entitybuilder_skills_on_entity_id"
   end
 
-  create_table "entitybuilder_trackables", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_trackables", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "name", null: false
+    t.string "name", null: false
     t.text "description"
     t.integer "minimum"
     t.integer "maximum"
@@ -545,35 +545,35 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["entity_id"], name: "index_entitybuilder_trackables_on_entity_id"
   end
 
-  create_table "entitybuilder_traits", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "entity_id"
+  create_table "entitybuilder_traits", id: :string, force: :cascade do |t|
+    t.string "entity_id"
     t.integer "sort_order"
-    t.text "name", null: false
-    t.text "short_description"
+    t.string "name", null: false
+    t.string "short_description"
     t.text "full_description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text "detail"
+    t.string "detail"
     t.index ["entity_id"], name: "index_entitybuilder_traits_on_entity_id"
   end
 
-  create_table "gallery_image_joins", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "image_id", null: false
-    t.text "imageable_id", null: false
-    t.text "imageable_type", null: false
+  create_table "gallery_image_joins", id: :string, force: :cascade do |t|
+    t.string "image_id", null: false
+    t.string "imageable_id", null: false
+    t.string "imageable_type", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["imageable_id", "imageable_type"], name: "index_gallery_image_joins_on_imageable_id_and_imageable_type"
   end
 
-  create_table "gallery_images", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "type", null: false
-    t.text "resident_id"
-    t.text "name"
+  create_table "gallery_images", id: :string, force: :cascade do |t|
+    t.string "type", null: false
+    t.string "resident_id"
+    t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text "file_file_name"
-    t.text "file_content_type"
+    t.string "file_file_name"
+    t.string "file_content_type"
     t.integer "file_file_size"
     t.datetime "file_updated_at"
     t.boolean "file_processing"
@@ -660,12 +660,12 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["status"], name: "index_importer_previews_on_status"
   end
 
-  create_table "messages", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "sender_id", null: false
-    t.text "recipient_id"
+  create_table "messages", id: :string, force: :cascade do |t|
+    t.string "sender_id", null: false
+    t.string "recipient_id"
     t.boolean "sender_deleted", default: false
     t.boolean "recipient_deleted", default: false
-    t.text "subject", null: false
+    t.string "subject", null: false
     t.text "body"
     t.datetime "read_at"
     t.datetime "created_at"
@@ -674,59 +674,59 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
-  create_table "residents", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "user_id", null: false
-    t.text "name", null: false
-    t.text "slug", null: false
-    t.text "short_description"
+  create_table "residents", id: :string, force: :cascade do |t|
+    t.string "user_id", null: false
+    t.string "name", null: false
+    t.string "slug", null: false
+    t.string "short_description"
     t.text "full_description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text "title"
+    t.string "title"
     t.text "badges"
     t.index ["slug"], name: "index_residents_on_slug", unique: true
     t.index ["user_id"], name: "index_residents_on_user_id", unique: true
   end
 
-  create_table "rulebuilder_abilities", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "type", null: false
-    t.text "resident_id"
-    t.text "core_rules"
-    t.text "name"
-    t.text "short_description"
+  create_table "rulebuilder_abilities", id: :string, force: :cascade do |t|
+    t.string "type", null: false
+    t.string "resident_id"
+    t.string "core_rules"
+    t.string "name"
+    t.string "short_description"
     t.text "full_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "parent_id"
-    t.text "publisher"
-    t.text "source"
+    t.string "parent_id"
+    t.string "publisher"
+    t.string "source"
     t.boolean "is_3pp", default: false
-    t.text "tags", default: "[]"
+    t.text "tags"
     t.index ["parent_id"], name: "index_rulebuilder_abilities_on_parent_id"
     t.index ["resident_id"], name: "index_rulebuilder_abilities_on_resident_id"
     t.index ["tags"], name: "index_rulebuilder_abilities_on_tags"
     t.index ["type"], name: "index_rulebuilder_abilities_on_type"
   end
 
-  create_table "rulebuilder_feats", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "type", null: false
-    t.text "resident_id"
-    t.text "core_rules"
-    t.text "name"
-    t.text "short_description"
+  create_table "rulebuilder_feats", id: :string, force: :cascade do |t|
+    t.string "type", null: false
+    t.string "resident_id"
+    t.string "core_rules"
+    t.string "name"
+    t.string "short_description"
     t.text "full_description"
-    t.text "prerequisites"
+    t.string "prerequisites"
     t.text "benefit"
     t.text "normal"
     t.text "special"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "categories", default: "[]"
-    t.text "parent_id"
-    t.text "publisher"
-    t.text "source"
+    t.text "categories"
+    t.string "parent_id"
+    t.string "publisher"
+    t.string "source"
     t.boolean "is_3pp", default: false
-    t.text "tags", default: "[]"
+    t.text "tags"
     t.index ["categories"], name: "index_rulebuilder_feats_on_categories"
     t.index ["parent_id"], name: "index_rulebuilder_feats_on_parent_id"
     t.index ["resident_id"], name: "index_rulebuilder_feats_on_resident_id"
@@ -734,23 +734,23 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["type"], name: "index_rulebuilder_feats_on_type"
   end
 
-  create_table "rulebuilder_items", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "type", null: false
-    t.text "resident_id"
-    t.text "core_rules"
-    t.text "name"
-    t.text "short_description"
+  create_table "rulebuilder_items", id: :string, force: :cascade do |t|
+    t.string "type", null: false
+    t.string "resident_id"
+    t.string "core_rules"
+    t.string "name"
+    t.string "short_description"
     t.text "full_description"
     t.text "category"
     t.float "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "parent_id"
-    t.text "publisher"
-    t.text "source"
+    t.string "parent_id"
+    t.string "publisher"
+    t.string "source"
     t.boolean "is_3pp", default: false
-    t.text "tags", default: "[]"
-    t.text "privacy", default: "Private", null: false
+    t.text "tags"
+    t.string "privacy", default: "Private", null: false
     t.index ["parent_id"], name: "index_rulebuilder_items_on_parent_id"
     t.index ["privacy"], name: "index_rulebuilder_items_on_privacy"
     t.index ["resident_id"], name: "index_rulebuilder_items_on_resident_id"
@@ -758,22 +758,22 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["type"], name: "index_rulebuilder_items_on_type"
   end
 
-  create_table "rulebuilder_rules", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "type", null: false
-    t.text "resident_id"
-    t.text "parent_id"
-    t.text "core_rules"
-    t.text "rule_type"
+  create_table "rulebuilder_rules", id: :string, force: :cascade do |t|
+    t.string "type", null: false
+    t.string "resident_id"
+    t.string "parent_id"
+    t.string "core_rules"
+    t.string "rule_type"
     t.boolean "is_shared"
-    t.text "name"
-    t.text "short_description"
+    t.string "name"
+    t.string "short_description"
     t.text "full_description"
-    t.text "publisher"
-    t.text "source"
+    t.string "publisher"
+    t.string "source"
     t.boolean "is_3pp"
-    t.text "tags", default: "[]"
-    t.text "categories", default: "[]"
-    t.text "prerequisites"
+    t.text "tags"
+    t.text "categories"
+    t.string "prerequisites"
     t.text "benefit"
     t.text "normal"
     t.text "special"
@@ -786,31 +786,31 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["type"], name: "index_rulebuilder_rules_on_type"
   end
 
-  create_table "rulebuilder_spells", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "type", null: false
-    t.text "resident_id"
-    t.text "core_rules"
-    t.text "name"
-    t.text "short_description"
+  create_table "rulebuilder_spells", id: :string, force: :cascade do |t|
+    t.string "type", null: false
+    t.string "resident_id"
+    t.string "core_rules"
+    t.string "name"
+    t.string "short_description"
     t.text "full_description"
-    t.text "school"
-    t.text "casting_time"
+    t.string "school"
+    t.string "casting_time"
     t.text "components"
-    t.text "range"
-    t.text "effect"
-    t.text "target"
-    t.text "area"
-    t.text "duration"
-    t.text "saving_throw"
+    t.string "range"
+    t.string "effect"
+    t.string "target"
+    t.string "area"
+    t.string "duration"
+    t.string "saving_throw"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "spell_resistance"
-    t.text "levels", default: "[]"
-    t.text "parent_id"
-    t.text "publisher"
-    t.text "source"
+    t.string "spell_resistance"
+    t.text "levels"
+    t.string "parent_id"
+    t.string "publisher"
+    t.string "source"
     t.boolean "is_3pp", default: false
-    t.text "tags", default: "[]"
+    t.text "tags"
     t.index ["levels"], name: "index_rulebuilder_spells_on_levels"
     t.index ["parent_id"], name: "index_rulebuilder_spells_on_parent_id"
     t.index ["resident_id"], name: "index_rulebuilder_spells_on_resident_id"
@@ -818,63 +818,63 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["type"], name: "index_rulebuilder_spells_on_type"
   end
 
-  create_table "storybuilder_adventures", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "resident_id"
-    t.text "parent_id"
-    t.text "name", null: false
-    t.text "slug", null: false
-    t.text "page_label"
-    t.text "privacy", null: false
-    t.text "short_description"
+  create_table "storybuilder_adventures", id: :string, force: :cascade do |t|
+    t.string "resident_id"
+    t.string "parent_id"
+    t.string "name", null: false
+    t.string "slug", null: false
+    t.string "page_label"
+    t.string "privacy", null: false
+    t.string "short_description"
     t.text "full_description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text "type"
-    t.text "core_rules"
+    t.string "type"
+    t.string "core_rules"
     t.index ["parent_id"], name: "index_storybuilder_adventures_on_parent_id"
     t.index ["resident_id"], name: "index_storybuilder_adventures_on_resident_id"
   end
 
-  create_table "storybuilder_features", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "featureable_id"
-    t.text "featureable_type"
+  create_table "storybuilder_features", id: :string, force: :cascade do |t|
+    t.string "featureable_id"
+    t.string "featureable_type"
     t.integer "sort_order"
-    t.text "feature_label"
+    t.string "feature_label"
     t.text "feature_text"
-    t.text "feature_type"
-    t.text "record_type"
-    t.text "search_tags"
+    t.string "feature_type"
+    t.string "record_type"
+    t.string "search_tags"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["featureable_id", "featureable_type"], name: "index_storybuilder_features_id_and_type"
   end
 
-  create_table "storybuilder_menu_item_joins", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "menu_item_id", null: false
-    t.text "menu_item_joinable_id", null: false
-    t.text "menu_item_joinable_type", null: false
+  create_table "storybuilder_menu_item_joins", id: :string, force: :cascade do |t|
+    t.string "menu_item_id", null: false
+    t.string "menu_item_joinable_id", null: false
+    t.string "menu_item_joinable_type", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["menu_item_id"], name: "index_storybuilder_menu_item_joins_on_menu_item_id"
     t.index ["menu_item_joinable_id", "menu_item_joinable_type"], name: "sb_menu_item_join_id_and_type"
   end
 
-  create_table "storybuilder_menu_items", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "menu_itemable_id"
-    t.text "menu_itemable_type"
+  create_table "storybuilder_menu_items", id: :string, force: :cascade do |t|
+    t.string "menu_itemable_id"
+    t.string "menu_itemable_type"
     t.integer "sort_order"
-    t.text "item_label"
-    t.text "item_link"
+    t.string "item_label"
+    t.string "item_link"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["menu_itemable_id", "menu_itemable_type"], name: "sb_menu_item_id_and_type"
   end
 
-  create_table "storybuilder_notables", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "notableable_id"
-    t.text "notableable_type"
-    t.text "entity_id"
-    t.text "name"
+  create_table "storybuilder_notables", id: :string, force: :cascade do |t|
+    t.string "notableable_id"
+    t.string "notableable_type"
+    t.string "entity_id"
+    t.string "name"
     t.integer "sort_order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -882,19 +882,19 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["notableable_id", "notableable_type"], name: "sb_notable_id_and_type"
   end
 
-  create_table "storybuilder_pages", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "type"
-    t.text "parent_id"
-    t.text "name"
-    t.text "slug"
-    t.text "page_label"
-    t.text "privacy"
-    t.text "short_description"
+  create_table "storybuilder_pages", id: :string, force: :cascade do |t|
+    t.string "type"
+    t.string "parent_id"
+    t.string "name"
+    t.string "slug"
+    t.string "page_label"
+    t.string "privacy"
+    t.string "short_description"
     t.text "full_description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text "adventure_id"
-    t.text "tags", default: "[]"
+    t.string "adventure_id"
+    t.text "tags"
     t.integer "sort_weight", default: 1000, null: false
     t.boolean "player_handout", default: false
     t.index ["adventure_id"], name: "index_storybuilder_pages_on_adventure_id"
@@ -902,60 +902,60 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["tags"], name: "index_storybuilder_pages_on_tags"
   end
 
-  create_table "storybuilder_sections", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "sectionable_id"
-    t.text "sectionable_type"
+  create_table "storybuilder_sections", id: :string, force: :cascade do |t|
+    t.string "sectionable_id"
+    t.string "sectionable_type"
     t.integer "sort_order"
-    t.text "header"
+    t.string "header"
     t.text "content"
-    t.text "section_type"
-    t.text "section_style"
-    t.text "record_type"
-    t.text "search_tags"
+    t.string "section_type"
+    t.string "section_style"
+    t.string "record_type"
+    t.string "search_tags"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["sectionable_id", "sectionable_type"], name: "index_storybuilder_sections_id_and_type"
   end
 
-  create_table "support_core_faqs", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "faq_id", null: false
-    t.text "core_item", null: false
+  create_table "support_core_faqs", id: :string, force: :cascade do |t|
+    t.string "faq_id", null: false
+    t.string "core_item", null: false
     t.boolean "active", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "support_faqs", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "topic"
-    t.text "question", null: false
+  create_table "support_faqs", id: :string, force: :cascade do |t|
+    t.string "topic"
+    t.string "question", null: false
     t.text "answer"
     t.boolean "active", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "email", default: "", null: false
-    t.text "encrypted_password", default: "", null: false
-    t.text "reset_password_token"
+  create_table "users", id: :string, force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.text "current_sign_in_ip"
-    t.text "last_sign_in_ip"
-    t.text "confirmation_token"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.text "unconfirmed_email"
+    t.string "unconfirmed_email"
     t.integer "failed_attempts", default: 0, null: false
-    t.text "unlock_token"
+    t.string "unlock_token"
     t.datetime "locked_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text "status", default: "trial", null: false
-    t.text "stripe_customer_token"
+    t.string "status", default: "trial", null: false
+    t.string "stripe_customer_token"
     t.string "locale", default: "en", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -965,90 +965,91 @@ ActiveRecord::Schema.define(version: 2026_06_22_195600) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
-  create_table "worldbuilder_contributors", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "district_id", null: false
-    t.text "affiliation_id", null: false
+  create_table "worldbuilder_contributors", id: :string, force: :cascade do |t|
+    t.string "district_id", null: false
+    t.string "affiliation_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["district_id", "affiliation_id"], name: "index_worldbuilder_contributers_district_and_affiliate", unique: true
   end
 
-  create_table "worldbuilder_districts", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "resident_id"
-    t.text "name", null: false
-    t.text "slug", null: false
-    t.text "short_description"
+  create_table "worldbuilder_districts", id: :string, force: :cascade do |t|
+    t.string "resident_id"
+    t.string "name", null: false
+    t.string "slug", null: false
+    t.string "short_description"
     t.text "full_description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text "privacy"
-    t.text "page_label"
+    t.string "privacy"
+    t.string "page_label"
     t.index ["resident_id"], name: "index_worldbuilder_districts_on_resident_id"
     t.index ["slug"], name: "index_worldbuilder_districts_on_slug", unique: true
   end
 
-  create_table "worldbuilder_features", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "featureable_id"
-    t.text "featureable_type"
+  create_table "worldbuilder_features", id: :string, force: :cascade do |t|
+    t.string "featureable_id"
+    t.string "featureable_type"
     t.integer "sort_order"
-    t.text "feature_label"
+    t.string "feature_label"
     t.text "feature_text"
-    t.text "feature_type"
-    t.text "record_type"
-    t.text "search_tags"
+    t.string "feature_type"
+    t.string "record_type"
+    t.string "search_tags"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["featureable_id", "featureable_type"], name: "index_worldbuilder_features_id_and_type"
   end
 
-  create_table "worldbuilder_menu_item_joins", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "menu_item_id", null: false
-    t.text "menu_item_joinable_id", null: false
-    t.text "menu_item_joinable_type", null: false
+  create_table "worldbuilder_menu_item_joins", id: :string, force: :cascade do |t|
+    t.string "menu_item_id", null: false
+    t.string "menu_item_joinable_id", null: false
+    t.string "menu_item_joinable_type", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["menu_item_id"], name: "index_worldbuilder_menu_item_joins_on_menu_item_id"
     t.index ["menu_item_joinable_id", "menu_item_joinable_type"], name: "wb_menu_item_joins_id_and_type"
   end
 
-  create_table "worldbuilder_menu_items", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "menu_itemable_id"
-    t.text "menu_itemable_type"
+  create_table "worldbuilder_menu_items", id: :string, force: :cascade do |t|
+    t.string "menu_itemable_id"
+    t.string "menu_itemable_type"
     t.integer "sort_order"
-    t.text "item_label"
-    t.text "item_link"
+    t.string "item_label"
+    t.string "item_link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["menu_itemable_id", "menu_itemable_type"], name: "wb_menu_items_id_and_type"
   end
 
-  create_table "worldbuilder_pages", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "type"
-    t.text "district_id"
-    t.text "parent_id"
-    t.text "name"
-    t.text "slug"
-    t.text "page_label"
-    t.text "short_description"
+  create_table "worldbuilder_pages", id: :string, force: :cascade do |t|
+    t.string "type"
+    t.string "district_id"
+    t.string "parent_id"
+    t.string "name"
+    t.string "slug"
+    t.string "page_label"
+    t.string "short_description"
     t.text "full_description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text "tags", default: "[]"
+    t.text "tags"
     t.integer "sort_weight", default: 1000, null: false
     t.index ["district_id", "slug"], name: "index_worldbuilder_pages_on_district_id_and_slug"
     t.index ["parent_id"], name: "index_worldbuilder_pages_on_parent_id"
     t.index ["tags"], name: "index_worldbuilder_pages_on_tags"
   end
 
-  create_table "worldbuilder_sections", id: :text, default: "uuid()", force: :cascade do |t|
-    t.text "sectionable_id"
-    t.text "sectionable_type"
+  create_table "worldbuilder_sections", id: :string, force: :cascade do |t|
+    t.string "sectionable_id"
+    t.string "sectionable_type"
     t.integer "sort_order"
-    t.text "header"
+    t.string "header"
     t.text "content"
-    t.text "section_type"
-    t.text "section_style"
-    t.text "record_type"
-    t.text "search_tags"
+    t.string "section_type"
+    t.string "section_style"
+    t.string "record_type"
+    t.string "search_tags"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["sectionable_id", "sectionable_type"], name: "index_worldbuilder_sections_id_and_type"
