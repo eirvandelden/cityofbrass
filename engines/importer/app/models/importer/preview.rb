@@ -1,3 +1,5 @@
+require "nokogiri"
+
 module Importer
   class Preview < ApplicationRecord
     RESIDENT_CONTENT = "resident_content"
@@ -5,7 +7,8 @@ module Importer
     GAME_MASTER_5_XML = "game_master_5_xml"
     MODES = [ RESIDENT_CONTENT, ADMIN_STOCK ].freeze
     STATUSES = %w[parsing ready expired].freeze
-    XML_CONTENT_TYPES = %w[application/xml text/xml text/plain].freeze
+    XML_CONTENT_TYPES = %w[application/xml text/xml].freeze
+    PLAIN_TEXT_CONTENT_TYPE = "text/plain"
 
     belongs_to :resident, optional: true
     has_many :preview_files, dependent: :destroy
@@ -62,11 +65,23 @@ module Importer
     end
 
     def xml_upload?(file)
-      XML_CONTENT_TYPES.include?(upload_content_type(file))
+      return true if XML_CONTENT_TYPES.include?(upload_content_type(file))
+      return false unless upload_content_type(file) == PLAIN_TEXT_CONTENT_TYPE
+
+      valid_xml?(file_io(file))
     end
 
     def upload_content_type(file)
       file.content_type.to_s.split(";").first
+    end
+
+    def valid_xml?(io)
+      Nokogiri::XML(io) { |config| config.strict.noblanks }
+      true
+    rescue Nokogiri::XML::SyntaxError
+      false
+    ensure
+      io.rewind if io.respond_to?(:rewind)
     end
 
     def invalid_upload
