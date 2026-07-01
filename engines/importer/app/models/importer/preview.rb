@@ -5,7 +5,7 @@ module Importer
     GAME_MASTER_5_XML = "game_master_5_xml"
     MODES = [ RESIDENT_CONTENT, ADMIN_STOCK ].freeze
     STATUSES = %w[parsing ready expired].freeze
-    XML_CONTENT_TYPES = %w[application/xml text/xml].freeze
+    XML_CONTENT_TYPES = %w[application/xml text/xml text/plain].freeze
 
     belongs_to :resident, optional: true
     has_many :preview_files, dependent: :destroy
