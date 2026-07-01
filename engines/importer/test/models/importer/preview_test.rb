@@ -20,6 +20,19 @@ class ImporterPreviewTest < ActiveSupport::TestCase
     assert_equal 1, preview.preview_files.count
   end
 
+  test "add_uploads rejects plain text files without xml content" do
+    preview = Importer::Preview.create!(resident: residents(:razune), mode: "resident_content", source: "game_master_5_xml",
+                                        status: "parsing")
+    file = plain_text_upload
+
+    assert_not preview.add_uploads([ file ])
+    assert_includes preview.errors[:base], "must be an XML file"
+    assert_equal "parsing", preview.reload.status
+    assert_equal 0, preview.preview_files.count
+  ensure
+    FileUtils.rm_f(file&.path)
+  end
+
   test "resident content previews require a resident" do
     preview = Importer::Preview.new(mode: "resident_content", source: "game_master_5_xml", status: "parsing")
 
@@ -37,5 +50,14 @@ class ImporterPreviewTest < ActiveSupport::TestCase
 
   def text_plain_xml_upload
     Rack::Test::UploadedFile.new(importer_fixture_file("sample_compendium.xml"), "text/plain")
+  end
+
+  def plain_text_upload
+    file = Tempfile.new([ "plain-import", ".txt" ])
+    file.write("not xml")
+    file.rewind
+    Rack::Test::UploadedFile.new(file.path, "text/plain")
+  ensure
+    file&.close
   end
 end
