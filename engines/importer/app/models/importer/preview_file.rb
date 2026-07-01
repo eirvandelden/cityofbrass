@@ -11,7 +11,7 @@ module Importer
     validates :detected_kind, presence: true
     validate :valid_detected_kind
     validate :valid_override_kind
-    validates_attachment_content_type :file, content_type: %w[application/xml text/xml]
+    validates_attachment_content_type :file, content_type: %w[application/xml text/xml text/plain]
 
     def kind
       override_kind.presence || detected_kind

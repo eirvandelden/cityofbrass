@@ -14,7 +14,7 @@ module Importer
     validates :parse_status, presence: true
     validate :valid_kind
     validate :valid_parse_status
-    validates_attachment_content_type :file, content_type: %w[application/xml text/xml]
+    validates_attachment_content_type :file, content_type: %w[application/xml text/xml text/plain]
 
     private
 

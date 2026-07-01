@@ -3,7 +3,6 @@ module Importer
     RESIDENT_CONTENT = "resident_content"
     ADMIN_STOCK = "admin_stock"
     GAME_MASTER_5_XML = "game_master_5_xml"
-    MAX_UPLOAD_SIZE = 10.megabytes
     MODES = [ RESIDENT_CONTENT, ADMIN_STOCK ].freeze
     STATUSES = %w[parsing ready expired].freeze
     XML_CONTENT_TYPES = %w[application/xml text/xml].freeze
@@ -44,7 +43,6 @@ module Importer
 
     def add_upload(file)
       return invalid_upload unless xml_upload?(file)
-      return oversized_upload if upload_size(file) > MAX_UPLOAD_SIZE
 
       detector = Sources::GameMaster5Xml::Detector.new(file_io(file))
       preview_files.create!(
@@ -69,18 +67,6 @@ module Importer
 
     def upload_content_type(file)
       file.content_type.to_s.split(";").first
-    end
-
-    def upload_size(file)
-      return file.size if file.respond_to?(:size)
-      return file.tempfile.size if file.respond_to?(:tempfile)
-
-      0
-    end
-
-    def oversized_upload
-      errors.add(:base, :file_too_large, max_size: ActiveSupport::NumberHelper.number_to_human_size(MAX_UPLOAD_SIZE))
-      false
     end
 
     def invalid_upload
