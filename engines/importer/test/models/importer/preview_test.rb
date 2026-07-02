@@ -11,19 +11,19 @@ class ImporterPreviewTest < ActiveSupport::TestCase
     assert_equal 0, preview.preview_files.count
   end
 
-  test "add_uploads accepts xml files detected as plain text" do
+  test "add_uploads accepts xml files regardless of content type" do
     preview = Importer::Preview.create!(resident: residents(:razune), mode: "resident_content", source: "game_master_5_xml",
                                         status: "parsing")
 
-    assert preview.add_uploads([ text_plain_xml_upload ])
+    assert preview.add_uploads([ octet_stream_xml_upload ])
     assert_equal "ready", preview.reload.status
     assert_equal 1, preview.preview_files.count
   end
 
-  test "add_uploads rejects plain text files without xml content" do
+  test "add_uploads rejects non-xml content regardless of content type" do
     preview = Importer::Preview.create!(resident: residents(:razune), mode: "resident_content", source: "game_master_5_xml",
                                         status: "parsing")
-    file = plain_text_upload
+    file = octet_stream_plain_text_upload
 
     assert_not preview.add_uploads([ file ])
     assert_includes preview.errors[:base], "must be an XML file"
@@ -48,15 +48,15 @@ class ImporterPreviewTest < ActiveSupport::TestCase
 
   private
 
-  def text_plain_xml_upload
-    Rack::Test::UploadedFile.new(importer_fixture_file("sample_compendium.xml"), "text/plain")
+  def octet_stream_xml_upload
+    Rack::Test::UploadedFile.new(importer_fixture_file("sample_compendium.xml"), "application/octet-stream")
   end
 
-  def plain_text_upload
+  def octet_stream_plain_text_upload
     file = Tempfile.new([ "plain-import", ".txt" ])
     file.write("not xml")
     file.rewind
-    Rack::Test::UploadedFile.new(file.path, "text/plain")
+    Rack::Test::UploadedFile.new(file.path, "application/octet-stream")
   ensure
     file&.close
   end
