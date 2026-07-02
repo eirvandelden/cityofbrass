@@ -38,8 +38,7 @@ class Resident < ApplicationRecord
   has_one :gallery_image_join,
           as: :imageable,
           class_name: "Gallery::ImageJoin",
-          dependent: :destroy,
-          inverse_of: :imageable
+          dependent: :destroy, inverse_of: :imageable
 
   has_one :gallery_image,
           through: :gallery_image_join,

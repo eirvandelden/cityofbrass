@@ -2,10 +2,10 @@ module Entitybuilder
   class InventoryItem < ApplicationRecord
 
     belongs_to :entity, inverse_of: :inventory_items
-    belongs_to :item, :class_name => "Rulebuilder::Item"
+    belongs_to :item, class_name: "Rulebuilder::Item"
 
-    has_many :modifiers, -> { order(:sort_order) }, :as => :modifierable, :dependent => :destroy, inverse_of: :modifierable
-    accepts_nested_attributes_for :modifiers, :allow_destroy => true
+    has_many :modifiers, -> { order(:sort_order) }, as: :modifierable, dependent: :destroy, inverse_of: :modifierable
+    accepts_nested_attributes_for :modifiers, allow_destroy: true
 
     validates :item_id, presence: true, allow_nil: false
     validates :quantity, presence: true, numericality: { only_integer: true, greater_than: -1000000, less_than: 1000000 }

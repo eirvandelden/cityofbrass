@@ -11,43 +11,41 @@ module Campaignmanager
     scope :order_name, -> { order(:name) }
 
     belongs_to :campaign, -> { select('campaignmanager_campaigns.id, campaignmanager_campaigns.name, campaignmanager_campaigns.resident_id, campaignmanager_campaigns.core_rules') }, touch: true
-    has_one :resident, -> { select('residents.id, residents.user_id, residents.name, residents.slug') }, :through => :campaign
+    has_one :resident, -> { select('residents.id, residents.user_id, residents.name, residents.slug') }, through: :campaign
 
     has_one :user,
             -> { select('users.id, email, status').where(status: User::ACTIVE_STATUS) },
-            :through => :resident,
-            :source => :user,
-            :class_name => "User"
+            through: :resident,
+            source: :user,
+            class_name: "User"
 
-    belongs_to :parent, :class_name => "Page", optional: true
+    belongs_to :parent, class_name: "Page", optional: true
 
-    has_many :children, -> { order(:name) }, :class_name => "Page", :foreign_key => "parent_id"
-    has_many :features, -> { order(:sort_order) }, :as => :featureable, :dependent => :destroy
-    has_many :sections, -> { order(:sort_order) }, :as => :sectionable, :dependent => :destroy
-    has_many :notables, -> { order(:sort_order) }, :as => :notableable, :dependent => :destroy, inverse_of: :notableable
-    has_many :entities, -> { select('id, type, name') }, :through => :notables, :source => :entity, :class_name => "Entitybuilder::Entity"
+    has_many :children, -> { order(:name) }, class_name: "Page", foreign_key: "parent_id"
+    has_many :features, -> { order(:sort_order) }, as: :featureable, dependent: :destroy
+    has_many :sections, -> { order(:sort_order) }, as: :sectionable, dependent: :destroy
+    has_many :notables, -> { order(:sort_order) }, as: :notableable, dependent: :destroy, inverse_of: :notableable
+    has_many :entities, -> { select('id, type, name') }, through: :notables, source: :entity, class_name: "Entitybuilder::Entity"
 
     has_one :menu_item_join,
             as: :menu_item_joinable,
             class_name: "Storybuilder::MenuItemJoin",
-            dependent: :destroy,
-            inverse_of: :menu_item_joinable
+            dependent: :destroy, inverse_of: :menu_item_joinable
 
     has_one :gallery_image_join,
-            :as => :imageable,
-            :class_name => "Gallery::ImageJoin",
-            :dependent => :destroy,
-            inverse_of: :imageable
+            as: :imageable,
+            class_name: "Gallery::ImageJoin",
+            dependent: :destroy, inverse_of: :imageable
 
     has_one :gallery_image,
-            :through => :gallery_image_join,
-            :source => :image,
-            :class_name => "Gallery::Image"
+            through: :gallery_image_join,
+            source: :image,
+            class_name: "Gallery::Image"
 
-    accepts_nested_attributes_for :features, :allow_destroy => true
-    accepts_nested_attributes_for :sections, :allow_destroy => true
-    accepts_nested_attributes_for :notables, :allow_destroy => true
-    accepts_nested_attributes_for :gallery_image_join, :allow_destroy => true
+    accepts_nested_attributes_for :features, allow_destroy: true
+    accepts_nested_attributes_for :sections, allow_destroy: true
+    accepts_nested_attributes_for :notables, allow_destroy: true
+    accepts_nested_attributes_for :gallery_image_join, allow_destroy: true
 
     validates :campaign_id, presence: true
     validates :name, uniqueness: { scope: [:campaign_id, :type] }, presence: true, length: { maximum: 64 }
