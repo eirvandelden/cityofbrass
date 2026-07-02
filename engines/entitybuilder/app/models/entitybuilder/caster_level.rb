@@ -3,7 +3,7 @@ module Entitybuilder
 
     NULL_ATTRS = %w( dice )
 
-    belongs_to :entity
+    belongs_to :entity, inverse_of: :caster_levels
 
     validates :caster_class, presence: true, length: { maximum: 64 }
     validates :level, uniqueness: { scope: [:entity_id, :caster_class] }, numericality: { only_integer: true, greater_than: -1000, less_than: 1000 }, allow_nil: true

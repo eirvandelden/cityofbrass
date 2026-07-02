@@ -4,8 +4,8 @@ module Entitybuilder
 
     NULL_ATTRS = %w( dice )
 
-    belongs_to :entity
-    has_many :modifiers, -> { order(:sort_order) }, :as => :modifierable, :dependent => :destroy
+    belongs_to :entity, inverse_of: :ability_scores
+    has_many :modifiers, -> { order(:sort_order) }, :as => :modifierable, :dependent => :destroy, inverse_of: :modifierable
 
     accepts_nested_attributes_for :modifiers, :allow_destroy => true
 

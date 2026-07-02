@@ -6,7 +6,7 @@ module Campaignmanager
     test "should have the necessary required validators" do
       page = Page.new(name: "PageName")
       assert_not page.valid?
-      assert_equal [:campaign_id, :privacy], page.errors.keys
+      assert_equal [:campaign, :campaign_id, :privacy], page.errors.keys
     end
 
     test "game master notes allow long full descriptions" do

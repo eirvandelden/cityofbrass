@@ -13,23 +13,24 @@ module Storybuilder
     scope :order_name, -> { order(:name) }
     scope :stock_active, -> { where("storybuilder_adventures.privacy = ?", "Residents") }
 
-    belongs_to :resident, -> { select('residents.id, residents.user_id, residents.name, residents.slug') }
+    belongs_to :resident, -> { select('residents.id, residents.user_id, residents.name, residents.slug') }, optional: true
 
-    belongs_to :parent, class_name: "Adventure"
+    belongs_to :parent, class_name: "Adventure", optional: true
     has_many :children, class_name: "Adventure", foreign_key: "parent_id"
 
     has_many :features, -> { order(:sort_order) }, as: :featureable, dependent: :destroy
     has_many :sections, -> { order(:sort_order) }, as: :sectionable, dependent: :destroy
-    has_many :notables, -> { order(:sort_order) }, as: :notableable, dependent: :destroy
+    has_many :notables, -> { order(:sort_order) }, as: :notableable, dependent: :destroy, inverse_of: :notableable
     has_many :entities, -> { select('id, type, name') }, through: :notables, source: :entity, class_name: "Entitybuilder::Entity"
 
     has_many :menu_items, -> { order(:sort_order) }, as: :menu_itemable, dependent: :destroy
-    has_one  :menu_item_join, as: :menu_item_joinable, dependent: :destroy
+    has_one  :menu_item_join, as: :menu_item_joinable, dependent: :destroy, inverse_of: :menu_item_joinable
 
     has_one :gallery_image_join,
             as: :imageable,
             class_name: "Gallery::ImageJoin",
-            dependent: :destroy
+            dependent: :destroy,
+            inverse_of: :imageable
 
     has_one :gallery_image,
             through: :gallery_image_join,

@@ -13,7 +13,7 @@ module Rulebuilder
 
     json_array_column :tags, :levels
 
-    belongs_to :parent, class_name: "Spell"
+    belongs_to :parent, class_name: "Spell", optional: true
 
     has_many :children, -> { order(:name) }, class_name: "Spell", foreign_key: "parent_id"
     has_many :known_spells, class_name: "Entitybuilder::KnownSpell", dependent: :destroy
@@ -21,7 +21,8 @@ module Rulebuilder
     has_one :gallery_image_join,
             as: :imageable,
             class_name: "Gallery::ImageJoin",
-            dependent: :destroy
+            dependent: :destroy,
+            inverse_of: :imageable
 
     has_one :gallery_image,
             through: :gallery_image_join,

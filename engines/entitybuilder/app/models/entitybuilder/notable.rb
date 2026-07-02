@@ -3,7 +3,7 @@ module Entitybuilder
 
     scope :order_sort_order, -> { order(:sort_order) }
 
-    belongs_to :notableable, :polymorphic => true
+    belongs_to :notableable, :polymorphic => true, inverse_of: :notables
     belongs_to :entity, :class_name => "Entitybuilder::Entity"
 
     validates :entity, presence: true

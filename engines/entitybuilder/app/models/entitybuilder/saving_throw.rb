@@ -4,7 +4,7 @@ module Entitybuilder
 
     NULL_ATTRS = %w( dice )
 
-    belongs_to :entity
+    belongs_to :entity, inverse_of: :saving_throws
 
     validates :name, uniqueness: { scope: :entity_id }, presence: true, length: { maximum: 64 }
     validates :description, length: { maximum: 6000 }

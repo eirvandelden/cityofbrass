@@ -29,19 +29,20 @@ module Storybuilder
             source: :user,
             class_name: "User"
 
-    belongs_to :parent, class_name: "Page"
+    belongs_to :parent, class_name: "Page", optional: true
 
     has_many :children, class_name: "Page", foreign_key: "parent_id"
     has_many :features, -> { order(:sort_order) }, as: :featureable, dependent: :destroy
     has_many :sections, -> { order(:sort_order) }, as: :sectionable, dependent: :destroy
-    has_many :notables, -> { order(:sort_order) }, as: :notableable, dependent: :destroy
+    has_many :notables, -> { order(:sort_order) }, as: :notableable, dependent: :destroy, inverse_of: :notableable
     has_many :entities, -> { select('id, type, name') }, through: :notables, source: :entity, class_name: "Entitybuilder::Entity"
-    has_one  :menu_item_join, as: :menu_item_joinable, dependent: :destroy
+    has_one  :menu_item_join, as: :menu_item_joinable, dependent: :destroy, inverse_of: :menu_item_joinable
 
     has_one :gallery_image_join,
             as: :imageable,
             class_name: "Gallery::ImageJoin",
-            dependent: :destroy
+            dependent: :destroy,
+            inverse_of: :imageable
 
     has_one :gallery_image,
             through: :gallery_image_join,

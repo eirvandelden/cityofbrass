@@ -17,7 +17,7 @@ module Entitybuilder
 
     json_array_column :tags
 
-    has_one :campaign_join, dependent: :destroy
+    has_one :campaign_join, dependent: :destroy, inverse_of: :entity
     has_one :campaign,
             through: :campaign_join,
             source: :campaign,
@@ -31,40 +31,41 @@ module Entitybuilder
     has_one :gallery_image_join,
             as: :imageable,
             class_name: "Gallery::ImageJoin",
-            dependent: :destroy
+            dependent: :destroy,
+            inverse_of: :imageable
 
     has_one :gallery_image,
             through: :gallery_image_join,
             source: :image,
             class_name: "Gallery::Image"
 
-    has_many :descriptors, -> { order(:sort_order) }, dependent: :destroy
-    has_many :ability_scores, -> { order(:sort_order) }, dependent: :destroy
-    has_many :movements, -> { order(:sort_order) }, dependent: :destroy
-    has_many :class_levels, -> { order(:sort_order) }, dependent: :destroy
-    has_many :caster_levels, -> { order(:sort_order) }, dependent: :destroy
-    has_many :base_values, -> { order(:sort_order) }, dependent: :destroy
-    has_many :skills, -> { order(:sort_order) }, dependent: :destroy
-    has_many :trackables, -> { order(:sort_order) }, dependent: :destroy
-    has_many :attacks, -> { order(:sort_order) }, dependent: :destroy
-    has_many :defenses, -> { order(:sort_order) }, dependent: :destroy
-    has_many :saving_throws, -> { order(:sort_order) }, dependent: :destroy
-    has_many :currencies, -> { order(:sort_order) }, dependent: :destroy
+    has_many :descriptors, -> { order(:sort_order) }, dependent: :destroy, inverse_of: :entity
+    has_many :ability_scores, -> { order(:sort_order) }, dependent: :destroy, inverse_of: :entity
+    has_many :movements, -> { order(:sort_order) }, dependent: :destroy, inverse_of: :entity
+    has_many :class_levels, -> { order(:sort_order) }, dependent: :destroy, inverse_of: :entity
+    has_many :caster_levels, -> { order(:sort_order) }, dependent: :destroy, inverse_of: :entity
+    has_many :base_values, -> { order(:sort_order) }, dependent: :destroy, inverse_of: :entity
+    has_many :skills, -> { order(:sort_order) }, dependent: :destroy, inverse_of: :entity
+    has_many :trackables, -> { order(:sort_order) }, dependent: :destroy, inverse_of: :entity
+    has_many :attacks, -> { order(:sort_order) }, dependent: :destroy, inverse_of: :entity
+    has_many :defenses, -> { order(:sort_order) }, dependent: :destroy, inverse_of: :entity
+    has_many :saving_throws, -> { order(:sort_order) }, dependent: :destroy, inverse_of: :entity
+    has_many :currencies, -> { order(:sort_order) }, dependent: :destroy, inverse_of: :entity
 
-    has_many :linked_rules, -> { order(:sort_order) }, dependent: :destroy
+    has_many :linked_rules, -> { order(:sort_order) }, dependent: :destroy, inverse_of: :entity
     has_many :rules, through: :linked_rules, class_name: "Rulebuilder::Rule"
 
-    has_many :known_spells, -> { order(:sort_order) }, dependent: :destroy
+    has_many :known_spells, -> { order(:sort_order) }, dependent: :destroy, inverse_of: :entity
     has_many :spells, through: :known_spells, class_name: "Rulebuilder::Spell"
     has_many :prepared_known_spells, -> { order(:sort_order).prepared }, class_name: "KnownSpell"
     has_many :prepared_spells, through: :prepared_known_spells, class_name: "Rulebuilder::Spell", source: :spell
 
-    has_many :inventory_items, -> { order(:sort_order) }, dependent: :destroy
+    has_many :inventory_items, -> { order(:sort_order) }, dependent: :destroy, inverse_of: :entity
     has_many :items, through: :inventory_items, class_name: "Rulebuilder::Item"
 
-    has_many :modifiers, -> { order(:item) }, dependent: :destroy
+    has_many :modifiers, -> { order(:item) }, dependent: :destroy, inverse_of: :entity
 
-    has_many :notables, -> { order(:sort_order) }, as: :notableable, dependent: :destroy
+    has_many :notables, -> { order(:sort_order) }, as: :notableable, dependent: :destroy, inverse_of: :notableable
     has_many :entities, -> { select('id, type, name') }, through: :notables, source: :entity, class_name: "Entitybuilder::Entity"
 
     has_many :eb_notables, -> { order(:sort_order) }, class_name: "Entitybuilder::Notable", dependent: :destroy

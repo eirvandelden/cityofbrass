@@ -1,7 +1,7 @@
 module Entitybuilder
   class Trackable < ApplicationRecord
 
-    belongs_to :entity
+    belongs_to :entity, inverse_of: :trackables
 
     validates :name, uniqueness: { scope: :entity_id }, presence: true, length: { maximum: 64 }
     validates :current, numericality: { only_integer: true, greater_than: -1000000, less_than: 1000000 }, allow_nil: true

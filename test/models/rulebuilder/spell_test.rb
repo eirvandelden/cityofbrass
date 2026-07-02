@@ -5,7 +5,7 @@ module Rulebuilder
     test "resident should have the necessary required validators" do
       spell = ResidentSpell.new(name: "ResidentSpellTest")
       assert_not spell.valid?
-      assert_equal [ :core_rules, :resident_id ], spell.errors.attribute_names
+      assert_equal [ :core_rules, :resident, :resident_id ], spell.errors.attribute_names
     end
 
     test "list helpers return comma separated values" do

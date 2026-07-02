@@ -32,7 +32,7 @@ module Activeplay
              :through => :campaign,
              :class_name => "Campaignmanager::Player"
 
-    has_many :notables, -> { order(:sort_order) }, :dependent => :destroy
+    has_many :notables, -> { order(:sort_order) }, :dependent => :destroy, inverse_of: :virtual_table
 
     accepts_nested_attributes_for :notables, :allow_destroy => true
 
