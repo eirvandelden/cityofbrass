@@ -1,9 +1,9 @@
 module Entitybuilder
   class LinkedRule < ApplicationRecord
-    belongs_to :entity
+    belongs_to :entity, inverse_of: :linked_rules
     belongs_to :rule, class_name: "Rulebuilder::Rule"
 
-    has_many :modifiers, -> { order(:sort_order) }, as: :modifierable, dependent: :destroy
+    has_many :modifiers, -> { order(:sort_order) }, as: :modifierable, dependent: :destroy, inverse_of: :modifierable
     accepts_nested_attributes_for :modifiers, allow_destroy: true
     accepts_nested_attributes_for :rule
 

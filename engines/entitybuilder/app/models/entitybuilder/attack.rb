@@ -4,7 +4,7 @@ module Entitybuilder
 
     NULL_ATTRS = %w[ attack_dice damage_dice critical_damage_dice special_damage_dice ]
 
-    belongs_to :entity
+    belongs_to :entity, inverse_of: :attacks
 
     validates :name, uniqueness: { scope: :entity_id }, presence: true, length: { maximum: 64 }
     validates :attack_type, presence: true

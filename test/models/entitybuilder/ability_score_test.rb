@@ -4,7 +4,7 @@ module Entitybuilder
   class AbilityScoreTest < ActiveSupport::TestCase
 
     test "ability_score should have the necessary required validators" do
-      ability_score = AbilityScore.new(name: "AbilityScoreTest")
+      ability_score = AbilityScore.new(name: "AbilityScoreTest", entity: entitybuilder_entities(:resident_character_one))
       assert ability_score.valid?
     end
 

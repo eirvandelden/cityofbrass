@@ -2,7 +2,7 @@ module Entitybuilder
   class Modifier < ApplicationRecord
 
     belongs_to :modifierable, :polymorphic => true
-    belongs_to :entity
+    belongs_to :entity, inverse_of: :modifiers
 
     validates :modifierable_type, presence: true, allow_nil: false
 

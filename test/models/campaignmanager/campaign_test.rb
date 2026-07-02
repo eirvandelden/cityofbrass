@@ -6,7 +6,7 @@ module Campaignmanager
     test "should have the necessary required validators" do
       campaign = Campaign.new(name: "CampaignTest")
       assert_not campaign.valid?
-      assert_equal [:resident_id, :privacy], campaign.errors.keys
+      assert_equal [:resident, :resident_id, :privacy], campaign.errors.keys
     end
 
   end

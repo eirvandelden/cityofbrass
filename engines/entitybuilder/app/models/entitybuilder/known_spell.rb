@@ -3,7 +3,7 @@ module Entitybuilder
 
     scope :prepared, -> { where(prepared: true) }
 
-    belongs_to :entity
+    belongs_to :entity, inverse_of: :known_spells
     belongs_to :spell, :class_name => "Rulebuilder::Spell"
 
     validates :spell_id, presence: true, allow_nil: false

@@ -16,7 +16,7 @@ module Rulebuilder
 
     json_array_column :tags
 
-    belongs_to :parent, class_name: "Item"
+    belongs_to :parent, class_name: "Item", optional: true
 
     has_many :children, -> { order(:name) }, class_name: "Item", foreign_key: "parent_id"
     has_many :inventory_items, class_name: "Entitybuilder::InventoryItem", dependent: :destroy
@@ -24,7 +24,8 @@ module Rulebuilder
     has_one :gallery_image_join,
             as: :imageable,
             class_name: "Gallery::ImageJoin",
-            dependent: :destroy
+            dependent: :destroy,
+            inverse_of: :imageable
 
     has_one :gallery_image,
             through: :gallery_image_join,

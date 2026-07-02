@@ -5,7 +5,7 @@ module Rulebuilder
     test "resident should have the necessary required validators" do
       rule = ResidentRule.new(name: "ResidentRuleTest")
       assert_not rule.valid?
-      assert_equal [ :core_rules, :rule_type, :resident_id ], rule.errors.attribute_names
+      assert_equal [ :core_rules, :rule_type, :resident, :resident_id ], rule.errors.attribute_names
     end
 
     test "stock should have the necessary required validators" do
