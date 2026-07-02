@@ -4,7 +4,7 @@ module Entitybuilder
     scope :prepared, -> { where(prepared: true) }
 
     belongs_to :entity, inverse_of: :known_spells
-    belongs_to :spell, :class_name => "Rulebuilder::Spell"
+    belongs_to :spell, class_name: "Rulebuilder::Spell"
 
     validates :spell_id, presence: true, allow_nil: false
     validates :spell_class, length: { maximum: 64 }

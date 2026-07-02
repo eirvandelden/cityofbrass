@@ -23,8 +23,7 @@ module Campaignmanager
 
     belongs_to :district,
             -> { select('worldbuilder_districts.id, worldbuilder_districts.resident_id, worldbuilder_districts.name, worldbuilder_districts.slug, worldbuilder_districts.privacy') },
-            class_name: "Worldbuilder::District",
-            optional: true
+            class_name: "Worldbuilder::District", optional: true
 
     has_many :features, -> { order(:sort_order) }, as: :featureable, dependent: :destroy
     has_many :sections, -> { order(:sort_order) }, as: :sectionable, dependent: :destroy

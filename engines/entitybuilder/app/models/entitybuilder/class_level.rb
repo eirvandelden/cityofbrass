@@ -5,9 +5,9 @@ module Entitybuilder
     NULL_ATTRS = %w( hit_dice )
 
     belongs_to :entity, inverse_of: :class_levels
-    has_many :modifiers, -> { order(:sort_order) }, :as => :modifierable, :dependent => :destroy, inverse_of: :modifierable
+    has_many :modifiers, -> { order(:sort_order) }, as: :modifierable, dependent: :destroy, inverse_of: :modifierable
 
-    accepts_nested_attributes_for :modifiers, :allow_destroy => true
+    accepts_nested_attributes_for :modifiers, allow_destroy: true
 
     validates :name, presence: true, length: { maximum: 64 }
     validates :description, length: { maximum: 6000 }
