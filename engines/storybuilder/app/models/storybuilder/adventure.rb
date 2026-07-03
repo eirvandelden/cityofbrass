@@ -18,12 +18,15 @@ module Storybuilder
     belongs_to :parent, class_name: "Adventure", optional: true
     has_many :children, class_name: "Adventure", foreign_key: "parent_id"
 
-    has_many :features, -> { order(:sort_order) }, as: :featureable, dependent: :destroy
-    has_many :sections, -> { order(:sort_order) }, as: :sectionable, dependent: :destroy
+    has_many :features, -> { order(:sort_order) }, as: :featureable, dependent: :destroy, inverse_of: :featureable
+    has_many :sections, -> { order(:sort_order) }, as: :sectionable, dependent: :destroy, inverse_of: :sectionable
     has_many :notables, -> { order(:sort_order) }, as: :notableable, dependent: :destroy, inverse_of: :notableable
     has_many :entities, -> { select('id, type, name') }, through: :notables, source: :entity, class_name: "Entitybuilder::Entity"
 
-    has_many :menu_items, -> { order(:sort_order) }, as: :menu_itemable, dependent: :destroy
+    has_many :menu_items, -> { order(:sort_order) },
+             as: :menu_itemable,
+             dependent: :destroy,
+             inverse_of: :menu_itemable
     has_one  :menu_item_join, as: :menu_item_joinable, dependent: :destroy, inverse_of: :menu_item_joinable
 
     has_one :gallery_image_join,

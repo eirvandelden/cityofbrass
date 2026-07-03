@@ -25,10 +25,14 @@ module Campaignmanager
             -> { select('worldbuilder_districts.id, worldbuilder_districts.resident_id, worldbuilder_districts.name, worldbuilder_districts.slug, worldbuilder_districts.privacy') },
             class_name: "Worldbuilder::District", optional: true
 
-    has_many :features, -> { order(:sort_order) }, as: :featureable, dependent: :destroy
-    has_many :sections, -> { order(:sort_order) }, as: :sectionable, dependent: :destroy
+    has_many :features, -> { order(:sort_order) }, as: :featureable, dependent: :destroy, inverse_of: :featureable
+    has_many :sections, -> { order(:sort_order) }, as: :sectionable, dependent: :destroy, inverse_of: :sectionable
     has_many :notables, -> { order(:sort_order) }, as: :notableable, dependent: :destroy, inverse_of: :notableable
-    has_many :menu_items, -> { order(:sort_order) }, as: :menu_itemable, class_name: "Storybuilder::MenuItem", dependent: :destroy
+    has_many :menu_items, -> { order(:sort_order) },
+             as: :menu_itemable,
+             class_name: "Storybuilder::MenuItem",
+             dependent: :destroy,
+             inverse_of: :menu_itemable
     has_many :entities, -> { select('entitybuilder_entities.id, entitybuilder_entities.type, entitybuilder_entities.resident_id, entitybuilder_entities.privacy, entitybuilder_entities.sheet_privacy, entitybuilder_entities.name, entitybuilder_entities.core_rules, entitybuilder_entities.short_description') }, through: :notables, source: :entity, class_name: "Entitybuilder::Entity"
 
     has_many :players,
