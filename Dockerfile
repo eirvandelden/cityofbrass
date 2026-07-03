@@ -52,7 +52,7 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y \
       curl sqlite3 libsqlite3-0 libvips \
       libxml2 libxslt1.1 zlib1g \
-      imagemagick && \
+      imagemagick file shared-mime-info && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
