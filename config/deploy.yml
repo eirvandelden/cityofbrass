@@ -8,7 +8,10 @@ servers:
   job:
     hosts:
       - 192.168.1.101
-    cmd: bundle exec sidekiq -c 8 -q imports -q default -q mailers -q paperclip
+    cmd: bundle exec sidekiq -c 1 -q imports -q default -q mailers -q paperclip
+    options:
+      cpus: "1.5"
+      memory: "1g"
 
 proxy:
   ssl: false
