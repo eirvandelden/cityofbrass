@@ -4,6 +4,8 @@ require "tmpdir"
 
 class ApplicationSystemTestCaseTest < ActiveSupport::TestCase
   test "registers cuprite with CI-safe browser startup options" do
+    ApplicationSystemTestCase.driver.use
+
     driver = Capybara.drivers[:cuprite].call(->(_env) { [ 200, {}, [] ] })
 
     assert driver.options[:js_errors]
