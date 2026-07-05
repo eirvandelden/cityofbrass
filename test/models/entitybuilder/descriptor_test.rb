@@ -6,7 +6,7 @@ module Entitybuilder
     test "resident should have the necessary required validators" do
       descriptor = Descriptor.new
       assert_not descriptor.valid?
-      assert_equal [:entity, :name], descriptor.errors.keys
+      assert_equal [:entity, :name], descriptor.errors.attribute_names
     end
 
   end

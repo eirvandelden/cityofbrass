@@ -6,7 +6,7 @@ module Entitybuilder
     test "resident should have the necessary required validators" do
       known_spell = KnownSpell.new
       assert_not known_spell.valid?
-      assert_equal [:entity, :spell, :spell_id], known_spell.errors.keys
+      assert_equal [:entity, :spell, :spell_id], known_spell.errors.attribute_names
     end
 
   end

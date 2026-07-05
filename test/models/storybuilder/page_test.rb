@@ -5,7 +5,7 @@ module Storybuilder
     test "should have the necessary required validators" do
       page = Page.new(name: "PageName")
       assert_not page.valid?
-      assert_equal [:adventure, :adventure_id, :privacy], page.errors.keys
+      assert_equal [:adventure, :adventure_id, :privacy], page.errors.attribute_names
     end
 
     test "tag_list returns a comma separated list" do

@@ -5,7 +5,7 @@ class MessageTest < ActiveSupport::TestCase
   test "should have the necessary required validators" do
     message = Message.new
     assert_not message.valid?
-    assert_equal [:sender, :recipient, :sender_id, :recipient_id, :subject], message.errors.keys
+    assert_equal [:sender, :recipient, :sender_id, :recipient_id, :subject], message.errors.attribute_names
   end
 
   test "search by subject returns matching message" do
