@@ -6,7 +6,7 @@ module Worldbuilder
     test "should have the necessary required validators" do
       section = Section.new(section_type: "paragraph")
       assert_not section.valid?
-      assert_equal [:sectionable, :sectionable_type, :section_style], section.errors.keys
+      assert_equal [:sectionable, :sectionable_type, :section_style], section.errors.attribute_names
     end
 
   end

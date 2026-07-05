@@ -6,25 +6,25 @@ module Gallery
     test "resident should have the necessary required validators" do
       image = ResidentImage.new(name: "ResidentTest")
       assert_not image.valid?
-      assert_equal [:resident, :resident_id, :file], image.errors.keys
+      assert_equal [:resident, :resident_id, :file], image.errors.attribute_names
     end
 
     test "stock should have the necessary required validators" do
       image = StockImage.new(name: "StockTest")
       assert_not image.valid?
-      assert_equal [:file], image.errors.keys
+      assert_equal [:file], image.errors.attribute_names
     end
 
     test "map should have the necessary required validators" do
       image = MapImage.new(name: "MapTest")
       assert_not image.valid?
-      assert_equal [:file], image.errors.keys
+      assert_equal [:file], image.errors.attribute_names
     end
 
     test "faq should have the necessary required validators" do
       image = FaqImage.new(name: "FaqTest")
       assert_not image.valid?
-      assert_equal [:file], image.errors.keys
+      assert_equal [:file], image.errors.attribute_names
     end
 
     test "kt-paperclip gem is loaded (not upstream paperclip)" do

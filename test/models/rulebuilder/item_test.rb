@@ -5,13 +5,13 @@ module Rulebuilder
     test "resident should have the necessary required validators" do
       item = ResidentItem.new(name: "ResidentItemTest")
       assert_not item.valid?
-      assert_equal [:core_rules, :resident, :resident_id], item.errors.keys
+      assert_equal [:core_rules, :resident, :resident_id], item.errors.attribute_names
     end
 
     test "stock should have the necessary required validators" do
       item = StockItem.new(name: "StockItemTest")
       assert_not item.valid?
-      assert_equal [:core_rules], item.errors.keys
+      assert_equal [:core_rules], item.errors.attribute_names
     end
 
     test "tag_list returns a comma separated list" do

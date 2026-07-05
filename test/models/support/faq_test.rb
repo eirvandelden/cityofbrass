@@ -6,7 +6,7 @@ module Support
     test "should have the necessary required validators" do
       faq = Faq.new
       assert_not faq.valid?
-      assert_equal [:question], faq.errors.keys
+      assert_equal [:question], faq.errors.attribute_names
     end
 
   end

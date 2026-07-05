@@ -5,7 +5,7 @@ class ResidentTest < ActiveSupport::TestCase
   test "should have the necessary required validators" do
     resident = Resident.new(name: "TestResident")
     assert_not resident.valid?
-    assert_equal [:user, :user_id], resident.errors.keys
+    assert_equal [:user, :user_id], resident.errors.attribute_names
   end
 
 end

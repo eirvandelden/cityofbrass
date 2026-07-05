@@ -6,7 +6,7 @@ module Worldbuilder
     test "should have the necessary required validators" do
       feature = Feature.new(feature_type: "text")
       assert_not feature.valid?
-      assert_equal [:featureable, :featureable_type, :feature_label], feature.errors.keys
+      assert_equal [:featureable, :featureable_type, :feature_label], feature.errors.attribute_names
     end
 
   end

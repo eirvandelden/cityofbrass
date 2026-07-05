@@ -6,7 +6,7 @@ module Storybuilder
     test "should have the necessary required validators" do
       adventure = ResidentAdventure.new(name: "AdventureTest")
       assert_not adventure.valid?
-      assert_equal [:privacy, :resident, :resident_id], adventure.errors.keys
+      assert_equal [:privacy, :resident, :resident_id], adventure.errors.attribute_names
     end
 
     test "can_show? returns true for Public privacy with nil user" do

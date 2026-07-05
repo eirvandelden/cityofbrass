@@ -6,7 +6,7 @@ module Storybuilder
     test "should have the necessary required validators" do
       menu_item = MenuItem.new
       assert_not menu_item.valid?
-      assert_equal [:menu_itemable, :menu_itemable_type, :item_label], menu_item.errors.keys
+      assert_equal [:menu_itemable, :menu_itemable_type, :item_label], menu_item.errors.attribute_names
     end
 
   end

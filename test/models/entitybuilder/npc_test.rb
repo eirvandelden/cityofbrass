@@ -6,7 +6,7 @@ module Entitybuilder
     test "resident should have the necessary required validators" do
       npc = ResidentNpc.new(name: "CreatureTest")
       assert_not npc.valid?
-      assert_equal [:core_rules, :resident, :resident_id], npc.errors.keys
+      assert_equal [:core_rules, :resident, :resident_id], npc.errors.attribute_names
     end
 
   end
