@@ -8,7 +8,7 @@ class ApplicationSystemTestCaseTest < ActiveSupport::TestCase
 
     assert driver.options[:js_errors]
     assert_equal 30, driver.options[:timeout]
-    assert_equal 30, driver.options[:process_timeout]
+    assert_equal 60, driver.options[:process_timeout]
     assert_equal [ 1400, 1400 ], driver.options[:window_size]
     assert_includes driver.options[:browser_options], "no-sandbox"
     assert_includes driver.options[:browser_options], "disable-dev-shm-usage"
