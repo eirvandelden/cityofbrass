@@ -13,8 +13,6 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
 
   self.use_transactional_tests = false
 
-  driven_by :cuprite
-
   class << self
     def browser_path(paths: browser_paths)
       ENV["BROWSER_PATH"] || paths.find { |path| File.executable?(path) }
@@ -23,7 +21,22 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     def browser_paths
       MACOS_BROWSER_PATHS
     end
+
+    def cuprite_options
+      {
+        browser_path: browser_path,
+        js_errors: true,
+        timeout: 30,
+        process_timeout: 60,
+        browser_options: {
+          "disable-dev-shm-usage" => nil,
+          "no-sandbox" => nil
+        }
+      }
+    end
   end
+
+  driven_by :cuprite, screen_size: [ 1400, 1400 ], options: cuprite_options
 
   setup do
     swap_queue_adapter_for_system_tests
@@ -56,19 +69,4 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     fill_in "Password", with: "password"
     click_button "Login"
   end
-end
-
-Capybara.register_driver(:cuprite) do |app|
-  Capybara::Cuprite::Driver.new(
-    app,
-    browser_path: ApplicationSystemTestCase.browser_path,
-    window_size: [ 1400, 1400 ],
-    js_errors: true,
-    timeout: 30,
-    process_timeout: 60,
-    browser_options: {
-      "disable-dev-shm-usage" => nil,
-      "no-sandbox" => nil
-    }
-  )
 end
