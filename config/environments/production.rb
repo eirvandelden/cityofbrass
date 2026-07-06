@@ -1,5 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
+
   config.action_mailer.default_url_options = { host: ENV["DEFAULT_BASE_URL"] }
   if ENV["SMTP_URL"].present?
     require "uri"

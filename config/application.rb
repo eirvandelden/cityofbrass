@@ -10,6 +10,10 @@ module Brasscore
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    config.active_support.cache_format_version = 7.1
+    config.before_initialize do
+      Devise.secret_key ||= config.secret_key_base if defined?(Devise)
+    end
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -35,6 +39,8 @@ module Brasscore
     GC::Profiler.enable
     config.active_job.queue_adapter = :sidekiq
 
-    config.action_view.sanitized_allowed_attributes = [ "name", "href", "cite", "class", "title", "src", "height", "width", "style" ]
+    config.action_view.sanitized_allowed_attributes = [
+      "name", "href", "cite", "class", "title", "src", "height", "width", "style"
+    ]
   end
 end

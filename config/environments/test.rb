@@ -1,5 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.secret_key_base = [
+    "08f78ee89b11eec2bb57cbe0e6cdd004897955d1dd7ff65d7190484d3c58ce6",
+    "057c65d88eacc374d301a1d6edaeeeabf03c50c9112c46c6587c6ee762e83d614"
+  ].join
 
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that
