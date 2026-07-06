@@ -1,5 +1,10 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.secret_key_base = [
+    "16919e3a95245544b99385af4be960e686de26060913aa054a5d589a506b8923",
+    "a0f09e4304d9c3c956965c34b80be9df1d20e7aab6289952703a09a1fa725739"
+  ].join
+
   config.action_mailer.default_url_options = { :host => ENV["DEFAULT_BASE_URL"] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
