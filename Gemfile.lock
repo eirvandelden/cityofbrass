@@ -620,7 +620,7 @@ DEPENDENCIES
   omniauth
   ostruct
   puma
-  rails (~> 7.1.0)
+  rails (~> 7.1)
   rails-controller-testing
   rails-i18n
   redcarpet
