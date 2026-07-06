@@ -70,7 +70,7 @@ Game systems are defined in `config/core_rules/`:
 - **Auth:** Devise + OmniAuth
 - **Payments:** Stripe
 - **File uploads:** Paperclip (disk-backed, optional AWS S3)
-- **Frontend:** server-rendered ERB, Turbolinks, jQuery, Foundation, Sprockets asset
+- **Frontend:** server-rendered ERB, Turbo, jQuery, Foundation, Sprockets asset
   pipeline; CKEditor for rich text
 - **Testing:** Minitest, Capybara + Cuprite (headless Chrome), RuboCop
 - **Deployment:** Docker image, deployed with Kamal
@@ -255,7 +255,7 @@ domain lives in its own namespaced **Rails engine** mounted under a sub-path in
 owns its own models, controllers, views, and migrations — while sharing one deployable
 app and database.
 
-The frontend is **server-rendered** ERB with Turbolinks for fast page transitions,
+The frontend is **server-rendered** ERB with Turbo for fast page transitions,
 jQuery for interactivity, and Foundation for styling, served through the Sprockets
 asset pipeline (no SPA or Hotwire). **Sidekiq + Redis** handle background work
 (asynchronous mail, Paperclip image processing) and caching. Authentication is built on

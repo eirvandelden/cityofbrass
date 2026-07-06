@@ -119,7 +119,7 @@ blockquote{
   font-size:.8rem;
 }
 
-html.turbolinks-progress-bar::before {
+.turbo-progress-bar {
   background-color: $color-primary !important;
 }
 

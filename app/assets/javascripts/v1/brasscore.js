@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function () {
+$(document).on('turbo:load', function () {
   $('[data-link]').click(function () {
     window.location = this.dataset.link;
     return;
@@ -6,7 +6,7 @@ $(document).on('turbolinks:load', function () {
 });
 
 // feature menu items sections
-$(document).on('turbolinks:load', function () {
+$(document).on('turbo:load', function () {
   $('[type=checkbox]').change(function () {
     $checkbox = $(this);
     $icon = $checkbox.siblings('[class*=fa-times-circle]');
