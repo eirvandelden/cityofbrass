@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function () {
+$(document).on('turbo:load', function () {
   var clearAlert = setTimeout(function(){
     $(".alert-box").fadeOut('slow')
   }, 2000);

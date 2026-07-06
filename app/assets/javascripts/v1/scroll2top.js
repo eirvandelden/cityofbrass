@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function () {
+$(document).on('turbo:load', function () {
 	// Show or hide the sticky footer button
 	$(window).off('scroll.scroll2top');
 	$(window).on('scroll.scroll2top', function() {

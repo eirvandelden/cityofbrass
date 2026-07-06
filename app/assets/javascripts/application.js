@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require foundation
 //= require chance.v1.0.2
 //= require moment.min
@@ -33,7 +32,7 @@
 //= require activeplay/application
 
 
-$(document).on('turbolinks:load', function () {
+$(document).on('turbo:load', function () {
   $(document).foundation();
 
   $('.popbox').popbox();
@@ -58,7 +57,7 @@ $(document).on('turbolinks:load', function () {
 });
 
 
-$(document).on('turbolinks:load', function () {
+$(document).on('turbo:load', function () {
   //FIX OFFSCREEN/BODY SO ITS 100% HIEGHT
   $(function() {
     var timer;

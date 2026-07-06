@@ -3,12 +3,12 @@ function destroyRulebuilderSelect2() {
   $('.select2-rule_type.select2-hidden-accessible').select2('destroy');
 }
 
-$(document).on('turbolinks:before-cache', function () {
+$(document).on('turbo:before-cache', function () {
   destroyRulebuilderSelect2();
 });
 
 // SEARCH
-$(document).on('turbolinks:load', function () {
+$(document).on('turbo:load', function () {
   var core_rules_param = getQueryVariable('core_rules');
   $('.select2-rule_type_search > optgroup').each(function () {
     if (this.label !== core_rules_param && core_rules_param !== false) {
@@ -26,7 +26,7 @@ $(document).on('turbolinks:load', function () {
 });
 
 // NEW FORM
-$(document).on('turbolinks:load', function () {
+$(document).on('turbo:load', function () {
 
   $('.select2-rule_type > optgroup').each(function () {
     if (this.label !== $('select[id$="rule_core_rules"] option:selected').val()) {
@@ -49,7 +49,7 @@ $(document).on('turbolinks:load', function () {
 });
 
 // CORE RULES SELECTION
-$(document).on('turbolinks:load', function () {
+$(document).on('turbo:load', function () {
   $('select[id$="rule_core_rules"]').on('change', function () {
     $('.select2-rule_type').prop('disabled', false);
     $core_rule = this.value;

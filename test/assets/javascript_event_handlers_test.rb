@@ -1,16 +1,34 @@
 require "test_helper"
 
 class JavascriptEventHandlersTest < ActiveSupport::TestCase
-  test "application handlers bound on persistent targets are reset on turbolinks load" do
+  test "application manifest does not require legacy navigation asset" do
     source = Rails.root.join("app/assets/javascripts/application.js").read
 
+    assert_not_includes source, "//= require #{legacy_navigation_name}"
+  end
+
+  test "application layouts load Turbo as a module" do
+    desktop_source = Rails.root.join("app/views/layouts/application.html.erb").read
+    phone_source = Rails.root.join("app/views/layouts/application.html+phone.erb").read
+
+    [ desktop_source, phone_source ].each do |source|
+      assert_includes source, 'javascript_include_tag "turbo.min", type: "module"'
+      assert_includes source, 'javascript_include_tag "application", "data-turbo-track" => true'
+    end
+  end
+
+  test "application handlers bound on persistent targets are reset on turbo load" do
+    source = Rails.root.join("app/assets/javascripts/application.js").read
+
+    assert_includes source, "$(document).on('turbo:load'"
     assert_includes source, "$(document).off('closed.fndtn.reveal.brasscore')"
     assert_includes source, "$(window).off('resize.brasscore')"
   end
 
-  test "scroll to top handlers bound on persistent targets are reset on turbolinks load" do
+  test "scroll to top handlers bound on persistent targets are reset on turbo load" do
     source = Rails.root.join("app/assets/javascripts/v1/scroll2top.js").read
 
+    assert_includes source, "$(document).on('turbo:load'"
     assert_includes source, "$(window).off('scroll.scroll2top')"
   end
 
@@ -30,27 +48,27 @@ class JavascriptEventHandlersTest < ActiveSupport::TestCase
     assert_not_includes source, '$(document).on("click", ".alert-box a.close"'
   end
 
-  test "rulebuilder select2 widgets are destroyed before turbolinks caches the page" do
+  test "rulebuilder select2 widgets are destroyed before turbo caches the page" do
     source = Rails.root.join("engines/rulebuilder/app/assets/javascripts/rulebuilder/rules.js").read
 
-    assert_includes source, "$(document).on('turbolinks:before-cache'"
+    assert_includes source, "$(document).on('turbo:before-cache'"
     assert_includes source, ".select2-hidden-accessible"
     assert_includes source, ".select2('destroy')"
   end
 
-  test "basic select2 widgets use the turbolinks lifecycle without cached reinitialization" do
+  test "basic select2 widgets use the turbo lifecycle without cached reinitialization" do
     source = Rails.root.join("app/assets/javascripts/v1/select2.js").read
 
-    assert_includes source, "$(document).on('turbolinks:load'"
-    assert_includes source, "$(document).on('turbolinks:before-cache'"
+    assert_includes source, "$(document).on('turbo:load'"
+    assert_includes source, "$(document).on('turbo:before-cache'"
     assert_includes source, ".select2-basic.select2-hidden-accessible"
     assert_includes source, ".select2('destroy')"
   end
 
-  test "activeplay view scripts reset persistent turbolinks and resize handlers" do
+  test "activeplay view scripts reset persistent turbo and resize handlers" do
     desktop_source = Rails.root.join("engines/activeplay/app/views/activeplay/virtual_tables/show.html.erb").read
     phone_source = Rails.root.join("engines/activeplay/app/views/activeplay/virtual_tables/show.html+phone.erb").read
-    cleanup_events = "turbolinks:before-cache.activeplayCleanup turbolinks:before-visit.activeplayCleanup"
+    cleanup_events = "turbo:before-cache.activeplayCleanup turbo:before-visit.activeplayCleanup"
 
     assert_includes desktop_source, "$(document).off('#{cleanup_events}')"
     assert_includes desktop_source, "$(window).off('resize.activeplayCleanup')"
@@ -61,5 +79,31 @@ class JavascriptEventHandlersTest < ActiveSupport::TestCase
       assert_includes source, "$(document).on('#{cleanup_events}'"
       assert_not_includes source, "page:fetch"
     end
+  end
+
+  test "application and engine sources no longer use legacy navigation names" do
+    sources = Rails.root.glob("{app,engines}/**/*.{erb,js,scss}").reject do |path|
+      path.to_s.include?("/test/dummy/")
+    end
+
+    matches = sources.filter_map do |path|
+      "#{path.relative_path_from(Rails.root)} uses legacy navigation" if legacy_navigation?(path.read)
+    end
+
+    assert_empty matches
+  end
+
+  private
+
+  def legacy_navigation?(source)
+    source.include?(legacy_navigation_name) || source.include?(legacy_navigation_constant)
+  end
+
+  def legacy_navigation_name
+    "turbo" + "links"
+  end
+
+  def legacy_navigation_constant
+    "Turbo" + "links"
   end
 end
