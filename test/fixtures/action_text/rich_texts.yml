@@ -19,6 +19,16 @@ rulebuilder_rule_resident_one_full_description:
   record: resident_one (Rulebuilder::Rule)
   name: full_description
   body: MyText
+rulebuilder_rule_one_full_description:
+  record_type: Rulebuilder::Rule
+  record_id: rule_one
+  name: full_description
+  body: MyText
+rulebuilder_rule_two_full_description:
+  record_type: Rulebuilder::Rule
+  record_id: rule_two
+  name: full_description
+  body: MyText
 rulebuilder_rule_resident_one_benefit:
   record: resident_one (Rulebuilder::Rule)
   name: benefit
@@ -111,6 +121,16 @@ rulebuilder_spell_stock_two_full_description:
   record: stock_two (Rulebuilder::Spell)
   name: full_description
   body: MyText
+rulebuilder_spell_one_full_description:
+  record_type: Rulebuilder::Spell
+  record_id: spell_one
+  name: full_description
+  body: MyText
+rulebuilder_spell_two_full_description:
+  record_type: Rulebuilder::Spell
+  record_id: spell_two
+  name: full_description
+  body: MyText
 rulebuilder_item_resident_one_full_description:
   record: resident_one (Rulebuilder::Item)
   name: full_description
@@ -125,6 +145,16 @@ rulebuilder_item_stock_one_full_description:
   body: MyText
 rulebuilder_item_stock_two_full_description:
   record: stock_two (Rulebuilder::Item)
+  name: full_description
+  body: MyText
+rulebuilder_item_one_full_description:
+  record_type: Rulebuilder::Item
+  record_id: item_one
+  name: full_description
+  body: MyText
+rulebuilder_item_two_full_description:
+  record_type: Rulebuilder::Item
+  record_id: item_two
   name: full_description
   body: MyText
 storybuilder_section_page_text1_content:
