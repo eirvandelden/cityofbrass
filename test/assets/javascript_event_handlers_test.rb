@@ -12,9 +12,17 @@ class JavascriptEventHandlersTest < ActiveSupport::TestCase
     phone_source = Rails.root.join("app/views/layouts/application.html+phone.erb").read
 
     [ desktop_source, phone_source ].each do |source|
-      assert_includes source, 'javascript_include_tag "turbo.min", type: "module"'
-      assert_includes source, 'javascript_include_tag "application", "data-turbo-track" => true'
+      assert_includes source, 'javascript_include_tag "turbo.min", type: "module", "data-turbo-track" => "reload"'
+      assert_includes source, 'javascript_include_tag "application", "data-turbo-track" => "reload"'
+      assert_includes source, 'stylesheet_link_tag "application", "data-turbo-track" => "reload"'
     end
+  end
+
+  test "README describes Turbo without contradicting the Hotwire stack" do
+    source = Rails.root.join("README.md").read
+
+    assert_includes source, "Turbo for fast page transitions"
+    assert_not_includes source, "no SPA or Hotwire"
   end
 
   test "application handlers bound on persistent targets are reset on turbo load" do

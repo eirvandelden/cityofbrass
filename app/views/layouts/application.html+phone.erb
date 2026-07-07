@@ -7,12 +7,12 @@
   <link rel="apple-touch-icon-precomposed" href="<%=image_path "apple-touch-icon-precomposed.png" %>">
   <meta name="msapplication-config" content="none" />
 
-<%= stylesheet_link_tag "application", "data-turbo-track" => true %>
+<%= stylesheet_link_tag "application", "data-turbo-track" => "reload" %>
 
 <%= javascript_include_tag "vendor/modernizr" %>
 
-<%= javascript_include_tag "turbo.min", type: "module", "data-turbo-track" => true %>
-<%= javascript_include_tag "application", "data-turbo-track" => true %>
+<%= javascript_include_tag "turbo.min", type: "module", "data-turbo-track" => "reload" %>
+<%= javascript_include_tag "application", "data-turbo-track" => "reload" %>
 
 <%= yield :head %>
 
