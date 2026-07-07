@@ -61,10 +61,10 @@ var ap_sok = '<%= "#{ENV['ACTIVEPLAY_URL']}/activeplay/v0.6" %>';
 
 </script>
 
-<%= stylesheet_link_tag "#{ENV['ACTIVEPLAY_URL']}/stylesheets/activeplay.v0.6.min.css", :media => "all", "data-turbo-track" => true %>
+<%= stylesheet_link_tag "#{ENV['ACTIVEPLAY_URL']}/stylesheets/activeplay.v0.6.min.css", :media => "all", "data-turbo-track" => "reload" %>
 
-<%= javascript_include_tag "#{ENV['ACTIVEPLAY_URL']}/socket.io/socket.io.js", "data-turbo-track" => true %>
-<%= javascript_include_tag "#{ENV['ACTIVEPLAY_URL']}/javascripts/vue.v1.0.21.min.js", "data-turbo-track" => true %>
-<%= javascript_include_tag "#{ENV['ACTIVEPLAY_URL']}/javascripts/activeplay.v0.6.min.js", "data-turbo-track" => true %>
+<%= javascript_include_tag "#{ENV['ACTIVEPLAY_URL']}/socket.io/socket.io.js", "data-turbo-track" => "reload" %>
+<%= javascript_include_tag "#{ENV['ACTIVEPLAY_URL']}/javascripts/vue.v1.0.21.min.js", "data-turbo-track" => "reload" %>
+<%= javascript_include_tag "#{ENV['ACTIVEPLAY_URL']}/javascripts/activeplay.v0.6.min.js", "data-turbo-track" => "reload" %>
 
 <%= render 'entitybuilder/layouts/modal_list' %>

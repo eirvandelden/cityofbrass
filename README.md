@@ -257,7 +257,7 @@ app and database.
 
 The frontend is **server-rendered** ERB with Turbo for fast page transitions,
 jQuery for interactivity, and Foundation for styling, served through the Sprockets
-asset pipeline (no SPA or Hotwire). **Sidekiq + Redis** handle background work
+asset pipeline (no SPA). **Sidekiq + Redis** handle background work
 (asynchronous mail, Paperclip image processing) and caching. Authentication is built on
 **Devise** with a custom single-sign-on layer, and authorization is enforced through a
 status-tier and **quota** system (`lib/quota.rb`) that gates features per account level.
