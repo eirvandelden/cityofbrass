@@ -13,7 +13,7 @@ class Rails71DeprecationConfigurationTest < ActiveSupport::TestCase
     assert_equal Rails.application.config.secret_key_base, Devise.secret_key
   end
 
-  test "keeps the cookie serializer compatible with legacy sessions" do
-    assert_equal :hybrid, Rails.application.config.action_dispatch.cookies_serializer
+  test "uses the JSON cookie serializer" do
+    assert_equal :json, Rails.application.config.action_dispatch.cookies_serializer
   end
 end
