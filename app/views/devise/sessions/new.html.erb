@@ -17,11 +17,6 @@
             <% if flash[:alert] %>
               <label class="error" style="padding-bottom: .5em;"><%= alert %></label>
             <% end %>
-            <% if devise_mapping.rememberable? %>
-            <div style='margin-top:1em; margin-bottom:.7em;'>
-              <%= f.input :remember_me, label: "Remember me", as: :boolean %>
-            </div>
-            <% end %>
             <%= button_tag type: 'submit' do %>
               Login <i class='fa fa-sign-in'></i>
             <% end %>

@@ -3,8 +3,8 @@ require "sidekiq/web"
 Rails.application.routes.draw do
   get "/up", to: ->(env) { [200, { "Content-Type" => "text/plain" }, ["OK"]] }
 
-  devise_for :admins, path_names: { sign_in: 'login', sign_out: 'logout' }
-  devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout' }, skip: [:registrations]
+  devise_for :admins, path_names: { sign_in: 'login', sign_out: 'logout' }, controllers: { sessions: 'sessions' }
+  devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout' }, skip: [:registrations], controllers: { sessions: 'sessions' }
 
   get 'sso/symposium' => 'sso#symposium'
 
