@@ -6,7 +6,7 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     include ActiveModel::Model
 
     attr_accessor :name, :bio, :age, :score, :active, :status, :starts_at, :born_on,
-                  :category_id
+                  :category_id, :adventure_ids
 
     validates :name, presence: true
 
@@ -33,6 +33,8 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     end
   end
 
+  Category = Struct.new(:id, :name)
+
   def form_for_model(object = DummyModel.new, &block)
     options = { builder: ApplicationFormBuilder, url: "/dummy", html: { id: "dummy_form" } }
     form_for(object, options, &block)
@@ -42,6 +44,14 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     output = nil
     form_for_model(object) do |f|
       output = f.input(attribute, options)
+    end
+    output.to_s
+  end
+
+  def render_with_builder(object = DummyModel.new)
+    output = nil
+    form_for_model(object) do |f|
+      output = yield f
     end
     output.to_s
   end
@@ -125,10 +135,43 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     assert_match(/Active/, html)
   end
 
+  test "collection option infers select field" do
+    html = render_input(:status, collection: [ [ "Active", "active" ], [ "Inactive", "inactive" ] ])
+
+    assert_match(/class="input select optional"/, html)
+    assert_match(/<select/, html)
+    assert_no_match(/type="text"/, html)
+  end
+
+  test "select field supports string collections without value method" do
+    html = render_input(:status, collection: [ "public", "private" ])
+
+    assert_match(/<option value="public">public<\/option>/, html)
+    assert_match(/<option value="private">private<\/option>/, html)
+  end
+
+  test "select field uses label and value methods for object collections" do
+    categories = [ Category.new(1, "Monsters") ]
+
+    html = render_input(:category_id, as: :select, collection: categories, label_method: :name, value_method: :id)
+
+    assert_match(/<option value="1">Monsters<\/option>/, html)
+    assert_no_match(/struct Category/, html)
+  end
+
+  test "checkbox collection uses label and value methods for object collections" do
+    categories = [ Category.new(1, "Monsters") ]
+
+    html = render_input(:adventure_ids, as: :check_boxes, collection: categories, label_method: :name, value_method: :id)
+
+    assert_match(/type="checkbox"/, html)
+    assert_match(/value="1"/, html)
+    assert_match(/Monsters/, html)
+  end
+
   # ─── Test 9: Association ──────────────────────────────────────────────────────
 
   test "association wraps a collection_select for the _id attribute" do
-    Category = Struct.new(:id, :name) unless defined?(Category)
     categories = [ Category.new(1, "Monsters"), Category.new(2, "NPCs") ]
 
     output = nil
@@ -177,7 +220,6 @@ class ApplicationFormBuilderTest < ActionView::TestCase
   # ─── Test 14: association with include_blank renders a blank option ───────────
 
   test "association with include_blank: true renders a blank option" do
-    Category = Struct.new(:id, :name) unless defined?(Category)
     categories = [ Category.new(1, "Monsters") ]
 
     output = nil
@@ -187,5 +229,24 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     html = output.to_s
 
     assert_match(/<option value=""[^>]*><\/option>/, html)
+  end
+
+  test "input_field renders an unwrapped field" do
+    html = render_with_builder do |f|
+      f.input_field(:status, value: "Draft", disabled: true, readonly: "readonly")
+    end
+
+    assert_match(/value="Draft"/, html)
+    assert_match(/disabled="disabled"/, html)
+    assert_match(/readonly="readonly"/, html)
+    assert_no_match(/class="input/, html)
+  end
+
+  test "button supports simple form submit signature" do
+    html = render_with_builder do |f|
+      f.button(:submit, "Save")
+    end
+
+    assert_match(/<input type="submit" name="commit" value="Save"/, html)
   end
 end
