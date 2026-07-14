@@ -33,6 +33,14 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     end
   end
 
+  class AttachmentModel < DummyModel
+    attr_accessor :file
+
+    def self.attachment_definitions
+      { file: {} }
+    end
+  end
+
   Category = Struct.new(:id, :name)
 
   def form_for_model(object = DummyModel.new, &block)
@@ -127,6 +135,13 @@ class ApplicationFormBuilderTest < ActionView::TestCase
 
   test "file field renders file input" do
     html = render_input(:status, as: :file)
+
+    assert_match(/class="input file optional"/, html)
+    assert_match(/type="file"/, html)
+  end
+
+  test "attachment field infers file input" do
+    html = render_input(:file, object: AttachmentModel.new)
 
     assert_match(/class="input file optional"/, html)
     assert_match(/type="file"/, html)

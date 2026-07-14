@@ -66,8 +66,15 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
   private
 
   def column_type(attribute)
+    return :file if attached_file_attribute?(attribute)
+
     object.class.respond_to?(:type_for_attribute) &&
       object.class.type_for_attribute(attribute.to_s).type || :string
+  end
+
+  def attached_file_attribute?(attribute)
+    object.class.respond_to?(:attachment_definitions) &&
+      object.class.attachment_definitions.key?(attribute.to_sym)
   end
 
   def required_attribute?(attribute)
