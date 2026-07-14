@@ -103,7 +103,7 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
     prompt = options.delete(:prompt)
     include_blank = options.delete(:include_blank)
     label_method = options.delete(:label_method) || :to_s
-    value_method = options.delete(:value_method) || :id
+    value_method = options.delete(:value_method) || (grouped ? :to_s : :id)
     select_options = { prompt: prompt, include_blank: include_blank }.compact
     if grouped
       grouped_collection_select(attribute, collection,
