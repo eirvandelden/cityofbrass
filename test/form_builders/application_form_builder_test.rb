@@ -125,6 +125,13 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     assert_match(/type="email"/, html)
   end
 
+  test "file field renders file input" do
+    html = render_input(:status, as: :file)
+
+    assert_match(/class="input file optional"/, html)
+    assert_match(/type="file"/, html)
+  end
+
   # ─── Test 8: Select field ─────────────────────────────────────────────────────
 
   test "select field renders select element within wrapper" do

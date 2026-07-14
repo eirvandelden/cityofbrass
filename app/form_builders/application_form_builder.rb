@@ -2,7 +2,7 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
   TYPE_TO_FIELD = {
     string: :text_field, text: :text_area, integer: :number_field,
     float: :number_field, decimal: :number_field, boolean: :check_box,
-    datetime: :datetime_select, date: :date_select, email: :email_field
+    datetime: :datetime_select, date: :date_select, email: :email_field, file: :file_field
   }.freeze
 
   def input(attribute, options = {})
