@@ -106,7 +106,16 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     assert_match(/type="number"/, html)
   end
 
-  # ─── Test 7: Select field ─────────────────────────────────────────────────────
+  # ─── Test 7: Email field ──────────────────────────────────────────────────────
+
+  test "email field renders email input and email wrapper" do
+    html = render_input(:status, as: :email)
+
+    assert_match(/class="input email optional"/, html)
+    assert_match(/type="email"/, html)
+  end
+
+  # ─── Test 8: Select field ─────────────────────────────────────────────────────
 
   test "select field renders select element within wrapper" do
     html = render_input(:status, as: :select, collection: [ [ "Active", "active" ], [ "Inactive", "inactive" ] ])
@@ -116,7 +125,7 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     assert_match(/Active/, html)
   end
 
-  # ─── Test 8: Association ──────────────────────────────────────────────────────
+  # ─── Test 9: Association ──────────────────────────────────────────────────────
 
   test "association wraps a collection_select for the _id attribute" do
     Category = Struct.new(:id, :name) unless defined?(Category)
@@ -133,7 +142,7 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     assert_match(/Monsters/, html)
   end
 
-  # ─── Test 9: wrapper_html class ──────────────────────────────────────────────
+  # ─── Test 10: wrapper_html class ──────────────────────────────────────────────
 
   test "wrapper_html class is appended to outer div" do
     html = render_input(:status, wrapper_html: { class: "extra" })
@@ -141,7 +150,7 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     assert_match(/class="input string optional extra"/, html)
   end
 
-  # ─── Test 10: label: false suppresses the label ───────────────────────────────
+  # ─── Test 11: label: false suppresses the label ───────────────────────────────
 
   test "label: false suppresses the label entirely" do
     html = render_input(:status, label: false)
@@ -149,7 +158,7 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     assert_no_match(/<label/, html)
   end
 
-  # ─── Test 11: input_html options are applied to the rendered input ────────────
+  # ─── Test 12: input_html options are applied to the rendered input ────────────
 
   test "input_html class is applied to the rendered input" do
     html = render_input(:status, input_html: { class: "my-input" })
@@ -157,7 +166,7 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     assert_match(/class="my-input"/, html)
   end
 
-  # ─── Test 12: hint text renders a span.hint element ──────────────────────────
+  # ─── Test 13: hint text renders a span.hint element ──────────────────────────
 
   test "hint text renders a span with hint class" do
     html = render_input(:status, hint: "Some hint text")
@@ -165,7 +174,7 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     assert_match(/<span class="hint">Some hint text<\/span>/, html)
   end
 
-  # ─── Test 13: association with include_blank renders a blank option ───────────
+  # ─── Test 14: association with include_blank renders a blank option ───────────
 
   test "association with include_blank: true renders a blank option" do
     Category = Struct.new(:id, :name) unless defined?(Category)
