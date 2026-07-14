@@ -17,7 +17,7 @@
       } %>
   </div>
   <div class="medium-10 columns" id="brass_form">
-    <%= simple_form_for [@route_namespace, @spell].compact do |f| %>
+    <%= form_with model: [@route_namespace, @spell].compact, builder: ApplicationFormBuilder do |f| %>
       <%= render :partial => 'form', :locals => { :f => f } %>
     <% end %>
   </div>

@@ -24,7 +24,7 @@
     </div>
     <hr class="faded">
     <div id="brass_form">
-    <%= simple_form_for @adventure do |f| %>
+    <%= form_with model: @adventure, builder: ApplicationFormBuilder do |f| %>
       <%= render :partial => 'form', :locals => { :f => f } %>
     <% end %>
     </div>

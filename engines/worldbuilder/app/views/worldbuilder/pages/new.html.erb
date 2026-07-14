@@ -23,7 +23,7 @@
     </div>
     <hr class="faded">
     <div id="brass_form">
-      <%= simple_form_for @page, url: worldbuilder.district_pages_path(@district.slug) do |f| %>
+      <%= form_with model: @page, url: worldbuilder.district_pages_path(@district.slug), builder: ApplicationFormBuilder do |f| %>
         <%= render :partial => 'form', :locals => { :f => f } %>
       <% end %>
     </div>

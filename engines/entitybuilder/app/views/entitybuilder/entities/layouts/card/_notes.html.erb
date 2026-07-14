@@ -1,4 +1,4 @@
-<%= simple_form_for entity, :url => "#{polymorphic_path(entity)}/update_notes", :remote => true do |f| %>
+<%= form_with model: entity, url: "#{polymorphic_path(entity)}/update_notes", remote: true, builder: ApplicationFormBuilder do |f| %>
   <div class="row">
     <div class="medium-12 columns">
       <%= f.label :notes %>

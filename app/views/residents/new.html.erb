@@ -18,7 +18,7 @@
     <div class="row">
       <div class="small-12 columns">
         <div id="brass_form">
-          <%= simple_form_for @resident do |f| %>
+          <%= form_with model: @resident, builder: ApplicationFormBuilder do |f| %>
             <%= render :partial => 'form', :locals => { :f => f } %>
           <% end %>
         </div>

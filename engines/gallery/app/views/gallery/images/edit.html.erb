@@ -25,7 +25,7 @@
 </div>
 <div class="row">
   <div class="medium-8 medium-centered columns">
-    <%= simple_form_for [@route_namespace, @image].compact do |f| %>
+    <%= form_with model: [@route_namespace, @image].compact, builder: ApplicationFormBuilder do |f| %>
       <%= render :partial => 'form', :locals => { :f => f } %>
     <% end %>
   </div>

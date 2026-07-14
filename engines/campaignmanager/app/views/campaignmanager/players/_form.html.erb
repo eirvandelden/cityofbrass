@@ -1,5 +1,5 @@
 <div id="form_div">
-<%= simple_form_for [@campaign, @player], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+<%= form_with model: [@campaign, @player], remote: true, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
   <fieldset>
     <%= f.association :affiliation, collection: @aff_list, :include_blank => true %>
   </fieldset>

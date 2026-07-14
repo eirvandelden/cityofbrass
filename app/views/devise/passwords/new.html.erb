@@ -11,7 +11,7 @@
               <label class="flat">Forgot password</label>
             </div>
           </div>
-          <%= simple_form_for resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post } do |f| %>
+          <%= form_with model: resource, scope: resource_name, url: password_path(resource_name), method: :post, builder: ApplicationFormBuilder do |f| %>
             <%= f.input :email, :autofocus => true, as: :email, placeholder: 'user@domain.com' %>
             <%= f.button :submit, 'Send me reset password instructions' %>
           <% end %>
