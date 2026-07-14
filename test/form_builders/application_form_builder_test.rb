@@ -84,8 +84,8 @@ class ApplicationFormBuilderTest < ActionView::TestCase
   test "custom label text overrides default humanized attribute name" do
     html = render_input(:name, label: "Full Name")
 
-    assert_match(/Full Name/, html)
-    assert_no_match(/\bName\b(?!.*Full Name)/, html.sub("Full Name", ""))
+    assert_match(/<label[^>]*>Full Name/, html)
+    assert_no_match(/<label[^>]*>\s*Name[\s<]/, html)
   end
 
   # ─── Test 5: Boolean field ────────────────────────────────────────────────────
