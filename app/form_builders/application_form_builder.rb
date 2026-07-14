@@ -7,25 +7,43 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
 
   def input(attribute, options = {})
     as = options.delete(:as)
-    field_type = as || column_type(attribute)
+    collection = options.delete(:collection)
+    field_type = as || (collection ? :select : column_type(attribute))
     required = required_attribute?(attribute)
     wrapper_html = options.delete(:wrapper_html) || {}
     label_text = options.key?(:label) ? options.delete(:label) : nil
     hint_text = options.delete(:hint)
     input_html_opts = options.delete(:input_html) || {}
-    collection = options.delete(:collection)
 
     field_html =
       case field_type
       when :select, :grouped_select
         build_select(attribute, collection, options.merge(input_html_opts), field_type == :grouped_select)
       when :check_boxes
-        collection_check_boxes(attribute, collection, :first, :last, {}, input_html_opts)
+        build_check_boxes(attribute, collection, options, input_html_opts)
       else
         send(TYPE_TO_FIELD.fetch(field_type, :text_field), attribute, options.merge(input_html_opts))
       end
 
     wrap(attribute, field_type, required, label_text, hint_text, wrapper_html) { field_html }
+  end
+
+  def input_field(attribute, options = {})
+    as = options.delete(:as)
+    collection = options.delete(:collection)
+    field_type = as || (collection ? :select : column_type(attribute))
+
+    if field_type == :select
+      build_select(attribute, collection, options, false)
+    else
+      send(TYPE_TO_FIELD.fetch(field_type, :text_field), attribute, options)
+    end
+  end
+
+  def button(type, value = nil, options = {})
+    return submit(value, options) if type == :submit
+
+    super
   end
 
   def association(attribute, options = {})
@@ -84,16 +102,39 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
   def build_select(attribute, collection, options, grouped)
     prompt = options.delete(:prompt)
     include_blank = options.delete(:include_blank)
+    label_method = options.delete(:label_method) || :to_s
+    value_method = options.delete(:value_method) || :id
     select_options = { prompt: prompt, include_blank: include_blank }.compact
     if grouped
       grouped_collection_select(attribute, collection,
                                 options.delete(:group_method) || :last,
                                 options.delete(:group_label_method) || :first,
-                                options.delete(:value_method) || :id,
-                                options.delete(:label_method) || :to_s,
+                                value_method,
+                                label_method,
                                 select_options, options)
     else
-      select(attribute, collection, select_options, options)
+      select(attribute, option_values(collection, label_method, value_method), select_options, options)
     end
+  end
+
+  def build_check_boxes(attribute, collection, options, input_html_opts)
+    label_method = options.delete(:label_method) || :last
+    value_method = options.delete(:value_method) || :first
+    collection_check_boxes(attribute, collection, value_method, label_method, {}, input_html_opts)
+  end
+
+  def option_values(collection, label_method, value_method)
+    return collection if collection.blank? || collection.first.is_a?(Array)
+
+    collection.map do |item|
+      [ value_for(item, label_method), value_for(item, value_method) ]
+    end
+  end
+
+  def value_for(item, method)
+    return method.call(item) if method.respond_to?(:call)
+    return item.public_send(method) if item.respond_to?(method)
+
+    item
   end
 end
