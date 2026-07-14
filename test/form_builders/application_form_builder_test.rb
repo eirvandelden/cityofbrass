@@ -150,6 +150,14 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     assert_match(/<option value="private">private<\/option>/, html)
   end
 
+  test "grouped select supports string option values without value method" do
+    html = render_input(:status, as: :grouped_select, collection: [ [ "Core", [ "Rule", "Feat" ] ] ])
+
+    assert_match(/<optgroup label="Core">/, html)
+    assert_match(/<option value="Rule">Rule<\/option>/, html)
+    assert_match(/<option value="Feat">Feat<\/option>/, html)
+  end
+
   test "select field uses label and value methods for object collections" do
     categories = [ Category.new(1, "Monsters") ]
 
