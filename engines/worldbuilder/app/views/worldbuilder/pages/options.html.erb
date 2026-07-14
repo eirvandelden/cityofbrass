@@ -30,7 +30,7 @@
     <div class="row">
       <div class="small-12 columns">
         <div id="brass_form">
-          <%= simple_form_for @page, url: worldbuilder.district_page_path(@district.slug, @page), method: :delete do |f| %>
+          <%= form_with model: @page, url: worldbuilder.district_page_path(@district.slug, @page), method: :delete, builder: ApplicationFormBuilder do |f| %>
             <%= render :partial => 'layouts/form/options', :locals => { :f => f, :record => @page } %>
           <% end %>
         </div>

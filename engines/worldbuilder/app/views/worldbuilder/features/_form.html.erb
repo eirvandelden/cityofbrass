@@ -1,16 +1,13 @@
 <div id="form_div">
-<%= simple_form_for [@parent_object, @feature],
-                    :url => nested_resource_form_path(@parent_object, @feature, :features),
-                    :remote => true,
-                    :html => {'data-no-transition-cache' => ''} do |f| %>
+<%= form_with model: [@parent_object, @feature], url: nested_resource_form_path(@parent_object, @feature, :features), remote: true, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
   <fieldset>
     <div class="row inline text-right">
       <div class="small-12 columns">
         <label class="inline-label-flat"><%= f.object.feature_type.humanize %></label>
       </div>
     </div>
-    <%= f.input :sort_order, as: :hidden %>
-    <%= f.input :feature_type, as: :hidden %>
+    <%= f.hidden_field :sort_order %>
+    <%= f.hidden_field :feature_type %>
     <div class="row">
       <div class="small-12 columns">
         <%= render :partial => "worldbuilder/features/form/#{f.object.feature_type}", :locals => { f: f } %>

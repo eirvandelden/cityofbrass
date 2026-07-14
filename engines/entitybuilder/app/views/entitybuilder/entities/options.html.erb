@@ -34,7 +34,7 @@
     <div class="row">
       <div class="small-12 columns">
         <div id="brass_form">
-          <%= simple_form_for @entity, method: :delete do |f| %>
+          <%= form_with model: @entity, method: :delete, builder: ApplicationFormBuilder do |f| %>
             <%= render :partial => 'layouts/form/options', :locals => { :f => f, :record => @entity } %>
           <% end %>
         </div>

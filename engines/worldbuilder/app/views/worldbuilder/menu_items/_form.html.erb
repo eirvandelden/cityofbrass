@@ -1,7 +1,7 @@
 <div id="form_div">
-<%= simple_form_for [@parent_object, @menu_item], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+<%= form_with model: [@parent_object, @menu_item], remote: true, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
   <fieldset>
-    <%= f.input :sort_order, as: :hidden %>
+    <%= f.hidden_field :sort_order %>
     <div class="row">
       <div class="small-10 columns">
         <%= f.input :item_label, label: 'Label' %>

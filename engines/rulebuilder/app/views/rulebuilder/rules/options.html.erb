@@ -30,7 +30,7 @@
     <div class="row">
       <div class="small-12 columns">
         <div id="rule_form">
-          <%= simple_form_for @rule, method: :delete do |f| %>
+          <%= form_with model: @rule, method: :delete, builder: ApplicationFormBuilder do |f| %>
             <%= render :partial => 'layouts/form/options', :locals => { :f => f, :record => @rule } %>
           <% end %>
         </div>

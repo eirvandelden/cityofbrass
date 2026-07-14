@@ -1,5 +1,5 @@
 <div id="form_div">
-<%= simple_form_for [@parent_object, @class_level], :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+<%= form_with model: [@parent_object, @class_level], remote: true, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
   <fieldset>
     <div class="row inline text-right">
       <div class="small-12 columns">

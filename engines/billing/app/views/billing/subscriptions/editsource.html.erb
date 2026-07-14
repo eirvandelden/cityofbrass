@@ -21,13 +21,13 @@
           <fieldset>
             <div class="row">
               <div class="small-12 columns">
-                <%= simple_form_for @subscription, :html => { :id => "payment-form" } do |f| %>
+                <%= form_with model: @subscription, html: { id: "payment-form" }, builder: ApplicationFormBuilder do |f| %>
                   <span class="payment-errors">
                     <% @subscription.errors.full_messages.each do |msg| %>
                       <%= msg %><br>
                     <% end %>
                   </span>
-                  <%= f.input :plan_id, as: :hidden, readonly: true %>
+                  <%= f.hidden_field :plan_id%>
                   <%= render 'form_card' %>
                   <%= render "layouts/form/save" %>
                 <% end %>

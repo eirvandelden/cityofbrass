@@ -1,5 +1,5 @@
 <div id="form_div">
-<%= simple_form_for [@parent_object, @skill], url: {action: :create_core_skill}, :remote => true do |f| %>
+<%= form_with model: [@parent_object, @skill], url: {action: :create_core_skill}, remote: true, builder: ApplicationFormBuilder do |f| %>
   <fieldset>
     <div class="row inline text-right">
       <div class="small-12 columns">

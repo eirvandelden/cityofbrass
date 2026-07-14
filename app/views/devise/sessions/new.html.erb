@@ -11,7 +11,7 @@
               <label class="flat"><%= "#{resource_name.to_s.humanize} " if resource_name.to_s == 'admin' %>Login</label>
             </div>
           </div>
-          <%= simple_form_for resource, :as => resource_name, :url => session_path(resource_name) do |f| %>
+          <%= form_with model: resource, scope: resource_name, url: session_path(resource_name), builder: ApplicationFormBuilder do |f| %>
             <%= f.input :email, :autofocus => true, as: :email, placeholder: 'user@domain.com' %>
             <%= f.input :password %>
             <% if flash[:alert] %>

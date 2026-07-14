@@ -1,4 +1,4 @@
-<%= simple_form_for @user, :remote => true, :html => {'data-no-transition-cache' => ''} do |f| %>
+<%= form_with model: @user, remote: true, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
   <fieldset>
     <div class="row">
       <div class="small-12 columns">
