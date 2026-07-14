@@ -140,4 +140,43 @@ class ApplicationFormBuilderTest < ActionView::TestCase
 
     assert_match(/class="input string optional extra"/, html)
   end
+
+  # ─── Test 10: label: false suppresses the label ───────────────────────────────
+
+  test "label: false suppresses the label entirely" do
+    html = render_input(:status, label: false)
+
+    assert_no_match(/<label/, html)
+  end
+
+  # ─── Test 11: input_html options are applied to the rendered input ────────────
+
+  test "input_html class is applied to the rendered input" do
+    html = render_input(:status, input_html: { class: "my-input" })
+
+    assert_match(/class="my-input"/, html)
+  end
+
+  # ─── Test 12: hint text renders a span.hint element ──────────────────────────
+
+  test "hint text renders a span with hint class" do
+    html = render_input(:status, hint: "Some hint text")
+
+    assert_match(/<span class="hint">Some hint text<\/span>/, html)
+  end
+
+  # ─── Test 13: association with include_blank renders a blank option ───────────
+
+  test "association with include_blank: true renders a blank option" do
+    Category = Struct.new(:id, :name) unless defined?(Category)
+    categories = [ Category.new(1, "Monsters") ]
+
+    output = nil
+    form_for_model do |f|
+      output = f.association(:category, collection: categories, label_method: :name, value_method: :id, include_blank: true)
+    end
+    html = output.to_s
+
+    assert_match(/<option value=""[^>]*><\/option>/, html)
+  end
 end
