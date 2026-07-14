@@ -1,9 +1,0 @@
-it:
-  simple_form:
-    "yes": 'Sì'
-    "no": 'No'
-    required:
-      text: 'obbligatorio'
-      mark: '*'
-    error_notification:
-      default_message: "Si prega di rivedere i problemi seguenti:"

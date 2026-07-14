@@ -517,9 +517,6 @@ GEM
       logger
       rack (>= 2.2.4)
       redis-client (>= 0.22.2)
-    simple_form (5.3.1)
-      actionpack (>= 5.2)
-      activemodel (>= 5.2)
     spring (4.4.2)
     spring-watcher-listen (2.1.0)
       listen (>= 2.7, < 4.0)
@@ -639,7 +636,6 @@ DEPENDENCIES
   sass-rails
   sdoc
   sidekiq
-  simple_form
   spring
   spring-watcher-listen
   sqlite3 (~> 1)
