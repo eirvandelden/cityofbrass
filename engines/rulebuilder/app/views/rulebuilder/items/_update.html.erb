@@ -1,3 +1,3 @@
-<%= form_with model: [@route_namespace, @item].compact, remote: true, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
+<%= form_with model: [@route_namespace, @item].compact, local: false, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
   <%= render :partial => 'form', :locals => { :f => f } %>
 <% end %>

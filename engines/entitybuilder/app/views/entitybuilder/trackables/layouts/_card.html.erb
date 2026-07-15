@@ -16,7 +16,7 @@
 <% if (entity.type.include?"Character") && can_edit %>
 
   <% trackables.each do |trackable| %>
-    <%= form_with model: [entity, trackable], url: "#{entitybuilder.polymorphic_path(entity)}/trackables/#{trackable.id}/update_card", remote: true, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
+    <%= form_with model: [entity, trackable], url: "#{entitybuilder.polymorphic_path(entity)}/trackables/#{trackable.id}/update_card", local: false, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
       <div class="row">
         <div class="small-6 columns eb-v1-card-title clipper">
           <%= link_to_if (clickable && trackable.description.present?), trackable.name, "#{entitybuilder.polymorphic_path(entity)}/trackables/#{trackable.id}", "data-reveal-id" => "trackable_modal", :remote => true %>

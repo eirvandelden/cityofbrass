@@ -1,5 +1,5 @@
 <div id="form_div">
-<%= form_with model: [@parent_object, @menu_item], remote: true, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
+<%= form_with model: [@parent_object, @menu_item], local: false, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
   <fieldset>
     <%= f.hidden_field :sort_order %>
     <div class="row">
