@@ -56,21 +56,25 @@ class JavascriptEventHandlersTest < ActiveSupport::TestCase
     assert_not_includes source, '$(document).on("click", ".alert-box a.close"'
   end
 
-  test "rulebuilder select2 widgets are destroyed before turbo caches the page" do
+  test "rulebuilder rule type selects keep native select behavior" do
     source = Rails.root.join("engines/rulebuilder/app/assets/javascripts/rulebuilder/rules.js").read
 
-    assert_includes source, "$(document).on('turbo:before-cache'"
-    assert_includes source, ".select2-hidden-accessible"
-    assert_includes source, ".select2('destroy')"
+    assert_includes source, "$(document).on('turbo:load'"
+    assert_includes source, ".rule-type-search"
+    assert_includes source, ".rule-type-select"
+    assert_includes source, "selectedCoreRules"
+    assert_includes source, "typeof rule_type_param"
+    assert_not_includes source, "select2"
   end
 
-  test "basic select2 widgets use the turbo lifecycle without cached reinitialization" do
-    source = Rails.root.join("app/assets/javascripts/v1/select2.js").read
+  test "application assets do not require select2" do
+    javascript_source = Rails.root.join("app/assets/javascripts/application.js").read
+    stylesheet_source = Rails.root.join("app/assets/stylesheets/application.scss").read
 
-    assert_includes source, "$(document).on('turbo:load'"
-    assert_includes source, "$(document).on('turbo:before-cache'"
-    assert_includes source, ".select2-basic.select2-hidden-accessible"
-    assert_includes source, ".select2('destroy')"
+    assert_not_includes javascript_source, "require select2"
+    assert_not_includes stylesheet_source, "require select2"
+    assert_not Rails.root.join("app/assets/javascripts/v1/select2.js").exist?
+    assert_not Rails.root.join("app/assets/stylesheets/v1/select2.foundation.scss").exist?
   end
 
   test "activeplay view scripts reset persistent turbo and resize handlers" do
