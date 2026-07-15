@@ -54,8 +54,8 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
 
   def association(attribute, options = {})
     collection    = options.delete(:collection)
-    label_method  = options.delete(:label_method) || :to_s
-    value_method  = options.delete(:value_method) || :id
+    label_method  = options.delete(:label_method) || default_association_label_method(collection)
+    value_method  = options.delete(:value_method) || default_association_value_method(collection)
     prompt        = options.delete(:prompt)
     include_blank = options.delete(:include_blank)
     label_supplied = options.key?(:label)
@@ -88,6 +88,14 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
   def required_attribute?(attribute)
     object.class.respond_to?(:validators_on) &&
       object.class.validators_on(attribute).any? { |v| v.is_a?(ActiveModel::Validations::PresenceValidator) }
+  end
+
+  def default_association_label_method(collection)
+    collection&.first.is_a?(Array) ? :first : :to_s
+  end
+
+  def default_association_value_method(collection)
+    collection&.first.is_a?(Array) ? :last : :id
   end
 
   def wrap(attribute, type, required, label_supplied, label_text, hint_text, wrapper_html)
