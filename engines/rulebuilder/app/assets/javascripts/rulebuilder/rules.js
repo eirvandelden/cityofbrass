@@ -1,72 +1,57 @@
-function destroyRulebuilderSelect2() {
-  $('.select2-rule_type_search.select2-hidden-accessible').select2('destroy');
-  $('.select2-rule_type.select2-hidden-accessible').select2('destroy');
-}
-
-$(document).on('turbo:before-cache', function () {
-  destroyRulebuilderSelect2();
-});
-
 // SEARCH
 $(document).on('turbo:load', function () {
   var core_rules_param = getQueryVariable('core_rules');
-  $('.select2-rule_type_search > optgroup').each(function () {
+  $('.rule-type-search > optgroup').each(function () {
     if (this.label !== core_rules_param && core_rules_param !== false) {
       this.remove();
     }
   });
 
-  if ($('.select2-rule_type_search optgroup').length < 1) {
-    $('.select2-rule_type_search option:selected').remove();
+  if ($('.rule-type-search optgroup').length < 1) {
+    $('.rule-type-search option:selected').remove();
   }
-
-  $('.select2-rule_type_search').select2({
-    minimumResultsForSearch: Infinity
-  });
 });
 
 // NEW FORM
 $(document).on('turbo:load', function () {
+  updateRuleTypeOptions();
 
-  $('.select2-rule_type > optgroup').each(function () {
-    if (this.label !== $('select[id$="rule_core_rules"] option:selected').val()) {
-      this.remove();
-    }
-  });
-
-  if (typeof rule_type_param !== 'undefined') {
-    $('.select2-rule_type').val(rule_type_param);
-  }
-
-  if ($('.select2-rule_type optgroup').length < 1) {
-    $('.select2-rule_type option:selected').remove();
-    $('.select2-rule_type').prop('disabled', true);
-  }
-
-  $('.select2-rule_type').select2({
-    minimumResultsForSearch: Infinity
-  });
+  $('select[id$="rule_core_rules"]').off('change.ruleTypeSelect');
+  $('select[id$="rule_core_rules"]').on('change.ruleTypeSelect', updateRuleTypeOptions);
 });
 
-// CORE RULES SELECTION
-$(document).on('turbo:load', function () {
-  $('select[id$="rule_core_rules"]').on('change', function () {
-    $('.select2-rule_type').prop('disabled', false);
-    $core_rule = this.value;
-    $('.select2-rule_type > optgroup').each(function () {
-      this.remove();
-    });
+function selectedCoreRules() {
+  return $('select[id$="rule_core_rules"]').val();
+}
 
-    var optgroup = $('<optgroup/>');
-    optgroup.attr('label', $core_rule);
+function updateRuleTypeOptions() {
+  var select = $('.rule-type-select');
+  if (select.length < 1 || typeof ruleList === 'undefined') {
+    return;
+  }
 
-    $.each(ruleList[$core_rule], function (index, value) {
-      optgroup.append(
-          $('<option></option>').html(value)
-      );
-    });
+  var coreRules = selectedCoreRules();
+  var rules = ruleList[coreRules] || [];
+  var selectedRuleType = select.val();
 
-    $('.select2-rule_type').append(optgroup);
-    $('.select2-rule_type').val($('.select2-rule_type option:first').val()).trigger('change');
+  if (!selectedRuleType && typeof rule_type_param !== 'undefined') {
+    selectedRuleType = rule_type_param;
+  }
+
+  select.empty();
+
+  if (rules.length < 1) {
+    select.prop('disabled', true);
+    return;
+  }
+
+  select.prop('disabled', false);
+
+  $.each(rules, function (index, value) {
+    select.append($('<option></option>').val(value).html(value));
   });
-});
+
+  if (rules.indexOf(selectedRuleType) >= 0) {
+    select.val(selectedRuleType);
+  }
+}

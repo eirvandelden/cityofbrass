@@ -17,7 +17,6 @@
 //= require moment.min
 //= require jquery-ui-1.11.4.custom
 //= require jquery.ui.touch-punch
-//= require select2
 
 //= require_tree ./v1
 //= require_tree ./time

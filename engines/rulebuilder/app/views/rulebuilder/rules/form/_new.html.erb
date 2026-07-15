@@ -6,7 +6,7 @@
         <%= f.input :core_rules, collection: CoreRules.all(admin_signed_in?), label_method: :name, value_method: :slug, :include_blank => true %>
       </div>
       <div class="small-6 columns">
-        <%= f.input :rule_type, as: :grouped_select, collection: CoreRules::Rule.options(admin_signed_in?), group_method: :last, include_blank: false, input_html: { class: "select2-rule_type"} %>
+        <%= f.input :rule_type, as: :grouped_select, collection: CoreRules::Rule.options(admin_signed_in?), group_method: :last, include_blank: false, input_html: { class: "rule-type-select"} %>
       </div>
     </div>
   </div>
