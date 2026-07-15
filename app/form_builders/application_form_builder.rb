@@ -12,7 +12,8 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
     field_type = as || (collection ? :select : column_type(attribute))
     required = required_attribute?(attribute)
     wrapper_html = options.delete(:wrapper_html) || {}
-    label_text = options.key?(:label) ? options.delete(:label) : nil
+    label_supplied = options.key?(:label)
+    label_text = options.delete(:label) if label_supplied
     hint_text = options.delete(:hint)
     input_html_opts = options.delete(:input_html) || {}
 
@@ -28,7 +29,7 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
         send(TYPE_TO_FIELD.fetch(field_type, :text_field), attribute, options.merge(input_html_opts))
       end
 
-    wrap(attribute, field_type, required, label_text, hint_text, wrapper_html) { field_html }
+    wrap(attribute, field_type, required, label_supplied, label_text, hint_text, wrapper_html) { field_html }
   end
 
   def input_field(attribute, options = {})
@@ -57,7 +58,8 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
     value_method  = options.delete(:value_method) || :id
     prompt        = options.delete(:prompt)
     include_blank = options.delete(:include_blank)
-    label_text    = options.delete(:label)
+    label_supplied = options.key?(:label)
+    label_text    = options.delete(:label) if label_supplied
     id_attr       = :"#{attribute}_id"
 
     select_opts = {}
@@ -65,7 +67,7 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
     select_opts[:prompt] = prompt if prompt
 
     field_html = collection_select(id_attr, collection, value_method, label_method, select_opts, options)
-    wrap(id_attr, :select, required_attribute?(id_attr), label_text, nil, {}) { field_html }
+    wrap(id_attr, :select, required_attribute?(id_attr), label_supplied, label_text, nil, {}) { field_html }
   end
 
   private
@@ -88,11 +90,11 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
       object.class.validators_on(attribute).any? { |v| v.is_a?(ActiveModel::Validations::PresenceValidator) }
   end
 
-  def wrap(attribute, type, required, label_text, hint_text, wrapper_html)
+  def wrap(attribute, type, required, label_supplied, label_text, hint_text, wrapper_html)
     state = required ? "required" : "optional"
     error = object.errors[attribute].any?
     css = [ "input", type, state, ("field_with_errors" if error) ].compact.join(" ")
-    label_html = label_text == false ? nil : build_label(attribute, type, state, required, label_text)
+    label_html = label_text == false ? nil : build_label(attribute, type, state, required, label_supplied, label_text)
     hint_html = hint_text ? @template.content_tag(:span, hint_text, class: "hint") : nil
     error_html = error ? @template.content_tag(:small, object.errors[attribute].first, class: "error") : nil
     @template.content_tag(:div, class: [ css, wrapper_html[:class] ].compact.join(" ")) do
@@ -100,9 +102,9 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
     end
   end
 
-  def build_label(attribute, type, state, required, label_text)
+  def build_label(attribute, type, state, required, label_supplied, label_text)
     label(attribute, class: "#{type} #{state} control-label") do
-      text = label_text.presence || attribute.to_s.humanize
+      text = label_supplied ? label_text : attribute.to_s.humanize
       if required
         abbr = @template.content_tag(:abbr, "*", title: "required")
         @template.safe_join([ text, abbr ])
