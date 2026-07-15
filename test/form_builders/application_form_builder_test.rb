@@ -272,6 +272,15 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     assert_no_match(/class="input/, html)
   end
 
+  test "hidden input renders a hidden field without visible wrapper" do
+    html = render_input(:category_id, as: :hidden)
+
+    assert_match(/type="hidden"/, html)
+    assert_no_match(/type="text"/, html)
+    assert_no_match(/<label/, html)
+    assert_no_match(/class="input hidden/, html)
+  end
+
   test "button supports simple form submit signature" do
     html = render_with_builder do |f|
       f.button(:submit, "Save")
