@@ -229,6 +229,18 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     assert_match(/Monsters/, html)
   end
 
+  test "association supports array pair collections without explicit methods" do
+    affiliations = [ [ "Alice", 123 ] ]
+
+    output = nil
+    form_for_model do |f|
+      output = f.association(:category, collection: affiliations, include_blank: true)
+    end
+    html = output.to_s
+
+    assert_match(/<option value="123">Alice<\/option>/, html)
+  end
+
   # ─── Test 10: wrapper_html class ──────────────────────────────────────────────
 
   test "wrapper_html class is appended to outer div" do
