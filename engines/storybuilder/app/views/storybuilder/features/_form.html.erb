@@ -1,5 +1,5 @@
 <div id="form_div">
-<%= form_with model: [@parent_object, @feature], url: nested_resource_form_path(@parent_object, @feature, :features), remote: true, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
+<%= form_with model: [@parent_object, @feature], url: nested_resource_form_path(@parent_object, @feature, :features), local: false, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
   <fieldset>
     <div class="row inline text-right">
       <div class="small-12 columns">

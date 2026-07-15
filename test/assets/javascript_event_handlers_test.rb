@@ -77,6 +77,16 @@ class JavascriptEventHandlersTest < ActiveSupport::TestCase
     assert_not Rails.root.join("app/assets/stylesheets/v1/select2.foundation.scss").exist?
   end
 
+  test "ajax forms migrated to form_with opt into remote submission" do
+    sources = Rails.root.glob("{app,engines}/**/*.erb")
+
+    local_forms = sources.filter_map do |path|
+      "#{path.relative_path_from(Rails.root)} uses ignored remote: true" if path.read.match?(/form_with .*remote: true/)
+    end
+
+    assert_empty local_forms
+  end
+
   test "activeplay view scripts reset persistent turbo and resize handlers" do
     desktop_source = Rails.root.join("engines/activeplay/app/views/activeplay/virtual_tables/show.html.erb").read
     phone_source = Rails.root.join("engines/activeplay/app/views/activeplay/virtual_tables/show.html+phone.erb").read

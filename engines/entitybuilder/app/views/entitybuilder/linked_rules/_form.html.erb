@@ -1,5 +1,5 @@
 <div id="form_div">
-<%= form_with model: [@parent_object, @linked_rule], remote: true, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
+<%= form_with model: [@parent_object, @linked_rule], local: false, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
   <div class="row">
     <div class="medium-12 columns">
 

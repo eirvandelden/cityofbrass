@@ -1,5 +1,5 @@
 <div id="form_div">
-<%= form_with model: [@parent_object, @movement], remote: true, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
+<%= form_with model: [@parent_object, @movement], local: false, html: {'data-no-transition-cache' => ''}, builder: ApplicationFormBuilder do |f| %>
   <fieldset>
     <div class="row inline text-right">
       <div class="small-12 columns">
