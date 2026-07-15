@@ -189,6 +189,13 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     assert_no_match(/struct Category/, html)
   end
 
+  test "select field uses default option as selected value" do
+    html = render_input(:status, collection: [ [ "Draft", "draft" ], [ "Published", "published" ] ], default: "draft")
+
+    assert_match(/<option selected="selected" value="draft">Draft<\/option>/, html)
+    assert_no_match(/default=/, html)
+  end
+
   test "checkbox collection uses label and value methods for object collections" do
     categories = [ Category.new(1, "Monsters") ]
 

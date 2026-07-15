@@ -111,9 +111,11 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
   def build_select(attribute, collection, options, grouped)
     prompt = options.delete(:prompt)
     include_blank = options.delete(:include_blank)
+    default = options.delete(:default)
     label_method = options.delete(:label_method) || :to_s
     value_method = options.delete(:value_method) || (grouped ? :to_s : :id)
     select_options = { prompt: prompt, include_blank: include_blank }.compact
+    select_options[:selected] = default if default.present? && object_value(attribute).blank?
     if grouped
       grouped_collection_select(attribute, collection,
                                 options.delete(:group_method) || :last,
@@ -145,5 +147,9 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
     return item.public_send(method) if item.respond_to?(method)
 
     item
+  end
+
+  def object_value(attribute)
+    object.public_send(attribute) if object.respond_to?(attribute)
   end
 end
