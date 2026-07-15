@@ -5,7 +5,7 @@ class ApplicationFormBuilderTest < ActionView::TestCase
   class DummyModel
     include ActiveModel::Model
 
-    attr_accessor :name, :bio, :age, :score, :active, :status, :starts_at, :born_on,
+    attr_accessor :name, :bio, :age, :score, :active, :status, :password, :starts_at, :born_on,
                   :category_id, :adventure_ids
 
     validates :name, presence: true
@@ -131,6 +131,13 @@ class ApplicationFormBuilderTest < ActionView::TestCase
 
     assert_match(/class="input email optional"/, html)
     assert_match(/type="email"/, html)
+  end
+
+  test "password-like fields render password inputs" do
+    html = render_input(:password)
+
+    assert_match(/class="input password optional"/, html)
+    assert_match(/type="password"/, html)
   end
 
   test "file field renders file input" do
@@ -294,5 +301,6 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     end
 
     assert_match(/<input type="submit" name="commit" value="Save"/, html)
+    assert_match(/class="button"/, html)
   end
 end
