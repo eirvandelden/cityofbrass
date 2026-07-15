@@ -15,6 +15,8 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
     hint_text = options.delete(:hint)
     input_html_opts = options.delete(:input_html) || {}
 
+    return hidden_field(attribute, options.merge(input_html_opts)) if field_type == :hidden
+
     field_html =
       case field_type
       when :select, :grouped_select
