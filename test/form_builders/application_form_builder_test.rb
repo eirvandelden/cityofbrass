@@ -245,6 +245,13 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     assert_no_match(/<label/, html)
   end
 
+  test "blank label does not fall back to humanized attribute name" do
+    html = render_input(:active, label: "", as: :boolean)
+
+    assert_match(/<label[^>]*><\/label>/, html)
+    assert_no_match(/Active/, html)
+  end
+
   # ─── Test 12: input_html options are applied to the rendered input ────────────
 
   test "input_html class is applied to the rendered input" do
