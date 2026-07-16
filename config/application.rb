@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module Brasscore
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.1
+    config.load_defaults 7.2
     config.active_support.cache_format_version = 7.1
     config.before_initialize do
       Devise.secret_key ||= config.secret_key_base if defined?(Devise)
