@@ -4,7 +4,7 @@ ruby file: ".ruby-version"
 
 gem "dotenv-rails" # We want dotenv to load before everything else.
 
-gem "rails", "~> 7.1"
+gem "rails", "~> 7.2.0"
 gem "bootsnap", ">= 1.4.4"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1", force_ruby_platform: true
