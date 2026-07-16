@@ -1,65 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="en">
 <head>
-  <title>Your browser is not supported (406)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City of Brass | 406</title>
+  <link rel="apple-touch-icon" href="https://s3.amazonaws.com/thecityofbrass/assets/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" href="https://s3.amazonaws.com/thecityofbrass/assets/images/apple-touch-icon.png">
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Marcellus+SC' rel='stylesheet' type='text/css'>
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css" type="text/css" media="all">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" href="https://www.embersds.com/css/errors.css?v7132015" type="text/css">
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js"></script>
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
+  <script>
+    $(document).foundation();
+  </script>
 </head>
-
-<body class="rails-default-error-page">
-  <!-- This file lives in public/406-unsupported-browser.html -->
-  <div class="dialog">
-    <div>
-      <h1>Your browser is not supported.</h1>
-      <p>Please upgrade your browser to continue.</p>
+<body>
+  <div class="text-center">
+    <p><a href="https://www.cityofbrass.io"><img class="error-logo" src="https://thecityofbrass.s3.amazonaws.com/assets/images/CityofBrass_200w.png"></a></p>
+    <p><i class="fa fa-home"></i> <strong><a href="https://www.cityofbrass.io">cityofbrass.io</a></strong>
+  </div>
+  <div class="row">
+    <div class="large-10 large-centered columns">
+      <div class="row">
+        <div class="medium-8 columns">
+          <span class="error-code">406</span>
+          <h2>Your browser is too old for this tavern.</h2>
+          <p>Even the goblins have upgraded by now. City of Brass requires a modern browser to work its magic — please update yours and try again.</p>
+          <p><i class="fa fa-angle-double-left"></i> <a href="#" onclick="window.history.go(-1); return false;">Go Back</a>
+        </div>
+        <div class="medium-4 columns text-center">
+          <p>&nbsp;</p>
+          <img src="https://s3.amazonaws.com/thecityofbrass/assets/images/orc_boss.png">
+        </div>
+      </div>
     </div>
   </div>
 </body>
