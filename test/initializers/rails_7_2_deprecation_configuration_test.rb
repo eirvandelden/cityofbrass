@@ -1,8 +1,8 @@
 require "test_helper"
 
-class Rails71DeprecationConfigurationTest < ActiveSupport::TestCase
-  test "loads Rails 7.1 framework defaults" do
-    assert_equal 7.1, Rails.application.config.loaded_config_version
+class Rails72DeprecationConfigurationTest < ActiveSupport::TestCase
+  test "loads Rails 7.2 framework defaults" do
+    assert_equal 7.2, Rails.application.config.loaded_config_version
   end
 
   test "uses the Rails 7.1 cache serialization format" do
