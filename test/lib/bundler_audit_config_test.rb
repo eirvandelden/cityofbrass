@@ -3,7 +3,7 @@ require "bundler/audit/scanner"
 
 class BundlerAuditConfigTest < ActiveSupport::TestCase
   test "loads project advisory exceptions by default" do
-    scanner = Bundler::Audit::Scanner.new(Rails.root)
+    scanner = Bundler::Audit::Scanner.new(Rails.root, "Gemfile.lock", nil)
 
     assert_includes scanner.config.ignore, "CVE-THAT-DOES-NOT-APPLY"
   end
