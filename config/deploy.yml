@@ -53,6 +53,7 @@ env:
     - SECRET_KEY_BASE
     - SMTP_URL
     - ACTIVEPLAY_SECRET
+    - CAMPFIRE_WEBHOOK_URL
 
 aliases:
   apps: server exec docker exec kamal-proxy kamal-proxy list
