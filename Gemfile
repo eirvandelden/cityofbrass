@@ -5,6 +5,8 @@ ruby file: ".ruby-version"
 gem "dotenv-rails" # We want dotenv to load before everything else.
 
 gem "rails", "~> 7.2"
+gem "exception_notification", ">= 5.0"
+gem "exception_notification-campfire-once", github: "eirvandelden/exception_notification-campfire-once", branch: "ai/reykjavik"
 gem "bootsnap", ">= 1.4.4"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1", force_ruby_platform: true
