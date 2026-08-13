@@ -22,7 +22,7 @@
 //= require_tree ./time
 //= require_tree ./roller
 //= require activestorage
-//= require trix/dist/trix
+//= require trix/dist/trix.umd
 //= require actiontext/attachment_upload
 //= require gallery/image-picker
 //= require billing/subscriptions
