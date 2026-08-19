@@ -63,7 +63,7 @@ Game systems are defined in `config/core_rules/`:
 
 ## 🧰 Tech stack
 
-- **Language / framework:** Ruby, Rails
+- **Language / framework:** Ruby, Rails 8
 - **Web server:** Puma
 - **Database:** SQLite (with a custom UUID function; UUID primary keys)
 - **Background jobs / cache:** Sidekiq + Redis
