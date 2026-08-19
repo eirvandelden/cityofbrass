@@ -165,7 +165,13 @@ module Campaignmanager
     test "should update campaign" do
       sign_in @user
       patch :update, params: { id: @campaign, campaign: { resident_id: @campaign.resident_id, name: @campaign.name, privacy: @campaign.privacy, short_description: @campaign.short_description, full_description: @campaign.full_description.to_s } }
-      assert_redirected_to edit_campaign_path(assigns(:campaign))
+      assert_redirected_to campaign_path(assigns(:campaign))
+    end
+
+    test "should flash a notice after updating campaign" do
+      sign_in @user
+      patch :update, params: { id: @campaign, campaign: { resident_id: @campaign.resident_id, name: @campaign.name, privacy: @campaign.privacy, short_description: @campaign.short_description, full_description: @campaign.full_description.to_s } }
+      assert_equal "#{@campaign.name} has been updated.", flash[:notice]
     end
 
     test "should not destroy campaign" do
@@ -195,7 +201,7 @@ module Campaignmanager
           adventure_ids: [ adventure.id ]
         }
       }
-      assert_redirected_to edit_campaign_path(assigns(:campaign))
+      assert_redirected_to campaign_path(assigns(:campaign))
       assert_includes @campaign.reload.adventures, adventure
     end
 
@@ -210,7 +216,7 @@ module Campaignmanager
           active_adventure_id: adventure.id
         }
       }
-      assert_redirected_to edit_campaign_path(assigns(:campaign))
+      assert_redirected_to campaign_path(assigns(:campaign))
       assert_equal adventure, @campaign2.reload.active_adventure
     end
 
@@ -224,7 +230,7 @@ module Campaignmanager
           active_adventure_id: ''
         }
       }
-      assert_redirected_to edit_campaign_path(assigns(:campaign))
+      assert_redirected_to campaign_path(assigns(:campaign))
       assert_nil @campaign2.reload.active_adventure
     end
 
