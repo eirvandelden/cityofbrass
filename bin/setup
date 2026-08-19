@@ -2,7 +2,7 @@
 require "fileutils"
 
 APP_ROOT = File.expand_path("..", __dir__)
-APP_NAME = "brasscore"
+APP_NAME = "CityOfBrass"
 
 def system!(*args)
   system(*args, exception: true)
@@ -19,7 +19,6 @@ FileUtils.chdir APP_ROOT do
 
   system! "bin/yarn"
 
-  # puts "\n== Copying sample files =="
   # unless File.exist?("config/database.yml")
   #   FileUtils.cp "config/database.yml.sample", "config/database.yml"
   # end
