@@ -97,11 +97,9 @@ module Campaignmanager
             @campaign.active_adventure_id = requested_active_id
           end
           cm_new_activeplay_virtual_table(@campaign) if @campaign.activeplay.blank?
-          format.html { redirect_to edit_campaign_path(@campaign) }
-          format.js   { flash.now[:notice] = "#{@campaign.name} has been updated." }
+          format.html { redirect_to campaign_path(@campaign), notice: "#{@campaign.name} has been updated." }
         else
           format.html { render action: 'edit' }
-          format.js
         end
       end
     end
