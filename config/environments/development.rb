@@ -9,6 +9,14 @@ Rails.application.configure do
 
   config.middleware.use AssumeLocalHttpsProxy
 
+  # Caddy terminates TLS and proxies to puma-dev, which then proxies to this
+  # app over plain HTTP. X-Forwarded-Proto only survives the first hop
+  # reliably (AssumeLocalHttpsProxy covers that via the Origin header), but
+  # multi-redirect chains lose it on later hops, downgrading redirect_to
+  # Location headers to http and tripping CORS. Every local request arrives
+  # through that same HTTPS proxy, so assume it unconditionally instead.
+  config.assume_ssl = true
+
   config.action_mailer.default_url_options = { :host => ENV["DEFAULT_BASE_URL"] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
