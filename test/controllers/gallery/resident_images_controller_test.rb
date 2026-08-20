@@ -90,10 +90,14 @@ module Gallery
       assert_response 403
     end
 
-    test "should update image" do
+    test "the owner can rename their own picture" do
       sign_in @user
-      patch :update, params: { id: @image, resident_image: { name: @image.name, resident_id: @image.resident_id } }
-      #assert_redirected_to edit_resident_image_path(assigns(:image))
+      @image.update!(file: fixture_file_upload("sample.png", "image/png"))
+
+      patch :update, params: { id: @image, resident_image: { name: "Renamed by the owner" } }
+
+      assert_redirected_to @image
+      assert_equal "Renamed by the owner", @image.reload.name
     end
 
     test "should not destroy image" do
