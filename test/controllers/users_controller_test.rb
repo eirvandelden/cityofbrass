@@ -27,6 +27,7 @@ class UsersControllerTest < ActionController::TestCase
   test "should get edit" do
     sign_in @dan
     get :edit, params: { id: @user2 }
+    assert_response :success
   end
 
   test "should update.js" do

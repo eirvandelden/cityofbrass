@@ -66,12 +66,12 @@ class MessagesControllerTest < ActionController::TestCase
     assert_redirected_to inbox_path
   end
 
-  test "should destroy message" do
-    #sign_in @dan
-    #assert_difference('Message.count', -1) do
-    #  delete :destroy, id: @message
-    #end
-    #assert_response :success
-    #assert_equal "#{@message.email} has been removed from the beta list.", flash[:notice]
+  test "deleting a message you sent takes it out of your sent list" do
+    sign_in @dan
+
+    delete :destroy, params: { resident_id: @razune.slug, id: @message }
+
+    assert_redirected_to inbox_path
+    assert_not_includes @razune.messages_sent.reload, @message
   end
 end

@@ -96,11 +96,15 @@ module Gallery
       assert_response 403
     end
 
-    test "should update image" do
+    test "an administrator can rename a help picture" do
       sign_in @user
       sign_in @admin
-      patch :update, params: { id: @image, faq_image: { name: @image.name } }
-      #assert_redirected_to edit_faq_image_path(assigns(:image))
+      @image.update!(file: fixture_file_upload("sample.png", "image/png"))
+
+      patch :update, params: { id: @image, faq_image: { name: "Renamed by an administrator" } }
+
+      assert_redirected_to @image
+      assert_equal "Renamed by an administrator", @image.reload.name
     end
 
     test "should not destroy image" do
