@@ -4,7 +4,7 @@ development:
 test:
   adapter: async
 
+# The app has no channels. Adding one means choosing an adapter that works
+# across processes first — async only broadcasts within a single process.
 production:
-  adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/0" } %>
-  channel_prefix: cityofbrass_production
+  adapter: async
