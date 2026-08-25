@@ -1,20 +1,20 @@
 require "test_helper"
 
-class SidekiqWebTest < ActionDispatch::IntegrationTest
+class JobsDashboardTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
-  test "admin can open sidekiq web" do
+  test "admin can open the jobs dashboard" do
     sign_in admins(:dan)
 
-    get "/sidekiq"
+    get "/jobs"
 
     assert_response :success
   end
 
-  test "user cannot open sidekiq web" do
+  test "user cannot open the jobs dashboard" do
     sign_in users(:dan)
 
-    get "/sidekiq"
+    get "/jobs"
 
     assert_response :redirect
   end
