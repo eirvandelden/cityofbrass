@@ -101,8 +101,10 @@ See [Configuration](#configuration) for the full list of variables.
 1. Install **Ruby** (the version pinned in `.ruby-version`).
 2. Install dependencies and prepare the database:
    ```sh
-   bin/setup            # bundle install + bin/rails db:prepare
+   bin/setup --skip-server    # install gems and JavaScript packages, prepare the database
    ```
+   Without `--skip-server`, `bin/setup` finishes by starting the development
+   server and never returns, so the remaining steps would not run.
 3. Export the required production environment variables:
    ```sh
    export RAILS_ENV=production
@@ -218,9 +220,16 @@ development — see `config/application.example.yml`).
 ## 🧪 Development & testing
 
 ```sh
-bin/setup              # install gems, prepare the database
-bin/rails db:setup     # load schema and seed data
-bin/rails server       # http://localhost:3000
+bin/setup              # install gems and JavaScript packages, prepare the database, start the app
+```
+
+`bin/setup` ends by starting the app on http://localhost:3000. To stop before that
+and run the pieces yourself:
+
+```sh
+bin/setup --skip-server    # install gems and JavaScript packages, prepare the database
+bin/rails db:setup         # load schema and seed data
+bin/dev                    # http://localhost:3000
 ```
 
 The seed data creates a login you can use immediately:
