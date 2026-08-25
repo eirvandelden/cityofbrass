@@ -74,7 +74,7 @@ class MessagesController < ApplicationController
   # DELETE /messages/1
   # DELETE /messages/1.json
   def destroy
-    @message.mark_message_deleted(@message.id,@resident.id) unless @message.nil?
+    @message.mark_message_deleted(@resident.id) unless @message.nil?
     respond_to do |format|
       format.html { redirect_to inbox_path }
       format.json { head :no_content }
