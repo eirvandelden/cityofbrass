@@ -478,8 +478,6 @@ GEM
       rbs (>= 4.0.0)
       tsort
     redcarpet (3.6.1)
-    redis-client (0.30.1)
-      connection_pool
     regexp_parser (2.11.3)
     reline (0.7.0)
       io-console (~> 0.5)
@@ -538,12 +536,6 @@ GEM
     sdoc (2.6.5)
       rdoc (>= 5.0)
     securerandom (0.4.1)
-    sidekiq (8.0.10)
-      connection_pool (>= 2.5.0)
-      json (>= 2.9.0)
-      logger (>= 1.6.2)
-      rack (>= 3.1.0)
-      redis-client (>= 0.23.2)
     simpleidn (0.2.3)
     solid_queue (1.7.0)
       activejob (>= 7.1)
@@ -675,7 +667,6 @@ DEPENDENCIES
   rulebuilder!
   sass-rails
   sdoc
-  sidekiq
   solid_queue
   spring
   spring-watcher-listen
