@@ -537,6 +537,11 @@ GEM
       rdoc (>= 5.0)
     securerandom (0.4.1)
     simpleidn (0.2.3)
+    solid_cable (4.0.2)
+      actioncable (>= 7.2)
+      activejob (>= 7.2)
+      activerecord (>= 7.2)
+      railties (>= 7.2)
     solid_queue (1.7.0)
       activejob (>= 7.1)
       activerecord (>= 7.1)
@@ -667,6 +672,7 @@ DEPENDENCIES
   rulebuilder!
   sass-rails
   sdoc
+  solid_cable
   solid_queue
   spring
   spring-watcher-listen
