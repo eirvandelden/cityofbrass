@@ -29,9 +29,9 @@ class Message < ApplicationRecord
 
   # marks a message as deleted by either the sender or the recepient, which ever the user that was passed is.
   # When both sender and recepient marks it deleted, it is destroyed.
-  def mark_message_deleted(id, resident_id)
-    self.sender_deleted = true if self.sender_id == resident_id and self.id=id
-    self.recipient_deleted = true if self.recipient_id == resident_id and self.id=id
+  def mark_message_deleted(resident_id)
+    self.sender_deleted = true if self.sender_id == resident_id
+    self.recipient_deleted = true if self.recipient_id == resident_id
     self.sender_deleted && self.recipient_deleted ? self.destroy : save!
   end
 
