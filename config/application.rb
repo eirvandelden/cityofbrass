@@ -38,6 +38,7 @@ module Brasscore
     # set this so you we can see GC stats in New Relic
     GC::Profiler.enable
     config.active_job.queue_adapter = :sidekiq
+    config.solid_queue.connects_to = { database: { writing: :queue } }
 
     config.action_view.sanitized_allowed_attributes = [
       "name", "href", "cite", "class", "title", "src", "height", "width", "style"
