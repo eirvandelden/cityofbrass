@@ -1,6 +1,6 @@
-# Development runs the web server and the worker as separate processes
-# (see Procfile.dev), so a broadcast has to cross a process boundary there
-# just as it does in production.
+# Development and production both run the app in more than one process — see
+# Procfile.dev and config/deploy.yml — so in both a broadcast has to reach
+# past the process that sent it.
 default: &default
   adapter: solid_cable
   connects_to:

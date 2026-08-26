@@ -1,5 +1,6 @@
 require "test_helper"
 require "yaml"
+require "puma/configuration"
 
 class DeploymentTest < ActiveSupport::TestCase
   test "no Redis server is deployed alongside the app" do
@@ -13,11 +14,13 @@ class DeploymentTest < ActiveSupport::TestCase
   end
 
   test "the web server actually starts the queue when deployment asks it to" do
-    assert_includes web_server_plugins_when_asked_to_run_jobs, "solid_queue"
+    web_server_asked_to_run_jobs
+
+    assert_includes started_plugin_names, "solid_queue"
   end
 
   test "the database has a connection spare for every web thread" do
-    assert_operator connections_available, :>=, web_threads
+    assert_operator connections_the_database_offers, :>=, threads_the_web_server_runs
   end
 
   test "the queue database is kept between releases" do
@@ -29,26 +32,28 @@ class DeploymentTest < ActiveSupport::TestCase
 
   private
 
-  def web_server_plugins_when_asked_to_run_jobs
-    require "puma/configuration"
+  # Puma publishes no list of the plugins it started, and the names are the only
+  # way to tell a queue that actually starts from a config file that mentions one.
+  def started_plugin_names
+    Puma::Plugins.instance_variable_get(:@plugins).keys
+  end
+
+  def threads_the_web_server_runs
+    web_server_asked_to_run_jobs.final_options[:max_threads]
+  end
+
+  def web_server_asked_to_run_jobs
     asked_before = ENV["SOLID_QUEUE_IN_PUMA"]
     ENV["SOLID_QUEUE_IN_PUMA"] = "1"
-    Puma::Configuration.new { |puma| puma.load Rails.root.join("config/puma.rb").to_s }.clamp
-    Puma::Plugins.instance_variable_get(:@plugins).keys
+    Puma::Configuration.new { |puma| puma.load Rails.root.join("config/puma.rb").to_s }.tap(&:clamp)
   ensure
     ENV["SOLID_QUEUE_IN_PUMA"] = asked_before
   end
 
-  def web_threads
-    default_from(Rails.root.join("config/puma.rb"))
-  end
-
-  def connections_available
-    default_from(Rails.root.join("config/database.yml"))
-  end
-
-  def default_from(path)
-    path.read[/MAX_THREADS", (\d+)/, 1].to_i
+  def connections_the_database_offers
+    ActiveRecord::Base.configurations
+      .configs_for(env_name: "production", name: "primary")
+      .max_connections
   end
 
   def deployment
