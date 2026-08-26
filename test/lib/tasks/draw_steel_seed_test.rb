@@ -3,7 +3,7 @@ require "rake"
 
 class DrawSteelSeedTest < ActiveSupport::TestCase
   setup do
-    Rails.application.load_tasks unless Rake::Task.task_defined?("db:seed:draw_steel:ancestries")
+    TaskDefinitions.read_once
   end
 
   test "ancestries seed task creates StockRules with attribution" do
