@@ -3,7 +3,7 @@ require "rake"
 
 class DbSeedTest < ActiveSupport::TestCase
   setup do
-    Rails.application.load_tasks unless Rake::Task.task_defined?("db:seed")
+    TaskDefinitions.read_once
   end
 
   test "db:seed invokes stock system seed aggregates" do

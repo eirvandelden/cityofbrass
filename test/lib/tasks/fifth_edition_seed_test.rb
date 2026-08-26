@@ -3,7 +3,7 @@ require "rake"
 
 class FifthEditionSeedTest < ActiveSupport::TestCase
   setup do
-    Rails.application.load_tasks unless Rake::Task.task_defined?("db:seed:5e:classes")
+    TaskDefinitions.read_once
   end
 
   test "classes seed task creates valid StockRules with normalized source fields" do

@@ -1,7 +1,7 @@
 namespace :db do
   namespace :seed do
     namespace :pf2e do
-      PF2E_SEED_DIR = Rails.root.join("db", "seeds", "pf2e") unless defined?(PF2E_SEED_DIR)
+      PF2E_SEED_DIR = Rails.root.join("db", "seeds", "pf2e")
 
       # ── Rules ──────────────────────────────────────────────────────────
 
