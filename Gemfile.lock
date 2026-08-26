@@ -624,7 +624,6 @@ DEPENDENCIES
   bundle-audit
   campaignmanager!
   capybara
-  connection_pool (~> 2.5)
   cuprite
   devise
   devise-i18n
