@@ -232,6 +232,9 @@ bin/rails db:setup         # load schema and seed data
 bin/dev                    # http://localhost:3000
 ```
 
+`bin/setup --reset` throws the development database away and rebuilds it from
+scratch.
+
 The seed data creates a login you can use immediately:
 
 - **Email:** `user@example.com`
