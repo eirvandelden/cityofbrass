@@ -66,8 +66,7 @@ Game systems are defined in `config/core_rules/`:
 - **Language / framework:** Ruby, Rails 8
 - **Web server:** Puma
 - **Database:** SQLite (with a custom UUID function; UUID primary keys)
-- **Background jobs:** Sidekiq + Redis
-- **Cache:** in-memory in development, files on disk in production
+- **Background jobs:** Solid Queue (stored in its own SQLite database)
 - **Auth:** Devise + OmniAuth
 - **Payments:** Stripe
 - **File uploads:** Paperclip (disk-backed, optional AWS S3)
@@ -80,8 +79,8 @@ Game systems are defined in `config/core_rules/`:
 
 - **Production / Docker / Kamal:** Linux on **amd64** (the image is built for
   `x86_64-linux`).
-- **Development:** macOS and Linux. Requires the Ruby version pinned in `.ruby-version`,
-  Redis, and a POSIX filesystem for the `storage/` directory (SQLite database and
+- **Development:** macOS and Linux. Requires the Ruby version pinned in `.ruby-version`
+  and a POSIX filesystem for the `storage/` directory (SQLite database and
   uploaded files live there).
 - **Windows** is not supported.
 
@@ -99,16 +98,17 @@ See [Configuration](#configuration) for the full list of variables.
 
 ### 🖥️ Local machine (production-style)
 
-1. Install **Ruby** (the version pinned in `.ruby-version`) and a running **Redis**.
+1. Install **Ruby** (the version pinned in `.ruby-version`).
 2. Install dependencies and prepare the database:
    ```sh
-   bin/setup            # bundle install + bin/rails db:prepare
+   bin/setup --skip-server    # install gems and JavaScript packages, prepare the database
    ```
+   Without `--skip-server`, `bin/setup` finishes by starting the development
+   server and never returns, so the remaining steps would not run.
 3. Export the required production environment variables:
    ```sh
    export RAILS_ENV=production
    export SECRET_KEY_BASE="$(bin/rails secret)"
-   export REDIS_URL=redis://localhost:6379/0
    export DEFAULT_BASE_URL=your.domain
    export SMTP_URL=smtp://user:pass@host:587
    export RAILS_SERVE_STATIC_FILES=1
@@ -121,8 +121,8 @@ See [Configuration](#configuration) for the full list of variables.
    ```
 5. Start the processes defined in the `Procfile`:
    ```sh
-   bundle exec puma -C config/puma.rb                                   # web
-   bundle exec sidekiq -c 8 -q default -q mailers -q paperclip          # worker
+   bundle exec puma -C config/puma.rb    # web
+   bin/jobs                              # worker
    ```
 
 The SQLite production database is created at `storage/db/production.sqlite3`, and
@@ -138,17 +138,13 @@ yourself after the first start.
    ```sh
    docker build -t cityofbrass .
    ```
-2. Run Redis and the app on a shared network, with a volume for `storage/`:
+2. Run the app with a volume for `storage/`:
    ```sh
-   docker network create cob-net
-
-   docker run -d --name cob-redis --network cob-net redis:7-alpine
-
-   docker run -d --name cityofbrass --network cob-net \
+   docker run -d --name cityofbrass \
      -p 80:3000 \
      -v cob-storage:/rails/storage \
      -e SECRET_KEY_BASE="$(openssl rand -hex 64)" \
-     -e REDIS_URL=redis://cob-redis:6379/0 \
+     -e SOLID_QUEUE_IN_PUMA=1 \
      -e DEFAULT_BASE_URL=your.domain \
      -e SMTP_URL=smtp://user:pass@host:587 \
      -e RAILS_SERVE_STATIC_FILES=1 \
@@ -160,23 +156,24 @@ yourself after the first start.
    docker exec cityofbrass bin/rails db:prepare
    ```
 
-You'll also want a worker container for background jobs, started from the same image
-with the Sidekiq command:
+`SOLID_QUEUE_IN_PUMA` runs background jobs inside the web container. To give jobs a
+container of their own instead, leave that variable out and start a second container
+from the same image, sharing the volume so both see the same queue:
 
 ```sh
-docker run -d --name cob-worker --network cob-net \
+docker run -d --name cob-worker \
   -v cob-storage:/rails/storage \
-  -e SECRET_KEY_BASE=... -e REDIS_URL=redis://cob-redis:6379/0 \
-  cityofbrass bundle exec sidekiq -c 8 -q default -q mailers -q paperclip
+  -e SECRET_KEY_BASE=... \
+  cityofbrass bin/jobs
 ```
 
 ### ⛵ Kamal
 
 Production is deployed with [Kamal](https://kamal-deploy.org); see `config/deploy.yml`.
-It builds the image on a remote builder, pushes to a private registry, and runs two
-roles on the host: a **web** role (Puma) and a **job** role (Sidekiq), plus a **Redis**
-accessory. The `storage/` directory is mounted from a persistent host volume and the
-proxy health-checks `/up`.
+It builds the image on a remote builder, pushes to a private registry, and runs a
+single **web** role (Puma), which runs background jobs in the same process. The
+`storage/` directory is mounted from a persistent host volume and the proxy
+health-checks `/up`.
 
 Secrets are pulled at deploy time from `.kamal/secrets` (backed by 1Password). Provide:
 
@@ -209,7 +206,7 @@ development — see `config/application.example.yml`).
 | `SECRET_KEY_BASE` | Rails secret; **required** in production |
 | `RAILS_ENV` | Environment (`production`) |
 | `DEFAULT_BASE_URL` | Public host used for URL generation and mailers |
-| `REDIS_URL` | Redis connection (Sidekiq) |
+| `SOLID_QUEUE_IN_PUMA` | Run background jobs inside the web server (`1`) |
 | `SMTP_URL` | SMTP connection string for outbound mail |
 | `DEFAULT_FROM_EMAIL` | Default "from" address |
 | `RAILS_SERVE_STATIC_FILES` | Serve precompiled assets from the app (`1`) |
@@ -223,10 +220,20 @@ development — see `config/application.example.yml`).
 ## 🧪 Development & testing
 
 ```sh
-bin/setup              # install gems, prepare the database
-bin/rails db:setup     # load schema and seed data
-bin/rails server       # http://localhost:3000
+bin/setup              # install gems and JavaScript packages, prepare the database, start the app
 ```
+
+`bin/setup` ends by starting the app on http://localhost:3000. To stop before that
+and run the pieces yourself:
+
+```sh
+bin/setup --skip-server    # install gems and JavaScript packages, prepare the database
+bin/rails db:setup         # load schema and seed data
+bin/dev                    # http://localhost:3000
+```
+
+`bin/setup --reset` throws the development database away and rebuilds it from
+scratch.
 
 The seed data creates a login you can use immediately:
 
@@ -258,9 +265,11 @@ app and database.
 
 The frontend is **server-rendered** ERB with Turbo for fast page transitions,
 jQuery for interactivity, and Foundation for styling, served through the Sprockets
-asset pipeline (no SPA). **Sidekiq + Redis** handle background work
-(asynchronous mail, Paperclip image processing). Authentication is built on
-**Devise** with a custom single-sign-on layer, and authorization is enforced through a
+asset pipeline (no SPA). **Solid Queue** handles background work (asynchronous mail,
+Paperclip image processing), keeping queued jobs in a SQLite database of its own so no
+separate queue server is needed. Caching needs no server either: development caches in
+memory and production to disk. Authentication is built on **Devise** with a custom
+single-sign-on layer, and authorization is enforced through a
 status-tier and **quota** system (`lib/quota.rb`) that gates features per account level.
 Records use **UUID primary keys**. Persistence is **SQLite** (database and Paperclip
 uploads both stored under `storage/`), payments run through **Stripe**, and the whole

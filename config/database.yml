@@ -1,6 +1,6 @@
 default: &default
   adapter: sqlite3
-  pool: <%= ENV.fetch("MAX_THREADS", 5) %>
+  pool: <%= ENV.fetch("MAX_THREADS", 16) %>
   timeout: 5000
   pragmas:
     journal_mode: wal
@@ -10,11 +10,7 @@ default: &default
     cache_size: -20000
     wal_autocheckpoint: 10000
 
-development:
-  <<: *default
-  database: db/development.sqlite3
-
-test:
+test_default: &test_default
   <<: *default
   timeout: 20000
   pragmas:
@@ -24,8 +20,42 @@ test:
     mmap_size: 134217728
     cache_size: -20000
     wal_autocheckpoint: 0
-  database: db/test.sqlite3
+
+development:
+  primary:
+    <<: *default
+    database: db/development.sqlite3
+  queue:
+    <<: *default
+    database: db/development_queue.sqlite3
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *default
+    database: db/development_cable.sqlite3
+    migrations_paths: db/cable_migrate
+
+test:
+  primary:
+    <<: *test_default
+    database: db/test.sqlite3
+  queue:
+    <<: *test_default
+    database: db/test_queue.sqlite3
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *test_default
+    database: db/test_cable.sqlite3
+    migrations_paths: db/cable_migrate
 
 production:
-  <<: *default
-  database: storage/db/production.sqlite3
+  primary:
+    <<: *default
+    database: storage/db/production.sqlite3
+  queue:
+    <<: *default
+    database: storage/db/production_queue.sqlite3
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *default
+    database: storage/db/production_cable.sqlite3
+    migrations_paths: db/cable_migrate

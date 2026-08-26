@@ -81,9 +81,6 @@ Rails.application.configure do
   # silently switch it to a different default (e.g. Solid Cache).
   config.cache_store = :file_store, "#{Rails.root}/tmp/cache/"
 
-  # Use a real queuing backend for Active Job (and separate queues per environment)
-  # config.active_job.queue_adapter     = :sidekiq
-  # config.active_job.queue_name_prefix = "brasscore_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.

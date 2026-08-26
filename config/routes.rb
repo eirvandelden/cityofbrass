@@ -1,5 +1,3 @@
-require "sidekiq/web"
-
 Rails.application.routes.draw do
   get "/up", to: ->(env) { [200, { "Content-Type" => "text/plain" }, ["OK"]] }
 
@@ -25,7 +23,7 @@ Rails.application.routes.draw do
   get "/paperclip/*path" => "paperclip_files#show", as: :paperclip_file, format: false
 
   authenticate :admin do
-    mount Sidekiq::Web => "/sidekiq"
+    mount MissionControl::Jobs::Engine, at: "/jobs"
   end
 
   resources :residents

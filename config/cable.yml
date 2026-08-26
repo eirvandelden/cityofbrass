@@ -1,10 +1,19 @@
+# Development and production both run the app in more than one process — see
+# Procfile.dev and config/deploy.yml — so in both a broadcast has to reach
+# past the process that sent it.
+default: &default
+  adapter: solid_cable
+  connects_to:
+    database:
+      writing: cable
+  polling_interval: 0.1.seconds
+  message_retention: 1.day
+
 development:
-  adapter: async
+  <<: *default
 
 test:
   adapter: async
 
-# The app has no channels. Adding one means choosing an adapter that works
-# across processes first — async only broadcasts within a single process.
 production:
-  adapter: async
+  <<: *default

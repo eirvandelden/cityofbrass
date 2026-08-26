@@ -3,7 +3,7 @@ require "rake"
 
 class Pf2eSeedTest < ActiveSupport::TestCase
   setup do
-    Rails.application.load_tasks unless Rake::Task.task_defined?("db:seed:pf2e:ancestries")
+    TaskDefinitions.read_once
   end
 
   test "ancestries seed task creates StockRules with ORC attribution" do
