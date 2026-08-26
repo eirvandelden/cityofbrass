@@ -12,6 +12,14 @@ class DeploymentTest < ActiveSupport::TestCase
     assert deployment.dig("env", "clear", "SOLID_QUEUE_IN_PUMA")
   end
 
+  test "the web server actually starts the queue when deployment asks it to" do
+    assert_includes web_server_plugins_when_asked_to_run_jobs, "solid_queue"
+  end
+
+  test "the database has a connection spare for every web thread" do
+    assert_operator connections_available, :>=, web_threads
+  end
+
   test "the queue database is kept between releases" do
     kept_between_releases = deployment.fetch("volumes").any? { |volume| volume.end_with?("/rails/storage") }
 
@@ -20,6 +28,28 @@ class DeploymentTest < ActiveSupport::TestCase
   end
 
   private
+
+  def web_server_plugins_when_asked_to_run_jobs
+    require "puma/configuration"
+    asked_before = ENV["SOLID_QUEUE_IN_PUMA"]
+    ENV["SOLID_QUEUE_IN_PUMA"] = "1"
+    Puma::Configuration.new { |puma| puma.load Rails.root.join("config/puma.rb").to_s }.clamp
+    Puma::Plugins.instance_variable_get(:@plugins).keys
+  ensure
+    ENV["SOLID_QUEUE_IN_PUMA"] = asked_before
+  end
+
+  def web_threads
+    default_from(Rails.root.join("config/puma.rb"))
+  end
+
+  def connections_available
+    default_from(Rails.root.join("config/database.yml"))
+  end
+
+  def default_from(path)
+    path.read[/MAX_THREADS", (\d+)/, 1].to_i
+  end
 
   def deployment
     YAML.load_file(Rails.root.join("config/deploy.yml"))
