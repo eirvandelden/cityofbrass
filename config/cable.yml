@@ -1,13 +1,19 @@
-development:
-  adapter: async
-
-test:
-  adapter: async
-
-production:
+# Development runs the web server and the worker as separate processes
+# (see Procfile.dev), so a broadcast has to cross a process boundary there
+# just as it does in production.
+default: &default
   adapter: solid_cable
   connects_to:
     database:
       writing: cable
   polling_interval: 0.1.seconds
   message_retention: 1.day
+
+development:
+  <<: *default
+
+test:
+  adapter: async
+
+production:
+  <<: *default
