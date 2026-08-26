@@ -66,7 +66,8 @@ Game systems are defined in `config/core_rules/`:
 - **Language / framework:** Ruby, Rails 8
 - **Web server:** Puma
 - **Database:** SQLite (with a custom UUID function; UUID primary keys)
-- **Background jobs / cache:** Sidekiq + Redis
+- **Background jobs:** Sidekiq + Redis
+- **Cache:** in-memory in development, files on disk in production
 - **Auth:** Devise + OmniAuth
 - **Payments:** Stripe
 - **File uploads:** Paperclip (disk-backed, optional AWS S3)
@@ -208,7 +209,7 @@ development — see `config/application.example.yml`).
 | `SECRET_KEY_BASE` | Rails secret; **required** in production |
 | `RAILS_ENV` | Environment (`production`) |
 | `DEFAULT_BASE_URL` | Public host used for URL generation and mailers |
-| `REDIS_URL` | Redis connection (Sidekiq + cache) |
+| `REDIS_URL` | Redis connection (Sidekiq) |
 | `SMTP_URL` | SMTP connection string for outbound mail |
 | `DEFAULT_FROM_EMAIL` | Default "from" address |
 | `RAILS_SERVE_STATIC_FILES` | Serve precompiled assets from the app (`1`) |
@@ -258,7 +259,7 @@ app and database.
 The frontend is **server-rendered** ERB with Turbo for fast page transitions,
 jQuery for interactivity, and Foundation for styling, served through the Sprockets
 asset pipeline (no SPA). **Sidekiq + Redis** handle background work
-(asynchronous mail, Paperclip image processing) and caching. Authentication is built on
+(asynchronous mail, Paperclip image processing). Authentication is built on
 **Devise** with a custom single-sign-on layer, and authorization is enforced through a
 status-tier and **quota** system (`lib/quota.rb`) that gates features per account level.
 Records use **UUID primary keys**. Persistence is **SQLite** (database and Paperclip

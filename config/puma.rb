@@ -2,8 +2,6 @@
 # are invoked here are part of Puma's configuration DSL. For more information
 # about methods provided by the DSL, see https://puma.io/puma/Puma/DSL.html.
 
-# MAX_THREADS also sizes the database connection pool (see config/database.yml),
-# so the two can never drift apart.
 threads_count = ENV.fetch("MAX_THREADS", 16).to_i
 threads threads_count, threads_count
 
