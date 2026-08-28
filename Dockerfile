@@ -50,9 +50,10 @@ FROM base
 
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y \
-      curl sqlite3 libsqlite3-0 libvips \
+      curl sqlite3 libsqlite3-0 libvips libjemalloc2 \
       libxml2 libxslt1.1 zlib1g \
       imagemagick file shared-mime-info && \
+    ln -s /usr/lib/$(uname -m)-linux-gnu/libjemalloc.so.2 /usr/local/lib/libjemalloc.so && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
@@ -67,6 +68,7 @@ ARG APP_VERSION
 ENV APP_VERSION=$APP_VERSION
 ARG GIT_REVISION
 ENV GIT_REVISION=$GIT_REVISION
+ENV LD_PRELOAD="/usr/local/lib/libjemalloc.so"
 
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
