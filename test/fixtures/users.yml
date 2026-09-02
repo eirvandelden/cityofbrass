@@ -24,3 +24,9 @@ brittany:
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   confirmed_at: <%= DateTime.now %>
   status: suspended
+
+priya:
+  email: priya@embersds.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  confirmed_at: <%= DateTime.now %>
+  status: active

@@ -7,6 +7,7 @@ class MessagesControllerTest < ActionController::TestCase
     @dan = users(:dan)
     @razune = residents(:razune)
     @message = messages(:message1)
+    @priya = users(:priya)
   end
 
   test "should get inbox" do
@@ -73,5 +74,47 @@ class MessagesControllerTest < ActionController::TestCase
 
     assert_redirected_to inbox_path
     assert_not_includes @razune.messages_sent.reload, @message
+  end
+
+  test "a resident cannot view a stranger's message" do
+    sign_in @priya
+
+    get :show, params: { resident_id: residents(:priya).slug, id: @message.id }
+
+    assert_response :not_found
+  end
+
+  test "a resident cannot open the edit form for a stranger's message" do
+    sign_in @priya
+
+    get :edit, params: { resident_id: residents(:priya).slug, id: @message.id }
+
+    assert_response :not_found
+  end
+
+  test "a resident cannot update a stranger's message" do
+    sign_in @priya
+
+    patch :update, params: { resident_id: residents(:priya).slug, id: @message.id, message: { body: "<p>hijacked</p>" } }
+
+    assert_response :not_found
+    assert_equal "this is a message", @message.reload.body.to_plain_text
+  end
+
+  test "a resident cannot delete a stranger's message" do
+    sign_in @priya
+
+    delete :destroy, params: { resident_id: residents(:priya).slug, id: @message.id }
+
+    assert_response :not_found
+    assert Message.exists?(@message.id)
+  end
+
+  test "updating a message cannot reassign who sent it" do
+    sign_in @dan
+
+    patch :update, params: { resident_id: @razune.slug, id: @message.id, message: { sender_id: residents(:tuandn).id } }
+
+    assert_equal @razune.id, @message.reload.sender_id
   end
 end

@@ -91,7 +91,12 @@ class MessagesController < ApplicationController
     end
 
     def set_message
-      @message = Message.includes([:sender, :recipient]).find(params[:id])
+      @message = Message.includes([:sender, :recipient])
+                         .where("sender_id = :resident_id OR recipient_id = :resident_id", resident_id: @resident.id)
+                         .find_by(id: params[:id])
+      if @message.nil?
+        render template: 'errors/404', layout: 'layouts/application', status: 404
+      end
     end
 
     def check_affiliation
@@ -104,6 +109,6 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:sender_id, :recipient_id, :sender_deleted, :recipient_deleted, :subject, :body, :read_at)
+      params.require(:message).permit(:recipient_id, :subject, :body)
     end
 end

@@ -21,3 +21,10 @@ eleanor:
   slug: eleanor
   short_description:
   full_description:
+
+priya:
+  user: priya
+  name: Priya
+  slug: priya
+  short_description: Priya is a stranger to Razune and Tuandn
+  full_description: <p>Priya has no part in their messages</p>
