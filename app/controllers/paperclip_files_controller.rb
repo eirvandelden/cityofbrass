@@ -39,8 +39,6 @@ class PaperclipFilesController < ApplicationController
     case path_segments
     in [ "gallery", "residents", _, _, _, _, "images", id, _ ]
       Gallery::ResidentImage.find_by(id: id)
-    in [ "gallery", "stock-images", id, _ ]
-      Gallery::StockImage.find_by(id: id)
     in [ "gallery", "map-images", id, _ ]
       Gallery::MapImage.find_by(id: id)
     else
@@ -50,7 +48,7 @@ class PaperclipFilesController < ApplicationController
 
   def allowed_to_show_gallery_attachment?
     case attachment_record
-    when Gallery::StockImage, Gallery::MapImage
+    when Gallery::MapImage
       true
     when Gallery::ResidentImage
       admin_signed_in? || attachment_record.resident.user_id == current_user&.id
@@ -88,8 +86,6 @@ class PaperclipFilesController < ApplicationController
     when Gallery::ResidentImage
       [ "gallery", "residents", *resident_part_id, attachment_record.resident_id, "images", attachment_record.id,
         "#{style}.#{attachment_extension}" ]
-    when Gallery::StockImage
-      [ "gallery", "stock-images", attachment_record.id, "#{style}.#{attachment_extension}" ]
     when Gallery::MapImage
       [ "gallery", "map-images", attachment_record.id, "#{style}.#{attachment_extension}" ]
     end

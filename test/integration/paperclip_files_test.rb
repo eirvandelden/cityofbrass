@@ -36,46 +36,6 @@ class PaperclipFilesTest < ActionDispatch::IntegrationTest
     image&.destroy
   end
 
-  test "serves public stock image files to anonymous users" do
-    image = stock_image
-
-    get image.file.url(:original)
-
-    assert_response :success
-  ensure
-    image&.destroy
-  end
-
-  test "serves legacy public stock image files through the new URL" do
-    image = stock_image
-    FileUtils.rm_f(image.file.path(:original))
-    file = legacy_stock_image_file(image)
-    FileUtils.mkdir_p(file.dirname)
-    FileUtils.cp(Gallery::Engine.root.join("app/assets/images/gallery/blank_image.png"), file)
-
-    get image.file.url(:original)
-
-    assert_response :success
-  ensure
-    FileUtils.rm_f(file) if file
-    image&.destroy
-  end
-
-  test "does not serve arbitrary files in a public stock image directory" do
-    image = stock_image
-    path = "stock-images/#{image.id}/not_the_attachment.txt"
-    file = stored_gallery_file(path)
-    FileUtils.mkdir_p(file.dirname)
-    File.write(file, "stock")
-
-    get "/paperclip/gallery/#{path}"
-
-    assert_response :not_found
-  ensure
-    FileUtils.rm_f(file) if file
-    image&.destroy
-  end
-
   test "serves importer preview files to the owner" do
     preview = Importer::Preview.create!(resident: residents(:razune), mode: Importer::Preview::RESIDENT_CONTENT,
                                         source: Importer::Preview::GAME_MASTER_5_XML, status: "parsing")
@@ -131,20 +91,8 @@ class PaperclipFilesTest < ActionDispatch::IntegrationTest
 
   private
 
-  def stored_gallery_file(path)
-    Rails.root.join("storage", "paperclip", "gallery", path)
-  end
-
   def resident_image
     Gallery::ResidentImage.create!(name: "Resident", resident: residents(:razune), file: image_upload)
-  end
-
-  def stock_image
-    Gallery::StockImage.create!(name: "Stock", file: image_upload)
-  end
-
-  def legacy_stock_image_file(image)
-    Rails.root.join("gallery", "stock-images", image.id, "original.png")
   end
 
   def image_upload
