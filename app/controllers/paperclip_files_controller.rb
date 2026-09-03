@@ -43,8 +43,6 @@ class PaperclipFilesController < ApplicationController
       Gallery::StockImage.find_by(id: id)
     in [ "gallery", "map-images", id, _ ]
       Gallery::MapImage.find_by(id: id)
-    in [ "gallery", "faq-images", id, _ ]
-      Gallery::FaqImage.find_by(id: id)
     else
       nil
     end
@@ -54,8 +52,6 @@ class PaperclipFilesController < ApplicationController
     case attachment_record
     when Gallery::StockImage, Gallery::MapImage
       true
-    when Gallery::FaqImage
-      admin_signed_in?
     when Gallery::ResidentImage
       admin_signed_in? || attachment_record.resident.user_id == current_user&.id
     else
@@ -96,8 +92,6 @@ class PaperclipFilesController < ApplicationController
       [ "gallery", "stock-images", attachment_record.id, "#{style}.#{attachment_extension}" ]
     when Gallery::MapImage
       [ "gallery", "map-images", attachment_record.id, "#{style}.#{attachment_extension}" ]
-    when Gallery::FaqImage
-      [ "gallery", "faq-images", attachment_record.id, "#{style}.#{attachment_extension}" ]
     end
   end
 
