@@ -1,85 +1,19 @@
+---
+# The rules shared by every personal Ruby project, plus the Rails layer.
 inherit_gem:
-  rubocop-rails-omakase: rubocop.yml
+  rubocop-eirvandelden:
+    - config/default.yml
+    - config/rails.yml
 
 inherit_from:
   - .rubocop_todo.yml
 
+# Every inherited Exclude adds to the list rather than replacing it. Without this the todo
+# file's own exclusions would drop the shared ones, bringing Metrics/BlockLength back for
+# routes and environment files.
 inherit_mode:
   merge:
     - Exclude
 
-plugins:
-  - rubocop-minitest
-  - rubocop-performance
-  - rubocop-rails
-
 AllCops:
-  # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
-  # to ignore them, so only the ones explicitly set in this file are enabled.
-  DisabledByDefault: true
-  SuggestExtensions: false
-
-  Exclude:
-    - "**/app/assets/**/*"
-    - "**/db/schema.rb"
-    - "**/db/**/*schema.rb"
-    - "**/log/**/*"
-    - "**/node_modules/**/*"
-    - "**/public/**/*"
-    - "**/storage/**/*"
-    - "**/tmp/**/*"
-    - "**/vendor/**/*"
-    - "bin/**/*"
-
-  NewCops: enable
-
-# Default Cops
-Metrics/BlockLength:
-  Exclude:
-    - spec/**/*_spec.rb
-    - lib/tasks/**/*.rake
-
-Style/FrozenStringLiteralComment:
-  EnforcedStyle: never
-
-# Cops from Extensions
-Minitest/UnreachableAssertion:
-  Enabled: true
-
-Performance/BindCall:
-  Enabled: true
-Performance/DeletePrefix:
-  Enabled: true
-Performance/DeleteSuffix:
-  Enabled: true
-Performance/EndWith:
-  Enabled: true
-Performance/FlatMap:
-  Enabled: true
-Performance/MapCompact:
-  Enabled: true
-Performance/RedundantMerge:
-  Enabled: true
-Performance/RegexpMatch:
-  Enabled: true
-Performance/ReverseEach:
-  Enabled: true
-Performance/SelectMap:
-  Enabled: true
-Performance/StartWith:
-  Enabled: true
-Performance/StringReplacement:
-  Enabled: true
-Performance/UnfreezeString:
-  Enabled: true
-
-Rails/AssertNot: # Prefer assert_not over assert !
-  Include:
-    - "**/test/**/*"
-Rails/RefuteMethods: # Prefer assert_not_x over refute_x
-  Include:
-    - "**/test/**/*"
-Rails/IndexBy:
-  Enabled: true
-Rails/IndexWith:
-  Enabled: true
+  TargetRubyVersion: 3.4

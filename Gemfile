@@ -91,11 +91,7 @@ group :development, :test do
   gem "rails-controller-testing"
   gem "spring"
   gem "spring-watcher-listen"
-  gem "rubocop"
-  gem "rubocop-minitest"
-  gem "rubocop-performance"
-  gem "rubocop-rails"
-  gem "rubocop-rails-omakase"
+  gem "rubocop-eirvandelden", github: "eirvandelden/rubocop-eirvandelden", require: false
 end
 
 group :test do
