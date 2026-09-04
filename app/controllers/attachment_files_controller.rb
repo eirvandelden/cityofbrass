@@ -17,6 +17,8 @@ class AttachmentFilesController < ApplicationController
       Gallery::FaqImage.find_by(id: id)
     in [ "gallery", "stock_images", id, _ ]
       Gallery::StockImage.find_by(id: id)
+    in [ "gallery", "map_images", id, _ ]
+      Gallery::MapImage.find_by(id: id)
     else
       nil
     end
@@ -26,7 +28,7 @@ class AttachmentFilesController < ApplicationController
     case attachment_record
     when Gallery::FaqImage
       admin_signed_in?
-    when Gallery::StockImage
+    when Gallery::StockImage, Gallery::MapImage
       true
     else
       false
