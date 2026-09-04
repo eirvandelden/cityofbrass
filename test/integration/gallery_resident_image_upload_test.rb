@@ -3,7 +3,7 @@ require "test_helper"
 class GalleryResidentImageUploadTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
-  test "the owner views their own resident picture after uploading it, a stranger cannot" do
+  test "the owner and an admin view a resident's picture; a stranger and an anonymous visitor cannot" do
     sign_in users(:dan)
     upload = Rack::Test::UploadedFile.new(
       Gallery::Engine.root.join("app/assets/images/gallery/blank_image.png"), "image/png"
@@ -27,5 +27,15 @@ class GalleryResidentImageUploadTest < ActionDispatch::IntegrationTest
     get picture_src
 
     assert_response :forbidden
+
+    sign_out :user
+    get picture_src
+
+    assert_response :forbidden
+
+    sign_in admins(:dan)
+    get picture_src
+
+    assert_response :success
   end
 end
