@@ -15,27 +15,6 @@ class PaperclipFilesTest < ActionDispatch::IntegrationTest
     FileUtils.rm_f(file) if file
   end
 
-  test "does not serve resident image files to anonymous users" do
-    image = resident_image
-
-    get image.file.url(:original)
-
-    assert_response :forbidden
-  ensure
-    image&.destroy
-  end
-
-  test "serves resident image files to the owner" do
-    image = resident_image
-    sign_in users(:dan)
-
-    get image.file.url(:original)
-
-    assert_response :success
-  ensure
-    image&.destroy
-  end
-
   test "serves importer preview files to the owner" do
     preview = Importer::Preview.create!(resident: residents(:razune), mode: Importer::Preview::RESIDENT_CONTENT,
                                         source: Importer::Preview::GAME_MASTER_5_XML, status: "parsing")
@@ -90,14 +69,6 @@ class PaperclipFilesTest < ActionDispatch::IntegrationTest
   end
 
   private
-
-  def resident_image
-    Gallery::ResidentImage.create!(name: "Resident", resident: residents(:razune), file: image_upload)
-  end
-
-  def image_upload
-    Rack::Test::UploadedFile.new(Gallery::Engine.root.join("app/assets/images/gallery/blank_image.png"), "image/png")
-  end
 
   def importer_fixture_file
     Importer::Engine.root.join("test/fixtures/files/importer/sample_compendium.xml")

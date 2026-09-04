@@ -1,4 +1,6 @@
 module Gallery
+  # Included per-model rather than placed on Gallery::Image so it never collided with
+  # Gallery::ResidentImage's has_attached_file macro while that model was still on Paperclip.
   module HasAttachedPicture
     extend ActiveSupport::Concern
 

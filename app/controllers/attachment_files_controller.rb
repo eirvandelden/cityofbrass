@@ -19,6 +19,8 @@ class AttachmentFilesController < ApplicationController
       Gallery::StockImage.find_by(id: id)
     in [ "gallery", "map_images", id, _ ]
       Gallery::MapImage.find_by(id: id)
+    in [ "gallery", "resident_images", id, _ ]
+      Gallery::ResidentImage.find_by(id: id)
     else
       nil
     end
@@ -30,6 +32,8 @@ class AttachmentFilesController < ApplicationController
       admin_signed_in?
     when Gallery::StockImage, Gallery::MapImage
       true
+    when Gallery::ResidentImage
+      admin_signed_in? || attachment_record.resident.user_id == current_user&.id
     else
       false
     end
