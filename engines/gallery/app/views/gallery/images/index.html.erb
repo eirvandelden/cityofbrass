@@ -41,8 +41,8 @@
             </div>
           </li>
           <li class="text-center">
-            <% if image.file? %>
-            <%= link_to image_tag(image.file.url(:thumb), :alt => image.name), route_path(image) %>
+            <% if image.file_attached? %>
+            <%= link_to image_tag(image.file_url(:thumb), :alt => image.name), route_path(image) %>
             <% end %>
           </li>
         </ul>
