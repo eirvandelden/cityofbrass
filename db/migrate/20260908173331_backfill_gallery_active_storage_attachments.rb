@@ -15,17 +15,24 @@ class BackfillGalleryActiveStorageAttachments < ActiveRecord::Migration[8.1]
     stats = Hash.new(0)
 
     LEGACY_PATH_SEGMENTS.each do |sti_type, path_segment|
-      pending_gallery_images(sti_type).each do |row|
+      rows = pending_gallery_images(sti_type)
+      puts "Backfilling #{rows.length} #{sti_type} images"
+
+      rows.each do |row|
         attach_original(stats, record_id: row["id"], disk_path: gallery_image_path(path_segment, row),
           filename: row["file_file_name"], content_type: row["file_content_type"])
       end
     end
 
-    pending_resident_images.each do |row|
+    resident_rows = pending_resident_images
+    puts "Backfilling #{resident_rows.length} Gallery::ResidentImage images"
+
+    resident_rows.each do |row|
       attach_original(stats, record_id: row["id"], disk_path: resident_image_path(row),
         filename: row["file_file_name"], content_type: row["file_content_type"])
     end
 
+    puts "Done. attached=#{stats[:attached]} skipped=#{stats[:skipped]} errored=#{stats[:errored]}"
     stats
   end
 
