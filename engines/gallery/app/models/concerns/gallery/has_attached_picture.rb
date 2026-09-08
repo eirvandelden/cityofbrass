@@ -21,6 +21,10 @@ module Gallery
       def max_file_size
         2.megabytes
       end
+
+      def total_byte_size
+        joins(file_attachment: :blob).sum("active_storage_blobs.byte_size")
+      end
     end
 
     def file_attached?

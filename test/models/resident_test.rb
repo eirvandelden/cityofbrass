@@ -8,4 +8,14 @@ class ResidentTest < ActiveSupport::TestCase
     assert_equal [:user, :user_id], resident.errors.attribute_names
   end
 
+  test "resident_images_sum reflects the actual stored size of attached pictures" do
+    resident = residents(:razune)
+    picture = Gallery::ResidentImage.create!(name: "Portrait", resident: resident,
+      file: { io: File.open(Rails.root.join("test/fixtures/files/sample.png")), filename: "sample.png", content_type: "image/png" })
+
+    expected_kb = (picture.file.blob.byte_size / 1000.0).round(1)
+
+    assert_equal "#{expected_kb} KB", resident.resident_images_sum
+  end
+
 end

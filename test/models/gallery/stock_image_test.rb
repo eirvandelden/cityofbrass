@@ -35,6 +35,13 @@ module Gallery
       assert_includes image.errors.attribute_names, :file
     end
 
+    test "sums the actual stored byte size of every stock picture" do
+      first = StockImage.create!(name: "Stock", file: sample_picture)
+      second = StockImage.create!(name: "Stock 2", file: sample_picture)
+
+      assert_equal first.file.blob.byte_size + second.file.blob.byte_size, StockImage.total_byte_size
+    end
+
     private
 
     def sample_picture
