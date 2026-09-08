@@ -27,7 +27,7 @@
         </li>
         <li style="padding-top: 10px;">
           <% unless entity.gallery_image.nil? %>
-            <%= link_to image_tag(entity.gallery_image.file.url(:thumb), align: "left", style: "max-height:100px; max-width:100px; padding-right:10px;"), route_path(entity) %>
+            <%= link_to image_tag(entity.gallery_image.file_url(:thumb), align: "left", style: "max-height:100px; max-width:100px; padding-right:10px;"), route_path(entity) %>
           <% end %>
           <%= entity.short_description %>
         </li>

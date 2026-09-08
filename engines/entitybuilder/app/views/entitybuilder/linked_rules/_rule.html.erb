@@ -8,7 +8,7 @@
   %>
   <hr class="faded">
   <% unless @linked_rule.rule.gallery_image.nil? %>
-    <%= link_to (image_tag @linked_rule.rule.gallery_image.file.url(:medium), :alt => @linked_rule.rule.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@linked_rule.rule.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
+    <%= link_to (image_tag @linked_rule.rule.gallery_image.file_url(:medium), :alt => @linked_rule.rule.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@linked_rule.rule.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
   <% end %>
 
   <% if @linked_rule.rule.prerequisites? && %w[dnd5e generic].include?(@linked_rule.rule.core_rules) %><p class="italic"><strong>Prerequisites:</strong> <%= @linked_rule.rule.prerequisites %></p><% end %>
