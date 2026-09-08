@@ -56,6 +56,54 @@ class PaperclipFilesTest < ActionDispatch::IntegrationTest
     FileUtils.rm_f(file) if file
   end
 
+  test "redirects a legacy faq image url to the new attachment url" do
+    faq_image = gallery_images(:faq_one)
+
+    get "/paperclip/gallery/faq-images/#{faq_image.id}/thumb.png"
+
+    assert_redirected_to "/attachments/gallery/faq_images/#{faq_image.id}/thumb"
+    assert_equal 301, response.status
+  end
+
+  test "redirects a legacy stock image url to the new attachment url" do
+    stock_image = gallery_images(:stock_one)
+
+    get "/paperclip/gallery/stock-images/#{stock_image.id}/original.jpg"
+
+    assert_redirected_to "/attachments/gallery/stock_images/#{stock_image.id}/original"
+    assert_equal 301, response.status
+  end
+
+  test "redirects a legacy map image url to the new attachment url" do
+    map_image = gallery_images(:map_one)
+
+    get "/paperclip/gallery/map-images/#{map_image.id}/medium.png"
+
+    assert_redirected_to "/attachments/gallery/map_images/#{map_image.id}/medium"
+    assert_equal 301, response.status
+  end
+
+  test "redirects a legacy resident image url to the new attachment url" do
+    resident_image = gallery_images(:resident_one)
+    resident_id = resident_image.resident_id
+    part_id = resident_id[0, 3].chars.join("/")
+
+    get "/paperclip/gallery/residents/#{part_id}/#{resident_id}/images/#{resident_image.id}/thumb.png"
+
+    assert_redirected_to "/attachments/gallery/resident_images/#{resident_image.id}/thumb"
+    assert_equal 301, response.status
+  end
+
+  test "following a legacy faq image redirect as a non-admin is still refused" do
+    faq_image = gallery_images(:faq_one)
+    sign_in users(:dan)
+
+    get "/paperclip/gallery/faq-images/#{faq_image.id}/thumb.png"
+    follow_redirect!
+
+    assert_response :forbidden
+  end
+
   private
 
   def importer_fixture_file

@@ -1,5 +1,7 @@
 class PaperclipFilesController < ApplicationController
   def show
+    return redirect_to(legacy_gallery_redirect_path, status: :moved_permanently) if legacy_gallery_redirect_path
+
     requested_file = requested_storage_file
     return head :not_found unless requested_file
     return head :not_found unless attachment_record
@@ -13,6 +15,25 @@ class PaperclipFilesController < ApplicationController
   end
 
   private
+
+  def legacy_gallery_redirect_path
+    case path_segments
+    in [ "gallery", "faq-images", id, style_with_extension ]
+      "/attachments/gallery/faq_images/#{id}/#{style_from(style_with_extension)}"
+    in [ "gallery", "stock-images", id, style_with_extension ]
+      "/attachments/gallery/stock_images/#{id}/#{style_from(style_with_extension)}"
+    in [ "gallery", "map-images", id, style_with_extension ]
+      "/attachments/gallery/map_images/#{id}/#{style_from(style_with_extension)}"
+    in [ "gallery", "residents", _, _, _, _resident_id, "images", id, style_with_extension ]
+      "/attachments/gallery/resident_images/#{id}/#{style_from(style_with_extension)}"
+    else
+      nil
+    end
+  end
+
+  def style_from(style_with_extension)
+    File.basename(style_with_extension, ".*")
+  end
 
   def storage_path
     Rails.root.join("storage", "paperclip")
