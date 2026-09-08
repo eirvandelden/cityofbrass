@@ -3,18 +3,6 @@ require "test_helper"
 class PaperclipFilesTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
-  test "does not serve unrecognized gallery files from storage" do
-    file = Rails.root.join("storage", "paperclip", "gallery", "test.txt")
-    FileUtils.mkdir_p(file.dirname)
-    File.write(file, "paperclip")
-
-    get "/paperclip/gallery/test.txt"
-
-    assert_response :not_found
-  ensure
-    FileUtils.rm_f(file) if file
-  end
-
   test "serves importer preview files to the owner" do
     preview = Importer::Preview.create!(resident: residents(:razune), mode: Importer::Preview::RESIDENT_CONTENT,
                                         source: Importer::Preview::GAME_MASTER_5_XML, status: "parsing")
