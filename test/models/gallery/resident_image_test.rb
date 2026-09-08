@@ -35,6 +35,15 @@ module Gallery
       assert_includes image.errors.attribute_names, :file
     end
 
+    test "a resident picture rejects a file whose declared type does not match its real bytes" do
+      spoofed = StringIO.new("a" * 100)
+      image = ResidentImage.new(name: "Portrait", resident: residents(:razune),
+        file: { io: spoofed, filename: "big.png", content_type: "image/png" })
+
+      assert_not image.valid?
+      assert_includes image.errors.attribute_names, :file
+    end
+
     private
 
     def sample_picture

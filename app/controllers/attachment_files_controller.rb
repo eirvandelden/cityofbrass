@@ -45,8 +45,21 @@ class AttachmentFilesController < ApplicationController
     style = path_segments.last
     return attachment_record.file if style == "original"
 
-    attachment_record.file.variant(style.to_sym).processed
+    variant = requested_named_variant(style)
+    return unless variant
+
+    processed_variant(variant)
+  end
+
+  def requested_named_variant(style)
+    attachment_record.file.variant(style.to_sym)
   rescue ArgumentError
+    nil
+  end
+
+  def processed_variant(variant)
+    variant.processed
+  rescue Vips::Error
     nil
   end
 

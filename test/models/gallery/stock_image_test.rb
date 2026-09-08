@@ -35,6 +35,15 @@ module Gallery
       assert_includes image.errors.attribute_names, :file
     end
 
+    test "a stock picture rejects a file whose declared type does not match its real bytes" do
+      spoofed = StringIO.new("a" * 100)
+      image = StockImage.new(name: "Stock",
+        file: { io: spoofed, filename: "big.png", content_type: "image/png" })
+
+      assert_not image.valid?
+      assert_includes image.errors.attribute_names, :file
+    end
+
     test "sums the actual stored byte size of every stock picture" do
       first = StockImage.create!(name: "Stock", file: sample_picture)
       second = StockImage.create!(name: "Stock 2", file: sample_picture)

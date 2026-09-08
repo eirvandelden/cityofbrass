@@ -42,4 +42,14 @@ class GalleryStockImageUploadTest < ActionDispatch::IntegrationTest
 
     assert_response :not_found
   end
+
+  test "a corrupted picture returns not found instead of crashing when its thumbnail is requested" do
+    image = Gallery::StockImage.new(name: "Corrupted stock picture")
+    image.file.attach(io: StringIO.new("not a real image"), filename: "big.png", content_type: "image/png")
+    image.save(validate: false)
+
+    get "/attachments/gallery/stock_images/#{image.id}/thumb"
+
+    assert_response :not_found
+  end
 end
