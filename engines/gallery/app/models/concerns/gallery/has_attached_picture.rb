@@ -43,7 +43,7 @@ module Gallery
     private
 
     def file_is_an_allowed_content_type
-      return unless attachment_changes["file"]
+      return unless pending_upload
 
       errors.add(:file, "must be a JPEG, PNG or GIF") unless sniffed_content_type.in?(ALLOWED_CONTENT_TYPES)
     end
@@ -52,15 +52,22 @@ module Gallery
     # falls back to the declared type or the filename extension whenever it can't identify the
     # bytes by magic number, so passing name/declared_type here would let a mislabeled file through.
     def sniffed_content_type
-      Marcel::MimeType.for(pending_attachable_io(attachment_changes["file"].attachable))
+      Marcel::MimeType.for(pending_attachable_io(pending_upload.attachable))
     end
 
     def pending_attachable_io(attachable)
       attachable.is_a?(Hash) ? attachable.fetch(:io) : attachable.open
     end
 
+    # attachment_changes["file"] is also present for a pending removal (assigning file: nil),
+    # which has no #attachable — only a change that is actually uploading a new file does.
+    def pending_upload
+      change = attachment_changes["file"]
+      change if change.respond_to?(:attachable)
+    end
+
     def file_is_within_the_size_limit
-      return unless attachment_changes["file"]
+      return unless pending_upload
 
       return unless file.blob.byte_size > self.class.max_file_size
 

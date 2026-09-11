@@ -29,10 +29,11 @@ module GalleryPictureValidationsTest
     end
 
     test "rejects when no file is attached at all" do
-      image = build_picture
+      assert_file_invalid(build_picture)
+    end
 
-      assert_not image.valid?
-      assert_includes image.errors.attribute_names, :file
+    test "rejects a file explicitly set to nil instead of crashing" do
+      assert_file_invalid(build_picture(file: nil))
     end
   end
 
@@ -41,6 +42,10 @@ module GalleryPictureValidationsTest
   def assert_picture_invalid(io:, filename:, content_type:)
     image = build_picture(file: { io: io, filename: filename, content_type: content_type })
 
+    assert_file_invalid(image)
+  end
+
+  def assert_file_invalid(image)
     assert_not image.valid?
     assert_includes image.errors.attribute_names, :file
   end
