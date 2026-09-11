@@ -21,6 +21,7 @@ class GalleryFaqImageUploadTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_equal upload.read, response.body
+    assert_includes response.headers["Cache-Control"], "private"
   end
 
   test "an administrator sees a resized thumbnail of the help picture" do

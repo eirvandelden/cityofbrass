@@ -6,10 +6,20 @@ class AttachmentFilesController < ApplicationController
     variant = requested_variant
     return head :not_found unless variant
 
+    expires_in 1.day, public: publicly_cacheable?
     send_data variant.download, type: variant.content_type, disposition: "inline"
   end
 
   private
+
+  def publicly_cacheable?
+    case attachment_record
+    when Gallery::StockImage, Gallery::MapImage
+      true
+    else
+      false
+    end
+  end
 
   def attachment_record
     @attachment_record ||= case path_segments

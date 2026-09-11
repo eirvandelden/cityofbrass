@@ -6,8 +6,8 @@ module Gallery
 
     included do
       has_one_attached :file do |attachable|
-        attachable.variant :thumb, resize_to_limit: [ 200, 200 ]
-        attachable.variant :medium, resize_to_limit: [ 400, 400 ]
+        attachable.variant :thumb, resize_to_limit: [ 200, 200 ], preprocessed: true
+        attachable.variant :medium, resize_to_limit: [ 400, 400 ], preprocessed: true
       end
 
       validates :file, presence: true
@@ -65,7 +65,9 @@ module Gallery
     def file_is_within_the_size_limit
       return unless file.attached?
 
-      errors.add(:file, "must be smaller than #{self.class.max_file_size / 1.megabyte}MB") if file.blob.byte_size > self.class.max_file_size
+      return unless file.blob.byte_size > self.class.max_file_size
+
+      errors.add(:file, "must be smaller than #{self.class.max_file_size / 1.megabyte}MB")
     end
   end
 end

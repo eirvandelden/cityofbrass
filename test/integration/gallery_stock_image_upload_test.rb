@@ -25,6 +25,7 @@ class GalleryStockImageUploadTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_equal upload.read, response.body
+    assert_includes response.headers["Cache-Control"], "public"
   end
 
   test "an unrecognized picture size returns not found instead of crashing" do
