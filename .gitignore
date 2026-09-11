@@ -61,3 +61,8 @@ bower.json
 
 # Ignore Paperclip upload storage
 /storage/paperclip/
+
+.claude/settings.local.json
+.claude/.cc-writes
+.claude/worktrees/
+.claude/scheduled_tasks.lock
