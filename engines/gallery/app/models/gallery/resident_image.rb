@@ -1,7 +1,5 @@
 module Gallery
   class ResidentImage < Image
-    include HasAttachedPicture
-
     belongs_to :resident, -> { select('residents.id, residents.user_id, residents.name, residents.slug') }
 
     has_one :user,

@@ -13,14 +13,8 @@ class AttachmentFilesController < ApplicationController
 
   def attachment_record
     @attachment_record ||= case path_segments
-    in [ "gallery", "faq_images", id, _ ]
-      Gallery::FaqImage.find_by(id: id)
-    in [ "gallery", "stock_images", id, _ ]
-      Gallery::StockImage.find_by(id: id)
-    in [ "gallery", "map_images", id, _ ]
-      Gallery::MapImage.find_by(id: id)
-    in [ "gallery", "resident_images", id, _ ]
-      Gallery::ResidentImage.find_by(id: id)
+    in [ "gallery", collection_name, id, _ ]
+      Gallery::Image::ATTACHMENT_SEGMENTS[collection_name]&.constantize&.find_by(id: id)
     else
       nil
     end

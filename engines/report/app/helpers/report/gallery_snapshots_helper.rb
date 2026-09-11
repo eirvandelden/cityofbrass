@@ -6,9 +6,7 @@ module Report
     end
 
     def report_stock_gallery_size
-      sum = Gallery::StockImage.total_byte_size.to_f
-      return "#{(sum/1000000).round(1)} MB" if sum >= 1000000
-      "#{(sum/1000).round(1)} KB"
+      Gallery::Image.format_byte_size(Gallery::StockImage.total_byte_size)
     end
 
     def report_resident_image_count(status)
@@ -16,9 +14,7 @@ module Report
     end
 
     def report_resident_gallery_size(status)
-      sum = Gallery::ResidentImage.joins(:user).where("users.status in (?)", status).total_byte_size.to_f
-      return "#{(sum/1000000).round(1)} MB" if sum >= 1000000
-      "#{(sum/1000).round(1)} KB"
+      Gallery::Image.format_byte_size(Gallery::ResidentImage.joins(:user).where("users.status in (?)", status).total_byte_size)
     end
 
   end
