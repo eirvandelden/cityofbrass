@@ -6,7 +6,7 @@ module Gallery
     test "resident should have the necessary required validators" do
       image = ResidentImage.new(name: "ResidentTest")
       assert_not image.valid?
-      assert_equal [:file, :resident, :resident_id], image.errors.attribute_names
+      assert_equal [:file, :resident, :resident_id].sort, image.errors.attribute_names.sort
     end
 
     test "stock should have the necessary required validators" do
