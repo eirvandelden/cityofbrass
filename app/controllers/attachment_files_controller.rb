@@ -6,8 +6,11 @@ class AttachmentFilesController < ApplicationController
     variant = requested_variant
     return head :not_found unless variant
 
+    data = downloaded(variant)
+    return head :not_found unless data
+
     expires_in 1.day, public: publicly_cacheable?
-    send_data variant.download, type: variant.content_type, disposition: "inline"
+    send_data data, type: variant.content_type, disposition: "inline"
   end
 
   private
@@ -63,7 +66,13 @@ class AttachmentFilesController < ApplicationController
 
   def processed_variant(variant)
     variant.processed
-  rescue Vips::Error
+  rescue Vips::Error, ActiveStorage::FileNotFoundError
+    nil
+  end
+
+  def downloaded(variant)
+    variant.download
+  rescue ActiveStorage::FileNotFoundError
     nil
   end
 

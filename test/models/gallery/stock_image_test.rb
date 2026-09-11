@@ -44,6 +44,23 @@ module Gallery
       assert_includes image.errors.attribute_names, :file
     end
 
+    test "renaming an existing stock picture does not re-download the file to re-check its content type" do
+      image = StockImage.create!(name: "Stock", file: sample_picture)
+      image = StockImage.find(image.id)
+      streamed_download = false
+      subscriber = ActiveSupport::Notifications.subscribe("service_streaming_download.active_storage") do
+        streamed_download = true
+      end
+
+      begin
+        image.update!(name: "Renamed stock picture")
+      ensure
+        ActiveSupport::Notifications.unsubscribe(subscriber)
+      end
+
+      assert_not streamed_download
+    end
+
     test "sums the actual stored byte size of every stock picture" do
       first = StockImage.create!(name: "Stock", file: sample_picture)
       second = StockImage.create!(name: "Stock 2", file: sample_picture)

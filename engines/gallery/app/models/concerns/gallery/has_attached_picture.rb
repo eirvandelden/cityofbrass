@@ -2,7 +2,7 @@ module Gallery
   module HasAttachedPicture
     extend ActiveSupport::Concern
 
-    ALLOWED_CONTENT_TYPES = %w[image/jpeg image/png image/gif]
+    ALLOWED_CONTENT_TYPES = %w[image/jpeg image/png image/gif].freeze
 
     included do
       has_one_attached :file do |attachable|
@@ -43,7 +43,7 @@ module Gallery
     private
 
     def file_is_an_allowed_content_type
-      return unless file.attached?
+      return unless attachment_changes["file"]
 
       errors.add(:file, "must be a JPEG, PNG or GIF") unless sniffed_content_type.in?(ALLOWED_CONTENT_TYPES)
     end
@@ -52,10 +52,7 @@ module Gallery
     # falls back to the declared type or the filename extension whenever it can't identify the
     # bytes by magic number, so passing name/declared_type here would let a mislabeled file through.
     def sniffed_content_type
-      pending_upload = attachment_changes["file"]
-      return Marcel::MimeType.for(pending_attachable_io(pending_upload.attachable)) if pending_upload
-
-      file.blob.open { |io| Marcel::MimeType.for(io) }
+      Marcel::MimeType.for(pending_attachable_io(attachment_changes["file"].attachable))
     end
 
     def pending_attachable_io(attachable)
@@ -63,7 +60,7 @@ module Gallery
     end
 
     def file_is_within_the_size_limit
-      return unless file.attached?
+      return unless attachment_changes["file"]
 
       return unless file.blob.byte_size > self.class.max_file_size
 

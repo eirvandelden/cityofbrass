@@ -53,4 +53,21 @@ class GalleryStockImageUploadTest < ActionDispatch::IntegrationTest
 
     assert_response :not_found
   end
+
+  test "a picture whose stored file was deleted returns not found instead of crashing" do
+    image = Gallery::StockImage.create!(name: "Stock picture with a missing file", file: sample_picture)
+    image.file.blob.service.delete(image.file.blob.key)
+
+    get "/attachments/gallery/stock_images/#{image.id}/original"
+    assert_response :not_found
+
+    get "/attachments/gallery/stock_images/#{image.id}/thumb"
+    assert_response :not_found
+  end
+
+  private
+
+  def sample_picture
+    { io: File.open(Gallery::Engine.root.join("app/assets/images/gallery/blank_image.png")), filename: "sample.png", content_type: "image/png" }
+  end
 end

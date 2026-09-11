@@ -1,6 +1,8 @@
 class PaperclipFilesController < ApplicationController
   def show
-    return redirect_to(legacy_gallery_redirect_path, status: :moved_permanently) if legacy_gallery_redirect_path
+    if (redirect_path = legacy_gallery_redirect_path)
+      return redirect_to(redirect_path, status: :moved_permanently)
+    end
 
     requested_file = requested_storage_file
     return head :not_found unless requested_file
