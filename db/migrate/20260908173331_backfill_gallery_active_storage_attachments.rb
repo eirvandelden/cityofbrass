@@ -33,6 +33,13 @@ class BackfillGalleryActiveStorageAttachments < ActiveRecord::Migration[8.1]
     end
 
     puts "Done. attached=#{stats[:attached]} skipped=#{stats[:skipped]} errored=#{stats[:errored]}"
+
+    if stats[:errored].positive? || stats[:skipped].positive?
+      raise "Gallery backfill did not complete: #{stats[:errored]} row(s) errored, " \
+            "#{stats[:skipped]} row(s) skipped (missing source file). Fix the underlying issue " \
+            "and re-run — this migration is idempotent and safe to retry."
+    end
+
     stats
   end
 

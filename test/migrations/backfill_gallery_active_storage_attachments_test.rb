@@ -7,7 +7,7 @@ class BackfillGalleryActiveStorageAttachmentsTest < ActiveSupport::TestCase
   end
 
   teardown do
-    @written_files.each { |file| FileUtils.rm_f(file) }
+    @written_files.each { |file| FileUtils.rm_rf(file) }
   end
 
   test "attaches the legacy original file to a faq image" do
@@ -32,16 +32,33 @@ class BackfillGalleryActiveStorageAttachmentsTest < ActiveSupport::TestCase
     assert_equal 1, attachments.count
   end
 
-  test "skips a legacy record whose disk file is missing without raising, and still backfills others" do
+  test "raises when a legacy record's disk file is missing, but still backfills the others first" do
     missing_id = insert_legacy_image("Gallery::MapImage")
     present_id = insert_legacy_image("Gallery::MapImage")
     write_legacy_file(legacy_path("map-images", present_id))
 
-    assert_nothing_raised do
+    error = assert_raises(RuntimeError) do
       BackfillGalleryActiveStorageAttachments.new.up
     end
+    assert_match(/1 row\(s\) skipped/, error.message)
 
     assert_not Gallery::MapImage.find(missing_id).file.attached?
+    assert Gallery::MapImage.find(present_id).file.attached?
+  end
+
+  test "raises when attaching a record errors unexpectedly, but still backfills the others first" do
+    broken_id = insert_legacy_image("Gallery::MapImage")
+    present_id = insert_legacy_image("Gallery::MapImage")
+    FileUtils.mkdir_p(legacy_path("map-images", broken_id))
+    @written_files << legacy_path("map-images", broken_id)
+    write_legacy_file(legacy_path("map-images", present_id))
+
+    error = assert_raises(RuntimeError) do
+      BackfillGalleryActiveStorageAttachments.new.up
+    end
+    assert_match(/1 row\(s\) errored/, error.message)
+
+    assert_not Gallery::MapImage.find(broken_id).file.attached?
     assert Gallery::MapImage.find(present_id).file.attached?
   end
 
