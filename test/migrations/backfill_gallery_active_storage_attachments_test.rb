@@ -45,6 +45,16 @@ class BackfillGalleryActiveStorageAttachmentsTest < ActiveSupport::TestCase
     assert Gallery::MapImage.find(present_id).file.attached?
   end
 
+  test "reports progress as it runs, so a live db:migrate log shows more than silence" do
+    id = insert_legacy_image("Gallery::FaqImage")
+    write_legacy_file(legacy_path("faq-images", id))
+
+    output, = capture_io { BackfillGalleryActiveStorageAttachments.new.up }
+
+    assert_match(/Backfilling 1 Gallery::FaqImage images/, output)
+    assert_match(/Done\. attached=1 skipped=0 errored=0/, output)
+  end
+
   test "attaches the legacy original file to a resident image using the sharded path" do
     resident_id = residents(:razune).id
     id = insert_legacy_image("Gallery::ResidentImage", resident_id: resident_id)
