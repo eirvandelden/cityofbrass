@@ -1,44 +1,26 @@
 require "test_helper"
+require_relative "../../support/gallery_picture_validations_test"
 
 module Gallery
   class MapImageTest < ActiveSupport::TestCase
-    test "a map picture attaches the uploaded file" do
-      image = MapImage.new(name: "Map", file: sample_picture)
+    include GalleryPictureValidationsTest
 
-      image.save!
-
-      assert image.file.attached?
-    end
-
-    test "a map picture has a thumb and a medium variant" do
+    test "a map picture processes a real thumbnail variant of the original file" do
       image = MapImage.create!(name: "Map", file: sample_picture)
 
-      assert_not_equal image.file_url(:thumb), image.file_url(:medium)
-      assert_not_equal image.file_url(:thumb), image.file_url(:original)
-    end
+      thumbnail = image.file.variant(:thumb).processed.download
 
-    test "a map picture rejects a file larger than 2 megabytes" do
-      oversized = StringIO.new("a" * 3.megabytes)
-      image = MapImage.new(name: "Map",
-        file: { io: oversized, filename: "big.png", content_type: "image/png" })
-
-      assert_not image.valid?
-      assert_includes image.errors.attribute_names, :file
-    end
-
-    test "a map picture rejects a file that is not an image" do
-      document = StringIO.new("not a picture")
-      image = MapImage.new(name: "Map",
-        file: { io: document, filename: "notes.txt", content_type: "text/plain" })
-
-      assert_not image.valid?
-      assert_includes image.errors.attribute_names, :file
+      assert_not_equal image.file.download, thumbnail
     end
 
     private
 
-    def sample_picture
-      { io: File.open(Rails.root.join("test/fixtures/files/sample.png")), filename: "sample.png", content_type: "image/png" }
+    def picture_class
+      MapImage
+    end
+
+    def picture_attributes
+      { name: "Map" }
     end
   end
 end
