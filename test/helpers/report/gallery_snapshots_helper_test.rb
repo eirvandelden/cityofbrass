@@ -47,7 +47,8 @@ module Report
     private
 
     def sample_picture
-      { io: File.open(Rails.root.join("test/fixtures/files/sample.png")), filename: "sample.png", content_type: "image/png" }
+      { io: File.open(Rails.root.join("test/fixtures/files/sample.png")), filename: "sample.png",
+content_type: "image/png" }
     end
   end
 end

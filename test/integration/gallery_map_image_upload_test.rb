@@ -14,6 +14,7 @@ class GalleryMapImageUploadTest < ActionDispatch::IntegrationTest
     image = Gallery::MapImage.find_by!(name: "Uploaded map picture")
 
     get gallery.map_image_path(image)
+
     assert_response :success
 
     picture_src = css_select("#originalLabel + input")[0]["value"]

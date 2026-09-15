@@ -10,8 +10,9 @@ class ResidentTest < ActiveSupport::TestCase
 
   test "resident_images_sum reflects the actual stored size of attached pictures" do
     resident = residents(:razune)
-    picture = Gallery::ResidentImage.create!(name: "Portrait", resident: resident,
-      file: { io: File.open(Rails.root.join("test/fixtures/files/sample.png")), filename: "sample.png", content_type: "image/png" })
+    file = { io: File.open(Rails.root.join("test/fixtures/files/sample.png")),
+             filename: "sample.png", content_type: "image/png" }
+    picture = Gallery::ResidentImage.create!(name: "Portrait", resident: resident, file: file)
 
     expected_kb = (picture.file.blob.byte_size / 1000.0).round(1)
 

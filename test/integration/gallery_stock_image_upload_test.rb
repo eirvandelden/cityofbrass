@@ -14,6 +14,7 @@ class GalleryStockImageUploadTest < ActionDispatch::IntegrationTest
     image = Gallery::StockImage.find_by!(name: "Uploaded stock picture")
 
     get gallery.stock_image_path(image)
+
     assert_response :success
 
     picture_src = css_select("#originalLabel + input")[0]["value"]
@@ -59,9 +60,11 @@ class GalleryStockImageUploadTest < ActionDispatch::IntegrationTest
     image.file.blob.service.delete(image.file.blob.key)
 
     get "/attachments/gallery/stock_images/#{image.id}/original"
+
     assert_response :not_found
 
     get "/attachments/gallery/stock_images/#{image.id}/thumb"
+
     assert_response :not_found
   end
 

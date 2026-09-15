@@ -17,7 +17,8 @@ class BackfillGalleryActiveStorageAttachmentsTest < ActiveSupport::TestCase
     BackfillGalleryActiveStorageAttachments.new.up
 
     image = Gallery::FaqImage.find(id)
-    assert image.file.attached?
+
+    assert_predicate image.file, :attached?
     assert_equal sample_file_bytes, image.file.download
   end
 
@@ -29,6 +30,7 @@ class BackfillGalleryActiveStorageAttachmentsTest < ActiveSupport::TestCase
     BackfillGalleryActiveStorageAttachments.new.up
 
     attachments = ActiveStorage::Attachment.where(record_type: "Gallery::Image", record_id: id, name: "file")
+
     assert_equal 1, attachments.count
   end
 
@@ -43,7 +45,7 @@ class BackfillGalleryActiveStorageAttachmentsTest < ActiveSupport::TestCase
     assert_match(/1 row\(s\) skipped/, error.message)
 
     assert_not Gallery::MapImage.find(missing_id).file.attached?
-    assert Gallery::MapImage.find(present_id).file.attached?
+    assert_predicate Gallery::MapImage.find(present_id).file, :attached?
   end
 
   test "raises when attaching a record errors unexpectedly, but still backfills the others first" do
@@ -59,7 +61,7 @@ class BackfillGalleryActiveStorageAttachmentsTest < ActiveSupport::TestCase
     assert_match(/1 row\(s\) errored/, error.message)
 
     assert_not Gallery::MapImage.find(broken_id).file.attached?
-    assert Gallery::MapImage.find(present_id).file.attached?
+    assert_predicate Gallery::MapImage.find(present_id).file, :attached?
   end
 
   test "reports progress as it runs, so a live db:migrate log shows more than silence" do
@@ -77,17 +79,23 @@ class BackfillGalleryActiveStorageAttachmentsTest < ActiveSupport::TestCase
     id = insert_legacy_image("Gallery::ResidentImage", resident_id: resident_id)
     part_id = resident_id[0, 3].chars
     write_legacy_file(
-      Rails.root.join("storage", "paperclip", "gallery", "residents", *part_id, resident_id, "images", id, "original.png")
+      Rails.root.join("storage", "paperclip", "gallery", "residents", *part_id, resident_id, "images", id,
+"original.png")
     )
 
     BackfillGalleryActiveStorageAttachments.new.up
 
     image = Gallery::ResidentImage.find(id)
-    assert image.file.attached?
+
+    assert_predicate image.file, :attached?
     assert_equal sample_file_bytes, image.file.download
   end
 
   private
+    def connection
+      ActiveRecord::Base.connection
+    end
+
     def insert_legacy_image(type, resident_id: nil)
       id = SecureRandom.uuid
       connection.execute(<<~SQL)
@@ -119,9 +127,5 @@ class BackfillGalleryActiveStorageAttachmentsTest < ActiveSupport::TestCase
 
     def sample_file_bytes
       @sample_file_bytes ||= File.binread(Rails.root.join("test/fixtures/files/sample.png"))
-    end
-
-    def connection
-      ActiveRecord::Base.connection
     end
 end

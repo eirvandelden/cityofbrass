@@ -14,7 +14,8 @@ module Report
     end
 
     def report_resident_gallery_size(status)
-      Gallery::Image.format_byte_size(Gallery::ResidentImage.joins(:user).where("users.status in (?)", status).total_byte_size)
+      Gallery::Image.format_byte_size(Gallery::ResidentImage.joins(:user).where("users.status in (?)",
+status).total_byte_size)
     end
 
   end

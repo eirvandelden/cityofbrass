@@ -10,10 +10,12 @@ class GalleryResidentImageUploadTest < ActionDispatch::IntegrationTest
     )
 
     post gallery.resident_images_path,
-      params: { resident_image: { name: "Uploaded resident picture", resident_id: residents(:razune).id, file: upload } }
+      params: { resident_image: { name: "Uploaded resident picture", resident_id: residents(:razune).id,
+file: upload } }
     image = Gallery::ResidentImage.find_by!(name: "Uploaded resident picture")
 
     get gallery.resident_image_path(image)
+
     assert_response :success
 
     picture_src = css_select("#originalLabel + input")[0]["value"]

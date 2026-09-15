@@ -15,15 +15,6 @@ class AttachmentFilesController < ApplicationController
 
   private
 
-  def publicly_cacheable?
-    case attachment_record
-    when Gallery::StockImage, Gallery::MapImage
-      true
-    else
-      false
-    end
-  end
-
   def attachment_record
     @attachment_record ||= case path_segments
     in [ "gallery", collection_name, id, _ ]
@@ -31,6 +22,10 @@ class AttachmentFilesController < ApplicationController
     else
       nil
     end
+  end
+
+  def path_segments
+    @path_segments ||= params[:path].to_s.split("/")
   end
 
   def allowed_to_show_attachment?
@@ -76,7 +71,12 @@ class AttachmentFilesController < ApplicationController
     nil
   end
 
-  def path_segments
-    @path_segments ||= params[:path].to_s.split("/")
+  def publicly_cacheable?
+    case attachment_record
+    when Gallery::StockImage, Gallery::MapImage
+      true
+    else
+      false
+    end
   end
 end

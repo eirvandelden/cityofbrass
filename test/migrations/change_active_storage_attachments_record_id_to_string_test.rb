@@ -5,7 +5,8 @@ class ChangeActiveStorageAttachmentsRecordIdToStringTest < ActiveSupport::TestCa
     rich_text = action_text_rich_texts(:message_message1_body)
     faq_image = Gallery::FaqImage.create!(name: "pin test", file: sample_upload)
 
-    blob = ActiveStorage::Blob.create_and_upload!(io: File.open(sample_file_path), filename: "sample.png", content_type: "image/png")
+    blob = ActiveStorage::Blob.create_and_upload!(io: File.open(sample_file_path), filename: "sample.png",
+content_type: "image/png")
 
     integer_attachment = ActiveStorage::Attachment.create!(
       name: "embeds", record_type: "ActionText::RichText", record_id: rich_text.id, blob: blob

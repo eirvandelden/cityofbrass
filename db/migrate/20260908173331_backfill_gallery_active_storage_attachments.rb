@@ -65,6 +65,38 @@ class BackfillGalleryActiveStorageAttachments < ActiveRecord::Migration[8.1]
       SQL
     end
 
+    def attach_original(stats, record_id:, disk_path:, filename:, content_type:)
+      unless File.exist?(disk_path)
+        puts "  SKIP id=#{record_id}: missing file at #{disk_path}"
+        stats[:skipped] += 1
+        return
+      end
+
+      blob = File.open(disk_path) do |file|
+        ActiveStorage::Blob.create_and_upload!(io: file, filename: filename,
+          content_type: content_type.presence || "application/octet-stream")
+      end
+
+      ActiveStorage::Attachment.create!(name: "file", record_type: ATTACHMENT_RECORD_TYPE, record_id: record_id,
+blob: blob)
+      stats[:attached] += 1
+    rescue => e
+      puts "  ERROR id=#{record_id}: #{e.message}"
+      stats[:errored] += 1
+    end
+
+    def gallery_image_path(path_segment, row)
+      legacy_storage_root.join("gallery", path_segment, row["id"], "original.#{extension_for(row['file_file_name'])}")
+    end
+
+    def legacy_storage_root
+      Rails.root.join("storage", "paperclip")
+    end
+
+    def extension_for(file_file_name)
+      File.extname(file_file_name.to_s).delete_prefix(".")
+    end
+
     def pending_resident_images
       select_all(<<~SQL)
         SELECT id, resident_id, file_file_name, file_content_type
@@ -82,41 +114,10 @@ class BackfillGalleryActiveStorageAttachments < ActiveRecord::Migration[8.1]
       SQL
     end
 
-    def gallery_image_path(path_segment, row)
-      legacy_storage_root.join("gallery", path_segment, row["id"], "original.#{extension_for(row['file_file_name'])}")
-    end
-
     def resident_image_path(row)
       resident_id = row["resident_id"]
       part_id = resident_id[0, 3].chars
       legacy_storage_root.join("gallery", "residents", *part_id, resident_id, "images", row["id"],
         "original.#{extension_for(row['file_file_name'])}")
-    end
-
-    def legacy_storage_root
-      Rails.root.join("storage", "paperclip")
-    end
-
-    def extension_for(file_file_name)
-      File.extname(file_file_name.to_s).delete_prefix(".")
-    end
-
-    def attach_original(stats, record_id:, disk_path:, filename:, content_type:)
-      unless File.exist?(disk_path)
-        puts "  SKIP id=#{record_id}: missing file at #{disk_path}"
-        stats[:skipped] += 1
-        return
-      end
-
-      blob = File.open(disk_path) do |file|
-        ActiveStorage::Blob.create_and_upload!(io: file, filename: filename,
-          content_type: content_type.presence || "application/octet-stream")
-      end
-
-      ActiveStorage::Attachment.create!(name: "file", record_type: ATTACHMENT_RECORD_TYPE, record_id: record_id, blob: blob)
-      stats[:attached] += 1
-    rescue => e
-      puts "  ERROR id=#{record_id}: #{e.message}"
-      stats[:errored] += 1
     end
 end

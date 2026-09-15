@@ -7,7 +7,7 @@ module GalleryPictureValidationsTest
 
       image.save!
 
-      assert image.file.attached?
+      assert_predicate image.file, :attached?
     end
 
     test "rejects a file larger than the maximum size" do
@@ -57,6 +57,7 @@ module GalleryPictureValidationsTest
   end
 
   def sample_picture
-    { io: File.open(Rails.root.join("test/fixtures/files/sample.png")), filename: "sample.png", content_type: "image/png" }
+    { io: File.open(Rails.root.join("test/fixtures/files/sample.png")), filename: "sample.png",
+content_type: "image/png" }
   end
 end

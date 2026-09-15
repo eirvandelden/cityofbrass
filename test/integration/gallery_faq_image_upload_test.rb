@@ -14,6 +14,7 @@ class GalleryFaqImageUploadTest < ActionDispatch::IntegrationTest
     image = Gallery::FaqImage.find_by!(name: "Uploaded help picture")
 
     get gallery.faq_image_path(image)
+
     assert_response :success
 
     picture_src = css_select("#originalLabel + input")[0]["value"]
