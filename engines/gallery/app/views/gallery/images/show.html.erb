@@ -22,7 +22,7 @@
     <p><i class='fa fa-angle-double-left'></i> <%= link_to "Return to Index".html_safe, route_collection_path(@type.tableize) %></p>
   </div>
 </div>
-<% if @image.file? %>
+<% if @image.file_attached? %>
 
 <div class="row">
   <div class="medium-8 medium-centered columns">
@@ -30,8 +30,8 @@
     <div class="row">
       <div class="medium-12 columns">
         <label id="thumbLabel">Thumb</label>
-        <input type="text" value="<%= @image.file.url(:thumb) %>" id="copyThumbUrl">
-        <%= image_tag @image.file.url(:thumb), :alt => @image.name, :style => "padding-bottom:1rem;" %>
+        <input type="text" value="<%= @image.file_url(:thumb) %>" id="copyThumbUrl">
+        <%= image_tag @image.file_url(:thumb), :alt => @image.name, :style => "padding-bottom:1rem;" %>
       </div>
     </div>
 
@@ -40,8 +40,8 @@
     <div class="row">
       <div class="medium-12 columns">
         <label id="mediumLabel">Medium</label>
-        <input type="text" value="<%= @image.file.url(:medium) %>" id="copyMediumUrl">
-        <%= image_tag @image.file.url(:medium), :alt => @image.name, :style => "padding-bottom:1rem;" %>
+        <input type="text" value="<%= @image.file_url(:medium) %>" id="copyMediumUrl">
+        <%= image_tag @image.file_url(:medium), :alt => @image.name, :style => "padding-bottom:1rem;" %>
       </div>
     </div>
 
@@ -50,8 +50,8 @@
     <div class="row">
       <div class="medium-12 columns">
         <label id="originalLabel">Original</label>
-        <input type="text" value="<%= @image.file.url(:original) %>" id="copyOriginalUrl">
-        <%= image_tag @image.file.url(:original), :alt => @image.name, :style => "padding-bottom:1rem; max-width:800px; max-height:800px;" %>
+        <input type="text" value="<%= @image.file_url(:original) %>" id="copyOriginalUrl">
+        <%= image_tag @image.file_url(:original), :alt => @image.name, :style => "padding-bottom:1rem; max-width:800px; max-height:800px;" %>
       </div>
     </div>
 

@@ -9,7 +9,7 @@
   %>
   <hr class="faded">
   <% unless @spell.gallery_image.nil? %>
-    <%= link_to (image_tag @spell.gallery_image.file.url(:medium), :alt => @spell.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@spell.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
+    <%= link_to (image_tag @spell.gallery_image.file_url(:medium), :alt => @spell.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@spell.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
   <% end %>
 
   <%= render :partial => 'rulebuilder/spells/spell_details', :locals => { :spell => @spell } %>

@@ -25,7 +25,7 @@
     <hr class="faded">
 
     <% unless @adventure.gallery_image.nil? %>
-      <%= link_to (image_tag @adventure.gallery_image.file.url(:medium), :alt => @adventure.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@adventure.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
+      <%= link_to (image_tag @adventure.gallery_image.file_url(:medium), :alt => @adventure.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@adventure.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
     <% end %>
 
     <%= render :partial =>'features' %>

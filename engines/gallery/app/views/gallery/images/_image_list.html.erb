@@ -3,10 +3,10 @@
     <div class="row">
     <% slice.each do |image| %>
       <div class="medium-2 columns text-center">
-        <div class="image-pick-list" id="<%= image.id %>" data-url="<%= image.file.url(:thumb) %>">
+        <div class="image-pick-list" id="<%= image.id %>" data-url="<%= image.file_url(:thumb) %>">
           <h5><%= image.name %></h5>
-          <% if image.file? %>
-            <%= image_tag image.file.url(:thumb) %>
+          <% if image.file_attached? %>
+            <%= image_tag image.file_url(:thumb) %>
           <% end %>
         </div>
       </div>

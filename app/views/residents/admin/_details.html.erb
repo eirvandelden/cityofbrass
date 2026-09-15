@@ -35,7 +35,7 @@
     <div class="small-5 columns text-center">
       <p>
         <% unless @resident.gallery_image.nil? %>
-          <%= image_tag @resident.gallery_image.file.url(:thumb), :alt => @resident.name %>
+          <%= image_tag @resident.gallery_image.file_url(:thumb), :alt => @resident.name %>
         <% else %>
           <%= image_tag "Halfling-A.jpg" %>
         <% end %>

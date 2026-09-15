@@ -34,7 +34,7 @@
       <div class="medium-4 columns">
         <% unless @campaign.gallery_image.nil? %>
           <p class="text-center">
-            <%= link_to (image_tag @campaign.gallery_image.file.url(:medium), :alt => @campaign.name, class: "images_space"), "#{gallery.polymorphic_path(@campaign.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
+            <%= link_to (image_tag @campaign.gallery_image.file_url(:medium), :alt => @campaign.name, class: "images_space"), "#{gallery.polymorphic_path(@campaign.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
           </p>
         <% end %>
 

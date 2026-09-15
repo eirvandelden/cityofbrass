@@ -8,7 +8,7 @@
       <% unless @resident.new_record? %>
         <%= f.fields_for :gallery_image_join do |p| %>
           <%= p.input :image_id, as: :hidden %>
-          <%= render :partial => 'gallery/images/image_pkr', :locals => { :image_url => (@resident.gallery_image.file.url(:thumb) unless @resident.gallery_image.nil?) } %>
+          <%= render :partial => 'gallery/images/image_pkr', :locals => { :image_url => (@resident.gallery_image.file_url(:thumb) unless @resident.gallery_image.nil?) } %>
         <% end %>
       <% else %>
         <%= image_tag 'logo.png', style: 'max-height: 125px' %>

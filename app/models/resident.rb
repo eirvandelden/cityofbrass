@@ -159,19 +159,11 @@ class Resident < ApplicationRecord
     district_list.sort_by! { |dl| dl.name.downcase }
   end
 
-  def images_sum
-    sum = images.pluck(:file_file_size).sum.to_f
-    return "#{(sum/1000000).round(1)} MB" if sum >= 1000000
-    "#{(sum/1000).round(1)} KB"
-  end
-
   def resident_images_sum
-    sum_a = resident_images.pluck(:file_file_size).to_a
-    if sum_a.any?
-      sum = sum_a.sum.to_f
-      return "#{(sum/1000000).round(1)} MB" if sum >= 1000000
-      "#{(sum/1000).round(1)} KB"
-    end
+    sum = resident_images.total_byte_size
+    return if sum.zero?
+
+    Gallery::Image.format_byte_size(sum)
   end
 
   def can_auth(user)

@@ -7,7 +7,7 @@
     </div>
     <div class="medium-4 columns text-center">
       <% unless @image.new_record? %>
-        <%= image_tag @image.file.url(:thumb) %>
+        <%= image_tag @image.file_url(:thumb) %>
       <% end %>
     </div>
 
