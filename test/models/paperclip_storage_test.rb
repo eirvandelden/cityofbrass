@@ -2,10 +2,6 @@ require "test_helper"
 
 class PaperclipStorageTest < ActiveSupport::TestCase
   ATTACHMENT_MODELS = [
-    Gallery::FaqImage,
-    Gallery::MapImage,
-    Gallery::ResidentImage,
-    Gallery::StockImage,
     Importer::ImportFile,
     Importer::PreviewFile
   ].freeze

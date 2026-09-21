@@ -81,8 +81,17 @@ class ApplicationFormBuilder < ActionView::Helpers::FormBuilder
   end
 
   def attached_file_attribute?(attribute)
+    paperclip_attachment?(attribute) || active_storage_attachment?(attribute)
+  end
+
+  def paperclip_attachment?(attribute)
     object.class.respond_to?(:attachment_definitions) &&
       object.class.attachment_definitions.key?(attribute.to_sym)
+  end
+
+  def active_storage_attachment?(attribute)
+    object.class.respond_to?(:attachment_reflections) &&
+      object.class.attachment_reflections.key?(attribute.to_s)
   end
 
   def required_attribute?(attribute)

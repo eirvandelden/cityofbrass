@@ -24,7 +24,7 @@
     <hr class="faded">
 
     <% unless @district.gallery_image.nil? %>
-      <%= image_tag @district.gallery_image.file.url(:medium), :alt => @district.name, :align=>"right", class: "images_space" %>
+      <%= image_tag @district.gallery_image.file_url(:medium), :alt => @district.name, :align=>"right", class: "images_space" %>
     <% end %>
 
     <%= render :partial =>'features' if @district.features.size > 0 %>

@@ -41,6 +41,14 @@ class ApplicationFormBuilderTest < ActionView::TestCase
     end
   end
 
+  class ActiveStorageAttachmentModel < DummyModel
+    attr_accessor :file
+
+    def self.attachment_reflections
+      { "file" => Object.new }
+    end
+  end
+
   Category = Struct.new(:id, :name)
 
   def form_for_model(object = DummyModel.new, &block)
@@ -149,6 +157,13 @@ class ApplicationFormBuilderTest < ActionView::TestCase
 
   test "attachment field infers file input" do
     html = render_input(:file, object: AttachmentModel.new)
+
+    assert_match(/class="input file optional"/, html)
+    assert_match(/type="file"/, html)
+  end
+
+  test "active storage attachment field infers file input" do
+    html = render_input(:file, object: ActiveStorageAttachmentModel.new)
 
     assert_match(/class="input file optional"/, html)
     assert_match(/type="file"/, html)

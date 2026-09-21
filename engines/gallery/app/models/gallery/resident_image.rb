@@ -10,15 +10,8 @@ module Gallery
 
     validates :resident_id, presence: true
 
-    has_attached_file :file,
-      styles: { thumb: { geometry: '200x200>' }, medium: { geometry: '400x400>' } },
-      path: ":rails_root/storage/paperclip/gallery/residents/:part_id/:resident_id/images/:id/:style.:extension",
-      url: "/paperclip/gallery/residents/:part_id/:resident_id/images/:id/:style.:extension"
-
-    validates :resident_id, presence: true
-
-    validates :file, presence: true
-    validates_attachment_size :file, in: 0..1.megabyte
-    validates_attachment_content_type :file, content_type: %w[image/jpeg image/jpg image/png image/gif]
+    def self.max_file_size
+      1.megabyte
+    end
   end
 end

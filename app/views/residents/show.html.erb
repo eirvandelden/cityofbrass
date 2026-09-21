@@ -16,7 +16,7 @@
     <% end %>
     <p>
       <% unless @resident.gallery_image.nil? %>
-        <%= link_to (image_tag @resident.gallery_image.file.url(:medium), :alt => @resident.name, class: "images_space"), "#{gallery.polymorphic_path(@resident.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
+        <%= link_to (image_tag @resident.gallery_image.file_url(:medium), :alt => @resident.name, class: "images_space"), "#{gallery.polymorphic_path(@resident.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
       <% else %>
       <%= image_tag "Halfling-A.jpg" %>
       <% end %>

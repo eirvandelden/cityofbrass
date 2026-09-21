@@ -82,7 +82,7 @@
         <a href="#panelSummary-<%= entity_id %>"><label class="inline-label-flat">Summary</label></a>
         <div id="panelSummary-<%= entity_id %>" class="content">
           <% if entity.gallery_image.present? %>
-            <%= link_to (image_tag entity.gallery_image.file.url(:thumb), :alt => entity.name, class: "images_space", style: "max-width: 150px; max-height: 250px; float: right;"), "#{gallery.polymorphic_path(entity.gallery_image)}/swoosh", "data-reveal-id" => "image_modal", :remote => true  %>
+            <%= link_to (image_tag entity.gallery_image.file_url(:thumb), :alt => entity.name, class: "images_space", style: "max-width: 150px; max-height: 250px; float: right;"), "#{gallery.polymorphic_path(entity.gallery_image)}/swoosh", "data-reveal-id" => "image_modal", :remote => true  %>
           <% end %>
           <p><%= entity.short_description %></p>
           <%= render "entitybuilder/descriptors/layouts/card",

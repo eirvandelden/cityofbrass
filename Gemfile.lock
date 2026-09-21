@@ -684,7 +684,12 @@ DEPENDENCIES
   redcarpet
   reline
   report!
+  rubocop
   rubocop-eirvandelden!
+  rubocop-minitest
+  rubocop-performance
+  rubocop-rails
+  rubocop-rails-omakase
   rulebuilder!
   sass-rails
   sdoc

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   end
 
   get "/paperclip/*path" => "paperclip_files#show", as: :paperclip_file, format: false
+  get "/attachments/*path" => "attachment_files#show", as: :attachment_file, format: false
 
   authenticate :admin do
     mount MissionControl::Jobs::Engine, at: "/jobs"

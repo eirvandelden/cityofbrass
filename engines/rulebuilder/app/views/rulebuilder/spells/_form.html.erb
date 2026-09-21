@@ -24,7 +24,7 @@
     <div class="medium-4 columns text-center">
       <%= f.fields_for :gallery_image_join do |p| %>
         <%= p.input :image_id, as: :hidden %>
-        <%= render :partial => 'gallery/images/image_pkr', :locals => { :image_url => (@spell.gallery_image.file.url(:thumb) unless @spell.gallery_image.nil?) } %>
+        <%= render :partial => 'gallery/images/image_pkr', :locals => { :image_url => (@spell.gallery_image.file_url(:thumb) unless @spell.gallery_image.nil?) } %>
       <% end %>
     </div>
   </div>

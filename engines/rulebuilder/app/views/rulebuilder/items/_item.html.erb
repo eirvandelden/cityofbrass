@@ -9,7 +9,7 @@
   %>
   <hr class="faded">
   <% unless @item.gallery_image.nil? %>
-    <%= link_to (image_tag @item.gallery_image.file.url(:medium), :alt => @item.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@item.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
+    <%= link_to (image_tag @item.gallery_image.file_url(:medium), :alt => @item.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@item.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
   <% end %>
 
   <%= render :partial => 'rulebuilder/items/item_details', :locals => { :item => @item } %>

@@ -3,7 +3,7 @@
   <div class="medium-2 columns">
     <div class="text-center">
       <% unless @parent_object.gallery_image.nil? %>
-        <%= link_to (image_tag @parent_object.gallery_image.file.url(:medium), :alt => @parent_object.name), "#{gallery.polymorphic_path(@parent_object.gallery_image)}/swoosh", "data-reveal-id" => "image_modal", :remote => true  %>
+        <%= link_to (image_tag @parent_object.gallery_image.file_url(:medium), :alt => @parent_object.name), "#{gallery.polymorphic_path(@parent_object.gallery_image)}/swoosh", "data-reveal-id" => "image_modal", :remote => true  %>
       <% end %>
     </div>
     <% if @parent_object.ability_scores.size > 0 %><%= render "entitybuilder/ability_scores/sheet/full" %><% end %>

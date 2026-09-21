@@ -26,7 +26,7 @@
     <div class="row <%= "#{@type.downcase}" if @type == "Handout" %>">
       <div class="small-12 columns">
         <% unless @page.gallery_image.nil? %>
-          <%= link_to (image_tag @page.gallery_image.file.url(:medium), :alt => @page.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@page.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
+          <%= link_to (image_tag @page.gallery_image.file_url(:medium), :alt => @page.name, :align=>"right", class: "images_space"), "#{gallery.polymorphic_path(@page.gallery_image)}/swoosh", "data-reveal-id" => "imageModal", :remote => true  %>
         <% end %>
 
         <%= render :partial =>'features' if @page.features.size > 0 || @page.parent || @page.page_date || @page.notables.size > 0 %>

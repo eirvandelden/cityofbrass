@@ -3,79 +3,6 @@ require "test_helper"
 class PaperclipFilesTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
-  test "does not serve unrecognized gallery files from storage" do
-    file = Rails.root.join("storage", "paperclip", "gallery", "test.txt")
-    FileUtils.mkdir_p(file.dirname)
-    File.write(file, "paperclip")
-
-    get "/paperclip/gallery/test.txt"
-
-    assert_response :not_found
-  ensure
-    FileUtils.rm_f(file) if file
-  end
-
-  test "does not serve resident image files to anonymous users" do
-    image = resident_image
-
-    get image.file.url(:original)
-
-    assert_response :forbidden
-  ensure
-    image&.destroy
-  end
-
-  test "serves resident image files to the owner" do
-    image = resident_image
-    sign_in users(:dan)
-
-    get image.file.url(:original)
-
-    assert_response :success
-  ensure
-    image&.destroy
-  end
-
-  test "serves public stock image files to anonymous users" do
-    image = stock_image
-
-    get image.file.url(:original)
-
-    assert_response :success
-  ensure
-    image&.destroy
-  end
-
-  test "serves legacy public stock image files through the new URL" do
-    image = stock_image
-    FileUtils.rm_f(image.file.path(:original))
-    file = legacy_stock_image_file(image)
-    FileUtils.mkdir_p(file.dirname)
-    FileUtils.cp(Gallery::Engine.root.join("app/assets/images/gallery/blank_image.png"), file)
-
-    get image.file.url(:original)
-
-    assert_response :success
-  ensure
-    FileUtils.rm_f(file) if file
-    image&.destroy
-  end
-
-  test "does not serve arbitrary files in a public stock image directory" do
-    image = stock_image
-    path = "stock-images/#{image.id}/not_the_attachment.txt"
-    file = stored_gallery_file(path)
-    FileUtils.mkdir_p(file.dirname)
-    File.write(file, "stock")
-
-    get "/paperclip/gallery/#{path}"
-
-    assert_response :not_found
-  ensure
-    FileUtils.rm_f(file) if file
-    image&.destroy
-  end
-
   test "serves importer preview files to the owner" do
     preview = Importer::Preview.create!(resident: residents(:razune), mode: Importer::Preview::RESIDENT_CONTENT,
                                         source: Importer::Preview::GAME_MASTER_5_XML, status: "parsing")
@@ -129,27 +56,55 @@ class PaperclipFilesTest < ActionDispatch::IntegrationTest
     FileUtils.rm_f(file) if file
   end
 
+  test "redirects a legacy faq image url to the new attachment url" do
+    faq_image = gallery_images(:faq_one)
+
+    get "/paperclip/gallery/faq-images/#{faq_image.id}/thumb.png"
+
+    assert_redirected_to "/attachments/gallery/faq_images/#{faq_image.id}/thumb"
+    assert_equal 301, response.status
+  end
+
+  test "redirects a legacy stock image url to the new attachment url" do
+    stock_image = gallery_images(:stock_one)
+
+    get "/paperclip/gallery/stock-images/#{stock_image.id}/original.jpg"
+
+    assert_redirected_to "/attachments/gallery/stock_images/#{stock_image.id}/original"
+    assert_equal 301, response.status
+  end
+
+  test "redirects a legacy map image url to the new attachment url" do
+    map_image = gallery_images(:map_one)
+
+    get "/paperclip/gallery/map-images/#{map_image.id}/medium.png"
+
+    assert_redirected_to "/attachments/gallery/map_images/#{map_image.id}/medium"
+    assert_equal 301, response.status
+  end
+
+  test "redirects a legacy resident image url to the new attachment url" do
+    resident_image = gallery_images(:resident_one)
+    resident_id = resident_image.resident_id
+    part_id = resident_id[0, 3].chars.join("/")
+
+    get "/paperclip/gallery/residents/#{part_id}/#{resident_id}/images/#{resident_image.id}/thumb.png"
+
+    assert_redirected_to "/attachments/gallery/resident_images/#{resident_image.id}/thumb"
+    assert_equal 301, response.status
+  end
+
+  test "following a legacy faq image redirect as a non-admin is still refused" do
+    faq_image = gallery_images(:faq_one)
+    sign_in users(:dan)
+
+    get "/paperclip/gallery/faq-images/#{faq_image.id}/thumb.png"
+    follow_redirect!
+
+    assert_response :forbidden
+  end
+
   private
-
-  def stored_gallery_file(path)
-    Rails.root.join("storage", "paperclip", "gallery", path)
-  end
-
-  def resident_image
-    Gallery::ResidentImage.create!(name: "Resident", resident: residents(:razune), file: image_upload)
-  end
-
-  def stock_image
-    Gallery::StockImage.create!(name: "Stock", file: image_upload)
-  end
-
-  def legacy_stock_image_file(image)
-    Rails.root.join("gallery", "stock-images", image.id, "original.png")
-  end
-
-  def image_upload
-    Rack::Test::UploadedFile.new(Gallery::Engine.root.join("app/assets/images/gallery/blank_image.png"), "image/png")
-  end
 
   def importer_fixture_file
     Importer::Engine.root.join("test/fixtures/files/importer/sample_compendium.xml")

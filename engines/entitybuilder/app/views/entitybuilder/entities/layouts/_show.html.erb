@@ -2,7 +2,7 @@
 
   <% if @parent_object.gallery_image.present? %>
     <div class="medium-4 columns text-center">
-      <%= link_to (image_tag @parent_object.gallery_image.file.url(:medium), :alt => @parent_object.name, class: "images_space"), "#{gallery.polymorphic_path(@parent_object.gallery_image)}/swoosh", "data-reveal-id" => "image_modal", :remote => true  %>
+      <%= link_to (image_tag @parent_object.gallery_image.file_url(:medium), :alt => @parent_object.name, class: "images_space"), "#{gallery.polymorphic_path(@parent_object.gallery_image)}/swoosh", "data-reveal-id" => "image_modal", :remote => true  %>
       <h4 style="color:#c5c5c5;">Est. <span data-timestamp="<%= @parent_object.created_at.to_i*1000 %>"></span></h4>
     </div>
     <div class="medium-8 columns">

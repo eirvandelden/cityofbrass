@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_03_122207) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_08_173331) do
   create_table "action_text_rich_texts", id: :integer, default: nil, force: :cascade do |t|
     t.text "body"
     t.datetime "created_at", null: false
@@ -25,7 +25,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_03_122207) do
     t.bigint "blob_id", null: false
     t.datetime "created_at", precision: nil, null: false
     t.string "name", null: false
-    t.bigint "record_id", null: false
+    t.string "record_id", null: false
     t.string "record_type", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
