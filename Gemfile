@@ -49,8 +49,6 @@ gem "jwt"
 gem "symbol-fstring", require: "fstring/all" # Performance improvement
 # gem 'bigdecimal' # BigDecimal support
 
-# bugs - allow json to upgrade for Rails 6.1
-gem "json", ">= 2.0"
 gem "mutex_m" # Moved from Ruby stdlib to bundled gem in Ruby 3.3+
 gem "base64"      # bundled gem in Ruby 3.4+, required before Rails boots
 gem "bigdecimal"  # bundled gem in Ruby 3.4+
