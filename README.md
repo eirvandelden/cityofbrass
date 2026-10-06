@@ -34,7 +34,7 @@ City of Brass is organized into feature engines, each mounted under its own path
 
 Cross-cutting capabilities in the core app:
 
-- 🔐 **Authentication** via Devise (email confirmation, account lockout) plus a custom
+- 🔐 **Authentication** via Rails built-in authentication (account lockout, password reset) plus a custom
   single sign-on layer (`lib/single_sign_on.rb`).
 - 🤝 **Collaboration** — residents send/accept **affiliations** to co-edit shared content
   and campaigns.
@@ -67,7 +67,7 @@ Game systems are defined in `config/core_rules/`:
 - **Web server:** Puma
 - **Database:** SQLite (with a custom UUID function; UUID primary keys)
 - **Background jobs:** Solid Queue (stored in its own SQLite database)
-- **Auth:** Devise + OmniAuth
+- **Auth:** Rails built-in authentication (`has_secure_password`) + OmniAuth
 - **Payments:** Stripe
 - **File uploads:** Paperclip (disk-backed, optional AWS S3)
 - **Frontend:** server-rendered ERB, Turbo, jQuery, Foundation, Sprockets asset
@@ -215,7 +215,7 @@ development — see `config/application.example.yml`).
 | `ACTIVEPLAY_URL` / `ACTIVEPLAY_SECRET` | Active Play integration |
 | `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` / `AWS_REGION` | S3 image storage (optional) |
 | `STRIPE_SECRET_KEY` / `STRIPE_PUBLISHABLE_KEY` / `STRIPE_WEBHOOK_TOKEN` | Stripe billing (optional) |
-| `DEVISE_SECRET` / `DEVISE_PEPPER` | Devise auth secrets |
+| `DEVISE_SECRET` / `DEVISE_PEPPER` | Unused since Devise was removed; kept in the deploy environment until a later change |
 
 ## 🧪 Development & testing
 
@@ -268,7 +268,7 @@ jQuery for interactivity, and Foundation for styling, served through the Sprocke
 asset pipeline (no SPA). **Solid Queue** handles background work (asynchronous mail,
 Paperclip image processing), keeping queued jobs in a SQLite database of its own so no
 separate queue server is needed. Caching needs no server either: development caches in
-memory and production to disk. Authentication is built on **Devise** with a custom
+memory and production to disk. Authentication is built on Rails' own authentication (`has_secure_password` and `Session` records) with a custom
 single-sign-on layer, and authorization is enforced through a
 status-tier and **quota** system (`lib/quota.rb`) that gates features per account level.
 Records use **UUID primary keys**. Persistence is **SQLite** (database and Paperclip

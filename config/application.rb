@@ -11,9 +11,6 @@ module Brasscore
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.1
     config.active_support.cache_format_version = 7.1
-    config.before_initialize do
-      Devise.secret_key ||= config.secret_key_base if defined?(Devise)
-    end
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

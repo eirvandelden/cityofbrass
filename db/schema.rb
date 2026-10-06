@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_06_114441) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_06_121258) do
   create_table "action_text_rich_texts", id: :integer, default: nil, force: :cascade do |t|
     t.text "body"
     t.datetime "created_at", null: false
@@ -72,21 +72,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_06_114441) do
     t.datetime "current_sign_in_at", precision: nil
     t.text "current_sign_in_ip"
     t.text "email", default: "", null: false
-    t.text "encrypted_password", default: "", null: false
     t.integer "failed_attempts", default: 0, null: false
     t.datetime "last_sign_in_at", precision: nil
     t.text "last_sign_in_ip"
     t.datetime "locked_at", precision: nil
-    t.datetime "remember_created_at", precision: nil
-    t.datetime "reset_password_sent_at", precision: nil
-    t.text "reset_password_token"
     t.integer "sign_in_count", default: 0, null: false
-    t.text "unlock_token"
     t.datetime "updated_at", precision: nil
     t.text "password_digest"
     t.index ["email"], name: "index_admins_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-    t.index ["unlock_token"], name: "index_admins_on_unlock_token", unique: true
   end
 
   create_table "affiliations", id: :text, default: -> { "uuid()" }, force: :cascade do |t|
@@ -945,35 +938,23 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_06_114441) do
   end
 
   create_table "users", id: :text, default: -> { "uuid()" }, force: :cascade do |t|
-    t.datetime "confirmation_sent_at", precision: nil
-    t.text "confirmation_token"
-    t.datetime "confirmed_at", precision: nil
     t.datetime "created_at", precision: nil
     t.datetime "current_sign_in_at", precision: nil
     t.text "current_sign_in_ip"
     t.text "email", default: "", null: false
-    t.text "encrypted_password", default: "", null: false
     t.integer "failed_attempts", default: 0, null: false
     t.datetime "last_sign_in_at", precision: nil
     t.text "last_sign_in_ip"
     t.string "locale", default: "en", null: false
     t.datetime "locked_at", precision: nil
-    t.datetime "remember_created_at", precision: nil
-    t.datetime "reset_password_sent_at", precision: nil
-    t.text "reset_password_token"
     t.integer "sign_in_count", default: 0, null: false
     t.text "status", default: "trial", null: false
     t.text "stripe_customer_token"
-    t.text "unconfirmed_email"
-    t.text "unlock_token"
     t.datetime "updated_at", precision: nil
     t.text "password_digest"
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["status"], name: "index_users_on_status"
     t.index ["stripe_customer_token"], name: "index_users_on_stripe_customer_token"
-    t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
   create_table "worldbuilder_contributors", id: :text, default: -> { "uuid()" }, force: :cascade do |t|

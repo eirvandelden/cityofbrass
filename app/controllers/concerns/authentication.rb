@@ -66,7 +66,7 @@ module Authentication
     def request_authentication(login_path)
       return head(:unauthorized) unless request.format.html?
 
-      session[:return_to_after_authenticating] = request.url if request.get?
+      session[:return_to_after_authenticating] = request.url if request.get? || request.head?
       redirect_to login_path, alert: t("authentication.unauthenticated")
     end
 
