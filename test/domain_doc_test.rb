@@ -29,21 +29,26 @@ class DomainDocTest < ActiveSupport::TestCase
     assert_includes section("Code names"), "World → `Worldbuilder::District`"
   end
 
-  test "keeps Campagna in Italian and Campagne in Dutch" do
+  test "keeps Campagna in Italian and Campaign in Dutch" do
     translations = section("Translations")
 
     assert_includes translations, "Italian keeps \"Campagna\""
-    assert_includes translations, "Dutch keeps \"Campagne\""
+    assert_includes translations, "Dutch uses \"Campaign\""
+    assert_no_match(/Dutch keeps "Campagne"/, translations)
   end
 
   test "says a Game references its content and never embeds it" do
-    assert_match(/references? (its|the) content and never embeds it/i, section("Target model"))
+    assert_match(/A Game references its content and never embeds it/, section("Target model"))
   end
 
   test "names the playlist states active, queued-future and retired" do
     playlist = section("Target model")[/playlist.*$/i].to_s
 
     %w[active queued-future retired].each { |state| assert_includes playlist, "`#{state}`" }
+  end
+
+  test "says a Campaign holds no live-play state" do
+    assert_match(/A Campaign holds no live-play state/, section("Target model"))
   end
 
   test "says a Module owns its copy and keeps only a severable source link" do
