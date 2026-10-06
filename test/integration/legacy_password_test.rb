@@ -2,6 +2,8 @@ require "test_helper"
 require Rails.root.join("db/migrate/20261006114441_copy_devise_passwords_to_password_digest")
 
 class LegacyPasswordTest < ActionDispatch::IntegrationTest
+  include SchemaChangingTestHelper
+
   # Generated once with BCrypt::Password.create("legacy-password", cost: 10): the shape Devise stores, no pepper.
   LEGACY_HASH = "$2a$10$KBfSqkfEtvgXwAOFG4wxB.b/Hd2nzt7JTkXPcMgKS07im3Fip4AE6".freeze
 
@@ -15,8 +17,6 @@ class LegacyPasswordTest < ActionDispatch::IntegrationTest
 
   teardown do
     %i[users admins].each { |table| restore_current_shape(table) }
-    User.reset_column_information
-    Admin.reset_column_information
   end
 
   test "user with a copied devise hash signs in" do

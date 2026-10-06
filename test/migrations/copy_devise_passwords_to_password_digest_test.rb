@@ -2,6 +2,8 @@ require "test_helper"
 require Rails.root.join("db/migrate/20261006114441_copy_devise_passwords_to_password_digest")
 
 class CopyDevisePasswordsToPasswordDigestTest < ActiveSupport::TestCase
+  include SchemaChangingTestHelper
+
   setup do
     @connection = ActiveRecord::Base.connection
     %i[users admins].each { |table| restore_devise_shape(table) }
@@ -9,8 +11,6 @@ class CopyDevisePasswordsToPasswordDigestTest < ActiveSupport::TestCase
 
   teardown do
     %i[users admins].each { |table| restore_current_shape(table) }
-    User.reset_column_information
-    Admin.reset_column_information
   end
 
   test "copies encrypted_password into password_digest" do
