@@ -2,7 +2,6 @@ require_relative "../test_helper"
 
 class ImporterImportFlowTest < ActionDispatch::IntegrationTest
   include ActiveJob::TestHelper
-  include Devise::Test::IntegrationHelpers
 
   test "resident confirms a preview and imports content" do
     sign_in users(:dan)

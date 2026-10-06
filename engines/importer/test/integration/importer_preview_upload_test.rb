@@ -1,8 +1,6 @@
 require_relative "../test_helper"
 
 class ImporterPreviewUploadTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
-
   test "resident upload creates preview files with detected kinds and counts" do
     sign_in users(:dan)
     preview_count = Importer::Preview.count
