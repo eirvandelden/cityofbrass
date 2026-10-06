@@ -26,6 +26,8 @@ nl:
       campaign_details: Campaign details
       campaign_menu: Campaign menu
       campaign_pages: Campaign pagina's
+  domain:
+    game: Spel
   errors:
     messages:
       invalid_privacy: is niet geldig.
