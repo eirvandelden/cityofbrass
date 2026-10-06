@@ -77,7 +77,7 @@ Authored content is Campaign, Adventure, World, Page and House Rules. A Campaign
 
 - The locale key for Game is `domain.game`: en "Game", nl "Spel", it "Gioco" (proposed in #91, decided in its `intent.md`; #93 may move the key).
 - Italian keeps "Campagna" for Campaign (decided in the `intent.md` of #91).
-- Dutch uses "Campaign" for Campaign, not "Campagne" (Etienne's review-stage decision of 2026-10-06; #91 proposed "Campagne"). Some existing Dutch strings still read "campagne"; a follow-up issue aligns them.
+- Dutch uses "Campaign" for Campaign, not "Campagne" (Etienne's review-stage decision of 2026-10-06; #91 proposed "Campagne"). Some existing Dutch strings still read "campagne"; #152 aligns them.
 
 ## Rules
 
