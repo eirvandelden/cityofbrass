@@ -43,3 +43,15 @@ Fix commit 60b2186: doc-only and test-only changes; no `app/`, `engines/`, `db/`
 Compliance: the round-1 criterion map still holds. R5 now reads "Campagna in Italian, Campaign in Dutch" → `test/domain_doc_test.rb` "keeps Campagna in Italian and Campaign in Dutch". The added `assert_no_match` strengthens that test; no existing test was weakened, skipped or deleted. Every test named in `plan.md` `## Proof` still exists (one renamed for the Dutch decision).
 
 - [ ] Nit: "a follow-up issue aligns them" names no issue, and none exists yet (`gh issue list --search campagne` finds only #91). Everywhere else the doc cites an issue number for future work. Open the issue and cite its number, or name the strings (`campaignmanager.campaigns.form.*`, `campaignmanager.menu_items.about.description`). — `docs/domain.md:80` →
+
+## Round 3 — 2026-10-06T19:59Z — d50f35d
+
+State at review: `bin/rails test test/domain_doc_test.rb test/i18n_test.rb` green (16 runs, 0 failures). Working tree clean; branch based on current `origin/main`. Full suite not re-run for a one-line doc change.
+
+Round 2 verification:
+
+- Nit (uncited follow-up issue) — resolved. `docs/domain.md:80` now cites #152, which exists and is open ("Use \"Campaign\" instead of \"campagne\" in the Dutch locale").
+
+Fix commit d50f35d: one line changed in `docs/domain.md`; nothing else. Bugs, Security and Compliance passes: nothing found. The criterion map from rounds 1 and 2 still holds.
+
+Nothing found.
