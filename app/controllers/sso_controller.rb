@@ -14,7 +14,7 @@ class SsoController < ApplicationController
       sso.external_id = current_user.id
       sso.sso_secret = secret
 
-      redirect_to sso.to_url(ENV["SYMPOSIUM_SSO_URL"])
+      redirect_to sso.to_url(ENV["SYMPOSIUM_SSO_URL"]), allow_other_host: true
     rescue => e
       logger.error "User #{current_user.email} was unable to log into Symposium"
       redirect_to root_path
