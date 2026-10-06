@@ -26,3 +26,20 @@ Every test named in `plan.md` `## Proof` exists. No existing test was weakened, 
 - [ ] Nit: "It holds no live-play state (#94)" applies to all authored content. #94 states this only for Campaign. Either scope the sentence to Campaign or drop the #94 citation for the other types. — `docs/domain.md:24` →
 - [ ] Nit: "Dutch keeps Campagne" contradicts three existing nl keys that read "Campaign details", "Campaign menu" and "Campaign pagina's". The plan's out-of-scope note ("Dutch 'campagne'") is therefore only partly true. Propose a separate follow-up for those keys; not for this branch. — `config/locales/nl.yml:26` →
 - [ ] Nit: The "references its content" test accepts "references the content" and does not check that the subject is a Game. Any sentence in `## Target model` with that phrase passes it. — `test/domain_doc_test.rb:40` →
+
+## Round 2 — 2026-10-06T19:17Z — 60b2186
+
+State at review: `bin/rails test` green (1167 runs, 0 failures), `bin/rails test:system` green (3 runs, 0 failures), `bundle exec rubocop` clean (1057 files), `bin/i18n-tasks health` all five checks green. Working tree clean. No `REVIEW.md` in the repo; default passes used.
+
+Round 1 verification:
+
+- Nit 1 (translation attribution) — resolved. `docs/domain.md:78–79` attribute the decisions to the `intent.md` of #91; `## Sources` matches.
+- Nit 2 (#94 scope) — resolved. `docs/domain.md:24` now limits the rule to Campaign; new test "says a Campaign holds no live-play state" pins it.
+- Nit 3 (Dutch "Campagne") — resolved by Etienne's decision: Dutch uses "Campaign". `docs/domain.md:80` and `## Sources` record it; aligning the existing nl strings is out of scope.
+- Nit 4 (loose regex) — resolved. `test/domain_doc_test.rb:41` now requires the literal subject "A Game".
+
+Fix commit 60b2186: doc-only and test-only changes; no `app/`, `engines/`, `db/` or locale changes. Bugs and Security passes: nothing found.
+
+Compliance: the round-1 criterion map still holds. R5 now reads "Campagna in Italian, Campaign in Dutch" → `test/domain_doc_test.rb` "keeps Campagna in Italian and Campaign in Dutch". The added `assert_no_match` strengthens that test; no existing test was weakened, skipped or deleted. Every test named in `plan.md` `## Proof` still exists (one renamed for the Dutch decision).
+
+- [ ] Nit: "a follow-up issue aligns them" names no issue, and none exists yet (`gh issue list --search campagne` finds only #91). Everywhere else the doc cites an issue number for future work. Open the issue and cite its number, or name the strings (`campaignmanager.campaigns.form.*`, `campaignmanager.menu_items.about.description`). — `docs/domain.md:80` →
