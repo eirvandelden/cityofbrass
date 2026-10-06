@@ -2,8 +2,6 @@ require "test_helper"
 
 module Entitybuilder
   class FifthEditionAttributionTest < ActionController::TestCase
-    include Devise::Test::ControllerHelpers
-
     tests Entitybuilder::ResidentCharactersController
 
     ATTRIBUTION = "System Reference Document 5.2.1"

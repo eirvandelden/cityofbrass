@@ -1,8 +1,6 @@
 require "test_helper"
 
 class GalleryResidentImageUploadTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
-
   test "the owner and an admin view a resident's picture; a stranger and an anonymous visitor cannot" do
     sign_in users(:dan)
     upload = Rack::Test::UploadedFile.new(

@@ -1,8 +1,6 @@
 require "test_helper"
 
 class AdminStockEntityNavigationTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
-
   setup do
     @user = users(:dan)
     @admin = admins(:dan)

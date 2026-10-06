@@ -39,7 +39,6 @@ class SeedsTest < ActiveSupport::TestCase
       password: "password1",
       password_confirmation: "password1"
     )
-    user.skip_confirmation!
     user.save!
   end
 

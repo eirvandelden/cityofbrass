@@ -1,8 +1,6 @@
 require "test_helper"
 
 class PageCreationTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
-
   setup do
     @game_master = users(:dan)
     @adventure   = storybuilder_adventures(:resident_one)

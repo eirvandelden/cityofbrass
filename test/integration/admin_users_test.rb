@@ -1,8 +1,6 @@
 require "test_helper"
 
 class AdminUsersTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
-
   test "new user page renders translated labels" do
     with_default_locale(:nl) do
       sign_in admins(:dan)

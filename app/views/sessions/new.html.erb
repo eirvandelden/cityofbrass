@@ -8,23 +8,23 @@
         <div class="medium-7 columns">
           <div class="row text-right">
             <div class="small-12 columns">
-              <label class="flat"><%= "#{resource_name.to_s.humanize} " if resource_name.to_s == 'admin' %>Login</label>
+              <label class="flat"><%= t(@scope == "admin" ? "sessions.new.admin_title" : "sessions.new.title") %></label>
             </div>
           </div>
-          <%= form_with model: resource, scope: resource_name, url: session_path(resource_name), builder: ApplicationFormBuilder do |f| %>
+          <%= form_with model: @account, scope: @scope, url: @form_url, builder: ApplicationFormBuilder do |f| %>
             <%= f.input :email, :autofocus => true, as: :email, placeholder: 'user@domain.com' %>
             <%= f.input :password %>
             <% if flash[:alert] %>
               <label class="error" style="padding-bottom: .5em;"><%= alert %></label>
             <% end %>
             <%= button_tag type: 'submit' do %>
-              Login <i class='fa fa-sign-in'></i>
+              <%= t("sessions.new.submit") %> <i class='fa fa-sign-in'></i>
             <% end %>
           <% end %>
-          <%= render "devise/shared/links" %>
+          <%= render "sessions/links" %>
         </div>
       </div>
     </div>
-    <%= render 'devise/shared/poweredby' %>
+    <%= render 'sessions/poweredby' %>
   </div>
 </div>

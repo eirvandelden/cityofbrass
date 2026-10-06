@@ -2,7 +2,6 @@ require 'test_helper'
 
 module Campaignmanager
   class PagesControllerTest < ActionController::TestCase
-    include Devise::Test::ControllerHelpers
 
     setup do
       @routes = Campaignmanager::Engine.routes

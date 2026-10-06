@@ -1,8 +1,6 @@
 require "test_helper"
 
 class ImporterNavigationTest < ActionView::TestCase
-  include Devise::Test::ControllerHelpers
-
   test "admin navigation links to stock imports" do
     render template: "layouts/navigation/_admin"
 

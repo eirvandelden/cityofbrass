@@ -5,8 +5,6 @@ require "test_helper"
 # Paperclip-backed controller. These tests assert the equivalent safety property on the new
 # controller: garbage input to /attachments/* cleanly 404s.
 class AttachmentFilesTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
-
   test "an unknown record id 404s" do
     get attachment_file_path("gallery/faq_images/00000000-0000-0000-0000-000000000000/original")
 

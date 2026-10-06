@@ -2,8 +2,6 @@ require 'test_helper'
 
 module Support
   class CoreFaqsControllerTest < ActionController::TestCase
-    include Devise::Test::ControllerHelpers
-
     setup do
       @routes = Support::Engine.routes
 

@@ -2,8 +2,6 @@ require 'test_helper'
 
 module Gallery
   class FaqImagesControllerTest < ActionController::TestCase
-    include Devise::Test::ControllerHelpers
-
     setup do
       @routes = Gallery::Engine.routes
       @user = users(:dan)

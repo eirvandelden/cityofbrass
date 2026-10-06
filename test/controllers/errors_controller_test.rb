@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ErrorsControllerTest < ActionController::TestCase
-  include Devise::Test::ControllerHelpers
 
   #test "should get 403" do
   #  get :show, code: 403

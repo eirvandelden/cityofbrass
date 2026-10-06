@@ -1,8 +1,6 @@
 require "test_helper"
 
 class CampaignLifecycleTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
-
   setup do
     @game_master = users(:dan)
     @player = users(:lucas)

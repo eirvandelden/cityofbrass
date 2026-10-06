@@ -1,8 +1,6 @@
 require 'test_helper'
 
 class ScrollsControllerTest < ActionController::TestCase
-  include Devise::Test::ControllerHelpers
-
   test "should show home" do
     get :home
     assert_response :success

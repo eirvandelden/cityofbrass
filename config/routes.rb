@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   get "/up", to: ->(env) { [200, { "Content-Type" => "text/plain" }, ["OK"]] }
 
-  devise_for :admins, path_names: { sign_in: 'login', sign_out: 'logout' }, controllers: { sessions: 'sessions' }
-  devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout' }, skip: [:registrations], controllers: { sessions: 'sessions' }
+  %w[user admin].each do |scope_name|
+    scope "/#{scope_name}s", defaults: { scope: scope_name } do
+      get    "login",  to: "sessions#new",     as: :"new_#{scope_name}_session"
+      post   "login",  to: "sessions#create",  as: :"#{scope_name}_session"
+      delete "logout", to: "sessions#destroy", as: :"destroy_#{scope_name}_session"
+      resources :passwords, param: :token, only: [ :new, :create, :edit, :update ], as: :"#{scope_name}_passwords"
+    end
+  end
 
   get 'sso/symposium' => 'sso#symposium'
 

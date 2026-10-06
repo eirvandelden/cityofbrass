@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ResidentsControllerTest < ActionController::TestCase
-  include Devise::Test::ControllerHelpers
 
   setup do
     @dan = users(:dan)

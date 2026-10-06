@@ -2,8 +2,6 @@ require 'test_helper'
 
 module Rulebuilder
   class ResidentSpellsControllerTest < ActionController::TestCase
-    include Devise::Test::ControllerHelpers
-
     setup do
       @routes = Rulebuilder::Engine.routes
       @user = users(:dan)

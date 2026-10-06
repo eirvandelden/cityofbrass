@@ -3,8 +3,6 @@ require "test_helper"
 module Entitybuilder
   module Admin
     class StockNpcsControllerTest < ActionController::TestCase
-      include Devise::Test::ControllerHelpers
-
       setup do
         @routes = Entitybuilder::Engine.routes
         @user = users(:dan)

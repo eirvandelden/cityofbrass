@@ -2,8 +2,6 @@ require "test_helper"
 
 module Entitybuilder
   class SkillGroupingViewTest < ActionController::TestCase
-    include Devise::Test::ControllerHelpers
-
     tests Entitybuilder::ResidentCharactersController
 
     setup do

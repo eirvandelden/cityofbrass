@@ -1,0 +1,51 @@
+it:
+  activerecord:
+    attributes:
+      user:
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Conferma password"
+        current_password: "Password corrente"
+      admin:
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Conferma password"
+        current_password: "Password corrente"
+  authentication:
+    unauthenticated: "Devi accedere o registrarti per continuare."
+  sessions:
+    new:
+      title: "Accedi"
+      admin_title: "Admin Accedi"
+      submit: "Accedi"
+    links:
+      forgot_your_password: "Password dimenticata?"
+    create:
+      invalid: "Credenziali email o password non valide."
+      locked: "Il tuo account è bloccato."
+      signed_in: "Accesso effettuato con successo."
+    destroy:
+      signed_out: "Sei uscito correttamente."
+  passwords:
+    new:
+      title: "Password dimenticata?"
+      submit: "Inviami le istruzioni per resettare la password"
+    edit:
+      title: "Cambia la tua password"
+      new_password: "Nuova password"
+      submit: "Conferma la nuova password"
+    create:
+      sent: "Se la tua email esiste nel nostro database, riceverai un messaggio email contentente un link per il ripristino della password"
+    update:
+      updated: "La tua password è stata cambiata. Ora sei collegato."
+      expired: "Token di reset password è scaduto, si prega di richiederne uno nuovo"
+  passwords_mailer:
+    reset:
+      subject: "Istruzioni per reimpostare la password"
+      greeting: "Ciao %{email}!"
+      instruction: "Qualcuno ha richiesto di resettare la tua password, se lo vuoi davvero puoi farlo cliccando sul link qui sotto."
+      action: "Cambia la mia password"
+      instruction_2: "Se non sei stato tu ad effettuare questa richiesta puoi ignorare questa mail."
+      instruction_3: "La tua password non cambierà finché non accederai al link sopra."
+      regards: "Best regards,"
+      team: "The City of Brass Team"
