@@ -635,6 +635,7 @@ PLATFORMS
 DEPENDENCIES
   activeplay!
   base64
+  bcrypt
   benchmark
   better_errors
   bigdecimal

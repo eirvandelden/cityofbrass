@@ -31,6 +31,7 @@ gem "sdoc"
 
 gem "kt-paperclip"
 gem "image_processing", "~> 1.2"
+gem "bcrypt"
 gem "devise"
 gem "foundation-rails", "5.5.3.2" # git: 'https://github.com/embersds/foundation-rails', branch: 'v5'
 gem "kaminari"
