@@ -21,7 +21,7 @@ Where no source decides a point, the document says "not decided" and links the i
 
 ### Authored content
 
-Authored content is Campaign, Adventure, World, Page and House Rules. It holds no live-play state (#94).
+Authored content is Campaign, Adventure, World, Page and House Rules. A Campaign holds no live-play state (#94).
 
 - A Campaign has its own Pages, its House Rules, a World and connected Adventures (#94).
 - An Adventure has an optional default World. A Game can later run the same Adventure in another World by duplicating content (#92).
@@ -75,9 +75,9 @@ Authored content is Campaign, Adventure, World, Page and House Rules. It holds n
 
 ## Translations
 
-- The locale key for Game is `domain.game`: en "Game", nl "Spel", it "Gioco" (decided in #91; #93 may move the key).
-- Italian keeps "Campagna" for Campaign (decided in #91).
-- Dutch keeps "Campagne" as a loanword (#91).
+- The locale key for Game is `domain.game`: en "Game", nl "Spel", it "Gioco" (proposed in #91, decided in its `intent.md`; #93 may move the key).
+- Italian keeps "Campagna" for Campaign (decided in the `intent.md` of #91).
+- Dutch uses "Campaign" for Campaign, not "Campagne" (Etienne's review-stage decision of 2026-10-06; #91 proposed "Campagne"). Some existing Dutch strings still read "campagne"; a follow-up issue aligns them.
 
 ## Rules
 
@@ -105,6 +105,7 @@ Authored content is Campaign, Adventure, World, Page and House Rules. It holds n
 ## Sources
 
 - The bodies of issues #91–#106 on `eirvandelden/cityofbrass`.
-- The accepted `intent.md` of #91 (`docs/changes/91-domain-doc-glossary-i18n-for-game/`): the Game translations, "Campagna" and "Campagne".
+- The accepted `intent.md` of #91 (`docs/changes/91-domain-doc-glossary-i18n-for-game/`): the Game translations and "Campagna".
 - Etienne's plan-stage decision of 2026-10-06: Stock Creatures become Published Monsters.
+- Etienne's review-stage decision of 2026-10-06: Dutch uses "Campaign", not "Campagne".
 - Class names verified in `engines/`.
