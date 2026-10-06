@@ -34,6 +34,8 @@ en:
       campaign_details: Campaign Details
       campaign_menu: Campaign Menu
       campaign_pages: Campaign Pages
+  domain:
+    game: Game
   errors:
     messages:
       invalid_privacy: is not valid.
