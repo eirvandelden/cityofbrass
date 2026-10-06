@@ -105,6 +105,7 @@ Core app:
 Tests:
 - `test/test_helper.rb`, `test/test_helpers/session_test_helper.rb` — new helper (decision 15).
 - `test/fixtures/users.yml`, `test/fixtures/admins.yml` — `password_digest`, no `confirmed_at`.
+- `test/fixtures/sessions.yml` — empty. System tests run without transactions, and fixture loading clears only tables with a fixture file. Without it, sign-ins in system tests leave `sessions` rows that break `test/models/session_test.rb` on the next run. Added during implementation.
 - `test/application_system_test_case.rb` — `sign_in_as` keeps working via the unchanged route names; check the "Login" button text still matches the en translation.
 - ~66 test files — remove `include Devise::Test::IntegrationHelpers` / `ControllerHelpers`. Pattern only; no other change to them.
 - `test/integration/locale_settings_test.rb` — drop `assert_nil user.unconfirmed_email`; `valid_password?` → `authenticate`.
