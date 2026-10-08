@@ -1,0 +1,13 @@
+monster_strength_bonus:
+  entity: resident_creature_full
+  modifierable: monster_strength (Entitybuilder::AbilityScore)
+  category: Rage
+  item: Bonus
+  value: 2
+
+monster_stray_bonus:
+  entity: resident_creature_full
+  modifierable: one (Entitybuilder::AbilityScore)
+  category: Stray
+  item: Bonus
+  value: 1

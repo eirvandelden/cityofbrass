@@ -78,3 +78,9 @@ three:
   special_damage_bonus: 5
   special_damage_misc_modifier:
   critical_range:
+
+monster_greataxe:
+  entity: resident_creature_full
+  sort_order: 1
+  name: Greataxe
+  attack_type: Melee

@@ -19,3 +19,10 @@ two:
   level: 1
   at_will: true
   detail:
+
+monster_spell:
+  entity: resident_creature_full
+  sort_order: 1
+  spell: resident_one
+  prepared: true
+  spell_class: Shaman

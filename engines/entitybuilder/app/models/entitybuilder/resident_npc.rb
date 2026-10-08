@@ -1,5 +1,6 @@
 module Entitybuilder
   class ResidentNpc < Entity
+    include Entity::Versionable
 
     belongs_to :resident, -> { select('residents.id, residents.user_id, residents.name, residents.slug') }
 
