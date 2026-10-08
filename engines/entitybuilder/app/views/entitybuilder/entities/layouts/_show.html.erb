@@ -45,6 +45,7 @@
           <% end %>
         <% end %>
         </ul>
+        <%= render "entitybuilder/entities/layouts/versions" if @parent_object.respond_to?(:versions) %>
         <%= @parent_object.full_description %>
 
       </div>

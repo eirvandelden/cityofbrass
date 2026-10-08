@@ -19,6 +19,7 @@
             </div>
             <div class="small-8 columns text-center">
               <h3><%= link_to entity.name, route_path(entity) %></h3>
+              <% if entity.version_label.present? %><small><%= entity.version_label %></small><% end %>
             </div>
             <div class="small-2 columns text-right">
               <h3><% if entity.can_edit?(current_user, admin_signed_in?, @type) %><%= link_to "<i class='fa fa-cogs'></i>".html_safe, edit_route_path(entity), class: "cogs125" %><% end %></h3>

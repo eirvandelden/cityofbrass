@@ -105,10 +105,16 @@ Entitybuilder::Engine.routes.draw do
     patch '/modifiers' => 'modifiers#update_list', as: :update_modifiers
   end
 
+  concern :monster do
+    resources :versions, only: [:new, :create]
+  end
+
   scope '/resident/' do
     resources :resident_characters,   path: :characters, concerns: [:entity_core, :profile, :sheet, :card, :notes]
-    resources :resident_creatures,    path: :creatures,  concerns: [:entity_core, :profile, :sheet, :card, :notes]
-    resources :resident_npcs,         path: :npcs,       concerns: [:entity_core, :profile, :sheet, :card, :notes]
+    resources :resident_creatures,    path: :creatures,
+concerns: [:entity_core, :monster, :profile, :sheet, :card, :notes]
+    resources :resident_npcs,         path: :npcs,
+concerns: [:entity_core, :monster, :profile, :sheet, :card, :notes]
   end
 
   scope '/stock/' do

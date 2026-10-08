@@ -26,6 +26,22 @@ nl:
       campaign_details: Campaign details
       campaign_menu: Campaign menu
       campaign_pages: Campaign pagina's
+  entitybuilder:
+    entities:
+      versions:
+        heading: Versies
+        version_of_html: Versie van %{parent}
+    menus:
+      manage:
+        new_version: Nieuwe versie
+    versions:
+      created: Van %{name} is een nieuwe versie gemaakt.
+      form:
+        label: Naam van de versie
+        submit: Versie maken
+      new:
+        heading: Nieuwe versie
+        title: Nieuwe versie van %{name}
   errors:
     messages:
       invalid_privacy: is niet geldig.
