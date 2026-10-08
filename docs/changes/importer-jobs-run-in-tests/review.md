@@ -42,3 +42,19 @@ Bugs and security: none found. The diff since round 1 removes test helpers and c
 - [ ] Nit: `plan.md` still describes the pre-round-1 scope. "Files that change" lists two files and says "Nothing else", but the branch also changes `test/application_system_test_case.rb` and `test/application_system_test_case_test.rb`. Design decisions still say "`intent.md` is not edited by this change" and quote the old criterion. "Out of scope" lists "Amending `intent.md`", and the round 1 amendment sits under "Out of scope" although it is now in scope. — `docs/changes/importer-jobs-run-in-tests/plan.md:48` →
 - [ ] Nit: `plan.md` design decision "No new test … A test that asserts an adapter class would be a meta-test of plumbing" contradicts the new test, which asserts the configured adapter. Record why that test is now accepted, or reword the decision. — `docs/changes/importer-jobs-run-in-tests/plan.md:31` →
 - [ ] Nit: The new test is named "system tests run jobs on the test adapter" but reads `Rails.application.config.active_job.queue_adapter`, not the adapter a system test sees at run time. It proves the `test.rb` line, not the system-test behaviour. A name that says what it checks ("test environment selects the test job adapter") would be accurate. — `test/application_system_test_case_test.rb:23` →
+
+## Round 3 — 2026-10-08T12:45Z — 6213098
+
+Suite state on 6213098: ApplicationSystemTestCaseTest, QueueStorageTest, JobsDashboardTest and the importer flow tests run together: 19 runs, 0 failures. Rubocop is clean on the four changed code files. The caller reports the renamed config test green for 5 runs.
+
+Round 2 nits:
+
+- Stale "Files that change" and out-of-scope intent note: resolved. `plan.md` lists all four changed files, records the round 1 intent amendment, and no longer lists "Amending `intent.md`" as out of scope.
+- "No new test" decision contradicting the config test: resolved. The decision now says one config test replaces the vacuous adapter-restore test, and why.
+- Misleading test name: resolved. The test is "test environment selects the test queue adapter" and checks exactly that.
+
+Plan against diff: "Files that change" matches the diff (four code files plus the change folder). Production and development config have no diff. Every Proof test exists and passes.
+
+Bugs and security: none. The commit since round 2 changes plan prose and one test name.
+
+- [ ] Nit: The "Per changed file, the unit tests expected" list still names only `test.rb` and `queue_storage_test.rb`, and says `test.rb` gets "no new tests". The new config test in `test/application_system_test_case_test.rb` now covers `test.rb`, and the two system-test files are not listed there. — `docs/changes/importer-jobs-run-in-tests/plan.md:93` →
