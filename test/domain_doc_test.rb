@@ -25,6 +25,14 @@ class DomainDocTest < ActiveSupport::TestCase
     assert_includes rename_map, "browse surface → Catalog"
   end
 
+  test "maps old code names to their new names" do
+    rename_map = section("Rename map")
+
+    assert_includes rename_map, "`Resident` → User"
+    assert_includes rename_map, "`District` → World"
+    assert_includes rename_map, "`ResidentCharacter` → Player Character"
+  end
+
   test "names District as the code name for World" do
     assert_includes section("Code names"), "World → `Worldbuilder::District`"
   end
@@ -39,6 +47,16 @@ class DomainDocTest < ActiveSupport::TestCase
 
   test "says a Game references its content and never embeds it" do
     assert_match(/A Game references its content and never embeds it/, section("Target model"))
+  end
+
+  test "says a user owns a Game" do
+    assert_match(/A Game is owned by a user/, section("Target model"))
+  end
+
+  test "uses Resident only inside code names" do
+    prose = domain_doc.gsub(/`[^`]*`/, "")
+
+    assert_no_match(/resident/i, prose)
   end
 
   test "names the playlist states active, queued-future and retired" do
