@@ -17,3 +17,28 @@ Bugs and security: the QueueStorageTest swap saves and restores the adapter obje
 - [ ] Important: Existing test weakened by side effect. "restores the configured queue adapter after each system test" now swaps `:test` to `:test` and compares `TestAdapter` with `TestAdapter`, so both assertions pass even if `restore_queue_adapter` is broken. It also leaves `ActiveJob::Base` holding a fresh `TestAdapter` instead of the configured instance, because `restore_queue_adapter` restores by name. The plan defers removal of the swap and this test to a follow-up; until then the test is vacuous. — `test/application_system_test_case_test.rb:23` →
 - [ ] Nit: QueueStorageTest swaps only `ActiveJob::Base`. A job class that later sets its own `queue_adapter` (or gets one via a `queue_adapter_for_test` override elsewhere) would bypass the swap and silently stop writing Solid Queue rows in these tests. No job does this today. — `test/jobs/queue_storage_test.rb:4` →
 - [ ] Nit: Plain `ActiveSupport::TestCase` tests that enqueue (for example `User` trial-warning mail via `deliver_later`) now accumulate jobs in the shared configured `TestAdapter` until the next `ActiveJob::TestHelper` test clears it. No assertion reads that list today, but a future `assert_enqueued_jobs` without a block in a plain test would see leftovers. — `config/environments/test.rb:45` →
+
+## Round 2 — 2026-10-08T12:30Z — 486ed58
+
+Suite state on 486ed58: `bin/rails test` 1151 runs, 0 failures; the set ApplicationSystemTestCaseTest, QueueStorageTest, JobsDashboardTest and the importer flow tests passes with seed 7; rubocop clean on the four changed code files. The caller reports importer engine 135/0, `test:system` 3/0, and the new adapter test failing without the `test.rb` line.
+
+Round 1 Important findings:
+
+- Intent criterion "No other test changes behaviour": resolved. Commit 6976f2b rewrites it as "Every test that passes today still passes", and names the tests that now run differently. The suite result matches that criterion.
+- Vacuous "restores the configured queue adapter" test: resolved. Commit 486ed58 removes the swap/restore methods and the test. Its replacement fails when `test.rb` stops selecting `:test`, so it now guards something real.
+
+Removed system-test setup/teardown: nothing is lost. The swap was `:test` to `:test`. The teardown's `clear_enqueued_jobs` and `clear_performed_jobs` move to the next test's start: `ActiveJob::TestHelper#before_setup` (activejob 8.1.4) clears both before every test that includes it, and `ApplicationSystemTestCase` still includes it. The only gap is a plain `ActiveSupport::TestCase` that runs right after a system test in the same process: it now sees that test's leftover jobs. That is the same gap as round 1's second nit, and no test reads the list. Removing the by-name restore also fixes round 1's side issue, where `ActiveJob::Base` got a fresh `TestAdapter` instead of the configured one.
+
+Compliance:
+
+- "The import flow tests run the import job and pass" → `engines/importer/test/integration/importer_import_flow_test.rb` (three named tests). Present and green.
+- "`bin/pre_push_checks` passes again for branches that touch importer tests" → command run, not a test (unchanged from round 1).
+- "Every test that passes today still passes" → full-suite run, 1151/0, and the Proof list in `plan.md`. Met.
+- "Tests that exercise Solid Queue itself select it explicitly" → `test/jobs/queue_storage_test.rb` setup/teardown; "work handed off for later waits in the queue" sees a `SolidQueue::Job` row. Met.
+- Proof tests named in `plan.md`: all exist. The one deleted test (the vacuous adapter-restore test) was removed together with the code it covered, by Etienne's decision, and has a stronger replacement. Not a weakening.
+
+Bugs and security: none found. The diff since round 1 removes test helpers and changes one assertion. No production or development config changes.
+
+- [ ] Nit: `plan.md` still describes the pre-round-1 scope. "Files that change" lists two files and says "Nothing else", but the branch also changes `test/application_system_test_case.rb` and `test/application_system_test_case_test.rb`. Design decisions still say "`intent.md` is not edited by this change" and quote the old criterion. "Out of scope" lists "Amending `intent.md`", and the round 1 amendment sits under "Out of scope" although it is now in scope. — `docs/changes/importer-jobs-run-in-tests/plan.md:48` →
+- [ ] Nit: `plan.md` design decision "No new test … A test that asserts an adapter class would be a meta-test of plumbing" contradicts the new test, which asserts the configured adapter. Record why that test is now accepted, or reword the decision. — `docs/changes/importer-jobs-run-in-tests/plan.md:31` →
+- [ ] Nit: The new test is named "system tests run jobs on the test adapter" but reads `Rails.application.config.active_job.queue_adapter`, not the adapter a system test sees at run time. It proves the `test.rb` line, not the system-test behaviour. A name that says what it checks ("test environment selects the test job adapter") would be accurate. — `test/application_system_test_case_test.rb:23` →
