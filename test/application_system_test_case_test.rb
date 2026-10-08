@@ -20,15 +20,8 @@ class ApplicationSystemTestCaseTest < ActiveSupport::TestCase
     assert_equal false, ApplicationSystemTestCase.use_transactional_tests
   end
 
-  test "restores the configured queue adapter after each system test" do
-    test_case = ApplicationSystemTestCase.allocate
-    original_adapter = ActiveJob::Base.queue_adapter
-
-    test_case.send(:swap_queue_adapter_for_system_tests)
-    assert_equal "test", ActiveJob::Base.queue_adapter_name
-
-    test_case.send(:restore_queue_adapter)
-    assert_equal original_adapter.class, ActiveJob::Base.queue_adapter.class
+  test "test environment selects the test queue adapter" do
+    assert_equal :test, Rails.application.config.active_job.queue_adapter
   end
 
   test "prefers the configured browser path" do

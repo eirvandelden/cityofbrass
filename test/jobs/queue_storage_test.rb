@@ -1,6 +1,15 @@
 require "test_helper"
 
 class QueueStorageTest < ActiveSupport::TestCase
+  setup do
+    @previous_queue_adapter = ActiveJob::Base.queue_adapter
+    ActiveJob::Base.queue_adapter = :solid_queue
+  end
+
+  teardown do
+    ActiveJob::Base.queue_adapter = @previous_queue_adapter
+  end
+
   test "the queue is ready to hold background jobs" do
     assert SolidQueue::Job.table_exists?
   end

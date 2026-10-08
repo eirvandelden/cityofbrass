@@ -40,6 +40,13 @@ Rails.application.configure do
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :test
 
+  # Use the test adapter so ActiveJob::TestHelper can enqueue and perform jobs.
+  # The :solid_queue adapter from config/application.rb would otherwise stay in place.
+  config.active_job.queue_adapter = :test
+
+  # Keep the /jobs dashboard on Solid Queue; Mission Control would otherwise read the test adapter.
+  config.mission_control.jobs.adapters = [ :solid_queue ]
+
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
