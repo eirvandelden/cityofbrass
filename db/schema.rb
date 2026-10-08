@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_09_08_173331) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_08_120000) do
   create_table "action_text_rich_texts", id: :integer, default: nil, force: :cascade do |t|
     t.text "body"
     t.datetime "created_at", null: false
@@ -384,6 +384,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_08_173331) do
     t.text "tags", default: "[]"
     t.text "type", null: false
     t.datetime "updated_at", precision: nil, null: false
+    t.text "parent_id"
+    t.string "version_label", limit: 64
+    t.index ["parent_id"], name: "index_entitybuilder_entities_on_parent_id"
     t.index ["resident_id"], name: "index_entitybuilder_entities_on_resident_id"
     t.index ["tags"], name: "index_entitybuilder_entities_on_tags"
     t.index ["type"], name: "index_entitybuilder_entities_on_type"

@@ -1,0 +1,5 @@
+monster_armor_class:
+  entity: resident_creature_full
+  sort_order: 1
+  name: Armor Class
+  base: 10

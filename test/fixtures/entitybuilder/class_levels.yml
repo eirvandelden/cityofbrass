@@ -1,0 +1,5 @@
+monster_class:
+  entity: resident_creature_full
+  sort_order: 1
+  name: Warrior
+  level: 4
