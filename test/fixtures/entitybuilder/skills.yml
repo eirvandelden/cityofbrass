@@ -1,0 +1,5 @@
+monster_intimidate:
+  entity: resident_creature_full
+  sort_order: 1
+  name: Intimidate
+  ranks: 4

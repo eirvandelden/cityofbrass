@@ -1,0 +1,5 @@
+monster_speed:
+  entity: resident_creature_full
+  sort_order: 1
+  name: Speed
+  base: 30

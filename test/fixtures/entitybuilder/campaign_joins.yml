@@ -5,3 +5,7 @@ one:
 one:
   entity: resident_character_two
   campaign: resident_two
+
+monster_campaign:
+  entity: resident_creature_full
+  campaign: resident_one

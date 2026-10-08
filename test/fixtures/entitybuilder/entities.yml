@@ -214,3 +214,28 @@ pf2e_character:
   sheet_privacy: Residents
   core_rules: pf2e
   short_description: A Pathfinder 2e test character
+
+resident_creature_pf2e:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Wyvern
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: pf2e
+
+resident_creature_private:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Secret Beast
+  privacy: Private
+  sheet_privacy: Private
+  core_rules: pf1e
+
+resident_creature_full:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Orc Warrior
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: pf1e
+  short_description: A brutal orc

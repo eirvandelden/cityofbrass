@@ -1,0 +1,6 @@
+monster_hit_points:
+  entity: resident_creature_full
+  sort_order: 1
+  name: Hit Points
+  maximum: 30
+  current: 30
