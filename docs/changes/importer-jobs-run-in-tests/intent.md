@@ -10,7 +10,7 @@ Because of this, `bin/pre_push_checks` fails for any branch that touches an impo
 
 ## Proposed outcome
 
-The import flow tests run the import job and pass on `main`. `bin/pre_push_checks` passes again for branches that touch importer tests. No other test changes behaviour.
+The import flow tests run the import job and pass on `main`. `bin/pre_push_checks` passes again for branches that touch importer tests. Every test that passes today still passes. Some tests change how they run: every test now enqueues jobs on the in-memory test adapter, so `deliver_later` mail and Active Storage jobs no longer write Solid Queue rows, and `Gallery::ReprocessAttachmentJobTest` now runs its job. Tests that exercise Solid Queue itself select it explicitly.
 
 ## Affected users and systems
 
