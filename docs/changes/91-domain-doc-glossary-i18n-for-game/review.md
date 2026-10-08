@@ -55,3 +55,17 @@ Round 2 verification:
 Fix commit d50f35d: one line changed in `docs/domain.md`; nothing else. Bugs, Security and Compliance passes: nothing found. The criterion map from rounds 1 and 2 still holds.
 
 Nothing found.
+
+## Round 4 — 2026-10-08T15:10Z — 28d0451
+
+State at review: `bin/rails test test/domain_doc_test.rb test/i18n_test.rb` green (19 runs, 0 failures), `bundle exec rubocop` on both test files clean, `bin/i18n-tasks health` green. Working tree clean; branch based on current `origin/main`. Full suite not re-run: commit 28d0451 changes only `docs/domain.md` and `test/domain_doc_test.rb`. No `REVIEW.md` in the repo; default passes used.
+
+Round 3 left no open finding. Commit 28d0451 adds Etienne's 2026-10-08 decisions: a user owns a Game, the doc never says Resident, and three old code names map to new names. Security pass: nothing found.
+
+Compliance: the criterion map from rounds 1–3 still holds. Every test named in `plan.md` `## Proof` still exists. The commit adds three tests and weakens, skips or deletes none. The 2026-10-08 decisions go beyond `intent.md` (its rename map covers only Stock and the Catalog); see the last Nit.
+
+- [ ] Important: "`Resident` → User" maps onto a class name that already exists with another meaning. `User` is the Devise login record; `User has_one :resident` (`app/models/user.rb:15`), and all content belongs to `Resident` (for example `belongs_to :resident` in `engines/campaignmanager/app/models/campaignmanager/campaign.rb:16`). "A Game is owned by a user" (`docs/domain.md:31`) therefore does not tell #93 which record owns a Game: `belongs_to :user` would break the pattern of every other owned record. `## Code names` also has no line for the user concept. Add one (for example "user, as content owner → `Resident`; login → `User`") and say which record a Game belongs to, or list it under `## Not decided` with #93. — `docs/domain.md:58` →
+- [ ] Nit: The three new rename-map lines cite no issue for the code rename, unlike the Stock lines (#103). `## Code names` keeps `Worldbuilder::District` and `Entitybuilder::ResidentCharacter` with no plan to change them. The doc's own rule (line 7) asks for "not decided" plus the issue that decides it. Say whether the classes get renamed and link the issue, or state that the map is vocabulary only. — `docs/domain.md:58-60` →
+- [ ] Nit: `AGENTS.md` (and `CLAUDE.md`, its symlink) still defines **Resident** as the content owner and uses "residents" in five places, one line above the new pointer to `docs/domain.md`, which now says "never `Resident`". Agents read `AGENTS.md` first and get the opposite rule. Align the `## Domain` bullets with the doc, or propose that for a follow-up. — `AGENTS.md:12` →
+- [ ] Nit: The test name says "Resident only inside code names", but the check strips every backtick span. Line 31 quotes `` `resident` `` as an issue word, not a code name, and any future backticked phrase passes. Rename the test to match what it checks ("says resident only inside backticks"), or narrow the strip to `Resident…` class names. — `test/domain_doc_test.rb:56` →
+- [ ] Nit: The 2026-10-08 decisions live only in the doc's `## Sources` line. Unlike the 2026-10-06 Dutch decision (round 2), nothing in the change folder records them. Note them in this folder (for example in `plan.md` design decisions) so the trail from intent to doc stays complete. — `docs/domain.md:115` →
