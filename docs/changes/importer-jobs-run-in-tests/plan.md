@@ -24,7 +24,7 @@ Cause, read in `activejob-8.1.4/lib/active_job/test_helper.rb`:
 
 - Set `config.active_job.queue_adapter = :test` in `config/environments/test.rb`. Every test class then gets the test adapter, so `perform_enqueued_jobs` and the `assert_enqueued_*` helpers work everywhere, not only in the importer tests. Etienne chose this over a per-class `queue_adapter_for_test` override on 2026-10-06.
 - **Conflict with `intent.md`:** the intent says "No other test changes behaviour". The global setting changes how three other places work: `QueueStorageTest`, the `/jobs` dashboard in tests, and `Gallery::ReprocessAttachmentJobTest`. This plan reads the criterion as: every test that passes before the change still passes after it, and production and development job processing do not change. `intent.md` is not edited by this change.
-- `test/jobs/queue_storage_test.rb` tests Solid Queue itself, so it selects Solid Queue explicitly. A `setup` block saves `ActiveJob::Base.queue_adapter` and sets it to `:solid_queue`. A `teardown` block restores the saved adapter object. This is the same swap-and-restore shape `ApplicationSystemTestCase` already uses (`swap_queue_adapter_for_system_tests`, `restore_queue_adapter`).
+- `test/jobs/queue_storage_test.rb` tests Solid Queue itself, so it selects Solid Queue explicitly. A `setup` block saves `ActiveJob::Base.queue_adapter` and sets it to `:solid_queue`. A `teardown` block restores the saved adapter object. `ApplicationSystemTestCase` used the same swap-and-restore shape until this change removed it (see below).
 - The `/jobs` dashboard keeps reading Solid Queue. Mission Control 1.1.0 builds its adapter list from `config.active_job.queue_adapter` when `config.mission_control.jobs.adapters` is empty (`mission_control/jobs/engine.rb`). `TestAdapter` does not include `MissionControl::Jobs::Adapter`, so `get "/jobs"` would fail. Set `config.mission_control.jobs.adapters = [ :solid_queue ]` in `config/environments/test.rb`, next to the job adapter line.
 - Both new lines go in `test.rb`, not `application.rb`. Production and development config files get no diff.
 - Each new `test.rb` line gets a one-line comment that says why, matching the commented style of that file.
@@ -37,7 +37,7 @@ Cause, read in `activejob-8.1.4/lib/active_job/test_helper.rb`:
 - Mission Control Jobs 1.1.0 (`/jobs`, `test/integration/jobs_dashboard_test.rb`). It prepends `SolidQueueExt` onto `SolidQueueAdapter` only when its adapter list includes `:solid_queue`.
 - `test/jobs/queue_storage_test.rb` — enqueues and reads `SolidQueue::Job` rows in the queue database.
 - `test/jobs/gallery/reprocess_attachment_job_test.rb` — its `perform_enqueued_jobs` block starts running the job.
-- `ApplicationSystemTestCase` — its adapter swap becomes a swap from `:test` to `:test`.
+- `ApplicationSystemTestCase` — its adapter swap (`swap_queue_adapter_for_system_tests`, `restore_queue_adapter`) and its setup/teardown are removed; `ActiveJob::TestHelper` clears jobs on its own.
 - Mailers sent with `deliver_later` (Devise notifications, `UserMailer`, `SubscriptionMailer`) — in tests they now wait in the test adapter instead of Solid Queue rows. Neither performs them, so no outcome changes.
 
 ## Files that change
@@ -73,7 +73,7 @@ Nothing else. `engines/importer/test/integration/importer_import_flow_test.rb`, 
 
 ## Out of scope
 
-- `ApplicationSystemTestCase#swap_queue_adapter_for_system_tests` and `#restore_queue_adapter` become redundant once `test.rb` selects `:test`. Removing them, and the matching test in `test/application_system_test_case_test.rb`, is a separate follow-up branch and PR.
+- Amended after review round 1 (Etienne, 2026-10-08): `ApplicationSystemTestCase#swap_queue_adapter_for_system_tests` and `#restore_queue_adapter` became a swap from `:test` to `:test`, and their test in `test/application_system_test_case_test.rb` passed no matter what. Both are removed in this branch instead of a follow-up. The test becomes "system tests run jobs on the test adapter", which fails if `test.rb` stops selecting `:test`.
 - The redundant `include ActiveJob::TestHelper` in `ImporterImportFlowTest`. Rails already includes it into `ActionDispatch::IntegrationTest`.
 - Any change to production or development job processing.
 - Amending `intent.md` for the reading of "No other test changes behaviour" given above.

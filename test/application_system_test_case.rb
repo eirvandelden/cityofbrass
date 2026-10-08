@@ -38,30 +38,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
 
   driven_by :cuprite, screen_size: [ 1400, 1400 ], options: cuprite_options
 
-  setup do
-    swap_queue_adapter_for_system_tests
-  end
-
-  teardown do
-    clear_enqueued_jobs
-    clear_performed_jobs
-    restore_queue_adapter
-  end
-
   private
-
-  def swap_queue_adapter_for_system_tests
-    @previous_queue_adapter_name = ActiveJob::Base.queue_adapter_name
-    ActiveJob::Base.queue_adapter = :test
-  end
-
-  def restore_queue_adapter
-    ActiveJob::Base.queue_adapter = previous_queue_adapter_name
-  end
-
-  def previous_queue_adapter_name
-    @previous_queue_adapter_name&.to_sym || Rails.application.config.active_job.queue_adapter
-  end
 
   def sign_in_as(account, scope:)
     visit public_send("new_#{scope}_session_path")
