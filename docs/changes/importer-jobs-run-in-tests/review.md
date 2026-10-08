@@ -58,3 +58,9 @@ Plan against diff: "Files that change" matches the diff (four code files plus th
 Bugs and security: none. The commit since round 2 changes plan prose and one test name.
 
 - [ ] Nit: The "Per changed file, the unit tests expected" list still names only `test.rb` and `queue_storage_test.rb`, and says `test.rb` gets "no new tests". The new config test in `test/application_system_test_case_test.rb` now covers `test.rb`, and the two system-test files are not listed there. — `docs/changes/importer-jobs-run-in-tests/plan.md:93` →
+
+## Dismissals — 2026-10-08 — Etienne
+
+- Round 1 nit, `test/jobs/queue_storage_test.rb:4` (swap covers only `ActiveJob::Base`): dismissed. No job class sets its own adapter today.
+- Round 1 nit, `config/environments/test.rb:45` (plain tests accumulate jobs in the shared `TestAdapter`): dismissed. No test reads that list outside `ActiveJob::TestHelper`, which clears it before each test.
+- Round 3 nit, `plan.md:93` (stale per-file unit test list): dismissed. `finish` removes the change folder; the PR body carries the file list.
