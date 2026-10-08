@@ -20,7 +20,7 @@ class ApplicationSystemTestCaseTest < ActiveSupport::TestCase
     assert_equal false, ApplicationSystemTestCase.use_transactional_tests
   end
 
-  test "system tests run jobs on the test adapter" do
+  test "test environment selects the test queue adapter" do
     assert_equal :test, Rails.application.config.active_job.queue_adapter
   end
 
