@@ -1,0 +1,14 @@
+<%= form_with model: @version, scope: :version, url: polymorphic_path([@parent_object, :versions]), builder: ApplicationFormBuilder do |f| %>
+  <fieldset>
+    <div class="row">
+      <div class="medium-8 columns">
+        <%= f.input :version_label, label: t("entitybuilder.versions.form.label"), required: true %>
+      </div>
+    </div>
+  </fieldset>
+  <div class="row">
+    <div class="small-12 columns text-center">
+      <%= f.submit t("entitybuilder.versions.form.submit"), class: "button" %>
+    </div>
+  </div>
+<% end %>

@@ -49,6 +49,22 @@ en:
       campaign_pages: Campaign Pages
   domain:
     game: Game
+  entitybuilder:
+    entities:
+      versions:
+        heading: Versions
+        version_of_html: Version of %{parent}
+    menus:
+      manage:
+        new_version: New version
+    versions:
+      created: "%{name} was successfully versioned."
+      form:
+        label: Version label
+        submit: Create version
+      new:
+        heading: New version
+        title: New version of %{name}
   errors:
     messages:
       invalid_privacy: is not valid.
