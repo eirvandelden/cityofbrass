@@ -64,10 +64,19 @@ module AuthenticatableTests
       other = account.start_session(ip_address: "203.0.113.6", user_agent: "Agent")
       Current.public_send("#{account_class.name.underscore}_session=", current)
 
-      account.reset_password(password: "brand-new-pass", password_confirmation: "brand-new-pass")
+      account.update!(password: "brand-new-pass", password_confirmation: "brand-new-pass")
 
       assert_equal [ current ], account.sessions.reload.to_a
       assert_not Session.exists?(other.id)
+    end
+
+    test "reset_password ends every session, including the current one" do
+      current = account.start_session(ip_address: "203.0.113.5", user_agent: "Agent")
+      Current.public_send("#{account_class.name.underscore}_session=", current)
+
+      account.reset_password(password: "brand-new-pass", password_confirmation: "brand-new-pass")
+
+      assert_empty account.sessions.reload
     end
 
     test "saving without a password change keeps every session" do

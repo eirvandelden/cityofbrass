@@ -38,7 +38,7 @@ module Authentication
 
   # Starts from a fresh Rails session (new id and CSRF token), so a planted session cannot be reused.
   def start_new_session_for(account)
-    reset_session
+    reset_session_keeping_return_to
     session_record = account.start_session(ip_address: request.remote_ip, user_agent: request.user_agent)
     write_cookie(account.class.name, session_record)
     session_record
@@ -62,6 +62,12 @@ module Authentication
 
     def write_cookie(type, session_record)
       cookies.signed[COOKIE_NAMES.fetch(type)] = COOKIE_OPTIONS.merge(value: session_record.id)
+    end
+
+    def reset_session_keeping_return_to
+      return_to = RETURN_TO_KEYS.values.index_with { |key| session[key] }.compact
+      reset_session
+      return_to.each { |key, url| session[key] = url }
     end
 
     def request_authentication(type, login_path)

@@ -62,4 +62,24 @@ class SessionSecurityTest < ActionDispatch::IntegrationTest
 
     assert_predicate cookies["session_id"], :blank?
   end
+
+  test "resetting the password in a signed-in browser ends that browser's earlier session" do
+    user = users(:dan)
+    post user_session_path, params: { user: { email: user.email, password: "password" } }
+    earlier = user.sessions.sole
+
+    put user_password_path(user.password_reset_token),
+        params: { user: { password: "brand-new-pass", password_confirmation: "brand-new-pass" } }
+
+    assert_not Session.exists?(earlier.id)
+    assert_equal 1, user.sessions.count
+  end
+
+  test "an admin sign-in keeps a pending user return-to address" do
+    get residents_path
+    post admin_session_path, params: { admin: { email: admins(:dan).email, password: "password" } }
+    post user_session_path, params: { user: { email: users(:dan).email, password: "password" } }
+
+    assert_redirected_to residents_url
+  end
 end
