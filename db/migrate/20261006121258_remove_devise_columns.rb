@@ -19,8 +19,9 @@ class RemoveDeviseColumns < ActiveRecord::Migration[8.1]
   end
 
   private
+    # if_exists: production may lack an index or column that the development schema has.
     def drop_devise(table, indexes, columns)
-      indexes.each { |column| remove_index table, column: column }
-      columns.each { |column| remove_column table, column }
+      indexes.each { |column| remove_index table, column: column, if_exists: true }
+      columns.each { |column| remove_column table, column, if_exists: true }
     end
 end

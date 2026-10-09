@@ -68,6 +68,7 @@ The spec's design decisions stand (polymorphic `sessions` table, `session_id` / 
 18. **Review round 1 fixes, controller side.** `start_new_session_for` calls `reset_session` first, so sign-in and password reset start a fresh Rails session with a new id and CSRF token. `SessionsController` reads the return-to address before that reset. The return-to address is stored per scope (`user_return_to`, `admin_return_to`), so an Admin sign-in never follows an address stored for a User page. A signed cookie whose `Session` row is gone is deleted on the next request instead of costing a lookup every time.
 19. **Review round 1: crafted reset requests.** `PasswordsController#new_password` turns a missing `password_confirmation` into `""`, so the confirmation check fails with a 422 instead of an `ArgumentError` (500). A `user` param that is not a hash stays a 400 from `params.expect`.
 20. **Review round 1: `Accept-Language` parsing.** Entries with `q=0` ("not acceptable") are dropped, and spaces around `;` and `=` are allowed.
+21. **Review round 1: tolerant drop migration.** `RemoveDeviseColumns` removes its indexes and columns with `if_exists: true`, so a production database whose indexes differ from the development schema does not stop the deploy halfway. The runbook also rehearses the migrations on a copy of the production backup before the window.
 
 ## Integration points
 
@@ -167,6 +168,8 @@ Each step: write the test, run it, watch it fail for the right reason, make it p
 - Translating any page other than sign-in, password reset and their flashes.
 
 ## Proof
+
+- The drop migration survives a missing index (review round 1) → `test/migrations/remove_devise_columns_test.rb` `test "drops the columns when an expected index is missing"`
 
 - `Accept-Language` drops `q=0` and allows spaces (review round 1) → `test/integration/authentication_locale_test.rb` `test "accept-language skips a language marked not acceptable"`, `"accept-language allows spaces around parameters"`
 
