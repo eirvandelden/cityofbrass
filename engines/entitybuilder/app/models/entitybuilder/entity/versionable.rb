@@ -15,7 +15,7 @@ module Entitybuilder
       ]).freeze
       SKIPPED_ASSOCIATIONS = %i[
         campaign_join campaign district prepared_known_spells prepared_spells entities
-        eb_notables sb_notables cm_notables ap_notables
+        eb_notables sb_notables cm_notables ap_notables versions user
       ].freeze
       RICH_TEXTS = %i[full_description introduction notes].freeze
       RULE_RICH_TEXTS = %i[full_description benefit normal special].freeze
