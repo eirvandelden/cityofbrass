@@ -1,8 +1,8 @@
 <% parent = @parent_object.parent %>
-<% if parent && parent.can_show?(current_user, admin_signed_in?, parent.type) %>
+<% if parent && parent.can_show?(current_user, admin_signed_in?, parent.type.demodulize) %>
   <p><%= t("entitybuilder.entities.versions.version_of_html", parent: link_to(parent.name, polymorphic_path(parent))) %></p>
 <% end %>
-<% shown_versions = @parent_object.versions.select { |version| version.can_show?(current_user, admin_signed_in?, version.type) } %>
+<% shown_versions = @parent_object.versions_visible_to(current_user, admin_signed_in?) %>
 <% if shown_versions.any? %>
   <h4><%= t("entitybuilder.entities.versions.heading") %></h4>
   <ul class="no-bullet">
