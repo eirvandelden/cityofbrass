@@ -1,5 +1,5 @@
-<% parent = @parent_object.parent %>
-<% if parent && parent.can_show?(current_user, admin_signed_in?, parent.type.demodulize) %>
+<% parent = @parent_object.parent_visible_to(current_user, admin_signed_in?) %>
+<% if parent %>
   <p><%= t("entitybuilder.entities.versions.version_of_html", parent: link_to(parent.name, polymorphic_path(parent))) %></p>
 <% end %>
 <% shown_versions = @parent_object.versions_visible_to(current_user, admin_signed_in?) %>

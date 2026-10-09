@@ -84,6 +84,15 @@ module Entitybuilder
         assert_equal [ "Level 5" ], visible_to_other.map(&:version_label)
       end
 
+      test "shows the parent only to a viewer who may see it" do
+        parent = entitybuilder_entities(:resident_creature_private)
+        version = parent.create_version(version_label: "Level 3")
+
+        assert_equal parent, version.parent_visible_to(users(:dan), false)
+        assert_nil version.parent_visible_to(users(:lucas), false)
+        assert_nil @monster.parent_visible_to(users(:dan), false)
+      end
+
       test "copies notables through notableable only" do
         version = @monster.create_version(version_label: "Level 10")
 
