@@ -90,3 +90,18 @@ Compliance: the criterion map from rounds 1–4 still holds. Every test named in
 - [x] Nit: The doc dates the `Resident` names (user line `:69` and Game line `:77` say "until #155") but not the #156 names. The glossary says World is "called "District" in code (#91)", and `World → Worldbuilder::District` and `Player Character → Entitybuilder::ResidentCharacter` have no end date. `## Rules` (`:89`) calls all three old code names. Add "until #156" to those three lines. — `docs/domain.md:15` → fixed (Align AGENTS.md and the domain doc with the Resident and District renames)
 - [x] Nit: The first Live play bullet has a 34-word second sentence with a semicolon and a parenthesis. Playbook rule 1 asks for at most 20 words per sentence. Split it, for example: "Until #155 merges `Resident` into `User`, a Game belongs to the user's `Resident`, like all other owned content. #155 then moves it." — `docs/domain.md:31` → fixed (Align AGENTS.md and the domain doc with the Resident and District renames)
 - [x] Nit: The edited visibility line says "Public / Residents / Private throughout", but Campaign also has `Friends` (`engines/campaignmanager/app/models/campaignmanager/campaign.rb:8`). This was wrong before this branch. Propose a separate fix; not for this branch. — `AGENTS.md:18` → fixed (Align AGENTS.md and the domain doc with the Resident and District renames)
+
+## Round 6 — 2026-10-09T08:35Z — 53729bc
+
+State at review: `bin/rails test test/domain_doc_test.rb test/i18n_test.rb` green (19 runs, 81 assertions, 0 failures), `bundle exec rubocop` on both test files clean. Working tree clean. Full suite not re-run: commit 53729bc changes only `AGENTS.md`, `docs/domain.md` and `review.md`. The branch now contains `origin/main` (`182565a`, the #154 merge), so the round 5 rebase note is closed. No `REVIEW.md` in the repo; default passes used.
+
+Round 5 verification:
+
+- Nit (`## What this is` introduces Resident) — resolved. `AGENTS.md:5` says a user signs up and dates the `Resident` record until #155; `:7` says "users (with their `Resident` record)". `CLAUDE.md` is still a symlink to `AGENTS.md`.
+- Nit (#156 names undated) — resolved. `docs/domain.md:15`, `:64` and `:70` say "until #156"; `:89` and the rename map agree.
+- Nit (34-word sentence) — resolved. `docs/domain.md:31` is split; each sentence is at most 20 words.
+- Nit (visibility misses Friends) — resolved on this branch instead of a follow-up. Acceptable: the line was already edited here. `AGENTS.md:18` matches `PRIVACY_OPTIONS` in all five engine models (`engines/campaignmanager/app/models/campaignmanager/campaign.rb:8` and its peers). #155's body confirms it renames the "Residents" level.
+
+Bugs and Security passes: nothing found. The change is documentation only; the pinned test "names District as the code name for World" still matches `:64`.
+
+Compliance: the criterion map from rounds 1–5 still holds. Every test named in `plan.md` `## Proof` still exists; the commit changes no test. No file under `app/`, `engines/` or `db/` changed. No new findings.
