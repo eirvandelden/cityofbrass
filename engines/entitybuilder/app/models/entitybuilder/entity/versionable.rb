@@ -40,6 +40,10 @@ module Entitybuilder
         version
       end
 
+      def parent_visible_to(current_user, is_admin)
+        parent if parent&.can_show?(current_user, is_admin, parent.type.demodulize)
+      end
+
       def versions_visible_to(current_user, is_admin)
         versions.select { |version| version.can_show?(current_user, is_admin, version.type.demodulize) }
       end
