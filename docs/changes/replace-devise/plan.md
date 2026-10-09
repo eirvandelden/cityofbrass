@@ -69,6 +69,7 @@ The spec's design decisions stand (polymorphic `sessions` table, `session_id` / 
 19. **Review round 1: crafted reset requests.** `PasswordsController#new_password` turns a missing `password_confirmation` into `""`, so the confirmation check fails with a 422 instead of an `ArgumentError` (500). A `user` param that is not a hash stays a 400 from `params.expect`.
 20. **Review round 1: `Accept-Language` parsing.** Entries with `q=0` ("not acceptable") are dropped, and spaces around `;` and `=` are allowed.
 21. **Review round 1: tolerant drop migration.** `RemoveDeviseColumns` removes its indexes and columns with `if_exists: true`, so a production database whose indexes differ from the development schema does not stop the deploy halfway. The runbook also rehearses the migrations on a copy of the production backup before the window.
+22. **Review round 1: `.rubocop_todo.yml`.** Drop the three entries for the deleted `config/initializers/devise.rb`. The entry for the old `devise_create_users` migration stays; that file still exists.
 
 ## Integration points
 
