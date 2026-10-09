@@ -12,6 +12,7 @@ Rails modular monolith: core `app/` handles users, residents, auth, messaging, a
 - **Resident** — the user's in-world identity; owns the content built in each engine.
 - **Affiliation** — an invite/accept relationship between residents to co-edit shared content or campaigns.
 - **Message** — resident-to-resident inbox/sent messaging.
+- The milestone 7 vocabulary (Game, Campaign, Adventure, Page, World, Module, Published, Catalog) and the target model live in `docs/domain.md`.
 - Each engine owns its own models/controllers/views/migrations but shares the one database and one deploy.
 - All primary keys are UUIDs.
 - Content visibility is Public / Residents / Private throughout.
