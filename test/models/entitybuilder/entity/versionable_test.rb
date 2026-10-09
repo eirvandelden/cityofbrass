@@ -73,6 +73,17 @@ module Entitybuilder
         assert_not ActionText::RichText.exists?(record: @monster, name: "notes")
       end
 
+      test "lists only the versions a viewer may see" do
+        @monster.create_version(version_label: "Level 5")
+        @monster.create_version(version_label: "Level 10").update_columns(privacy: "Private")
+
+        visible_to_owner = @monster.versions_visible_to(users(:dan), false)
+        visible_to_other = Entity.find(@monster.id).versions_visible_to(users(:lucas), false)
+
+        assert_equal [ "Level 10", "Level 5" ], visible_to_owner.map(&:version_label)
+        assert_equal [ "Level 5" ], visible_to_other.map(&:version_label)
+      end
+
       test "copies notables through notableable only" do
         version = @monster.create_version(version_label: "Level 10")
 
