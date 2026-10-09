@@ -62,7 +62,9 @@ class PasswordsController < ApplicationController
       @scope == "admin" ? new_admin_session_path : new_user_session_path
     end
 
+    # A missing confirmation becomes "", which fails the confirmation check instead of raising.
     def new_password
-      params.expect(@scope => [ :password, :password_confirmation ]).to_h.symbolize_keys
+      attributes = params.expect(@scope => [ :password, :password_confirmation ])
+      { password: attributes[:password], password_confirmation: attributes[:password_confirmation].to_s }
     end
 end

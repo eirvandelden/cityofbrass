@@ -78,4 +78,18 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
 
     assert_response :unprocessable_entity
   end
+
+  test "missing confirmation re-renders with errors and keeps the old password" do
+    user = users(:dan)
+    patch user_password_path(user.password_reset_token), params: { user: { password: "long-enough-1" } }
+
+    assert_response :unprocessable_entity
+    assert user.reload.authenticate("password")
+  end
+
+  test "a reset request without password fields is a bad request, not an error" do
+    patch user_password_path(users(:dan).password_reset_token), params: { user: "not-a-hash" }
+
+    assert_response :bad_request
+  end
 end

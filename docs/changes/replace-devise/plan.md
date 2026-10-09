@@ -66,6 +66,7 @@ The spec's design decisions stand (polymorphic `sessions` table, `session_id` / 
 16. **No rate limiting added.** The Rails 8 generator adds `rate_limit` on `sessions#create`; lockout covers the spec. Out of scope.
 17. **Review round 1 fixes, model side** (Etienne, 2026-10-09: fix all findings). `register_failed_attempt` counts in SQL (`update_all` with `failed_attempts = failed_attempts + 1` and a `CASE` for `locked_at`), so parallel wrong guesses on stale copies all count. A password change (`after_update` on `password_digest`) destroys the account's sessions except the ones `Current.session_ids` names, so a reset ends every earlier session and an account-settings change keeps only the session making it. `authenticate_by_credentials` builds `new(password:)` for an unknown email, so it costs a BCrypt hash like a known one.
 18. **Review round 1 fixes, controller side.** `start_new_session_for` calls `reset_session` first, so sign-in and password reset start a fresh Rails session with a new id and CSRF token. `SessionsController` reads the return-to address before that reset. The return-to address is stored per scope (`user_return_to`, `admin_return_to`), so an Admin sign-in never follows an address stored for a User page. A signed cookie whose `Session` row is gone is deleted on the next request instead of costing a lookup every time.
+19. **Review round 1: crafted reset requests.** `PasswordsController#new_password` turns a missing `password_confirmation` into `""`, so the confirmation check fails with a 422 instead of an `ArgumentError` (500). A `user` param that is not a hash stays a 400 from `params.expect`.
 
 ## Integration points
 
@@ -165,6 +166,8 @@ Each step: write the test, run it, watch it fail for the right reason, make it p
 - Translating any page other than sign-in, password reset and their flashes.
 
 ## Proof
+
+- Crafted reset requests never raise (review round 1) → `test/integration/password_resets_test.rb` `test "missing confirmation re-renders with errors and keeps the old password"`, `"a reset request without password fields is a bad request, not an error"`
 
 - Sign-in starts a fresh Rails session; return-to is per scope; a password change keeps only the current session; a reset ends earlier sessions; a cookie for a deleted session is cleared (review round 1) → `test/integration/session_security_test.rb` (six tests)
 
