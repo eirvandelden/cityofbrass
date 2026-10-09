@@ -69,3 +69,24 @@ Compliance: the criterion map from rounds 1–3 still holds. Every test named in
 - [x] Nit: `AGENTS.md` (and `CLAUDE.md`, its symlink) still defines **Resident** as the content owner and uses "residents" in five places, one line above the new pointer to `docs/domain.md`, which now says "never `Resident`". Agents read `AGENTS.md` first and get the opposite rule. Align the `## Domain` bullets with the doc, or propose that for a follow-up. — `AGENTS.md:12` → fixed (Record the Resident merge and City-name renames in the domain docs)
 - [x] Nit: The test name says "Resident only inside code names", but the check strips every backtick span. Line 31 quotes `` `resident` `` as an issue word, not a code name, and any future backticked phrase passes. Rename the test to match what it checks ("says resident only inside backticks"), or narrow the strip to `Resident…` class names. — `test/domain_doc_test.rb:56` → dismissed: Etienne limited this session to documentation, so the test code stays as it is
 - [x] Nit: The 2026-10-08 decisions live only in the doc's `## Sources` line. Unlike the 2026-10-06 Dutch decision (round 2), nothing in the change folder records them. Note them in this folder (for example in `plan.md` design decisions) so the trail from intent to doc stays complete. — `docs/domain.md:115` → fixed (Record the Resident merge and City-name renames in the domain docs)
+
+## Round 5 — 2026-10-09T06:50Z — 5155fd9
+
+State at review: `bin/rails test test/domain_doc_test.rb test/i18n_test.rb` green (19 runs, 81 assertions, 0 failures), `bundle exec rubocop` on both test files clean, `bin/i18n-tasks health` green. Working tree clean. Full suite not re-run: commit 5155fd9 changes only `AGENTS.md`, `docs/domain.md`, `plan.md` and `review.md`. No `REVIEW.md` in the repo; default passes used. The branch is behind `origin/main` by the #154 merge (`182565a`); `git merge-tree` shows no conflict. Rebase before the next push (playbook rule 20).
+
+Round 4 verification:
+
+- Important (which record owns a Game) — resolved. `docs/domain.md:31` and `:77` say a Game belongs to `Resident` until #155; `## Code names` has a user line (`:69`).
+- Nit (rename lines cite no issue) — resolved. The three lines cite #155 and #156. Both issues exist and are open, and their bodies match the doc.
+- Nit (`AGENTS.md` defines Resident) — partly resolved; see the first Nit below.
+- Nit (test name) — dismissed by Etienne; not re-raised.
+- Nit (decisions only in `## Sources`) — resolved. `plan.md` design decisions record the 2026-10-08 decisions.
+
+Bugs and Security passes: nothing found. "Residents" as signed-in users matches the code (`app/models/concerns/keys_to_campaignmanager.rb:14`, after the `current_user.nil?` guard).
+
+Compliance: the criterion map from rounds 1–4 still holds. Every test named in `plan.md` `## Proof` still exists; the commit changes no test. No file under `app/`, `engines/` or `db/` changed.
+
+- [ ] Nit: `## What this is` in `AGENTS.md` (and `CLAUDE.md`, its symlink) still says a user "creates a **Resident** — their identity in the world" and that `app/` "handles users, residents". The `## Domain` bullet four lines below now says Resident is only the content-owner record and to "say user". Agents read this paragraph first. Align it with the bullet. — `AGENTS.md:5`
+- [ ] Nit: The doc dates the `Resident` names (user line `:69` and Game line `:77` say "until #155") but not the #156 names. The glossary says World is "called "District" in code (#91)", and `World → Worldbuilder::District` and `Player Character → Entitybuilder::ResidentCharacter` have no end date. `## Rules` (`:89`) calls all three old code names. Add "until #156" to those three lines. — `docs/domain.md:15`
+- [ ] Nit: The first Live play bullet has a 34-word second sentence with a semicolon and a parenthesis. Playbook rule 1 asks for at most 20 words per sentence. Split it, for example: "Until #155 merges `Resident` into `User`, a Game belongs to the user's `Resident`, like all other owned content. #155 then moves it." — `docs/domain.md:31`
+- [ ] Nit: The edited visibility line says "Public / Residents / Private throughout", but Campaign also has `Friends` (`engines/campaignmanager/app/models/campaignmanager/campaign.rb:8`). This was wrong before this branch. Propose a separate fix; not for this branch. — `AGENTS.md:18`
