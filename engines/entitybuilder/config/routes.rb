@@ -112,9 +112,9 @@ Entitybuilder::Engine.routes.draw do
   scope '/resident/' do
     resources :resident_characters,   path: :characters, concerns: [:entity_core, :profile, :sheet, :card, :notes]
     resources :resident_creatures,    path: :creatures,
-concerns: [:entity_core, :monster, :profile, :sheet, :card, :notes]
+                                      concerns: [:entity_core, :monster, :profile, :sheet, :card, :notes]
     resources :resident_npcs,         path: :npcs,
-concerns: [:entity_core, :monster, :profile, :sheet, :card, :notes]
+                                      concerns: [:entity_core, :monster, :profile, :sheet, :card, :notes]
   end
 
   scope '/stock/' do
