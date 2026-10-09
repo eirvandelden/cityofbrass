@@ -21,11 +21,14 @@ module Entitybuilder
         assert_predicate version.errors[:version_label], :any?
       end
 
-      test "every entity association is listed as copied or skipped" do
+      test "every versionable association is listed as copied or skipped" do
         listed = Versionable::COPIED_ASSOCIATIONS + Versionable::SKIPPED_ASSOCIATIONS
-        actual = Entity.reflect_on_all_associations.select { |r| r.macro.in?(%i[has_many has_one]) }.map(&:name)
 
-        assert_empty actual - listed
+        [ ResidentCreature, ResidentNpc ].each do |model|
+          actual = model.reflect_on_all_associations.select { |r| r.macro.in?(%i[has_many has_one]) }.map(&:name)
+
+          assert_empty actual - listed, model.name
+        end
       end
 
       test "copies every child association with fresh ids" do
