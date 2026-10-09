@@ -47,3 +47,22 @@ Checked and clean: `sessions.destroy_all` returns an Array, which is truthy even
 - [ ] Nit: `reset_password` is not atomic. `update` commits first, then `sessions.destroy_all` and `unlock` run outside that transaction. An error between the two leaves the new password in place and the resetting browser's (possibly stolen) session alive. Wrap the three steps in one `transaction`. — `app/models/concerns/authenticatable.rb:63` →
 - [ ] Nit: `sessions.destroy_all && unlock` looks like a condition, but `destroy_all` always returns an Array, so `unlock` always runs. Write two statements under the `if saved`, so the reader does not look for a case that cannot happen. — `app/models/concerns/authenticatable.rb:65` →
 - [ ] Nit: A password reset now keeps the same scope's pending return-to address. Before round 2's fix, `reset_session` dropped it. `PasswordsController#update` redirects to root and does not consume the key, so the next sign-in in that browser goes to an old page. Only same-host URLs are stored, so this is harmless. Delete the scope's key in `update`, or accept it and note it in the plan. — `app/controllers/passwords_controller.rb:22` →
+
+## Round 4 — 2026-10-09 08:52 UTC — 6354e17
+
+Suite state: `user_test.rb`, `admin_test.rb`, `session_security_test.rb` and `password_resets_test.rb` give 62 runs, 0 failures. RuboCop on the four changed files: no offenses. The caller reports the full suite, system tests, importer engine, seeded migration runs and `bin/pre_push_checks` as green. Those runs were not repeated here.
+
+Round 3 status: all three nits are resolved in the code. The `→` slots stay open for the closer.
+
+- Atomic reset (59c99b3): `update`, `sessions.destroy_all` and `unlock` now run in one `transaction`. In production this block is the outermost transaction; `update` and each `destroy` join it, so the `after_update` callback's deletes roll back with it. In tests the fixture transaction is not joinable, so the block opens a savepoint and the rollback is real. A failed validation returns `false` from the block without raising, so nothing is rolled back and nothing needs to be.
+- Two statements (59c99b3): `end_sessions_and_unlock` calls `destroy_all` and `unlock` in sequence. No false condition is implied.
+- Own return-to dropped (6354e17): `reset_session_keeping_return_to(except: account.class.name)` keeps only the other scope's key. `RETURN_TO_KEYS` uses string keys, so `except("User")` / `except("Admin")` match.
+
+Checked and clean:
+
+- Normal sign-in redirect: `SessionsController#sign_in_and_redirect` reads `after_authentication_url` before `start_new_session_for`, and `PasswordsController#update` is the only other caller. No caller reads the own key after the reset, so the sign-in redirect is unchanged.
+- Stub test validity: `users(:dan)` / `admins(:dan)` come from the fixture cache, so `account.stub(:unlock, …)` and `account.reset_password` act on the same object. `unlock` is called with an implicit receiver, which the singleton stub intercepts. Against the old code, `update` and the session deletes would persist before the raise, so the test fails there and passes here. `ActiveRecord::ActiveRecordError` is re-raised after the rollback (only `ActiveRecord::Rollback` is swallowed). `minitest/mock` is already required; Minitest is 5.27, so `Object#stub` is available.
+- Return-to test validity: `terminate_session` does not call `reset_session`, so the sign-out step does not clear the key by itself. Against the old code the sign-in would go to `residents_url`; the test asserts `root_url`.
+- Compliance: both new tests named in `plan.md`'s `## Proof` exist. Plan items 17 and 18 describe the new behaviour. No test was weakened, skipped or deleted.
+
+Nothing found.
