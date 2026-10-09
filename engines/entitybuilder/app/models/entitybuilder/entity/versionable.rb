@@ -40,6 +40,10 @@ module Entitybuilder
         version
       end
 
+      def versions_visible_to(current_user, is_admin)
+        versions.select { |version| version.can_show?(current_user, is_admin, version.type.demodulize) }
+      end
+
       private
         def build_version(version_label)
           dup.tap do |version|
