@@ -66,6 +66,13 @@ module Entitybuilder
         assert_not_equal @monster.gallery_image_join.id, version.gallery_image_join.id
       end
 
+      test "does not leave empty rich text behind on the parent" do
+        @monster.create_version(version_label: "Level 10")
+        @monster.save!
+
+        assert_not ActionText::RichText.exists?(record: @monster, name: "notes")
+      end
+
       test "copies notables through notableable only" do
         version = @monster.create_version(version_label: "Level 10")
 
