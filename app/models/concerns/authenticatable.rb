@@ -61,12 +61,19 @@ module Authenticatable
 
   # Ends every session, including one the resetting browser still holds: it may be the stolen one.
   def reset_password(password:, password_confirmation:)
-    saved = update(password: password, password_confirmation: password_confirmation)
-    sessions.destroy_all && unlock if saved
-    saved
+    transaction do
+      saved = update(password: password, password_confirmation: password_confirmation)
+      end_sessions_and_unlock if saved
+      saved
+    end
   end
 
   private
+    def end_sessions_and_unlock
+      sessions.destroy_all
+      unlock
+    end
+
     def end_other_sessions_after_password_change
       return unless saved_change_to_password_digest?
 

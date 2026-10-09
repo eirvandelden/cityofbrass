@@ -79,6 +79,19 @@ module AuthenticatableTests
       assert_empty account.sessions.reload
     end
 
+    test "reset_password changes nothing when ending the sessions fails" do
+      kept = account.start_session(ip_address: "203.0.113.5", user_agent: "Agent")
+
+      account.stub(:unlock, -> { raise ActiveRecord::ActiveRecordError, "boom" }) do
+        assert_raises(ActiveRecord::ActiveRecordError) do
+          account.reset_password(password: "brand-new-pass", password_confirmation: "brand-new-pass")
+        end
+      end
+
+      assert account.reload.authenticate("password")
+      assert Session.exists?(kept.id)
+    end
+
     test "saving without a password change keeps every session" do
       account.start_session(ip_address: "203.0.113.5", user_agent: "Agent")
 
