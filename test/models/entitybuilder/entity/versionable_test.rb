@@ -73,6 +73,14 @@ module Entitybuilder
         assert_not ActionText::RichText.exists?(record: @monster, name: "notes")
       end
 
+      test "lists versions in natural label order" do
+        [ "Level 10", "level 5", "Elite", "Level 25" ].each { |label| @monster.create_version(version_label: label) }
+
+        labels = @monster.versions_visible_to(users(:dan), false).map(&:version_label)
+
+        assert_equal [ "Elite", "level 5", "Level 10", "Level 25" ], labels
+      end
+
       test "lists only the versions a viewer may see" do
         @monster.create_version(version_label: "Level 5")
         @monster.create_version(version_label: "Level 10").update_columns(privacy: "Private")
@@ -80,7 +88,7 @@ module Entitybuilder
         visible_to_owner = @monster.versions_visible_to(users(:dan), false)
         visible_to_other = Entity.find(@monster.id).versions_visible_to(users(:lucas), false)
 
-        assert_equal [ "Level 10", "Level 5" ], visible_to_owner.map(&:version_label)
+        assert_equal [ "Level 5", "Level 10" ], visible_to_owner.map(&:version_label)
         assert_equal [ "Level 5" ], visible_to_other.map(&:version_label)
       end
 

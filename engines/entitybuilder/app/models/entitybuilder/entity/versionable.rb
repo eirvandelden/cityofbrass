@@ -45,10 +45,17 @@ module Entitybuilder
       end
 
       def versions_visible_to(current_user, is_admin)
-        versions.select { |version| version.can_show?(current_user, is_admin, version.type.demodulize) }
+        versions
+          .select { |version| version.can_show?(current_user, is_admin, version.type.demodulize) }
+          .sort_by { |version| natural_sort_key(version.version_label) }
       end
 
       private
+        # "Level 5" sorts before "Level 10": digit runs compare as numbers, the rest case-insensitively.
+        def natural_sort_key(label)
+          label.to_s.split(/(\d+)/).map { |part| part.match?(/\A\d+\z/) ? [ 0, part.to_i ] : [ 1, part.downcase ] }
+        end
+
         def build_version(version_label)
           dup.tap do |version|
             version.parent = parent || self
