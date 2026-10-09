@@ -10,7 +10,7 @@ class PasswordsController < ApplicationController
   end
 
   def create
-    account = @model.find_by(email: params.dig(@scope, :email).to_s)
+    account = @model.find_by(email: params.expect(@scope => [ :email ])[:email].to_s)
     deliver_reset(account) if account
     redirect_to login_path, notice: t("passwords.create.sent")
   end

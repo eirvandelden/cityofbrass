@@ -92,4 +92,10 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
 
     assert_response :bad_request
   end
+
+  test "a reset request with a malformed account param is a bad request, not an error" do
+    post user_passwords_path, params: { user: "not-a-hash" }
+
+    assert_response :bad_request
+  end
 end
