@@ -5,6 +5,9 @@ module Authenticatable
   MAXIMUM_ATTEMPTS = 20
   UNLOCK_IN = 1.hour
 
+  FAILED_ATTEMPT_SQL = "failed_attempts = failed_attempts + 1, " \
+                       "locked_at = CASE WHEN failed_attempts + 1 >= ? THEN ? ELSE locked_at END".freeze
+
   class Locked < StandardError; end
 
   included do
@@ -14,11 +17,17 @@ module Authenticatable
     normalizes :email, with: ->(email) { email.strip.downcase }
 
     validates :password, length: { minimum: 8 }, allow_nil: true
+
+    after_update :end_other_sessions_after_password_change
   end
 
   class_methods do
     def authenticate_by_credentials(email:, password:)
-      find_by(email: email)&.authenticate_unless_locked(password)
+      account = find_by(email: email)
+      return account.authenticate_unless_locked(password) if account
+
+      new(password: password) # Hash anyway, so an unknown email costs the same time as a known one.
+      nil
     end
   end
 
@@ -37,9 +46,9 @@ module Authenticatable
     update_columns(failed_attempts: 0, locked_at: nil)
   end
 
+  # Counts in SQL so parallel wrong guesses on stale copies all count.
   def register_failed_attempt
-    attempts = failed_attempts + 1
-    update_columns(failed_attempts: attempts, locked_at: (Time.current if attempts >= MAXIMUM_ATTEMPTS))
+    self.class.where(id: id).update_all([ FAILED_ATTEMPT_SQL, MAXIMUM_ATTEMPTS, Time.current ])
     nil
   end
 
@@ -55,6 +64,12 @@ module Authenticatable
   end
 
   private
+    def end_other_sessions_after_password_change
+      return unless saved_change_to_password_digest?
+
+      sessions.where.not(id: Current.session_ids).destroy_all
+    end
+
     def lock_expired?
       locked? && locked_at <= UNLOCK_IN.ago
     end

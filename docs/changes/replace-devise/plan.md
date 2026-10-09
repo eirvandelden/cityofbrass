@@ -64,6 +64,7 @@ The spec's design decisions stand (polymorphic `sessions` table, `session_id` / 
     - **Deploy with a short downtime, one release.** Etienne chose this on 2026-10-06 over an expand/cutover/contract split. Old Devise code fails once `encrypted_password` is gone, and new code fails before `password_digest` and `sessions` exist; `config/deploy.yml` runs migrations through the `kamal migrate` alias (`app exec --reuse "bin/rails db:migrate"`), which runs in the current container. Runbook, written into the PR description (no deploy file changes): (1) confirm `DEVISE_PEPPER` is empty in production; (2) back up the production primary SQLite database; (3) stop the app; (4) run `db:migrate` in the new image; (5) boot the new image. The implementer writes the exact Kamal commands after checking the Kamal docs for the version in `Gemfile.lock`, and states the expected downtime. Only Etienne runs them (playbook rule 13).
 15. **Test sign-in helper.** New `test/test_helpers/session_test_helper.rb`, included in `ActionDispatch::IntegrationTest` and `ActionController::TestCase` from `test/test_helper.rb`. It provides `sign_in(account)` and `sign_out(account_or_scope)` with the same call shape as Devise's helpers, so the ~70 test files only lose their `include Devise::Test::...` line. Integration tests set the signed cookie the Rails 8 way (`ActionDispatch::TestRequest.create.cookie_jar` → copy into `cookies`); controller tests write `cookies.signed[...]` directly. Fixtures use `password_digest: <%= BCrypt::Password.create("password", cost: BCrypt::Engine::MIN_COST) %>` and drop `confirmed_at`.
 16. **No rate limiting added.** The Rails 8 generator adds `rate_limit` on `sessions#create`; lockout covers the spec. Out of scope.
+17. **Review round 1 fixes, model side** (Etienne, 2026-10-09: fix all findings). `register_failed_attempt` counts in SQL (`update_all` with `failed_attempts = failed_attempts + 1` and a `CASE` for `locked_at`), so parallel wrong guesses on stale copies all count. A password change (`after_update` on `password_digest`) destroys the account's sessions except the ones `Current.session_ids` names, so a reset ends every earlier session and an account-settings change keeps only the session making it. `authenticate_by_credentials` builds `new(password:)` for an unknown email, so it costs a BCrypt hash like a known one.
 
 ## Integration points
 
@@ -163,6 +164,8 @@ Each step: write the test, run it, watch it fail for the right reason, make it p
 - Translating any page other than sign-in, password reset and their flashes.
 
 ## Proof
+
+- Parallel wrong guesses all count; password changes end other sessions; unknown emails cost a hash (review round 1) → `test/support/authenticatable_tests.rb` `test "register_failed_attempt counts attempts made through stale copies"`, `"authenticate_by_credentials hashes a password for an unknown email"`, `"changing the password ends the account's other sessions"`, `"changing the password keeps the session making the change"`, `"saving without a password change keeps every session"` (run for User and Admin)
 
 Acceptance criteria → tests:
 

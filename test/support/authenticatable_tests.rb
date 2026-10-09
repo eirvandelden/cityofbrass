@@ -1,4 +1,6 @@
 # Shared examples for models that include Authenticatable. Expects `account` and `account_class`.
+require "minitest/mock"
+
 module AuthenticatableTests
   extend ActiveSupport::Concern
 
@@ -30,6 +32,50 @@ module AuthenticatableTests
       account.register_failed_attempt
 
       assert_predicate account.reload, :locked?
+    end
+
+    test "register_failed_attempt counts attempts made through stale copies" do
+      stale_copies = Array.new(Authenticatable::MAXIMUM_ATTEMPTS) { account_class.find(account.id) }
+      stale_copies.each(&:register_failed_attempt)
+
+      assert_equal Authenticatable::MAXIMUM_ATTEMPTS, account.reload.failed_attempts
+      assert_predicate account, :locked?
+    end
+
+    test "authenticate_by_credentials hashes a password for an unknown email" do
+      hashed = false
+      BCrypt::Password.stub(:create, ->(*) { hashed = true }) do
+        account_class.authenticate_by_credentials(email: "nobody@example.com", password: "password")
+      end
+
+      assert hashed, "an unknown email must cost a password hash, like a known one"
+    end
+
+    test "changing the password ends the account's other sessions" do
+      2.times { account.start_session(ip_address: "203.0.113.5", user_agent: "Agent") }
+
+      account.reset_password(password: "brand-new-pass", password_confirmation: "brand-new-pass")
+
+      assert_empty account.sessions.reload
+    end
+
+    test "changing the password keeps the session making the change" do
+      current = account.start_session(ip_address: "203.0.113.5", user_agent: "Agent")
+      other = account.start_session(ip_address: "203.0.113.6", user_agent: "Agent")
+      Current.public_send("#{account_class.name.underscore}_session=", current)
+
+      account.reset_password(password: "brand-new-pass", password_confirmation: "brand-new-pass")
+
+      assert_equal [ current ], account.sessions.reload.to_a
+      assert_not Session.exists?(other.id)
+    end
+
+    test "saving without a password change keeps every session" do
+      account.start_session(ip_address: "203.0.113.5", user_agent: "Agent")
+
+      account.update!(email: "renamed-#{account.email}")
+
+      assert_equal 1, account.sessions.reload.count
     end
 
     test "expired lock is cleared before authenticating" do
