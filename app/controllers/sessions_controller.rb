@@ -40,9 +40,10 @@ class SessionsController < ApplicationController
     end
 
     def sign_in_and_redirect(account)
+      return_to = after_authentication_url(account)
       start_new_session_for(account)
       I18n.with_locale(account.try(:locale) || I18n.locale) do
-        redirect_to after_authentication_url, notice: t("sessions.create.signed_in")
+        redirect_to return_to, notice: t("sessions.create.signed_in")
       end
     end
 
