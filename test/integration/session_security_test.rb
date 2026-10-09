@@ -82,4 +82,16 @@ class SessionSecurityTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to residents_url
   end
+
+  test "a password reset drops its own pending return-to address" do
+    user = users(:dan)
+    get residents_path
+    put user_password_path(user.password_reset_token),
+        params: { user: { password: "brand-new-pass", password_confirmation: "brand-new-pass" } }
+    delete destroy_user_session_path
+
+    post user_session_path, params: { user: { email: user.email, password: "brand-new-pass" } }
+
+    assert_redirected_to root_url
+  end
 end
