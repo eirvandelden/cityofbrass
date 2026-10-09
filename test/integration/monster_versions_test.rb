@@ -65,6 +65,21 @@ class MonsterVersionsTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", "/eb/resident/creatures/#{version.id}", count: 0
   end
 
+  test "non-owner does not see a private parent on a public version's summary" do
+    parent = entitybuilder_entities(:resident_creature_private)
+    sign_in @owner
+    version = create_version(parent, "Level 3")
+    version.update_columns(privacy: "Public")
+    sign_out @owner
+
+    sign_in @other
+    get "/eb/resident/creatures/#{version.id}"
+
+    assert_response :success
+    assert_select "a[href=?]", "/eb/resident/creatures/#{parent.id}", count: 0
+    assert_select "p", text: /Version of/, count: 0
+  end
+
   test "creature index shows the version label" do
     sign_in @owner
     create_version(entitybuilder_entities(:resident_creature_one), "Level 10")
