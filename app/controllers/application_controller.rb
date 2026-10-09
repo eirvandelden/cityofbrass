@@ -51,12 +51,13 @@ class ApplicationController < ActionController::Base
       weighted.compact.sort_by { |_, weight, index| [ -weight, index ] }.map(&:first)
     end
 
+    # Returns nil for a wildcard or for q=0, which means "not acceptable".
     def language_weight(entry, index)
-      tag, *params = entry.strip.split(";")
+      tag, *params = entry.split(";").map(&:strip)
       return if tag.blank? || tag == "*"
 
-      quality = params.filter_map { |param| param.strip[/\Aq=(\d(?:\.\d+)?)\z/, 1] }.first
-      [ tag.split("-").first.downcase.to_sym, (quality || 1).to_f, index ]
+      quality = (params.filter_map { |param| param[/\Aq\s*=\s*(\d(?:\.\d+)?)\z/, 1] }.first || 1).to_f
+      [ tag.split("-").first.downcase.to_sym, quality, index ] if quality.positive?
     end
 
     def check_quota

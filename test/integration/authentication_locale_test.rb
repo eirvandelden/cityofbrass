@@ -26,6 +26,18 @@ class AuthenticationLocaleTest < ActionDispatch::IntegrationTest
     assert_select "label.flat", text: "Inloggen"
   end
 
+  test "accept-language skips a language marked not acceptable" do
+    get new_user_session_path, headers: { "Accept-Language" => "nl;q=0, de" }
+
+    assert_select "label.flat", text: "Login"
+  end
+
+  test "accept-language allows spaces around parameters" do
+    get new_user_session_path, headers: { "Accept-Language" => "de, nl ; q=0.8" }
+
+    assert_select "label.flat", text: "Inloggen"
+  end
+
   test "falls back to default for an unknown language" do
     get new_user_session_path, headers: { "Accept-Language" => "de-DE,fr;q=0.8" }
 
