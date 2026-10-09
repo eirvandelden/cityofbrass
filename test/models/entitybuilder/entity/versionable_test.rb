@@ -21,7 +21,7 @@ module Entitybuilder
         assert_predicate version.errors[:version_label], :any?
       end
 
-      test "every versionable association is listed as copied or skipped" do
+      test "every entity association is listed as copied or skipped" do
         listed = Versionable::COPIED_ASSOCIATIONS + Versionable::SKIPPED_ASSOCIATIONS
 
         [ ResidentCreature, ResidentNpc ].each do |model|
