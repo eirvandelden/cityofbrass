@@ -100,7 +100,7 @@ module Entitybuilder
 
         def copy_rich_text(source, target, names)
           names.each do |name|
-            body = source.public_send(name).body
+            body = source.public_send("rich_text_#{name}")&.body
             target.public_send("#{name}=", body) if body
           end
         end
