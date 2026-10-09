@@ -9,13 +9,13 @@ Rails modular monolith: core `app/` handles users, residents, auth, messaging, a
 ## Domain
 
 - **User** — login/auth record (Devise). Has a **status** (`free`, `trial`, `active`, `alpha`, `beta`, `vip`, `locked`, `canceled`) that gates features and quotas (`lib/quota.rb`).
-- **Resident** — the user's in-world identity; owns the content built in each engine.
-- **Affiliation** — an invite/accept relationship between residents to co-edit shared content or campaigns.
-- **Message** — resident-to-resident inbox/sent messaging.
+- **Resident** — the content-owner record of a User, exactly one per User; owns the content built in each engine. It merges into User (#155); in domain language, say user.
+- **Affiliation** — an invite/accept relationship between users (through their Resident) to co-edit shared content or campaigns.
+- **Message** — user-to-user inbox/sent messaging, stored between Residents.
 - The milestone 7 vocabulary (Game, Campaign, Adventure, Page, World, Module, Published, Catalog) and the target model live in `docs/domain.md`.
 - Each engine owns its own models/controllers/views/migrations but shares the one database and one deploy.
 - All primary keys are UUIDs.
-- Content visibility is Public / Residents / Private throughout.
+- Content visibility is Public / Residents / Private throughout. "Residents" means signed-in users; #155 renames it.
 
 ## Commands
 

@@ -28,7 +28,7 @@ Authored content is Campaign, Adventure, World, Page and House Rules. A Campaign
 
 ### Live play
 
-- A Game is owned by a user (#93 says `resident`; Etienne's decision of 2026-10-08 replaces that name with user). It holds a content queue of references to Campaigns and Adventures. Several may be active; the others are queued for the future (#93).
+- A Game is owned by a user. Until #155 merges `Resident` into `User`, a Game belongs to the user's `Resident`, like all other owned content; #155 then moves it with the rest (Etienne's decision of 2026-10-08; #93 says `resident`). It holds a content queue of references to Campaigns and Adventures. Several may be active; the others are queued for the future (#93).
 - A Game references its content and never embeds it (#93, #97).
 - Players belong to the Game. Each Player has an ordered queue of Player Characters; a retired character stays as history and stays referenceable (#93, #95).
 - The playlist pattern is ordered items with the states `active`, `queued-future` and `retired`; the content queue and the per-player character queue share it (#93, #95).
@@ -55,9 +55,9 @@ Authored content is Campaign, Adventure, World, Page and House Rules. A Campaign
 - Stock Items → Published Items (#91, #103)
 - Stock Spells → Published Spells (#91, #103)
 - browse surface → Catalog (#91, #104)
-- `Resident` → User (Etienne's decision of 2026-10-08)
-- `ResidentCharacter` → Player Character (Etienne's decision of 2026-10-08)
-- `District` → World (Etienne's decision of 2026-10-08)
+- `Resident` → User: `Resident` merges into `User`, which already holds the login. A user has exactly one profile, and deleting a user deletes all their content (Etienne's decision of 2026-10-08; #155)
+- `ResidentCharacter` → Player Character (Etienne's decision of 2026-10-08; #156)
+- `District` → World (Etienne's decision of 2026-10-08; #156)
 
 ## Code names
 
@@ -66,6 +66,7 @@ Authored content is Campaign, Adventure, World, Page and House Rules. A Campaign
 - Adventure → `Storybuilder::Adventure`
 - Page → `Campaignmanager::Page`, `Storybuilder::Page`, `Worldbuilder::Page`
 - Player → `Campaignmanager::Player`
+- user → `User` (login) and `Resident` (content owner, exactly one per `User`), until #155 merges them
 - Player Character → `Entitybuilder::ResidentCharacter`
 - ActivePlay session → `Activeplay::VirtualTable`
 - combatant → `Activeplay::Notable`
@@ -73,7 +74,7 @@ Authored content is Campaign, Adventure, World, Page and House Rules. A Campaign
 - House Rules → `Campaignmanager::HouseRule`
 - GM Notes → `Campaignmanager::GameMasterNote`
 - Stock → `Storybuilder::StockAdventure`, `Entitybuilder::StockNpc`, `Entitybuilder::StockCreature`, `Rulebuilder::StockItem`, `Rulebuilder::StockSpell`
-- Game → no model yet (#93)
+- Game → no model yet (#93); it belongs to `Resident` until #155
 - Scene and Encounter are not models: a Page plays the Scene role, and launching ActivePlay from a Page realises an encounter (#105)
 
 ## Translations
@@ -85,7 +86,7 @@ Authored content is Campaign, Adventure, World, Page and House Rules. A Campaign
 ## Rules
 
 - Use game-agnostic terms; no City-of-Brass theming (#91).
-- Say user, never `Resident`. Classes named `Resident…`, such as `Entitybuilder::ResidentCharacter`, are old code names (Etienne's decision of 2026-10-08).
+- Say user, never `Resident`. No City-of-Brass names in the UI or in code: `Resident`, `ResidentCharacter` and `District` are old code names that #155 and #156 remove (Etienne's decision of 2026-10-08).
 - No new Foundation-specific UI; use framework-agnostic HTML and CSS (#91).
 - Ship vertically: model, UI and i18n together (#91).
 - A Game references content and never embeds it (#93).
@@ -112,5 +113,5 @@ Authored content is Campaign, Adventure, World, Page and House Rules. A Campaign
 - The accepted `intent.md` of #91 (`docs/changes/91-domain-doc-glossary-i18n-for-game/`): the Game translations and "Campagna".
 - Etienne's plan-stage decision of 2026-10-06: Stock Creatures become Published Monsters.
 - Etienne's review-stage decision of 2026-10-06: Dutch uses "Campaign", not "Campagne".
-- Etienne's review-stage decisions of 2026-10-08: a user owns a Game, the domain never says `Resident`, `Resident` becomes User, `ResidentCharacter` becomes Player Character and `District` becomes World.
+- Etienne's review-stage decisions of 2026-10-08: no City-of-Brass names in the UI or in code; `Resident` merges into `User` (#155); `ResidentCharacter` becomes Player Character and `District` becomes World (#156); a Game belongs to `Resident` until #155.
 - Class names verified in `engines/`.
