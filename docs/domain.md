@@ -12,7 +12,7 @@ Where no source decides a point, the document says "not decided" and links the i
 - **Campaign** — authored content: an ongoing series of connected Adventures, a World and continuity, with its own Pages and House Rules (#91, #94).
 - **Adventure** — authored content: one complete playable unit, built from Pages (#91).
 - **Page** — a flexible building block inside an Adventure; it plays the "Scene" role, so there are no Scene or Encounter models (#91, #105).
-- **World** — setting and reference material, called "District" in code (#91).
+- **World** — setting and reference material, called `District` in code until #156 (#91).
 - **Module** — the delivery format: the released form of a runnable container, named "Adventure Module", "Campaign Module" or "World Module" (#91, #100).
 - **Published** — the released form of a single entity, named "Published NPC", "Published Item", "Published Monster" or "Published Spell" (#91, #100).
 - **Catalog** — the browse surface that holds both Modules and Published content (#91, #104).
@@ -28,7 +28,7 @@ Authored content is Campaign, Adventure, World, Page and House Rules. A Campaign
 
 ### Live play
 
-- A Game is owned by a user. Until #155 merges `Resident` into `User`, a Game belongs to the user's `Resident`, like all other owned content; #155 then moves it with the rest (Etienne's decision of 2026-10-08; #93 says `resident`). It holds a content queue of references to Campaigns and Adventures. Several may be active; the others are queued for the future (#93).
+- A Game is owned by a user. Until #155 merges `Resident` into `User`, a Game belongs to the user's `Resident`, like all other owned content. #155 then moves it with the rest (Etienne's decision of 2026-10-08; #93 says `resident`). It holds a content queue of references to Campaigns and Adventures. Several may be active; the others are queued for the future (#93).
 - A Game references its content and never embeds it (#93, #97).
 - Players belong to the Game. Each Player has an ordered queue of Player Characters; a retired character stays as history and stays referenceable (#93, #95).
 - The playlist pattern is ordered items with the states `active`, `queued-future` and `retired`; the content queue and the per-player character queue share it (#93, #95).
@@ -61,13 +61,13 @@ Authored content is Campaign, Adventure, World, Page and House Rules. A Campaign
 
 ## Code names
 
-- World → `Worldbuilder::District`
+- World → `Worldbuilder::District`, until #156
 - Campaign → `Campaignmanager::Campaign`; it fuses authored content and live play until #94
 - Adventure → `Storybuilder::Adventure`
 - Page → `Campaignmanager::Page`, `Storybuilder::Page`, `Worldbuilder::Page`
 - Player → `Campaignmanager::Player`
 - user → `User` (login) and `Resident` (content owner, exactly one per `User`), until #155 merges them
-- Player Character → `Entitybuilder::ResidentCharacter`
+- Player Character → `Entitybuilder::ResidentCharacter`, until #156
 - ActivePlay session → `Activeplay::VirtualTable`
 - combatant → `Activeplay::Notable`
 - session log → `Campaignmanager::AdventureLog`, a Page STI until #98
