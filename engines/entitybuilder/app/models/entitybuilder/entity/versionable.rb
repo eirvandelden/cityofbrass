@@ -22,8 +22,7 @@ module Entitybuilder
 
       included do
         belongs_to :parent, class_name: "Entitybuilder::Entity", optional: true
-        has_many :versions, -> { order(:version_label) }, class_name: "Entitybuilder::Entity",
-                 foreign_key: :parent_id, dependent: :nullify
+        has_many :versions, class_name: "Entitybuilder::Entity", foreign_key: :parent_id, dependent: :nullify
 
         validates :version_label, presence: true, if: :parent_id?
         validates :version_label, length: { maximum: 64 }
@@ -47,11 +46,12 @@ module Entitybuilder
       def versions_visible_to(current_user, is_admin)
         versions
           .select { |version| version.can_show?(current_user, is_admin, version.type.demodulize) }
-          .sort_by { |version| natural_sort_key(version.version_label) }
+          .sort_by { |version| [ natural_sort_key(version.version_label), version.version_label.to_s, version.id ] }
       end
 
       private
         # "Level 5" sorts before "Level 10": digit runs compare as numbers, the rest case-insensitively.
+        # Callers break ties by the exact label, because sort_by is not stable.
         def natural_sort_key(label)
           label.to_s.split(/(\d+)/).map { |part| part.match?(/\A\d+\z/) ? [ 0, part.to_i ] : [ 1, part.downcase ] }
         end
