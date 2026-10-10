@@ -81,6 +81,14 @@ module Entitybuilder
         assert_equal [ "Elite", "level 5", "Level 10", "Level 25" ], labels
       end
 
+      test "breaks natural order ties by the exact label" do
+        [ "level 5", "Level 5", "Level 05" ].each { |label| @monster.create_version(version_label: label) }
+
+        labels = @monster.versions_visible_to(users(:dan), false).map(&:version_label)
+
+        assert_equal [ "Level 05", "Level 5", "level 5" ], labels
+      end
+
       test "lists only the versions a viewer may see" do
         @monster.create_version(version_label: "Level 5")
         @monster.create_version(version_label: "Level 10").update_columns(privacy: "Private")
@@ -165,7 +173,7 @@ module Entitybuilder
         second = first.create_version(version_label: "Level 15")
 
         assert_equal @monster, second.parent
-        assert_equal [ "Level 10", "Level 15" ], @monster.versions.map(&:version_label)
+        assert_equal [ "Level 10", "Level 15" ], @monster.versions.map(&:version_label).sort
       end
 
       test "destroying the parent keeps its versions" do
