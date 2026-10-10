@@ -55,5 +55,21 @@ Compliance — acceptance criteria (spec, phase A):
 
 Compliance — `## Proof` tests: all 28 named tests exist by name. The two new tests (`lists versions in natural label order`, `shows the parent only to a viewer who may see it`) are additions. No existing test was weakened, skipped or deleted. The changed assertion in `lists only the versions a viewer may see` follows the agreed natural order and checks the same visibility.
 
-- [ ] Nit: `has_many :versions` still orders by `version_label` as text in SQL. The only reader, `versions_visible_to`, sorts again in Ruby. The SQL order is dead weight, and any later caller of `versions` gets an order that differs from the summary ("Level 10" before "Level 5") — `engines/entitybuilder/app/models/entitybuilder/entity/versionable.rb:25` →
-- [ ] Nit: `natural_sort_key` gives equal keys to labels such as "Level 5", "level 5" and "Level 05". Ruby's `sort_by` is not stable, so the order of such labels can change between requests. A tie-breaker (for example the raw label) makes the order deterministic — `engines/entitybuilder/app/models/entitybuilder/entity/versionable.rb:56` →
+- [x] Nit: `has_many :versions` still orders by `version_label` as text in SQL. The only reader, `versions_visible_to`, sorts again in Ruby. The SQL order is dead weight, and any later caller of `versions` gets an order that differs from the summary ("Level 10" before "Level 5") — `engines/entitybuilder/app/models/entitybuilder/entity/versionable.rb:25` →
+- [x] Nit: `natural_sort_key` gives equal keys to labels such as "Level 5", "level 5" and "Level 05". Ruby's `sort_by` is not stable, so the order of such labels can change between requests. A tie-breaker (for example the raw label) makes the order deterministic — `engines/entitybuilder/app/models/entitybuilder/entity/versionable.rb:56` →
+
+## Round 4 — 2026-10-10 05:34 UTC — 82eec53
+
+Scope: phase A (`plan.md`) only, commit 82eec53 on top of round 3. Suite state at review: `PARALLEL_WORKERS=1 bin/rails test test/models/entitybuilder/entity/versionable_test.rb test/integration/monster_versions_test.rb` green (28 runs, 0 failures, 0 errors, 0 skips). `bundle exec rubocop` on the changed files is clean. The full suite (1186 runs, 0 failures) and `bin/i18n-tasks health` were green on this tree before the review and were not run again.
+
+Round 3 follow-up: both findings are resolved and ticked above. 82eec53 removes the SQL order from `has_many :versions`. No caller other than `versions_visible_to` reads `versions`. `versions_visible_to` breaks natural-order ties by the exact label, then by id, so the order is deterministic. The new test `breaks natural order ties by the exact label` covers it, and its expected order is correct for byte order.
+
+Compliance — acceptance criteria (spec, phase A):
+
+- Parent lists all its versions; each version links back → `test/integration/monster_versions_test.rb` `parent lists its versions and each version links back`
+- Pathfinder 2e creature gets a version without level, role or group → `test/integration/monster_versions_test.rb` `pathfinder 2e creature gets a version without builder fields`
+- Version of a Private monster is owned by the same resident and starts Private → `test/integration/monster_versions_test.rb` `version of a private monster stays private and owned by the same resident`
+
+Compliance — `## Proof` tests: all 28 named tests exist by name. `links a version of a version to the root parent` now sorts the labels before it compares them. This is not a weakening: the association has no order now, and the test still checks the root parent and both labels.
+
+Nothing found.
