@@ -50,3 +50,33 @@ Intent criteria for difficulty and power prefill belong to phases D and C and ar
 Every unit, controller and library test named in `plan.md` exists: `monster_stats_test.rb` (13), `monster_target_test.rb` (8), `entity/monster_buildable_test.rb` (17), `entity/versionable_test.rb` (2 new), `versions_controller_test.rb` (1 new), `entity_monster_builder_test.rb` (2), `monster_builds_controller_test.rb` (5). No existing test was weakened, skipped or deleted.
 
 Counts: Important 3, Nit 4.
+
+## Round 2 — 2026-10-13T17:01Z — a5b3219
+
+Scope: phase B only, `git diff origin/56-monsters-can-have-multiple-versions...HEAD`. This round checks the round 1 fixes (7cffd31, f015ee0, 7736cba, b1420bd) and looks for problems they introduce. No `REVIEW.md` or `REVIEW.local.md` exists, so the reviewer defaults apply: Bugs, Security, Compliance.
+
+Checks run: the nine phase B test files with `PARALLEL_WORKERS=1` (113 runs, 425 assertions, 0 failures), `bundle exec rubocop` on the 27 changed Ruby files without `db/schema.rb` (no offenses), `bin/i18n-tasks health` (clean). A throwaway integration test in the scratchpad confirmed the first finding below. It is not committed.
+
+Round 1 fixes:
+
+- Extra action (7736cba): holds. A select with a blank "Group default" option stores nil, so a Solo keeps its additional standard action, also when an Elite becomes a Solo. The test now checks that the form selects the blank option and submits `""` as the form does.
+- Version level (b1420bd): holds. `valid_version?` checks the typed level before anything is saved. The rebuild runs inside the copy transaction, and a refused rebuild raises, so the transaction rolls back. The form keeps the typed level after a refused level or a blank label.
+- Level outside 1 to 40 (7cffd31): holds. `monster_built?` requires a 4e rule set and a card level, so the values table and the sheet summary no longer render for level 0 or 41. `MonsterStats` refuses such a level. Reset on an unbuilt monster gets 404.
+- Rule set change (7cffd31): holds. The sheet summary hides when `core_rules` is not 4e.
+- Values that are not whole numbers (f015ee0): holds for "abc", but see the first finding below.
+- `assert_select "body", text: ..., count: 0` never fails, because rails-dom-testing skips it (`selecting_no_body?`). No such assertion remains in phase B. 7736cba replaced the one in the extra action test with `"p"`. Every other `count: 0` assertion selects an element (`p`, `tr`, `tr.roll`, `input`) that the positive case renders.
+
+### Bugs
+
+- [ ] Nit: `store_monster_values` checks only the whole-number format, not the range the child row validates. "1000000" for Armor Class, "1000" for Initiative or Saving Throws, or a descriptor longer than 255 characters passes `accepts?`. Then `MonsterTarget#write` calls `row.save!`, which raises `ActiveRecord::RecordInvalid`. The controller does not rescue it, so the GM gets the generic error page instead of the form with a message. The transaction rolls back, so nothing is saved. Checked with an integration test: the PATCH with `armor_class: "1000000"` raised `RecordInvalid` and AC stayed 23. A fix could validate the row before the write, or rescue `RecordInvalid` and add its messages to `errors`. — `engines/entitybuilder/app/models/entitybuilder/monster_target.rb:37`
+- [ ] Nit: A refused value now discards every value the GM typed in the same submit. The values table re-renders `value.stored` from the database, so the refused "abc" and the valid values next to it all revert to their stored numbers. The GM sees the error but must type all values again. Before f015ee0, the valid values were saved. Showing the submitted values on re-render keeps the all-or-nothing save and fixes this. — `engines/entitybuilder/app/views/entitybuilder/monster_builds/_values.html.erb:20`
+
+### Security
+
+Nothing new. The fixes add no params and no routes. `monster_extra_action` still goes through the strong parameters, and the boolean cast turns `""` into nil. `check_monster_built` runs after `check_parent_authorization`.
+
+### Compliance
+
+Each fix has a test: `level above 40 renders the form with errors`, `reset on an unbuilt monster gets 404`, `a value that is not a whole number renders the form with an error`, `a refused level renders the form with the typed level`, `blank label keeps the typed level`, `a built monster moved to another rule set hides its builder summary`, `refuses a level outside 1 to 40`, `a level outside 1 to 40 is not built`, `a monster moved to another rule set is not built`, `refuses a value that is not a whole number`, `a blank value clears a text value`, `refuses a version at a level the builder refuses`. The extra action acceptance test now follows the form. The plan's decision 4 (nil means the group default) holds through the page. The new strings have en, nl and it keys. No test was weakened, skipped or deleted.
+
+Counts: Important 0, Nit 2.
