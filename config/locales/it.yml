@@ -26,6 +26,8 @@ it:
       campaign_details: Dettagli campagna
       campaign_menu: Menu campagna
       campaign_pages: Pagine campagna
+  domain:
+    game: Gioco
   errors:
     messages:
       invalid_privacy: non è valido.

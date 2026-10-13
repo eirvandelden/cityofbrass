@@ -2,19 +2,20 @@
 
 ## What this is
 
-Tabletop RPG world-building and campaign-management platform (cityofbrass.io). A user signs in and creates a **Resident** — their identity in the world — then builds worlds, authors character/creature sheets, writes adventures, and runs campaigns. Content is game-system aware (D&D 5e, Pathfinder 1e/2e, Fate Core, Draw Steel, and others defined in `config/core_rules/`).
+Tabletop RPG world-building and campaign-management platform (cityofbrass.io). A user signs up, then builds worlds, authors character/creature sheets, writes adventures, and runs campaigns. The code stores each user's public profile and content in a separate `Resident` record until #155 merges it into `User`. Content is game-system aware (D&D 5e, Pathfinder 1e/2e, Fate Core, Draw Steel, and others defined in `config/core_rules/`).
 
-Rails modular monolith: core `app/` handles users, residents, auth, messaging, and affiliations; each feature domain is its own mounted Rails engine under `engines/` (activeplay, billing, campaignmanager, entitybuilder, gallery, importer, report, rulebuilder, storybuilder, support, worldbuilder), routed at `/ap`, `/billing`, `/cm`, `/eb`, `/gallery`, `/imports`, `/report`, `/rb`, `/sb`, `/wb`, `/support`.
+Rails modular monolith: core `app/` handles users (with their `Resident` record), auth, messaging, and affiliations; each feature domain is its own mounted Rails engine under `engines/` (activeplay, billing, campaignmanager, entitybuilder, gallery, importer, report, rulebuilder, storybuilder, support, worldbuilder), routed at `/ap`, `/billing`, `/cm`, `/eb`, `/gallery`, `/imports`, `/report`, `/rb`, `/sb`, `/wb`, `/support`.
 
 ## Domain
 
 - **User** — login/auth record (Devise). Has a **status** (`free`, `trial`, `active`, `alpha`, `beta`, `vip`, `locked`, `canceled`) that gates features and quotas (`lib/quota.rb`).
-- **Resident** — the user's in-world identity; owns the content built in each engine.
-- **Affiliation** — an invite/accept relationship between residents to co-edit shared content or campaigns.
-- **Message** — resident-to-resident inbox/sent messaging.
+- **Resident** — the content-owner record of a User, exactly one per User; owns the content built in each engine. It merges into User (#155); in domain language, say user.
+- **Affiliation** — an invite/accept relationship between users (through their Resident) to co-edit shared content or campaigns.
+- **Message** — user-to-user inbox/sent messaging, stored between Residents.
+- The milestone 7 vocabulary (Game, Campaign, Adventure, Page, World, Module, Published, Catalog) and the target model live in `docs/domain.md`.
 - Each engine owns its own models/controllers/views/migrations but shares the one database and one deploy.
 - All primary keys are UUIDs.
-- Content visibility is Public / Residents / Private throughout.
+- Content visibility is Private / Friends / Residents / Public throughout. "Residents" means signed-in users; #155 renames it.
 
 ## Commands
 

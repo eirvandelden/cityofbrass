@@ -58,3 +58,5 @@ ignore_unused:
   - 'views.pagination.*'
   # Placeholder key from the default Rails locale template
   - 'hello'
+  # No view uses the Game key until #93 (Introduce Game model); #93 removes this entry.
+  - 'domain.game'
