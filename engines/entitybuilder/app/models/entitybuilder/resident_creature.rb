@@ -1,6 +1,7 @@
 module Entitybuilder
   class ResidentCreature < Entity
     include Entity::Versionable
+    include Entity::MonsterBuildable
 
     belongs_to :resident, -> { select('residents.id, residents.user_id, residents.name, residents.slug') }
 

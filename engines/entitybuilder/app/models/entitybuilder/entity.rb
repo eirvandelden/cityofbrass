@@ -15,7 +15,7 @@ module Entitybuilder
     scope :short, -> { select('id, type, resident_id, name, short_description, core_rules, privacy, sheet_privacy, parent_id, version_label') }
     scope :order_name, -> { order(:name) }
 
-    json_array_column :tags
+    json_array_column :tags, :monster_defense_bonuses
 
     has_one :campaign_join, dependent: :destroy, inverse_of: :entity
     has_one :campaign,

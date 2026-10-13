@@ -34,6 +34,19 @@ it:
     menus:
       manage:
         new_version: Nuova versione
+    monster_builder:
+      errors:
+        group: Il gruppo non è un gruppo noto.
+        incomplete: Livello, ruolo e gruppo devono essere tutti compilati, oppure
+          tutti vuoti.
+        level: Il livello deve essere un numero intero da 1 a 40.
+        picks: Scegli al massimo due tra Fortitude, Reflex e Will.
+        role: Il ruolo non è un ruolo noto.
+        unavailable: Il costruttore di mostri non è disponibile per questo sistema
+          di regole.
+      extra_action:
+        elite: Attacco aggiuntivo
+        solo: Azione standard aggiuntiva
     versions:
       created: Una nuova versione di %{name} è stata creata.
       form:

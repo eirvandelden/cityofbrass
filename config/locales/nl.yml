@@ -34,6 +34,18 @@ nl:
     menus:
       manage:
         new_version: Nieuwe versie
+    monster_builder:
+      errors:
+        group: Groep is geen bekende groep.
+        incomplete: Niveau, rol en groep moeten alle drie ingevuld zijn, of alle drie
+          leeg.
+        level: Niveau moet een geheel getal van 1 tot 40 zijn.
+        picks: Kies hoogstens twee van Fortitude, Reflex en Will.
+        role: Rol is geen bekende rol.
+        unavailable: De monsterbouwer is niet beschikbaar voor deze regelset.
+      extra_action:
+        elite: Extra aanval
+        solo: Extra standaardactie
     versions:
       created: Van %{name} is een nieuwe versie gemaakt.
       form:
