@@ -29,5 +29,27 @@ module Entitybuilder
       entity.sheet_privacy = 'Private'
       assert_not entity.can_sheet?(nil, false, entity.type)
     end
+
+    test "set_privacy gives a new entity Residents and Private" do
+      entity = ResidentCreature.new(privacy: nil, sheet_privacy: nil)
+      entity.valid?
+
+      assert_equal 'Residents', entity.privacy
+      assert_equal 'Private', entity.sheet_privacy
+    end
+
+    test "set_privacy keeps given privacy values" do
+      entity = ResidentCreature.new(privacy: 'Public', sheet_privacy: 'Public')
+      entity.valid?
+
+      assert_equal 'Public', entity.privacy
+      assert_equal 'Public', entity.sheet_privacy
+    end
+
+    test "short scope includes the version label" do
+      version = entitybuilder_entities(:resident_creature_full).create_version(version_label: "Level 5")
+
+      assert_equal "Level 5", Entity.short.find(version.id).version_label
+    end
   end
 end

@@ -26,6 +26,22 @@ it:
       campaign_details: Dettagli campagna
       campaign_menu: Menu campagna
       campaign_pages: Pagine campagna
+  entitybuilder:
+    entities:
+      versions:
+        heading: Versioni
+        version_of_html: Versione di %{parent}
+    menus:
+      manage:
+        new_version: Nuova versione
+    versions:
+      created: Una nuova versione di %{name} è stata creata.
+      form:
+        label: Etichetta della versione
+        submit: Crea versione
+      new:
+        heading: Nuova versione
+        title: Nuova versione di %{name}
   errors:
     messages:
       invalid_privacy: non è valido.

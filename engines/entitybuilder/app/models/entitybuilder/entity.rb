@@ -12,7 +12,7 @@ module Entitybuilder
     PRIVACY_OPTIONS = [ 'Private', 'Friends', 'Residents', 'Public' ]
     NULL_ATTRS = %w[ ]
 
-    scope :short, -> { select('id, type, resident_id, name, short_description, core_rules, privacy, sheet_privacy') }
+    scope :short, -> { select('id, type, resident_id, name, short_description, core_rules, privacy, sheet_privacy, parent_id, version_label') }
     scope :order_name, -> { order(:name) }
 
     json_array_column :tags
@@ -182,8 +182,8 @@ module Entitybuilder
 
     private
       def set_privacy
-        self.privacy = 'Residents' if self.new_record?
-        self.sheet_privacy = 'Private' if self.new_record?
+        self.privacy = 'Residents' if new_record? && privacy.blank?
+        self.sheet_privacy = 'Private' if new_record? && sheet_privacy.blank?
       end
 
       def mark_for_removal

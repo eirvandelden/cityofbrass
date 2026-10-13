@@ -11,3 +11,9 @@ two:
   name: Water breathing
   description: Breath water on stuff
   is_private: true
+
+monster_size:
+  entity: resident_creature_full
+  sort_order: 1
+  name: Size
+  description: Medium

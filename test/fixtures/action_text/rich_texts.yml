@@ -485,3 +485,11 @@ entitybuilder_entity_stock_npc_two_notes:
   record: stock_npc_two (Entitybuilder::Entity)
   name: notes
   body: "<p>Text for test</p>"
+entitybuilder_entity_resident_creature_full_full_description:
+  record: resident_creature_full (Entitybuilder::Entity)
+  name: full_description
+  body: "<p>Orcs smash things</p>"
+rulebuilder_rule_monster_unshared_full_description:
+  record: monster_unshared (Rulebuilder::Rule)
+  name: full_description
+  body: "<p>Unshared rule text</p>"

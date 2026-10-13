@@ -17,3 +17,9 @@ two:
   score: 12
   modifier: 2
   dice: 1d6
+
+monster_strength:
+  entity: resident_creature_full
+  sort_order: 1
+  name: Strength
+  base: 18

@@ -15,3 +15,9 @@ two:
   equipped:
   carried:
   detail:
+
+monster_item:
+  entity: resident_creature_full
+  sort_order: 1
+  item: resident_one
+  quantity: 1

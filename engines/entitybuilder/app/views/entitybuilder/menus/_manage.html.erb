@@ -20,6 +20,10 @@
     </dd>
   <% end %>
 
+  <% if @parent_object.respond_to?(:versions) %>
+    <dd><h3><%= link_to t("entitybuilder.menus.manage.new_version"), new_polymorphic_path([@parent_object, :version]), :style => 'display:block;' %></h3></dd>
+  <% end %>
+
 </dl>
 
 <% content_for :left_menu_icon do %>
@@ -39,6 +43,9 @@
 
     <li><%= link_to item['label'], "#{base_link}/#{item['link']}" %></li>
   <% end %>
+  <% if @parent_object.respond_to?(:versions) %>
+    <li><%= link_to t("entitybuilder.menus.manage.new_version"), new_polymorphic_path([@parent_object, :version]) %></li>
+  <% end %>
 <% end %>
 
 <% content_for :small_menu do %>
@@ -51,6 +58,9 @@
 
       <% CoreRules::Entity.menu(@parent_object.core_rules).each do |item| %>
         <li><%= link_to item['label'], "#{base_link}/#{item['link']}" %></li>
+      <% end %>
+      <% if @parent_object.respond_to?(:versions) %>
+        <li><%= link_to t("entitybuilder.menus.manage.new_version"), new_polymorphic_path([@parent_object, :version]) %></li>
       <% end %>
     </ul>
   </li>
