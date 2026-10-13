@@ -34,8 +34,9 @@
         <% end %>
       </div>
       <div class="medium-4 columns">
-        <%= f.check_box :monster_extra_action, checked: @parent_object.extra_action? %>
         <%= f.label :monster_extra_action, t("entitybuilder.monster_builds.inputs.extra_action") %>
+        <%= f.select :monster_extra_action, monster_extra_action_options,
+              selected: @parent_object.monster_extra_action.to_s %>
       </div>
     </div>
   </fieldset>
