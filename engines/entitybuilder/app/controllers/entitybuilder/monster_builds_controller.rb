@@ -13,8 +13,7 @@ module Entitybuilder
 
     # PATCH /creatures/1/monster_build
     def update
-      if @parent_object.rebuild_monster(input_params)
-        @parent_object.store_monster_values(value_params)
+      if @parent_object.rebuild_monster(input_params) && @parent_object.store_monster_values(value_params)
         redirect_to edit_polymorphic_path([ @parent_object, :monster_build ]),
                     notice: t("entitybuilder.monster_builds.update.saved")
       else
@@ -29,7 +28,7 @@ module Entitybuilder
       end
 
       def value_params
-        params.require(@parent_type).permit(monster_values: MonsterTarget.all.map(&:key)).fetch(:monster_values, {})
+        params.require(@parent_type).permit(monster_values: MonsterTarget.all.map(&:key))[:monster_values] || {}
       end
   end
 end

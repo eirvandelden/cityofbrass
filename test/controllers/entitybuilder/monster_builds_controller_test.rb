@@ -53,6 +53,17 @@ module Entitybuilder
       assert_equal 5, @monster.reload.monster_level
     end
 
+    test "a value that is not a whole number renders the form with an error" do
+      sign_in users(:dan)
+
+      patch :update,
+params: { resident_creature_id: @monster.id, resident_creature: { monster_values: { armor_class: "abc" } } }
+
+      assert_response :unprocessable_content
+      assert_select ".error"
+      assert_equal 23, @monster.defenses.find_by(name: "Armor Class").bonus
+    end
+
     test "a submitted value is stored and marked" do
       sign_in users(:dan)
 

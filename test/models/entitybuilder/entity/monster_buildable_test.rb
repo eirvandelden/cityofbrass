@@ -210,6 +210,22 @@ monster_defense_bonuses: [] }.freeze
           assert_not creature.monster_built?
         end
 
+        test "refuses a value that is not a whole number" do
+          creature = entitybuilder_entities(:four_e_creature_built)
+
+          assert_not creature.store_monster_values({ "armor_class" => "abc", "fortitude" => "25" })
+          assert_predicate creature.errors, :any?
+          assert_equal 23, row(creature, :defenses, "Armor Class").bonus
+          assert_equal 17, row(creature, :defenses, "Fortitude").bonus
+        end
+
+        test "a blank value clears a text value" do
+          creature = entitybuilder_entities(:four_e_creature_built)
+
+          assert creature.store_monster_values({ "role" => "" })
+          assert_equal "", row(creature, :descriptors, "Role").description
+        end
+
         test "extra action defaults per group" do
           creature = entitybuilder_entities(:four_e_creature_unbuilt)
 
