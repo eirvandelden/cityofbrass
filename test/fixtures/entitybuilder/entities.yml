@@ -281,9 +281,7 @@ four_e_creature_built:
   privacy: Residents
   sheet_privacy: Residents
   core_rules: dnd4e
-<% if Entitybuilder::Entity.column_names.include?("monster_level") %>
   monster_level: 5
   monster_role: Soldier
   monster_group: Standard
   monster_defense_bonuses: "[]"
-<% end %>
