@@ -1,0 +1,45 @@
+<% if @parent_object.errors.any? %>
+  <div class="error">
+    <ul class="no-bullet">
+      <% @parent_object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model: @parent_object, scope: @parent_type, url: polymorphic_path([ @parent_object, :monster_build ]),
+      method: :patch, local: true do |f| %>
+  <fieldset>
+    <legend><%= t("entitybuilder.monster_builds.inputs.heading") %></legend>
+    <div class="row">
+      <div class="medium-4 columns">
+        <%= f.label :monster_level, t("entitybuilder.monster_builds.inputs.level") %>
+        <%= f.number_field :monster_level, min: 1, max: 40 %>
+      </div>
+      <div class="medium-4 columns">
+        <%= f.label :monster_role, t("entitybuilder.monster_builds.inputs.role") %>
+        <%= f.select :monster_role, monster_role_options, include_blank: true %>
+      </div>
+      <div class="medium-4 columns">
+        <%= f.label :monster_group, t("entitybuilder.monster_builds.inputs.group") %>
+        <%= f.select :monster_group, monster_group_options, include_blank: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-8 columns">
+        <label><%= t("entitybuilder.monster_builds.inputs.defense_bonuses") %></label>
+        <%= f.collection_check_boxes :monster_defense_bonuses, monster_defense_options, :last, :first do |box| %>
+          <%= box.check_box %> <%= box.label %>
+        <% end %>
+      </div>
+      <div class="medium-4 columns">
+        <%= f.check_box :monster_extra_action, checked: @parent_object.extra_action? %>
+        <%= f.label :monster_extra_action, t("entitybuilder.monster_builds.inputs.extra_action") %>
+      </div>
+    </div>
+  </fieldset>
+  <div class="text-center">
+    <%= f.submit t("entitybuilder.monster_builds.inputs.submit"), class: "button" %>
+  </div>
+<% end %>
