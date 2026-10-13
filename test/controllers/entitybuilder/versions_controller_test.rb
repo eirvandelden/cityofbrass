@@ -47,5 +47,17 @@ module Entitybuilder
 
       assert_response :success
     end
+
+    test "new shows a level field only for a built monster" do
+      sign_in users(:dan)
+
+      get :new, params: { resident_creature_id: entitybuilder_entities(:four_e_creature_built).id }
+
+      assert_select "input[name=?]", "version[monster_level]"
+
+      get :new, params: { resident_creature_id: @creature.id }
+
+      assert_select "input[name=?]", "version[monster_level]", count: 0
+    end
   end
 end

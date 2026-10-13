@@ -4,3 +4,41 @@ monster_hit_points:
   name: Hit Points
   maximum: 30
   current: 30
+
+<% { "four_e_creature_unbuilt" => [0, 0], "four_e_creature_dex14" => [0, 0],
+     "four_e_creature_designed" => [40, 40], "four_e_creature_built" => [64, 64] }.each do |entity, (maximum, current)| %>
+<%= entity %>_hit_points:
+  entity: <%= entity %>
+  sort_order: 0
+  name: Hit Points
+  maximum: <%= maximum %>
+  current: <%= current %>
+
+<%= entity %>_action_points:
+  entity: <%= entity %>
+  sort_order: 1
+  name: Action Points
+  maximum: 0
+  current: 0
+<% end %>
+
+four_e_npc_unbuilt_hit_points:
+  entity: four_e_npc_unbuilt
+  sort_order: 0
+  name: Hit Points
+  maximum: 0
+  current: 0
+
+four_e_npc_unbuilt_healing_surges:
+  entity: four_e_npc_unbuilt
+  sort_order: 1
+  name: Healing Surges
+  maximum: 0
+  current: 1
+
+four_e_npc_unbuilt_action_points:
+  entity: four_e_npc_unbuilt
+  sort_order: 2
+  name: Action Points
+  maximum: 0
+  current: 1

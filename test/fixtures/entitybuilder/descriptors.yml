@@ -17,3 +17,27 @@ monster_size:
   sort_order: 1
   name: Size
   description: Medium
+
+<% four_e_creature_descriptors = [
+  [ "Level", "" ], [ "Role", "" ], [ "Type", "" ], [ "Size", "Medium" ], [ "Race", "humanoid" ],
+  [ "Alignment", "" ], [ "Senses", "" ], [ "Languages", "" ], [ "Experience", "" ]
+] %>
+<% { "four_e_creature_unbuilt" => {}, "four_e_creature_dex14" => {}, "four_e_creature_designed" => {},
+     "four_e_creature_built" => { "Level" => "5", "Role" => "Soldier", "Experience" => "200" } }.each do |entity, values| %>
+<% four_e_creature_descriptors.each_with_index do |(name, description), index| %>
+<%= entity %>_<%= name.downcase %>:
+  entity: <%= entity %>
+  sort_order: <%= index %>
+  name: <%= name %>
+  description: "<%= values.fetch(name, description) %>"
+  is_private: false
+<% end %>
+<% end %>
+<% [ [ "Race", "" ], [ "Height", "" ], [ "Size", "Medium" ] ].each_with_index do |(name, description), index| %>
+four_e_npc_unbuilt_<%= name.downcase %>:
+  entity: four_e_npc_unbuilt
+  sort_order: <%= index %>
+  name: <%= name %>
+  description: "<%= description %>"
+  is_private: false
+<% end %>

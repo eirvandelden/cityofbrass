@@ -8,8 +8,9 @@ class MonsterVersionsTest < ActionDispatch::IntegrationTest
     @other = users(:lucas)
   end
 
-  def create_version(creature, label)
-    post "/eb/resident/creatures/#{creature.id}/versions", params: { version: { version_label: label } }
+  def create_version(creature, label, monster_level: nil)
+    version_params = { version_label: label, monster_level: monster_level }.compact
+    post "/eb/resident/creatures/#{creature.id}/versions", params: { version: version_params }
     Entitybuilder::Entity.find_by!(parent_id: creature.id, version_label: label)
   end
 
@@ -88,5 +89,36 @@ class MonsterVersionsTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select "li", text: /Level 10/
+  end
+  test "version at level 10 shows level 10 numbers" do
+    sign_in @owner
+    orc = entitybuilder_entities(:four_e_creature_built)
+    version = create_version(orc, "Level 10", monster_level: 10)
+
+    get "/eb/resident/creatures/#{version.id}/sheet"
+
+    assert_response :success
+    assert_equal 10, version.monster_level
+    assert_select "tr.roll", text: /Fortitude\s+22/
+    assert_select "tr.roll", text: /Will\s+22/
+    assert_equal [ 104, 104 ], version.trackables.find_by(name: "Hit Points").then { |hp| [ hp.maximum, hp.current ] }
+    assert_equal "10", version.descriptors.find_by(name: "Level").description
+    assert_equal 5, orc.reload.monster_level
+  end
+
+  test "version keeps an edited armor class and marks it" do
+    sign_in @owner
+    orc = entitybuilder_entities(:four_e_creature_built)
+    version = create_version(orc, "Level 10", monster_level: 10)
+
+    get "/eb/resident/creatures/#{version.id}/sheet"
+
+    assert_select ".sheet-over-big", text: "23"
+
+    get "/eb/resident/creatures/#{version.id}/monster_build/edit"
+
+    assert_response :success
+    assert_select "tr", text: /Armor Class.*needs manual revision/im
+    assert_select "tr", text: /Fortitude.*needs manual revision/im, count: 0
   end
 end

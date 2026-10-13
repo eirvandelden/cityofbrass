@@ -23,3 +23,27 @@ monster_strength:
   sort_order: 1
   name: Strength
   base: 18
+
+<% four_e_creature_scores = [
+  [ "Strength", 16, 3 ], [ "Dexterity", 13, 1 ], [ "Constitution", 13, 1 ],
+  [ "Intelligence", 13, 1 ], [ "Wisdom", 13, 1 ], [ "Charisma", 13, 1 ]
+] %>
+<% { "four_e_creature_unbuilt" => [10, 0], "four_e_creature_dex14" => [14, 2],
+     "four_e_creature_designed" => [10, 0], "four_e_creature_built" => [10, 0] }.each do |entity, (dex, dex_modifier)| %>
+<% four_e_creature_scores.each_with_index do |(name, base, modifier), index| %>
+<%= entity %>_<%= name.downcase %>:
+  entity: <%= entity %>
+  sort_order: <%= index %>
+  name: <%= name %>
+  base: <%= name == "Dexterity" ? dex : base %>
+  modifier: <%= name == "Dexterity" ? dex_modifier : modifier %>
+<% end %>
+<% end %>
+<% %w[Strength Constitution Dexterity Intelligence Wisdom Charisma].each_with_index do |name, index| %>
+four_e_npc_unbuilt_<%= name.downcase %>:
+  entity: four_e_npc_unbuilt
+  sort_order: <%= index %>
+  name: <%= name %>
+  base: 10
+  modifier: 0
+<% end %>

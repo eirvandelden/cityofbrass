@@ -239,3 +239,51 @@ resident_creature_full:
   sheet_privacy: Residents
   core_rules: pf1e
   short_description: A brutal orc
+
+four_e_creature_unbuilt:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Gnoll Hunter
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+
+four_e_creature_dex14:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Dark Creeper
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+
+four_e_creature_designed:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Hobgoblin Commander
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+
+four_e_npc_unbuilt:
+  type: Entitybuilder::ResidentNpc
+  resident: razune
+  name: Town Guard
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+
+# Level 5 Soldier Standard, Dex 10. Armor Class is stored at 23 (an edit); the card gives 21.
+# The builder columns do not exist before the monster builder migration, so the inputs are guarded.
+four_e_creature_built:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Orc Warrior
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+<% if Entitybuilder::Entity.column_names.include?("monster_level") %>
+  monster_level: 5
+  monster_role: Soldier
+  monster_group: Standard
+  monster_defense_bonuses: "[]"
+<% end %>
