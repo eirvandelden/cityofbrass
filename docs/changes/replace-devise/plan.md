@@ -70,6 +70,7 @@ The spec's design decisions stand (polymorphic `sessions` table, `session_id` / 
 20. **Review round 1: `Accept-Language` parsing.** Entries with `q=0` ("not acceptable") are dropped, and spaces around `;` and `=` are allowed.
 21. **Review round 1: tolerant drop migration.** `RemoveDeviseColumns` removes its indexes with `if_exists: true` (the SQLite adapter ignores the option on `remove_column`, and a missing column already passes there; review round 2), so a production database whose indexes differ from the development schema does not stop the deploy halfway. The runbook also rehearses the migrations on a copy of the production backup before the window.
 22. **Review round 1: `.rubocop_todo.yml`.** Drop the three entries for the deleted `config/initializers/devise.rb`. The entry for the old `devise_create_users` migration stays; that file still exists.
+23. **Locale strings live in `config/locales/{en,nl,it}.yml`** (after the rebase onto #153). Decision 4 put them in `config/locales/authentication.{en,nl,it}.yml`, but `config/i18n-tasks.yml` reads only `config/locales/%{locale}.yml`, so #153's `test/i18n_test.rb` and CI's `bin/i18n-tasks health` reported 69 missing keys. The keys move into the main locale files instead of widening the i18n-tasks read path. `app/views/sessions/new.html.erb` calls `t("sessions.new.admin_title")` and `t("sessions.new.title")` as two literal calls, so i18n-tasks sees both keys as used.
 
 ## Integration points
 

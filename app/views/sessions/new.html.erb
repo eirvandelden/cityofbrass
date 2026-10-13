@@ -8,7 +8,7 @@
         <div class="medium-7 columns">
           <div class="row text-right">
             <div class="small-12 columns">
-              <label class="flat"><%= t(@scope == "admin" ? "sessions.new.admin_title" : "sessions.new.title") %></label>
+              <label class="flat"><%= @scope == "admin" ? t("sessions.new.admin_title") : t("sessions.new.title") %></label>
             </div>
           </div>
           <%= form_with model: @account, scope: @scope, url: @form_url, builder: ApplicationFormBuilder do |f| %>

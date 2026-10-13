@@ -6,6 +6,17 @@ en:
     update:
       updated: Your settings have been saved.
   activerecord:
+    attributes:
+      admin:
+        current_password: Current password
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
+      user:
+        current_password: Current password
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
     errors:
       models:
         importer/preview:
@@ -13,6 +24,8 @@ en:
             base:
               invalid_file: must be an XML file
               missing_files: must include at least one file
+  authentication:
+    unauthenticated: You need to login before continuing.
   campaignmanager:
     campaigns:
       features:
@@ -238,6 +251,45 @@ en:
       search: Search
       session: Session
       support: Support
+  passwords:
+    create:
+      sent: If your email address exists in our database, you will receive a password
+        recovery link at your email address in a few minutes.
+    edit:
+      new_password: New Password
+      submit: Confirm new password
+      title: Change password
+    new:
+      submit: Send me reset password instructions
+      title: Forgot password
+    update:
+      expired: Reset password token has expired, please request a new one
+      updated: Your password was changed successfully. You are now signed in.
+  passwords_mailer:
+    reset:
+      action: Change my password
+      greeting: Hello %{email}!
+      instruction: Someone has requested a link to change your password. You can do
+        this through the link below.
+      instruction_2: If you didn't request this, please ignore this email.
+      instruction_3: Your password won't change until you access the link above and
+        create a new one.
+      regards: Best regards,
+      subject: Reset password instructions
+      team: The City of Brass Team
+  sessions:
+    create:
+      invalid: Invalid email or password.
+      locked: Your account is locked.
+      signed_in: Signed in successfully.
+    destroy:
+      signed_out: Signed out successfully.
+    links:
+      forgot_your_password: Forgot your password?
+    new:
+      admin_title: Admin Login
+      submit: Login
+      title: Login
   users:
     create:
       created: "%{email} has been created."
