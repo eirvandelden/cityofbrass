@@ -195,6 +195,21 @@ monster_defense_bonuses: [] }.freeze
           assert_not creature.monster_values[:armor_class].needs_manual_revision?
         end
 
+        test "a level outside 1 to 40 is not built" do
+          creature = entitybuilder_entities(:four_e_creature_built)
+          creature.monster_level = 41
+
+          assert_not creature.monster_built?
+          assert_empty creature.monster_values
+        end
+
+        test "a monster moved to another rule set is not built" do
+          creature = entitybuilder_entities(:four_e_creature_built)
+          creature.core_rules = "pf2e"
+
+          assert_not creature.monster_built?
+        end
+
         test "extra action defaults per group" do
           creature = entitybuilder_entities(:four_e_creature_unbuilt)
 

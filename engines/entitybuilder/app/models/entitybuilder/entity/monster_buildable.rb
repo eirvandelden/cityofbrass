@@ -11,7 +11,7 @@ module Entitybuilder
       end
 
       def monster_built?
-        monster_level.present?
+        monster_buildable? && MonsterStats::LEVELS.cover?(monster_level)
       end
 
       def monster_stats

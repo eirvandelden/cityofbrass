@@ -135,6 +135,18 @@ class MonsterBuilderTest < ActionDispatch::IntegrationTest
     assert_select "input[type=checkbox][name=?][checked]", "resident_creature[monster_extra_action]", count: 0
   end
 
+  test "a built monster moved to another rule set hides its builder summary" do
+    built = entitybuilder_entities(:four_e_creature_built)
+    sheet(built)
+
+    assert_select "body", text: /Level 5 Soldier/
+
+    built.update_columns(core_rules: "pf2e")
+    sheet(built)
+
+    assert_select "p", text: /Level 5 Soldier/, count: 0
+  end
+
   test "elite cannot pick a third defense" do
     creature = entitybuilder_entities(:four_e_creature_unbuilt)
 
