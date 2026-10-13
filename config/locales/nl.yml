@@ -48,6 +48,7 @@ nl:
         picks: Kies hoogstens twee van Fortitude, Reflex en Will.
         role: Rol is geen bekende rol.
         unavailable: De monsterbouwer is niet beschikbaar voor deze regelset.
+        whole_number: "%{name} moet een geheel getal zijn."
       extra_action:
         elite: Extra aanval
         solo: Extra standaardactie

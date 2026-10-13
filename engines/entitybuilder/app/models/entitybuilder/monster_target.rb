@@ -34,6 +34,8 @@ module Entitybuilder
       cast(row[field])
     end
 
+    def accepts?(value) = !integer || value.to_s.match?(/\A[+-]?\d+\z/)
+
     def edited?(entity, calculated)
       return true if key == :initiative && row_for(entity)&.bonus.present?
 

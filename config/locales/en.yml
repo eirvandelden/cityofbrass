@@ -55,6 +55,7 @@ en:
         picks: Pick at most two of Fortitude, Reflex and Will.
         role: Role is not a known role.
         unavailable: The monster builder is not available for this rule set.
+        whole_number: "%{name} must be a whole number."
       extra_action:
         elite: Additional attack
         solo: Additional standard action

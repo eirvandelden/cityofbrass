@@ -49,6 +49,7 @@ it:
         role: Il ruolo non è un ruolo noto.
         unavailable: Il costruttore di mostri non è disponibile per questo sistema
           di regole.
+        whole_number: "%{name} deve essere un numero intero."
       extra_action:
         elite: Attacco aggiuntivo
         solo: Azione standard aggiuntiva

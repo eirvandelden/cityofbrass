@@ -43,11 +43,15 @@ module Entitybuilder
         target.write(self, target.calculated(monster_stats))
       end
 
+      # Writes the changed values, or none when one of them is refused.
       def store_monster_values(values)
-        values.each do |key, value|
-          target = MonsterTarget.fetch(key)
-          target.write(self, value) if value.present? && target.stored(self).to_s != value.to_s
-        end
+        changes = changed_monster_values(values)
+        refused = changes.reject { |target, value| target.accepts?(value) }.keys
+        refused.each { |target| errors.add(:base, monster_value_error(target)) }
+        return false if refused.any?
+
+        transaction { changes.each { |target, value| target.write(self, value) } }
+        true
       end
 
       def extra_action?
@@ -85,6 +89,15 @@ module Entitybuilder
         return target.untouched_template?(self) unless previous
 
         !target.edited?(self, target.calculated(previous))
+      end
+
+      def changed_monster_values(values)
+        values.each_pair.to_h { |key, value| [ MonsterTarget.fetch(key), value.to_s.strip ] }
+              .reject { |target, value| target.stored(self).to_s == value }
+      end
+
+      def monster_value_error(target)
+        I18n.t("entitybuilder.monster_builder.errors.whole_number", name: target.row_name)
       end
 
       def monster_value(target, calculated)
