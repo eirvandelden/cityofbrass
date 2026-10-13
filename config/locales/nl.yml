@@ -95,6 +95,7 @@ nl:
       created: Van %{name} is een nieuwe versie gemaakt.
       form:
         label: Naam van de versie
+        monster_level: Monsterniveau
         submit: Versie maken
       new:
         heading: Nieuwe versie

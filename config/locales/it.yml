@@ -96,6 +96,7 @@ it:
       created: Una nuova versione di %{name} è stata creata.
       form:
         label: Etichetta della versione
+        monster_level: Livello del mostro
         submit: Crea versione
       new:
         heading: Nuova versione
