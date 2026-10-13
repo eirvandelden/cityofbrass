@@ -8,7 +8,7 @@ module Entitybuilder
 
     # GET /creatures/1/versions/new
     def new
-      @version = @parent_object.class.new
+      @version = @parent_object.class.new(monster_level: @parent_object.try(:monster_level))
     end
 
     # POST /creatures/1/versions
