@@ -184,6 +184,32 @@ module Entitybuilder
         assert_nil Entity.find(version.id).parent_id
       end
 
+      test "rebuilds a built copy at the given level" do
+        built = entitybuilder_entities(:four_e_creature_built)
+
+        version = built.create_version(version_label: "Level 10", monster_level: 10)
+
+        assert_predicate version, :persisted?
+        assert_equal 10, version.monster_level
+        assert_equal 22, version.defenses.find_by(name: "Fortitude").bonus
+        assert_equal 23, version.defenses.find_by(name: "Armor Class").bonus
+        assert_predicate version.monster_values[:armor_class], :needs_manual_revision?
+        assert_equal "10", version.descriptors.find_by(name: "Level").description
+        assert_equal 5, built.reload.monster_level
+        assert_equal 17, built.defenses.find_by(name: "Fortitude").bonus
+      end
+
+      test "ignores a level for an unbuilt copy" do
+        unbuilt = entitybuilder_entities(:four_e_creature_unbuilt)
+
+        version = unbuilt.create_version(version_label: "Level 10", monster_level: 10)
+
+        assert_predicate version, :persisted?
+        assert_nil version.monster_level
+        assert_equal 14, version.defenses.find_by(name: "Armor Class").base
+        assert_nil version.defenses.find_by(name: "Armor Class").bonus
+      end
+
       test "copies an npc" do
         npc = entitybuilder_entities(:resident_npc_one)
         version = npc.create_version(version_label: "Veteran")
