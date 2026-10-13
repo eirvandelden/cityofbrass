@@ -1,0 +1,13 @@
+<% if @parent_object.respond_to?(:monster_built?) && @parent_object.monster_built? %>
+  <div class="row">
+    <div class="medium-12 columns">
+      <p class="sheet-font-bold">
+        <%= t("entitybuilder.monster_builds.sheet.summary", level: @parent_object.monster_level,
+              role: monster_role_label(@parent_object)) %>
+        <% if @parent_object.extra_action? %>
+          <br><%= @parent_object.extra_action_label %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+<% end %>
