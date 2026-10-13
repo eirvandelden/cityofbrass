@@ -29,6 +29,29 @@ module Entitybuilder
       assert_select ".error", text: /blank/i
     end
 
+    test "a refused level renders the form with the typed level" do
+      sign_in users(:dan)
+      built = entitybuilder_entities(:four_e_creature_built)
+
+      assert_no_difference("Entity.count") do
+        post :create, params: { resident_creature_id: built.id,
+                                version: { version_label: "Epic", monster_level: "41" } }
+      end
+      assert_response :unprocessable_content
+      assert_select "input[name=?][value='41']", "version[monster_level]"
+      assert_select ".error"
+    end
+
+    test "blank label keeps the typed level" do
+      sign_in users(:dan)
+      built = entitybuilder_entities(:four_e_creature_built)
+
+      post :create, params: { resident_creature_id: built.id, version: { version_label: "", monster_level: "10" } }
+
+      assert_response :unprocessable_content
+      assert_select "input[name=?][value='10']", "version[monster_level]"
+    end
+
     test "creates a version and redirects to its edit page" do
       sign_in users(:dan)
 

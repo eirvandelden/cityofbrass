@@ -199,6 +199,17 @@ module Entitybuilder
         assert_equal 17, built.defenses.find_by(name: "Fortitude").bonus
       end
 
+      test "refuses a version at a level the builder refuses" do
+        built = entitybuilder_entities(:four_e_creature_built)
+
+        version = assert_no_difference("Entity.count") do
+          built.create_version(version_label: "Level 41", monster_level: 41)
+        end
+
+        assert_not version.persisted?
+        assert_predicate version.errors[:monster_level], :any?
+      end
+
       test "ignores a level for an unbuilt copy" do
         unbuilt = entitybuilder_entities(:four_e_creature_unbuilt)
 

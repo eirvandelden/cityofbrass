@@ -9,13 +9,13 @@ module Entitybuilder
 
       def create_version(version_label:, monster_level: nil)
         version = build_version(version_label)
-        return version unless version.valid?
+        return version unless valid_version?(version, monster_level)
 
         transaction do
           version.save!
           copy_children_into(version)
+          rebuild_version_monster(version, monster_level)
         end
-        rebuild_version_monster(version, monster_level)
         version
       end
 
@@ -84,11 +84,24 @@ module Entitybuilder
           end
         end
 
+        # Checks the new level before anything is saved. A refused version keeps that level for the form.
+        def valid_version?(version, monster_level)
+          return version.valid? unless rebuild_version?(version, monster_level)
+
+          copied_level = version.monster_level
+          version.monster_level = monster_level
+          version.valid?.tap { |valid| version.monster_level = copied_level if valid }
+        end
+
+        def rebuild_version?(version, monster_level)
+          monster_level.present? && version.monster_built?
+        end
+
         # A built copy at another level recalculates its unedited numbers; edited ones stay marked.
         def rebuild_version_monster(version, monster_level)
-          return unless monster_level.present? && version.monster_built?
+          return unless rebuild_version?(version, monster_level)
 
-          version.rebuild_monster(monster_level: monster_level)
+          version.rebuild_monster(monster_level: monster_level) || raise(ActiveRecord::RecordInvalid, version)
         end
     end
   end
