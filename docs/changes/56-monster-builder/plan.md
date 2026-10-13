@@ -8,6 +8,17 @@ Settle with Etienne:
 
 - Anything phase A taught about the copy (`Entity::Versionable#create_version`), since step 10 extends it.
 
+## Phase A lessons
+
+Settled with Etienne on 2026-10-13.
+
+- Move the copy out of `Entity::Versionable` into its own concern under `Entity` when step 10 adds `monster_level:`. `versionable.rb` is already at the ~100-line class limit.
+- Read rich text through `rich_text_<name>`, never through the `has_rich_text` reader. The reader builds an empty record, and a later save persists it.
+- In tests, `ActionText::RichText` delegates `nil?` to its body, so `assert_nil` passes on an empty record. Assert on persisted rows instead.
+- The association guard test checks `ResidentCreature` and `ResidentNpc`. List every new `has_many` or `has_one` as copied or skipped.
+- `versions` has no SQL order. List versions through `versions_visible_to`, which sorts in natural label order.
+- Worktree setup: symlink `node_modules` to the main checkout and clear `tmp/cache/assets`. Remove any `.git/safe` entry from `PATH`, because it points `bundle` at the main checkout. Run the full suite with `PARALLEL_WORKERS=1` to avoid SQLite lock errors.
+
 ## Context
 
 A GM fills in every 4e monster number by hand. Phase B adds an opt-in builder for 4e resident creatures and NPCs: level, role and group fill in the "Monster Manual 3 on a business card" numbers (spec 6–8, 11). Hand-edited values survive recalculation and show "needs manual revision". A new version at another level recalculates (spec 16, 17). Phase A (`plan-a-versions.md`) already added versions.
