@@ -6,6 +6,7 @@ module Entitybuilder
     before_action :set_parent_object
     before_action :check_parent_authorization
     before_action :check_monster_buildable
+    before_action :check_monster_built
     before_action :check_target
 
     # DELETE /creatures/1/monster_build/overrides/armor_class
@@ -16,6 +17,10 @@ module Entitybuilder
     end
 
     private
+      def check_monster_built
+        render_not_found unless @parent_object.monster_built?
+      end
+
       def check_target
         render_not_found unless MonsterTarget.all.map { |target| target.key.to_s }.include?(params[:id])
       end

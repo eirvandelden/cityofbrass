@@ -27,7 +27,7 @@ module Entitybuilder
         def validate_monster_inputs
           add_monster_error(:base, "unavailable") unless monster_buildable?
           add_monster_error(:base, "incomplete") unless monster_inputs_complete_or_blank?
-          add_monster_error(:monster_level, "level") unless monster_level.nil? || (1..40).cover?(monster_level)
+          add_monster_error(:monster_level, "level") unless monster_level.nil? || MonsterStats::LEVELS.cover?(monster_level)
           add_monster_error(:monster_role, "role") unless monster_role.nil? || MonsterStats::ROLES.include?(monster_role)
           add_monster_error(:monster_group, "group") unless monster_group.nil? || MonsterStats::GROUPS.include?(monster_group)
           add_monster_error(:monster_defense_bonuses, "picks") unless valid_monster_defense_bonuses?
