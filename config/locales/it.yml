@@ -72,6 +72,10 @@ it:
       inputs:
         defense_bonuses: Difese con +2 (Elite e Solo, al massimo due)
         extra_action: Azione extra
+        extra_action_choices:
+          default: Predefinito del gruppo
+          disabled: 'No'
+          enabled: Sì
         group: Gruppo
         heading: Livello, ruolo e gruppo
         level: Livello

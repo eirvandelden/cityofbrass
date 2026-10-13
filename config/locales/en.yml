@@ -78,6 +78,10 @@ en:
       inputs:
         defense_bonuses: Defenses raised by 2 (Elite and Solo, at most two)
         extra_action: Extra action
+        extra_action_choices:
+          default: Group default
+          disabled: 'No'
+          enabled: 'Yes'
         group: Group
         heading: Level, role and group
         level: Level

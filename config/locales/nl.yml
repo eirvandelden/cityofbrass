@@ -71,6 +71,10 @@ nl:
       inputs:
         defense_bonuses: Verdedigingen met +2 (Elite en Solo, hoogstens twee)
         extra_action: Extra actie
+        extra_action_choices:
+          default: Standaard van de groep
+          disabled: Nee
+          enabled: Ja
         group: Groep
         heading: Niveau, rol en groep
         level: Niveau

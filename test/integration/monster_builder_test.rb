@@ -116,23 +116,25 @@ class MonsterBuilderTest < ActionDispatch::IntegrationTest
   end
 
   test "solo extra action defaults on and elite extra action defaults off" do
-    solo = build_soldier(entitybuilder_entities(:four_e_creature_unbuilt), level: 3, group: "Solo")
-    elite = build_soldier(entitybuilder_entities(:four_e_creature_dex14), level: 3, group: "Elite")
+    get "#{builder_path(entitybuilder_entities(:four_e_creature_unbuilt))}/edit"
+
+    assert_select "select[name=?] option[selected][value='']", "resident_creature[monster_extra_action]"
+
+    solo = build_soldier(entitybuilder_entities(:four_e_creature_unbuilt), level: 3, group: "Solo", extra_action: "")
+    elite = build_soldier(entitybuilder_entities(:four_e_creature_dex14), level: 3, group: "Elite", extra_action: "")
 
     sheet(solo)
 
     assert_select "body", text: /additional standard action/i
-    get "#{builder_path(solo)}/edit"
-
-    assert_select "input[type=checkbox][name=?][checked]", "resident_creature[monster_extra_action]"
 
     sheet(elite)
 
-    assert_select "body", text: /additional attack/i, count: 0
-    get "#{builder_path(elite)}/edit"
+    assert_select "p", text: /additional attack/i, count: 0
 
-    assert_select "input[type=checkbox][name=?]", "resident_creature[monster_extra_action]"
-    assert_select "input[type=checkbox][name=?][checked]", "resident_creature[monster_extra_action]", count: 0
+    solo_later = build_soldier(elite, level: 3, group: "Solo", extra_action: "")
+    sheet(solo_later)
+
+    assert_select "body", text: /additional standard action/i
   end
 
   test "a built monster moved to another rule set hides its builder summary" do
