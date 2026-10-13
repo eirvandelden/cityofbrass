@@ -80,6 +80,12 @@ module Entitybuilder
       assert_equal 555_000, stats(level: 40, group: "Solo").experience
     end
 
+    test "refuses a level outside 1 to 40" do
+      [ 0, 41 ].each do |level|
+        assert_raises(ArgumentError) { stats(level: level) }
+      end
+    end
+
     test "minion experience uses the rounded table values" do
       assert_equal 31, stats(level: 2, group: "Minion").experience
       assert_equal 38, stats(level: 3, group: "Minion").experience

@@ -6,6 +6,7 @@ module Entitybuilder
     GROUPS = %w[Minion Standard Elite Solo].freeze
     DEFENSES = %w[Fortitude Reflex Will].freeze
     PICKING_GROUPS = %w[Elite Solo].freeze
+    LEVELS = (1..40)
 
     ARMOR_CLASS_ROLE = Hash.new(0).merge("Soldier" => 2, "Brute" => -2, "Artillery" => -2).freeze
     GROUP_BONUS = { "Elite" => 2, "Solo" => 2 }.freeze
@@ -30,6 +31,12 @@ module Entitybuilder
     ENCOUNTER_XP_BUDGET = STANDARD_XP
 
     USAGE_FACTOR = { at_will: 1r, encounter: 5r / 4 }.freeze
+
+    def initialize(level:, **rest)
+      raise ArgumentError, "level #{level.inspect} is outside #{LEVELS}" unless LEVELS.cover?(level)
+
+      super
+    end
 
     def armor_class
       14 + level + ARMOR_CLASS_ROLE[role] + GROUP_BONUS.fetch(group, 0)

@@ -43,6 +43,16 @@ module Entitybuilder
       assert_equal 5, @monster.reload.monster_level
     end
 
+    test "level above 40 renders the form with errors" do
+      sign_in users(:dan)
+
+      patch :update, params: { resident_creature_id: @monster.id, resident_creature: { monster_level: 41 } }
+
+      assert_response :unprocessable_content
+      assert_select ".error"
+      assert_equal 5, @monster.reload.monster_level
+    end
+
     test "a submitted value is stored and marked" do
       sign_in users(:dan)
 
@@ -71,6 +81,16 @@ params: { resident_creature_id: @monster.id, resident_creature: { monster_values
       sign_in users(:dan)
 
       delete :destroy, params: { resident_creature_id: @monster.id, id: "bogus" }
+
+      assert_response 404
+    end
+
+    test "reset on an unbuilt monster gets 404" do
+      sign_in users(:dan)
+
+      unbuilt = entitybuilder_entities(:four_e_creature_unbuilt)
+
+      delete :destroy, params: { resident_creature_id: unbuilt.id, id: "armor_class" }
 
       assert_response 404
     end
