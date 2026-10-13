@@ -107,6 +107,9 @@ Entitybuilder::Engine.routes.draw do
 
   concern :monster do
     resources :versions, only: [:new, :create]
+    resource :monster_build, only: [:edit, :update] do
+      resources :overrides, only: :destroy, controller: "monster_overrides"
+    end
   end
 
   scope '/resident/' do

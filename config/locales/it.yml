@@ -33,8 +33,13 @@ it:
         version_of_html: Versione di %{parent}
     menus:
       manage:
+        monster_builder: Costruttore di mostri
         new_version: Nuova versione
     monster_builder:
+      defenses:
+        fortitude: Fortitude
+        reflex: Reflex
+        will: Will
       errors:
         group: Il gruppo non è un gruppo noto.
         incomplete: Livello, ruolo e gruppo devono essere tutti compilati, oppure
@@ -47,6 +52,46 @@ it:
       extra_action:
         elite: Attacco aggiuntivo
         solo: Azione standard aggiuntiva
+      groups:
+        elite: Elite
+        minion: Minion
+        solo: Solo
+        standard: Standard
+      roles:
+        artillery: Artillery
+        brute: Brute
+        controller: Controller
+        lurker: Lurker
+        skirmisher: Skirmisher
+        soldier: Soldier
+    monster_builds:
+      edit:
+        heading: Costruttore di mostri
+        title: Costruttore di mostri di %{name}
+      inputs:
+        defense_bonuses: Difese con +2 (Elite e Solo, al massimo due)
+        extra_action: Azione extra
+        group: Gruppo
+        heading: Livello, ruolo e gruppo
+        level: Livello
+        role: Ruolo
+        submit: Calcola
+      sheet:
+        summary: Livello %{level} %{role}
+      update:
+        saved: I numeri del mostro sono stati salvati.
+      values:
+        calculated: Calcolato
+        heading: Valori
+        manual_revision: Richiede revisione manuale
+        name: Valore
+        reset: Ripristina il calcolato
+        status: Stato
+        stored: Sulla scheda
+        submit: Salva i valori
+    monster_overrides:
+      destroy:
+        reset: Il valore è stato ripristinato al numero calcolato.
     versions:
       created: Una nuova versione di %{name} è stata creata.
       form:

@@ -1,0 +1,33 @@
+<% type_array = type_split(@parent_type.camelize) %>
+<% provide(:title, t("entitybuilder.monster_builds.edit.title", name: @parent_object.name)) %>
+<% content_for :breadcrumb do %>
+  <%= breadcrumb [
+    { type_array[0] => nil },
+    { type_array[1] => polymorphic_path(@parent_type.pluralize) },
+    { @parent_object.name => polymorphic_path(@parent_object) },
+    { t("entitybuilder.monster_builds.edit.heading") => nil }
+  ] %>
+<% end %>
+
+<div class="row">
+  <div class="medium-3 large-2 columns">
+    <%= render partial: "entitybuilder/menus/manage",
+      locals: {
+        index_link: polymorphic_path(@parent_type.pluralize),
+        view_link: polymorphic_path(@parent_object),
+        about_link: edit_polymorphic_path(@parent_object),
+        base_link: polymorphic_path(@parent_object)
+      } %>
+  </div>
+  <div class="medium-9 large-10 columns">
+    <%= render partial: "layouts/header",
+      locals: { main: @parent_object.name, sub: t("entitybuilder.monster_builds.edit.heading") } %>
+    <hr class="faded">
+    <div id="brass_form">
+      <%= render "inputs" %>
+      <% if @parent_object.monster_built? %>
+        <%= render "values" %>
+      <% end %>
+    </div>
+  </div>
+</div>

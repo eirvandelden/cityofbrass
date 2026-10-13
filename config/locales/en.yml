@@ -41,8 +41,13 @@ en:
         version_of_html: Version of %{parent}
     menus:
       manage:
+        monster_builder: Monster builder
         new_version: New version
     monster_builder:
+      defenses:
+        fortitude: Fortitude
+        reflex: Reflex
+        will: Will
       errors:
         group: Group is not a known group.
         incomplete: Level, role and group must all be filled in, or all be blank.
@@ -53,6 +58,46 @@ en:
       extra_action:
         elite: Additional attack
         solo: Additional standard action
+      groups:
+        elite: Elite
+        minion: Minion
+        solo: Solo
+        standard: Standard
+      roles:
+        artillery: Artillery
+        brute: Brute
+        controller: Controller
+        lurker: Lurker
+        skirmisher: Skirmisher
+        soldier: Soldier
+    monster_builds:
+      edit:
+        heading: Monster builder
+        title: Monster builder of %{name}
+      inputs:
+        defense_bonuses: Defenses raised by 2 (Elite and Solo, at most two)
+        extra_action: Extra action
+        group: Group
+        heading: Level, role and group
+        level: Level
+        role: Role
+        submit: Calculate
+      sheet:
+        summary: Level %{level} %{role}
+      update:
+        saved: The monster numbers were saved.
+      values:
+        calculated: Calculated
+        heading: Values
+        manual_revision: Needs manual revision
+        name: Value
+        reset: Reset to calculated
+        status: Status
+        stored: On the sheet
+        submit: Save values
+    monster_overrides:
+      destroy:
+        reset: The value was reset to the calculated number.
     versions:
       created: "%{name} was successfully versioned."
       form:
