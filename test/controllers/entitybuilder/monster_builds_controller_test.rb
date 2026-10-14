@@ -64,6 +64,18 @@ params: { resident_creature_id: @monster.id, resident_creature: { monster_values
       assert_equal 23, @monster.defenses.find_by(name: "Armor Class").bonus
     end
 
+    test "a whole number out of the row's range renders the form with an error and saves nothing" do
+      sign_in users(:dan)
+
+      patch :update, params: { resident_creature_id: @monster.id,
+                               resident_creature: { monster_values: { fortitude: "25", armor_class: "1000000" } } }
+
+      assert_response :unprocessable_content
+      assert_select ".error"
+      assert_equal 23, @monster.defenses.find_by(name: "Armor Class").bonus
+      assert_not_equal 25, @monster.defenses.find_by(name: "Fortitude").bonus
+    end
+
     test "a submitted value is stored and marked" do
       sign_in users(:dan)
 
