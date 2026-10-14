@@ -50,8 +50,7 @@ module Entitybuilder
         refused.each { |target| errors.add(:base, monster_value_error(target)) }
         return false if refused.any?
 
-        transaction { changes.each { |target, value| target.write(self, value) } }
-        true
+        write_monster_values(changes)
       end
 
       def extra_action?
@@ -89,6 +88,14 @@ module Entitybuilder
         return target.untouched_template?(self) unless previous
 
         !target.edited?(self, target.calculated(previous))
+      end
+
+      def write_monster_values(changes)
+        transaction { changes.each { |target, value| target.write(self, value) } }
+        true
+      rescue ActiveRecord::RecordInvalid => error
+        errors.add(:base, error.record.errors.full_messages.to_sentence)
+        false
       end
 
       def changed_monster_values(values)
