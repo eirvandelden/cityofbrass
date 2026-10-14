@@ -17,6 +17,7 @@ module Entitybuilder
         redirect_to edit_polymorphic_path([ @parent_object, :monster_build ]),
                     notice: t("entitybuilder.monster_builds.update.saved")
       else
+        @submitted_values = value_params.to_h
         render :edit, status: :unprocessable_content
       end
     end

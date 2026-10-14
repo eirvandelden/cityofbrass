@@ -76,6 +76,18 @@ params: { resident_creature_id: @monster.id, resident_creature: { monster_values
       assert_not_equal 25, @monster.defenses.find_by(name: "Fortitude").bonus
     end
 
+    test "a refused submit shows the submitted values again" do
+      sign_in users(:dan)
+
+      patch :update, params: { resident_creature_id: @monster.id,
+                               resident_creature: { monster_values: { fortitude: "25", armor_class: "abc" } } }
+
+      assert_response :unprocessable_content
+      assert_select "input#monster_value_fortitude[value=?]", "25"
+      assert_select "input#monster_value_armor_class[value=?]", "abc"
+      assert_not_equal 25, @monster.defenses.find_by(name: "Fortitude").bonus
+    end
+
     test "a submitted value is stored and marked" do
       sign_in users(:dan)
 
