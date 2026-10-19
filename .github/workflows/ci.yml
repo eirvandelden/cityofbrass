@@ -43,11 +43,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
       - name: Install JavaScript dependencies
-        run: |
-          npm install --global yarn
-          yarn install --frozen-lockfile
+        run: npm ci
 
       - name: Install ImageMagick and libvips
         run: |
