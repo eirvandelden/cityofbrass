@@ -44,7 +44,7 @@ From `intent.md` (2026-10-17). Status: accepted.
 
 ### Phase 2 — cityofbrass
 
-- `yarn.lock` → removed; `package-lock.json` → added (generated as above).
+- `yarn.lock` → removed; `package-lock.json` → added (generated as above). `.npmrc` → added with `legacy-peer-deps=true`: `@rails/actiontext` peers `trix@^1.2.0` while the app pins `trix@^2.1.18`, which yarn ignored and npm rejects with ERESOLVE.
 - `bin/yarn` → removed (Rails 8.1 has no `yarn:install` task that needs it).
 - `bin/setup` — `system!("yarn install --check-files")` becomes `system!("npm install")`.
 - `.github/workflows/ci.yml` — the two-line install step becomes `npm ci`; add `cache: npm` to the existing `setup-node` block.
