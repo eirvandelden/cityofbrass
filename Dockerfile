@@ -38,8 +38,7 @@ RUN bundle lock --add-platform x86_64-linux \
 
 COPY . .
 
-RUN npm install --global yarn \
- && yarn install --frozen-lockfile
+RUN npm ci
 
 RUN bundle exec bootsnap precompile app/ lib/
 
