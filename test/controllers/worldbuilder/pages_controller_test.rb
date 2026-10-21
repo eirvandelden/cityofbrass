@@ -2,7 +2,6 @@ require 'test_helper'
 
 module Worldbuilder
   class PagesControllerTest < ActionController::TestCase
-    include Devise::Test::ControllerHelpers
 
     setup do
       @routes = Worldbuilder::Engine.routes

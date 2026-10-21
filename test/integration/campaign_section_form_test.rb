@@ -1,8 +1,6 @@
 require "test_helper"
 
 class CampaignSectionFormTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
-
   setup { @game_master = users(:dan) }
 
   # Regression for POST /cm/campaigns/:id/sections/:uuid 404 — the new-section

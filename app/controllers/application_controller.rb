@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   include DetectFormatVariant
+  include Authentication
 
   protect_from_forgery prepend: true, with: :exception
 
@@ -37,7 +38,26 @@ class ApplicationController < ActionController::Base
 
   protected
     def set_locale
-      I18n.locale = current_user&.locale || I18n.default_locale
+      I18n.locale = current_user&.locale || accepted_locale || I18n.default_locale
+    end
+
+    def accepted_locale
+      accepted_languages.find { |language| I18n.available_locales.include?(language) }
+    end
+
+    def accepted_languages
+      header = request.headers["Accept-Language"].to_s
+      weighted = header.split(",").each_with_index.map { |entry, index| language_weight(entry, index) }
+      weighted.compact.sort_by { |_, weight, index| [ -weight, index ] }.map(&:first)
+    end
+
+    # Returns nil for a wildcard or for q=0, which means "not acceptable".
+    def language_weight(entry, index)
+      tag, *params = entry.split(";").map(&:strip)
+      return if tag.blank? || tag == "*"
+
+      quality = (params.filter_map { |param| param[/\Aq\s*=\s*(\d(?:\.\d+)?)\z/, 1] }.first || 1).to_f
+      [ tag.split("-").first.downcase.to_sym, quality, index ] if quality.positive?
     end
 
     def check_quota

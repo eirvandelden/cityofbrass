@@ -1,8 +1,6 @@
 require "test_helper"
 
 class RulebuilderItemPrivacyTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
-
   ENTITY_CASES = [
     [ "resident character", :resident_character_one, "/eb/resident/characters" ],
     [ "resident creature", :resident_creature_one, "/eb/resident/creatures" ],

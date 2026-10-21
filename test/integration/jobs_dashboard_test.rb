@@ -1,7 +1,11 @@
 require "test_helper"
 
 class JobsDashboardTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
+  test "signed out visitor is redirected to the admin login" do
+    get "/jobs"
+
+    assert_redirected_to "/admins/login"
+  end
 
   test "admin can open the jobs dashboard" do
     sign_in admins(:dan)
@@ -16,6 +20,6 @@ class JobsDashboardTest < ActionDispatch::IntegrationTest
 
     get "/jobs"
 
-    assert_response :redirect
+    assert_redirected_to "/admins/login"
   end
 end

@@ -2,7 +2,6 @@ require 'test_helper'
 
 module Entitybuilder
   class KnownSpellsControllerTest < ActionController::TestCase
-    include Devise::Test::ControllerHelpers
 
     setup do
       @routes = Entitybuilder::Engine.routes

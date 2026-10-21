@@ -1,8 +1,6 @@
 require "test_helper"
 
 class GalleryFaqImageUploadTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
-
   test "an administrator views a help picture after uploading it" do
     sign_in users(:dan)
     sign_in admins(:dan)

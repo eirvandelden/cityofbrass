@@ -5,6 +5,20 @@ nl:
       current_password_hint: Vereist wanneer je je e-mailadres of wachtwoord wijzigt.
     update:
       updated: Je instellingen zijn opgeslagen.
+  activerecord:
+    attributes:
+      admin:
+        current_password: Huidig wachtwoord
+        email: E-mailadres
+        password: Wachtwoord
+        password_confirmation: Bevestig wachtwoord
+      user:
+        current_password: Huidig wachtwoord
+        email: E-mailadres
+        password: Wachtwoord
+        password_confirmation: Bevestig wachtwoord
+  authentication:
+    unauthenticated: Je dient je aan te melden of in te schrijven om door te gaan.
   campaignmanager:
     campaigns:
       features:
@@ -230,6 +244,45 @@ nl:
       search: Zoeken
       session: Sessie
       support: Ondersteuning
+  passwords:
+    create:
+      sent: Als we je e-mailadres terugvinden in onze database, zal je binnen enkele
+        ogenblikken via e-mail een link ontvangen om je wachtwoord opnieuw in te stellen.
+    edit:
+      new_password: Nieuw wachtwoord
+      submit: Bevestig nieuw wachtwoord
+      title: Wijzig je wachtwoord
+    new:
+      submit: Stuur me wachtwoord reset instructies
+      title: Wachtwoord vergeten?
+    update:
+      expired: Reset wachtwoord token is verlopen, vraag een nieuwe aan
+      updated: Je wachtwoord is gewijzigd. Je bent nu aangemeld.
+  passwords_mailer:
+    reset:
+      action: Verander mijn wachtwoord
+      greeting: Hallo %{email}!
+      instruction: Iemand heeft een link gevraagd om uw wachtwoord te wijzigen; dit
+        kan via onderstaande link.
+      instruction_2: Als je dit niet zelf hebt gevraagd, negeer deze mail dan alsjeblieft.
+      instruction_3: Je wachtwoord zal niet wijzigen totdat je bovenstaande link hebt
+        gevolgd en een nieuw wachtwoord hebt aangemaakt.
+      regards: Best regards,
+      subject: Instructies om je wachtwoord opnieuw in te stellen
+      team: The City of Brass Team
+  sessions:
+    create:
+      invalid: Ongeldig e-mailadres of wachtwoord.
+      locked: Je account is vergrendeld.
+      signed_in: Je bent succesvol ingelogd.
+    destroy:
+      signed_out: Je bent succesvol uitgelogd.
+    links:
+      forgot_your_password: Wachtwoord vergeten?
+    new:
+      admin_title: Admin Inloggen
+      submit: Inloggen
+      title: Inloggen
   users:
     create:
       created: "%{email} is aangemaakt."

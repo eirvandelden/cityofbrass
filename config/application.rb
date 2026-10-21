@@ -11,9 +11,6 @@ module Brasscore
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.1
     config.active_support.cache_format_version = 7.1
-    config.before_initialize do
-      Devise.secret_key ||= config.secret_key_base if defined?(Devise)
-    end
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -40,6 +37,7 @@ module Brasscore
     config.active_job.queue_adapter = :solid_queue
     config.solid_queue.connects_to = { database: { writing: :queue } }
     config.mission_control.jobs.http_basic_auth_enabled = false
+    config.mission_control.jobs.base_controller_class = "MissionControlController"
 
     config.action_view.sanitized_allowed_attributes = [
       "name", "href", "cite", "class", "title", "src", "height", "width", "style"

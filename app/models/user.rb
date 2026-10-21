@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  devise :database_authenticatable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable, :lockable
+  include Authenticatable
+
+  attr_accessor :current_password
 
   STATUS_OPTIONS  = [ "active", "alpha", "beta", "trial", "free", "vip", "locked", "canceled" ]
   ACTIVE_STATUS   = [ "active", "alpha", "beta", "trial", "free", "vip" ]
@@ -32,7 +32,7 @@ class User < ApplicationRecord
     attributes = attributes.to_h.with_indifferent_access
 
     if current_password_required_for?(attributes)
-      update_with_password(attributes)
+      update_with_current_password(attributes)
     else
       update(attributes.except(:password, :password_confirmation, :current_password))
     end
@@ -106,10 +106,6 @@ class User < ApplicationRecord
     User.where([ "status = ? AND created_at < ?", :trial, 30.days.ago ]).update_all(status: "canceled")
   end
 
-  def send_devise_notification(notification, *args)
-    devise_mailer.send(notification, self, *args).deliver_later
-  end
-
   def trial_days_remaining
     days_used = (Time.now.to_date - self.created_at.to_date).to_i
     days_left = 31 - days_used
@@ -133,5 +129,12 @@ class User < ApplicationRecord
 
     def password_changed_for?(attributes)
       attributes[:password].present? || attributes[:password_confirmation].present?
+    end
+
+    def update_with_current_password(attributes)
+      return update(attributes.except(:current_password)) if authenticate(attributes[:current_password])
+
+      errors.add(:current_password, :invalid)
+      false
     end
 end

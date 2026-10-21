@@ -1,0 +1,1 @@
+# Empty on purpose: a fixture file makes fixture loading clear the table between non-transactional system tests.

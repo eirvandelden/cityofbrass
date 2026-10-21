@@ -31,7 +31,7 @@ gem "sdoc"
 
 gem "kt-paperclip"
 gem "image_processing", "~> 1.2"
-gem "devise"
+gem "bcrypt"
 gem "foundation-rails", "5.5.3.2" # git: 'https://github.com/embersds/foundation-rails', branch: 'v5'
 gem "kaminari"
 gem "omniauth"
@@ -41,7 +41,6 @@ gem "solid_queue"
 gem "solid_cable"
 gem "mission_control-jobs"
 gem "rails-i18n"
-gem "devise-i18n"
 gem "stripe"
 gem "bundle-audit"
 gem "font-awesome-rails"  # Remove version constraint for Rails 6.1

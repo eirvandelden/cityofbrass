@@ -1,7 +1,4 @@
 class ScrollsController < ApplicationController
-
-  respond_to :html, :json, :js
-
   def home
     if user_signed_in?
       if current_user.active?
