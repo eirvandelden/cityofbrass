@@ -3,11 +3,11 @@ require "jwt"
 
 class JwtEmptyKeyTest < ActiveSupport::TestCase
   test "signing with an empty key is refused" do
-    assert_raises(JWT::DecodeError) { JWT.encode({ "sub" => "gm" }, "", "HS256") }
+    assert_raises(JWT::EncodeError) { JWT.encode({ "sub" => "gm" }, "", "HS256") }
   end
 
   test "signing with a nil key is refused" do
-    assert_raises(JWT::DecodeError) { JWT.encode({ "sub" => "gm" }, nil, "HS256") }
+    assert_raises(JWT::EncodeError) { JWT.encode({ "sub" => "gm" }, nil, "HS256") }
   end
 
   test "decoding a token forged with an empty key is refused" do
