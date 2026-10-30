@@ -107,3 +107,28 @@ Nothing new. The fixes add no params, routes or queries. `@submitted_values` com
 Each round 2 fix has a test: `a whole number out of the row's range renders the form with an error and saves nothing` and `a refused submit shows the submitted values again`. Neither test checks the message text, which is how the first finding above went unnoticed. The phase B acceptance criteria and named unit tests from round 1 still pass. No test was weakened, skipped or deleted.
 
 Counts: Important 0, Nit 2.
+
+## Round 4 — 2026-10-30T11:09Z — 79a9465
+
+Scope: phase B only, `git diff origin/56-monsters-can-have-multiple-versions...HEAD`. Phase A is reviewed in PR #157. This round checks the round 3 fixes (79296b7, fca4fdb) and looks for new problems. No `REVIEW.md` or `REVIEW.local.md` exists, so the reviewer defaults apply: Bugs, Security, Compliance.
+
+Checks run: the nine phase B test files with `PARALLEL_WORKERS=1` (117 runs, 440 assertions, 0 failures), `bundle exec rubocop` on the 27 changed Ruby files without `db/schema.rb` (no offenses), `bin/i18n-tasks health` (clean), `bundle exec brakeman -q` (9 warnings, none in a phase B file). A throwaway controller test confirmed the first fix for a row that does not exist yet. It was removed after the run and is not committed.
+
+Round 3 fixes:
+
+- Out-of-range error names every row (79296b7): holds. `write_monster_value` rescues each refused `save!`, adds `"<row name>: <message>"`, and the loop continues, so each refused row gets its own message. `raise ActiveRecord::Rollback` then discards the rows written in the same submit. The throwaway test sent Saving Throws "5000" on a Standard monster with no saving throws row, Will "3" and a 300-character Role. The page showed "Saving Throws: Bonus must be less than 1000" and "Role: Description is too long (maximum is 255 characters)", returned 422, and saved no saving throws row, no Will and no Role. The new `refused_value` key exists in en, nl and it.
+- Missing label param (fca4fdb): holds. The controller passes `version_params[:version_label]` and `version_params[:monster_level]`, so an absent key gives nil and the label validation refuses the version with the form and a 422. An absent level on a built monster skips the rebuild, as before.
+
+### Bugs
+
+Nothing found.
+
+### Security
+
+Nothing new. The fixes add no params, routes or queries. The refusal message joins the row name from the fixed `MonsterTarget::ROWS` list with model validation text, and the view escapes it. Brakeman reports no warning in a phase B file.
+
+### Compliance
+
+Each round 3 fix has a test: `an out-of-range error names every refused row` checks the message text for two rows, and `a missing label param renders the form with an error` checks the 422 and that no entity is created. The phase B acceptance criteria and named unit tests from round 1 still pass. No test was weakened, skipped or deleted.
+
+Counts: Important 0, Nit 0.
