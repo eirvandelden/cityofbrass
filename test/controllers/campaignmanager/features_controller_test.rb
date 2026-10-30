@@ -2,8 +2,6 @@ require 'test_helper'
 
 module Campaignmanager
   class FeaturesControllerTest < ActionController::TestCase
-    include Devise::Test::ControllerHelpers
-
     setup do
       @routes = Campaignmanager::Engine.routes
       @user = users(:dan)

@@ -14,6 +14,8 @@ module TaskDefinitions
   end
 end
 
+Dir[File.expand_path("test_helpers/*.rb", __dir__)].each { |file| require file }
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
@@ -24,3 +26,6 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+ActionDispatch::IntegrationTest.include SessionTestHelper
+ActionController::TestCase.include SessionTestHelper

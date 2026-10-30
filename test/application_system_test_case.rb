@@ -29,6 +29,8 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
         timeout: 30,
         process_timeout: 60,
         browser_options: {
+          "lang" => "en-US",
+          "accept-lang" => "en-US",
           "disable-dev-shm-usage" => nil,
           "no-sandbox" => nil
         }

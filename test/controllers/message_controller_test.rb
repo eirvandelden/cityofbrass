@@ -1,8 +1,6 @@
 require 'test_helper'
 
 class MessagesControllerTest < ActionController::TestCase
-  include Devise::Test::ControllerHelpers
-
   setup do
     @dan = users(:dan)
     @razune = residents(:razune)

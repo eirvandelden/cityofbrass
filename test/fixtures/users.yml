@@ -3,30 +3,25 @@
 
 dan:
   email: daniel@embersds.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
-  confirmed_at: <%= DateTime.now %>
+  password_digest: <%= BCrypt::Password.create("password", cost: BCrypt::Engine::MIN_COST) %>
   status: active
 
 lucas:
   email: lucas@embersds.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
-  confirmed_at: <%= DateTime.now %>
+  password_digest: <%= BCrypt::Password.create("password", cost: BCrypt::Engine::MIN_COST) %>
   status: free
 
 courtney:
   email: courtney@embersds.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
-  confirmed_at: <%= DateTime.now %>
+  password_digest: <%= BCrypt::Password.create("password", cost: BCrypt::Engine::MIN_COST) %>
   status: trial
 
 brittany:
   email: brittany@embersds.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
-  confirmed_at: <%= DateTime.now %>
+  password_digest: <%= BCrypt::Password.create("password", cost: BCrypt::Engine::MIN_COST) %>
   status: suspended
 
 priya:
   email: priya@embersds.com
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
-  confirmed_at: <%= DateTime.now %>
+  password_digest: <%= BCrypt::Password.create("password", cost: BCrypt::Engine::MIN_COST) %>
   status: active

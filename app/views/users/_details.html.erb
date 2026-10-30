@@ -22,7 +22,6 @@
           <tr><td><strong>Last Login At</strong></td><td><span data-timestamp="<%= @user.last_sign_in_at.to_i*1000 %>"></span></td></tr>
           <tr><td><strong>Current Login IP</strong></td><td><%= @user.current_sign_in_ip %></td></tr>
           <tr><td><strong>Last Login IP</strong></td><td><%= @user.last_sign_in_ip %></td></tr>
-          <tr><td><strong>Confirmed At</strong></td><td><span data-timestamp="<%= @user.confirmed_at.to_i*1000 %>"></span></td></tr>
           <tr><td><strong>Failed Attempts</strong></td><td><%= @user.failed_attempts %></td></tr>
           <tr><td><strong>Locked At</strong></td><td><span data-timestamp="<%= @user.locked_at.to_i*1000 %>"></span></td></tr>
           <tr><td><strong>Created At</strong></td><td><span data-timestamp="<%= @user.created_at.to_i*1000 %>"></span></td></tr>

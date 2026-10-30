@@ -1,8 +1,6 @@
 require "test_helper"
 
 class GalleryMapImageUploadTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
-
   test "anyone can view a map picture after an administrator uploads it" do
     sign_in users(:dan)
     sign_in admins(:dan)

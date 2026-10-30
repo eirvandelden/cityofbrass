@@ -4,8 +4,6 @@ module Entitybuilder
   # Tests that the Draw Steel Creator License attribution string appears on all
   # three required user-facing surfaces per the Draw Steel Creator License.
   class DrawSteelAttributionTest < ActionController::TestCase
-    include Devise::Test::ControllerHelpers
-
     tests Entitybuilder::ResidentCharactersController
 
     ATTRIBUTION = "Draw Steel Creator License"

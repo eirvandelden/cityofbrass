@@ -2,7 +2,6 @@ require 'test_helper'
 
 module Storybuilder
   class PagesControllerTest < ActionController::TestCase
-    include Devise::Test::ControllerHelpers
 
     setup do
       @routes = Storybuilder::Engine.routes

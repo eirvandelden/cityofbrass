@@ -645,7 +645,6 @@ Layout/SpaceInsideArrayLiteralBrackets:
     - 'app/controllers/messages_controller.rb'
     - 'app/controllers/residents_controller.rb'
     - 'app/controllers/users_controller.rb'
-    - 'config/initializers/devise.rb'
     - 'config/initializers/filter_parameter_logging.rb'
     - 'config/initializers/wrap_parameters.rb'
     - 'config/routes.rb'
@@ -861,7 +860,6 @@ Lint/RedundantStringCoercion:
 Metrics/BlockLength:
   Exclude:
     - 'app/models/concerns/json_array_columns.rb'
-    - 'config/initializers/devise.rb'
     - 'lib/tasks/backfill_rich_text.rake'
     - 'lib/tasks/draw_steel.rake'
     - 'lib/tasks/fifth_edition.rake'
@@ -1351,7 +1349,6 @@ Style/StringLiterals:
     - 'config/environments/test.rb'
     - 'config/initializers/assets.rb'
     - 'config/initializers/core_rules.rb'
-    - 'config/initializers/devise.rb'
     - 'config/initializers/quota.rb'
     - 'config/initializers/session_store.rb'
     - 'config/initializers/stripe.rb'

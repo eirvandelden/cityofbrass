@@ -1,8 +1,6 @@
 require "test_helper"
 
 class LocaleSettingsTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
-
   test "account settings render locale choices in the user's locale" do
     user = users(:dan)
     user.update!(locale: "it")
@@ -40,7 +38,6 @@ class LocaleSettingsTest < ActionDispatch::IntegrationTest
 
     assert_response :unprocessable_entity
     assert_equal email, user.reload.email
-    assert_nil user.unconfirmed_email
   end
 
   test "password changes require the signed in user's current password" do
@@ -57,7 +54,7 @@ class LocaleSettingsTest < ActionDispatch::IntegrationTest
     }
 
     assert_response :unprocessable_entity
-    assert user.reload.valid_password?("password")
+    assert user.reload.authenticate("password")
   end
 
   test "password changes with the signed in user's current password" do
@@ -75,6 +72,6 @@ class LocaleSettingsTest < ActionDispatch::IntegrationTest
     }
 
     assert_redirected_to "/users/edit"
-    assert user.reload.valid_password?("new-password")
+    assert user.reload.authenticate("new-password")
   end
 end

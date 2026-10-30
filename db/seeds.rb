@@ -16,7 +16,6 @@ if Rails.env.development? || Rails.env.test?
   if user.new_record?
     user.password = "password1"
     user.password_confirmation = "password1"
-    user.skip_confirmation!
     user.save!
   end
 

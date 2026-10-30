@@ -3,8 +3,6 @@ require "test_helper"
 module Gallery
   module Admin
     class StockImagesControllerTest < ActionController::TestCase
-      include Devise::Test::ControllerHelpers
-
       setup do
         @routes = Gallery::Engine.routes
         @user = users(:dan)

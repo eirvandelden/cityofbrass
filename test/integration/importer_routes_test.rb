@@ -1,8 +1,6 @@
 require "test_helper"
 
 class ImporterRoutesTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
-
   test "normal user can open resident import preview form" do
     sign_in users(:dan)
 

@@ -4,8 +4,6 @@ module Entitybuilder
   # Tests that the ORC License attribution string appears on all three required
   # user-facing surfaces for Pathfinder 2e content.
   class Pf2eAttributionTest < ActionController::TestCase
-    include Devise::Test::ControllerHelpers
-
     tests Entitybuilder::ResidentCharactersController
 
     ATTRIBUTION_MATCH = /ORC/i

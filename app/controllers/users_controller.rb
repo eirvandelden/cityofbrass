@@ -13,7 +13,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(create_user_params)
-    @user.skip_confirmation!
     if @user.save
       redirect_to users_path, notice: t(".created", email: @user.email)
     else
@@ -25,11 +24,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    email_updated = (@user.email == user_params[:email]) ? false : true
-    @user.skip_confirmation_notification!
     respond_to do |format|
       if @user.update(user_params)
-        @user.confirm if email_updated
         format.js { flash.now[:notice] = "#{@user.email} has been updated." }
       else
         format.js

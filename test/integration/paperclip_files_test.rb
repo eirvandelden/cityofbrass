@@ -1,8 +1,6 @@
 require "test_helper"
 
 class PaperclipFilesTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
-
   test "serves importer preview files to the owner" do
     preview = Importer::Preview.create!(resident: residents(:razune), mode: Importer::Preview::RESIDENT_CONTENT,
                                         source: Importer::Preview::GAME_MASTER_5_XML, status: "parsing")

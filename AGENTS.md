@@ -8,7 +8,7 @@ Rails modular monolith: core `app/` handles users (with their `Resident` record)
 
 ## Domain
 
-- **User** — login/auth record (Devise). Has a **status** (`free`, `trial`, `active`, `alpha`, `beta`, `vip`, `locked`, `canceled`) that gates features and quotas (`lib/quota.rb`).
+- **User** — login/auth record (Rails built-in authentication: `has_secure_password`, `Session` records). Has a **status** (`free`, `trial`, `active`, `alpha`, `beta`, `vip`, `locked`, `canceled`) that gates features and quotas (`lib/quota.rb`).
 - **Resident** — the content-owner record of a User, exactly one per User; owns the content built in each engine. It merges into User (#155); in domain language, say user.
 - **Affiliation** — an invite/accept relationship between users (through their Resident) to co-edit shared content or campaigns.
 - **Message** — user-to-user inbox/sent messaging, stored between Residents.
