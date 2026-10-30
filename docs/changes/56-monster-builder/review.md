@@ -80,3 +80,30 @@ Nothing new. The fixes add no params and no routes. `monster_extra_action` still
 Each fix has a test: `level above 40 renders the form with errors`, `reset on an unbuilt monster gets 404`, `a value that is not a whole number renders the form with an error`, `a refused level renders the form with the typed level`, `blank label keeps the typed level`, `a built monster moved to another rule set hides its builder summary`, `refuses a level outside 1 to 40`, `a level outside 1 to 40 is not built`, `a monster moved to another rule set is not built`, `refuses a value that is not a whole number`, `a blank value clears a text value`, `refuses a version at a level the builder refuses`. The extra action acceptance test now follows the form. The plan's decision 4 (nil means the group default) holds through the page. The new strings have en, nl and it keys. No test was weakened, skipped or deleted.
 
 Counts: Important 0, Nit 2.
+
+## Round 3 — 2026-10-14T19:24Z — 8462d4f
+
+Scope: phase B only, `git diff origin/56-monsters-can-have-multiple-versions...HEAD`. Phase A is reviewed in PR #157. This round checks the round 2 fixes (b98acf3, bd5d8d1) and looks for new problems. No `REVIEW.md` or `REVIEW.local.md` exists, so the reviewer defaults apply: Bugs, Security, Compliance.
+
+Checks run: the nine phase B test files with `PARALLEL_WORKERS=1` (115 runs, 433 assertions, 0 failures), `bundle exec rubocop` on the 27 changed Ruby files without `db/schema.rb` (no offenses), `bin/i18n-tasks health` (clean). A throwaway controller test in the scratchpad confirmed the first finding below. It is not committed.
+
+Round 2 fixes:
+
+- Value outside the row's range (b98acf3): holds. `write_monster_values` rescues `ActiveRecord::RecordInvalid` and returns false, so the GM gets the form with a message and a 422 instead of the error page. The controller calls `store_monster_values` outside any other transaction, so the rollback discards the values written before the refused one. The test checks that a valid Fortitude next to the refused Armor Class is not saved. See the first finding for the message text.
+- Submitted values on re-render (bd5d8d1): holds. The values table shows `@submitted_values` after a refused submit, for both a refused format ("abc") and a refused range. `value_params.to_h` is a `HashWithIndifferentAccess`, so the symbol keys from `monster_values` find the string param keys. A refused inputs form submits no values, so the table falls back to the stored values.
+- `assert_select "body", text: ..., count: 0`: none in phase B. Every `count: 0` assertion selects an element that the positive case renders: `input[name=?]`, `tr.roll`, `p` (the sheet summary is a `<p>`) and `tr`.
+
+### Bugs
+
+- [ ] Nit: The out-of-range message names neither the row nor the other refused values. The rescue reports the first row that `save!` refuses and stops. Checked with a PATCH of Armor Class "1000000", Initiative "5000" and a 300-character Role: the page shows only "Bonus must be less than 1000000". The values table has no "Bonus" column, and Armor Class, Fortitude, Reflex and Will all give the same text, so the GM cannot tell which value to fix. A fix could prefix the target's `row_name`, as `monster_value_error` does for the whole-number check, or validate every changed row before the write and report each one. — `engines/entitybuilder/app/models/entitybuilder/entity/monster_buildable.rb:97`
+- [ ] Nit: A version POST with `version[monster_level]` and no `version[version_label]` returns a 500. `create_version(**version_params.to_h.symbolize_keys)` then has no `version_label:` keyword, and the method requires it, so Ruby raises `ArgumentError`. Before phase B the controller passed `version_params[:version_label]`, which gives nil and the form with an error. The form always sends the label, so only a hand-crafted request gets here. — `engines/entitybuilder/app/controllers/entitybuilder/versions_controller.rb:16`
+
+### Security
+
+Nothing new. The fixes add no params, routes or queries. `@submitted_values` comes from the permitted `monster_values` keys only, and `text_field_tag` escapes the value. The error message comes from model validation text, not from user input.
+
+### Compliance
+
+Each round 2 fix has a test: `a whole number out of the row's range renders the form with an error and saves nothing` and `a refused submit shows the submitted values again`. Neither test checks the message text, which is how the first finding above went unnoticed. The phase B acceptance criteria and named unit tests from round 1 still pass. No test was weakened, skipped or deleted.
+
+Counts: Important 0, Nit 2.
