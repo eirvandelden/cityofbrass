@@ -29,6 +29,17 @@ module Entitybuilder
       assert_select ".error", text: /blank/i
     end
 
+    test "a missing label param renders the form with an error" do
+      sign_in users(:dan)
+      built = entitybuilder_entities(:four_e_creature_built)
+
+      assert_no_difference("Entity.count") do
+        post :create, params: { resident_creature_id: built.id, version: { monster_level: "10" } }
+      end
+      assert_response :unprocessable_content
+      assert_select ".error", text: /blank/i
+    end
+
     test "a refused level renders the form with the typed level" do
       sign_in users(:dan)
       built = entitybuilder_entities(:four_e_creature_built)
