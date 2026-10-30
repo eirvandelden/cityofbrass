@@ -91,16 +91,27 @@ module Entitybuilder
       end
 
       def write_monster_values(changes)
-        transaction { changes.each { |target, value| target.write(self, value) } }
-        true
+        transaction do
+          changes.each { |target, value| write_monster_value(target, value) }
+          raise ActiveRecord::Rollback if errors.any?
+        end
+        errors.empty?
+      end
+
+      def write_monster_value(target, value)
+        target.write(self, value)
       rescue ActiveRecord::RecordInvalid => error
-        errors.add(:base, error.record.errors.full_messages.to_sentence)
-        false
+        errors.add(:base, monster_refusal(target, error.record))
       end
 
       def changed_monster_values(values)
         values.each_pair.to_h { |key, value| [ MonsterTarget.fetch(key), value.to_s.strip ] }
               .reject { |target, value| target.stored(self).to_s == value }
+      end
+
+      def monster_refusal(target, row)
+        I18n.t("entitybuilder.monster_builder.errors.refused_value", name: target.row_name,
+                                                                     message: row.errors.full_messages.to_sentence)
       end
 
       def monster_value_error(target)

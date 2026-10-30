@@ -53,6 +53,7 @@ en:
         incomplete: Level, role and group must all be filled in, or all be blank.
         level: Level must be a whole number from 1 to 40.
         picks: Pick at most two of Fortitude, Reflex and Will.
+        refused_value: "%{name}: %{message}"
         role: Role is not a known role.
         unavailable: The monster builder is not available for this rule set.
         whole_number: "%{name} must be a whole number."

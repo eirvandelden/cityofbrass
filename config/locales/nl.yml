@@ -46,6 +46,7 @@ nl:
           leeg.
         level: Niveau moet een geheel getal van 1 tot 40 zijn.
         picks: Kies hoogstens twee van Fortitude, Reflex en Will.
+        refused_value: "%{name}: %{message}"
         role: Rol is geen bekende rol.
         unavailable: De monsterbouwer is niet beschikbaar voor deze regelset.
         whole_number: "%{name} moet een geheel getal zijn."

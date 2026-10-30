@@ -46,6 +46,7 @@ it:
           tutti vuoti.
         level: Il livello deve essere un numero intero da 1 a 40.
         picks: Scegli al massimo due tra Fortitude, Reflex e Will.
+        refused_value: "%{name}: %{message}"
         role: Il ruolo non è un ruolo noto.
         unavailable: Il costruttore di mostri non è disponibile per questo sistema
           di regole.

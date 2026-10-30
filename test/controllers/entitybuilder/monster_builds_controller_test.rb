@@ -76,6 +76,17 @@ params: { resident_creature_id: @monster.id, resident_creature: { monster_values
       assert_not_equal 25, @monster.defenses.find_by(name: "Fortitude").bonus
     end
 
+    test "an out-of-range error names every refused row" do
+      sign_in users(:dan)
+
+      patch :update, params: { resident_creature_id: @monster.id,
+                               resident_creature: { monster_values: { fortitude: "2000000", armor_class: "1000000" } } }
+
+      assert_response :unprocessable_content
+      assert_select ".error", text: /Armor Class: .*less than 1000000/m
+      assert_select ".error", text: /Fortitude: .*less than 1000000/m
+    end
+
     test "a refused submit shows the submitted values again" do
       sign_in users(:dan)
 
