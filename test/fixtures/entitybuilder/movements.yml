@@ -3,3 +3,34 @@ monster_speed:
   sort_order: 1
   name: Speed
   base: 30
+
+<% { "four_e_creature_unbuilt" => 0, "four_e_creature_dex14" => 0,
+     "four_e_creature_designed" => 0, "four_e_creature_built" => 4 }.each do |entity, base| %>
+<%= entity %>_initiative:
+  entity: <%= entity %>
+  sort_order: 0
+  name: Initiative
+  base: <%= base %>
+  ability_score: Dexterity
+
+<%= entity %>_speed:
+  entity: <%= entity %>
+  sort_order: 1
+  name: Speed
+  base: 5
+  description: Squares
+<% end %>
+
+four_e_npc_unbuilt_initiative:
+  entity: four_e_npc_unbuilt
+  sort_order: 0
+  name: Initiative
+  base: 0
+  ability_score: Dexterity
+
+four_e_npc_unbuilt_speed:
+  entity: four_e_npc_unbuilt
+  sort_order: 1
+  name: Speed
+  base: 6
+  description: Squares
