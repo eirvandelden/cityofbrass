@@ -31,6 +31,10 @@
   <div class="row">
     <div class="medium-12 columns">
 
+      <% if monster_powers?(@parent_object) %>
+        <%= render "entitybuilder/attacks/power_fields", f: f %>
+      <% end %>
+
       <fieldset>
         <legend>Attack Roll</legend>
         <div class="row">
@@ -117,4 +121,5 @@
   $('#unlock_special').on("click", function(e){
     unlock_field('#attack_special_damage_bonus', '#icon_unlock_special');
   });
+  $('#power_fields').on("change", "select, input", prefill_power);
 </script>

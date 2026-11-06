@@ -5,6 +5,19 @@ nl:
       current_password_hint: Vereist wanneer je je e-mailadres of wachtwoord wijzigt.
     update:
       updated: Je instellingen zijn opgeslagen.
+  activerecord:
+    errors:
+      models:
+        entitybuilder/attack:
+          attributes:
+            recharges_when_bloodied:
+              already_marked: staat al op een andere kracht
+              not_elite: vereist een Elite-monster
+              not_encounter: vereist een kracht per ontmoeting
+            usable_at_will:
+              already_marked: staat al op een andere kracht
+              not_encounter: vereist een kracht per ontmoeting
+              not_solo: vereist een Solo-monster
   campaignmanager:
     campaigns:
       features:
@@ -27,6 +40,22 @@ nl:
       campaign_menu: Campaign menu
       campaign_pages: Campaign pagina's
   entitybuilder:
+    attacks:
+      power_fields:
+        action_immediate_interrupt: Onmiddellijke onderbreking
+        action_immediate_reaction: Onmiddellijke reactie
+        action_minor: Kleine actie
+        action_standard: Standaard
+        action_type: Actietype
+        hint: Het gebruik vult de aanvalsbonus en schade in vanuit niveau, rol en
+          groep van het monster.
+        legend: Kracht
+        multi_target: Raakt meerdere doelen
+        recharges_when_bloodied: Krijgt een extra gebruik bij de eerste verwonding
+        usable_at_will: Naar believen te gebruiken
+        usage: Gebruik
+        usage_at_will: Naar believen
+        usage_encounter: Per ontmoeting
     entities:
       versions:
         heading: Versies

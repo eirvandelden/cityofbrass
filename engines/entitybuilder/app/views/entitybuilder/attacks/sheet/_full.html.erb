@@ -15,7 +15,10 @@
           <%= link_to "<i class='fa fa-expand'></i>".html_safe, "#", class: "cogs125", onclick: "$('#details_#{attack.id}').toggle(); return false;" %>
           <% end %>
         </td>
-        <td><%= attack.name %></td>
+        <td>
+          <%= attack.name %>
+          <%= render 'entitybuilder/attacks/sheet/power_summary', attack: attack %>
+        </td>
         <td class="text-center">
           <% attack_dice = attack.game_dice(@parent_object.core_rules) %>
           <% attack_bonus = attack.calculated_attack_bonus(@parent_object.ability_scores, @parent_object.modifiers, @parent_object.base_values) %>
