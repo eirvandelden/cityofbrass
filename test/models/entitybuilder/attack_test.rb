@@ -50,6 +50,13 @@ module Entitybuilder
       assert_equal 5, marked.reload.sort_order
     end
 
+    test "reports a missing entity instead of raising for a marked attack" do
+      attack = Attack.new(name: "Orphan", attack_type: "Melee", power_usage: "Encounter", recharges_when_bloodied: true)
+
+      assert_not attack.valid?
+      assert_includes attack.errors.attribute_names, :entity
+    end
+
     test "power prefill options cover every usage and multi-target combination" do
       options = power(entitybuilder_entities(:four_e_brute_level_4)).power_prefill_options
 
