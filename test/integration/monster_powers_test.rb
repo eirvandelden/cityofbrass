@@ -61,4 +61,23 @@ class MonsterPowersTest < ActionDispatch::IntegrationTest
 
     assert_select "small.power-details", text: /Immediate interrupt/
   end
+
+  test "built monster saves an attack whose usage the form leaves blank" do
+    standard = entitybuilder_entities(:four_e_standard_level_3)
+
+    assert_difference -> { standard.attacks.count }, 1 do
+      add_power(standard, power_usage: "")
+    end
+    assert_nil standard.attacks.find_by(name: "New power").power_usage
+  end
+
+  test "built monster edits an existing attack with the blank usage the form sends" do
+    attack = entitybuilder_attacks(:elite_plain_power)
+    attack.update_columns(power_usage: nil)
+
+    put "/eb/resident/creatures/#{attack.entity_id}/attacks/#{attack.id}",
+        params: { attack: { name: "Renamed", power_usage: "" } }, xhr: true
+
+    assert_equal "Renamed", attack.reload.name
+  end
 end
