@@ -33,11 +33,75 @@ nl:
         version_of_html: Versie van %{parent}
     menus:
       manage:
+        monster_builder: Monsterbouwer
         new_version: Nieuwe versie
+    monster_builder:
+      defenses:
+        fortitude: Fortitude
+        reflex: Reflex
+        will: Will
+      errors:
+        group: Groep is geen bekende groep.
+        incomplete: Niveau, rol en groep moeten alle drie ingevuld zijn, of alle drie
+          leeg.
+        level: Niveau moet een geheel getal van 1 tot 40 zijn.
+        picks: Kies hoogstens twee van Fortitude, Reflex en Will.
+        refused_value: "%{name}: %{message}"
+        role: Rol is geen bekende rol.
+        unavailable: De monsterbouwer is niet beschikbaar voor deze regelset.
+        whole_number: "%{name} moet een geheel getal zijn."
+      extra_action:
+        elite: Extra aanval
+        solo: Extra standaardactie
+      groups:
+        elite: Elite
+        minion: Minion
+        solo: Solo
+        standard: Standaard
+      roles:
+        artillery: Artillery
+        brute: Brute
+        controller: Controller
+        lurker: Lurker
+        skirmisher: Skirmisher
+        soldier: Soldier
+    monster_builds:
+      edit:
+        heading: Monsterbouwer
+        title: Monsterbouwer van %{name}
+      inputs:
+        defense_bonuses: Verdedigingen met +2 (Elite en Solo, hoogstens twee)
+        extra_action: Extra actie
+        extra_action_choices:
+          default: Standaard van de groep
+          disabled: Nee
+          enabled: Ja
+        group: Groep
+        heading: Niveau, rol en groep
+        level: Niveau
+        role: Rol
+        submit: Berekenen
+      sheet:
+        summary: Niveau %{level} %{role}
+      update:
+        saved: De monstergetallen zijn opgeslagen.
+      values:
+        calculated: Berekend
+        heading: Waarden
+        manual_revision: Handmatige controle nodig
+        name: Waarde
+        reset: Terug naar berekend
+        status: Status
+        stored: Op het blad
+        submit: Waarden opslaan
+    monster_overrides:
+      destroy:
+        reset: De waarde is teruggezet naar het berekende getal.
     versions:
       created: Van %{name} is een nieuwe versie gemaakt.
       form:
         label: Naam van de versie
+        monster_level: Monsterniveau
         submit: Versie maken
       new:
         heading: Nieuwe versie

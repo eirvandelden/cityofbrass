@@ -14,6 +14,7 @@
     "sheet": "default",
     "use_modifiers": "true",
     "show_core_blocks": "true",
+    "monster_builder": "true",
     "menu": [
       {
         "label": "Descriptors",

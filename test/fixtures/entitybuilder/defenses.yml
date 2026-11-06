@@ -3,3 +3,34 @@ monster_armor_class:
   sort_order: 1
   name: Armor Class
   base: 10
+
+<% four_e_creature_defenses = [
+  [ "Armor Class", 14, "Dexterity" ], [ "Fortitude", 12, "Strength" ],
+  [ "Reflex", 12, "Dexterity" ], [ "Will", 12, "Wisdom" ]
+] %>
+<% { "four_e_creature_unbuilt" => {}, "four_e_creature_dex14" => {},
+     "four_e_creature_designed" => { "Armor Class" => { base: 19 } },
+     "four_e_creature_built" => { "Armor Class" => { bonus: 23 }, "Fortitude" => { bonus: 17 },
+                                  "Reflex" => { bonus: 17 }, "Will" => { bonus: 17 } } }.each do |entity, changes| %>
+<% four_e_creature_defenses.each_with_index do |(name, base, ability), index| %>
+<%= entity %>_<%= name.downcase.tr(" ", "_") %>:
+  entity: <%= entity %>
+  sort_order: <%= index %>
+  name: <%= name %>
+  base: <%= changes.dig(name, :base) || base %>
+  bonus: <%= changes.dig(name, :bonus) %>
+  ability_score: <%= ability %>
+<% end %>
+<% end %>
+<% [
+  [ "Armor Class", 10, "Dexterity" ], [ "Fortitude (Str)", 10, "Strength" ],
+  [ "Fortitude (Con)", 10, "Constitution" ], [ "Reflex (Dex)", 10, "Dexterity" ],
+  [ "Reflex (Int)", 10, "Intelligence" ], [ "Will (Wis)", 10, "Wisdom" ], [ "Will (Cha)", 10, "Charisma" ]
+].each_with_index do |(name, base, ability), index| %>
+four_e_npc_unbuilt_<%= name.downcase.gsub(/[ ()]+/, "_").chomp("_") %>:
+  entity: four_e_npc_unbuilt
+  sort_order: <%= index %>
+  name: <%= name %>
+  base: <%= base %>
+  ability_score: <%= ability %>
+<% end %>
