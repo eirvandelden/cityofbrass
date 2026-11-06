@@ -1,8 +1,6 @@
 require "test_helper"
 
 class MonsterVersionsTest < ActionDispatch::IntegrationTest
-  include Devise::Test::IntegrationHelpers
-
   setup do
     @owner = users(:dan)
     @other = users(:lucas)

@@ -2,8 +2,6 @@ require "test_helper"
 
 module Entitybuilder
   class VersionsControllerTest < ActionController::TestCase
-    include Devise::Test::ControllerHelpers
-
     setup do
       @routes = Entitybuilder::Engine.routes
       @creature = entitybuilder_entities(:resident_creature_one)
