@@ -13,11 +13,11 @@
   <div class="row">
     <div class="medium-12 columns">
       <%= f.input :multi_target, as: :boolean, label: t("entitybuilder.attacks.power_fields.multi_target") %>
-      <% if @parent_object.monster_group == "Elite" || f.object.recharges_when_bloodied? %>
+      <% if @parent_object.monster_elite? || f.object.recharges_when_bloodied? %>
         <%= f.input :recharges_when_bloodied, as: :boolean,
               label: t("entitybuilder.attacks.power_fields.recharges_when_bloodied") %>
       <% end %>
-      <% if @parent_object.monster_group == "Solo" || f.object.usable_at_will? %>
+      <% if @parent_object.monster_solo? || f.object.usable_at_will? %>
         <%= f.input :usable_at_will, as: :boolean, label: t("entitybuilder.attacks.power_fields.usable_at_will") %>
       <% end %>
       <small><%= t("entitybuilder.attacks.power_fields.hint") %></small>
