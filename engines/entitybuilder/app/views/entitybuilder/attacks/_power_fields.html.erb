@@ -1,0 +1,26 @@
+<fieldset id="power_fields" data-prefill="<%= power_prefill_json(f.object) %>">
+  <legend><%= t("entitybuilder.attacks.power_fields.legend") %></legend>
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.input :power_usage, label: t("entitybuilder.attacks.power_fields.usage"),
+            collection: power_usage_options, include_blank: true %>
+    </div>
+    <div class="large-6 columns">
+      <%= f.input :action_type, label: t("entitybuilder.attacks.power_fields.action_type"),
+            collection: action_type_options, include_blank: false %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-12 columns">
+      <%= f.input :multi_target, as: :boolean, label: t("entitybuilder.attacks.power_fields.multi_target") %>
+      <% if @parent_object.monster_group == "Elite" %>
+        <%= f.input :recharges_when_bloodied, as: :boolean,
+              label: t("entitybuilder.attacks.power_fields.recharges_when_bloodied") %>
+      <% end %>
+      <% if @parent_object.monster_group == "Solo" %>
+        <%= f.input :usable_at_will, as: :boolean, label: t("entitybuilder.attacks.power_fields.usable_at_will") %>
+      <% end %>
+      <small><%= t("entitybuilder.attacks.power_fields.hint") %></small>
+    </div>
+  </div>
+</fieldset>
