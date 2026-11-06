@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_13_120000) do
+ActiveRecord::Schema[8.1].define(version: 2026_11_06_120000) do
   create_table "action_text_rich_texts", id: :integer, default: nil, force: :cascade do |t|
     t.text "body"
     t.datetime "created_at", null: false
@@ -270,6 +270,11 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_13_120000) do
     t.integer "special_damage_misc_modifier"
     t.text "special_damage_name"
     t.datetime "updated_at", precision: nil
+    t.string "power_usage", limit: 16
+    t.string "action_type", limit: 24, default: "Standard", null: false
+    t.boolean "multi_target", default: false, null: false
+    t.boolean "recharges_when_bloodied", default: false, null: false
+    t.boolean "usable_at_will", default: false, null: false
     t.index ["entity_id"], name: "index_entitybuilder_attacks_on_entity_id"
   end
 
