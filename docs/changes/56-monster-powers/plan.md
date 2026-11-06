@@ -127,6 +127,7 @@ Departures recorded during implementation:
 - The sheet text sits in `attacks/sheet/_power_summary.html.erb`, rendered by `_full.html.erb` (default sheet) and `_show_detail.html.erb` (profile). `AttackPowerHelper#monster_powers?` guards entities without the monster builder.
 - Extra fixture `four_e_solo_level_3_open` (a Solo with no marked power) for the usable-at-will system test.
 - Extra unit test: `has no prefill options for an unbuilt monster`.
+- Review round 1: the form still renders a mark checkbox while the mark is stored, even after the group no longer allows it. The GM unticks it to clear the mark. Plan decision 5 stands (marks stay stored); the mark validation is unchanged. Chosen over a validation that runs only when a mark turns on, because it changes only the view.
 
 Test setup: fixtures only, on top of phase B's 4e fixtures: built level 4 Brute, Skirmisher and Minion creatures, built level 3 Elite and Solo creatures, one marked encounter power on each of the Elite and the Solo, and a level 3 Standard monster. System tests sign in as `users(:dan)` through the form.
 
