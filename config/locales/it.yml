@@ -17,6 +17,18 @@ it:
         email: Email
         password: Password
         password_confirmation: Conferma password
+    errors:
+      models:
+        entitybuilder/attack:
+          attributes:
+            recharges_when_bloodied:
+              already_marked: è già impostato su un altro potere
+              not_elite: richiede un mostro Elite
+              not_encounter: richiede un potere a incontro
+            usable_at_will:
+              already_marked: è già impostato su un altro potere
+              not_encounter: richiede un potere a incontro
+              not_solo: richiede un mostro Solo
   authentication:
     unauthenticated: Devi accedere o registrarti per continuare.
   campaignmanager:
@@ -43,6 +55,22 @@ it:
   domain:
     game: Gioco
   entitybuilder:
+    attacks:
+      power_fields:
+        action_immediate_interrupt: Interruzione immediata
+        action_immediate_reaction: Reazione immediata
+        action_minor: Minore
+        action_standard: Standard
+        action_type: Tipo di azione
+        hint: L'utilizzo compila bonus di attacco e danno da livello, ruolo e gruppo
+          del mostro.
+        legend: Potere
+        multi_target: Colpisce più bersagli
+        recharges_when_bloodied: Ottiene un altro utilizzo alla prima ferita
+        usable_at_will: Utilizzabile a volontà
+        usage: Utilizzo
+        usage_at_will: A volontà
+        usage_encounter: A incontro
     entities:
       versions:
         heading: Versioni
