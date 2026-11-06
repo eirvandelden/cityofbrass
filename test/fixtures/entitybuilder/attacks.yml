@@ -84,3 +84,26 @@ monster_greataxe:
   sort_order: 1
   name: Greataxe
   attack_type: Melee
+
+elite_marked_power:
+  entity: four_e_elite_level_3
+  sort_order: 1
+  name: Savage Rush
+  attack_type: Melee
+  power_usage: Encounter
+  recharges_when_bloodied: true
+
+solo_marked_power:
+  entity: four_e_solo_level_3
+  sort_order: 1
+  name: Drake Fury
+  attack_type: Melee
+  power_usage: Encounter
+  usable_at_will: true
+
+elite_plain_power:
+  entity: four_e_elite_level_3
+  sort_order: 1
+  name: Claw
+  attack_type: Melee
+  power_usage: At-will

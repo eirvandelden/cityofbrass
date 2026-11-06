@@ -285,3 +285,88 @@ four_e_creature_built:
   monster_role: Soldier
   monster_group: Standard
   monster_defense_bonuses: "[]"
+
+# Phase C: built monsters for the power prefill tests.
+four_e_brute_level_4:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Ogre Bruiser
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: 4
+  monster_role: Brute
+  monster_group: Standard
+  monster_defense_bonuses: "[]"
+
+four_e_skirmisher_level_4:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Goblin Cutter
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: 4
+  monster_role: Skirmisher
+  monster_group: Standard
+  monster_defense_bonuses: "[]"
+
+four_e_minion_level_4:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Goblin Lackey
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: 4
+  monster_role: Soldier
+  monster_group: Minion
+  monster_defense_bonuses: "[]"
+
+four_e_elite_level_3:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Gnoll Chieftain
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: 3
+  monster_role: Soldier
+  monster_group: Elite
+  monster_defense_bonuses: "[]"
+
+four_e_solo_level_3:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Young Drake
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: 3
+  monster_role: Brute
+  monster_group: Solo
+  monster_defense_bonuses: "[]"
+
+four_e_standard_level_3:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Kobold Guard
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: 3
+  monster_role: Soldier
+  monster_group: Standard
+  monster_defense_bonuses: "[]"
+
+four_e_solo_level_3_open:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Cave Drake
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: 3
+  monster_role: Brute
+  monster_group: Solo
+  monster_defense_bonuses: "[]"
