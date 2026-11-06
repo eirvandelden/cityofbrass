@@ -2,7 +2,7 @@ module Entitybuilder
   class Attack < ApplicationRecord
     include Dice
 
-    NULL_ATTRS = %w[ attack_dice damage_dice critical_damage_dice special_damage_dice ]
+    NULL_ATTRS = %w[ attack_dice damage_dice critical_damage_dice special_damage_dice power_usage ]
     POWER_USAGES = [ "At-will", "Encounter" ].freeze
     ACTION_TYPES = [ "Standard", "Minor", "Immediate interrupt", "Immediate reaction" ].freeze
 
