@@ -80,4 +80,28 @@ class MonsterPowersTest < ActionDispatch::IntegrationTest
 
     assert_equal "Renamed", attack.reload.name
   end
+
+  test "gm clears a stored mark after the group no longer allows it" do
+    elite = entitybuilder_entities(:four_e_elite_level_3)
+    marked = entitybuilder_attacks(:elite_marked_power)
+    elite.update!(monster_group: "Standard")
+
+    get "#{attacks_path(elite)}/#{marked.id}/edit", xhr: true
+
+    assert_match "attack_recharges_when_bloodied", response.body
+    put "#{attacks_path(elite)}/#{marked.id}",
+        params: { attack: { power_usage: "At-will", recharges_when_bloodied: "0" } }, xhr: true
+
+    assert_equal "At-will", marked.reload.power_usage
+    assert_not marked.recharges_when_bloodied?
+  end
+
+  test "standard monster form offers no mark checkbox when none is stored" do
+    standard = entitybuilder_entities(:four_e_standard_level_3)
+    attack = standard.attacks.create!(name: "Plain", attack_type: "Melee")
+
+    get "#{attacks_path(standard)}/#{attack.id}/edit", xhr: true
+
+    assert_no_match "attack_recharges_when_bloodied", response.body
+  end
 end
