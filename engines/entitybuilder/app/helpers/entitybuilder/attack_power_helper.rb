@@ -1,7 +1,7 @@
 module Entitybuilder
   module AttackPowerHelper
     def monster_powers?(entity)
-      entity.respond_to?(:monster_built?) && entity.monster_built?
+      entity.monster_built?
     end
 
     def power_usage_options
