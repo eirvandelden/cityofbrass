@@ -121,6 +121,13 @@ Per changed file, the unit tests expected:
 - `attack.rb` (`test/models/entitybuilder/attack_test.rb`): `refuses an unknown action type or power usage`, `refuses recharges when first bloodied on an at-will power`, `refuses usable at will outside a solo`, `refuses usable at will on an at-will power`, `a marked attack still saves a new sort order after a group change`, `power prefill options cover every usage and multi-target combination`, `usable at will prefills at-will damage`.
 - The system tests save each prefilled power and check the stored `attack_bonus` and `damage_bonus`, which proves the unlocked inputs submit.
 
+Departures recorded during implementation:
+
+- `Attack#power_prefill_options` returns a hash keyed by `[usage, multi_target, usable_at_will]`; `AttackPowerHelper#power_prefill_json` serialises it for the form.
+- The sheet text sits in `attacks/sheet/_power_summary.html.erb`, rendered by `_full.html.erb` (default sheet) and `_show_detail.html.erb` (profile). `AttackPowerHelper#monster_powers?` guards entities without the monster builder.
+- Extra fixture `four_e_solo_level_3_open` (a Solo with no marked power) for the usable-at-will system test.
+- Extra unit test: `has no prefill options for an unbuilt monster`.
+
 Test setup: fixtures only, on top of phase B's 4e fixtures: built level 4 Brute, Skirmisher and Minion creatures, built level 3 Elite and Solo creatures, one marked encounter power on each of the Elite and the Solo, and a level 3 Standard monster. System tests sign in as `users(:dan)` through the form.
 
 ---
