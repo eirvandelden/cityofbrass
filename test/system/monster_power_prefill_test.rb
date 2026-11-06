@@ -73,4 +73,18 @@ class MonsterPowerPrefillTest < ApplicationSystemTestCase
 
     assert_prefill(solo, "Roar", attack_bonus: 8, damage_bonus: 13)
   end
+
+  test "hand-edited damage survives a change of action type" do
+    brute = entitybuilder_entities(:four_e_brute_level_4)
+    open_power_form(brute, "Smash")
+    select "At-will", from: "attack_power_usage"
+    fill_in "attack_damage_bonus", with: "20"
+    select "Minor", from: "attack_action_type"
+
+    assert_field "attack_damage_bonus", with: "20"
+    power = save_power(brute, "Smash")
+
+    assert_equal 20, power.damage_bonus
+    assert_equal "Minor", power.action_type
+  end
 end
