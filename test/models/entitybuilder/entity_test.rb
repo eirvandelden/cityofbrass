@@ -6,6 +6,16 @@ module Entitybuilder
       assert_equal "hello1, world2", entitybuilder_entities(:resident_character_one).tag_list
     end
 
+    test "answers whether its monster group is Elite or Solo" do
+      elite = entitybuilder_entities(:four_e_elite_level_3)
+      solo = entitybuilder_entities(:four_e_solo_level_3)
+
+      assert_predicate elite, :monster_elite?
+      assert_not_predicate elite, :monster_solo?
+      assert_predicate solo, :monster_solo?
+      assert_not_predicate solo, :monster_elite?
+    end
+
     test "can_show? returns true for Public privacy with nil user" do
       entity = entitybuilder_entities(:resident_creature_one)
       entity.privacy = 'Public'

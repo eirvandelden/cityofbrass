@@ -52,11 +52,11 @@ module Entitybuilder
     end
 
     def recharges_when_bloodied_shown?
-      recharges_when_bloodied? && entity.monster_group == "Elite"
+      recharges_when_bloodied? && entity.monster_elite?
     end
 
     def usable_at_will_shown?
-      usable_at_will? && entity.monster_group == "Solo"
+      usable_at_will? && entity.monster_solo?
     end
 
     def has_details(ability_scores, modifiers)
@@ -201,7 +201,7 @@ module Entitybuilder
       def recharge_mark_allowed
         return unless recharges_when_bloodied?
 
-        errors.add(:recharges_when_bloodied, :not_elite) unless entity&.monster_group == "Elite"
+        errors.add(:recharges_when_bloodied, :not_elite) unless entity&.monster_elite?
         errors.add(:recharges_when_bloodied, :not_encounter) unless power_usage == "Encounter"
         errors.add(:recharges_when_bloodied, :already_marked) if other_marked_power?(:recharges_when_bloodied)
       end
@@ -213,7 +213,7 @@ module Entitybuilder
       def usable_at_will_mark_allowed
         return unless usable_at_will?
 
-        errors.add(:usable_at_will, :not_solo) unless entity&.monster_group == "Solo"
+        errors.add(:usable_at_will, :not_solo) unless entity&.monster_solo?
         errors.add(:usable_at_will, :not_encounter) unless power_usage == "Encounter"
         errors.add(:usable_at_will, :already_marked) if other_marked_power?(:usable_at_will)
       end

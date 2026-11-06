@@ -123,6 +123,14 @@ module Entitybuilder
       end.uniq.sort
     end
 
+    def monster_elite?
+      monster_group == "Elite"
+    end
+
+    def monster_solo?
+      monster_group == "Solo"
+    end
+
     def is_character?
       self.type.include? "Character"
     end
