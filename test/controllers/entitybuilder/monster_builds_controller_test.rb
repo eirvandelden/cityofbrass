@@ -2,8 +2,6 @@ require "test_helper"
 
 module Entitybuilder
   class MonsterBuildsControllerTest < ActionController::TestCase
-    include Devise::Test::ControllerHelpers
-
     setup do
       @routes = Entitybuilder::Engine.routes
       @controller = Entitybuilder::MonsterBuildsController.new
@@ -115,8 +113,6 @@ params: { resident_creature_id: @monster.id, resident_creature: { monster_values
   end
 
   class MonsterOverridesControllerTest < ActionController::TestCase
-    include Devise::Test::ControllerHelpers
-
     setup do
       @routes = Entitybuilder::Engine.routes
       @controller = Entitybuilder::MonsterOverridesController.new
