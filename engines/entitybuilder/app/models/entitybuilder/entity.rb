@@ -123,6 +123,15 @@ module Entitybuilder
       end.uniq.sort
     end
 
+    # Overridden by Entity::MonsterBuildable on the entities that can be built.
+    def monster_built?
+      false
+    end
+
+    def monster_stats
+      nil
+    end
+
     def monster_elite?
       monster_group == "Elite"
     end

@@ -26,6 +26,13 @@ module Entitybuilder
       assert_not elite.power_marked?(:usable_at_will, except: plain)
     end
 
+    test "an entity without the monster builder is not built and has no stats" do
+      character = entitybuilder_entities(:resident_character_one)
+
+      assert_not character.monster_built?
+      assert_nil character.monster_stats
+    end
+
     test "can_show? returns true for Public privacy with nil user" do
       entity = entitybuilder_entities(:resident_creature_one)
       entity.privacy = 'Public'

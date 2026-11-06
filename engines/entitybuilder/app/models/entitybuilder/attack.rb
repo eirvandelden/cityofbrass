@@ -44,7 +44,7 @@ module Entitybuilder
 
     # Attack bonus and damage per [usage, multi_target, usable_at_will], from the monster's business card numbers.
     def power_prefill_options
-      stats = entity.monster_stats if entity.respond_to?(:monster_stats)
+      stats = entity.monster_stats
       return {} unless stats
 
       combinations = POWER_USAGES.product([ false, true ], [ false, true ])
