@@ -121,5 +121,5 @@
   $('#unlock_special').on("click", function(e){
     unlock_field('#attack_special_damage_bonus', '#icon_unlock_special');
   });
-  $('#power_fields').on("change", "select, input", prefill_power);
+  $('#attack_power_usage, #attack_multi_target, #attack_usable_at_will').on("change", prefill_power);
 </script>
