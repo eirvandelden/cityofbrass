@@ -16,6 +16,16 @@ module Entitybuilder
       assert_not_predicate solo, :monster_elite?
     end
 
+    test "answers whether a power other than the given one carries a mark" do
+      elite = entitybuilder_entities(:four_e_elite_level_3)
+      marked = entitybuilder_attacks(:elite_marked_power)
+      plain = entitybuilder_attacks(:elite_plain_power)
+
+      assert elite.power_marked?(:recharges_when_bloodied, except: plain)
+      assert_not elite.power_marked?(:recharges_when_bloodied, except: marked)
+      assert_not elite.power_marked?(:usable_at_will, except: plain)
+    end
+
     test "can_show? returns true for Public privacy with nil user" do
       entity = entitybuilder_entities(:resident_creature_one)
       entity.privacy = 'Public'

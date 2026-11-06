@@ -207,9 +207,7 @@ module Entitybuilder
       end
 
       def other_marked_power?(mark)
-        return false unless entity
-
-        entity.attacks.where(mark => true).where.not(id: id).exists?
+        entity&.power_marked?(mark, except: self)
       end
 
       def usable_at_will_mark_allowed

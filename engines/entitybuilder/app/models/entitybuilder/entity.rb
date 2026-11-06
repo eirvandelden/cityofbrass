@@ -131,6 +131,10 @@ module Entitybuilder
       monster_group == "Solo"
     end
 
+    def power_marked?(mark, except:)
+      attacks.where(mark => true).where.not(id: except.id).exists?
+    end
+
     def is_character?
       self.type.include? "Character"
     end
