@@ -9,6 +9,7 @@ class MonsterPowerPrefillTest < ApplicationSystemTestCase
 
   def open_power_form(monster, name)
     visit "/eb/resident/creatures/#{monster.id}/attacks"
+    page.execute_script("jQuery.fx.off = true")
     find("a.cogs.add").click
     fill_in "attack_name", with: name
     select "Melee", from: "attack_attack_type"
