@@ -9,3 +9,13 @@ two:
   rule: resident_two
   sort_order: 2
   detail:
+
+monster_shared_rule:
+  entity: resident_creature_full
+  rule: resident_one
+  sort_order: 1
+
+monster_unshared_rule:
+  entity: resident_creature_full
+  rule: monster_unshared
+  sort_order: 2

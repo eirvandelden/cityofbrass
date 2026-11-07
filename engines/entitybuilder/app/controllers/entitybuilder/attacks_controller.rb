@@ -142,7 +142,12 @@ module Entitybuilder
             :special_damage_dice,
             :special_damage_bonus,
             :special_damage_misc_modifier,
-            :special_damage_name
+            :special_damage_name,
+            :power_usage,
+            :action_type,
+            :multi_target,
+            :recharges_when_bloodied,
+            :usable_at_will
           )
       end
 

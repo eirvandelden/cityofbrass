@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_06_121258) do
+ActiveRecord::Schema[8.1].define(version: 2026_11_06_120000) do
   create_table "action_text_rich_texts", id: :integer, default: nil, force: :cascade do |t|
     t.text "body"
     t.datetime "created_at", null: false
@@ -270,6 +270,11 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_06_121258) do
     t.integer "special_damage_misc_modifier"
     t.text "special_damage_name"
     t.datetime "updated_at", precision: nil
+    t.string "power_usage", limit: 16
+    t.string "action_type", limit: 24, default: "Standard", null: false
+    t.boolean "multi_target", default: false, null: false
+    t.boolean "recharges_when_bloodied", default: false, null: false
+    t.boolean "usable_at_will", default: false, null: false
     t.index ["entity_id"], name: "index_entitybuilder_attacks_on_entity_id"
   end
 
@@ -378,6 +383,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_06_121258) do
     t.text "tags", default: "[]"
     t.text "type", null: false
     t.datetime "updated_at", precision: nil, null: false
+    t.text "parent_id"
+    t.string "version_label", limit: 64
+    t.integer "monster_level"
+    t.string "monster_role", limit: 16
+    t.string "monster_group", limit: 16
+    t.text "monster_defense_bonuses", default: "[]"
+    t.boolean "monster_extra_action"
+    t.index ["parent_id"], name: "index_entitybuilder_entities_on_parent_id"
     t.index ["resident_id"], name: "index_entitybuilder_entities_on_resident_id"
     t.index ["tags"], name: "index_entitybuilder_entities_on_tags"
     t.index ["type"], name: "index_entitybuilder_entities_on_type"
