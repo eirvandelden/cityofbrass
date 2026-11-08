@@ -1,6 +1,6 @@
 # Intent: Dependabot alerts describe only gems the app runs
 
-Author: Etienne van Delden de la Haije. Status: draft. Type: chore.
+Author: Etienne van Delden de la Haije. Status: accepted. Type: chore.
 
 ## Problem
 
