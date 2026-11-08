@@ -1,6 +1,6 @@
 # Intent: Security checks block pushes and pull requests
 
-Author: Etienne van Delden de la Haije. Status: draft. Type: chore.
+Author: Etienne van Delden de la Haije. Status: accepted. Type: chore.
 
 ## Problem
 
