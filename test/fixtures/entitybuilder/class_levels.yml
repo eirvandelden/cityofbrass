@@ -3,3 +3,26 @@ monster_class:
   sort_order: 1
   name: Warrior
   level: 4
+
+<% 5.times do |index| %>
+dnd4e_hero_level_5_<%= index %>_class:
+  entity: dnd4e_hero_level_5_<%= index %>
+  sort_order: 1
+  name: Fighter
+  level: 5
+<% end %>
+
+# The second row proves the character level is the sum of the class levels.
+<% 4.times do |index| %>
+dnd4e_hero_level_3_<%= index %>_class:
+  entity: dnd4e_hero_level_3_<%= index %>
+  sort_order: 1
+  name: Fighter
+  level: 2
+
+dnd4e_hero_level_3_<%= index %>_second_class:
+  entity: dnd4e_hero_level_3_<%= index %>
+  sort_order: 2
+  name: Cleric
+  level: 1
+<% end %>

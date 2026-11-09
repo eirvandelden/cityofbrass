@@ -370,3 +370,46 @@ four_e_solo_level_3_open:
   monster_role: Brute
   monster_group: Solo
   monster_defense_bonuses: "[]"
+
+<% 5.times do |index| %>
+dnd4e_hero_level_5_<%= index %>:
+  type: Entitybuilder::ResidentCharacter
+  resident: razune
+  name: Level Five Hero <%= index %>
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+<% end %>
+
+<% 4.times do |index| %>
+dnd4e_hero_level_3_<%= index %>:
+  type: Entitybuilder::ResidentCharacter
+  resident: razune
+  name: Level Three Hero <%= index %>
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+<% end %>
+
+# Phase D: built monsters, each with the campaign it is rated against.
+<% {
+  four_e_difficulty_standard_5: [ "Standard 5", 5, "Standard", "dnd4e_party_of_five" ],
+  four_e_difficulty_solo_5: [ "Solo 5", 5, "Solo", "dnd4e_party_of_five" ],
+  four_e_difficulty_minion_3: [ "Minion 3", 3, "Minion", "dnd4e_party_of_four" ],
+  four_e_difficulty_solo_9: [ "Solo 9", 9, "Solo", "dnd4e_party_of_five" ],
+  four_e_difficulty_solo_10: [ "Solo 10", 10, "Solo", "dnd4e_party_of_five" ],
+  four_e_difficulty_empty_party: [ "Empty", 5, "Standard", "dnd4e_empty_party" ]
+}.each do |key, (name, level, group, campaign)| %>
+<%= key %>:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Difficulty <%= name %>
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: <%= level %>
+  monster_role: Soldier
+  monster_group: <%= group %>
+  monster_defense_bonuses: "[]"
+  encounter_campaign: <%= campaign %>
+<% end %>
