@@ -85,6 +85,7 @@ it:
         reflex: Reflex
         will: Will
       errors:
+        encounter_campaign: La campagna deve essere una delle tue campagne 4e.
         group: Il gruppo non è un gruppo noto.
         incomplete: Livello, ruolo e gruppo devono essere tutti compilati, oppure
           tutti vuoti.
@@ -111,11 +112,24 @@ it:
         skirmisher: Skirmisher
         soldier: Soldier
     monster_builds:
+      difficulty:
+        empty_party: Questa campagna non ha personaggi collegati. Collega dei personaggi
+          alla campagna per vedere la difficoltà.
+        heading: Difficoltà in %{campaign}
+        party:
+          one: 'Gruppo: %{count} personaggio, livello %{level}'
+          other: 'Gruppo: %{count} personaggi, livello medio %{level}'
+        ratings:
+          easy: Facile
+          hard: Difficile
+          impossible: Impossibile
+          standard: Standard
       edit:
         heading: Costruttore di mostri
         title: Costruttore di mostri di %{name}
       inputs:
         defense_bonuses: Difese con +2 (Elite e Solo, al massimo due)
+        encounter_campaign: Campagna di riferimento
         extra_action: Azione extra
         extra_action_choices:
           default: Predefinito del gruppo
@@ -124,6 +138,7 @@ it:
         group: Gruppo
         heading: Livello, ruolo e gruppo
         level: Livello
+        no_campaign: Nessuna campagna
         role: Ruolo
         submit: Calcola
       sheet:

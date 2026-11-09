@@ -25,7 +25,8 @@ module Entitybuilder
     private
       def input_params
         params.require(@parent_type).permit(:monster_level, :monster_role, :monster_group,
-                                            :monster_extra_action, monster_defense_bonuses: [])
+                                            :monster_extra_action, :encounter_campaign_id,
+                                            monster_defense_bonuses: [])
       end
 
       def value_params

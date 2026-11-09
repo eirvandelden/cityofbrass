@@ -90,6 +90,7 @@ en:
         reflex: Reflex
         will: Will
       errors:
+        encounter_campaign: The campaign must be one of your own 4e campaigns.
         group: Group is not a known group.
         incomplete: Level, role and group must all be filled in, or all be blank.
         level: Level must be a whole number from 1 to 40.
@@ -114,11 +115,24 @@ en:
         skirmisher: Skirmisher
         soldier: Soldier
     monster_builds:
+      difficulty:
+        empty_party: This campaign has no joined characters. Join characters to the
+          campaign to see the difficulty.
+        heading: Difficulty in %{campaign}
+        party:
+          one: 'Party: %{count} character, level %{level}'
+          other: 'Party: %{count} characters, average level %{level}'
+        ratings:
+          easy: Easy
+          hard: Hard
+          impossible: Impossible
+          standard: Standard
       edit:
         heading: Monster builder
         title: Monster builder of %{name}
       inputs:
         defense_bonuses: Defenses raised by 2 (Elite and Solo, at most two)
+        encounter_campaign: Campaign to rate against
         extra_action: Extra action
         extra_action_choices:
           default: Group default
@@ -127,6 +141,7 @@ en:
         group: Group
         heading: Level, role and group
         level: Level
+        no_campaign: No campaign
         role: Role
         submit: Calculate
       sheet:

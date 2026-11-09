@@ -85,6 +85,7 @@ nl:
         reflex: Reflex
         will: Will
       errors:
+        encounter_campaign: De campagne moet een van je eigen 4e-campagnes zijn.
         group: Groep is geen bekende groep.
         incomplete: Niveau, rol en groep moeten alle drie ingevuld zijn, of alle drie
           leeg.
@@ -110,11 +111,24 @@ nl:
         skirmisher: Skirmisher
         soldier: Soldier
     monster_builds:
+      difficulty:
+        empty_party: Deze campagne heeft geen gekoppelde personages. Koppel personages
+          aan de campagne om de moeilijkheid te zien.
+        heading: Moeilijkheid in %{campaign}
+        party:
+          one: 'Groep: %{count} personage, niveau %{level}'
+          other: 'Groep: %{count} personages, gemiddeld niveau %{level}'
+        ratings:
+          easy: Makkelijk
+          hard: Moeilijk
+          impossible: Onmogelijk
+          standard: Standaard
       edit:
         heading: Monsterbouwer
         title: Monsterbouwer van %{name}
       inputs:
         defense_bonuses: Verdedigingen met +2 (Elite en Solo, hoogstens twee)
+        encounter_campaign: Campagne om tegen af te zetten
         extra_action: Extra actie
         extra_action_choices:
           default: Standaard van de groep
@@ -123,6 +137,7 @@ nl:
         group: Groep
         heading: Niveau, rol en groep
         level: Niveau
+        no_campaign: Geen campagne
         role: Rol
         submit: Berekenen
       sheet:
