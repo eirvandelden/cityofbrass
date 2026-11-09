@@ -4,7 +4,15 @@ module Entitybuilder
     module MonsterBuildable
       extend ActiveSupport::Concern
 
+      ENCOUNTER_RULES = "dnd4e".freeze
+
       include Validations
+
+      included do
+        belongs_to :encounter_campaign, class_name: "Campaignmanager::Campaign", optional: true
+        normalizes :encounter_campaign_id, with: ->(value) { value.presence }
+        validate :validate_encounter_campaign, if: :will_save_change_to_encounter_campaign_id?
+      end
 
       def monster_buildable?
         CoreRules::Entity.monster_builder?(core_rules)
@@ -19,6 +27,17 @@ module Entitybuilder
 
         MonsterStats.new(level: monster_level, role: monster_role, group: monster_group,
                          defense_bonuses: monster_defense_bonuses)
+      end
+
+      def encounter_campaign_options
+        resident.campaigns.where(core_rules: ENCOUNTER_RULES).order(:name)
+      end
+
+      def encounter_difficulty
+        return unless monster_built? && encounter_campaign
+
+        party = encounter_campaign.characters.includes(:class_levels).map(&:character_level)
+        EncounterDifficulty.new(monster_experience: monster_stats.experience, party_levels: party)
       end
 
       def rebuild_monster(attributes)
@@ -67,6 +86,12 @@ module Entitybuilder
       end
 
       private
+
+      def validate_encounter_campaign
+        return if encounter_campaign_id.nil? || encounter_campaign_options.exists?(id: encounter_campaign_id)
+
+        errors.add(:encounter_campaign_id, I18n.t("entitybuilder.monster_builder.errors.encounter_campaign"))
+      end
 
       def previous_monster_stats
         level = attribute_in_database(:monster_level)

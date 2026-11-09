@@ -26,6 +26,7 @@
     <div id="brass_form">
       <%= render "inputs" %>
       <% if @parent_object.monster_built? %>
+        <%= render "difficulty" %>
         <%= render "values" %>
       <% end %>
     </div>

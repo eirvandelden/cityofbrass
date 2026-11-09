@@ -249,6 +249,59 @@ monster_defense_bonuses: [] }.freeze
           assert_nil creature.extra_action_label
         end
       end
+
+      class EncounterCampaign < MonsterBuildableTest
+        test "refuses an encounter campaign the resident does not own" do
+          creature = entitybuilder_entities(:four_e_difficulty_standard_5)
+          foreign = campaignmanager_campaigns(:resident_two)
+          foreign.update_columns(core_rules: "dnd4e")
+          creature.encounter_campaign_id = foreign.id
+
+          assert_not creature.valid?
+          assert_predicate creature.errors[:encounter_campaign_id], :any?
+        end
+
+        test "refuses a non-4e encounter campaign" do
+          creature = entitybuilder_entities(:four_e_difficulty_standard_5)
+          creature.encounter_campaign_id = campaignmanager_campaigns(:resident_one).id
+
+          assert_not creature.valid?
+          assert_predicate creature.errors[:encounter_campaign_id], :any?
+        end
+
+        test "accepts an own 4e campaign and a blank one" do
+          creature = entitybuilder_entities(:four_e_difficulty_standard_5)
+          creature.encounter_campaign_id = campaignmanager_campaigns(:dnd4e_party_of_four).id
+
+          assert_predicate creature, :valid?
+
+          creature.encounter_campaign_id = nil
+
+          assert_predicate creature, :valid?
+        end
+
+        test "a deleted encounter campaign does not block saves" do
+          creature = entitybuilder_entities(:four_e_difficulty_standard_5)
+          campaignmanager_campaigns(:dnd4e_party_of_five).delete
+          creature.reload.name = "Renamed"
+
+          assert creature.save
+          assert_nil creature.encounter_campaign
+          assert_nil creature.encounter_difficulty
+        end
+
+        test "no difficulty without a built monster or a campaign" do
+          assert_nil entitybuilder_entities(:four_e_creature_unbuilt).encounter_difficulty
+          assert_nil entitybuilder_entities(:four_e_creature_built).encounter_difficulty
+        end
+
+        test "difficulty rates the monster against the party of its campaign" do
+          difficulty = entitybuilder_entities(:four_e_difficulty_solo_9).encounter_difficulty
+
+          assert_equal :hard, difficulty.rating
+          assert_equal 5, difficulty.party_size
+        end
+      end
     end
   end
 end
