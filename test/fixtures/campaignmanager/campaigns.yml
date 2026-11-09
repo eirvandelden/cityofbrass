@@ -21,3 +21,24 @@ resident_two:
   core_rules: pf1e
   short_description: MyString
   full_description: <p>Text for test</p>
+
+dnd4e_party_of_five:
+  resident: razune
+  name: Five Heroes
+  slug: five-heroes
+  privacy: Friends
+  core_rules: dnd4e
+
+dnd4e_party_of_four:
+  resident: razune
+  name: Four Heroes
+  slug: four-heroes
+  privacy: Friends
+  core_rules: dnd4e
+
+dnd4e_empty_party:
+  resident: razune
+  name: Empty Table
+  slug: empty-table
+  privacy: Friends
+  core_rules: dnd4e

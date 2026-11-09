@@ -9,3 +9,15 @@ one:
 monster_campaign:
   entity: resident_creature_full
   campaign: resident_one
+
+<% 5.times do |index| %>
+dnd4e_five_<%= index %>:
+  entity: dnd4e_hero_level_5_<%= index %>
+  campaign: dnd4e_party_of_five
+<% end %>
+
+<% 4.times do |index| %>
+dnd4e_four_<%= index %>:
+  entity: dnd4e_hero_level_3_<%= index %>
+  campaign: dnd4e_party_of_four
+<% end %>
