@@ -315,10 +315,6 @@ monster_defense_bonuses: [] }.freeze
           assert_not creature.encounter_campaign_available?
         end
 
-        test "an entity without the builder has no available encounter campaign" do
-          assert_not entitybuilder_entities(:resident_creature_pf2e).encounter_campaign_available?
-        end
-
         test "no difficulty without a built monster or a campaign" do
           assert_nil entitybuilder_entities(:four_e_creature_unbuilt).encounter_difficulty
           assert_nil entitybuilder_entities(:four_e_creature_built).encounter_difficulty

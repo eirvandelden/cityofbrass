@@ -33,6 +33,13 @@ module Entitybuilder
       assert_nil character.monster_stats
     end
 
+    test "an entity without the monster builder has no available encounter campaign" do
+      character = entitybuilder_entities(:resident_character_one)
+      character.update_columns(encounter_campaign_id: campaignmanager_campaigns(:dnd4e_party_of_five).id)
+
+      assert_not character.encounter_campaign_available?
+    end
+
     test "can_show? returns true for Public privacy with nil user" do
       entity = entitybuilder_entities(:resident_creature_one)
       entity.privacy = 'Public'
