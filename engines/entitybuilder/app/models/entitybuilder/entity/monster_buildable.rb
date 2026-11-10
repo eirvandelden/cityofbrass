@@ -93,10 +93,11 @@ module Entitybuilder
 
       private
 
-      # The campaign last saved: a refused choice on the form is never rated.
+      # The campaign last saved, while it is still one of the resident's 4e campaigns:
+      # a refused choice on the form is never rated.
       def saved_encounter_campaign
         saved_id = encounter_campaign_id_in_database
-        Campaignmanager::Campaign.find_by(id: saved_id) if saved_id
+        encounter_campaign_options.find_by(id: saved_id) if saved_id
       end
 
       def party_levels(campaign)

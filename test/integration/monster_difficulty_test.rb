@@ -86,6 +86,16 @@ class MonsterDifficultyTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "a campaign that is no longer 4e shows no difficulty" do
+    creature = entitybuilder_entities(:four_e_difficulty_standard_5)
+    campaignmanager_campaigns(:dnd4e_party_of_five).update_columns(core_rules: "pf1e")
+
+    builder(creature)
+
+    assert_select "p.encounter-difficulty-rating", count: 0
+    assert_select "#encounter_difficulty legend", count: 0
+  end
+
   test "pathfinder 2e creature has no builder, difficulty or power fields" do
     creature = entitybuilder_entities(:resident_creature_pf2e)
     get "/eb/resident/creatures/#{creature.id}/monster_build/edit"
