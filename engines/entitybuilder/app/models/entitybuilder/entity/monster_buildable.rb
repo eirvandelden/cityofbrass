@@ -33,6 +33,11 @@ module Entitybuilder
         resident.campaigns.where(core_rules: ENCOUNTER_RULES).order(:name)
       end
 
+      # True while the stored campaign is still one of the resident's own 4e campaigns.
+      def encounter_campaign_available?
+        encounter_campaign_id.present? && encounter_campaign_options.exists?(id: encounter_campaign_id)
+      end
+
       def encounter_difficulty
         campaign = saved_encounter_campaign
         return unless monster_built? && campaign
