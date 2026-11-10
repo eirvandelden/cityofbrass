@@ -7,6 +7,12 @@ module Entitybuilder
       EncounterDifficulty.new(monster_experience: experience, party_levels: levels)
     end
 
+    test "answers the campaign name it was given" do
+      named = EncounterDifficulty.new(campaign_name: "Five Heroes", monster_experience: 200, party_levels: [ 5 ])
+
+      assert_equal "Five Heroes", named.campaign_name
+    end
+
     test "no rating for an empty party" do
       assert_nil difficulty(1000, []).rating
     end

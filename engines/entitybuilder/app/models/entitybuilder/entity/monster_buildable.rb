@@ -33,18 +33,12 @@ module Entitybuilder
         resident.campaigns.where(core_rules: ENCOUNTER_RULES).order(:name)
       end
 
-      # The campaign last saved: a refused choice on the form is never rated.
-      def rated_encounter_campaign
-        saved_id = encounter_campaign_id_in_database
-        Campaignmanager::Campaign.find_by(id: saved_id) if saved_id
-      end
-
       def encounter_difficulty
-        campaign = rated_encounter_campaign
+        campaign = saved_encounter_campaign
         return unless monster_built? && campaign
 
-        party = campaign.characters.includes(:class_levels).map(&:character_level)
-        EncounterDifficulty.new(monster_experience: monster_stats.experience, party_levels: party)
+        EncounterDifficulty.new(campaign_name: campaign.name, monster_experience: monster_stats.experience,
+                                party_levels: party_levels(campaign))
       end
 
       def rebuild_monster(attributes)
@@ -93,6 +87,16 @@ module Entitybuilder
       end
 
       private
+
+      # The campaign last saved: a refused choice on the form is never rated.
+      def saved_encounter_campaign
+        saved_id = encounter_campaign_id_in_database
+        Campaignmanager::Campaign.find_by(id: saved_id) if saved_id
+      end
+
+      def party_levels(campaign)
+        campaign.characters.includes(:class_levels).map(&:character_level)
+      end
 
       def validate_encounter_campaign
         return if encounter_campaign_id.nil? || encounter_campaign_options.exists?(id: encounter_campaign_id)

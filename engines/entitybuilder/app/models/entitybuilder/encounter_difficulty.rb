@@ -1,9 +1,11 @@
 module Entitybuilder
   # How hard one monster is for a party, from the 4e experience budget per party level.
-  class EncounterDifficulty < Data.define(:monster_experience, :party_levels)
+  class EncounterDifficulty < Data.define(:campaign_name, :monster_experience, :party_levels)
     EASY_BELOW = 0
     STANDARD_UP_TO = 1
     HARD_UP_TO = 4
+
+    def initialize(monster_experience:, party_levels:, campaign_name: nil) = super
 
     def party_size = party_levels.size
 
