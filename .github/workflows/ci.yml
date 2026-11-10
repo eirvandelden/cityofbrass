@@ -22,6 +22,24 @@ jobs:
 
       - run: bundle exec rubocop --parallel --format github
 
+  security:
+    name: Security (bundler-audit, Brakeman)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: spinel-coop/setup-rv@main
+        with:
+          ruby-version: current
+          install-gems: true
+
+      - run: bin/bundler-audit check --update
+
+      - run: bin/brakeman --no-pager --quiet
+
   test:
     name: Test
     runs-on: ubuntu-latest
