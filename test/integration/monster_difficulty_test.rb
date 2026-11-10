@@ -67,6 +67,21 @@ class MonsterDifficultyTest < ActionDispatch::IntegrationTest
     assert_nil creature.reload.encounter_campaign_id
   end
 
+  test "a refused campaign choice shows no difficulty for the refused campaign" do
+    creature = entitybuilder_entities(:four_e_difficulty_standard_5)
+    other = Campaignmanager::Campaign.create!(resident: residents(:tuandn), name: "Elsewhere Crew",
+                                              slug: "elsewhere-crew", privacy: "Friends", core_rules: "dnd4e")
+
+    [ other, campaignmanager_campaigns(:resident_one) ].each do |refused|
+      patch "/eb/resident/creatures/#{creature.id}/monster_build",
+            params: { resident_creature: { monster_level: 5, monster_role: "Soldier", monster_group: "Standard",
+                                           encounter_campaign_id: refused.id } }
+
+      assert_response :unprocessable_entity
+      assert_select "#encounter_difficulty legend", text: /Five Heroes/
+    end
+  end
+
   test "pathfinder 2e creature has no builder, difficulty or power fields" do
     creature = entitybuilder_entities(:resident_creature_pf2e)
     get "/eb/resident/creatures/#{creature.id}/monster_build/edit"
