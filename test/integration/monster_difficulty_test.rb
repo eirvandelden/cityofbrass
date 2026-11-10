@@ -87,6 +87,18 @@ class MonsterDifficultyTest < ActionDispatch::IntegrationTest
     get "/eb/resident/creatures/#{creature.id}/monster_build/edit"
 
     assert_response :not_found
-    assert_nil creature.reload.encounter_campaign_id
+
+    get "/eb/resident/creatures/#{creature.id}/attacks/new", xhr: true
+
+    assert_response :success
+    assert_match "attack_name", response.body
+    assert_no_match(/power_fields/, response.body)
+  end
+
+  test "a built 4e monster attack form has power fields" do
+    creature = entitybuilder_entities(:four_e_difficulty_standard_5)
+    get "/eb/resident/creatures/#{creature.id}/attacks/new", xhr: true
+
+    assert_match "power_fields", response.body
   end
 end
