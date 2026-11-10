@@ -119,4 +119,33 @@ class MonsterVersionsTest < ActionDispatch::IntegrationTest
     assert_select "tr", text: /Armor Class.*needs manual revision/im
     assert_select "tr", text: /Fortitude.*needs manual revision/im, count: 0
   end
+
+  test "version keeps a valid 4e encounter campaign" do
+    sign_in @owner
+    rated = entitybuilder_entities(:four_e_difficulty_standard_5)
+
+    version = create_version(rated, "Level 7", monster_level: 7)
+
+    assert_equal rated.encounter_campaign_id, version.encounter_campaign_id
+  end
+
+  test "version is created after the encounter campaign is deleted" do
+    sign_in @owner
+    rated = entitybuilder_entities(:four_e_difficulty_standard_5)
+    campaignmanager_campaigns(:dnd4e_party_of_five).delete
+
+    version = create_version(rated, "Level 7", monster_level: 7)
+
+    assert_nil version.encounter_campaign_id
+  end
+
+  test "version is created after the encounter campaign stops being 4e" do
+    sign_in @owner
+    rated = entitybuilder_entities(:four_e_difficulty_standard_5)
+    campaignmanager_campaigns(:dnd4e_party_of_five).update_columns(core_rules: "pathfinder1e")
+
+    version = create_version(rated, "Level 7", monster_level: 7)
+
+    assert_nil version.encounter_campaign_id
+  end
 end

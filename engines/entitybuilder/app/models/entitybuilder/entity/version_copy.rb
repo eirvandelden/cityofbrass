@@ -24,6 +24,7 @@ module Entitybuilder
           dup.tap do |version|
             version.parent = parent || self
             version.version_label = version_label
+            version.encounter_campaign_id = nil unless encounter_campaign_available?
             copy_rich_text(self, version, RICH_TEXTS)
             version.gallery_image_join = gallery_image_join.dup if gallery_image_join
           end

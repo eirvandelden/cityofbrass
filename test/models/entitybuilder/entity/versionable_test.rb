@@ -221,6 +221,35 @@ module Entitybuilder
         assert_nil version.defenses.find_by(name: "Armor Class").bonus
       end
 
+      test "a version keeps a valid 4e encounter campaign" do
+        rated = entitybuilder_entities(:four_e_difficulty_standard_5)
+
+        version = rated.create_version(version_label: "Level 7", monster_level: 7)
+
+        assert_predicate version, :persisted?
+        assert_equal rated.encounter_campaign_id, version.encounter_campaign_id
+      end
+
+      test "a version drops a deleted encounter campaign" do
+        rated = entitybuilder_entities(:four_e_difficulty_standard_5)
+        campaignmanager_campaigns(:dnd4e_party_of_five).delete
+
+        version = rated.create_version(version_label: "Level 7", monster_level: 7)
+
+        assert_predicate version, :persisted?
+        assert_nil version.encounter_campaign_id
+      end
+
+      test "a version drops an encounter campaign that is no longer 4e" do
+        rated = entitybuilder_entities(:four_e_difficulty_standard_5)
+        campaignmanager_campaigns(:dnd4e_party_of_five).update_columns(core_rules: "pathfinder1e")
+
+        version = rated.create_version(version_label: "Level 7", monster_level: 7)
+
+        assert_predicate version, :persisted?
+        assert_nil version.encounter_campaign_id
+      end
+
       test "copies an npc" do
         npc = entitybuilder_entities(:resident_npc_one)
         version = npc.create_version(version_label: "Veteran")

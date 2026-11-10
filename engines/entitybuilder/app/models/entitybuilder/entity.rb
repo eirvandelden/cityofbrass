@@ -128,6 +128,10 @@ module Entitybuilder
       false
     end
 
+    def encounter_campaign_available?
+      false
+    end
+
     def monster_stats
       nil
     end
