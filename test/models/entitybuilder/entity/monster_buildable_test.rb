@@ -290,6 +290,35 @@ monster_defense_bonuses: [] }.freeze
           assert_nil creature.encounter_difficulty
         end
 
+        test "encounter campaign is unavailable without a campaign id" do
+          creature = entitybuilder_entities(:four_e_difficulty_standard_5)
+          creature.encounter_campaign_id = nil
+
+          assert_not creature.encounter_campaign_available?
+        end
+
+        test "encounter campaign is available while it is an own 4e campaign" do
+          assert_predicate entitybuilder_entities(:four_e_difficulty_standard_5), :encounter_campaign_available?
+        end
+
+        test "encounter campaign is unavailable once deleted" do
+          creature = entitybuilder_entities(:four_e_difficulty_standard_5)
+          campaignmanager_campaigns(:dnd4e_party_of_five).delete
+
+          assert_not creature.encounter_campaign_available?
+        end
+
+        test "encounter campaign is unavailable once it is no longer 4e" do
+          creature = entitybuilder_entities(:four_e_difficulty_standard_5)
+          campaignmanager_campaigns(:dnd4e_party_of_five).update_columns(core_rules: "pf1e")
+
+          assert_not creature.encounter_campaign_available?
+        end
+
+        test "an entity without the builder has no available encounter campaign" do
+          assert_not entitybuilder_entities(:resident_creature_pf2e).encounter_campaign_available?
+        end
+
         test "no difficulty without a built monster or a campaign" do
           assert_nil entitybuilder_entities(:four_e_creature_unbuilt).encounter_difficulty
           assert_nil entitybuilder_entities(:four_e_creature_built).encounter_difficulty
