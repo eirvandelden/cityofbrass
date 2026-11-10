@@ -12,10 +12,10 @@ module Entitybuilder
     PRIVACY_OPTIONS = [ 'Private', 'Friends', 'Residents', 'Public' ]
     NULL_ATTRS = %w[ ]
 
-    scope :short, -> { select('id, type, resident_id, name, short_description, core_rules, privacy, sheet_privacy') }
+    scope :short, -> { select('id, type, resident_id, name, short_description, core_rules, privacy, sheet_privacy, parent_id, version_label') }
     scope :order_name, -> { order(:name) }
 
-    json_array_column :tags
+    json_array_column :tags, :monster_defense_bonuses
 
     has_one :campaign_join, dependent: :destroy, inverse_of: :entity
     has_one :campaign,
@@ -123,6 +123,31 @@ module Entitybuilder
       end.uniq.sort
     end
 
+    # Overridden by Entity::MonsterBuildable on the entities that can be built.
+    def monster_built?
+      false
+    end
+
+    def encounter_campaign_available?
+      false
+    end
+
+    def monster_stats
+      nil
+    end
+
+    def monster_elite?
+      monster_group == "Elite"
+    end
+
+    def monster_solo?
+      monster_group == "Solo"
+    end
+
+    def power_marked?(mark, except:)
+      attacks.where(mark => true).where.not(id: except.id).exists?
+    end
+
     def is_character?
       self.type.include? "Character"
     end
@@ -182,8 +207,8 @@ module Entitybuilder
 
     private
       def set_privacy
-        self.privacy = 'Residents' if self.new_record?
-        self.sheet_privacy = 'Private' if self.new_record?
+        self.privacy = 'Residents' if new_record? && privacy.blank?
+        self.sheet_privacy = 'Private' if new_record? && sheet_privacy.blank?
       end
 
       def mark_for_removal

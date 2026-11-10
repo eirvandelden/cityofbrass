@@ -2,7 +2,9 @@ module Entitybuilder
   class Attack < ApplicationRecord
     include Dice
 
-    NULL_ATTRS = %w[ attack_dice damage_dice critical_damage_dice special_damage_dice ]
+    NULL_ATTRS = %w[ attack_dice damage_dice critical_damage_dice special_damage_dice power_usage ]
+    POWER_USAGES = [ "At-will", "Encounter" ].freeze
+    ACTION_TYPES = [ "Standard", "Minor", "Immediate interrupt", "Immediate reaction" ].freeze
 
     belongs_to :entity, inverse_of: :attacks
 
@@ -33,7 +35,29 @@ module Entitybuilder
 
     validates :critical_range, length: { maximum: 64 }
 
+    validates :power_usage, inclusion: { in: POWER_USAGES }, allow_nil: true
+    validates :action_type, inclusion: { in: ACTION_TYPES }
+    validate :recharge_mark_allowed, if: :will_save_change_to_power_marks?
+    validate :usable_at_will_mark_allowed, if: :will_save_change_to_power_marks?
+
     before_validation :nil_if_blank
+
+    # Attack bonus and damage per [usage, multi_target, usable_at_will], from the monster's business card numbers.
+    def power_prefill_options
+      stats = entity.monster_stats
+      return {} unless stats
+
+      combinations = POWER_USAGES.product([ false, true ], [ false, true ])
+      combinations.index_with { |key| power_prefill(stats, *key) }
+    end
+
+    def recharges_when_bloodied_shown?
+      recharges_when_bloodied? && entity.monster_elite?
+    end
+
+    def usable_at_will_shown?
+      usable_at_will? && entity.monster_solo?
+    end
 
     def has_details(ability_scores, modifiers)
       return true if attack_range.present?
@@ -174,8 +198,39 @@ module Entitybuilder
     end
 
     private
+      def recharge_mark_allowed
+        return unless recharges_when_bloodied?
+
+        errors.add(:recharges_when_bloodied, :not_elite) unless entity&.monster_elite?
+        errors.add(:recharges_when_bloodied, :not_encounter) unless power_usage == "Encounter"
+        errors.add(:recharges_when_bloodied, :already_marked) if other_marked_power?(:recharges_when_bloodied)
+      end
+
+      def other_marked_power?(mark)
+        entity&.power_marked?(mark, except: self)
+      end
+
+      def usable_at_will_mark_allowed
+        return unless usable_at_will?
+
+        errors.add(:usable_at_will, :not_solo) unless entity&.monster_solo?
+        errors.add(:usable_at_will, :not_encounter) unless power_usage == "Encounter"
+        errors.add(:usable_at_will, :already_marked) if other_marked_power?(:usable_at_will)
+      end
+
       def nil_if_blank
         NULL_ATTRS.each { |attr| self[attr] = nil if self[attr].blank? }
+      end
+
+      def power_prefill(stats, usage, multi_target, usable_at_will)
+        at_will = usage == "At-will" || usable_at_will
+        { attack_bonus: stats.attack_bonus,
+          damage_bonus: stats.power_damage(usage: at_will ? :at_will : :encounter, multi_target: multi_target) }
+      end
+
+      def will_save_change_to_power_marks?
+        will_save_change_to_recharges_when_bloodied? || will_save_change_to_usable_at_will? ||
+          will_save_change_to_power_usage?
       end
   end
 end

@@ -21,3 +21,9 @@ one:
   ability_score: Strength
   save_dc: 10
   proficient: false
+
+monster_caster:
+  entity: resident_creature_full
+  sort_order: 1
+  caster_class: Shaman
+  level: 2
