@@ -1,7 +1,7 @@
 <% difficulty = @parent_object.encounter_difficulty %>
 <% if difficulty %>
   <fieldset id="encounter_difficulty">
-    <legend><%= t("entitybuilder.monster_builds.difficulty.heading", campaign: @parent_object.rated_encounter_campaign.name) %></legend>
+    <legend><%= t("entitybuilder.monster_builds.difficulty.heading", campaign: difficulty.campaign_name) %></legend>
     <% if difficulty.rating %>
       <p class="encounter-difficulty-rating" data-rating="<%= difficulty.rating %>">
         <%= t("entitybuilder.monster_builds.difficulty.ratings.#{difficulty.rating}") %>

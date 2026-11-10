@@ -301,6 +301,12 @@ monster_defense_bonuses: [] }.freeze
           assert_equal :hard, difficulty.rating
           assert_equal 5, difficulty.party_size
         end
+
+        test "difficulty answers the campaign name" do
+          difficulty = entitybuilder_entities(:four_e_difficulty_solo_9).encounter_difficulty
+
+          assert_equal "Five Heroes", difficulty.campaign_name
+        end
       end
     end
   end
