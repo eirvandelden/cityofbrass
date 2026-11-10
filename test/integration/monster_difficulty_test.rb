@@ -55,6 +55,10 @@ class MonsterDifficultyTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to "/eb/resident/creatures/#{creature.id}/monster_build/edit"
     assert_equal campaign.id, creature.reload.encounter_campaign_id
+    follow_redirect!
+
+    assert_select "p.encounter-difficulty-rating"
+    assert_select "#encounter_difficulty legend", text: /Five Heroes/
   end
 
   test "a blank campaign choice clears the campaign" do
