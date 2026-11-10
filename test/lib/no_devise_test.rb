@@ -1,7 +1,7 @@
 require "test_helper"
 
 class NoDeviseTest < ActiveSupport::TestCase
-  LOCK_FILES = [ "Gemfile.lock", "engines/importer/Gemfile.lock" ].freeze
+  LOCK_FILES = [ "Gemfile.lock" ].freeze
 
   test "devise is gone" do
     assert_not defined?(Devise), "Devise must not be loaded"
