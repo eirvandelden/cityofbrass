@@ -3,6 +3,11 @@ require "open3"
 module PrePushChecks
   TEST_FILE_PATTERN = %r{\A(?:test|engines/[^/]+/test)/.*_test\.rb\z}
 
+  SECURITY_COMMANDS = [
+    ["bin/bundler-audit", "check", "--update"],
+    ["bin/brakeman", "--no-pager", "--quiet"]
+  ].freeze
+
   module_function
 
   def changed_files(base_ref: ENV.fetch("BASE_REF", "origin/main"))
@@ -27,36 +32,25 @@ module PrePushChecks
     changed_ruby_files = ruby_files(files)
     changed_test_files = test_files(files)
 
-    if changed_ruby_files.any?
-      planned_commands << ["bundle", "exec", "rubocop", "--force-exclusion", *changed_ruby_files]
-    end
-
-    if changed_test_files.any?
-      planned_commands << ["bundle", "exec", "rails", "test", *changed_test_files]
-    end
-
+    planned_commands << ["bundle", "exec", "rubocop", "--force-exclusion",
+*changed_ruby_files] if changed_ruby_files.any?
+    planned_commands.concat(SECURITY_COMMANDS)
+    planned_commands << ["bundle", "exec", "rails", "test", *changed_test_files] if changed_test_files.any?
     planned_commands
   end
 
   def run!(io: $stdout)
     files = changed_files
-    changed_ruby_files = ruby_files(files)
-    changed_test_files = test_files(files)
+    report_skipped_checks(files, io: io)
 
-    if changed_ruby_files.any?
-      return false unless run_command(["bundle", "exec", "rubocop", "--force-exclusion", *changed_ruby_files], io: io)
-    else
-      io.puts "No changed Ruby files to lint."
-    end
-
-    if changed_test_files.any?
-      return false unless run_command(["bundle", "exec", "rails", "test", *changed_test_files], io: io)
-    else
-      io.puts "No changed test files to run."
-    end
-
-    true
+    commands(files).all? { |command| run_command(command, io: io) }
   end
+
+  def report_skipped_checks(files, io:)
+    io.puts "No changed Ruby files to lint." if ruby_files(files).empty?
+    io.puts "No changed test files to run." if test_files(files).empty?
+  end
+  private_class_method :report_skipped_checks
 
   def run_command(command, io:)
     io.puts command.join(" ")
