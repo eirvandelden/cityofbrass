@@ -2,7 +2,7 @@ module Dice
   extend ActiveSupport::Concern
 
   VALID_DICE = /\A([0-9]+)(d)([0-9]+)(\+*([0-9]+)(d)([0-9]+))*\z/
-  VALID_DICE_MECHANIC = /\A([0-9]+)(d)([0-9]+)(\+*([0-9]+)(d)([0-9]+))*\z|\b(Standard)\b|\b(Fate)\b|\b(Roll Under)\b/
+  VALID_DICE_MECHANIC = /\A(?:[0-9]+d[0-9]+(?:\+*[0-9]+d[0-9]+)*|Standard|Fate|Roll Under)\z/
 
   CORE_RULES_DICE = [
     { core_rules: "dnd35e",           dice: "1d20" },

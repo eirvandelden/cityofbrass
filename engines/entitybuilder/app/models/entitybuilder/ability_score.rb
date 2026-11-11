@@ -14,7 +14,8 @@ module Entitybuilder
     validates :base, numericality: { only_integer: true, greater_than: -1000, less_than: 1000 }, allow_nil: true
     validates :score, numericality: { only_integer: true, greater_than: -1000, less_than: 1000 }, allow_nil: true
     validates :modifier, numericality: { only_integer: true, greater_than: -1000, less_than: 1000 }, allow_nil: true
-    validates :dice, length: { maximum: 255 }, format: { with: VALID_DICE_MECHANIC }, allow_nil: true
+    validates :dice, length: { maximum: 255 }, allow_nil: true
+    validates :dice, format: { with: VALID_DICE_MECHANIC }, allow_nil: true, if: :will_save_change_to_dice?
 
     before_validation :nil_if_blank
 
