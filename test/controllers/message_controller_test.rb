@@ -82,6 +82,15 @@ class MessagesControllerTest < ActionController::TestCase
     assert_response :not_found
   end
 
+  test "a stranger's message shows the 404 page" do
+    sign_in @priya
+
+    get :show, params: { resident_id: residents(:priya).slug, id: @message.id }
+
+    assert_response :not_found
+    assert_select "span.error-code", text: "404"
+  end
+
   test "a resident cannot open the edit form for a stranger's message" do
     sign_in @priya
 
