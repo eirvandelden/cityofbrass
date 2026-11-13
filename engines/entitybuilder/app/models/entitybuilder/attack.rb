@@ -11,7 +11,8 @@ module Entitybuilder
 
     validates :attack_range, length: { maximum: 20 }
     validates :attack_ability_score, length: { maximum: 255 }
-    validates :attack_dice, length: { maximum: 255 }, format: { with: VALID_DICE_MECHANIC }, allow_nil: true
+    validates :attack_dice, length: { maximum: 255 }, allow_nil: true
+    validates :attack_dice, format: { with: VALID_DICE_MECHANIC }, allow_nil: true, if: :will_save_change_to_attack_dice?
     validates :attack_bonus, numericality: { only_integer: true, greater_than: -1000, less_than: 1000 }, allow_nil: true
     validates :attack_misc_modifier, numericality: { only_integer: true, greater_than: -1000, less_than: 1000 }, allow_nil: true
 

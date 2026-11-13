@@ -18,7 +18,7 @@ class AttachmentFilesController < ApplicationController
   def attachment_record
     @attachment_record ||= case path_segments
     in [ "gallery", collection_name, id, _ ]
-      Gallery::Image::ATTACHMENT_SEGMENTS[collection_name]&.constantize&.find_by(id: id)
+      Gallery::Image.find_in_collection(collection_name, id)
     else
       nil
     end

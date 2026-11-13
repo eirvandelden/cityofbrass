@@ -17,6 +17,15 @@ class AttachmentFilesTest < ActionDispatch::IntegrationTest
     assert_response :not_found
   end
 
+  test "an image requested under another collection segment 404s" do
+    sign_in admins(:dan)
+    id = insert_faq_image_without_a_file
+
+    get attachment_file_path("gallery/stock_images/#{id}/original")
+
+    assert_response :not_found
+  end
+
   test "a record whose file is not attached 404s" do
     sign_in admins(:dan)
     id = insert_faq_image_without_a_file

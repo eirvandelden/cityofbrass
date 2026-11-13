@@ -3,6 +3,6 @@
   "private": true,
   "dependencies": {
     "@rails/actiontext": "^6.1.710",
-    "trix": "^2.1.18"
+    "trix": "^2.1.19"
   }
 }
