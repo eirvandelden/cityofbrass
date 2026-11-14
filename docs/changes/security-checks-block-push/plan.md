@@ -2,6 +2,12 @@
 
 From `intent.md` (2026-11-08). Status: accepted.
 
+## Departure from this plan (2026-11-14)
+
+PR #167 (`fix-security-audit-findings`) landed on main during implementation. It fixed the 8 Brakeman warnings: anchored `VALID_DICE_MECHANIC`, `Gallery::Image.find_in_collection`, and the `ErrorsController` removal. Order of work steps 1, 2, 4 and 5 are therefore dropped, with the `find_for_attachment` design and its Proof lines and the glossary commit. Main's Brakeman run is already clean.
+
+This change keeps: the `j` escaping of both dice roller partials (step 3), the `PrePushChecks` security commands (step 6), `ignore: []` (step 7) and the `security` CI job (step 8). Etienne chose this on 2026-11-14.
+
 ## Context
 
 Nothing stops a gem version with a known advisory, or code with a known security weakness, from reaching main. CI (`.github/workflows/ci.yml`) and `bin/pre_push_checks` (`lib/pre_push_checks.rb`) run neither bundler-audit nor Brakeman. bundler-audit is clean on main today. Brakeman 8.1.0 reports 8 warnings. This change fixes all 8 in code, then makes both security checks block every push and every pull request, with no reviewed exceptions.
