@@ -41,6 +41,14 @@ class Entitybuilder::ApplicationController < ApplicationController
       end
     end
 
+    def check_monster_buildable
+      render_not_found unless @parent_object.respond_to?(:monster_buildable?) && @parent_object.monster_buildable?
+    end
+
+    def render_not_found
+      render template: 'errors/404', layout: 'layouts/application', status: 404
+    end
+
     def can_show
       unless @parent_object.can_show?(current_user, admin_signed_in?, @type)
         render template: 'errors/403', layout: 'layouts/application', status: 403

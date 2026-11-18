@@ -1,0 +1,11 @@
+monster_ally:
+  notableable: resident_creature_full (Entitybuilder::Entity)
+  entity: resident_creature_one
+  name: Ally
+  sort_order: 1
+
+monster_pointer:
+  notableable: resident_creature_one (Entitybuilder::Entity)
+  entity: resident_creature_full
+  name: Pointing at the monster
+  sort_order: 1

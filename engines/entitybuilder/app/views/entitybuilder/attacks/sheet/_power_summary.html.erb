@@ -1,0 +1,7 @@
+<% if monster_powers?(@parent_object) && attack.power_usage.present? %>
+  <small class="power-details">
+    <%= [ power_usage_label(attack), action_type_label(attack),
+          (t("entitybuilder.attacks.power_fields.recharges_when_bloodied") if attack.recharges_when_bloodied_shown?),
+          (t("entitybuilder.attacks.power_fields.usable_at_will") if attack.usable_at_will_shown?) ].compact.join(" · ") %>
+  </small>
+<% end %>

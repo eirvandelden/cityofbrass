@@ -9,3 +9,7 @@ two:
   image: stock_one
   imageable: tuandn
   imageable_type: Resident
+
+monster_image:
+  image: resident_one
+  imageable: resident_creature_full (Entitybuilder::Entity)

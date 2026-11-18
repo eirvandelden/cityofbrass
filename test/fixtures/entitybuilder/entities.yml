@@ -214,3 +214,202 @@ pf2e_character:
   sheet_privacy: Residents
   core_rules: pf2e
   short_description: A Pathfinder 2e test character
+
+resident_creature_pf2e:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Wyvern
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: pf2e
+
+resident_creature_private:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Secret Beast
+  privacy: Private
+  sheet_privacy: Private
+  core_rules: pf1e
+
+resident_creature_full:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Orc Warrior
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: pf1e
+  short_description: A brutal orc
+
+four_e_creature_unbuilt:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Gnoll Hunter
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+
+four_e_creature_dex14:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Dark Creeper
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+
+four_e_creature_designed:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Hobgoblin Commander
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+
+four_e_npc_unbuilt:
+  type: Entitybuilder::ResidentNpc
+  resident: razune
+  name: Town Guard
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+
+# Level 5 Soldier Standard, Dex 10. Armor Class is stored at 23 (an edit); the card gives 21.
+# The builder columns do not exist before the monster builder migration, so the inputs are guarded.
+four_e_creature_built:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Orc Warrior
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: 5
+  monster_role: Soldier
+  monster_group: Standard
+  monster_defense_bonuses: "[]"
+
+# Phase C: built monsters for the power prefill tests.
+four_e_brute_level_4:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Ogre Bruiser
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: 4
+  monster_role: Brute
+  monster_group: Standard
+  monster_defense_bonuses: "[]"
+
+four_e_skirmisher_level_4:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Goblin Cutter
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: 4
+  monster_role: Skirmisher
+  monster_group: Standard
+  monster_defense_bonuses: "[]"
+
+four_e_minion_level_4:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Goblin Lackey
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: 4
+  monster_role: Soldier
+  monster_group: Minion
+  monster_defense_bonuses: "[]"
+
+four_e_elite_level_3:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Gnoll Chieftain
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: 3
+  monster_role: Soldier
+  monster_group: Elite
+  monster_defense_bonuses: "[]"
+
+four_e_solo_level_3:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Young Drake
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: 3
+  monster_role: Brute
+  monster_group: Solo
+  monster_defense_bonuses: "[]"
+
+four_e_standard_level_3:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Kobold Guard
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: 3
+  monster_role: Soldier
+  monster_group: Standard
+  monster_defense_bonuses: "[]"
+
+four_e_solo_level_3_open:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Cave Drake
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: 3
+  monster_role: Brute
+  monster_group: Solo
+  monster_defense_bonuses: "[]"
+
+<% 5.times do |index| %>
+dnd4e_hero_level_5_<%= index %>:
+  type: Entitybuilder::ResidentCharacter
+  resident: razune
+  name: Level Five Hero <%= index %>
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+<% end %>
+
+<% 4.times do |index| %>
+dnd4e_hero_level_3_<%= index %>:
+  type: Entitybuilder::ResidentCharacter
+  resident: razune
+  name: Level Three Hero <%= index %>
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+<% end %>
+
+# Phase D: built monsters, each with the campaign it is rated against.
+<% {
+  four_e_difficulty_standard_5: [ "Standard 5", 5, "Standard", "dnd4e_party_of_five" ],
+  four_e_difficulty_solo_5: [ "Solo 5", 5, "Solo", "dnd4e_party_of_five" ],
+  four_e_difficulty_minion_3: [ "Minion 3", 3, "Minion", "dnd4e_party_of_four" ],
+  four_e_difficulty_solo_9: [ "Solo 9", 9, "Solo", "dnd4e_party_of_five" ],
+  four_e_difficulty_solo_10: [ "Solo 10", 10, "Solo", "dnd4e_party_of_five" ],
+  four_e_difficulty_empty_party: [ "Empty", 5, "Standard", "dnd4e_empty_party" ]
+}.each do |key, (name, level, group, campaign)| %>
+<%= key %>:
+  type: Entitybuilder::ResidentCreature
+  resident: razune
+  name: Difficulty <%= name %>
+  privacy: Residents
+  sheet_privacy: Residents
+  core_rules: dnd4e
+  monster_level: <%= level %>
+  monster_role: Soldier
+  monster_group: <%= group %>
+  monster_defense_bonuses: "[]"
+  encounter_campaign: <%= campaign %>
+<% end %>

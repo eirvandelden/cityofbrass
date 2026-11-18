@@ -13,3 +13,9 @@ two:
   description: MyString
   value: 10
   dice: 1d6
+
+monster_base:
+  entity: resident_creature_full
+  sort_order: 1
+  name: Base Attack
+  value: 3

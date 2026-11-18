@@ -1,0 +1,5 @@
+monster_fortitude:
+  entity: resident_creature_full
+  sort_order: 1
+  name: Fortitude
+  base: 4

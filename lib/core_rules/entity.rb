@@ -19,6 +19,12 @@ module CoreRules
       return show_core_blocks == "true" ? true : false
     end
 
+    def self.monster_builder?(core_rules)
+      rulebook = CoreRules.rulebooks.detect { |v| v['slug'] == core_rules }
+      return false if rulebook.blank?
+      return rulebook['entitybuilder']['monster_builder'] == "true"
+    end
+
     def self.menu(core_rules)
       rulebook = CoreRules.rulebooks.detect { |v| v['slug'] == core_rules }
       menu = rulebook['entitybuilder']['menu'] unless rulebook.blank?

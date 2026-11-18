@@ -1,0 +1,38 @@
+<%# The value inputs belong to the form below through the form attribute, so the reset buttons never nest in a form. %>
+<h4><%= t("entitybuilder.monster_builds.values.heading") %></h4>
+<%= form_with url: polymorphic_path([ @parent_object, :monster_build ]), method: :patch, local: true,
+      id: "monster_values_form" do %>
+<% end %>
+<table class="sheet-table">
+  <thead>
+    <tr>
+      <th><%= t("entitybuilder.monster_builds.values.name") %></th>
+      <th><%= t("entitybuilder.monster_builds.values.stored") %></th>
+      <th><%= t("entitybuilder.monster_builds.values.calculated") %></th>
+      <th><%= t("entitybuilder.monster_builds.values.status") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @parent_object.monster_values.each do |key, value| %>
+      <tr>
+        <td><%= value.target.row_name %></td>
+        <td>
+          <%= text_field_tag "#{@parent_type}[monster_values][#{key}]", (@submitted_values || {}).fetch(key, value.stored),
+                form: "monster_values_form", id: "monster_value_#{key}" %>
+        </td>
+        <td><%= value.calculated %></td>
+        <td>
+          <% if value.needs_manual_revision? %>
+            <%= t("entitybuilder.monster_builds.values.manual_revision") %>
+            <%= button_to t("entitybuilder.monster_builds.values.reset"),
+                  polymorphic_path([ @parent_object, :monster_build, :override ], id: key), method: :delete,
+                  class: "button tiny" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="text-center">
+  <%= submit_tag t("entitybuilder.monster_builds.values.submit"), form: "monster_values_form", class: "button" %>
+</div>

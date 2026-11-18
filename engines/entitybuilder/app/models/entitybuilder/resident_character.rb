@@ -11,6 +11,10 @@ module Entitybuilder
 
     validates :resident_id, presence: true
 
+    def character_level
+      [ class_levels.sum { |class_level| class_level.level.to_i }, 1 ].max
+    end
+
     def icon
       'fa fa-shield'
     end
