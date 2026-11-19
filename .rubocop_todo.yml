@@ -838,7 +838,6 @@ Layout/SpaceInsideParens:
 # SupportedStyles: final_newline, final_blank_line
 Layout/TrailingEmptyLines:
   Exclude:
-    - 'engines/activeplay/Gemfile'
     - 'engines/billing/test/integration/navigation_test.rb'
     - 'engines/entitybuilder/test/dummy/config/initializers/cookies_serializer.rb'
     - 'engines/entitybuilder/test/integration/navigation_test.rb'
