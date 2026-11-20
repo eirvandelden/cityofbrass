@@ -2,7 +2,7 @@
 
 ## Behaviour delivered
 
-The app, its seven engines, the Docker image default and the RuboCop target move from Ruby 3.4.9 to 4.0.9. Puma moves from 7.2.1 to 7.2.3 to clear seven advisories that also fail on `main`. No app code changed.
+The app, its seven engines, the Docker image default and the RuboCop target move from Ruby 3.4.9 to 4.0.9. Puma moves from 7.2.1 to 7.2.3 to clear seven advisories that also fail on `main`. The importer lockfile records Ruby 4.0.9 too (Etienne put the engines in scope after delivery); its `BUNDLED WITH` stays 4.0.11. No app code changed.
 
 ## Evidence
 
@@ -26,6 +26,5 @@ Round 1: one Important, two Nits. The puma major bump became the 7.2.3 patch upd
 
 ## Left for separate changes
 
-- `engines/importer/Gemfile.lock` still records `ruby 3.4.9` and `BUNDLED WITH 4.0.11`. A `bundle lock` there also moves `BUNDLED WITH`, so the plan reverted it.
 - Seed user has no `Resident`, so the gallery upload page returns 500 on a fresh database.
 - Bundler 4, a real Docker build and the exception_notification fingerprint watch after deploy.
