@@ -9,7 +9,7 @@ The app, its seven engines, the Docker image default and the RuboCop target move
 - `rv run ruby -v` and `rv run bundle exec ruby -v`: ruby 4.0.9. All eight `.ruby-version` files read `4.0.9`.
 - `bin/rails test`: 1480 runs, 5070 assertions, 0 failures, 0 errors, 0 skips, on the final puma 7.2.3 lock.
 - RuboCop: 1112 files, no offenses. Brakeman: 0 warnings. `bundler-audit`: no vulnerabilities. `bin/i18n-tasks health`: green.
-- Smoke test on 4.0.9 with `bin/rails server`: home loads without error (302 on the implementer's dev database, 200 on the reviewer's), `/users/login` 200, sign-in 302, picture upload 302, image page 200, thumbnail `image/png` 200. Puma 7.2.3 boot (round 2 review): `/users/login` 200, `/` 200 signed out.
+- Smoke test on 4.0.9 with `bin/rails server`: home 200 signed out and 302 signed in (`ScrollsController#home` redirects an active signed-in user), `/users/login` 200, sign-in 302, picture upload 302, image page 200, thumbnail `image/png` 200. Puma 7.2.3 boot (round 2 review): `/users/login` 200, `/` 200 signed out.
 - Docker Hub tag `ruby:4.0.9-slim`: HTTP 200 on 2026-11-19. `docker build` did not run: no Docker runtime here.
 - No Ruby 3.4.9 baseline run: the 3.4.9 gem set does not build here. Parity rests on green CI on `main` at `fb8e301`.
 - System tests did not run: headless Chrome does not start in the sandbox. CI on the draft PR runs them.
