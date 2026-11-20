@@ -40,3 +40,16 @@ Round 3 Nit 2 (round 2 line in "Review outcome") is fixed by `f93c45f`; its line
 Bugs: none. Security: none. Compliance: the code diff holds only the approved pins and the puma 7.2.3 patch. Design: none; no Ruby code changed.
 
 - [ ] Nit: The smoke-test line now puts the home 302 down to the dev database ("302 on the implementer's dev database, 200 on the reviewer's"). The code does not support that. `ScrollsController#home` redirects only when `user_signed_in?` and `current_user.active?` (`app/controllers/scrolls_controller.rb:3`). No `before_action` in `ApplicationController` or `Authentication` redirects a signed-out request. A signed-out `/` is 200 on any database; the 302 came from a signed-in active user. Write the state instead, for example "home 200 signed out, 302 signed in (redirect to the resident page)". — `docs/changes/upgrade-ruby-4-0-9/deliver.md:12` → fixed (docs: state the signed-in and signed-out home results)
+
+## Round 5 — 2026-11-20 12:25 UTC — eba2629
+
+Base: `origin/main` at `fb8e301`, fetched; the branch sits on it. No REVIEW.md or REVIEW.local.md at the root, so the passes follow the playbook, intent.md and plan.md. Round 4 Nit holds as fixed by `6babdee`. `deliver`'s `restore` dropped the removal commit `d75d55a` by rebase, so the local branch diverges from `origin/upgrade-ruby-4-0-9` (ahead 3, behind 1). PR #168 points at `d75d55a`; only `git push --force-with-lease -u origin HEAD` updates it, as `restore` prints.
+
+New since round 4: `12398c9` sets `engines/importer/Gemfile.lock` `RUBY VERSION` to `ruby 4.0.9` and nothing else (`BUNDLED WITH` stays 4.0.11); `4712f2f` and `eba2629` record it in plan.md and deliver.md. Round 1 Nit 2 (importer leftover, dismissed) is now resolved by `12398c9` rather than deferred.
+
+Checks on eba2629: `rv run ruby -v` prints 4.0.9; all eight `.ruby-version` files and the `Dockerfile` default read 4.0.9; root `Gemfile.lock` records `ruby 4.0.9p0`; `test/engine_gemfile_test.rb` 2 runs, 4 assertions, 0 failures. No Ruby, gem set or config changed for the root app since round 3, so its RuboCop, Brakeman, bundler-audit and `bin/rails test` results still apply. They did not run again.
+
+Bugs: none. Security: none. Compliance: the importer lockfile change is one `RUBY VERSION` line, as plan step 6 allows, and plan.md records Etienne's scope decision. Design: none; no Ruby code changed.
+
+- [ ] Nit: "Review outcome" round 1 still says "The importer lockfile leftover is deferred (see below)". `12398c9` resolved it, and "Left for separate changes" no longer lists it, so the line contradicts the account's own "Behaviour delivered". Replace it with the resolution, for example "The importer lockfile now records Ruby 4.0.9 (`12398c9`)". — `docs/changes/upgrade-ruby-4-0-9/deliver.md:25` → fixed (docs: bring the delivery account up to date with the reviews)
+- [ ] Nit: "Review outcome" stops at round 2, while review.md now holds rounds 3 to 5, each closed by a `deliver.md` fix. "Check results" also still says "the draft PR", but PR #168 is marked ready. Add one line for rounds 3 to 5 and drop "draft", so the account matches review.md and the PR. — `docs/changes/upgrade-ruby-4-0-9/deliver.md:23` → fixed (docs: bring the delivery account up to date with the reviews)
