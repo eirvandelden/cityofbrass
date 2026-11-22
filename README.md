@@ -249,7 +249,6 @@ Running checks:
 ```sh
 bin/rails test         # unit, integration, and system tests (Capybara/Cuprite)
 bundle exec rubocop    # linting
-bin/pre_push_checks    # the full pre-push gate
 ```
 
 System tests use Cuprite (headless Chrome), so a local Chrome/Chromium is required.

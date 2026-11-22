@@ -24,7 +24,6 @@ bin/setup --skip-server    # install gems + JS packages, prepare the database (n
 bin/dev                    # run the app, http://localhost:3000
 bin/rails test              # unit, integration, and system tests
 bundle exec rubocop         # linting
-bin/pre_push_checks         # full pre-push gate (run before pushing)
 ```
 
 Seed login: `user@example.com` / `password1`. Promote to `vip` via `/admins/login` (same credentials) → User Admin → set status.
