@@ -58,7 +58,7 @@ Not affected: no request path changes. Push cost: the shared pre-push jobs plus 
 
 - Shared config: `https://github.com/eirvandelden/dotfiles.git`, `lefthook.yml` on `main`. Lefthook clones it into `<git common dir>/info/lefthook-remotes/` (a `dotfiles` clone already exists there).
 - Lefthook 2.2.2, installed as a gem under rv Ruby 3.4.9; `.git/hooks/pre-commit` and `pre-push` already call it.
-- rv: the shared jobs call bare `rubocop`, `bin/rails`, `brakeman` and `bundler-audit`, so they depend on rv putting Ruby 3.4.9 (`.ruby-version`) and its gem executables on `PATH`.
+- rv: the shared jobs call bare `rubocop`, `bin/rails`, `brakeman` and `bundler-audit`, so they depend on rv putting the `.ruby-version` Ruby (4.0.9 after the rebase onto main, #168) and its gem executables on `PATH`. The commit check passed under 4.0.9 with `rv run git commit`.
 - CI (`.github/workflows/ci.yml`) still runs full RuboCop and `bin/rails test`; unchanged.
 
 ## Files that change
