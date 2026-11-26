@@ -57,7 +57,7 @@ Not affected: no request path changes. Push cost: the shared pre-push jobs plus 
 ## Integration points
 
 - Shared config: `https://github.com/eirvandelden/dotfiles.git`, `lefthook.yml` on `main`. Lefthook clones it into `<git common dir>/info/lefthook-remotes/` (a `dotfiles` clone already exists there).
-- Lefthook 2.2.2, installed as a gem under rv Ruby 3.4.9; `.git/hooks/pre-commit` and `pre-push` already call it.
+- Lefthook (2.2.3 under Ruby 4.0.9 via rv), installed as a gem; `.git/hooks/pre-commit` and `pre-push` already call it.
 - rv: the shared jobs call bare `rubocop`, `bin/rails`, `brakeman` and `bundler-audit`, so they depend on rv putting the `.ruby-version` Ruby (4.0.9 after the rebase onto main, #168) and its gem executables on `PATH`. The commit check passed under 4.0.9 with `rv run git commit`.
 - CI (`.github/workflows/ci.yml`) still runs full RuboCop and `bin/rails test`; unchanged.
 
@@ -121,7 +121,9 @@ No criterion needs an automated test: every change is configuration or a removal
 
 ## Risks
 
-- The shared jobs call bare `rubocop`, not `bundle exec rubocop`. It runs the newest RuboCop installed for Ruby 3.4.9, which can differ from `Gemfile.lock`. A shell without rv's chpwd hook gets the wrong Ruby (seen in planning: Ruby 4.0.9 picked up `rubocop` 1.92.3 from the 4.0 gem dir). If the check in step 5 fails for that reason, the fix belongs in dotfiles: stop and ask.
+- The shared pre-push hook runs jobs in parallel (`parallel: true`). Two `bin/rails test` processes lock the one SQLite test database (`database is locked`; review round 3). The repo job therefore also runs the shared job's `app/X.rb` to `test/X_test.rb` mapping, and the hook-level `exclude_tags: [minitest]` turns the shared `minitest` job off. Proof: a probe with two changed `app/` files and three changed test files ran one process, 25 runs, 0 errors.
+
+- The shared jobs call bare `rubocop`, not `bundle exec rubocop`. It runs the newest RuboCop installed for the `.ruby-version` Ruby (4.0.9: 1.92.3, while `Gemfile.lock` pins 1.92.2); both report no offenses today. A shell without rv's chpwd hook gets the wrong Ruby. If the check in step 5 fails for that reason, the fix belongs in dotfiles: stop and ask.
 - The shared `rubocop` glob is `*.{rb}`: `.rake` files are no longer linted on commit or push. CI still lints them.
 - Engine tests run from the root with the root `test_helper` load path. That is how `bin/pre_push_checks` ran them, so behaviour is unchanged; an engine test that only passes under its own helper would now block a push it blocked before too.
 - The shared config changes on `main` of dotfiles without a cityofbrass commit, and a refetch picks it up within 24 hours. Accepted: that is the point of the remote.
