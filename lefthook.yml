@@ -16,7 +16,9 @@ pre-push:
         - tests
         - minitest
       glob:
+        - "test/*_test.rb"
         - "test/**/*_test.rb"
+        - "engines/*/test/*_test.rb"
         - "engines/*/test/**/*_test.rb"
       # GIT_DIR is unset for the reason given on the shared pre-commit rubocop job.
       run: |
