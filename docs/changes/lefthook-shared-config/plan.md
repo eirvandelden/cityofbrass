@@ -32,16 +32,17 @@ Not checked: no Ruby signatures change.
 
 ### Complexity
 
-Not affected: no request path changes. Push cost: the shared pre-push jobs plus one `bin/rails test` call over the pushed test files, the same test set `bin/pre_push_checks` ran.
+Not affected: no request path changes. Push cost: the shared pre-push jobs plus one `bin/rails test` call over the branch's changed test files and the tests mapped from its changed `app/X.rb` files. That is the test set `bin/pre_push_checks` ran, plus the mapped tests.
 
 ### Invariants
 
 - Every repo job that runs Ruby tooling runs `unset GIT_DIR` first. Enforced by review of `lefthook.yml`; proven by the worktree commit and push checks below.
 - A repo job never shares a name with a shared job, because the remote config is merged after the repo config and overrides a same-name job.
+- One `bin/rails test` process runs per push. The shared pre-push hook runs jobs in parallel and the test database is one SQLite file. Enforced by the repo's hook-level `exclude_tags: [minitest]`, which turns the shared `minitest` job off; proven by the round 3 probe. It holds only while the shared pre-push hook sets no `exclude_tags` of its own: a hook-level list in a later config replaces the earlier one.
 
 ### Alternatives
 
-1. **Chosen: Starter remote plus one repo pre-push job `minitest-changed-tests`.** The shared `minitest` job only maps a changed `app/X.rb` to `test/X_test.rb`. It never runs a changed test file itself, and never anything under `engines/*/test`. The repo job runs exactly the files `bin/pre_push_checks` ran, so removing that script loses no push-time coverage.
+1. **Chosen: Starter remote plus one repo pre-push job `minitest-changed-tests`.** The shared `minitest` job only maps a changed `app/X.rb` to `test/X_test.rb`. It never runs a changed test file itself, and never anything under `engines/*/test`. The repo job runs the files `bin/pre_push_checks` ran, plus the tests the shared job mapped, in one process, so removing that script loses no push-time coverage.
 2. Rejected: Starter remote only, rely on CI. Changed test files and engine tests would run only on CI.
 3. Rejected: change the shared dotfiles `minitest` job first. It is a separate repository and change; this one would wait on it.
 
@@ -83,16 +84,22 @@ remotes:
       - lefthook.yml
 
 pre-push:
+  # The shared minitest job runs bin/rails test too. Two test processes in parallel lock the one
+  # SQLite test database, so the repo job below replaces it. Its tag is excluded here.
+  exclude_tags:
+    - minitest
   commands:
-    # The shared minitest job only maps app/X.rb to test/X_test.rb. This job runs the pushed
-    # test files themselves, engine tests included. Not named minitest: the remote config
-    # overrides a repo job of the same name.
+    # Runs the branch's changed test files, engine tests included, and the tests that the shared
+    # minitest job maps from changed app/X.rb files (test/X_test.rb), in one bin/rails test run.
+    # The list comes from the shared hook-level `files:` (not {push_files}, which lists every
+    # file on a first push). Not named minitest: the remote config overrides a repo job of the
+    # same name.
     minitest-changed-tests:
       tags:
         - ruby
         - tests
-        - minitest
       glob:
+        - "app/**/*.rb"
         - "test/*_test.rb"
         - "test/**/*_test.rb"
         - "engines/*/test/*_test.rb"
@@ -100,9 +107,21 @@ pre-push:
       # GIT_DIR is unset for the reason given on the shared pre-commit rubocop job.
       run: |
         unset GIT_DIR
-        bin/rails test {files}
+        tests=""
+        for file in {files}; do
+          case "$file" in
+            test/*_test.rb | engines/*/test/*_test.rb) tests="$tests $file" ;;
+            app/*.rb)
+              mapped="test/${file#app/}"
+              mapped="${mapped%.rb}_test.rb"
+              [ -f "$mapped" ] && tests="$tests $mapped"
+              ;;
+          esac
+        done
+        [ -n "$tests" ] || exit 0
+        bin/rails test $(printf '%s\n' $tests | sort -u)
       fail_text: |
-        Tests failed for pushed test files.
+        Tests failed for the pushed files.
         Fix the failing tests or use `--no-verify` to skip.
 ```
 
@@ -121,6 +140,7 @@ No criterion needs an automated test: every change is configuration or a removal
 
 ## Risks
 
+- The `exclude_tags: [minitest]` fix depends on the shared config: if the shared pre-push hook ever sets its own `exclude_tags`, that list replaces the repo's, the shared `minitest` job runs again, and pushes fail with `database is locked`. A refetch picks it up within 24 hours without a cityofbrass commit. Accepted; the fix then belongs in dotfiles or in a repo `lefthook-local.yml`.
 - The shared pre-push hook runs jobs in parallel (`parallel: true`). Two `bin/rails test` processes lock the one SQLite test database (`database is locked`; review round 3). The repo job therefore also runs the shared job's `app/X.rb` to `test/X_test.rb` mapping, and the hook-level `exclude_tags: [minitest]` turns the shared `minitest` job off. Proof: a probe with two changed `app/` files and three changed test files ran one process, 25 runs, 0 errors.
 
 - The shared jobs call bare `rubocop`, not `bundle exec rubocop`. It runs the newest RuboCop installed for the `.ruby-version` Ruby (4.0.9: 1.92.3, while `Gemfile.lock` pins 1.92.2); both report no offenses today. A shell without rv's chpwd hook gets the wrong Ruby. If the check in step 5 fails for that reason, the fix belongs in dotfiles: stop and ask.
