@@ -7,9 +7,10 @@ remotes:
 
 pre-push:
   commands:
-    # The shared minitest job only maps app/X.rb to test/X_test.rb. This job runs the pushed
-    # test files themselves, engine tests included. Not named minitest: the remote config
-    # overrides a repo job of the same name.
+    # The shared minitest job only maps app/X.rb to test/X_test.rb. This job runs the branch's
+    # changed test files themselves, engine tests included, from the shared hook-level `files:`
+    # list (not {push_files}, which lists every file on a first push). Not named minitest: the
+    # remote config overrides a repo job of the same name.
     minitest-changed-tests:
       tags:
         - ruby
@@ -23,12 +24,7 @@ pre-push:
       # GIT_DIR is unset for the reason given on the shared pre-commit rubocop job.
       run: |
         unset GIT_DIR
-        files=""
-        for file in {push_files}; do
-          [ -f "$file" ] && files="$files $file"
-        done
-        [ -n "$files" ] || exit 0
-        bin/rails test $files
+        bin/rails test {files}
       fail_text: |
         Tests failed for pushed test files.
         Fix the failing tests or use `--no-verify` to skip.
