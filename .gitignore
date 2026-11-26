@@ -66,3 +66,4 @@ bower.json
 .claude/.cc-writes
 .claude/worktrees/
 .claude/scheduled_tasks.lock
+/engines/*/Gemfile.lock
