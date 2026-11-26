@@ -93,23 +93,20 @@ pre-push:
         - tests
         - minitest
       glob:
+        - "test/*_test.rb"
         - "test/**/*_test.rb"
+        - "engines/*/test/*_test.rb"
         - "engines/*/test/**/*_test.rb"
       # GIT_DIR is unset for the reason given on the shared pre-commit rubocop job.
       run: |
         unset GIT_DIR
-        files=""
-        for file in {push_files}; do
-          [ -f "$file" ] && files="$files $file"
-        done
-        [ -n "$files" ] || exit 0
-        bin/rails test $files
+        bin/rails test {files}
       fail_text: |
         Tests failed for pushed test files.
         Fix the failing tests or use `--no-verify` to skip.
 ```
 
-The glob list may need `test/*_test.rb` and `engines/*/test/*_test.rb` too, if lefthook's matcher does not let `**` match zero directories. Step 4 settles it.
+The zero-directory globs (`test/*_test.rb`, `engines/*/test/*_test.rb`) are needed: lefthook's matcher does not let `**` match zero directories (step 4 showed it). The job reads `{files}`, the shared hook-level pre-push list (the branch's changes against the merge base with origin's default branch, deleted files left out), not `{push_files}`, which lists every file on a first push (review round 1).
 
 ## Order of work
 
@@ -137,6 +134,7 @@ No criterion needs an automated test: every change is configuration or a removal
 - A commit that stages a Ruby file succeeds from a linked worktree with the hooks installed → check: in `.worktrees/lefthook-shared-config`, add a comment line to `app/models/user.rb`, stage it, `git commit`. The hook output shows the shared `rubocop` job ran (not skipped) and the commit exits 0. Then `git reset --soft HEAD~1` and `git restore --staged --worktree app/models/user.rb`.
 - A push succeeds from a linked worktree with the hooks installed → check: `git push -u origin HEAD` from the worktree exits 0 and the hook output lists the shared pre-push jobs.
 - The repo test job runs pushed test files, engine tests included → check: step 4's `lefthook run` calls run `bin/rails test` on all three files and exit 0.
+- The repo test job runs only the branch's own changed test files → check: a temporary commit that changes one engine test and one nested test, then `lefthook run pre-push --command minitest-changed-tests` with no `--file`, runs those two files only; reset the commit afterwards.
 - Invariant: every repo job that runs Ruby tooling unsets `GIT_DIR` first, enforced in `lefthook.yml` → check: the commit and push checks above run from a linked worktree, where git exports an absolute `GIT_DIR`.
 - Nothing references the removed script → check: `grep -rn "pre_push_checks\|PrePushChecks" --exclude-dir=docs .` returns nothing.
 - Suites stay green → check: `bundle exec rubocop` and `bin/rails test` pass.
