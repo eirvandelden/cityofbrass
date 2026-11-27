@@ -1,11 +1,47 @@
-pre-commit:
-  commands:
-    rubocop:
-      tags: rubocop
-      glob: "*.{rb,rake}"
-      run: rv run bundle exec rubocop --force-exclusion {staged_files}
+remotes:
+  - git_url: https://github.com/eirvandelden/dotfiles.git
+    ref: main
+    refetch_frequency: 24h
+    configs:
+      - lefthook.yml
 
 pre-push:
+  # The shared minitest job runs bin/rails test too. Two test processes in parallel lock the one
+  # SQLite test database, so the repo job below replaces it. Its tag is excluded here.
+  exclude_tags:
+    - minitest
   commands:
-    pre_push_checks:
-      run: rv run bin/pre_push_checks
+    # Runs the branch's changed test files, engine tests included, and the tests that the shared
+    # minitest job maps from changed app/X.rb files (test/X_test.rb), in one bin/rails test run.
+    # The list comes from the shared hook-level `files:` (not {push_files}, which lists every
+    # file on a first push). Not named minitest: the remote config overrides a repo job of the
+    # same name.
+    minitest-changed-tests:
+      tags:
+        - ruby
+        - tests
+      glob:
+        - "app/**/*.rb"
+        - "test/*_test.rb"
+        - "test/**/*_test.rb"
+        - "engines/*/test/*_test.rb"
+        - "engines/*/test/**/*_test.rb"
+      # GIT_DIR is unset for the reason given on the shared pre-commit rubocop job.
+      run: |
+        unset GIT_DIR
+        tests=""
+        for file in {files}; do
+          case "$file" in
+            test/*_test.rb | engines/*/test/*_test.rb) tests="$tests $file" ;;
+            app/*.rb)
+              mapped="test/${file#app/}"
+              mapped="${mapped%.rb}_test.rb"
+              [ -f "$mapped" ] && tests="$tests $mapped"
+              ;;
+          esac
+        done
+        [ -n "$tests" ] || exit 0
+        bin/rails test $(printf '%s\n' $tests | sort -u)
+      fail_text: |
+        Tests failed for the pushed files.
+        Fix the failing tests or use `--no-verify` to skip.
