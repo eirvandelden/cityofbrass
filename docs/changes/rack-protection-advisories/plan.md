@@ -62,7 +62,7 @@ None.
 ## Proof
 
 - No pin of 4.0.9 remains → check: `git grep -E "4\.0\.9" -- . ':!docs'` prints nothing
-- The app runs on 4.0.10 → check: `rv ruby run 4.0.10 -- -S bundle exec ruby -v` prints 4.0.10
+- The app runs on 4.0.10 → check: `rv run bundle exec ruby -v` prints 4.0.10
 - No advisory remains → check: `bin/bundle-audit check --update` exits 0
 - Only rack-protection moved → check: `git diff Gemfile.lock` shows one changed version line
 - Nothing regressed → check: `bin/rails test` green
